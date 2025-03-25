@@ -14,3 +14,14 @@ FASTTypescriptFormal_parameters class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'printing' }
+FASTTypescriptFormal_parameters >> mooseNameOn: aStream [
+	"Overriden because name is a property of FASTTypescriptEntity class"
+
+	self mooseID
+		ifNil: [ aStream nextPutAll: 'nil mooseID!!!' ]
+		ifNotNil: ['check']
+			 
+ 
+]
