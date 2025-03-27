@@ -20,6 +20,33 @@ Metacello new
   load.
 ```  
 
+## Usage
+
+In order to use it, please make sure that you have installed on your machine the correposndat library from tree sitter typescript, in order to make sure the parsing succeeds.
+For more details you can have a look at this [blog-post][tree-sitter-blog].
+
+To use it in Pharo, you can check below example:
+```smalltalk  
+res := FASTTypescriptGenerator new getASTFromString:  'class SimpleClass {
+	integerProperty = 1;
+  	doubleProperty = 1.2;  	
+   booleanProperty= true;
+  	stringProperty = "hello";
+}'. 
+```  
+
+## NB
+
+The project is still at the very begining. But at least now it can parse and generate a basic model of FASTTypescript.
+Still need to:
+- Reorder classes
+- Add new properties
+- Check traits
+- Add tests
+
+Your contribution is more than welcome.
+Happy coding with Typescript :)
+
 [fast]: https://github.com/moosetechnology/FAST 
 [pharo-tree-sitter]: https://github.com/Evref-BL/Pharo-Tree-Sitter
-  
+[tree-sitter-blog]: https://github.com/moosetechnology/moosetechnology.github.io/blob/c2d6c85f8c2145380db7fc0ad9994640e97b635e/_drafts/2025-03-25-tree-sitter.md
