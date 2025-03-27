@@ -13,7 +13,6 @@ BaselineOfFASTTypescript >> baseline: spec [
 		do: [ 
 			spec description: 'Developement version of FAST Typescript using TreeSitter for Pharo'.
 			spec author: 'AlessHosry'.
-			spec baseline: 'MoTion' with: [ spec repository: 'github://Evref-BL/PharoTreeSitter:main' ]. 	
 			self defineDependencies: spec.
 			self definePackages: spec.
 			self defineGroups: spec ]
