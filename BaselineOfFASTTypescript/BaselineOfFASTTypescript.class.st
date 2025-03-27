@@ -73,9 +73,7 @@ BaselineOfFASTTypescript >> definePackages: spec [
 		package: 'FASTTypescript-Model-Generator';
 		package: 'FASTTypescript-Model-Extension'
 		with: [ spec requires: #( 'FASTTypescript-Model' ) ];
-		package: 'FASTTypescript-Tools';
-		package: 'FASTTypescript-Model'
-		with: [ spec requires: #( 'TreeSitter-Typescript' ) ].
+		package: 'FASTTypescript-Tools'.
 	
 
 	"In case of no Famix loaded"
