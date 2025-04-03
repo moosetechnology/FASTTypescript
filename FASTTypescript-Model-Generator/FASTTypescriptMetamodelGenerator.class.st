@@ -504,22 +504,6 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 
 	(entity property: #'body') <>-* (entity property: #'bodyParent'). 
 	
-	
-	(entity property: #'declaration') <>-* (entity property: #'declarationParent').
-	(entity property: #'decorator') <>-* (entity property: #'decoratorParent').
-	(entity property: #'finalizer') <>-* (entity property: #'finalizerParent').
-	(entity property: #'flags') <>-* (entity property: #'flagsParent').
-	(entity property: #'function') <>-* (entity property: #'functionParent').
-	(entity property: #'handler') <>-* (entity property: #'handlerParent').
-	(entity property: #'increment') <>-* (entity property: #'incrementParent').
-	(entity property: #'index') <>-* (entity property: #'indexParent').
-	(entity property: #'index_type') <>-* (entity property: #'index_typeParent').
-	(entity property: #'initializer') <>-* (entity property: #'initializerParent').
-	(entity property: #'key') <>-* (entity property: #'keyParent').
-	(entity property: #'kind') <>-* (entity property: #'kindParent').
-	(entity property: #'label') <>-* (entity property: #'labelParent').
-	(entity property: #'left') <>-* (entity property: #'leftParent').
-	(entity property: #'module') <>-* (entity property: #'moduleParent').
 	(entity property: #'name') <>-* (entity property: #'nameParent').
 	(entity property: #'object') <>-* (entity property: #'objectParent').
 	(entity property: #'operator') <>-* (entity property: #'operatorParent').
