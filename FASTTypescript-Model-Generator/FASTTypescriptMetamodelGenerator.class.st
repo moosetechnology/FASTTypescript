@@ -458,6 +458,11 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_boolean --|> #TBooleanLiteral.
 	_null --|> #TNullPointerLiteral.
 	
+	
+	_program --|> tEntity.
+	_program --|> #THasImmediateSource.
+	_program withPrecedenceOf: #THasImmediateSource.
+	
 	_class_declaration --|> tDeclaration.
 	_class_declaration --|> tWithDeclarations.
 	_class_declaration --|> tWithModifiers.
@@ -465,6 +470,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_class_declaration --|> tStatement.
 	_class_declaration --|> #THasImmediateSource.
 	_class_declaration withPrecedenceOf: #THasImmediateSource.
+	
 	
 	_interface_declaration --|> tDeclaration.
 	_interface_declaration --|> tWithDeclarations.
@@ -474,6 +480,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_interface_declaration --|> #THasImmediateSource.
 	_interface_declaration withPrecedenceOf: #THasImmediateSource.
 	
+	
 	_enum_declaration --|> tDeclaration.
 	_enum_declaration --|> tWithDeclarations.
 	_enum_declaration --|> tWithModifiers.
@@ -481,6 +488,8 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_enum_declaration --|> tStatement.
 	_enum_declaration --|> #THasImmediateSource.
 	_enum_declaration withPrecedenceOf: #THasImmediateSource.
+	
+	
 	
 	
 	

@@ -21,7 +21,7 @@ FASTTypescriptGenerator >> getASTFromString: string [
 	importer languageName: 'Typescript'.
 	importer originString: string. 
 	 
-	^ importer import: (parser parseString: string) rootNode firstNamedChild.
+	^ importer import: (parser parseString: string) rootNode.
 	
 
 ]
