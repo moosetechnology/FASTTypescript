@@ -505,17 +505,8 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	(entity property: #'body') <>-* (entity property: #'bodyParent'). 
 	
 	(entity property: #'name') <>-* (entity property: #'nameParent').
-	(entity property: #'object') <>-* (entity property: #'objectParent').
-	(entity property: #'operator') <>-* (entity property: #'operatorParent').
-	(entity property: #'optional_chain') <>-* (entity property: #'optional_chainParent').
-	(entity property: #'parameter') <>-* (entity property: #'parameterParent').
-	(entity property: #'parameters') <>-* (entity property: #'parametersParent').
-	(entity property: #'pattern') <>-* (entity property: #'patternParent').
-	(entity property: #'property') <>-* (entity property: #'propertyParent').
-	(entity property: #'return_type') <>-* (entity property: #'return_typeParent').
-	(entity property: #'right') <>-* (entity property: #'rightParent').
-	(entity property: #'sign') <>-* (entity property: #'signParent').
-	(entity property: #'source') <>-* (entity property: #'sourceParent').
+	
+	
 	(entity property: #'type') <>-* (entity property: #'typeParent').
 	(entity property: #'type_arguments') <>-* (entity property: #'type_argumentsParent').
 	(entity property: #'type_parameters') <>-* (entity property: #'type_parametersParent').
