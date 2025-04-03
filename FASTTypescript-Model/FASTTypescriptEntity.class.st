@@ -5,15 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `aliasParent` | `FASTTypescriptEntity` | `alias` | `FASTTypescriptEntity` | |
-| `alternativeParent` | `FASTTypescriptEntity` | `alternative` | `FASTTypescriptEntity` | |
-| `argumentParent` | `FASTTypescriptEntity` | `argument` | `FASTTypescriptEntity` | |
-| `argumentsParent` | `FASTTypescriptEntity` | `arguments` | `FASTTypescriptEntity` | |
 | `bodyParent` | `FASTTypescriptEntity` | `body` | `FASTTypescriptEntity` | |
-| `conditionParent` | `FASTTypescriptEntity` | `condition` | `FASTTypescriptEntity` | |
-| `consequenceParent` | `FASTTypescriptEntity` | `consequence` | `FASTTypescriptEntity` | |
-| `constraintParent` | `FASTTypescriptEntity` | `constraint` | `FASTTypescriptEntity` | |
-| `constructorParent` | `FASTTypescriptEntity` | `constructor` | `FASTTypescriptEntity` | |
 | `declarationParent` | `FASTTypescriptEntity` | `declaration` | `FASTTypescriptEntity` | |
 | `decoratorParent` | `FASTTypescriptEntity` | `decorator` | `FASTTypescriptEntity` | |
 | `finalizerParent` | `FASTTypescriptEntity` | `finalizer` | `FASTTypescriptEntity` | |
@@ -50,16 +42,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `alias` | `FASTTypescriptEntity` | `aliasParent` | `FASTTypescriptEntity` | |
-| `alternative` | `FASTTypescriptEntity` | `alternativeParent` | `FASTTypescriptEntity` | |
-| `argument` | `FASTTypescriptEntity` | `argumentParent` | `FASTTypescriptEntity` | |
-| `arguments` | `FASTTypescriptEntity` | `argumentsParent` | `FASTTypescriptEntity` | |
 | `body` | `FASTTypescriptEntity` | `bodyParent` | `FASTTypescriptEntity` | |
 | `comments` | `FASTTWithComments` | `container` | `FASTTComment` | list of comments defined in the entity|
-| `condition` | `FASTTypescriptEntity` | `conditionParent` | `FASTTypescriptEntity` | |
-| `consequence` | `FASTTypescriptEntity` | `consequenceParent` | `FASTTypescriptEntity` | |
-| `constraint` | `FASTTypescriptEntity` | `constraintParent` | `FASTTypescriptEntity` | |
-| `constructor` | `FASTTypescriptEntity` | `constructorParent` | `FASTTypescriptEntity` | |
 | `declaration` | `FASTTypescriptEntity` | `declarationParent` | `FASTTypescriptEntity` | |
 | `decorator` | `FASTTypescriptEntity` | `decoratorParent` | `FASTTypescriptEntity` | |
 | `finalizer` | `FASTTypescriptEntity` | `finalizerParent` | `FASTTypescriptEntity` | |
@@ -109,24 +93,8 @@ Class {
 	#traits : 'FASTTEntity + FASTTWithComments',
 	#classTraits : 'FASTTEntity classTrait + FASTTWithComments classTrait',
 	#instVars : [
-		'#alias => FMMany type: #FASTTypescriptEntity opposite: #aliasParent',
-		'#aliasParent => FMOne type: #FASTTypescriptEntity opposite: #alias',
-		'#alternative => FMMany type: #FASTTypescriptEntity opposite: #alternativeParent',
-		'#alternativeParent => FMOne type: #FASTTypescriptEntity opposite: #alternative',
-		'#argument => FMMany type: #FASTTypescriptEntity opposite: #argumentParent',
-		'#argumentParent => FMOne type: #FASTTypescriptEntity opposite: #argument',
-		'#arguments => FMMany type: #FASTTypescriptEntity opposite: #argumentsParent',
-		'#argumentsParent => FMOne type: #FASTTypescriptEntity opposite: #arguments',
 		'#body => FMMany type: #FASTTypescriptEntity opposite: #bodyParent',
 		'#bodyParent => FMOne type: #FASTTypescriptEntity opposite: #body',
-		'#condition => FMMany type: #FASTTypescriptEntity opposite: #conditionParent',
-		'#conditionParent => FMOne type: #FASTTypescriptEntity opposite: #condition',
-		'#consequence => FMMany type: #FASTTypescriptEntity opposite: #consequenceParent',
-		'#consequenceParent => FMOne type: #FASTTypescriptEntity opposite: #consequence',
-		'#constraint => FMMany type: #FASTTypescriptEntity opposite: #constraintParent',
-		'#constraintParent => FMOne type: #FASTTypescriptEntity opposite: #constraint',
-		'#constructor => FMMany type: #FASTTypescriptEntity opposite: #constructorParent',
-		'#constructorParent => FMOne type: #FASTTypescriptEntity opposite: #constructor',
 		'#declaration => FMMany type: #FASTTypescriptEntity opposite: #declarationParent',
 		'#declarationParent => FMOne type: #FASTTypescriptEntity opposite: #declaration',
 		'#decorator => FMMany type: #FASTTypescriptEntity opposite: #decoratorParent',
@@ -222,51 +190,9 @@ FASTTypescriptEntity class >> metamodel [
 ]
 
 { #category : 'adding' }
-FASTTypescriptEntity >> addAlia: anObject [
-	<generated>
-	^ self alias add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addAlternative: anObject [
-	<generated>
-	^ self alternative add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addArgument: anObject [
-	<generated>
-	^ self arguments add: anObject
-]
-
-{ #category : 'adding' }
 FASTTypescriptEntity >> addBody: anObject [
 	<generated>
 	^ self body add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addCondition: anObject [
-	<generated>
-	^ self condition add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addConsequence: anObject [
-	<generated>
-	^ self consequence add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addConstraint: anObject [
-	<generated>
-	^ self constraint add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addConstructor: anObject [
-	<generated>
-	^ self constructor add: anObject
 ]
 
 { #category : 'adding' }
@@ -456,190 +382,6 @@ FASTTypescriptEntity >> addValue: anObject [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptEntity >> alias [
-	"Relation named: #alias type: #FASTTypescriptEntity opposite: #aliasParent"
-
-	<generated>
-	<derived>
-	^ alias
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> alias: anObject [
-
-	<generated>
-	alias value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> aliasGroup [
-	<generated>
-	<navigation: 'Alias'>
-	^ MooseSpecializedGroup withAll: self alias asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> aliasParent [
-	"Relation named: #aliasParent type: #FASTTypescriptEntity opposite: #alias"
-
-	<generated>
-	<container>
-	^ aliasParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> aliasParent: anObject [
-
-	<generated>
-	aliasParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> aliasParentGroup [
-	<generated>
-	<navigation: 'AliasParent'>
-	^ MooseSpecializedGroup with: self aliasParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> alternative [
-	"Relation named: #alternative type: #FASTTypescriptEntity opposite: #alternativeParent"
-
-	<generated>
-	<derived>
-	^ alternative
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> alternative: anObject [
-
-	<generated>
-	alternative value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> alternativeGroup [
-	<generated>
-	<navigation: 'Alternative'>
-	^ MooseSpecializedGroup withAll: self alternative asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> alternativeParent [
-	"Relation named: #alternativeParent type: #FASTTypescriptEntity opposite: #alternative"
-
-	<generated>
-	<container>
-	^ alternativeParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> alternativeParent: anObject [
-
-	<generated>
-	alternativeParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> alternativeParentGroup [
-	<generated>
-	<navigation: 'AlternativeParent'>
-	^ MooseSpecializedGroup with: self alternativeParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> argument [
-	"Relation named: #argument type: #FASTTypescriptEntity opposite: #argumentParent"
-
-	<generated>
-	<derived>
-	^ argument
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> argument: anObject [
-
-	<generated>
-	argument value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> argumentGroup [
-	<generated>
-	<navigation: 'Argument'>
-	^ MooseSpecializedGroup withAll: self argument asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> argumentParent [
-	"Relation named: #argumentParent type: #FASTTypescriptEntity opposite: #argument"
-
-	<generated>
-	<container>
-	^ argumentParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> argumentParent: anObject [
-
-	<generated>
-	argumentParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> argumentParentGroup [
-	<generated>
-	<navigation: 'ArgumentParent'>
-	^ MooseSpecializedGroup with: self argumentParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> arguments [
-	"Relation named: #arguments type: #FASTTypescriptEntity opposite: #argumentsParent"
-
-	<generated>
-	<derived>
-	^ arguments
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> arguments: anObject [
-
-	<generated>
-	arguments value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> argumentsGroup [
-	<generated>
-	<navigation: 'Arguments'>
-	^ MooseSpecializedGroup withAll: self arguments asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> argumentsParent [
-	"Relation named: #argumentsParent type: #FASTTypescriptEntity opposite: #arguments"
-
-	<generated>
-	<container>
-	^ argumentsParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> argumentsParent: anObject [
-
-	<generated>
-	argumentsParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> argumentsParentGroup [
-	<generated>
-	<navigation: 'ArgumentsParent'>
-	^ MooseSpecializedGroup with: self argumentsParent
-]
-
-{ #category : 'accessing' }
 FASTTypescriptEntity >> body [
 	"Relation named: #body type: #FASTTypescriptEntity opposite: #bodyParent"
 
@@ -683,190 +425,6 @@ FASTTypescriptEntity >> bodyParentGroup [
 	<generated>
 	<navigation: 'BodyParent'>
 	^ MooseSpecializedGroup with: self bodyParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> condition [
-	"Relation named: #condition type: #FASTTypescriptEntity opposite: #conditionParent"
-
-	<generated>
-	<derived>
-	^ condition
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> condition: anObject [
-
-	<generated>
-	condition value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> conditionGroup [
-	<generated>
-	<navigation: 'Condition'>
-	^ MooseSpecializedGroup withAll: self condition asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> conditionParent [
-	"Relation named: #conditionParent type: #FASTTypescriptEntity opposite: #condition"
-
-	<generated>
-	<container>
-	^ conditionParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> conditionParent: anObject [
-
-	<generated>
-	conditionParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> conditionParentGroup [
-	<generated>
-	<navigation: 'ConditionParent'>
-	^ MooseSpecializedGroup with: self conditionParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> consequence [
-	"Relation named: #consequence type: #FASTTypescriptEntity opposite: #consequenceParent"
-
-	<generated>
-	<derived>
-	^ consequence
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> consequence: anObject [
-
-	<generated>
-	consequence value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> consequenceGroup [
-	<generated>
-	<navigation: 'Consequence'>
-	^ MooseSpecializedGroup withAll: self consequence asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> consequenceParent [
-	"Relation named: #consequenceParent type: #FASTTypescriptEntity opposite: #consequence"
-
-	<generated>
-	<container>
-	^ consequenceParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> consequenceParent: anObject [
-
-	<generated>
-	consequenceParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> consequenceParentGroup [
-	<generated>
-	<navigation: 'ConsequenceParent'>
-	^ MooseSpecializedGroup with: self consequenceParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> constraint [
-	"Relation named: #constraint type: #FASTTypescriptEntity opposite: #constraintParent"
-
-	<generated>
-	<derived>
-	^ constraint
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> constraint: anObject [
-
-	<generated>
-	constraint value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> constraintGroup [
-	<generated>
-	<navigation: 'Constraint'>
-	^ MooseSpecializedGroup withAll: self constraint asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> constraintParent [
-	"Relation named: #constraintParent type: #FASTTypescriptEntity opposite: #constraint"
-
-	<generated>
-	<container>
-	^ constraintParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> constraintParent: anObject [
-
-	<generated>
-	constraintParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> constraintParentGroup [
-	<generated>
-	<navigation: 'ConstraintParent'>
-	^ MooseSpecializedGroup with: self constraintParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> constructor [
-	"Relation named: #constructor type: #FASTTypescriptEntity opposite: #constructorParent"
-
-	<generated>
-	<derived>
-	^ constructor
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> constructor: anObject [
-
-	<generated>
-	constructor value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> constructorGroup [
-	<generated>
-	<navigation: 'Constructor'>
-	^ MooseSpecializedGroup withAll: self constructor asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> constructorParent [
-	"Relation named: #constructorParent type: #FASTTypescriptEntity opposite: #constructor"
-
-	<generated>
-	<container>
-	^ constructorParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> constructorParent: anObject [
-
-	<generated>
-	constructorParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> constructorParentGroup [
-	<generated>
-	<navigation: 'ConstructorParent'>
-	^ MooseSpecializedGroup with: self constructorParent
 ]
 
 { #category : 'accessing' }

@@ -501,15 +501,10 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	super defineRelations.
 	(entity property: #'genericChildren') <>-* (entity property: #'genericParent').	
-	(entity property: #'alias') <>-* (entity property: #'aliasParent').
-	(entity property: #'alternative') <>-* (entity property: #'alternativeParent').
-	(entity property: #'argument') <>-* (entity property: #'argumentParent').
-	(entity property: #'arguments') <>-* (entity property: #'argumentsParent').
-	(entity property: #'body') <>-* (entity property: #'bodyParent').
-	(entity property: #'condition') <>-* (entity property: #'conditionParent').
-	(entity property: #'consequence') <>-* (entity property: #'consequenceParent').
-	(entity property: #'constraint') <>-* (entity property: #'constraintParent').
-	(entity property: #'constructor') <>-* (entity property: #'constructorParent').
+		 
+	(entity property: #'body') <>-* (entity property: #'bodyParent'). 
+	
+	
 	(entity property: #'declaration') <>-* (entity property: #'declarationParent').
 	(entity property: #'decorator') <>-* (entity property: #'decoratorParent').
 	(entity property: #'finalizer') <>-* (entity property: #'finalizerParent').
