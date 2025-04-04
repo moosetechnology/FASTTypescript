@@ -8,9 +8,6 @@
 | `bodyParent` | `FASTTypescriptEntity` | `body` | `FASTTypescriptEntity` | |
 | `genericParent` | `FASTTypescriptEntity` | `genericChildren` | `FASTTypescriptEntity` | |
 | `nameParent` | `FASTTypescriptEntity` | `name` | `FASTTypescriptEntity` | |
-| `typeParent` | `FASTTypescriptEntity` | `type` | `FASTTypescriptEntity` | |
-| `type_argumentsParent` | `FASTTypescriptEntity` | `type_arguments` | `FASTTypescriptEntity` | |
-| `type_parametersParent` | `FASTTypescriptEntity` | `type_parameters` | `FASTTypescriptEntity` | |
 | `valueParent` | `FASTTypescriptEntity` | `value` | `FASTTypescriptEntity` | |
 
 ### Children
@@ -20,9 +17,6 @@
 | `comments` | `FASTTWithComments` | `container` | `FASTTComment` | list of comments defined in the entity|
 | `genericChildren` | `FASTTypescriptEntity` | `genericParent` | `FASTTypescriptEntity` | |
 | `name` | `FASTTypescriptEntity` | `nameParent` | `FASTTypescriptEntity` | |
-| `type` | `FASTTypescriptEntity` | `typeParent` | `FASTTypescriptEntity` | |
-| `type_arguments` | `FASTTypescriptEntity` | `type_argumentsParent` | `FASTTypescriptEntity` | |
-| `type_parameters` | `FASTTypescriptEntity` | `type_parametersParent` | `FASTTypescriptEntity` | |
 | `value` | `FASTTypescriptEntity` | `valueParent` | `FASTTypescriptEntity` | |
 
 
@@ -47,12 +41,6 @@ Class {
 		'#genericParent => FMOne type: #FASTTypescriptEntity opposite: #genericChildren',
 		'#name => FMMany type: #FASTTypescriptEntity opposite: #nameParent',
 		'#nameParent => FMOne type: #FASTTypescriptEntity opposite: #name',
-		'#type => FMMany type: #FASTTypescriptEntity opposite: #typeParent',
-		'#typeParent => FMOne type: #FASTTypescriptEntity opposite: #type',
-		'#type_arguments => FMMany type: #FASTTypescriptEntity opposite: #type_argumentsParent',
-		'#type_argumentsParent => FMOne type: #FASTTypescriptEntity opposite: #type_arguments',
-		'#type_parameters => FMMany type: #FASTTypescriptEntity opposite: #type_parametersParent',
-		'#type_parametersParent => FMOne type: #FASTTypescriptEntity opposite: #type_parameters',
 		'#value => FMMany type: #FASTTypescriptEntity opposite: #valueParent',
 		'#valueParent => FMOne type: #FASTTypescriptEntity opposite: #value'
 	],
@@ -101,24 +89,6 @@ FASTTypescriptEntity >> addGenericChildren: anObject [
 FASTTypescriptEntity >> addName: anObject [
 	<generated>
 	^ self name add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addType: anObject [
-	<generated>
-	^ self type add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addType_argument: anObject [
-	<generated>
-	^ self type_arguments add: anObject
-]
-
-{ #category : 'adding' }
-FASTTypescriptEntity >> addType_parameter: anObject [
-	<generated>
-	^ self type_parameters add: anObject
 ]
 
 { #category : 'adding' }
@@ -333,144 +303,6 @@ FASTTypescriptEntity >> nameParentGroup [
 	<generated>
 	<navigation: 'NameParent'>
 	^ MooseSpecializedGroup with: self nameParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type [
-	"Relation named: #type type: #FASTTypescriptEntity opposite: #typeParent"
-
-	<generated>
-	<derived>
-	^ type
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type: anObject [
-
-	<generated>
-	type value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> typeGroup [
-	<generated>
-	<navigation: 'Type'>
-	^ MooseSpecializedGroup withAll: self type asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> typeParent [
-	"Relation named: #typeParent type: #FASTTypescriptEntity opposite: #type"
-
-	<generated>
-	<container>
-	^ typeParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> typeParent: anObject [
-
-	<generated>
-	typeParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> typeParentGroup [
-	<generated>
-	<navigation: 'TypeParent'>
-	^ MooseSpecializedGroup with: self typeParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type_arguments [
-	"Relation named: #type_arguments type: #FASTTypescriptEntity opposite: #type_argumentsParent"
-
-	<generated>
-	<derived>
-	^ type_arguments
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type_arguments: anObject [
-
-	<generated>
-	type_arguments value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> type_argumentsGroup [
-	<generated>
-	<navigation: 'Type_arguments'>
-	^ MooseSpecializedGroup withAll: self type_arguments asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type_argumentsParent [
-	"Relation named: #type_argumentsParent type: #FASTTypescriptEntity opposite: #type_arguments"
-
-	<generated>
-	<container>
-	^ type_argumentsParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type_argumentsParent: anObject [
-
-	<generated>
-	type_argumentsParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> type_argumentsParentGroup [
-	<generated>
-	<navigation: 'Type_argumentsParent'>
-	^ MooseSpecializedGroup with: self type_argumentsParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type_parameters [
-	"Relation named: #type_parameters type: #FASTTypescriptEntity opposite: #type_parametersParent"
-
-	<generated>
-	<derived>
-	^ type_parameters
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type_parameters: anObject [
-
-	<generated>
-	type_parameters value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> type_parametersGroup [
-	<generated>
-	<navigation: 'Type_parameters'>
-	^ MooseSpecializedGroup withAll: self type_parameters asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type_parametersParent [
-	"Relation named: #type_parametersParent type: #FASTTypescriptEntity opposite: #type_parameters"
-
-	<generated>
-	<container>
-	^ type_parametersParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> type_parametersParent: anObject [
-
-	<generated>
-	type_parametersParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> type_parametersParentGroup [
-	<generated>
-	<navigation: 'Type_parametersParent'>
-	^ MooseSpecializedGroup with: self type_parametersParent
 ]
 
 { #category : 'accessing' }

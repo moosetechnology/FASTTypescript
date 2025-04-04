@@ -5,7 +5,6 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `compilationUnit` | `FASTTypescriptClass_declaration` | `classDeclarations` | `FASTTypescriptCompilationUnit` | The compilation unit that owns me|
 | `invokedIn` | `FASTTNamedEntity` | `invoked` | `FASTTInvocation` | Optional invocation where this name is used|
 | `parentProgram` | `FASTTypescriptClass_declaration` | `classDeclarations` | `FASTTypescriptProgram` | The program that contains me|
 | `statementContainer` | `FASTTStatement` | `statements` | `FASTTStatementBlock` | Block containing this statement.|
@@ -42,7 +41,6 @@ Class {
 	#traits : '(FASTTNamedEntity + FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
 	#classTraits : '(FASTTNamedEntity classTrait + FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
-		'#compilationUnit => FMOne type: #FASTTypescriptCompilationUnit opposite: #classDeclarations',
 		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #classDeclarations',
 		'#typeIdentifier => FMOne type: #FASTTypescriptType_identifier opposite: #parentClass'
 	],
@@ -81,30 +79,6 @@ FASTTypescriptClass_declaration >> bodyGroup [
 	<generated>
 	<navigation: 'Body'>
 	^ MooseSpecializedGroup with: self body
-]
-
-{ #category : 'accessing' }
-FASTTypescriptClass_declaration >> compilationUnit [
-	"Relation named: #compilationUnit type: #FASTTypescriptCompilationUnit opposite: #classDeclarations"
-
-	<generated>
-	<FMComment: 'The compilation unit that owns me'>
-	<container>
-	^ compilationUnit
-]
-
-{ #category : 'accessing' }
-FASTTypescriptClass_declaration >> compilationUnit: anObject [
-
-	<generated>
-	compilationUnit := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptClass_declaration >> compilationUnitGroup [
-	<generated>
-	<navigation: 'CompilationUnit'>
-	^ MooseSpecializedGroup with: self compilationUnit
 ]
 
 { #category : 'testing' }

@@ -5,7 +5,6 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `compilationUnit` | `FASTTypescriptInterface_declaration` | `interfaceDeclarations` | `FASTTypescriptCompilationUnit` | The compilation unit that owns me|
 | `invokedIn` | `FASTTNamedEntity` | `invoked` | `FASTTInvocation` | Optional invocation where this name is used|
 | `parentProgram` | `FASTTypescriptInterface_declaration` | `interfaceDeclarations` | `FASTTypescriptProgram` | The program that contains me|
 | `statementContainer` | `FASTTStatement` | `statements` | `FASTTStatementBlock` | Block containing this statement.|
@@ -14,6 +13,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `body` | `FASTTypescriptInterface_declaration` | `bodyParent` | `FASTTypescriptInterface_body` | The body of the interface|
 | `body` | `FASTTypescriptInterface_declaration` | `bodyParent` | `FASTTypescriptInterface_body` | The body of the interface|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
@@ -42,7 +42,6 @@ Class {
 	#traits : '(FASTTNamedEntity + FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
 	#classTraits : '(FASTTNamedEntity classTrait + FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
-		'#compilationUnit => FMOne type: #FASTTypescriptCompilationUnit opposite: #interfaceDeclarations',
 		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #interfaceDeclarations',
 		'#typeIdentifier => FMOne type: #FASTTypescriptType_identifier opposite: #parentInterface'
 	],
@@ -81,30 +80,6 @@ FASTTypescriptInterface_declaration >> bodyGroup [
 	<generated>
 	<navigation: 'Body'>
 	^ MooseSpecializedGroup with: self body
-]
-
-{ #category : 'accessing' }
-FASTTypescriptInterface_declaration >> compilationUnit [
-	"Relation named: #compilationUnit type: #FASTTypescriptCompilationUnit opposite: #interfaceDeclarations"
-
-	<generated>
-	<FMComment: 'The compilation unit that owns me'>
-	<container>
-	^ compilationUnit
-]
-
-{ #category : 'accessing' }
-FASTTypescriptInterface_declaration >> compilationUnit: anObject [
-
-	<generated>
-	compilationUnit := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptInterface_declaration >> compilationUnitGroup [
-	<generated>
-	<navigation: 'CompilationUnit'>
-	^ MooseSpecializedGroup with: self compilationUnit
 ]
 
 { #category : 'accessing' }

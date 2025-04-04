@@ -499,18 +499,12 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 { #category : 'definition' }
 FASTTypescriptMetamodelGenerator >> defineRelations [
 
-	super defineRelations.
+super defineRelations.
 	(entity property: #'genericChildren') <>-* (entity property: #'genericParent').	
-		 
-	(entity property: #'body') <>-* (entity property: #'bodyParent'). 
-	
 	(entity property: #'name') <>-* (entity property: #'nameParent').
-	
-	
-	(entity property: #'type') <>-* (entity property: #'typeParent').
-	(entity property: #'type_arguments') <>-* (entity property: #'type_argumentsParent').
-	(entity property: #'type_parameters') <>-* (entity property: #'type_parametersParent').
+	(entity property: #'body') <>-* (entity property: #'bodyParent').
 	(entity property: #'value') <>-* (entity property: #'valueParent').
+	
 	
 	"Program should be on top"	
 	((_program property: #classDeclarations) comment: 'The class declarations that I define') <>-* 
@@ -528,7 +522,6 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((_class_declaration property: #body) comment: 'The body of the class') <>- 
 	((_class_body property: #bodyParent) comment: 'The class declaration that contains me').
-	"I don't like naming it like that, but I couldn't change it because previously it was named like that for entity and when I removed the generator didn't work"
 	
 	"Enum"
 	((_enum_declaration property: #identifier) comment: 'The identifier I define') <>-
@@ -543,18 +536,9 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((_interface_declaration property: #body) comment: 'The body of the interface') <>- 
 	((_interface_body property: #bodyParent) comment: 'The interface declaration that contains me').	
-		 	
-	"Declarations"
-	
-	((compilationUnit property: #classDeclarations) comment: 'My class declarations') <>-* 
-	((_class_declaration property: #compilationUnit) comment: 'The compilation unit that owns me').
-	
-	((compilationUnit property: #interfaceDeclarations) comment: 'My interface declarations') <>-* 	
-	((_interface_declaration property: #compilationUnit) comment: 'The compilation unit that owns me').
-	
-	((compilationUnit property: #enumDeclarations) comment: 'My enum declaration') <>-* 
-	((_enum_declaration property: #compilationUnit) comment: 'The compilation unit that owns me').
-	
+		
+	((_interface_declaration property: #body) comment: 'The body of the interface') <>- 
+	((_interface_body property: #bodyParent) comment: 'The interface declaration that contains me').	
 	
 	"Traits"
 	((tWithDeclarations property: #declarations) comment: 'The elements I declare') <>-* 
@@ -562,9 +546,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((tWithModifiers property: #modifiers) comment: 'My modifiers')	<>-* 
 	((tModifier property: #typescriptModifierOwner) comment: 'The owner of the modifier').
-		
-
-
+	
 ]
 
 { #category : 'definition' }

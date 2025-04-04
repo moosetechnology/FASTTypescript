@@ -5,7 +5,6 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `compilationUnit` | `FASTTypescriptEnum_declaration` | `enumDeclarations` | `FASTTypescriptCompilationUnit` | The compilation unit that owns me|
 | `invokedIn` | `FASTTNamedEntity` | `invoked` | `FASTTInvocation` | Optional invocation where this name is used|
 | `parentProgram` | `FASTTypescriptEnum_declaration` | `enumDeclarations` | `FASTTypescriptProgram` | The program that contains me|
 | `statementContainer` | `FASTTStatement` | `statements` | `FASTTStatementBlock` | Block containing this statement.|
@@ -42,7 +41,6 @@ Class {
 	#traits : '(FASTTNamedEntity + FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
 	#classTraits : '(FASTTNamedEntity classTrait + FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
-		'#compilationUnit => FMOne type: #FASTTypescriptCompilationUnit opposite: #enumDeclarations',
 		'#identifier => FMOne type: #FASTTypescriptIdentifier opposite: #parentEnum',
 		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #enumDeclarations'
 	],
@@ -81,30 +79,6 @@ FASTTypescriptEnum_declaration >> bodyGroup [
 	<generated>
 	<navigation: 'Body'>
 	^ MooseSpecializedGroup with: self body
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEnum_declaration >> compilationUnit [
-	"Relation named: #compilationUnit type: #FASTTypescriptCompilationUnit opposite: #enumDeclarations"
-
-	<generated>
-	<FMComment: 'The compilation unit that owns me'>
-	<container>
-	^ compilationUnit
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEnum_declaration >> compilationUnit: anObject [
-
-	<generated>
-	compilationUnit := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEnum_declaration >> compilationUnitGroup [
-	<generated>
-	<navigation: 'CompilationUnit'>
-	^ MooseSpecializedGroup with: self compilationUnit
 ]
 
 { #category : 'accessing' }
