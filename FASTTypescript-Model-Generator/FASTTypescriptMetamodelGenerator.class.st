@@ -490,7 +490,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_enum_declaration --|> #THasImmediateSource.
 	_enum_declaration withPrecedenceOf: #THasImmediateSource.
 	
-	
+	_ERROR --|> #THasImmediateSource.
 	
 	
 	
