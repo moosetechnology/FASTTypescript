@@ -191,7 +191,8 @@ Class {
 		'tWithModifiers',
 		'tNamedEntity',
 		'tLiteral',
-		'_literal'
+		'_literal',
+		'_ERROR'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -423,7 +424,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_statement_identifier := builder ensureClassNamed: #Statement_identifier.
 	_this_type := builder ensureClassNamed: #This_type.
 	_type_identifier := builder ensureClassNamed: #Type_identifier.
-	
+	_ERROR := builder ensureClassNamed: #ERROR.
 	compilationUnit := builder ensureClassNamed: #CompilationUnit.
 	compilationUnit withTesting.
 	

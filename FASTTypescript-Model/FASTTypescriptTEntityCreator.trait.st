@@ -301,6 +301,13 @@ FASTTypescriptTEntityCreator >> newDo_statement [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newERROR [
+
+	<generated>
+	^ self add: FASTTypescriptERROR new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newElse_clause [
 
 	<generated>
