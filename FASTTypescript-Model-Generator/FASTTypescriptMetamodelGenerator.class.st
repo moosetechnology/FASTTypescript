@@ -500,54 +500,88 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 { #category : 'definition' }
 FASTTypescriptMetamodelGenerator >> defineRelations [
 
-super defineRelations.
-	(entity property: #'genericChildren') <>-* (entity property: #'genericParent').	
-	(entity property: #'name') <>-* (entity property: #'nameParent').
-	(entity property: #'body') <>-* (entity property: #'bodyParent').
-	(entity property: #'value') <>-* (entity property: #'valueParent').
-	
-	
-	"Program should be on top"	
-	((_program property: #classDeclarations) comment: 'The class declarations that I define') <>-* 
-	((_class_declaration property: #parentProgram) comment: 'The program that contains me').
-	
-	((_program property: #enumDeclarations) comment: 'The enum declarations that I define') <>-* 
-	((_enum_declaration property: #parentProgram) comment: 'The program that contains me').
-	
-	((_program property: #interfaceDeclarations) comment: 'The interface declarations that I define') <>-* 
-	((_interface_declaration property: #parentProgram) comment: 'The program that contains me').
-	
-	"Class"
-	((_class_declaration property: #typeIdentifier) comment: 'The type identifier that defines me') <>-
-	((_type_identifier property: #parentClass) comment: 'The class that I define').
-	
-	((_class_declaration property: #body) comment: 'The body of the class') <>- 
-	((_class_body property: #bodyParent) comment: 'The class declaration that contains me').
-	
+	super defineRelations.
+	(entity property: #genericChildren)
+	<>-* (entity property: #genericParent).
+	(entity property: #value) <>-* (entity property: #valueParent).
+
+	((_program property: #classDeclarations) comment:
+		 'The class declarations that I define')
+	<>-* ((_class_declaration property: #parentProgram) comment:
+			 'The program that contains me').
+
+	((_program property: #enumDeclarations) comment:
+		 'The enum declarations that I define')
+	<>-* ((_enum_declaration property: #parentProgram) comment:
+			 'The program that contains me').
+
+	((_program property: #interfaceDeclarations) comment:
+		 'The interface declarations that I define')
+	<>-* ((_interface_declaration property: #parentProgram) comment:
+			 'The program that contains me').
+
+	((_for_in_statement property: #left) comment: 'The identifier')
+	<>- ((tExpression property: #forStatementLeftOwner) comment:
+			 'The left operand (if possible)').
+
+	((_for_in_statement property: #right) comment: 'The identifier')
+	<>- ((tExpression property: #forStatementRightOwner) comment:
+			 'The right operand (if possible)').
+	"body is missing for _for_in_statement; not added for the moment to avoid conflicts with the body of entity"
+
+	((_binary_expression property: #left) comment: 'left')
+	<>- ((tExpression property: #binaryExpressionLeftOwner) comment:
+			 'The left operand (if possible)').
+	((_binary_expression property: #right) comment: 'right')
+	<>- ((tExpression property: #binaryExpressionRightOwner) comment:
+			 'The right operand (if possible)').
+
+	((_new_expression property: #constructor) comment: 'The constructor of the new expression')
+	<>-
+		((_identifier property: #typescriptNewExpressionOwner)
+			 comment: 'The owner of this constructor').
+
+
+	"class declaration"
+	((_class_declaration property: #body) comment: 'The body of the class')
+	<>- ((_class_body property: #parent) comment:
+			 'The class declaration that contains me').
+
 	"Enum"
-	((_enum_declaration property: #identifier) comment: 'The identifier I define') <>-
-	((_identifier property: #parentEnum) comment: 'The enum that contains me').
-	
-	((_enum_declaration property: #body) comment: 'The body of the enum') <>- 
-	((_enum_body property: #bodyParent) comment: 'The enum declaration that contains me').
-			
+	((_enum_declaration property: #identifier) comment:
+		 'The identifier I define')
+	<>- ((_identifier property: #parentEnum) comment:
+			 'The enum that contains me').
+
+	((_enum_declaration property: #body) comment: 'The body of the enum')
+	<>- ((_enum_body property: #bodyParent) comment:
+			 'The enum declaration that contains me').
+
 	"Interface"
-	((_interface_declaration property: #typeIdentifier) comment: 'The type identifier that defines me') <>-
-	((_type_identifier property: #parentInterface) comment: 'The interface that I define').
-	
-	((_interface_declaration property: #body) comment: 'The body of the interface') <>- 
-	((_interface_body property: #bodyParent) comment: 'The interface declaration that contains me').	
-		
-	((_interface_declaration property: #body) comment: 'The body of the interface') <>- 
-	((_interface_body property: #bodyParent) comment: 'The interface declaration that contains me').	
-	
+	((_interface_declaration property: #typeIdentifier) comment:
+		 'The type identifier that defines me')
+	<>- ((_type_identifier property: #parentInterface) comment:
+			 'The interface that I define').
+
+	((_interface_declaration property: #body) comment:
+		 'The body of the interface')
+	<>- ((_interface_body property: #bodyParent) comment:
+			 'The interface declaration that contains me').
+
+	((_interface_declaration property: #body) comment:
+		 'The body of the interface')
+	<>- ((_interface_body property: #bodyParent) comment:
+			 'The interface declaration that contains me').
+
 	"Traits"
-	((tWithDeclarations property: #declarations) comment: 'The elements I declare') <>-* 
-	((tDeclaration property: #typescriptDeclarationOwner) comment: 'The element that declares me').
-	
-	((tWithModifiers property: #modifiers) comment: 'My modifiers')	<>-* 
-	((tModifier property: #typescriptModifierOwner) comment: 'The owner of the modifier').
-	
+	((tWithDeclarations property: #declarations) comment:
+		 'The elements I declare')
+	<>-* ((tDeclaration property: #typescriptDeclarationOwner) comment:
+			 'The element that declares me').
+
+	((tWithModifiers property: #modifiers) comment: 'My modifiers')
+	<>-* ((tModifier property: #typescriptModifierOwner) comment:
+			 'The owner of the modifier')
 ]
 
 { #category : 'definition' }
