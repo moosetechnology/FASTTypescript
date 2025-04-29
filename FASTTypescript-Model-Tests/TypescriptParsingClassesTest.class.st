@@ -78,6 +78,26 @@ TypescriptParsingClassesTest >> testParsingForInStatement [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingIndexSignature [
+
+	| res string forNode |
+
+	string := 'h as `hello`
+				T as {} & { [t: T]: T }
+				T as {} & { [t: T]: T } & { [g: G]: G }'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptIndex_signature parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptIndex_signature) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptFor_in_statement"
+	forNode := (res allWithType: FASTTypescriptIndex_signature) first.
+	self assert: forNode index_type class equals: FASTTypescriptType_identifier.
+	self assert: forNode type class equals: FASTTypescriptType_annotation.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingStringFragment [
 
 	| res string |
