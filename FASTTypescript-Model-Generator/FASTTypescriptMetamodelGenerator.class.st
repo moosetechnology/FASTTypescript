@@ -565,7 +565,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>-
 		((_identifier property: #typescriptNewExpressionOwner)
 			 comment: 'The owner of this constructor').
+	
+	((_index_signature property: #index_type) comment: 'My type')
+	<>- ((_type_identifier  property: #indexSignatureOwner) comment: 'The owner of this index type').
 
+	((_index_signature property: #type) comment: 'My annotation type')
+	<>- ((_type_annotation property: #indexSignatureOwner) comment: 'The owner of this annotation type').
 
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')

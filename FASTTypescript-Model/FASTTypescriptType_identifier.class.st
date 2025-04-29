@@ -5,6 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `indexSignatureOwner` | `FASTTypescriptType_identifier` | `index_type` | `FASTTypescriptIndex_signature` | The owner of this index type|
 | `parentInterface` | `FASTTypescriptType_identifier` | `typeIdentifier` | `FASTTypescriptInterface_declaration` | The interface that I define|
 
 
@@ -14,6 +15,7 @@ Class {
 	#name : 'FASTTypescriptType_identifier',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
+		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #index_type',
 		'#parentInterface => FMOne type: #FASTTypescriptInterface_declaration opposite: #typeIdentifier'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -28,6 +30,31 @@ FASTTypescriptType_identifier class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> indexSignatureOwner [
+	"Relation named: #indexSignatureOwner type: #FASTTypescriptIndex_signature opposite: #index_type"
+
+	<generated>
+	<FMComment: 'The owner of this index type'>
+	<container>
+	<derived>
+	^ indexSignatureOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> indexSignatureOwner: anObject [
+
+	<generated>
+	indexSignatureOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptType_identifier >> indexSignatureOwnerGroup [
+	<generated>
+	<navigation: 'IndexSignatureOwner'>
+	^ MooseSpecializedGroup with: self indexSignatureOwner
 ]
 
 { #category : 'accessing' }
