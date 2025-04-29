@@ -25,3 +25,9 @@ FASTTypescriptGenerator >> getASTFromString: string [
 	
 
 ]
+
+{ #category : 'parsing' }
+FASTTypescriptGenerator >> parse: aString [
+
+	^ self getASTFromString: aString 
+]
