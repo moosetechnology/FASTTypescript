@@ -13,6 +13,9 @@
 Class {
 	#name : 'FASTTypescriptEnum_body',
 	#superclass : 'FASTTypescriptEntity',
+	#instVars : [
+		'#bodyParent => FMOne type: #FASTTypescriptEnum_declaration opposite: #body'
+	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'

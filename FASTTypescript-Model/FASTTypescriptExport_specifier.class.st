@@ -1,3 +1,15 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `name` | `FASTTypescriptExport_specifier` | `nameParent` | `FASTTypescriptIdentifier` | My name is an identifier|
+
+
+
+"
 Class {
 	#name : 'FASTTypescriptExport_specifier',
 	#superclass : 'FASTTypescriptEntity',

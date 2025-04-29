@@ -1,6 +1,6 @@
 Class {
 	#name : 'FASTTypescriptAugmented_assignment_expression',
-	#superclass : 'FASTTypescriptEntity',
+	#superclass : 'FASTTypescriptExpression',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : 'meta' }
 FASTTypescriptAugmented_assignment_expression class >> annotation [
 
-	<FMClass: #Augmented_assignment_expression super: #FASTTypescriptEntity>
+	<FMClass: #Augmented_assignment_expression super: #FASTTypescriptExpression>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self

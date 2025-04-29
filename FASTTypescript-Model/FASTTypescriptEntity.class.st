@@ -5,18 +5,14 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `bodyParent` | `FASTTypescriptEntity` | `body` | `FASTTypescriptEntity` | |
 | `genericParent` | `FASTTypescriptEntity` | `genericChildren` | `FASTTypescriptEntity` | |
-| `nameParent` | `FASTTypescriptEntity` | `name` | `FASTTypescriptEntity` | |
 | `valueParent` | `FASTTypescriptEntity` | `value` | `FASTTypescriptEntity` | |
 
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptEntity` | `bodyParent` | `FASTTypescriptEntity` | |
 | `comments` | `FASTTWithComments` | `container` | `FASTTComment` | list of comments defined in the entity|
 | `genericChildren` | `FASTTypescriptEntity` | `genericParent` | `FASTTypescriptEntity` | |
-| `name` | `FASTTypescriptEntity` | `nameParent` | `FASTTypescriptEntity` | |
 | `value` | `FASTTypescriptEntity` | `valueParent` | `FASTTypescriptEntity` | |
 
 
@@ -35,12 +31,8 @@ Class {
 	#traits : 'FASTTEntity + FASTTWithComments',
 	#classTraits : 'FASTTEntity classTrait + FASTTWithComments classTrait',
 	#instVars : [
-		'#body => FMMany type: #FASTTypescriptEntity opposite: #bodyParent',
-		'#bodyParent => FMOne type: #FASTTypescriptEntity opposite: #body',
 		'#genericChildren => FMMany type: #FASTTypescriptEntity opposite: #genericParent',
 		'#genericParent => FMOne type: #FASTTypescriptEntity opposite: #genericChildren',
-		'#name => FMMany type: #FASTTypescriptEntity opposite: #nameParent',
-		'#nameParent => FMOne type: #FASTTypescriptEntity opposite: #name',
 		'#value => FMMany type: #FASTTypescriptEntity opposite: #valueParent',
 		'#valueParent => FMOne type: #FASTTypescriptEntity opposite: #value'
 	],
@@ -74,73 +66,15 @@ FASTTypescriptEntity class >> metamodel [
 ]
 
 { #category : 'adding' }
-FASTTypescriptEntity >> addBody: anObject [
-	<generated>
-	^ self body add: anObject
-]
-
-{ #category : 'adding' }
 FASTTypescriptEntity >> addGenericChildren: anObject [
 	<generated>
 	^ self genericChildren add: anObject
 ]
 
 { #category : 'adding' }
-FASTTypescriptEntity >> addName: anObject [
-	<generated>
-	^ self name add: anObject
-]
-
-{ #category : 'adding' }
 FASTTypescriptEntity >> addValue: anObject [
 	<generated>
 	^ self value add: anObject
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> body [
-	"Relation named: #body type: #FASTTypescriptEntity opposite: #bodyParent"
-
-	<generated>
-	<derived>
-	^ body
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> body: anObject [
-
-	<generated>
-	body value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> bodyGroup [
-	<generated>
-	<navigation: 'Body'>
-	^ MooseSpecializedGroup withAll: self body asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> bodyParent [
-	"Relation named: #bodyParent type: #FASTTypescriptEntity opposite: #body"
-
-	<generated>
-	<container>
-	^ bodyParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> bodyParent: anObject [
-
-	<generated>
-	bodyParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> bodyParentGroup [
-	<generated>
-	<navigation: 'BodyParent'>
-	^ MooseSpecializedGroup with: self bodyParent
 ]
 
 { #category : 'accessing' }
@@ -257,52 +191,6 @@ FASTTypescriptEntity >> isStringLiteral [
 
 	<generated>
 	^ false
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> name [
-	"Relation named: #name type: #FASTTypescriptEntity opposite: #nameParent"
-
-	<generated>
-	<derived>
-	^ name
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> name: anObject [
-
-	<generated>
-	name value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> nameGroup [
-	<generated>
-	<navigation: 'Name'>
-	^ MooseSpecializedGroup withAll: self name asSet
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> nameParent [
-	"Relation named: #nameParent type: #FASTTypescriptEntity opposite: #name"
-
-	<generated>
-	<container>
-	^ nameParent
-]
-
-{ #category : 'accessing' }
-FASTTypescriptEntity >> nameParent: anObject [
-
-	<generated>
-	nameParent := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptEntity >> nameParentGroup [
-	<generated>
-	<navigation: 'NameParent'>
-	^ MooseSpecializedGroup with: self nameParent
 ]
 
 { #category : 'accessing' }

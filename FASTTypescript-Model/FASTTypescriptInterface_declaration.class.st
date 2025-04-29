@@ -42,6 +42,7 @@ Class {
 	#traits : '(FASTTNamedEntity + FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
 	#classTraits : '(FASTTNamedEntity classTrait + FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
+		'#body => FMOne type: #FASTTypescriptInterface_body opposite: #bodyParent',
 		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #interfaceDeclarations',
 		'#typeIdentifier => FMOne type: #FASTTypescriptType_identifier opposite: #parentInterface'
 	],

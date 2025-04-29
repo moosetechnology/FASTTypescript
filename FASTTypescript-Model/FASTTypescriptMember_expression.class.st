@@ -1,6 +1,6 @@
 Class {
 	#name : 'FASTTypescriptMember_expression',
-	#superclass : 'FASTTypescriptEntity',
+	#superclass : 'FASTTypescriptExpression',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : 'meta' }
 FASTTypescriptMember_expression class >> annotation [
 
-	<FMClass: #Member_expression super: #FASTTypescriptEntity>
+	<FMClass: #Member_expression super: #FASTTypescriptExpression>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self

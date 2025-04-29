@@ -1,6 +1,6 @@
 Class {
 	#name : 'FASTTypescriptParenthesized_expression',
-	#superclass : 'FASTTypescriptEntity',
+	#superclass : 'FASTTypescriptExpression',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : 'meta' }
 FASTTypescriptParenthesized_expression class >> annotation [
 
-	<FMClass: #Parenthesized_expression super: #FASTTypescriptEntity>
+	<FMClass: #Parenthesized_expression super: #FASTTypescriptExpression>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self

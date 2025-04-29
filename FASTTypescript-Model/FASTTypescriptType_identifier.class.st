@@ -5,7 +5,6 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `parentClass` | `FASTTypescriptType_identifier` | `typeIdentifier` | `FASTTypescriptClass_declaration` | The class that I define|
 | `parentInterface` | `FASTTypescriptType_identifier` | `typeIdentifier` | `FASTTypescriptInterface_declaration` | The interface that I define|
 
 
@@ -15,7 +14,6 @@ Class {
 	#name : 'FASTTypescriptType_identifier',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#parentClass => FMOne type: #FASTTypescriptClass_declaration opposite: #typeIdentifier',
 		'#parentInterface => FMOne type: #FASTTypescriptInterface_declaration opposite: #typeIdentifier'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -30,31 +28,6 @@ FASTTypescriptType_identifier class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
-]
-
-{ #category : 'accessing' }
-FASTTypescriptType_identifier >> parentClass [
-	"Relation named: #parentClass type: #FASTTypescriptClass_declaration opposite: #typeIdentifier"
-
-	<generated>
-	<FMComment: 'The class that I define'>
-	<container>
-	<derived>
-	^ parentClass
-]
-
-{ #category : 'accessing' }
-FASTTypescriptType_identifier >> parentClass: anObject [
-
-	<generated>
-	parentClass := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptType_identifier >> parentClassGroup [
-	<generated>
-	<navigation: 'ParentClass'>
-	^ MooseSpecializedGroup with: self parentClass
 ]
 
 { #category : 'accessing' }

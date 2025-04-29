@@ -13,10 +13,9 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptClass_declaration` | `bodyParent` | `FASTTypescriptClass_body` | The body of the class|
+| `body` | `FASTTypescriptClass_declaration` | `parent` | `FASTTypescriptClass_body` | The body of the class|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
-| `typeIdentifier` | `FASTTypescriptClass_declaration` | `parentClass` | `FASTTypescriptType_identifier` | The type identifier that defines me|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -41,8 +40,8 @@ Class {
 	#traits : '(FASTTNamedEntity + FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
 	#classTraits : '(FASTTNamedEntity classTrait + FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
-		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #classDeclarations',
-		'#typeIdentifier => FMOne type: #FASTTypescriptType_identifier opposite: #parentClass'
+		'#body => FMOne type: #FASTTypescriptClass_body opposite: #parent',
+		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #classDeclarations'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -60,7 +59,7 @@ FASTTypescriptClass_declaration class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptClass_declaration >> body [
-	"Relation named: #body type: #FASTTypescriptClass_body opposite: #bodyParent"
+	"Relation named: #body type: #FASTTypescriptClass_body opposite: #parent"
 
 	<generated>
 	<FMComment: 'The body of the class'>
@@ -110,27 +109,4 @@ FASTTypescriptClass_declaration >> parentProgramGroup [
 	<generated>
 	<navigation: 'ParentProgram'>
 	^ MooseSpecializedGroup with: self parentProgram
-]
-
-{ #category : 'accessing' }
-FASTTypescriptClass_declaration >> typeIdentifier [
-	"Relation named: #typeIdentifier type: #FASTTypescriptType_identifier opposite: #parentClass"
-
-	<generated>
-	<FMComment: 'The type identifier that defines me'>
-	^ typeIdentifier
-]
-
-{ #category : 'accessing' }
-FASTTypescriptClass_declaration >> typeIdentifier: anObject [
-
-	<generated>
-	typeIdentifier := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptClass_declaration >> typeIdentifierGroup [
-	<generated>
-	<navigation: 'TypeIdentifier'>
-	^ MooseSpecializedGroup with: self typeIdentifier
 ]

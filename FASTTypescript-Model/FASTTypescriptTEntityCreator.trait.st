@@ -378,6 +378,13 @@ FASTTypescriptTEntityCreator >> newExport_statement [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newExpression [
+
+	<generated>
+	^ self add: FASTTypescriptExpression new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newExpression_statement [
 
 	<generated>

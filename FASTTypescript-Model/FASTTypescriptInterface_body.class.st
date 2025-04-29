@@ -14,6 +14,9 @@
 Class {
 	#name : 'FASTTypescriptInterface_body',
 	#superclass : 'FASTTypescriptEntity',
+	#instVars : [
+		'#bodyParent => FMOne type: #FASTTypescriptInterface_declaration opposite: #body'
+	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
