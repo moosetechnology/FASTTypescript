@@ -192,6 +192,8 @@ Class {
 		'tNamedEntity',
 		'tLiteral',
 		'_literal',
+		'_expression',
+		'tExpression',
 		'_ERROR'
 	],
 	#category : 'FASTTypescript-Model-Generator',
@@ -425,6 +427,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_this_type := builder ensureClassNamed: #This_type.
 	_type_identifier := builder ensureClassNamed: #Type_identifier.
 	_ERROR := builder ensureClassNamed: #ERROR.
+	_expression := builder ensureClassNamed: #Expression.
 	compilationUnit := builder ensureClassNamed: #CompilationUnit.
 	compilationUnit withTesting.
 	
@@ -492,6 +495,28 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	
 	_ERROR --|> #THasImmediateSource.
 	
+	_identifier --|> tExpression.
+	_expression --|> tExpression.
+	_array_pattern --|> tExpression.	
+	_binary_expression --|> _expression.
+	_unary_expression --|> _expression.
+	_member_expression --|> _expression.
+	_call_expression --|> _expression.
+	_as_expression --|> _expression.
+	_assignment_expression --|> _expression.
+	_augmented_assignment_expression --|> _expression.
+	_await_expression --|> _expression.
+	_function_expression --|> _expression.
+	_instantiation_expression --|> _expression.
+	_new_expression --|> _expression.
+	_non_null_expression --|> _expression.
+	_parenthesized_expression --|> _expression.	
+	_satisfies_expression --|> _expression.	
+	_sequence_expression --|> _expression.	
+	_subscript_expression --|> _expression.	
+	_ternary_expression --|> _expression.	
+	_update_expression --|> _expression.	
+	_yield_expression --|> _expression.				
 	
 	
 	
