@@ -1,0 +1,93 @@
+Class {
+	#name : 'TypescriptParsingClassesTest',
+	#superclass : 'TestCase',
+	#instVars : [
+		'parser'
+	],
+	#category : 'FASTTypescript-Model-Tests',
+	#package : 'FASTTypescript-Model-Tests'
+}
+
+{ #category : 'running' }
+TypescriptParsingClassesTest >> setUp [
+
+	super setUp.
+
+	parser := FASTTypescriptGenerator new
+]
+
+{ #category : 'running' }
+TypescriptParsingClassesTest >> tearDown [
+
+	"perhaps we should reset the TreeSitter parse here ..."
+	super tearDown
+]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingBinaryExpression [
+
+	| res string node |
+
+	string := 'x === 1'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptBinary_expression parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptBinary_expression) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptBinary_expression"	
+	node := (res allWithType: FASTTypescriptBinary_expression) first.
+	self assert: node right class equals: FASTTypescriptNumber.
+	self assert: node left class equals: FASTTypescriptIdentifier.
+]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingClassDeclaration [
+
+	| res string classNode |
+
+	string := 'class SimpleClass {}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptClass_declaration parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptClass_declaration) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptFor_in_statement"	
+	classNode := (res allWithType: FASTTypescriptClass_declaration) first.
+	"self assert: forNode right class equals: FASTTypescriptIdentifier.
+	self assert: forNode left class equals: FASTTypescriptIdentifier."
+]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingForInStatement [
+
+	| res string forNode |
+
+	string := 'for (const key in obj) {	}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptFor_in_statement parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptFor_in_statement) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptFor_in_statement"	
+	forNode := (res allWithType: FASTTypescriptFor_in_statement) first.
+	self assert: forNode right class equals: FASTTypescriptIdentifier.
+	self assert: forNode left class equals: FASTTypescriptIdentifier.
+]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingStringFragment [
+
+	| res string |
+
+	string := 'x = ''1'' '.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptString_fragment parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptString_fragment) isNotEmpty.
+	
+	
+]
