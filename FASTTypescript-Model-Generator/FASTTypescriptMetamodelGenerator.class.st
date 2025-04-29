@@ -589,11 +589,19 @@ FASTTypescriptMetamodelGenerator >> defineTraits [
 
 	super defineTraits.
 
-	tDeclaration := self newTraitNamed: #TDeclaration comment: 'I am a declaration in Typescript'.
-	tWithDeclarations := self newTraitNamed: #TWithDeclarations comment: 'I have declarations'.
-	
-	tModifier := self newTraitNamed: #TModifier comment: 'I am a modifier'.
-	tWithModifiers := self newTraitNamed: #TWithModifiers comment: 'I have modifiers'.
+	tDeclaration := self
+		                newTraitNamed: #TDeclaration
+		                comment: 'I am a declaration in Typescript'.
+	tWithDeclarations := self
+		                     newTraitNamed: #TWithDeclarations
+		                     comment: 'I have declarations'.
+
+	tModifier := self
+		             newTraitNamed: #TModifier
+		             comment: 'I am a modifier'.
+	tWithModifiers := self
+		                  newTraitNamed: #TWithModifiers
+		                  comment: 'I have modifiers'.
 
 	"From FAST"
 	tEntity := self remoteTrait: #TEntity withPrefix: #FAST.
@@ -601,6 +609,9 @@ FASTTypescriptMetamodelGenerator >> defineTraits [
 	tStatement := self remoteTrait: #TStatement withPrefix: #FAST.
 	tNamedEntity := self remoteTrait: #TNamedEntity withPrefix: #FAST.
 	tLiteral := self remoteTrait: #TLiteral withPrefix: #FAST.
-	
-	
+	tExpression := self remoteTrait: #TExpression withPrefix: #FAST. 	
+
+
+
+
 ]
