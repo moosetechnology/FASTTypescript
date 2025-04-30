@@ -193,8 +193,9 @@ Class {
 		'tLiteral',
 		'_literal',
 		'_expression',
+		'_ERROR',
 		'tExpression',
-		'_ERROR'
+		'tWithParameters'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -483,8 +484,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_interface_declaration --|> tStatement.
 	_interface_declaration --|> #THasImmediateSource.
 	_interface_declaration withPrecedenceOf: #THasImmediateSource.
-	
-	
+		
 	_enum_declaration --|> tDeclaration.
 	_enum_declaration --|> tWithDeclarations.
 	_enum_declaration --|> tWithModifiers.
@@ -494,10 +494,11 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_enum_declaration withPrecedenceOf: #THasImmediateSource.
 	
 	_ERROR --|> #THasImmediateSource.
-	
+		
 	_identifier --|> tExpression.
 	_expression --|> tExpression.
 	_array_pattern --|> tExpression.	
+				
 	_binary_expression --|> _expression.
 	_unary_expression --|> _expression.
 	_member_expression --|> _expression.
@@ -516,7 +517,9 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_subscript_expression --|> _expression.	
 	_ternary_expression --|> _expression.	
 	_update_expression --|> _expression.	
-	_yield_expression --|> _expression.				
+	_yield_expression --|> _expression.	
+		
+	"_function_type  --|> tWithParameters.	"		
 	
 	
 	
@@ -571,7 +574,10 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_index_signature property: #type) comment: 'My annotation type')
 	<>- ((_type_annotation property: #indexSignatureOwner) comment: 'The owner of this annotation type').
-
+	
+	((_function_type property: #return_type) comment: 'My return type')
+	<>- ((_predefined_type property: #functionTypeOwner) comment: 'The owner of this type').
+	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')
 	<>- ((_class_body property: #parent) comment:
@@ -602,7 +608,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'The body of the interface')
 	<>- ((_interface_body property: #bodyParent) comment:
 			 'The interface declaration that contains me').
-
+		 
 	"Traits"
 	((tWithDeclarations property: #declarations) comment:
 		 'The elements I declare')
@@ -640,7 +646,7 @@ FASTTypescriptMetamodelGenerator >> defineTraits [
 	tNamedEntity := self remoteTrait: #TNamedEntity withPrefix: #FAST.
 	tLiteral := self remoteTrait: #TLiteral withPrefix: #FAST.
 	tExpression := self remoteTrait: #TExpression withPrefix: #FAST. 	
-
+	tWithParameters := self remoteTrait: #TWithParameters withPrefix: #FAST.
 
 
 

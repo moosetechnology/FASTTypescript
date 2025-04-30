@@ -78,6 +78,28 @@ TypescriptParsingClassesTest >> testParsingForInStatement [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingFunctionType [
+
+	| res string forNode |
+
+	string := 'declare namespace moment {
+  type formatFunction = () => string;
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptFunction_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptFunction_type) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptFunction_type"
+	forNode := (res allWithType: FASTTypescriptFunction_type) first.
+	self assert: forNode return_type class equals: FASTTypescriptPredefined_type.
+	
+	"parameters should be tested also"
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingIndexSignature [
 
 	| res string forNode |
@@ -95,6 +117,7 @@ TypescriptParsingClassesTest >> testParsingIndexSignature [
 	forNode := (res allWithType: FASTTypescriptIndex_signature) first.
 	self assert: forNode index_type class equals: FASTTypescriptType_identifier.
 	self assert: forNode type class equals: FASTTypescriptType_annotation.
+	
 ]
 
 { #category : 'tests' }

@@ -1,3 +1,15 @@
+"
+## Relations
+======================
+
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `functionTypeOwner` | `FASTTypescriptFormal_parameters` | `parameters` | `FASTTypescriptFunction_type` | The owner of these parameters|
+
+
+
+"
 Class {
 	#name : 'FASTTypescriptFormal_parameters',
 	#superclass : 'FASTTypescriptEntity',
