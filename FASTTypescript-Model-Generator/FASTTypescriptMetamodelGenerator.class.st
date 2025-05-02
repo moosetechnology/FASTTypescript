@@ -583,6 +583,13 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((_extends_type_clause property: #type) comment: 'My type identifier')
 	<>- ((_type_identifier property: #extendsTypeClauseOwner) comment: 'The owner of this type identifier').
+	
+	((_with_statement property: #object) comment: 'My object as parenthesized expression')
+	<>- ((_parenthesized_expression property: #withStatementOwner) comment: 'The owner of this type parenthesized expression').
+	
+	((_with_statement property: #body) comment: 'My body as statement block')
+	<>- ((_statement_block property: #withStatementOwner) comment: 'The owner of this statement block').
+	
 		
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')

@@ -168,3 +168,23 @@ TypescriptParsingClassesTest >> testParsingUnaryExpression [
 	node := (res allWithType: FASTTypescriptUnary_expression) first.
 	self assert: node argument class equals: FASTTypescriptClass. 
 ]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingWithStatement [
+
+	| res string node |
+
+	string := 'with (person) {
+    	console.log(address.city); 
+	}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptWith_statement parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptWith_statement) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptWith_statement"	
+	node := (res allWithType: FASTTypescriptWith_statement) first.
+	self assert: node body class equals: FASTTypescriptStatement_block.
+	self assert: node object class equals: FASTTypescriptParenthesized_expression.
+]
