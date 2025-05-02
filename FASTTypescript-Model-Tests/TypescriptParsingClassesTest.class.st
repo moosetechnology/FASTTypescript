@@ -138,6 +138,24 @@ TypescriptParsingClassesTest >> testParsingIndexSignature [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingNestedIdentifier [
+
+	| res string node |
+
+	string := 'import r = X.N;'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptNested_identifier parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptNested_identifier) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptNested_identifier"	
+	node := (res allWithType: FASTTypescriptNested_identifier) first.
+	self assert: node property class equals: FASTTypescriptProperty_identifier.
+	self assert: node object class equals: FASTTypescriptIdentifier.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingStringFragment [
 
 	| res string |

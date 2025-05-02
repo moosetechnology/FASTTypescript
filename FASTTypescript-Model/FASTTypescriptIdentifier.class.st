@@ -12,6 +12,7 @@
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
+| `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNested_identifier` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentEnum` | `FASTTypescriptIdentifier` | `identifier` | `FASTTypescriptEnum_declaration` | The enum that contains me|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
@@ -36,6 +37,7 @@ Class {
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
+		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #object',
 		'#parentEnum => FMOne type: #FASTTypescriptEnum_declaration opposite: #identifier',
 		'#typescriptNewExpressionOwner => FMOne type: #FASTTypescriptNew_expression opposite: #constructor'
 	],
@@ -51,6 +53,31 @@ FASTTypescriptIdentifier class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIdentifier >> nestedIdentifierOwner [
+	"Relation named: #nestedIdentifierOwner type: #FASTTypescriptNested_identifier opposite: #object"
+
+	<generated>
+	<FMComment: 'The owner of this identifier'>
+	<container>
+	<derived>
+	^ nestedIdentifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIdentifier >> nestedIdentifierOwner: anObject [
+
+	<generated>
+	nestedIdentifierOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptIdentifier >> nestedIdentifierOwnerGroup [
+	<generated>
+	<navigation: 'NestedIdentifierOwner'>
+	^ MooseSpecializedGroup with: self nestedIdentifierOwner
 ]
 
 { #category : 'accessing' }

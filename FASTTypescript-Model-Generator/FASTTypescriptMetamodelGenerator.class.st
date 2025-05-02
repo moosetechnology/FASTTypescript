@@ -590,7 +590,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_with_statement property: #body) comment: 'My body as statement block')
 	<>- ((_statement_block property: #withStatementOwner) comment: 'The owner of this statement block').
 	
-		
+	((_nested_identifier property: #object) comment: 'My object as identifier')
+	<>- ((_identifier property: #nestedIdentifierOwner) comment: 'The owner of this identifier').
+	
+	((_nested_identifier property: #property) comment: 'My property as proprty identifier')
+	<>- ((_property_identifier property: #nestedIdentifierOwner) comment: 'The owner of this  property identifier').
+	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')
 	<>- ((_class_body property: #parent) comment:
