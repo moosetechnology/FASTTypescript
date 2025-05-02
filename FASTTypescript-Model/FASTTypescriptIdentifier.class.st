@@ -13,6 +13,7 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNested_identifier` | The owner of this identifier|
+| `optionalParameterOwner` | `FASTTypescriptIdentifier` | `pattern` | `FASTTypescriptOptional_parameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentEnum` | `FASTTypescriptIdentifier` | `identifier` | `FASTTypescriptEnum_declaration` | The enum that contains me|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
@@ -38,6 +39,7 @@ Class {
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
 		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #object',
+		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptional_parameter opposite: #pattern',
 		'#parentEnum => FMOne type: #FASTTypescriptEnum_declaration opposite: #identifier',
 		'#typescriptNewExpressionOwner => FMOne type: #FASTTypescriptNew_expression opposite: #constructor'
 	],
@@ -78,6 +80,31 @@ FASTTypescriptIdentifier >> nestedIdentifierOwnerGroup [
 	<generated>
 	<navigation: 'NestedIdentifierOwner'>
 	^ MooseSpecializedGroup with: self nestedIdentifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIdentifier >> optionalParameterOwner [
+	"Relation named: #optionalParameterOwner type: #FASTTypescriptOptional_parameter opposite: #pattern"
+
+	<generated>
+	<FMComment: 'The owner of this identifier'>
+	<container>
+	<derived>
+	^ optionalParameterOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIdentifier >> optionalParameterOwner: anObject [
+
+	<generated>
+	optionalParameterOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptIdentifier >> optionalParameterOwnerGroup [
+	<generated>
+	<navigation: 'OptionalParameterOwner'>
+	^ MooseSpecializedGroup with: self optionalParameterOwner
 ]
 
 { #category : 'accessing' }

@@ -173,6 +173,24 @@ TypescriptParsingClassesTest >> testParsingNestedIdentifier [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingOptionalParameter [
+
+	| res string node |
+
+	string := 'export function resolve<R>(value?: Thenable<R>): Promise<R>;'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptOptional_parameter parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptOptional_parameter) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptOptional_parameter"	
+	node := (res allWithType: FASTTypescriptOptional_parameter) first.
+	self assert: node pattern class equals: FASTTypescriptIdentifier.
+	self assert: node type class equals: FASTTypescriptType_annotation.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingStringFragment [
 
 	| res string |
