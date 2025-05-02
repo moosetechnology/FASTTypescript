@@ -24,6 +24,24 @@ TypescriptParsingClassesTest >> tearDown [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingAugmentedAssignmentExpression [
+
+	| res string node |
+
+	string := 'foo! += bar;'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptAugmented_assignment_expression parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptAugmented_assignment_expression) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptAugmented_assignment_expression"	
+	node := (res allWithType: FASTTypescriptAugmented_assignment_expression) first.
+	self assert: node left class equals: FASTTypescriptNon_null_expression.
+	self assert: node right class equals: FASTTypescriptIdentifier.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingBinaryExpression [
 
 	| res string node |

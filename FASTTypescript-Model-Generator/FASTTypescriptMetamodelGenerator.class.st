@@ -614,6 +614,14 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_if_statement property: #consequence) comment: 'My consequence as statement block')
 	<>- ((_statement_block property: #ifStatementOwner) comment: 'The owner of this statement block').
 	
+	((_augmented_assignment_expression property: #left) comment: 'left')
+	<>- ((tExpression property: #augmentedAssignmentExpressionLeftOwner) comment:
+			 'The left operand (if possible)').
+			
+	((_augmented_assignment_expression property: #right) comment: 'right')
+	<>- ((tExpression property: #augmentedAssignmentExpressionRightOwner) comment:
+			 'The right operand (if possible)').
+	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')
 	<>- ((_class_body property: #parent) comment:

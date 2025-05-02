@@ -1,6 +1,60 @@
 Extension { #name : 'FASTTExpression' }
 
 { #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> augmentedAssignmentExpressionLeftOwner [
+	"Relation named: #augmentedAssignmentExpressionLeftOwner type: #FASTTypescriptAugmented_assignment_expression opposite: #left"
+
+	<generated>
+	<FMComment: 'The left operand (if possible)'>
+	<container>
+	<derived>
+	<FMProperty: #augmentedAssignmentExpressionLeftOwner type: #FASTTypescriptAugmented_assignment_expression opposite: #left>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #augmentedAssignmentExpressionLeftOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> augmentedAssignmentExpressionLeftOwner: anObject [
+
+	<generated>
+	(self attributeAt: #augmentedAssignmentExpressionLeftOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self augmentedAssignmentExpressionLeftOwner.
+		self attributeAt: #augmentedAssignmentExpressionLeftOwner put: anObject.
+		otherSide left: nil ]
+	ifNotNil: [ 
+		self attributeAt: #augmentedAssignmentExpressionLeftOwner put: anObject.
+		anObject left: self ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> augmentedAssignmentExpressionRightOwner [
+	"Relation named: #augmentedAssignmentExpressionRightOwner type: #FASTTypescriptAugmented_assignment_expression opposite: #right"
+
+	<generated>
+	<FMComment: 'The right operand (if possible)'>
+	<container>
+	<derived>
+	<FMProperty: #augmentedAssignmentExpressionRightOwner type: #FASTTypescriptAugmented_assignment_expression opposite: #right>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #augmentedAssignmentExpressionRightOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> augmentedAssignmentExpressionRightOwner: anObject [
+
+	<generated>
+	(self attributeAt: #augmentedAssignmentExpressionRightOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self augmentedAssignmentExpressionRightOwner.
+		self attributeAt: #augmentedAssignmentExpressionRightOwner put: anObject.
+		otherSide right: nil ]
+	ifNotNil: [ 
+		self attributeAt: #augmentedAssignmentExpressionRightOwner put: anObject.
+		anObject right: self ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
 FASTTExpression >> binaryExpressionLeftOwner [
 	"Relation named: #binaryExpressionLeftOwner type: #FASTTypescriptBinary_expression opposite: #left"
 
