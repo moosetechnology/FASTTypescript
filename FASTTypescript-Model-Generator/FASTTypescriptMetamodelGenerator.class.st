@@ -608,6 +608,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_optional_parameter property: #pattern) comment: 'My pattern as identifier')
 	<>- ((_identifier property: #optionalParameterOwner) comment: 'The owner of this identifier').
 	
+	((_if_statement property: #condition) comment: 'My condition as parenthesized expression')
+	<>- ((_parenthesized_expression property: #ifStatementOwner) comment: 'The owner of this  parenthesized expression').
+	
+	((_if_statement property: #consequence) comment: 'My consequence as statement block')
+	<>- ((_statement_block property: #ifStatementOwner) comment: 'The owner of this statement block').
+	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')
 	<>- ((_class_body property: #parent) comment:
