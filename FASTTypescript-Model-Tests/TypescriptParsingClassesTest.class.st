@@ -60,6 +60,23 @@ TypescriptParsingClassesTest >> testParsingClassDeclaration [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
+
+	| res string node |
+
+	string := 'interface B extends A { b: string; }'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptExtends_type_clause parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptExtends_type_clause) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptExtends_type_clause"	
+	node := (res allWithType: FASTTypescriptExtends_type_clause) first.
+	self assert: node type class equals: FASTTypescriptType_identifier. 
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingForInStatement [
 
 	| res string forNode |

@@ -5,6 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `extendsTypeClauseOwner` | `FASTTypescriptType_identifier` | `type` | `FASTTypescriptExtends_type_clause` | The owner of this type identifier|
 | `indexSignatureOwner` | `FASTTypescriptType_identifier` | `index_type` | `FASTTypescriptIndex_signature` | The owner of this index type|
 | `parentInterface` | `FASTTypescriptType_identifier` | `typeIdentifier` | `FASTTypescriptInterface_declaration` | The interface that I define|
 
@@ -15,6 +16,7 @@ Class {
 	#name : 'FASTTypescriptType_identifier',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
+		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
 		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #index_type',
 		'#parentInterface => FMOne type: #FASTTypescriptInterface_declaration opposite: #typeIdentifier'
 	],
@@ -30,6 +32,31 @@ FASTTypescriptType_identifier class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> extendsTypeClauseOwner [
+	"Relation named: #extendsTypeClauseOwner type: #FASTTypescriptExtends_type_clause opposite: #type"
+
+	<generated>
+	<FMComment: 'The owner of this type identifier'>
+	<container>
+	<derived>
+	^ extendsTypeClauseOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> extendsTypeClauseOwner: anObject [
+
+	<generated>
+	extendsTypeClauseOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptType_identifier >> extendsTypeClauseOwnerGroup [
+	<generated>
+	<navigation: 'ExtendsTypeClauseOwner'>
+	^ MooseSpecializedGroup with: self extendsTypeClauseOwner
 ]
 
 { #category : 'accessing' }

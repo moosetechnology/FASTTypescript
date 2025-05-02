@@ -581,6 +581,9 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_unary_expression property: #argument) comment: 'My argument')
 	<>- ((_class property: #unaryExpressionOwner) comment: 'The owner of this class').
 	
+	((_extends_type_clause property: #type) comment: 'My type identifier')
+	<>- ((_type_identifier property: #extendsTypeClauseOwner) comment: 'The owner of this type identifier').
+		
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')
 	<>- ((_class_body property: #parent) comment:
