@@ -2,34 +2,20 @@
 ## Relations
 ======================
 
-### Parents
+### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `argumentOwner` | `FASTTExpression` | `arguments` | `FASTTWithArguments` | my owner|
-| `assignedIn` | `FASTTExpression` | `expression` | `FASTTAssignment` | Optional assignment where this expression is used|
-| `binaryExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptBinary_expression` | The left operand (if possible)|
-| `binaryExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptBinary_expression` | The right operand (if possible)|
-| `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
-| `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
-| `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
-| `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
-| `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
-| `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
-| `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
+| `argument` | `FASTTypescriptUnary_expression` | `unaryExpressionOwner` | `FASTTypescriptClass` | My argument|
 
 
-## Properties
-======================
-
-| Name | Type | Default value | Comment |
-|---|
-| `endPos` | `Number` | nil | |
-| `startPos` | `Number` | nil | |
 
 "
 Class {
 	#name : 'FASTTypescriptUnary_expression',
 	#superclass : 'FASTTypescriptExpression',
+	#instVars : [
+		'#argument => FMOne type: #FASTTypescriptClass opposite: #unaryExpressionOwner'
+	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -42,4 +28,27 @@ FASTTypescriptUnary_expression class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptUnary_expression >> argument [
+	"Relation named: #argument type: #FASTTypescriptClass opposite: #unaryExpressionOwner"
+
+	<generated>
+	<FMComment: 'My argument'>
+	^ argument
+]
+
+{ #category : 'accessing' }
+FASTTypescriptUnary_expression >> argument: anObject [
+
+	<generated>
+	argument := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptUnary_expression >> argumentGroup [
+	<generated>
+	<navigation: 'Argument'>
+	^ MooseSpecializedGroup with: self argument
 ]

@@ -134,3 +134,20 @@ TypescriptParsingClassesTest >> testParsingStringFragment [
 	
 	
 ]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingUnaryExpression [
+
+	| res string node |
+
+	string := 'typeof class {} === "function";'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptUnary_expression parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptUnary_expression) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptUnary_expression"	
+	node := (res allWithType: FASTTypescriptUnary_expression) first.
+	self assert: node argument class equals: FASTTypescriptClass. 
+]

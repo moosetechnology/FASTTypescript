@@ -578,6 +578,9 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_function_type property: #return_type) comment: 'My return type')
 	<>- ((_predefined_type property: #functionTypeOwner) comment: 'The owner of this type').
 	
+	((_unary_expression property: #argument) comment: 'My argument')
+	<>- ((_class property: #unaryExpressionOwner) comment: 'The owner of this class').
+	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')
 	<>- ((_class_body property: #parent) comment:
