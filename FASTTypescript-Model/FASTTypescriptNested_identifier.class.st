@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `object` | `FASTTypescriptNested_identifier` | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | My object as identifier|
-| `property` | `FASTTypescriptNested_identifier` | `nestedIdentifierOwner` | `FASTTypescriptProperty_identifier` | My property as proprty identifier|
+| `property` | `FASTTypescriptNested_identifier` | `nestedIdentifierOwner` | `FASTTypescriptProperty_identifier` | My property as property identifier|
 
 
 
@@ -60,7 +60,7 @@ FASTTypescriptNested_identifier >> property [
 	"Relation named: #property type: #FASTTypescriptProperty_identifier opposite: #nestedIdentifierOwner"
 
 	<generated>
-	<FMComment: 'My property as proprty identifier'>
+	<FMComment: 'My property as property identifier'>
 	^ property
 ]
 

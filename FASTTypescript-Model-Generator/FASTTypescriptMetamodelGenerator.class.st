@@ -593,8 +593,15 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_nested_identifier property: #object) comment: 'My object as identifier')
 	<>- ((_identifier property: #nestedIdentifierOwner) comment: 'The owner of this identifier').
 	
-	((_nested_identifier property: #property) comment: 'My property as proprty identifier')
+	((_nested_identifier property: #property) comment: 'My property as property identifier')
 	<>- ((_property_identifier property: #nestedIdentifierOwner) comment: 'The owner of this  property identifier').
+	
+	((_generic_type property: #name) comment: 'My name as type identifier')
+	<>- ((_type_identifier property: #genericTypeOwner) comment: 'The owner of this type identifier').
+	 
+	((_constructor_type property: #type) comment: 'My type as type identifier')
+	<>- ((_type_identifier property: #constructorTypeOwner) comment: 'The owner of this type identifier').
+	 
 	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')

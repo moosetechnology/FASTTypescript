@@ -5,7 +5,9 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `constructorTypeOwner` | `FASTTypescriptType_identifier` | `type` | `FASTTypescriptConstructor_type` | The owner of this type identifier|
 | `extendsTypeClauseOwner` | `FASTTypescriptType_identifier` | `type` | `FASTTypescriptExtends_type_clause` | The owner of this type identifier|
+| `genericTypeOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptGeneric_type` | The owner of this type identifier|
 | `indexSignatureOwner` | `FASTTypescriptType_identifier` | `index_type` | `FASTTypescriptIndex_signature` | The owner of this index type|
 | `parentInterface` | `FASTTypescriptType_identifier` | `typeIdentifier` | `FASTTypescriptInterface_declaration` | The interface that I define|
 
@@ -16,7 +18,9 @@ Class {
 	#name : 'FASTTypescriptType_identifier',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
+		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructor_type opposite: #type',
 		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
+		'#genericTypeOwner => FMOne type: #FASTTypescriptGeneric_type opposite: #name',
 		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #index_type',
 		'#parentInterface => FMOne type: #FASTTypescriptInterface_declaration opposite: #typeIdentifier'
 	],
@@ -32,6 +36,31 @@ FASTTypescriptType_identifier class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> constructorTypeOwner [
+	"Relation named: #constructorTypeOwner type: #FASTTypescriptConstructor_type opposite: #type"
+
+	<generated>
+	<FMComment: 'The owner of this type identifier'>
+	<container>
+	<derived>
+	^ constructorTypeOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> constructorTypeOwner: anObject [
+
+	<generated>
+	constructorTypeOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptType_identifier >> constructorTypeOwnerGroup [
+	<generated>
+	<navigation: 'ConstructorTypeOwner'>
+	^ MooseSpecializedGroup with: self constructorTypeOwner
 ]
 
 { #category : 'accessing' }
@@ -57,6 +86,31 @@ FASTTypescriptType_identifier >> extendsTypeClauseOwnerGroup [
 	<generated>
 	<navigation: 'ExtendsTypeClauseOwner'>
 	^ MooseSpecializedGroup with: self extendsTypeClauseOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> genericTypeOwner [
+	"Relation named: #genericTypeOwner type: #FASTTypescriptGeneric_type opposite: #name"
+
+	<generated>
+	<FMComment: 'The owner of this type identifier'>
+	<container>
+	<derived>
+	^ genericTypeOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> genericTypeOwner: anObject [
+
+	<generated>
+	genericTypeOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptType_identifier >> genericTypeOwnerGroup [
+	<generated>
+	<navigation: 'GenericTypeOwner'>
+	^ MooseSpecializedGroup with: self genericTypeOwner
 ]
 
 { #category : 'accessing' }

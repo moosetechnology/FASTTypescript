@@ -60,6 +60,23 @@ TypescriptParsingClassesTest >> testParsingClassDeclaration [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingConstructorType [
+
+	| res string node |
+
+	string := 'type Foo<T> = abstract new () => T;'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptConstructor_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptConstructor_type) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptConstructor_type"	
+	node := (res allWithType: FASTTypescriptConstructor_type) first.
+	self assert: node type class equals: FASTTypescriptType_identifier.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
 
 	| res string node |

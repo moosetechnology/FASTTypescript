@@ -1,3 +1,15 @@
+"
+## Relations
+======================
+
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `genericTypeOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptGeneric_type` | The owner of these type arguments|
+
+
+
+"
 Class {
 	#name : 'FASTTypescriptType_arguments',
 	#superclass : 'FASTTypescriptEntity',
