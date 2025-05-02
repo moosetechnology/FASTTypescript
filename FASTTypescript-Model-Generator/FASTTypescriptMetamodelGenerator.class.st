@@ -498,6 +498,16 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_identifier --|> tExpression.
 	_expression --|> tExpression.
 	_array_pattern --|> tExpression.	
+	_type_identifier --|> tExpression.
+	_conditional_type --|> tExpression.
+	_flow_maybe_type --|> tExpression.
+	_parenthesized_type --|> tExpression.
+	_function_type --|> tExpression.
+	_predefined_type --|> tExpression.
+	_generic_type --|> tExpression.
+	_array_type --|> tExpression.
+	_object_type --|> tExpression.
+	
 				
 	_binary_expression --|> _expression.
 	_unary_expression --|> _expression.
@@ -576,7 +586,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((_type_annotation property: #indexSignatureOwner) comment: 'The owner of this annotation type').
 	
 	((_function_type property: #return_type) comment: 'My return type')
-	<>- ((_predefined_type property: #functionTypeOwner) comment: 'The owner of this type').
+	<>- ((tExpression property: #functionTypeOwner) comment: 'The owner of this type').
 	
 	((_unary_expression property: #argument) comment: 'My argument')
 	<>- ((_class property: #unaryExpressionOwner) comment: 'The owner of this class').
@@ -621,6 +631,23 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_augmented_assignment_expression property: #right) comment: 'right')
 	<>- ((tExpression property: #augmentedAssignmentExpressionRightOwner) comment:
 			 'The right operand (if possible)').
+			
+	((_conditional_type property: #left) comment: 'left')
+	<>- ((tExpression property: #conditionalTypeLeftOwner) comment:
+			 'The left operand (if possible)').
+			
+	((_conditional_type property: #right) comment: 'right')
+	<>- ((tExpression property: #conditionalTypeRightOwner) comment:
+			 'The right operand (if possible)').
+			
+	((_conditional_type property: #alternative) comment: 'alternative')
+	<>- ((tExpression property: #alternativeOwner) comment:
+			 'Alternative owner').
+			
+	((_conditional_type property: #consequence) comment: 'consequence')
+	<>- ((tExpression property: #consequenceOwner) comment:
+			 'Consequence owner').		
+	
 	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')

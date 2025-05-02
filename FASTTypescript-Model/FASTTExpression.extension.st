@@ -1,6 +1,33 @@
 Extension { #name : 'FASTTExpression' }
 
 { #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> alternativeOwner [
+	"Relation named: #alternativeOwner type: #FASTTypescriptConditional_type opposite: #alternative"
+
+	<generated>
+	<FMComment: 'alternative'>
+	<container>
+	<derived>
+	<FMProperty: #alternativeOwner type: #FASTTypescriptConditional_type opposite: #alternative>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #alternativeOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> alternativeOwner: anObject [
+
+	<generated>
+	(self attributeAt: #alternativeOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self alternativeOwner.
+		self attributeAt: #alternativeOwner put: anObject.
+		otherSide alternative: nil ]
+	ifNotNil: [ 
+		self attributeAt: #alternativeOwner put: anObject.
+		anObject alternative: self ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
 FASTTExpression >> augmentedAssignmentExpressionLeftOwner [
 	"Relation named: #augmentedAssignmentExpressionLeftOwner type: #FASTTypescriptAugmented_assignment_expression opposite: #left"
 
@@ -109,6 +136,87 @@ FASTTExpression >> binaryExpressionRightOwner: anObject [
 ]
 
 { #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> conditionalTypeLeftOwner [
+	"Relation named: #conditionalTypeLeftOwner type: #FASTTypescriptConditional_type opposite: #left"
+
+	<generated>
+	<FMComment: 'The left operand (if possible)'>
+	<container>
+	<derived>
+	<FMProperty: #conditionalTypeLeftOwner type: #FASTTypescriptConditional_type opposite: #left>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #conditionalTypeLeftOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> conditionalTypeLeftOwner: anObject [
+
+	<generated>
+	(self attributeAt: #conditionalTypeLeftOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self conditionalTypeLeftOwner.
+		self attributeAt: #conditionalTypeLeftOwner put: anObject.
+		otherSide left: nil ]
+	ifNotNil: [ 
+		self attributeAt: #conditionalTypeLeftOwner put: anObject.
+		anObject left: self ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> conditionalTypeRightOwner [
+	"Relation named: #conditionalTypeRightOwner type: #FASTTypescriptConditional_type opposite: #right"
+
+	<generated>
+	<FMComment: 'The right operand (if possible)'>
+	<container>
+	<derived>
+	<FMProperty: #conditionalTypeRightOwner type: #FASTTypescriptConditional_type opposite: #right>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #conditionalTypeRightOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> conditionalTypeRightOwner: anObject [
+
+	<generated>
+	(self attributeAt: #conditionalTypeRightOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self conditionalTypeRightOwner.
+		self attributeAt: #conditionalTypeRightOwner put: anObject.
+		otherSide right: nil ]
+	ifNotNil: [ 
+		self attributeAt: #conditionalTypeRightOwner put: anObject.
+		anObject right: self ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> consequenceOwner [
+	"Relation named: #consequenceOwner type: #FASTTypescriptConditional_type opposite: #consequence"
+
+	<generated>
+	<FMComment: 'Consequence owner'>
+	<container>
+	<derived>
+	<FMProperty: #consequenceOwner type: #FASTTypescriptConditional_type opposite: #consequence>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #consequenceOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> consequenceOwner: anObject [
+
+	<generated>
+	(self attributeAt: #consequenceOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self consequenceOwner.
+		self attributeAt: #consequenceOwner put: anObject.
+		otherSide consequence: nil ]
+	ifNotNil: [ 
+		self attributeAt: #consequenceOwner put: anObject.
+		anObject consequence: self ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
 FASTTExpression >> forStatementLeftOwner [
 	"Relation named: #forStatementLeftOwner type: #FASTTypescriptFor_in_statement opposite: #left"
 
@@ -160,4 +268,31 @@ FASTTExpression >> forStatementRightOwner: anObject [
 	ifNotNil: [ 
 		self attributeAt: #forStatementRightOwner put: anObject.
 		anObject right: self ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> functionTypeOwner [
+	"Relation named: #functionTypeOwner type: #FASTTypescriptFunction_type opposite: #return_type"
+
+	<generated>
+	<FMComment: 'The owner of this type'>
+	<container>
+	<derived>
+	<FMProperty: #functionTypeOwner type: #FASTTypescriptFunction_type opposite: #return_type>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #functionTypeOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> functionTypeOwner: anObject [
+
+	<generated>
+	(self attributeAt: #functionTypeOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self functionTypeOwner.
+		self attributeAt: #functionTypeOwner put: anObject.
+		otherSide return_type: nil ]
+	ifNotNil: [ 
+		self attributeAt: #functionTypeOwner put: anObject.
+		anObject return_type: self ]
 ]
