@@ -224,6 +224,28 @@ TypescriptParsingClassesTest >> testParsingStringFragment [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingTryStatement [
+
+	| res string node |
+
+	string := 'try {}
+	catch (e: unknown) {}
+	finally {}'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptTry_statement parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptTry_statement) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptTry_statement"	
+	node := (res allWithType: FASTTypescriptTry_statement) first.
+	self assert: node handler class equals: FASTTypescriptCatch_clause.
+	self assert: node finalizer class equals: FASTTypescriptFinally_clause.
+	self assert: node body class equals: FASTTypescriptStatement_block.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingUnaryExpression [
 
 	| res string node |

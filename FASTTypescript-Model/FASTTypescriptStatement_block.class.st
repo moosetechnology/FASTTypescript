@@ -6,6 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `ifStatementOwner` | `FASTTypescriptStatement_block` | `consequence` | `FASTTypescriptIf_statement` | The owner of this statement block|
+| `tryStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptTry_statement` | Try statement owner|
 | `withStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptWith_statement` | The owner of this statement block|
 
 
@@ -16,6 +17,7 @@ Class {
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#ifStatementOwner => FMOne type: #FASTTypescriptIf_statement opposite: #consequence',
+		'#tryStatementOwner => FMOne type: #FASTTypescriptTry_statement opposite: #body',
 		'#withStatementOwner => FMOne type: #FASTTypescriptWith_statement opposite: #body'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -55,6 +57,31 @@ FASTTypescriptStatement_block >> ifStatementOwnerGroup [
 	<generated>
 	<navigation: 'IfStatementOwner'>
 	^ MooseSpecializedGroup with: self ifStatementOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptStatement_block >> tryStatementOwner [
+	"Relation named: #tryStatementOwner type: #FASTTypescriptTry_statement opposite: #body"
+
+	<generated>
+	<FMComment: 'Try statement owner'>
+	<container>
+	<derived>
+	^ tryStatementOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptStatement_block >> tryStatementOwner: anObject [
+
+	<generated>
+	tryStatementOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptStatement_block >> tryStatementOwnerGroup [
+	<generated>
+	<navigation: 'TryStatementOwner'>
+	^ MooseSpecializedGroup with: self tryStatementOwner
 ]
 
 { #category : 'accessing' }

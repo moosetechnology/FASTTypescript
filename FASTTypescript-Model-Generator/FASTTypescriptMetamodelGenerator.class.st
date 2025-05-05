@@ -646,8 +646,19 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			
 	((_conditional_type property: #consequence) comment: 'consequence')
 	<>- ((tExpression property: #consequenceOwner) comment:
-			 'Consequence owner').		
+			 'Consequence owner').	
 	
+	((_try_statement property: #body) comment: 'Body')
+	<>- ((_statement_block property: #tryStatementOwner) comment:
+			 'Try statement owner').
+	
+	((_try_statement property: #handler) comment: 'Handler')
+	<>- ((_catch_clause property: #tryStatementOwner) comment:
+			 'Try statement owner').	
+	
+	((_try_statement property: #finalizer) comment: 'Finalizer')
+	<>- ((_finally_clause property: #tryStatementOwner) comment:
+			 'Try statement owner').
 	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')
