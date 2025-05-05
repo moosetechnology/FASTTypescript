@@ -95,6 +95,31 @@ TypescriptParsingClassesTest >> testParsingConstructorType [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingEmptyStatement [
+
+	| res string node |
+
+	string := 'class Foo {
+  static {
+    this.#bar = "";
+  }
+  static {
+    this.baz();
+  }
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptMember_expression parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptMember_expression) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptMember_expression"	
+	node := (res allWithType: FASTTypescriptMember_expression) first.
+	self assert: node property class equals: FASTTypescriptPrivate_property_identifier.
+	self assert: node object class equals: FASTTypescriptThis .
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
 
 	| res string node |

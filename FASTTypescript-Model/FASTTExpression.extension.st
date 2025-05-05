@@ -296,3 +296,30 @@ FASTTExpression >> functionTypeOwner: anObject [
 		self attributeAt: #functionTypeOwner put: anObject.
 		anObject return_type: self ]
 ]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> memberExpressionOwner [
+	"Relation named: #memberExpressionOwner type: #FASTTypescriptMember_expression opposite: #property"
+
+	<generated>
+	<FMComment: 'Private property identifier owner'>
+	<container>
+	<derived>
+	<FMProperty: #memberExpressionOwner type: #FASTTypescriptMember_expression opposite: #property>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #memberExpressionOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> memberExpressionOwner: anObject [
+
+	<generated>
+	(self attributeAt: #memberExpressionOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self memberExpressionOwner.
+		self attributeAt: #memberExpressionOwner put: anObject.
+		otherSide property: nil ]
+	ifNotNil: [ 
+		self attributeAt: #memberExpressionOwner put: anObject.
+		anObject property: self ]
+]

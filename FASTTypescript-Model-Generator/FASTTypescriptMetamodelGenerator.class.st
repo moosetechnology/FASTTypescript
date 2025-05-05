@@ -507,6 +507,8 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_generic_type --|> tExpression.
 	_array_type --|> tExpression.
 	_object_type --|> tExpression.
+	_private_property_identifier --|> tExpression.
+	_property_identifier --|> tExpression.
 	
 				
 	_binary_expression --|> _expression.
@@ -659,6 +661,14 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_try_statement property: #finalizer) comment: 'Finalizer')
 	<>- ((_finally_clause property: #tryStatementOwner) comment:
 			 'Try statement owner').
+			
+	((_member_expression property: #object) comment: 'Object')
+	<>- ((_this property: #memberExpressionOwner) comment:
+			 'This owner').
+			
+	((_member_expression property: #property) comment: 'Property')
+	<>- ((tExpression property: #memberExpressionOwner) comment:
+			 'My owner').
 	
 	"class declaration"
 	((_class_declaration property: #body) comment: 'The body of the class')
