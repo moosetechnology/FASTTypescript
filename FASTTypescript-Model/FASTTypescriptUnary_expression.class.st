@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `argument` | `FASTTypescriptUnary_expression` | `unaryExpressionOwner` | `FASTTypescriptClass` | My argument|
+| `argument` | `FASTTypescriptUnary_expression` | `unaryExpressionOwner` | `FASTTExpression` | My argument|
 
 
 
@@ -13,9 +13,6 @@
 Class {
 	#name : 'FASTTypescriptUnary_expression',
 	#superclass : 'FASTTypescriptExpression',
-	#instVars : [
-		'#argument => FMOne type: #FASTTypescriptClass opposite: #unaryExpressionOwner'
-	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -32,18 +29,26 @@ FASTTypescriptUnary_expression class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptUnary_expression >> argument [
-	"Relation named: #argument type: #FASTTypescriptClass opposite: #unaryExpressionOwner"
+	"Relation named: #argument type: #FASTTExpression opposite: #unaryExpressionOwner"
 
 	<generated>
 	<FMComment: 'My argument'>
-	^ argument
+	<FMProperty: #argument type: #FASTTExpression opposite: #unaryExpressionOwner>
+	^ self attributeAt: #argument ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypescriptUnary_expression >> argument: anObject [
 
 	<generated>
-	argument := anObject
+	(self attributeAt: #argument ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self argument.
+		self attributeAt: #argument put: anObject.
+		otherSide unaryExpressionOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #argument put: anObject.
+		anObject unaryExpressionOwner: self ]
 ]
 
 { #category : 'navigation' }

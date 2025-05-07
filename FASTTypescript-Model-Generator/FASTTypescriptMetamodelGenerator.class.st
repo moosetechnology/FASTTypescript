@@ -441,63 +441,51 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 
 	super defineHierarchy.
 
-	"Inheritance"	
-	
+	"Inheritance"
+
 	entity --|> tEntity.
 	entity --|> tWithComments.
-	
+
 	_program --|> tEntity.
-		
+
 	_number --|> _literal.
 	_string --|> _literal.
 	_null --|> _literal.
 	_boolean --|> _literal.
 	_true --|> _boolean.
 	_false --|> _boolean.
-	
+
 	_abstract_class_declaration --|> _class_declaration.
-	
+
 	"Traits"
 	_literal --|> tLiteral.
 	_string --|> #TStringLiteral.
 	_boolean --|> #TBooleanLiteral.
 	_null --|> #TNullPointerLiteral.
-	
-	
+
 	_program --|> tEntity.
 	_program --|> #THasImmediateSource.
 	_program withPrecedenceOf: #THasImmediateSource.
-	
+
 	_class_declaration --|> tDeclaration.
 	_class_declaration --|> tWithDeclarations.
 	_class_declaration --|> tWithModifiers.
-	_class_declaration --|> tNamedEntity.
 	_class_declaration --|> tStatement.
-	_class_declaration --|> #THasImmediateSource.
-	_class_declaration withPrecedenceOf: #THasImmediateSource.
-	
-	
+
 	_interface_declaration --|> tDeclaration.
 	_interface_declaration --|> tWithDeclarations.
 	_interface_declaration --|> tWithModifiers.
-	_interface_declaration --|> tNamedEntity.
 	_interface_declaration --|> tStatement.
-	_interface_declaration --|> #THasImmediateSource.
-	_interface_declaration withPrecedenceOf: #THasImmediateSource.
-		
+
+
 	_enum_declaration --|> tDeclaration.
 	_enum_declaration --|> tWithDeclarations.
 	_enum_declaration --|> tWithModifiers.
-	_enum_declaration --|> tNamedEntity.
 	_enum_declaration --|> tStatement.
-	_enum_declaration --|> #THasImmediateSource.
-	_enum_declaration withPrecedenceOf: #THasImmediateSource.
-	
-	_ERROR --|> #THasImmediateSource.
-		
+
 	_identifier --|> tExpression.
 	_expression --|> tExpression.
-	_array_pattern --|> tExpression.	
+	_array_pattern --|> tExpression.
 	_type_identifier --|> tExpression.
 	_conditional_type --|> tExpression.
 	_flow_maybe_type --|> tExpression.
@@ -509,8 +497,11 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_object_type --|> tExpression.
 	_private_property_identifier --|> tExpression.
 	_property_identifier --|> tExpression.
-	
-				
+	_class --|> tExpression.
+	_this --|> tExpression.
+	_super --|> tExpression.
+	_array --|> tExpression.
+
 	_binary_expression --|> _expression.
 	_unary_expression --|> _expression.
 	_member_expression --|> _expression.
@@ -523,18 +514,15 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_instantiation_expression --|> _expression.
 	_new_expression --|> _expression.
 	_non_null_expression --|> _expression.
-	_parenthesized_expression --|> _expression.	
-	_satisfies_expression --|> _expression.	
-	_sequence_expression --|> _expression.	
-	_subscript_expression --|> _expression.	
-	_ternary_expression --|> _expression.	
-	_update_expression --|> _expression.	
-	_yield_expression --|> _expression.	
-		
-	"_function_type  --|> tWithParameters.	"		
-	
-	
-	
+	_parenthesized_expression --|> _expression.
+	_satisfies_expression --|> _expression.
+	_sequence_expression --|> _expression.
+	_subscript_expression --|> _expression.
+	_ternary_expression --|> _expression.
+	_update_expression --|> _expression.
+	_yield_expression --|> _expression
+
+	"_function_type  --|> tWithParameters.	"
 ]
 
 { #category : 'definition' }
@@ -576,102 +564,131 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((tExpression property: #binaryExpressionRightOwner) comment:
 			 'The right operand (if possible)').
 
-	((_new_expression property: #constructor) comment: 'The constructor of the new expression')
-	<>-
-		((_identifier property: #typescriptNewExpressionOwner)
-			 comment: 'The owner of this constructor').
-	
+	((_new_expression property: #constructor) comment:
+		 'The constructor of the new expression')
+	<>- ((_identifier property: #typescriptNewExpressionOwner) comment:
+			 'The owner of this constructor').
+
 	((_index_signature property: #index_type) comment: 'My type')
-	<>- ((_type_identifier  property: #indexSignatureOwner) comment: 'The owner of this index type').
+	<>- ((_type_identifier property: #indexSignatureOwner) comment:
+			 'The owner of this index type').
 
 	((_index_signature property: #type) comment: 'My annotation type')
-	<>- ((_type_annotation property: #indexSignatureOwner) comment: 'The owner of this annotation type').
-	
+	<>- ((_type_annotation property: #indexSignatureOwner) comment:
+			 'The owner of this annotation type').
+
 	((_function_type property: #return_type) comment: 'My return type')
-	<>- ((tExpression property: #functionTypeOwner) comment: 'The owner of this type').
-	
+	<>- ((tExpression property: #functionTypeOwner) comment:
+			 'The owner of this type').
+
 	((_unary_expression property: #argument) comment: 'My argument')
-	<>- ((_class property: #unaryExpressionOwner) comment: 'The owner of this class').
-	
+	<>- ((tExpression property: #unaryExpressionOwner) comment:
+			 'The owner of this class').
+
 	((_extends_type_clause property: #type) comment: 'My type identifier')
-	<>- ((_type_identifier property: #extendsTypeClauseOwner) comment: 'The owner of this type identifier').
-	
-	((_with_statement property: #object) comment: 'My object as parenthesized expression')
-	<>- ((_parenthesized_expression property: #withStatementOwner) comment: 'The owner of this type parenthesized expression').
-	
-	((_with_statement property: #body) comment: 'My body as statement block')
-	<>- ((_statement_block property: #withStatementOwner) comment: 'The owner of this statement block').
-	
-	((_nested_identifier property: #object) comment: 'My object as identifier')
-	<>- ((_identifier property: #nestedIdentifierOwner) comment: 'The owner of this identifier').
-	
-	((_nested_identifier property: #property) comment: 'My property as property identifier')
-	<>- ((_property_identifier property: #nestedIdentifierOwner) comment: 'The owner of this  property identifier').
-	
-	((_generic_type property: #name) comment: 'My name as type identifier')
-	<>- ((_type_identifier property: #genericTypeOwner) comment: 'The owner of this type identifier').
-	 
-	((_constructor_type property: #type) comment: 'My type as type identifier')
-	<>- ((_type_identifier property: #constructorTypeOwner) comment: 'The owner of this type identifier').
-	
-	((_optional_parameter property: #type) comment: 'My type as type annotation')
-	<>- ((_type_annotation property: #optionalParameterOwner) comment: 'The owner of this type annotation').
-	 
-	((_optional_parameter property: #pattern) comment: 'My pattern as identifier')
-	<>- ((_identifier property: #optionalParameterOwner) comment: 'The owner of this identifier').
-	
-	((_if_statement property: #condition) comment: 'My condition as parenthesized expression')
-	<>- ((_parenthesized_expression property: #ifStatementOwner) comment: 'The owner of this  parenthesized expression').
-	
-	((_if_statement property: #consequence) comment: 'My consequence as statement block')
-	<>- ((_statement_block property: #ifStatementOwner) comment: 'The owner of this statement block').
-	
+	<>- ((_type_identifier property: #extendsTypeClauseOwner) comment:
+			 'The owner of this type identifier').
+
+	((_with_statement property: #object) comment:
+		 'My object as parenthesized expression')
+	<>-
+		((_parenthesized_expression property: #withStatementOwner) comment:
+			 'The owner of this type parenthesized expression').
+
+	((_with_statement property: #body) comment:
+		 'My body as statement block')
+	<>- ((_statement_block property: #withStatementOwner) comment:
+			 'The owner of this statement block').
+
+	((_nested_identifier property: #object) comment:
+		 'My object as identifier')
+	<>- ((_identifier property: #nestedIdentifierOwner) comment:
+			 'The owner of this identifier').
+
+	((_nested_identifier property: #property) comment:
+		 'My property as property identifier')
+	<>-
+		((_property_identifier property: #nestedIdentifierOwner) comment:
+			 'The owner of this  property identifier').
+
+	((_generic_type property: #name) comment:
+		 'My name as type identifier')
+	<>- ((_type_identifier property: #genericTypeOwner) comment:
+			 'The owner of this type identifier').
+
+	((_constructor_type property: #type) comment:
+		 'My type as type identifier')
+	<>- ((_type_identifier property: #constructorTypeOwner) comment:
+			 'The owner of this type identifier').
+
+	((_optional_parameter property: #type) comment:
+		 'My type as type annotation')
+	<>- ((_type_annotation property: #optionalParameterOwner) comment:
+			 'The owner of this type annotation').
+
+	((_optional_parameter property: #pattern) comment:
+		 'My pattern as identifier')
+	<>- ((_identifier property: #optionalParameterOwner) comment:
+			 'The owner of this identifier').
+
+	((_if_statement property: #condition) comment:
+		 'My condition as parenthesized expression')
+	<>-
+		((_parenthesized_expression property: #ifStatementOwner) comment:
+			 'The owner of this  parenthesized expression').
+
+	((_if_statement property: #consequence) comment:
+		 'My consequence as statement block')
+	<>- ((_statement_block property: #ifStatementOwner) comment:
+			 'The owner of this statement block').
+
 	((_augmented_assignment_expression property: #left) comment: 'left')
-	<>- ((tExpression property: #augmentedAssignmentExpressionLeftOwner) comment:
-			 'The left operand (if possible)').
-			
+	<>- ((tExpression property: #augmentedAssignmentExpressionLeftOwner)
+			 comment: 'The left operand (if possible)').
+
 	((_augmented_assignment_expression property: #right) comment: 'right')
-	<>- ((tExpression property: #augmentedAssignmentExpressionRightOwner) comment:
-			 'The right operand (if possible)').
-			
+	<>-
+		((tExpression property: #augmentedAssignmentExpressionRightOwner)
+			 comment: 'The right operand (if possible)').
+
 	((_conditional_type property: #left) comment: 'left')
 	<>- ((tExpression property: #conditionalTypeLeftOwner) comment:
 			 'The left operand (if possible)').
-			
+
 	((_conditional_type property: #right) comment: 'right')
 	<>- ((tExpression property: #conditionalTypeRightOwner) comment:
 			 'The right operand (if possible)').
-			
+
 	((_conditional_type property: #alternative) comment: 'alternative')
 	<>- ((tExpression property: #alternativeOwner) comment:
 			 'Alternative owner').
-			
+
 	((_conditional_type property: #consequence) comment: 'consequence')
 	<>- ((tExpression property: #consequenceOwner) comment:
-			 'Consequence owner').	
-	
+			 'Consequence owner').
+
 	((_try_statement property: #body) comment: 'Body')
 	<>- ((_statement_block property: #tryStatementOwner) comment:
 			 'Try statement owner').
-	
+
 	((_try_statement property: #handler) comment: 'Handler')
 	<>- ((_catch_clause property: #tryStatementOwner) comment:
-			 'Try statement owner').	
-	
+			 'Try statement owner').
+
 	((_try_statement property: #finalizer) comment: 'Finalizer')
 	<>- ((_finally_clause property: #tryStatementOwner) comment:
 			 'Try statement owner').
-			
+
 	((_member_expression property: #object) comment: 'Object')
-	<>- ((_this property: #memberExpressionOwner) comment:
-			 'This owner').
-			
+	<>- ((tExpression property: #memberExpressionOwner) comment: 'This owner').
+
 	((_member_expression property: #property) comment: 'Property')
-	<>- ((tExpression property: #memberExpressionOwner) comment:
-			 'My owner').
-	
+	<>-
+	((tExpression property: #memberExpressionOwner) comment: 'My owner').
+
 	"class declaration"
-	((_class_declaration property: #body) comment: 'The body of the class')
+	((_class_declaration property: #body) comment:
+		 'The body of the class')
 	<>- ((_class_body property: #parent) comment:
 			 'The class declaration that contains me').
 
@@ -700,7 +717,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'The body of the interface')
 	<>- ((_interface_body property: #bodyParent) comment:
 			 'The interface declaration that contains me').
-		 
+
 	"Traits"
 	((tWithDeclarations property: #declarations) comment:
 		 'The elements I declare')

@@ -5,7 +5,6 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `invokedIn` | `FASTTNamedEntity` | `invoked` | `FASTTInvocation` | Optional invocation where this name is used|
 | `parentLoopStatement` | `FASTTStatement` | `body` | `FASTTLoopStatement` | Optional loop of which this statement is the body|
 | `parentProgram` | `FASTTypescriptInterface_declaration` | `interfaceDeclarations` | `FASTTypescriptProgram` | The program that contains me|
 | `statementContainer` | `FASTTStatement` | `statements` | `FASTTStatementBlock` | Block containing this statement.|
@@ -20,11 +19,6 @@
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
 | `typeIdentifier` | `FASTTypescriptInterface_declaration` | `parentInterface` | `FASTTypescriptType_identifier` | The type identifier that defines me|
 
-### Other
-| Relation | Origin | Opposite | Type | Comment |
-|---|
-| `element` | `FamixTSourceAnchor` | `sourceAnchor` | `FamixTSourceEntity` | Enable the accessibility to the famix entity that this class is a source pointer for|
-
 
 ## Properties
 ======================
@@ -32,16 +26,14 @@
 | Name | Type | Default value | Comment |
 |---|
 | `endPos` | `Number` | nil | |
-| `name` | `String` | nil | |
-| `source` | `String` | nil | Actual source code of the source entity|
 | `startPos` | `Number` | nil | |
 
 "
 Class {
 	#name : 'FASTTypescriptInterface_declaration',
 	#superclass : 'FASTTypescriptEntity',
-	#traits : '(FASTTNamedEntity + FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
-	#classTraits : '(FASTTNamedEntity classTrait + FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
+	#traits : 'FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers',
+	#classTraits : 'FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait',
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptInterface_body opposite: #bodyParent',
 		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #interfaceDeclarations',

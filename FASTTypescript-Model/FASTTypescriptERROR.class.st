@@ -19,8 +19,6 @@
 Class {
 	#name : 'FASTTypescriptERROR',
 	#superclass : 'FASTTypescriptEntity',
-	#traits : 'FamixTHasImmediateSource',
-	#classTraits : 'FamixTHasImmediateSource classTrait',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'

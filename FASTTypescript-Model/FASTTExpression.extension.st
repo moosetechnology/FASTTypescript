@@ -323,3 +323,30 @@ FASTTExpression >> memberExpressionOwner: anObject [
 		self attributeAt: #memberExpressionOwner put: anObject.
 		anObject property: self ]
 ]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> unaryExpressionOwner [
+	"Relation named: #unaryExpressionOwner type: #FASTTypescriptUnary_expression opposite: #argument"
+
+	<generated>
+	<FMComment: 'The owner of this class'>
+	<container>
+	<derived>
+	<FMProperty: #unaryExpressionOwner type: #FASTTypescriptUnary_expression opposite: #argument>
+	<package: #'FASTTypescript-Model'>
+	^ self attributeAt: #unaryExpressionOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FASTTypescript-Model-accessing' }
+FASTTExpression >> unaryExpressionOwner: anObject [
+
+	<generated>
+	(self attributeAt: #unaryExpressionOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self unaryExpressionOwner.
+		self attributeAt: #unaryExpressionOwner put: anObject.
+		otherSide argument: nil ]
+	ifNotNil: [ 
+		self attributeAt: #unaryExpressionOwner put: anObject.
+		anObject argument: self ]
+]

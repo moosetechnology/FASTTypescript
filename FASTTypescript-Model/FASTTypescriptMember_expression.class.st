@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `object` | `FASTTypescriptMember_expression` | `memberExpressionOwner` | `FASTTypescriptThis` | Object|
+| `object` | `FASTTypescriptMember_expression` | `memberExpressionOwner` | `FASTTExpression` | Object|
 | `property` | `FASTTypescriptMember_expression` | `memberExpressionOwner` | `FASTTExpression` | Property|
 
 
@@ -14,9 +14,6 @@
 Class {
 	#name : 'FASTTypescriptMember_expression',
 	#superclass : 'FASTTypescriptExpression',
-	#instVars : [
-		'#object => FMOne type: #FASTTypescriptThis opposite: #memberExpressionOwner'
-	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -33,18 +30,26 @@ FASTTypescriptMember_expression class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptMember_expression >> object [
-	"Relation named: #object type: #FASTTypescriptThis opposite: #memberExpressionOwner"
+	"Relation named: #object type: #FASTTExpression opposite: #memberExpressionOwner"
 
 	<generated>
 	<FMComment: 'Object'>
-	^ object
+	<FMProperty: #object type: #FASTTExpression opposite: #memberExpressionOwner>
+	^ self attributeAt: #object ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypescriptMember_expression >> object: anObject [
 
 	<generated>
-	object := anObject
+	(self attributeAt: #object ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self object.
+		self attributeAt: #object put: anObject.
+		otherSide memberExpressionOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #object put: anObject.
+		anObject memberExpressionOwner: self ]
 ]
 
 { #category : 'navigation' }

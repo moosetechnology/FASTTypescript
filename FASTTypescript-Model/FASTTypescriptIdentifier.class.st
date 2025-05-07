@@ -20,6 +20,7 @@
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNested_identifier` | The owner of this identifier|
 | `optionalParameterOwner` | `FASTTypescriptIdentifier` | `pattern` | `FASTTypescriptOptional_parameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
@@ -29,6 +30,7 @@
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `typescriptNewExpressionOwner` | `FASTTypescriptIdentifier` | `constructor` | `FASTTypescriptNew_expression` | The owner of this constructor|
+| `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnary_expression` | The owner of this class|
 
 
 ## Properties
