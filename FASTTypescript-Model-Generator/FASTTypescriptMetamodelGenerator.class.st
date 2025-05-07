@@ -501,6 +501,8 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_this --|> tExpression.
 	_super --|> tExpression.
 	_array --|> tExpression.
+	_undefined --|> tExpression.
+	_regex --|> tExpression.
 
 	_binary_expression --|> _expression.
 	_unary_expression --|> _expression.
