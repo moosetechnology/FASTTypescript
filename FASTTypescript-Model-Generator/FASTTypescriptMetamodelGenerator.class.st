@@ -466,6 +466,9 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_program --|> tEntity.
 	_program --|> #THasImmediateSource.
 	_program withPrecedenceOf: #THasImmediateSource.
+	
+	_ERROR --|> #THasImmediateSource.
+	_program withPrecedenceOf: #THasImmediateSource.
 
 	_class_declaration --|> tDeclaration.
 	_class_declaration --|> tWithDeclarations.
