@@ -13,7 +13,7 @@ TypescriptParsingClassesTest >> setUp [
 
 	super setUp.
 
-	parser := FASTTypescriptGenerator new
+	parser := FASTTypescriptParser new
 ]
 
 { #category : 'running' }

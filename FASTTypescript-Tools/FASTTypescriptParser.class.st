@@ -1,12 +1,12 @@
 Class {
-	#name : 'FASTTypescriptGenerator',
+	#name : 'FASTTypescriptParser',
 	#superclass : 'Object',
 	#category : 'FASTTypescript-Tools',
 	#package : 'FASTTypescript-Tools'
 }
 
 { #category : 'utilities' }
-FASTTypescriptGenerator >> getASTFromString: string [
+FASTTypescriptParser >> getASTFromString: string [
 
 	|parser tsLanguage importer |
 	
@@ -27,7 +27,7 @@ FASTTypescriptGenerator >> getASTFromString: string [
 ]
 
 { #category : 'parsing' }
-FASTTypescriptGenerator >> parse: aString [
+FASTTypescriptParser >> parse: aString [
 
 	^ self getASTFromString: aString 
 ]
