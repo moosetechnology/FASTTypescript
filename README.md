@@ -22,8 +22,9 @@ Metacello new
 
 ## Usage
 
-In order to use it, please make sure that you have installed on your machine the correposndat library from tree sitter typescript, in order to make sure the parsing succeeds.
-For more details you can have a look at this [blog-post][tree-sitter-blog].
+In order to use it, please make sure that you have installed on your machine the corresponding libraries for tree sitter, in order to make sure the parsing succeeds.
+Normally this has been automated for different operating systems.
+But for more details you can have a look at this [blog-post][tree-sitter-blog].
 
 To use it in Pharo, you can check below example:
 ```smalltalk  
