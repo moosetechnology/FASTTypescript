@@ -30,10 +30,10 @@ To use it in Pharo, you can check example below:
 
 ```smalltalk  
 res := FASTTypescriptParser new getASTFromString:  'class SimpleClass {
-	integerProperty = 1;
-  	doubleProperty = 1.2;  	
-   booleanProperty= true;
-  	stringProperty = "hello";
+    integerProperty = 1;
+    doubleProperty = 1.2;
+    booleanProperty= true;
+    stringProperty = "hello";
 }'. 
 ```  
 
