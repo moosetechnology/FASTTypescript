@@ -22,13 +22,14 @@ Metacello new
 
 ## Usage
 
-In order to use it, please make sure that you have installed on your machine the corresponding libraries for tree sitter, in order to make sure the parsing succeeds.
-Normally this has been automated for different operating systems.
-But for more details you can have a look at this [blog-post][tree-sitter-blog].
+To use it, please ensure that you have installed the corresponding libraries for Tree Sitter on your machine, to ensure parsing succeeds.
+Normally, this has been automated for different operating systems.
+But for more details, you can have a look at this [blog-post][tree-sitter-blog].
 
-To use it in Pharo, you can check below example:
+To use it in Pharo, you can check example below:
+
 ```smalltalk  
-res := FASTTypescriptGenerator new getASTFromString:  'class SimpleClass {
+res := FASTTypescriptParser new getASTFromString:  'class SimpleClass {
 	integerProperty = 1;
   	doubleProperty = 1.2;  	
    booleanProperty= true;
@@ -38,7 +39,7 @@ res := FASTTypescriptGenerator new getASTFromString:  'class SimpleClass {
 
 ## NB
 
-The project is still at the very begining. But at least now it can parse and generate a basic model of FASTTypescript.
+The project is still at the very beginning. But at least now it can parse and generate a basic model of FASTTypescript.
 Still need to:
 - Reorder classes
 - Add new properties
@@ -46,7 +47,7 @@ Still need to:
 - Add tests
 
 Your contribution is more than welcome.
-Happy coding with Typescript :)
+Happy coding with TypeScript :)
 
 [fast]: https://github.com/moosetechnology/FAST 
 [pharo-tree-sitter]: https://github.com/Evref-BL/Pharo-Tree-Sitter
