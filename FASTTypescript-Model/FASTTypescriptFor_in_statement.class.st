@@ -5,6 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `body` | `FASTTypescriptFor_in_statement` | `statementBlockOwner` | `FASTTypescriptStatement_block` | The body|
 | `left` | `FASTTypescriptFor_in_statement` | `forStatementLeftOwner` | `FASTTExpression` | The identifier|
 | `right` | `FASTTypescriptFor_in_statement` | `forStatementRightOwner` | `FASTTExpression` | The identifier|
 
@@ -14,6 +15,9 @@
 Class {
 	#name : 'FASTTypescriptFor_in_statement',
 	#superclass : 'FASTTypescriptEntity',
+	#instVars : [
+		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner'
+	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -26,6 +30,29 @@ FASTTypescriptFor_in_statement class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptFor_in_statement >> body [
+	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #statementBlockOwner"
+
+	<generated>
+	<FMComment: 'The body'>
+	^ body
+]
+
+{ #category : 'accessing' }
+FASTTypescriptFor_in_statement >> body: anObject [
+
+	<generated>
+	body := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptFor_in_statement >> bodyGroup [
+	<generated>
+	<navigation: 'Body'>
+	^ MooseSpecializedGroup with: self body
 ]
 
 { #category : 'accessing' }

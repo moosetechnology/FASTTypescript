@@ -560,7 +560,10 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_for_in_statement property: #right) comment: 'The identifier')
 	<>- ((tExpression property: #forStatementRightOwner) comment:
 			 'The right operand (if possible)').
-	"body is missing for _for_in_statement; not added for the moment to avoid conflicts with the body of entity"
+	
+	((_for_in_statement property: #body) comment: 'The body')
+	<>- ((_statement_block property: #statementBlockOwner) comment:
+			 'The owner of this body is a for_in_statment').
 
 	((_binary_expression property: #left) comment: 'left')
 	<>- ((tExpression property: #binaryExpressionLeftOwner) comment:
