@@ -691,6 +691,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>-
 	((tExpression property: #memberExpressionOwner) comment: 'My owner').
 
+	((_export_specifier property: #name) comment: 'name')
+	<>-
+	((_identifier property: #exportSpecifierOwner) comment: 'My owner').
+
+	
+
 	"class declaration"
 	((_class_declaration property: #body) comment:
 		 'The body of the class')
@@ -712,11 +718,6 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'The type identifier that defines me')
 	<>- ((_type_identifier property: #parentInterface) comment:
 			 'The interface that I define').
-
-	((_interface_declaration property: #body) comment:
-		 'The body of the interface')
-	<>- ((_interface_body property: #bodyParent) comment:
-			 'The interface declaration that contains me').
 
 	((_interface_declaration property: #body) comment:
 		 'The body of the interface')

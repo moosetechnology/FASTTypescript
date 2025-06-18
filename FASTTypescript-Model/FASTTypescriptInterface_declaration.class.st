@@ -14,7 +14,6 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `body` | `FASTTypescriptInterface_declaration` | `bodyParent` | `FASTTypescriptInterface_body` | The body of the interface|
-| `body` | `FASTTypescriptInterface_declaration` | `bodyParent` | `FASTTypescriptInterface_body` | The body of the interface|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
 | `typeIdentifier` | `FASTTypescriptInterface_declaration` | `parentInterface` | `FASTTypescriptType_identifier` | The type identifier that defines me|

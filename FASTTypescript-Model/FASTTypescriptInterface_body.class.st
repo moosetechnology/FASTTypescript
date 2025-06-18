@@ -6,7 +6,6 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `bodyParent` | `FASTTypescriptInterface_body` | `body` | `FASTTypescriptInterface_declaration` | The interface declaration that contains me|
-| `bodyParent` | `FASTTypescriptInterface_body` | `body` | `FASTTypescriptInterface_declaration` | The interface declaration that contains me|
 
 
 

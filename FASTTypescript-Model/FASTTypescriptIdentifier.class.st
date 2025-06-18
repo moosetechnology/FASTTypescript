@@ -15,12 +15,13 @@
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptConditional_type` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptConditional_type` | The right operand (if possible)|
 | `consequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypescriptConditional_type` | Consequence owner|
+| `exportSpecifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptExport_specifier` | My owner|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
-| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNested_identifier` | The owner of this identifier|
 | `optionalParameterOwner` | `FASTTypescriptIdentifier` | `pattern` | `FASTTypescriptOptional_parameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
@@ -48,6 +49,7 @@ Class {
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
+		'#exportSpecifierOwner => FMOne type: #FASTTypescriptExport_specifier opposite: #name',
 		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #object',
 		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptional_parameter opposite: #pattern',
 		'#parentEnum => FMOne type: #FASTTypescriptEnum_declaration opposite: #identifier',
@@ -65,6 +67,31 @@ FASTTypescriptIdentifier class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIdentifier >> exportSpecifierOwner [
+	"Relation named: #exportSpecifierOwner type: #FASTTypescriptExport_specifier opposite: #name"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ exportSpecifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIdentifier >> exportSpecifierOwner: anObject [
+
+	<generated>
+	exportSpecifierOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptIdentifier >> exportSpecifierOwnerGroup [
+	<generated>
+	<navigation: 'ExportSpecifierOwner'>
+	^ MooseSpecializedGroup with: self exportSpecifierOwner
 ]
 
 { #category : 'accessing' }
