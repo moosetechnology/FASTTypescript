@@ -20,8 +20,9 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
-| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `identifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptIndex_signature` | The owner of this identifier|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNested_identifier` | The owner of this identifier|
 | `optionalParameterOwner` | `FASTTypescriptIdentifier` | `pattern` | `FASTTypescriptOptional_parameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
@@ -50,6 +51,7 @@ Class {
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
 		'#exportSpecifierOwner => FMOne type: #FASTTypescriptExport_specifier opposite: #name',
+		'#identifierOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #name',
 		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #object',
 		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptional_parameter opposite: #pattern',
 		'#parentEnum => FMOne type: #FASTTypescriptEnum_declaration opposite: #identifier',
@@ -92,6 +94,31 @@ FASTTypescriptIdentifier >> exportSpecifierOwnerGroup [
 	<generated>
 	<navigation: 'ExportSpecifierOwner'>
 	^ MooseSpecializedGroup with: self exportSpecifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIdentifier >> identifierOwner [
+	"Relation named: #identifierOwner type: #FASTTypescriptIndex_signature opposite: #name"
+
+	<generated>
+	<FMComment: 'The owner of this identifier'>
+	<container>
+	<derived>
+	^ identifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIdentifier >> identifierOwner: anObject [
+
+	<generated>
+	identifierOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptIdentifier >> identifierOwnerGroup [
+	<generated>
+	<navigation: 'IdentifierOwner'>
+	^ MooseSpecializedGroup with: self identifierOwner
 ]
 
 { #category : 'accessing' }

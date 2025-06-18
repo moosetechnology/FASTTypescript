@@ -6,6 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `index_type` | `FASTTypescriptIndex_signature` | `indexSignatureOwner` | `FASTTypescriptType_identifier` | My type|
+| `name` | `FASTTypescriptIndex_signature` | `identifierOwner` | `FASTTypescriptIdentifier` | My name|
 | `type` | `FASTTypescriptIndex_signature` | `indexSignatureOwner` | `FASTTypescriptType_annotation` | My annotation type|
 
 
@@ -16,6 +17,7 @@ Class {
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#index_type => FMOne type: #FASTTypescriptType_identifier opposite: #indexSignatureOwner',
+		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #identifierOwner',
 		'#type => FMOne type: #FASTTypescriptType_annotation opposite: #indexSignatureOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -53,6 +55,29 @@ FASTTypescriptIndex_signature >> index_typeGroup [
 	<generated>
 	<navigation: 'Index_type'>
 	^ MooseSpecializedGroup with: self index_type
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIndex_signature >> name [
+	"Relation named: #name type: #FASTTypescriptIdentifier opposite: #identifierOwner"
+
+	<generated>
+	<FMComment: 'My name'>
+	^ name
+]
+
+{ #category : 'accessing' }
+FASTTypescriptIndex_signature >> name: anObject [
+
+	<generated>
+	name := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptIndex_signature >> nameGroup [
+	<generated>
+	<navigation: 'Name'>
+	^ MooseSpecializedGroup with: self name
 ]
 
 { #category : 'accessing' }

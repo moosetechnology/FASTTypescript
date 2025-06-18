@@ -584,6 +584,10 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_index_signature property: #type) comment: 'My annotation type')
 	<>- ((_type_annotation property: #indexSignatureOwner) comment:
 			 'The owner of this annotation type').
+	
+	((_index_signature property: #name) comment: 'My name')
+	<>- ((_identifier property: #identifierOwner) comment:
+			 'The owner of this identifier').
 
 	((_function_type property: #return_type) comment: 'My return type')
 	<>- ((tExpression property: #functionTypeOwner) comment:
