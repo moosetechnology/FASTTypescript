@@ -16,6 +16,7 @@
 | `body` | `FASTTypescriptClass_declaration` | `parent` | `FASTTypescriptClass_body` | The body of the class|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
+| `name` | `FASTTypescriptClass_declaration` | `typeIdentifierOwner` | `FASTTypescriptType_identifier` | The name of the class|
 
 
 ## Properties
@@ -34,6 +35,7 @@ Class {
 	#classTraits : 'FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait',
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptClass_body opposite: #parent',
+		'#name => FMOne type: #FASTTypescriptType_identifier opposite: #typeIdentifierOwner',
 		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #classDeclarations'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -78,6 +80,29 @@ FASTTypescriptClass_declaration >> isClass_declaration [
 
 	<generated>
 	^ true
+]
+
+{ #category : 'accessing' }
+FASTTypescriptClass_declaration >> name [
+	"Relation named: #name type: #FASTTypescriptType_identifier opposite: #typeIdentifierOwner"
+
+	<generated>
+	<FMComment: 'The name of the class'>
+	^ name
+]
+
+{ #category : 'accessing' }
+FASTTypescriptClass_declaration >> name: anObject [
+
+	<generated>
+	name := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptClass_declaration >> nameGroup [
+	<generated>
+	<navigation: 'Name'>
+	^ MooseSpecializedGroup with: self name
 ]
 
 { #category : 'accessing' }

@@ -23,14 +23,15 @@
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
 | `genericTypeOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptGeneric_type` | The owner of this type identifier|
 | `indexSignatureOwner` | `FASTTypescriptType_identifier` | `index_type` | `FASTTypescriptIndex_signature` | The owner of this index type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `parentInterface` | `FASTTypescriptType_identifier` | `typeIdentifier` | `FASTTypescriptInterface_declaration` | The interface that I define|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
+| `typeIdentifierOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptClass_declaration` | My owner|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnary_expression` | The owner of this class|
 
 
@@ -53,7 +54,8 @@ Class {
 		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
 		'#genericTypeOwner => FMOne type: #FASTTypescriptGeneric_type opposite: #name',
 		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #index_type',
-		'#parentInterface => FMOne type: #FASTTypescriptInterface_declaration opposite: #typeIdentifier'
+		'#parentInterface => FMOne type: #FASTTypescriptInterface_declaration opposite: #typeIdentifier',
+		'#typeIdentifierOwner => FMOne type: #FASTTypescriptClass_declaration opposite: #name'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -192,4 +194,29 @@ FASTTypescriptType_identifier >> parentInterfaceGroup [
 	<generated>
 	<navigation: 'ParentInterface'>
 	^ MooseSpecializedGroup with: self parentInterface
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> typeIdentifierOwner [
+	"Relation named: #typeIdentifierOwner type: #FASTTypescriptClass_declaration opposite: #name"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ typeIdentifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptType_identifier >> typeIdentifierOwner: anObject [
+
+	<generated>
+	typeIdentifierOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptType_identifier >> typeIdentifierOwnerGroup [
+	<generated>
+	<navigation: 'TypeIdentifierOwner'>
+	^ MooseSpecializedGroup with: self typeIdentifierOwner
 ]

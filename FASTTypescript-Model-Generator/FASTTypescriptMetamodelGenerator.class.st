@@ -698,13 +698,16 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>-
 	((_identifier property: #exportSpecifierOwner) comment: 'My owner').
 
-	
-
 	"class declaration"
 	((_class_declaration property: #body) comment:
 		 'The body of the class')
 	<>- ((_class_body property: #parent) comment:
 			 'The class declaration that contains me').
+	
+	((_class_declaration property: #name) comment:
+		 'The name of the class')
+	<>- ((_type_identifier property: #typeIdentifierOwner) comment:
+			 'My owner').
 
 	"Enum"
 	((_enum_declaration property: #identifier) comment:
