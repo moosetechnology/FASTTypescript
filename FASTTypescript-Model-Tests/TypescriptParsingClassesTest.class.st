@@ -288,6 +288,28 @@ TypescriptParsingClassesTest >> testParsingFunctionType [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingGenericType [
+
+	| res string node |
+
+	string := 'export interface IAppState {
+  public readonly users: ReadonlyArray<User>
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptGeneric_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptGeneric_type ) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptGeneric_type"
+	node := (res allWithType: FASTTypescriptGeneric_type) first.
+	self assert: node name class equals: FASTTypescriptType_identifier.
+	
+	 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingIndexSignature [
 
 	| res string forNode |
