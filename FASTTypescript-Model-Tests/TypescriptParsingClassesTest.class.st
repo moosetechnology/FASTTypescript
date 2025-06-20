@@ -41,6 +41,20 @@ TypescriptParsingClassesTest >> testParsingArray [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingArrayType [
+
+	| res string  |
+
+	string := 'bar satisfies number[];
+const miscArray: ?T[];'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptArray_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptArray_type) isNotEmpty.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingAugmentedAssignmentExpression [
 
 	| res string node |
