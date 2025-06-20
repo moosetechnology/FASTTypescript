@@ -454,6 +454,26 @@ TypescriptParsingClassesTest >> testParsingMemberExpression [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingMethodDefinition [
+
+	| res string node  |
+	string := 'class Foo { 
+  get(): Result {};
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptMethod_definition parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptMethod_definition) isNotEmpty. 
+		
+	"Checking properties of FASTTypescriptMethod_definition"	
+	node := (res allWithType: FASTTypescriptMethod_definition) first.
+	self assert: node name class equals: FASTTypescriptProperty_identifier.
+	self assert: node body class equals: FASTTypescriptStatement_block.
+	self assert: node return_type class equals: FASTTypescriptType_annotation.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingNestedIdentifier [
 
 	| res string node |
