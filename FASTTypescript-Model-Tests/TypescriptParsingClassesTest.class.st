@@ -109,6 +109,21 @@ TypescriptParsingClassesTest >> testParsingClassDeclaration [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingClassHeritage [
+
+	| res string |
+
+	string := 'class Bar extends Foo {
+  override baz() {}
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptClass_heritage parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptClass_heritage) isNotEmpty. 
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingConstructorType [
 
 	| res string node |
