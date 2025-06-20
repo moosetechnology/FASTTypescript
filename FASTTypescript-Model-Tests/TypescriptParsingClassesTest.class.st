@@ -651,6 +651,27 @@ TypescriptParsingClassesTest >> testParsingStringFragment [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingThis [
+
+	| res string |
+
+	string := 'class Foo {
+  static {
+    this.#bar = '''';
+  }
+  static {
+    this.baz();
+  }
+}'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptThis parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptThis) isNotEmpty.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingTryStatement [
 
 	| res string node |
