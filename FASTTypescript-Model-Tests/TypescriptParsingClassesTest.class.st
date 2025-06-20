@@ -364,6 +364,26 @@ TypescriptParsingClassesTest >> testParsingImportAlias [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingImportClause [
+
+	| res string  |
+
+	string := 'import type {UserID, User} from "./User.js";
+import {type UserID, type User} from "./User.js";
+import typeof {jimiguitar as GuitarT} from "./User.js";
+import type, {addUser, type User} from "./User.js";'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptImport_clause parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptImport_clause ) isNotEmpty.
+	
+	
+	 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingIndexSignature [
 
 	| res string forNode |
