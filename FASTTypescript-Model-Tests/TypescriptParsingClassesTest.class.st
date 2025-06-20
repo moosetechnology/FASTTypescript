@@ -406,6 +406,29 @@ TypescriptParsingClassesTest >> testParsingIndexSignature [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingInterfaceDeclaration [
+
+	| res string node |
+
+	string := 'interface Friend {
+    name: string;
+    favoriteColor?: string;
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptInterface_declaration parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptInterface_declaration) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptInterface_declaration"
+	node := (res allWithType: FASTTypescriptInterface_declaration) first.
+	self assert: node name class equals: FASTTypescriptType_identifier.
+	self assert: node body class equals: FASTTypescriptInterface_body.
+	 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingNestedIdentifier [
 
 	| res string node |
