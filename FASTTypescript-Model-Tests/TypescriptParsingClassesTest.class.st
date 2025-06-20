@@ -494,9 +494,10 @@ TypescriptParsingClassesTest >> testParsingNestedIdentifier [
 { #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingNewExpression [
 
-	| res string node |
-
-	string := 'const date = new Date();'.
+	| res string node node2|
+	
+	string := 'const date = new Date();
+	const genericInstance = new GenericClass<number>(42);'.
 	res := parser parse: string.
 
 	"Checking if FASTTypescriptNew_expression parsed correctly"
@@ -506,6 +507,11 @@ TypescriptParsingClassesTest >> testParsingNewExpression [
 	"Checking properties of FASTTypescriptNew_expression"	
 	node := (res allWithType: FASTTypescriptNew_expression) first.
 	self assert: node constructor class equals: FASTTypescriptIdentifier.
+	
+	node2 := (res allWithType: FASTTypescriptNew_expression) second.
+	self assert: node2 arguments class equals: FASTTypescriptArguments.
+	self assert: node2 type_arguments class equals: FASTTypescriptType_arguments.
+	
 	
 ]
 
