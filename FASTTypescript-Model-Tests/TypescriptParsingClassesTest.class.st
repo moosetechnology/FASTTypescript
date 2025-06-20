@@ -527,6 +527,25 @@ TypescriptParsingClassesTest >> testParsingObject [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingObjectType [
+
+	| res string  |
+
+	string := 'h as `hello`
+T as {} & { [t: T]: T }
+T as {} & { [t: T]: T } & { [g: G]: G }'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptObject_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptObject_type ) isNotEmpty.
+	
+	
+	 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingOptionalParameter [
 
 	| res string node |
