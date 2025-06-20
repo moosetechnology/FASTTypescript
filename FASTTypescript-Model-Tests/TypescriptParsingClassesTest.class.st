@@ -605,6 +605,22 @@ declare class Linter {
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingReadOnlyType [
+
+	| res string |
+
+	string := 'type t = readonly a[]
+type t = readonly a[][]
+type t = (readonly a[])[]
+type t = readonly (readonly a[]) []'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptReadonly_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptReadonly_type) isNotEmpty. 
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingStringFragment [
 
 	| res string |
