@@ -646,6 +646,11 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'My name as type identifier')
 	<>- ((_type_identifier property: #genericTypeOwner) comment:
 			 'The owner of this type identifier').
+	
+	((_generic_type property: #type_arguments) comment:
+		 'My name as type identifier')
+	<>- ((_type_arguments property: #typeArgumentsOwner) comment:
+			 'The owner of this type arguments').
 
 	((_constructor_type property: #type) comment:
 		 'My type as type identifier')

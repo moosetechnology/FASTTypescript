@@ -303,6 +303,7 @@ TypescriptParsingClassesTest >> testParsingGenericType [
 	"Checking properties of FASTTypescriptGeneric_type"
 	node := (res allWithType: FASTTypescriptGeneric_type) first.
 	self assert: node name class equals: FASTTypescriptType_identifier.
+	self assert: node type_arguments class equals: FASTTypescriptType_arguments.
 	
 	 
 	
