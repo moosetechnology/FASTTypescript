@@ -401,6 +401,7 @@ TypescriptParsingClassesTest >> testParsingIndexSignature [
 	forNode := (res allWithType: FASTTypescriptIndex_signature) first.
 	self assert: forNode index_type class equals: FASTTypescriptType_identifier.
 	self assert: forNode type class equals: FASTTypescriptType_annotation.
+	self assert: forNode name class equals: FASTTypescriptIdentifier.
 	
 ]
 
