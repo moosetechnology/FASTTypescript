@@ -144,6 +144,19 @@ TypescriptParsingClassesTest >> testParsingConditionalType [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingConstraint [
+
+	| res string  |
+
+	string := 'type HandlerFunction<T: Element> = void'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptConstraint parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptConstraint ) isNotEmpty. 
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingConstructorType [
 
 	| res string node |
