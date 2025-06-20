@@ -19,13 +19,14 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `nestedIdentifierOwner` | `FASTTypescriptProperty_identifier` | `property` | `FASTTypescriptNested_identifier` | The owner of this  property identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
+| `propertyIdentifierOwner` | `FASTTypescriptProperty_identifier` | `name` | `FASTTypescriptMethod_definition` | My owner|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnary_expression` | The owner of this class|
 
@@ -45,7 +46,8 @@ Class {
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
-		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #property'
+		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #property',
+		'#propertyIdentifierOwner => FMOne type: #FASTTypescriptMethod_definition opposite: #name'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -84,4 +86,29 @@ FASTTypescriptProperty_identifier >> nestedIdentifierOwnerGroup [
 	<generated>
 	<navigation: 'NestedIdentifierOwner'>
 	^ MooseSpecializedGroup with: self nestedIdentifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptProperty_identifier >> propertyIdentifierOwner [
+	"Relation named: #propertyIdentifierOwner type: #FASTTypescriptMethod_definition opposite: #name"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ propertyIdentifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypescriptProperty_identifier >> propertyIdentifierOwner: anObject [
+
+	<generated>
+	propertyIdentifierOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptProperty_identifier >> propertyIdentifierOwnerGroup [
+	<generated>
+	<navigation: 'PropertyIdentifierOwner'>
+	^ MooseSpecializedGroup with: self propertyIdentifierOwner
 ]

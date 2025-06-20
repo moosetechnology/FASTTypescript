@@ -1,6 +1,25 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `body` | `FASTTypescriptMethod_definition` | `statementBlockOwner` | `FASTTypescriptStatement_block` | My body|
+| `name` | `FASTTypescriptMethod_definition` | `propertyIdentifierOwner` | `FASTTypescriptProperty_identifier` | My name|
+| `return_type` | `FASTTypescriptMethod_definition` | `returnTypeOwner` | `FASTTypescriptTReturnType` | My return type in case it exists|
+
+
+
+"
 Class {
 	#name : 'FASTTypescriptMethod_definition',
 	#superclass : 'FASTTypescriptEntity',
+	#instVars : [
+		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner',
+		'#name => FMOne type: #FASTTypescriptProperty_identifier opposite: #propertyIdentifierOwner',
+		'#return_type => FMOne type: #FASTTypescriptTReturnType opposite: #returnTypeOwner'
+	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -13,4 +32,73 @@ FASTTypescriptMethod_definition class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptMethod_definition >> body [
+	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #statementBlockOwner"
+
+	<generated>
+	<FMComment: 'My body'>
+	^ body
+]
+
+{ #category : 'accessing' }
+FASTTypescriptMethod_definition >> body: anObject [
+
+	<generated>
+	body := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptMethod_definition >> bodyGroup [
+	<generated>
+	<navigation: 'Body'>
+	^ MooseSpecializedGroup with: self body
+]
+
+{ #category : 'accessing' }
+FASTTypescriptMethod_definition >> name [
+	"Relation named: #name type: #FASTTypescriptProperty_identifier opposite: #propertyIdentifierOwner"
+
+	<generated>
+	<FMComment: 'My name'>
+	^ name
+]
+
+{ #category : 'accessing' }
+FASTTypescriptMethod_definition >> name: anObject [
+
+	<generated>
+	name := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptMethod_definition >> nameGroup [
+	<generated>
+	<navigation: 'Name'>
+	^ MooseSpecializedGroup with: self name
+]
+
+{ #category : 'accessing' }
+FASTTypescriptMethod_definition >> return_type [
+	"Relation named: #return_type type: #FASTTypescriptTReturnType opposite: #returnTypeOwner"
+
+	<generated>
+	<FMComment: 'My return type in case it exists'>
+	^ return_type
+]
+
+{ #category : 'accessing' }
+FASTTypescriptMethod_definition >> return_type: anObject [
+
+	<generated>
+	return_type := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptMethod_definition >> return_typeGroup [
+	<generated>
+	<navigation: 'Return_type'>
+	^ MooseSpecializedGroup with: self return_type
 ]

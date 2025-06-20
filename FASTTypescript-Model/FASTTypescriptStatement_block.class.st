@@ -7,6 +7,7 @@
 |---|
 | `ifStatementOwner` | `FASTTypescriptStatement_block` | `consequence` | `FASTTypescriptIf_statement` | The owner of this statement block|
 | `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFor_in_statement` | The owner of this body is a for_in_statment|
+| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptMethod_definition` | My owner|
 | `tryStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptTry_statement` | Try statement owner|
 | `withStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptWith_statement` | The owner of this statement block|
 

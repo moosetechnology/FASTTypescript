@@ -21,8 +21,8 @@
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
 | `identifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptIndex_signature` | The owner of this identifier|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNested_identifier` | The owner of this identifier|
 | `optionalParameterOwner` | `FASTTypescriptIdentifier` | `pattern` | `FASTTypescriptOptional_parameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
