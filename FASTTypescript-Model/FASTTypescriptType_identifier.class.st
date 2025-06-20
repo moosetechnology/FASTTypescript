@@ -29,9 +29,9 @@
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
-| `parentInterface` | `FASTTypescriptType_identifier` | `typeIdentifier` | `FASTTypescriptInterface_declaration` | The interface that I define|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `typeIdentifierOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptClass_declaration` | My owner|
+| `typeIdentifierOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptInterface_declaration` | My owner|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnary_expression` | The owner of this class|
 
 
@@ -54,7 +54,6 @@ Class {
 		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
 		'#genericTypeOwner => FMOne type: #FASTTypescriptGeneric_type opposite: #name',
 		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #index_type',
-		'#parentInterface => FMOne type: #FASTTypescriptInterface_declaration opposite: #typeIdentifier',
 		'#typeIdentifierOwner => FMOne type: #FASTTypescriptClass_declaration opposite: #name'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -169,31 +168,6 @@ FASTTypescriptType_identifier >> indexSignatureOwnerGroup [
 	<generated>
 	<navigation: 'IndexSignatureOwner'>
 	^ MooseSpecializedGroup with: self indexSignatureOwner
-]
-
-{ #category : 'accessing' }
-FASTTypescriptType_identifier >> parentInterface [
-	"Relation named: #parentInterface type: #FASTTypescriptInterface_declaration opposite: #typeIdentifier"
-
-	<generated>
-	<FMComment: 'The interface that I define'>
-	<container>
-	<derived>
-	^ parentInterface
-]
-
-{ #category : 'accessing' }
-FASTTypescriptType_identifier >> parentInterface: anObject [
-
-	<generated>
-	parentInterface := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptType_identifier >> parentInterfaceGroup [
-	<generated>
-	<navigation: 'ParentInterface'>
-	^ MooseSpecializedGroup with: self parentInterface
 ]
 
 { #category : 'accessing' }

@@ -16,7 +16,7 @@
 | `body` | `FASTTypescriptInterface_declaration` | `bodyParent` | `FASTTypescriptInterface_body` | The body of the interface|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
-| `typeIdentifier` | `FASTTypescriptInterface_declaration` | `parentInterface` | `FASTTypescriptType_identifier` | The type identifier that defines me|
+| `name` | `FASTTypescriptInterface_declaration` | `typeIdentifierOwner` | `FASTTypescriptType_identifier` | My name|
 
 
 ## Properties
@@ -35,8 +35,8 @@ Class {
 	#classTraits : 'FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait',
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptInterface_body opposite: #bodyParent',
-		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #interfaceDeclarations',
-		'#typeIdentifier => FMOne type: #FASTTypescriptType_identifier opposite: #parentInterface'
+		'#name => FMOne type: #FASTTypescriptType_identifier opposite: #typeIdentifierOwner',
+		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #interfaceDeclarations'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -76,6 +76,29 @@ FASTTypescriptInterface_declaration >> bodyGroup [
 ]
 
 { #category : 'accessing' }
+FASTTypescriptInterface_declaration >> name [
+	"Relation named: #name type: #FASTTypescriptType_identifier opposite: #typeIdentifierOwner"
+
+	<generated>
+	<FMComment: 'My name'>
+	^ name
+]
+
+{ #category : 'accessing' }
+FASTTypescriptInterface_declaration >> name: anObject [
+
+	<generated>
+	name := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptInterface_declaration >> nameGroup [
+	<generated>
+	<navigation: 'Name'>
+	^ MooseSpecializedGroup with: self name
+]
+
+{ #category : 'accessing' }
 FASTTypescriptInterface_declaration >> parentProgram [
 	"Relation named: #parentProgram type: #FASTTypescriptProgram opposite: #interfaceDeclarations"
 
@@ -97,27 +120,4 @@ FASTTypescriptInterface_declaration >> parentProgramGroup [
 	<generated>
 	<navigation: 'ParentProgram'>
 	^ MooseSpecializedGroup with: self parentProgram
-]
-
-{ #category : 'accessing' }
-FASTTypescriptInterface_declaration >> typeIdentifier [
-	"Relation named: #typeIdentifier type: #FASTTypescriptType_identifier opposite: #parentInterface"
-
-	<generated>
-	<FMComment: 'The type identifier that defines me'>
-	^ typeIdentifier
-]
-
-{ #category : 'accessing' }
-FASTTypescriptInterface_declaration >> typeIdentifier: anObject [
-
-	<generated>
-	typeIdentifier := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypescriptInterface_declaration >> typeIdentifierGroup [
-	<generated>
-	<navigation: 'TypeIdentifier'>
-	^ MooseSpecializedGroup with: self typeIdentifier
 ]

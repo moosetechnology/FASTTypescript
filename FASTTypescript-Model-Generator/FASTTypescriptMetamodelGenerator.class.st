@@ -724,10 +724,10 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The enum declaration that contains me').
 
 	"Interface"
-	((_interface_declaration property: #typeIdentifier) comment:
-		 'The type identifier that defines me')
-	<>- ((_type_identifier property: #parentInterface) comment:
-			 'The interface that I define').
+	((_interface_declaration property: #name) comment:
+		 'My name')
+	<>- ((_type_identifier property: #typeIdentifierOwner) comment:
+			 'My owner').
 
 	((_interface_declaration property: #body) comment:
 		 'The body of the interface')
