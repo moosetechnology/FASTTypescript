@@ -350,6 +350,20 @@ export class A extends B<C, D> implements C {}'.
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingImportAlias [
+
+	| res string |
+
+	string := 'import r = X.N;'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptImport_alias parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptImport_alias) isNotEmpty.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingIndexSignature [
 
 	| res string forNode |
