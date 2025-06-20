@@ -621,6 +621,21 @@ type t = readonly (readonly a[]) []'.
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingReturnStatement [
+
+	| res string |
+
+	string := 'export default function point(x: number, y: number) {
+    return { x, y };
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptReturn_statement parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptReturn_statement) isNotEmpty. 
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingStringFragment [
 
 	| res string |
