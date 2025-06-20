@@ -672,6 +672,23 @@ TypescriptParsingClassesTest >> testParsingThis [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingThrowStatement [
+
+	| res string |
+
+	string := 'throw "hello";
+  try { }
+  catch (e) { }
+  finally { }'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptThrow_statement parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptThrow_statement) isNotEmpty.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingTryStatement [
 
 	| res string node |
