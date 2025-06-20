@@ -171,6 +171,7 @@ TypescriptParsingClassesTest >> testParsingConstructorType [
 	"Checking properties of FASTTypescriptConstructor_type"	
 	node := (res allWithType: FASTTypescriptConstructor_type) first.
 	self assert: node type class equals: FASTTypescriptType_identifier.
+	self assert: node parameters class equals: FASTTypescriptFormal_parameters.
 ]
 
 { #category : 'tests' }
