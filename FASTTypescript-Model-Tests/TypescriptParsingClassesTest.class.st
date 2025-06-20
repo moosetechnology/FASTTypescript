@@ -472,6 +472,8 @@ TypescriptParsingClassesTest >> testParsingMethodDefinition [
 	self assert: node name class equals: FASTTypescriptProperty_identifier.
 	self assert: node body class equals: FASTTypescriptStatement_block.
 	self assert: node return_type class equals: FASTTypescriptType_annotation.
+	self assert: node parameters class equals: FASTTypescriptFormal_parameters.
+	
 ]
 
 { #category : 'tests' }

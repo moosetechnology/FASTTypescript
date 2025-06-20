@@ -7,6 +7,7 @@
 |---|
 | `body` | `FASTTypescriptMethod_definition` | `statementBlockOwner` | `FASTTypescriptStatement_block` | My body|
 | `name` | `FASTTypescriptMethod_definition` | `propertyIdentifierOwner` | `FASTTypescriptProperty_identifier` | My name|
+| `parameters` | `FASTTypescriptMethod_definition` | `formalParametersOwner` | `FASTTypescriptFormal_parameters` | My parameters|
 | `return_type` | `FASTTypescriptMethod_definition` | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | My return type in case it exists|
 
 
@@ -18,6 +19,7 @@ Class {
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner',
 		'#name => FMOne type: #FASTTypescriptProperty_identifier opposite: #propertyIdentifierOwner',
+		'#parameters => FMOne type: #FASTTypescriptFormal_parameters opposite: #formalParametersOwner',
 		'#return_type => FMOne type: #FASTTypescriptTOptionalField opposite: #typeAnnotationOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -78,6 +80,29 @@ FASTTypescriptMethod_definition >> nameGroup [
 	<generated>
 	<navigation: 'Name'>
 	^ MooseSpecializedGroup with: self name
+]
+
+{ #category : 'accessing' }
+FASTTypescriptMethod_definition >> parameters [
+	"Relation named: #parameters type: #FASTTypescriptFormal_parameters opposite: #formalParametersOwner"
+
+	<generated>
+	<FMComment: 'My parameters'>
+	^ parameters
+]
+
+{ #category : 'accessing' }
+FASTTypescriptMethod_definition >> parameters: anObject [
+
+	<generated>
+	parameters := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptMethod_definition >> parametersGroup [
+	<generated>
+	<navigation: 'Parameters'>
+	^ MooseSpecializedGroup with: self parameters
 ]
 
 { #category : 'accessing' }

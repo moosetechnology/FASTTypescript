@@ -5,8 +5,8 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptGeneric_type` | The owner of this type arguments|
 | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptNew_expression` | The owner of these type arguments|
+| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptGeneric_type` | The owner of this type arguments|
 
 
 

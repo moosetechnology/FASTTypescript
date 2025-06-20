@@ -747,7 +747,9 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'My body')
 	<>- ((_statement_block property: #statementBlockOwner) comment: 'My owner').
 
-	
+	((_method_definition property: #parameters) comment:
+		 'My parameters')
+	<>- ((_formal_parameters property: #formalParametersOwner) comment: 'My owner'). 
 	
 	"class declaration"
 	((_class_declaration property: #body) comment:
