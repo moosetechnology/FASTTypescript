@@ -490,7 +490,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	
 	_type_annotation --|> tOptionalField.
 	_identifier --|> tOptionalField.
-
+	
 	_identifier --|> tExpression.
 	_expression --|> tExpression.
 	_array_pattern --|> tExpression.
@@ -586,6 +586,11 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'The arguments of the new expression')
 	<>- ((_arguments property: #argumentsOwner) comment:
 			 'The owner of these arguments').
+	
+	((_new_expression property: #type_arguments) comment:
+		 'The type arguments of the new expression if they exist between <>')
+	<>- ((_type_arguments property: #typeArgumentsOwner) comment:
+			 'The owner of these type arguments').
 
 	((_index_signature property: #index_type) comment: 'My type')
 	<>- ((_type_identifier property: #indexSignatureOwner) comment:
