@@ -582,6 +582,29 @@ var x: ({a: any});'.
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingPropertyIdentifier [
+
+	| res string  |
+
+	string := 'declare interface IFoo {
+  bar(): number,
+  baz(): IBaz,
+}
+declare class Linter {
+    static findConfiguration: typeof findConfiguration;
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptProperty_identifier parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptProperty_identifier) isNotEmpty.
+	
+	
+	 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingStringFragment [
 
 	| res string |
