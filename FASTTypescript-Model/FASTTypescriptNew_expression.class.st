@@ -5,6 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `arguments` | `FASTTypescriptNew_expression` | `argumentsOwner` | `FASTTypescriptArguments` | The arguments of the new expression|
 | `constructor` | `FASTTypescriptNew_expression` | `typescriptNewExpressionOwner` | `FASTTypescriptIdentifier` | The constructor of the new expression|
 
 
@@ -14,6 +15,7 @@ Class {
 	#name : 'FASTTypescriptNew_expression',
 	#superclass : 'FASTTypescriptExpression',
 	#instVars : [
+		'#arguments => FMOne type: #FASTTypescriptArguments opposite: #argumentsOwner',
 		'#constructor => FMOne type: #FASTTypescriptIdentifier opposite: #typescriptNewExpressionOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -28,6 +30,29 @@ FASTTypescriptNew_expression class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptNew_expression >> arguments [
+	"Relation named: #arguments type: #FASTTypescriptArguments opposite: #argumentsOwner"
+
+	<generated>
+	<FMComment: 'The arguments of the new expression'>
+	^ arguments
+]
+
+{ #category : 'accessing' }
+FASTTypescriptNew_expression >> arguments: anObject [
+
+	<generated>
+	arguments := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptNew_expression >> argumentsGroup [
+	<generated>
+	<navigation: 'Arguments'>
+	^ MooseSpecializedGroup with: self arguments
 ]
 
 { #category : 'accessing' }

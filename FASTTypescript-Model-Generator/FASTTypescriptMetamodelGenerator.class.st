@@ -581,6 +581,11 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'The constructor of the new expression')
 	<>- ((_identifier property: #typescriptNewExpressionOwner) comment:
 			 'The owner of this constructor').
+			
+	((_new_expression property: #arguments) comment:
+		 'The arguments of the new expression')
+	<>- ((_arguments property: #argumentsOwner) comment:
+			 'The owner of these arguments').
 
 	((_index_signature property: #index_type) comment: 'My type')
 	<>- ((_type_identifier property: #indexSignatureOwner) comment:
