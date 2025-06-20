@@ -5,9 +5,10 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
 | `indexSignatureOwner` | `FASTTypescriptType_annotation` | `type` | `FASTTypescriptIndex_signature` | The owner of this annotation type|
 | `optionalParameterOwner` | `FASTTypescriptType_annotation` | `type` | `FASTTypescriptOptional_parameter` | The owner of this type annotation|
-| `returnTypeOwner` | `FASTTypescriptTReturnType` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
+| `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
 
 
 
@@ -15,8 +16,8 @@
 Class {
 	#name : 'FASTTypescriptType_annotation',
 	#superclass : 'FASTTypescriptEntity',
-	#traits : 'FASTTypescriptTReturnType',
-	#classTraits : 'FASTTypescriptTReturnType classTrait',
+	#traits : 'FASTTypescriptTOptionalField',
+	#classTraits : 'FASTTypescriptTOptionalField classTrait',
 	#instVars : [
 		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #type',
 		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptional_parameter opposite: #type'

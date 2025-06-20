@@ -7,7 +7,7 @@
 |---|
 | `body` | `FASTTypescriptMethod_definition` | `statementBlockOwner` | `FASTTypescriptStatement_block` | My body|
 | `name` | `FASTTypescriptMethod_definition` | `propertyIdentifierOwner` | `FASTTypescriptProperty_identifier` | My name|
-| `return_type` | `FASTTypescriptMethod_definition` | `returnTypeOwner` | `FASTTypescriptTReturnType` | My return type in case it exists|
+| `return_type` | `FASTTypescriptMethod_definition` | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | My return type in case it exists|
 
 
 
@@ -18,7 +18,7 @@ Class {
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner',
 		'#name => FMOne type: #FASTTypescriptProperty_identifier opposite: #propertyIdentifierOwner',
-		'#return_type => FMOne type: #FASTTypescriptTReturnType opposite: #returnTypeOwner'
+		'#return_type => FMOne type: #FASTTypescriptTOptionalField opposite: #typeAnnotationOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -82,7 +82,7 @@ FASTTypescriptMethod_definition >> nameGroup [
 
 { #category : 'accessing' }
 FASTTypescriptMethod_definition >> return_type [
-	"Relation named: #return_type type: #FASTTypescriptTReturnType opposite: #returnTypeOwner"
+	"Relation named: #return_type type: #FASTTypescriptTOptionalField opposite: #typeAnnotationOwner"
 
 	<generated>
 	<FMComment: 'My return type in case it exists'>

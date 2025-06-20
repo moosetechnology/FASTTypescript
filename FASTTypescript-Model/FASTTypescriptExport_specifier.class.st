@@ -5,6 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `alias` | `FASTTypescriptExport_specifier` | `identifierOwner` | `FASTTypescriptTOptionalField` | My alias in case it exists|
 | `name` | `FASTTypescriptExport_specifier` | `exportSpecifierOwner` | `FASTTypescriptIdentifier` | name|
 
 
@@ -14,6 +15,7 @@ Class {
 	#name : 'FASTTypescriptExport_specifier',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
+		'#alias => FMOne type: #FASTTypescriptTOptionalField opposite: #identifierOwner',
 		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #exportSpecifierOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -28,6 +30,29 @@ FASTTypescriptExport_specifier class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptExport_specifier >> alias [
+	"Relation named: #alias type: #FASTTypescriptTOptionalField opposite: #identifierOwner"
+
+	<generated>
+	<FMComment: 'My alias in case it exists'>
+	^ alias
+]
+
+{ #category : 'accessing' }
+FASTTypescriptExport_specifier >> alias: anObject [
+
+	<generated>
+	alias := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptExport_specifier >> aliasGroup [
+	<generated>
+	<navigation: 'Alias'>
+	^ MooseSpecializedGroup with: self alias
 ]
 
 { #category : 'accessing' }

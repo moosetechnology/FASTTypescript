@@ -196,7 +196,8 @@ Class {
 		'_ERROR',
 		'tExpression',
 		'tWithParameters',
-		'tReturnType'
+		'tReturnType',
+		'tOptionalField'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -487,7 +488,8 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_enum_declaration --|> tWithModifiers.
 	_enum_declaration --|> tStatement.
 	
-	_type_annotation --|> tReturnType.
+	_type_annotation --|> tOptionalField.
+	_identifier --|> tOptionalField.
 
 	_identifier --|> tExpression.
 	_expression --|> tExpression.
@@ -705,9 +707,13 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>-
 	((_identifier property: #exportSpecifierOwner) comment: 'My owner').
 	
+	((_export_specifier property: #alias) comment:
+		 'My alias in case it exists')
+	<>- ((tOptionalField property: #identifierOwner) comment: 'My owner').
+	
 	((_method_definition property: #return_type) comment:
 		 'My return type in case it exists')
-	<>- ((tReturnType property: #returnTypeOwner) comment: 'My owner').
+	<>- ((tOptionalField property: #typeAnnotationOwner) comment: 'My owner').
 	
 	((_method_definition property: #name) comment:
 		 'My name')
@@ -717,6 +723,8 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'My body')
 	<>- ((_statement_block property: #statementBlockOwner) comment: 'My owner').
 
+	
+	
 	"class declaration"
 	((_class_declaration property: #body) comment:
 		 'The body of the class')
@@ -788,6 +796,7 @@ FASTTypescriptMetamodelGenerator >> defineTraits [
 	tExpression := self remoteTrait: #TExpression withPrefix: #FAST. 	
 	tWithParameters := self remoteTrait: #TWithParameters withPrefix: #FAST.
 	tReturnType := self newTraitNamed: #TReturnType comment: 'I am a Return Type in Typescript'.
+	tOptionalField := self newTraitNamed: #TOptionalField comment: 'I represent optional field in Typescript'.
 
 
 
