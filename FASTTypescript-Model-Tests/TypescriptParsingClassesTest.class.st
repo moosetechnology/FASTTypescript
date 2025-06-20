@@ -564,6 +564,24 @@ TypescriptParsingClassesTest >> testParsingOptionalParameter [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingParenthesizedType [
+
+	| res string  |
+
+	string := 'var x: (string);
+var x: ({a: any});'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptParenthesized_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptParenthesized_type ) isNotEmpty.
+	
+	
+	 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingStringFragment [
 
 	| res string |
