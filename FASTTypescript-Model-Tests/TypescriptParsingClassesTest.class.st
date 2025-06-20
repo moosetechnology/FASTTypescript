@@ -206,6 +206,30 @@ TypescriptParsingClassesTest >> testParsingExportClause [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingExportSpecifier [
+
+	| res string node node2|
+
+	string := 'export type { UserType } from "./User.js";
+export type {A as B } from ''mymodule'';'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptExport_specifier parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptExport_specifier) isNotEmpty. 
+		
+	"Checking properties of FASTTypescriptExport_specifier"	
+	node := (res allWithType: FASTTypescriptExport_specifier) first.
+	self assert: node name class equals: FASTTypescriptIdentifier. 
+	
+	"Checking properties of FASTTypescriptExport_specifier"	
+	node2 := (res allWithType: FASTTypescriptExport_specifier) second.
+	self assert: node2 name class equals: FASTTypescriptIdentifier. 
+	self assert: node2 alias class equals: FASTTypescriptIdentifier. 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
 
 	| res string node |
