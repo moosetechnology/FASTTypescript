@@ -762,6 +762,21 @@ TypescriptParsingClassesTest >> testParsingUnaryExpression [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingUnionType [
+
+	| res string |
+
+	string := 'type U = number | string;
+type Z = | "foo" | "bar";
+type Z = | "foo";'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptUnion_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptUnion_type) isNotEmpty.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingWithStatement [
 
 	| res string node |
