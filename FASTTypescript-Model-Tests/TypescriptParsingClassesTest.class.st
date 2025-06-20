@@ -24,6 +24,23 @@ TypescriptParsingClassesTest >> tearDown [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingArray [
+
+	| res string  |
+
+	string := '[, a, , b, , , , s, , , ]'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptArray parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptArray) isNotEmpty.
+	
+	
+	 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingAugmentedAssignmentExpression [
 
 	| res string node |
