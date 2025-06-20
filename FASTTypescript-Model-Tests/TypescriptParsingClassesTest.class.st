@@ -165,6 +165,7 @@ TypescriptParsingClassesTest >> testParsingForInStatement [
 	forNode := (res allWithType: FASTTypescriptFor_in_statement) first.
 	self assert: forNode right class equals: FASTTypescriptIdentifier.
 	self assert: forNode left class equals: FASTTypescriptIdentifier.
+	self assert: forNode body class equals: FASTTypescriptStatement_block.
 ]
 
 { #category : 'tests' }
