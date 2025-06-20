@@ -124,6 +124,26 @@ TypescriptParsingClassesTest >> testParsingClassHeritage [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingConditionalType [
+
+	| res string node |
+
+	string := 'type F<T, X, Y> = ((t: T) => X extends Y ? X : Y) extends ((t: T) => X extends Y ? Y : X) ? X : Y'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptConditional_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptConditional_type) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptConditional_type"	
+	node := (res allWithType: FASTTypescriptConditional_type) first.
+	self assert: node right class equals: FASTTypescriptParenthesized_type.
+	self assert: node left class equals: FASTTypescriptParenthesized_type.
+	self assert: node consequence class equals: FASTTypescriptType_identifier.
+	self assert: node alternative class equals: FASTTypescriptType_identifier.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingConstructorType [
 
 	| res string node |
