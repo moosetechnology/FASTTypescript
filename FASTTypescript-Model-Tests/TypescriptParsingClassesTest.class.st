@@ -282,8 +282,7 @@ TypescriptParsingClassesTest >> testParsingFunctionType [
 	"Checking properties of FASTTypescriptFunction_type"
 	forNode := (res allWithType: FASTTypescriptFunction_type) first.
 	self assert: forNode return_type class equals: FASTTypescriptPredefined_type.
-	
-	"parameters should be tested also"
+	self assert: forNode parameters class equals: FASTTypescriptFormal_parameters.
 	
 ]
 

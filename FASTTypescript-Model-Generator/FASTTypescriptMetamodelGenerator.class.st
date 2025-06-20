@@ -608,6 +608,10 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((tExpression property: #functionTypeOwner) comment:
 			 'The owner of this type').
 
+	((_function_type property: #parameters) comment: 'My parameters')
+	<>- ((_formal_parameters property: #formalParametersOwner) comment:
+			 'My owner').
+
 	((_unary_expression property: #argument) comment: 'My argument')
 	<>- ((tExpression property: #unaryExpressionOwner) comment:
 			 'The owner of this class').
