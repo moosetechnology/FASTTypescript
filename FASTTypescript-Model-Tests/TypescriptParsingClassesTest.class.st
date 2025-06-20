@@ -728,6 +728,23 @@ TypescriptParsingClassesTest >> testParsingTypeIdentifier [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingTypePredicateAnnotation [
+
+	| res string |
+
+	string := 'function isFish(pet: Fish): pet is Fish {
+} 
+function isFish(object: Fish): object is Fish {
+}'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptType_predicate_annotation parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptType_predicate_annotation) isNotEmpty.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingUnaryExpression [
 
 	| res string node |
