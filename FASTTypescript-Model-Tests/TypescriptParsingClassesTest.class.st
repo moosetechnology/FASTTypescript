@@ -120,6 +120,19 @@ TypescriptParsingClassesTest >> testParsingEmptyStatement [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingExportClause [
+
+	| res string |
+
+	string := 'export type { UserType }'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptExport_clause parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptExport_clause) isNotEmpty. 
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
 
 	| res string node |
