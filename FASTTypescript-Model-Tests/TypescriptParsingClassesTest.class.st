@@ -330,6 +330,26 @@ TypescriptParsingClassesTest >> testParsingIfStatement [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingImplementsClause [
+
+	| res string |
+
+	string := 'class A extends B<C>(D) implements C {}
+export class A extends B<C>(D) implements C {}
+
+class A extends B<C>(D)<E> implements C {}
+export class A extends B<C>(D)<E> implements C {}
+
+export class A extends B<C, D> implements C {}'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptType_predicate_annotation parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptImplements_clause) isNotEmpty.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingIndexSignature [
 
 	| res string forNode |
