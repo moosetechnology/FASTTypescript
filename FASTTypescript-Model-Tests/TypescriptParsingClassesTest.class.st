@@ -711,6 +711,23 @@ TypescriptParsingClassesTest >> testParsingTryStatement [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingTypeIdentifier [
+
+	| res string |
+
+	string := 'declare interface IFoo {
+  bar(): number,
+  baz(): IBaz,
+}'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptType_identifier parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptType_identifier) isNotEmpty.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingUnaryExpression [
 
 	| res string node |
