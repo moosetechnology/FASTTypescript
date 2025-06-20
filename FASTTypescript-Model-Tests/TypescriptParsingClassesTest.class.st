@@ -62,7 +62,7 @@ TypescriptParsingClassesTest >> testParsingBinaryExpression [
 { #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingClassDeclaration [
 
-	| res string classNode |
+	| res string node |
 
 	string := 'class SimpleClass {}'.
 	res := parser parse: string.
@@ -71,10 +71,10 @@ TypescriptParsingClassesTest >> testParsingClassDeclaration [
 	self assert:
 		(res allWithType: FASTTypescriptClass_declaration) isNotEmpty.
 	
-	"Checking properties of FASTTypescriptFor_in_statement"	
-	classNode := (res allWithType: FASTTypescriptClass_declaration) first.
-	"self assert: forNode right class equals: FASTTypescriptIdentifier.
-	self assert: forNode left class equals: FASTTypescriptIdentifier."
+	"Checking properties of FASTTypescriptClass_declaration"	
+	node := (res allWithType: FASTTypescriptClass_declaration) first.
+	self assert: node name class equals: FASTTypescriptType_identifier.
+	self assert: node body class equals: FASTTypescriptClass_body.
 ]
 
 { #category : 'tests' }
