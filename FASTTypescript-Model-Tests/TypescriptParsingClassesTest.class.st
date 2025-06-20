@@ -510,6 +510,23 @@ TypescriptParsingClassesTest >> testParsingNewExpression [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingObject [
+
+	| res string  |
+
+	string := 'x = { name, description, private: private_ }'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptObject parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptObject ) isNotEmpty.
+	
+	
+	 
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingOptionalParameter [
 
 	| res string node |
