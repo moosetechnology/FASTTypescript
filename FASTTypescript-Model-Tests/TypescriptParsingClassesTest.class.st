@@ -230,6 +230,24 @@ TypescriptParsingClassesTest >> testParsingNestedIdentifier [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingNewExpression [
+
+	| res string node |
+
+	string := 'const date = new Date();'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptNew_expression parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptNew_expression) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptNew_expression"	
+	node := (res allWithType: FASTTypescriptNew_expression) first.
+	self assert: node constructor class equals: FASTTypescriptIdentifier.
+	
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingOptionalParameter [
 
 	| res string node |
