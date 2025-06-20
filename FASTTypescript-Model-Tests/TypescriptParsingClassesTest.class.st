@@ -271,8 +271,8 @@ TypescriptParsingClassesTest >> testParsingFunctionType [
 	| res string forNode |
 
 	string := 'declare namespace moment {
-  type formatFunction = () => string;
-}'.
+  					type formatFunction = () => string;
+				}'.
 	res := parser parse: string.
 
 	"Checking if FASTTypescriptFunction_type parsed correctly"
