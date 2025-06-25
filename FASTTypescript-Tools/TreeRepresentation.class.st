@@ -3,23 +3,22 @@ Class {
 	#superclass : 'Object',
 	#instVars : [
 		'treeSitterTree',
-		'fastTypesctiptTree',
-		'uriDocument'
+		'fastTree'
 	],
 	#category : 'FASTTypescript-Tools',
 	#package : 'FASTTypescript-Tools'
 }
 
 { #category : 'accessing' }
-TreeRepresentation >> fastTypesctiptTree [
+TreeRepresentation >> fastTree [
 
-	^ fastTypesctiptTree
+	^ fastTree
 ]
 
 { #category : 'accessing' }
-TreeRepresentation >> fastTypesctiptTree: anObject [
+TreeRepresentation >> fastTree: anObject [
 
-	fastTypesctiptTree := anObject
+	fastTree := anObject
 ]
 
 { #category : 'accessing' }
@@ -32,16 +31,4 @@ TreeRepresentation >> treeSitterTree [
 TreeRepresentation >> treeSitterTree: anObject [
 
 	treeSitterTree := anObject
-]
-
-{ #category : 'accessing' }
-TreeRepresentation >> uriDocument [
-
-	^ uriDocument
-]
-
-{ #category : 'accessing' }
-TreeRepresentation >> uriDocument: anObject [
-
-	uriDocument := anObject
 ]
