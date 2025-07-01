@@ -5,8 +5,11 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptNew_expression` | The owner of these type arguments|
+| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
+| `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
 | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptGeneric_type` | The owner of this type arguments|
+| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptNew_expression` | The owner of these type arguments|
+| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptExtends_clause` | My owner|
 
 
 
@@ -14,6 +17,8 @@
 Class {
 	#name : 'FASTTypescriptType_arguments',
 	#superclass : 'FASTTypescriptEntity',
+	#traits : 'FASTTypescriptTOptionalField',
+	#classTraits : 'FASTTypescriptTOptionalField classTrait',
 	#instVars : [
 		'#typeArgumentsOwner => FMOne type: #FASTTypescriptNew_expression opposite: #type_arguments'
 	],

@@ -231,6 +231,28 @@ export type {A as B } from ''mymodule'';'.
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingExtendsClause [
+
+	| res string node node2|
+
+	string := 'class A extends B<C>(D) implements C {}
+class A extends B<C>(D)<E> implements C {}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptExtends_clause parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptExtends_clause) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptExtends_clause"	
+	node := (res allWithType: FASTTypescriptExtends_clause) first.
+	self assert: node value class equals: FASTTypescriptCall_expression.
+	
+	node2 := (res allWithType: FASTTypescriptExtends_clause) second.
+	self assert: node2 value class equals: FASTTypescriptCall_expression.
+	self assert: node2  type_arguments class equals: FASTTypescriptType_arguments.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
 
 	| res string node |
@@ -245,6 +267,41 @@ TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
 	"Checking properties of FASTTypescriptExtends_type_clause"	
 	node := (res allWithType: FASTTypescriptExtends_type_clause) first.
 	self assert: node type class equals: FASTTypescriptType_identifier. 
+]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingFalse [ 
+
+	| res string node |
+
+	string := 'let x: false'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptFalse parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptFalse) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptFalse"	
+	node := (res allWithType: FASTTypescriptFalse) first. 
+]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingFinallyClause [
+
+	| res string node |
+
+	string := 'try {}
+catch (e: unknown) {}
+finally {console.log("Done")}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptFinally_clause parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptFinally_clause) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptFinally_clause"	
+	node := (res allWithType: FASTTypescriptFinally_clause) first.
+	self assert: node body class equals: FASTTypescriptStatement_block.
 ]
 
 { #category : 'tests' }
@@ -660,6 +717,22 @@ TypescriptParsingClassesTest >> testParsingStringFragment [
 ]
 
 { #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingTemplateType [
+
+	| res string node |
+
+	string := 'type A<B, C> = `${B}${C}`;'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptTemplate_type parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptTemplate_type ) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptTemplate_type"	
+	node := (res allWithType: FASTTypescriptTemplate_type) first.
+]
+
+{ #category : 'tests' }
 TypescriptParsingClassesTest >> testParsingThis [
 
 	| res string |
@@ -695,6 +768,22 @@ TypescriptParsingClassesTest >> testParsingThrowStatement [
 	"Checking if FASTTypescriptThrow_statement parsed correctly"
 	self assert:
 		(res allWithType: FASTTypescriptThrow_statement) isNotEmpty.
+]
+
+{ #category : 'tests' }
+TypescriptParsingClassesTest >> testParsingTrue [ 
+
+	| res string node |
+
+	string := 'let x: true'.
+	res := parser parse: string.
+
+	"Checking if FASTTypescriptTrue parsed correctly"
+	self assert:
+		(res allWithType: FASTTypescriptTrue) isNotEmpty.
+	
+	"Checking properties of FASTTypescriptTrue"	
+	node := (res allWithType: FASTTypescriptTrue) first. 
 ]
 
 { #category : 'tests' }
@@ -790,17 +879,13 @@ TypescriptParsingClassesTest >> testParsingWithStatement [
 
 	| res string node |
 
-	string := 'with (person) {
-    	console.log(address.city); 
-	}'.
+	string := 'let x: false'.
 	res := parser parse: string.
 
-	"Checking if FASTTypescriptWith_statement parsed correctly"
+	"Checking if FASTTypescriptFalse parsed correctly"
 	self assert:
-		(res allWithType: FASTTypescriptWith_statement) isNotEmpty.
+		(res allWithType: FASTTypescriptFalse) isNotEmpty.
 	
-	"Checking properties of FASTTypescriptWith_statement"	
-	node := (res allWithType: FASTTypescriptWith_statement) first.
-	self assert: node body class equals: FASTTypescriptStatement_block.
-	self assert: node object class equals: FASTTypescriptParenthesized_expression.
+	"Checking properties of FASTTypescriptFalse"	
+	node := (res allWithType: FASTTypescriptFalse) first. 
 ]

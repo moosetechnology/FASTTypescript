@@ -7,6 +7,11 @@
 |---|
 | `tryStatementOwner` | `FASTTypescriptFinally_clause` | `finalizer` | `FASTTypescriptTry_statement` | Try statement owner|
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `body` | `FASTTypescriptFinally_clause` | `statementBlockOwner` | `FASTTypescriptStatement_block` | My body|
+
 
 
 "
@@ -14,6 +19,7 @@ Class {
 	#name : 'FASTTypescriptFinally_clause',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
+		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner',
 		'#tryStatementOwner => FMOne type: #FASTTypescriptTry_statement opposite: #finalizer'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -28,6 +34,29 @@ FASTTypescriptFinally_clause class >> annotation [
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'accessing' }
+FASTTypescriptFinally_clause >> body [
+	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #statementBlockOwner"
+
+	<generated>
+	<FMComment: 'My body'>
+	^ body
+]
+
+{ #category : 'accessing' }
+FASTTypescriptFinally_clause >> body: anObject [
+
+	<generated>
+	body := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypescriptFinally_clause >> bodyGroup [
+	<generated>
+	<navigation: 'Body'>
+	^ MooseSpecializedGroup with: self body
 ]
 
 { #category : 'accessing' }

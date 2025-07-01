@@ -490,6 +490,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	
 	_type_annotation --|> tOptionalField.
 	_identifier --|> tOptionalField.
+	_type_arguments --|> tOptionalField.
 	
 	_identifier --|> tExpression.
 	_expression --|> tExpression.
@@ -750,6 +751,18 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_method_definition property: #parameters) comment:
 		 'My parameters')
 	<>- ((_formal_parameters property: #formalParametersOwner) comment: 'My owner'). 
+	
+	((_finally_clause property: #body) comment:
+		 'My body')
+	<>- ((_statement_block property: #statementBlockOwner) comment: 'My owner'). 
+	
+	((_extends_clause property: #value) comment:
+		 'My value')
+	<>- ((_identifier property: #identifierOwner) comment: 'My owner'). 
+	
+	((_extends_clause property: #type_arguments) comment:
+		 'My arguments')
+	<>- ((_type_arguments property: #typeArgumentsOwner) comment: 'My owner'). 
 	
 	"class declaration"
 	((_class_declaration property: #body) comment:
