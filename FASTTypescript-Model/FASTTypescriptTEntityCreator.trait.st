@@ -1008,10 +1008,10 @@ FASTTypescriptTEntityCreator >> newShorthand_property_identifier_pattern [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newSpread_element [
+FASTTypescriptTEntityCreator >> newSpreadElement [
 
 	<generated>
-	^ self add: FASTTypescriptSpread_element new
+	^ self add: FASTTypescriptSpreadElement new
 ]
 
 { #category : 'entity creation' }
