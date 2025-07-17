@@ -66,7 +66,6 @@ Class {
 		'_regex_pattern',
 		'_omitting_type_annotation',
 		'_else_clause',
-		'_comment',
 		'_this_type',
 		'_with_statement',
 		'_asserts',
@@ -197,7 +196,8 @@ Class {
 		'boolean',
 		'module',
 		'pair',
-		'null'
+		'null',
+		'comment'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -233,7 +233,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	_escape_sequence := builder ensureClassNamed: #Escape_sequence.
-	_comment := builder ensureClassNamed: #Comment.
+	comment := builder ensureClassNamed: #Comment.
 	_regex_pattern := builder ensureClassNamed: #Regex_pattern.
 	_regex_flags := builder ensureClassNamed: #Regex_flags.
 	number := builder ensureClassNamed: #Number.
