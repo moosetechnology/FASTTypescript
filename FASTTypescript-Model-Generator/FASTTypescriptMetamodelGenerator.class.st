@@ -64,7 +64,6 @@ Class {
 		'_variable_declarator',
 		'_class_heritage',
 		'_regex_pattern',
-		'_null',
 		'_omitting_type_annotation',
 		'_else_clause',
 		'_comment',
@@ -197,7 +196,8 @@ Class {
 		'class',
 		'boolean',
 		'module',
-		'pair'
+		'pair',
+		'null'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -246,7 +246,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_true := builder ensureClassNamed: #True.
 	_false := builder ensureClassNamed: #False.
 	
-	_null := builder ensureClassNamed: #Null.
+	null := builder ensureClassNamed: #Null.
 	_undefined := builder ensureClassNamed: #Undefined.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	_html_comment := builder ensureClassNamed: #Html_comment.
@@ -452,7 +452,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 
 	number --|> _literal.
 	_string --|> _literal.
-	_null --|> _literal.
+	null --|> _literal.
 	boolean --|> _literal.
 	_true --|> boolean.
 	_false --|> boolean.
@@ -463,7 +463,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_literal --|> tLiteral.
 	_string --|> #TStringLiteral.
 	boolean --|> #TBooleanLiteral.
-	_null --|> #TNullPointerLiteral.
+	null --|> #TNullPointerLiteral.
 
 	program --|> tEntity.
 	program --|> #THasImmediateSource.
