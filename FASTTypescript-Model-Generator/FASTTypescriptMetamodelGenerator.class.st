@@ -149,7 +149,6 @@ Class {
 		'_super',
 		'_update_expression',
 		'_html_comment',
-		'_string',
 		'_enum_assignment',
 		'_namespace_export',
 		'_required_parameter',
@@ -197,7 +196,8 @@ Class {
 		'undefined',
 		'object',
 		'arguments',
-		'this'
+		'this',
+		'string'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -323,7 +323,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_unary_expression := builder ensureClassNamed: #Unary_expression.
 	_update_expression := builder ensureClassNamed: #Update_expression.
 	_sequence_expression := builder ensureClassNamed: #Sequence_expression.
-	_string := builder ensureClassNamed: #String.
+	string := builder ensureClassNamed: #String.
 	_template_string := builder ensureClassNamed: #Template_string.
 	_template_substitution := builder ensureClassNamed: #Template_substitution.
 	regex := builder ensureClassNamed: #Regex.
@@ -451,7 +451,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	program --|> tEntity.
 
 	number --|> _literal.
-	_string --|> _literal.
+	string --|> _literal.
 	null --|> _literal.
 	boolean --|> _literal.
 	_true --|> boolean.
@@ -461,7 +461,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 
 	"Traits"
 	_literal --|> tLiteral.
-	_string --|> #TStringLiteral.
+	string --|> #TStringLiteral.
 	boolean --|> #TBooleanLiteral.
 	null --|> #TNullPointerLiteral.
 
