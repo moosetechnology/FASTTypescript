@@ -102,7 +102,6 @@ Class {
 		'_instantiation_expression',
 		'_member_expression',
 		'_implements_clause',
-		'_undefined',
 		'_call_expression',
 		'_ambient_declaration',
 		'_template_type',
@@ -197,7 +196,8 @@ Class {
 		'asserts',
 		'decorator',
 		'identifier',
-		'array'
+		'array',
+		'undefined'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -247,7 +247,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_false := builder ensureClassNamed: #False.
 	
 	null := builder ensureClassNamed: #Null.
-	_undefined := builder ensureClassNamed: #Undefined.
+	undefined := builder ensureClassNamed: #Undefined.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	_html_comment := builder ensureClassNamed: #Html_comment.
 	_jsx_text := builder ensureClassNamed: #Jsx_text.
@@ -510,7 +510,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_this --|> tExpression.
 	_super --|> tExpression.
 	array --|> tExpression.
-	_undefined --|> tExpression.
+	undefined --|> tExpression.
 	regex --|> tExpression.
 
 	_binary_expression --|> expression.
