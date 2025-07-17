@@ -16,7 +16,6 @@ Class {
 		'_type_parameters',
 		'_as_expression',
 		'_do_statement',
-		'_regex',
 		'_type_assertion',
 		'_lookup_type',
 		'_lexical_declaration',
@@ -197,7 +196,8 @@ Class {
 		'expression',
 		'constraint',
 		'number',
-		'import'
+		'import',
+		'regex'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -326,7 +326,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_string := builder ensureClassNamed: #String.
 	_template_string := builder ensureClassNamed: #Template_string.
 	_template_substitution := builder ensureClassNamed: #Template_substitution.
-	_regex := builder ensureClassNamed: #Regex.
+	regex := builder ensureClassNamed: #Regex.
 	_meta_property := builder ensureClassNamed: #Meta_property.
 	_arguments := builder ensureClassNamed: #Arguments.
 	_decorator := builder ensureClassNamed: #Decorator.
@@ -511,7 +511,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_super --|> tExpression.
 	_array --|> tExpression.
 	_undefined --|> tExpression.
-	_regex --|> tExpression.
+	regex --|> tExpression.
 
 	_binary_expression --|> expression.
 	_unary_expression --|> expression.
