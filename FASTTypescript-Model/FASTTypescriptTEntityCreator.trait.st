@@ -903,10 +903,10 @@ FASTTypescriptTEntityCreator >> newProgram [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newProperty_identifier [
+FASTTypescriptTEntityCreator >> newPropertyIdentifier [
 
 	<generated>
-	^ self add: FASTTypescriptProperty_identifier new
+	^ self add: FASTTypescriptPropertyIdentifier new
 ]
 
 { #category : 'entity creation' }

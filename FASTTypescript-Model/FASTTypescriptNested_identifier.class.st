@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `object` | `FASTTypescriptNested_identifier` | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | My object as identifier|
-| `property` | `FASTTypescriptNested_identifier` | `nestedIdentifierOwner` | `FASTTypescriptProperty_identifier` | My property as property identifier|
+| `property` | `FASTTypescriptNested_identifier` | `nestedIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | My property as property identifier|
 
 
 
@@ -16,7 +16,7 @@ Class {
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#object => FMOne type: #FASTTypescriptIdentifier opposite: #nestedIdentifierOwner',
-		'#property => FMOne type: #FASTTypescriptProperty_identifier opposite: #nestedIdentifierOwner'
+		'#property => FMOne type: #FASTTypescriptPropertyIdentifier opposite: #nestedIdentifierOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -57,7 +57,7 @@ FASTTypescriptNested_identifier >> objectGroup [
 
 { #category : 'accessing' }
 FASTTypescriptNested_identifier >> property [
-	"Relation named: #property type: #FASTTypescriptProperty_identifier opposite: #nestedIdentifierOwner"
+	"Relation named: #property type: #FASTTypescriptPropertyIdentifier opposite: #nestedIdentifierOwner"
 
 	<generated>
 	<FMComment: 'My property as property identifier'>

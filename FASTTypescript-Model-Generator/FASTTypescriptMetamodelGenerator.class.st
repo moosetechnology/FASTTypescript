@@ -531,7 +531,8 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_subscript_expression --|> _expression.
 	_ternary_expression --|> _expression.
 	_update_expression --|> _expression.
-	_yield_expression --|> _expression
+	_yield_expression --|> _expression.
+	_object --|> _expression.
 
 	"_function_type  --|> tWithParameters.	"
 ]
