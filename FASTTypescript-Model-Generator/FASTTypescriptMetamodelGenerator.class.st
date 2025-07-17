@@ -146,7 +146,6 @@ Class {
 		'_variable_declaration',
 		'_export_specifier',
 		'_intersection_type',
-		'_this',
 		'_super',
 		'_update_expression',
 		'_html_comment',
@@ -197,7 +196,8 @@ Class {
 		'array',
 		'undefined',
 		'object',
-		'arguments'
+		'arguments',
+		'this'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -238,7 +238,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_regex_flags := builder ensureClassNamed: #Regex_flags.
 	number := builder ensureClassNamed: #Number.
 	_private_property_identifier := builder ensureClassNamed: #Private_property_identifier.
-	_this := builder ensureClassNamed: #This.
+	this := builder ensureClassNamed: #This.
 	_super := builder ensureClassNamed: #Super.
 	
 	_literal := builder ensureClassNamed: #Literal.
@@ -507,7 +507,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_private_property_identifier --|> tExpression.
 	propertyIdentifier --|> tExpression.
 	class --|> tExpression.
-	_this --|> tExpression.
+	this --|> tExpression.
 	_super --|> tExpression.
 	array --|> tExpression.
 	undefined --|> tExpression.
