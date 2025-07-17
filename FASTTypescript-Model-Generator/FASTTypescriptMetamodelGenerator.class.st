@@ -108,7 +108,6 @@ Class {
 		'_infer_type',
 		'_if_statement',
 		'_named_imports',
-		'_object',
 		'_object_pattern',
 		'_await_expression',
 		'_pair_pattern',
@@ -197,7 +196,8 @@ Class {
 		'decorator',
 		'identifier',
 		'array',
-		'undefined'
+		'undefined',
+		'object'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -291,7 +291,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_finally_clause := builder ensureClassNamed: #Finally_clause.
 	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
 	_yield_expression := builder ensureClassNamed: #Yield_expression.
-	_object := builder ensureClassNamed: #Object.
+	object := builder ensureClassNamed: #Object.
 	_object_pattern := builder ensureClassNamed: #Object_pattern.
 	_assignment_pattern := builder ensureClassNamed: #Assignment_pattern.
 	_object_assignment_pattern := builder ensureClassNamed: #Object_assignment_pattern.
@@ -532,7 +532,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_ternary_expression --|> expression.
 	_update_expression --|> expression.
 	_yield_expression --|> expression.
-	_object --|> expression.
+	object --|> expression.
 
 	"_function_type  --|> tWithParameters.	"
 ]
