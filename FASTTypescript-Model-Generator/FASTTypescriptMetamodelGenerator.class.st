@@ -100,7 +100,6 @@ Class {
 		'_type_parameter',
 		'_template_substitution',
 		'_instantiation_expression',
-		'_identifier',
 		'_array',
 		'_member_expression',
 		'_implements_clause',
@@ -197,7 +196,8 @@ Class {
 		'null',
 		'comment',
 		'asserts',
-		'decorator'
+		'decorator',
+		'identifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -228,7 +228,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 
 	program := builder ensureClassNamed: #Program.
 	
-	_identifier := builder ensureClassNamed: #Identifier.
+	identifier := builder ensureClassNamed: #Identifier.
 	_hash_bang_line := builder ensureClassNamed: #Hash_bang_line.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
@@ -489,10 +489,10 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_enum_declaration --|> tStatement.
 	
 	_type_annotation --|> tOptionalField.
-	_identifier --|> tOptionalField.
+	identifier --|> tOptionalField.
 	_type_arguments --|> tOptionalField.
 	
-	_identifier --|> tExpression.
+	identifier --|> tExpression.
 	expression --|> tExpression.
 	_array_pattern --|> tExpression.
 	_type_identifier --|> tExpression.
@@ -581,7 +581,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_new_expression property: #constructor) comment:
 		 'The constructor of the new expression')
-	<>- ((_identifier property: #typescriptNewExpressionOwner) comment:
+	<>- ((identifier property: #typescriptNewExpressionOwner) comment:
 			 'The owner of this constructor').
 			
 	((_new_expression property: #arguments) comment:
@@ -603,7 +603,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The owner of this annotation type').
 	
 	((_index_signature property: #name) comment: 'My name')
-	<>- ((_identifier property: #identifierOwner) comment:
+	<>- ((identifier property: #identifierOwner) comment:
 			 'The owner of this identifier').
 
 	((_function_type property: #return_type) comment: 'My return type')
@@ -635,7 +635,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_nested_identifier property: #object) comment:
 		 'My object as identifier')
-	<>- ((_identifier property: #nestedIdentifierOwner) comment:
+	<>- ((identifier property: #nestedIdentifierOwner) comment:
 			 'The owner of this identifier').
 
 	((_nested_identifier property: #property) comment:
@@ -671,7 +671,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_optional_parameter property: #pattern) comment:
 		 'My pattern as identifier')
-	<>- ((_identifier property: #optionalParameterOwner) comment:
+	<>- ((identifier property: #optionalParameterOwner) comment:
 			 'The owner of this identifier').
 
 	((_if_statement property: #condition) comment:
@@ -731,7 +731,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_export_specifier property: #name) comment: 'name')
 	<>-
-	((_identifier property: #exportSpecifierOwner) comment: 'My owner').
+	((identifier property: #exportSpecifierOwner) comment: 'My owner').
 	
 	((_export_specifier property: #alias) comment:
 		 'My alias in case it exists')
@@ -759,7 +759,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((_extends_clause property: #value) comment:
 		 'My value')
-	<>- ((_identifier property: #identifierOwner) comment: 'My owner'). 
+	<>- ((identifier property: #identifierOwner) comment: 'My owner'). 
 	
 	((_extends_clause property: #type_arguments) comment:
 		 'My arguments')
@@ -779,7 +779,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	"Enum"
 	((_enum_declaration property: #identifier) comment:
 		 'The identifier I define')
-	<>- ((_identifier property: #parentEnum) comment:
+	<>- ((identifier property: #parentEnum) comment:
 			 'The enum that contains me').
 
 	((_enum_declaration property: #body) comment: 'The body of the enum')
