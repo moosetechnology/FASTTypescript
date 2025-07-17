@@ -100,7 +100,6 @@ Class {
 		'_type_parameter',
 		'_template_substitution',
 		'_instantiation_expression',
-		'_array',
 		'_member_expression',
 		'_implements_clause',
 		'_undefined',
@@ -197,7 +196,8 @@ Class {
 		'comment',
 		'asserts',
 		'decorator',
-		'identifier'
+		'identifier',
+		'array'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -295,7 +295,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_object_pattern := builder ensureClassNamed: #Object_pattern.
 	_assignment_pattern := builder ensureClassNamed: #Assignment_pattern.
 	_object_assignment_pattern := builder ensureClassNamed: #Object_assignment_pattern.
-	_array := builder ensureClassNamed: #Array.
+	array := builder ensureClassNamed: #Array.
 	_array_pattern := builder ensureClassNamed: #Array_pattern.
 	_nested_identifier := builder ensureClassNamed: #Nested_identifier.
 	class := builder ensureClassNamed: #Class.
@@ -509,7 +509,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	class --|> tExpression.
 	_this --|> tExpression.
 	_super --|> tExpression.
-	_array --|> tExpression.
+	array --|> tExpression.
 	_undefined --|> tExpression.
 	regex --|> tExpression.
 
