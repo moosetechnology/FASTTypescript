@@ -154,10 +154,10 @@ FASTTypescriptTEntityCreator >> newBoolean [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newBreak_statement [
+FASTTypescriptTEntityCreator >> newBreakStatement [
 
 	<generated>
-	^ self add: FASTTypescriptBreak_statement new
+	^ self add: FASTTypescriptBreakStatement new
 ]
 
 { #category : 'entity creation' }

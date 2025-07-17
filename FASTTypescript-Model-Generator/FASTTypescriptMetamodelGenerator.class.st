@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_break_statement',
 		'_arrow_function',
 		'_abstract_class_declaration',
 		'_call_signature',
@@ -197,7 +196,8 @@ Class {
 		'arguments',
 		'this',
 		'string',
-		'spreadElement'
+		'spreadElement',
+		'breakStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -277,7 +277,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_do_statement := builder ensureClassNamed: #Do_statement.
 	_try_statement := builder ensureClassNamed: #Try_statement.
 	_with_statement := builder ensureClassNamed: #With_statement.
-	_break_statement := builder ensureClassNamed: #Break_statement.
+	breakStatement := builder ensureClassNamed: #BreakStatement.
 	_continue_statement := builder ensureClassNamed: #Continue_statement.
 	_debugger_statement := builder ensureClassNamed: #Debugger_statement.
 	_return_statement := builder ensureClassNamed: #Return_statement.
