@@ -91,7 +91,6 @@ Class {
 		'_template_literal_type',
 		'_assignment_pattern',
 		'_decorator',
-		'_program',
 		'_nested_identifier',
 		'_public_field_definition',
 		'_import_alias',
@@ -197,7 +196,8 @@ Class {
 		'tExpression',
 		'tWithParameters',
 		'tReturnType',
-		'tOptionalField'
+		'tOptionalField',
+		'program'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -226,7 +226,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 
 	entity := self newClassNamed: #Entity.
 
-	_program := builder ensureClassNamed: #Program.
+	program := builder ensureClassNamed: #Program.
 	
 	_identifier := builder ensureClassNamed: #Identifier.
 	_hash_bang_line := builder ensureClassNamed: #Hash_bang_line.
@@ -448,7 +448,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	entity --|> tEntity.
 	entity --|> tWithComments.
 
-	_program --|> tEntity.
+	program --|> tEntity.
 
 	_number --|> _literal.
 	_string --|> _literal.
@@ -465,12 +465,12 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_boolean --|> #TBooleanLiteral.
 	_null --|> #TNullPointerLiteral.
 
-	_program --|> tEntity.
-	_program --|> #THasImmediateSource.
-	_program withPrecedenceOf: #THasImmediateSource.
+	program --|> tEntity.
+	program --|> #THasImmediateSource.
+	program withPrecedenceOf: #THasImmediateSource.
 	
 	_ERROR --|> #THasImmediateSource.
-	_program withPrecedenceOf: #THasImmediateSource.
+	program withPrecedenceOf: #THasImmediateSource.
 
 	_class_declaration --|> tDeclaration.
 	_class_declaration --|> tWithDeclarations.
@@ -545,17 +545,17 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>-* (entity property: #genericParent).
 	(entity property: #value) <>-* (entity property: #valueParent).
 
-	((_program property: #classDeclarations) comment:
+	((program property: #classDeclarations) comment:
 		 'The class declarations that I define')
 	<>-* ((_class_declaration property: #parentProgram) comment:
 			 'The program that contains me').
 
-	((_program property: #enumDeclarations) comment:
+	((program property: #enumDeclarations) comment:
 		 'The enum declarations that I define')
 	<>-* ((_enum_declaration property: #parentProgram) comment:
 			 'The program that contains me').
 
-	((_program property: #interfaceDeclarations) comment:
+	((program property: #interfaceDeclarations) comment:
 		 'The interface declarations that I define')
 	<>-* ((_interface_declaration property: #parentProgram) comment:
 			 'The program that contains me').
