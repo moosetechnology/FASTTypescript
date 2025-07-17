@@ -19,7 +19,6 @@ Class {
 		'_type_assertion',
 		'_lookup_type',
 		'_lexical_declaration',
-		'_class',
 		'_template_string',
 		'_index_signature',
 		'_import_statement',
@@ -197,7 +196,8 @@ Class {
 		'constraint',
 		'number',
 		'import',
-		'regex'
+		'regex',
+		'class'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -298,7 +298,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_array := builder ensureClassNamed: #Array.
 	_array_pattern := builder ensureClassNamed: #Array_pattern.
 	_nested_identifier := builder ensureClassNamed: #Nested_identifier.
-	_class := builder ensureClassNamed: #Class.
+	class := builder ensureClassNamed: #Class.
 
 	_class_declaration := builder ensureClassNamed: #Class_declaration.
 	_class_declaration withTesting.
@@ -506,7 +506,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_object_type --|> tExpression.
 	_private_property_identifier --|> tExpression.
 	propertyIdentifier --|> tExpression.
-	_class --|> tExpression.
+	class --|> tExpression.
 	_this --|> tExpression.
 	_super --|> tExpression.
 	_array --|> tExpression.
