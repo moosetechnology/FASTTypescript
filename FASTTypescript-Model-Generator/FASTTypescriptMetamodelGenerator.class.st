@@ -10,7 +10,6 @@ Class {
 		'_call_signature',
 		'_labeled_statement',
 		'_formal_parameters',
-		'_constraint',
 		'_statement_identifier',
 		'_existential_type',
 		'_number',
@@ -197,7 +196,8 @@ Class {
 		'tReturnType',
 		'tOptionalField',
 		'program',
-		'expression'
+		'expression',
+		'constraint'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -413,7 +413,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_type_parameters := builder ensureClassNamed: #Type_parameters.
 	_type_parameter := builder ensureClassNamed: #Type_parameter.
 	_default_type := builder ensureClassNamed: #Default_type.
-	_constraint := builder ensureClassNamed: #Constraint.
+	constraint := builder ensureClassNamed: #Constraint.
 	_construct_signature := builder ensureClassNamed: #Construct_signature.
 	_index_signature := builder ensureClassNamed: #Index_signature.
 	_array_type := builder ensureClassNamed: #Array_type.
