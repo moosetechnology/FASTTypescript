@@ -526,7 +526,7 @@ TypescriptParsingClassesTest >> testParsingMethodDefinition [
 		
 	"Checking properties of FASTTypescriptMethod_definition"	
 	node := (res allWithType: FASTTypescriptMethod_definition) first.
-	self assert: node name class equals: FASTTypescriptProperty_identifier.
+	self assert: node name class equals: FASTTypescriptPropertyIdentifier.
 	self assert: node body class equals: FASTTypescriptStatement_block.
 	self assert: node return_type class equals: FASTTypescriptType_annotation.
 	self assert: node parameters class equals: FASTTypescriptFormal_parameters.
@@ -547,7 +547,7 @@ TypescriptParsingClassesTest >> testParsingNestedIdentifier [
 	
 	"Checking properties of FASTTypescriptNested_identifier"	
 	node := (res allWithType: FASTTypescriptNested_identifier) first.
-	self assert: node property class equals: FASTTypescriptProperty_identifier.
+	self assert: node property class equals: FASTTypescriptPropertyIdentifier.
 	self assert: node object class equals: FASTTypescriptIdentifier.
 ]
 
@@ -663,7 +663,7 @@ declare class Linter {
 
 	"Checking if FASTTypescriptProperty_identifier parsed correctly"
 	self assert:
-		(res allWithType: FASTTypescriptProperty_identifier) isNotEmpty.
+		(res allWithType: FASTTypescriptPropertyIdentifier) isNotEmpty.
 	
 	
 	 
