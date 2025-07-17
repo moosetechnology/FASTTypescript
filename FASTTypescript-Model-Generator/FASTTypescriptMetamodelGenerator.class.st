@@ -22,7 +22,6 @@ Class {
 		'_template_string',
 		'_index_signature',
 		'_import_statement',
-		'_boolean',
 		'_true',
 		'_debugger_statement',
 		'_rest_pattern',
@@ -197,7 +196,8 @@ Class {
 		'number',
 		'import',
 		'regex',
-		'class'
+		'class',
+		'boolean'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -242,7 +242,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_super := builder ensureClassNamed: #Super.
 	
 	_literal := builder ensureClassNamed: #Literal.
-	_boolean := builder ensureClassNamed: #Boolean.
+	boolean := builder ensureClassNamed: #Boolean.
 	_true := builder ensureClassNamed: #True.
 	_false := builder ensureClassNamed: #False.
 	
@@ -453,16 +453,16 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	number --|> _literal.
 	_string --|> _literal.
 	_null --|> _literal.
-	_boolean --|> _literal.
-	_true --|> _boolean.
-	_false --|> _boolean.
+	boolean --|> _literal.
+	_true --|> boolean.
+	_false --|> boolean.
 
 	_abstract_class_declaration --|> _class_declaration.
 
 	"Traits"
 	_literal --|> tLiteral.
 	_string --|> #TStringLiteral.
-	_boolean --|> #TBooleanLiteral.
+	boolean --|> #TBooleanLiteral.
 	_null --|> #TNullPointerLiteral.
 
 	program --|> tEntity.
