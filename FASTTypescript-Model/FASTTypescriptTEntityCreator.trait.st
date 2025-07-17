@@ -84,10 +84,10 @@ FASTTypescriptTEntityCreator >> newArray_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newArrow_function [
+FASTTypescriptTEntityCreator >> newArrowFunction [
 
 	<generated>
-	^ self add: FASTTypescriptArrow_function new
+	^ self add: FASTTypescriptArrowFunction new
 ]
 
 { #category : 'entity creation' }

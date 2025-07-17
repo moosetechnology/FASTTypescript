@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_arrow_function',
 		'_abstract_class_declaration',
 		'_call_signature',
 		'_labeled_statement',
@@ -197,7 +196,8 @@ Class {
 		'this',
 		'string',
 		'spreadElement',
-		'breakStatement'
+		'breakStatement',
+		'arrowFunction'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -308,7 +308,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_function_declaration := builder ensureClassNamed: #Function_declaration.
 	_generator_function := builder ensureClassNamed: #Generator_function.
 	_generator_function_declaration := builder ensureClassNamed: #Generator_function_declaration.
-	_arrow_function := builder ensureClassNamed: #Arrow_function.
+	arrowFunction := builder ensureClassNamed: #ArrowFunction.
 	_optional_chain := builder ensureClassNamed: #Optional_chain.
 	_call_expression := builder ensureClassNamed: #Call_expression.
 	_new_expression := builder ensureClassNamed: #New_expression.
