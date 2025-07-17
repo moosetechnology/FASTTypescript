@@ -12,7 +12,6 @@ Class {
 		'_formal_parameters',
 		'_statement_identifier',
 		'_existential_type',
-		'_number',
 		'_meta_property',
 		'_type_parameters',
 		'_as_expression',
@@ -197,7 +196,8 @@ Class {
 		'tOptionalField',
 		'program',
 		'expression',
-		'constraint'
+		'constraint',
+		'number'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -236,7 +236,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_comment := builder ensureClassNamed: #Comment.
 	_regex_pattern := builder ensureClassNamed: #Regex_pattern.
 	_regex_flags := builder ensureClassNamed: #Regex_flags.
-	_number := builder ensureClassNamed: #Number.
+	number := builder ensureClassNamed: #Number.
 	_private_property_identifier := builder ensureClassNamed: #Private_property_identifier.
 	_this := builder ensureClassNamed: #This.
 	_super := builder ensureClassNamed: #Super.
@@ -450,7 +450,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 
 	program --|> tEntity.
 
-	_number --|> _literal.
+	number --|> _literal.
 	_string --|> _literal.
 	_null --|> _literal.
 	_boolean --|> _literal.
