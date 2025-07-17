@@ -2,7 +2,7 @@ Class {
 	#name : 'FASTTypescriptMetamodelGenerator',
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
-		'_property_identifier',
+		'propertyIdentifier',
 		'_spread_element',
 		'_break_statement',
 		'_arrow_function',
@@ -423,7 +423,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_intersection_type := builder ensureClassNamed: #Intersection_type.
 	_function_type := builder ensureClassNamed: #Function_type.
 	_interface_body := builder ensureClassNamed: #Interface_body.
-	_property_identifier := builder ensureClassNamed: #Property_identifier.
+	propertyIdentifier := builder ensureClassNamed: #PropertyIdentifier.
 	_shorthand_property_identifier := builder ensureClassNamed: #Shorthand_property_identifier.
 	_shorthand_property_identifier_pattern := builder ensureClassNamed: #Shorthand_property_identifier_pattern.
 	_statement_identifier := builder ensureClassNamed: #Statement_identifier.
@@ -505,7 +505,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_array_type --|> tExpression.
 	_object_type --|> tExpression.
 	_private_property_identifier --|> tExpression.
-	_property_identifier --|> tExpression.
+	propertyIdentifier --|> tExpression.
 	_class --|> tExpression.
 	_this --|> tExpression.
 	_super --|> tExpression.
@@ -640,7 +640,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_nested_identifier property: #property) comment:
 		 'My property as property identifier')
 	<>-
-		((_property_identifier property: #nestedIdentifierOwner) comment:
+		((propertyIdentifier property: #nestedIdentifierOwner) comment:
 			 'The owner of this  property identifier').
 
 	((_generic_type property: #name) comment:
@@ -742,7 +742,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((_method_definition property: #name) comment:
 		 'My name')
-	<>- ((_property_identifier property: #propertyIdentifierOwner) comment: 'My owner').
+	<>- ((propertyIdentifier property: #propertyIdentifierOwner) comment: 'My owner').
 	
 	((_method_definition property: #body) comment:
 		 'My body')
