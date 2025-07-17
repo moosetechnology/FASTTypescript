@@ -68,7 +68,6 @@ Class {
 		'_else_clause',
 		'_this_type',
 		'_with_statement',
-		'_asserts',
 		'_private_property_identifier',
 		'_throw_statement',
 		'_hash_bang_line',
@@ -197,7 +196,8 @@ Class {
 		'module',
 		'pair',
 		'null',
-		'comment'
+		'comment',
+		'asserts'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -378,7 +378,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_type_annotation := builder ensureClassNamed: #Type_annotation.
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	_call_expression := builder ensureClassNamed: #Call_expression.
-	_asserts := builder ensureClassNamed: #Asserts.
+	asserts := builder ensureClassNamed: #Asserts.
 	_asserts_annotation := builder ensureClassNamed: #Asserts_annotation.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
 	_optional_parameter := builder ensureClassNamed: #Optional_parameter.
