@@ -114,7 +114,6 @@ Class {
 		'_import_require_clause',
 		'_type_annotation',
 		'_non_null_expression',
-		'_arguments',
 		'_object_type',
 		'_shorthand_property_identifier',
 		'_index_type_query',
@@ -197,7 +196,8 @@ Class {
 		'identifier',
 		'array',
 		'undefined',
-		'object'
+		'object',
+		'arguments'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -328,7 +328,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_template_substitution := builder ensureClassNamed: #Template_substitution.
 	regex := builder ensureClassNamed: #Regex.
 	_meta_property := builder ensureClassNamed: #Meta_property.
-	_arguments := builder ensureClassNamed: #Arguments.
+	arguments := builder ensureClassNamed: #Arguments.
 	decorator := builder ensureClassNamed: #Decorator.
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	_call_expression := builder ensureClassNamed: #Call_expression.
@@ -586,7 +586,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			
 	((_new_expression property: #arguments) comment:
 		 'The arguments of the new expression')
-	<>- ((_arguments property: #argumentsOwner) comment:
+	<>- ((arguments property: #argumentsOwner) comment:
 			 'The owner of these arguments').
 	
 	((_new_expression property: #type_arguments) comment:
