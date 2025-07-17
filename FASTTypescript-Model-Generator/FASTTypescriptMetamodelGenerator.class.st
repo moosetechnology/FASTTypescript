@@ -191,13 +191,13 @@ Class {
 		'tNamedEntity',
 		'tLiteral',
 		'_literal',
-		'_expression',
 		'_ERROR',
 		'tExpression',
 		'tWithParameters',
 		'tReturnType',
 		'tOptionalField',
-		'program'
+		'program',
+		'expression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -430,7 +430,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_this_type := builder ensureClassNamed: #This_type.
 	_type_identifier := builder ensureClassNamed: #Type_identifier.
 	_ERROR := builder ensureClassNamed: #ERROR.
-	_expression := builder ensureClassNamed: #Expression.
+	expression := builder ensureClassNamed: #Expression.
 	compilationUnit := builder ensureClassNamed: #CompilationUnit.
 	compilationUnit withTesting.
 	
@@ -493,7 +493,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_type_arguments --|> tOptionalField.
 	
 	_identifier --|> tExpression.
-	_expression --|> tExpression.
+	expression --|> tExpression.
 	_array_pattern --|> tExpression.
 	_type_identifier --|> tExpression.
 	_conditional_type --|> tExpression.
@@ -513,26 +513,26 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_undefined --|> tExpression.
 	_regex --|> tExpression.
 
-	_binary_expression --|> _expression.
-	_unary_expression --|> _expression.
-	_member_expression --|> _expression.
-	_call_expression --|> _expression.
-	_as_expression --|> _expression.
-	_assignment_expression --|> _expression.
-	_augmented_assignment_expression --|> _expression.
-	_await_expression --|> _expression.
-	_function_expression --|> _expression.
-	_instantiation_expression --|> _expression.
-	_new_expression --|> _expression.
-	_non_null_expression --|> _expression.
-	_parenthesized_expression --|> _expression.
-	_satisfies_expression --|> _expression.
-	_sequence_expression --|> _expression.
-	_subscript_expression --|> _expression.
-	_ternary_expression --|> _expression.
-	_update_expression --|> _expression.
-	_yield_expression --|> _expression.
-	_object --|> _expression.
+	_binary_expression --|> expression.
+	_unary_expression --|> expression.
+	_member_expression --|> expression.
+	_call_expression --|> expression.
+	_as_expression --|> expression.
+	_assignment_expression --|> expression.
+	_augmented_assignment_expression --|> expression.
+	_await_expression --|> expression.
+	_function_expression --|> expression.
+	_instantiation_expression --|> expression.
+	_new_expression --|> expression.
+	_non_null_expression --|> expression.
+	_parenthesized_expression --|> expression.
+	_satisfies_expression --|> expression.
+	_sequence_expression --|> expression.
+	_subscript_expression --|> expression.
+	_ternary_expression --|> expression.
+	_update_expression --|> expression.
+	_yield_expression --|> expression.
+	_object --|> expression.
 
 	"_function_type  --|> tWithParameters.	"
 ]
