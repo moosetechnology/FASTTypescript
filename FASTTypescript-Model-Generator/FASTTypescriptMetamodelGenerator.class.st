@@ -31,7 +31,6 @@ Class {
 		'_switch_body',
 		'_subscript_expression',
 		'_union_type',
-		'_module',
 		'_interface_body',
 		'_type_identifier',
 		'_function_declaration',
@@ -51,7 +50,6 @@ Class {
 		'_for_statement',
 		'_accessibility_modifier',
 		'_function_expression',
-		'_pair',
 		'_generator_function_declaration',
 		'_function_type',
 		'_escape_sequence',
@@ -197,7 +195,9 @@ Class {
 		'import',
 		'regex',
 		'class',
-		'boolean'
+		'boolean',
+		'module',
+		'pair'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -337,7 +337,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_class_static_block := builder ensureClassNamed: #Class_static_block.
 	_rest_pattern := builder ensureClassNamed: #Rest_pattern.
 	_method_definition := builder ensureClassNamed: #Method_definition.
-	_pair := builder ensureClassNamed: #Pair.
+	pair := builder ensureClassNamed: #Pair.
 	_pair_pattern := builder ensureClassNamed: #Pair_pattern.
 	_computed_property_name := builder ensureClassNamed: #Computed_property_name.
 	_public_field_definition := builder ensureClassNamed: #Public_field_definition.
@@ -355,7 +355,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_implements_clause := builder ensureClassNamed: #Implements_clause.
 	_ambient_declaration := builder ensureClassNamed: #Ambient_declaration.
 	_abstract_class_declaration := builder ensureClassNamed: #Abstract_class_declaration.
-	_module := builder ensureClassNamed: #Module.
+	module := builder ensureClassNamed: #Module.
 	_internal_module := builder ensureClassNamed: #Internal_module.
 	_import_alias := builder ensureClassNamed: #Import_alias.
 	_nested_type_identifier := builder ensureClassNamed: #Nested_type_identifier.
