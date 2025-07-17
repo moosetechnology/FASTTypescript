@@ -79,7 +79,6 @@ Class {
 		'_optional_chain',
 		'_template_literal_type',
 		'_assignment_pattern',
-		'_decorator',
 		'_nested_identifier',
 		'_public_field_definition',
 		'_import_alias',
@@ -197,7 +196,8 @@ Class {
 		'pair',
 		'null',
 		'comment',
-		'asserts'
+		'asserts',
+		'decorator'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -329,7 +329,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	regex := builder ensureClassNamed: #Regex.
 	_meta_property := builder ensureClassNamed: #Meta_property.
 	_arguments := builder ensureClassNamed: #Arguments.
-	_decorator := builder ensureClassNamed: #Decorator.
+	decorator := builder ensureClassNamed: #Decorator.
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	_call_expression := builder ensureClassNamed: #Call_expression.
 	_class_body := builder ensureClassNamed: #Class_body.
