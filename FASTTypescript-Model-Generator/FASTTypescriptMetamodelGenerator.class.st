@@ -15,7 +15,6 @@ Class {
 		'_meta_property',
 		'_type_parameters',
 		'_as_expression',
-		'_import',
 		'_do_statement',
 		'_regex',
 		'_type_assertion',
@@ -197,7 +196,8 @@ Class {
 		'program',
 		'expression',
 		'constraint',
-		'number'
+		'number',
+		'import'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -256,7 +256,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_namespace_export := builder ensureClassNamed: #Namespace_export.
 	_export_clause := builder ensureClassNamed: #Export_clause.
 	_export_specifier := builder ensureClassNamed: #Export_specifier.
-	_import := builder ensureClassNamed: #Import.
+	import := builder ensureClassNamed: #Import.
 	_import_statement := builder ensureClassNamed: #Import_statement.
 	_import_clause := builder ensureClassNamed: #Import_clause.
 	_namespace_import := builder ensureClassNamed: #Namespace_import.
