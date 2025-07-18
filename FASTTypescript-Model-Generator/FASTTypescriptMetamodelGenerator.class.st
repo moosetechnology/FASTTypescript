@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_labeled_statement',
 		'_formal_parameters',
 		'_statement_identifier',
 		'_existential_type',
@@ -197,7 +196,8 @@ Class {
 		'breakStatement',
 		'arrowFunction',
 		'abstractClassDeclaration',
-		'callSignature'
+		'callSignature',
+		'labeledStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -283,7 +283,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_return_statement := builder ensureClassNamed: #Return_statement.
 	_throw_statement := builder ensureClassNamed: #Throw_statement.
 	_empty_statement := builder ensureClassNamed: #Empty_statement.
-	_labeled_statement := builder ensureClassNamed: #Labeled_statement.
+	labeledStatement := builder ensureClassNamed: #LabeledStatement.
 	_switch_body := builder ensureClassNamed: #Switch_body.
 	_switch_case := builder ensureClassNamed: #Switch_case.
 	_switch_default := builder ensureClassNamed: #Switch_default.

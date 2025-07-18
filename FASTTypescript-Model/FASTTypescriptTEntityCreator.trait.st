@@ -644,10 +644,10 @@ FASTTypescriptTEntityCreator >> newJsx_text [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newLabeled_statement [
+FASTTypescriptTEntityCreator >> newLabeledStatement [
 
 	<generated>
-	^ self add: FASTTypescriptLabeled_statement new
+	^ self add: FASTTypescriptLabeledStatement new
 ]
 
 { #category : 'entity creation' }
