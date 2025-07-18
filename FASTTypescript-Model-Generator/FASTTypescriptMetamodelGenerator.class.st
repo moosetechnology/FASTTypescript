@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_abstract_class_declaration',
 		'_call_signature',
 		'_labeled_statement',
 		'_formal_parameters',
@@ -197,7 +196,8 @@ Class {
 		'string',
 		'spreadElement',
 		'breakStatement',
-		'arrowFunction'
+		'arrowFunction',
+		'abstractClassDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -354,7 +354,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_extends_clause := builder ensureClassNamed: #Extends_clause.
 	_implements_clause := builder ensureClassNamed: #Implements_clause.
 	_ambient_declaration := builder ensureClassNamed: #Ambient_declaration.
-	_abstract_class_declaration := builder ensureClassNamed: #Abstract_class_declaration.
+	abstractClassDeclaration := builder ensureClassNamed: #AbstractClassDeclaration.
 	module := builder ensureClassNamed: #Module.
 	_internal_module := builder ensureClassNamed: #Internal_module.
 	_import_alias := builder ensureClassNamed: #Import_alias.
@@ -457,7 +457,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_true --|> boolean.
 	_false --|> boolean.
 
-	_abstract_class_declaration --|> _class_declaration.
+	abstractClassDeclaration --|> _class_declaration.
 
 	"Traits"
 	_literal --|> tLiteral.

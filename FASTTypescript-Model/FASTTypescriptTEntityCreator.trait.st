@@ -21,10 +21,10 @@ FASTTypescriptTEntityCreator classSide >> annotation [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAbstract_class_declaration [
+FASTTypescriptTEntityCreator >> newAbstractClassDeclaration [
 
 	<generated>
-	^ self add: FASTTypescriptAbstract_class_declaration new
+	^ self add: FASTTypescriptAbstractClassDeclaration new
 ]
 
 { #category : 'entity creation' }
