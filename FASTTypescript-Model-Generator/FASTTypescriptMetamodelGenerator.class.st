@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_array_type',
 		'_new_expression',
 		'_literal_type',
 		'_type_predicate_annotation',
@@ -197,7 +196,8 @@ Class {
 		'unionType',
 		'interfaceBody',
 		'typeIdentifier',
-		'functionDeclaration'
+		'functionDeclaration',
+		'arrayType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -415,7 +415,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	constraint := builder ensureClassNamed: #Constraint.
 	_construct_signature := builder ensureClassNamed: #Construct_signature.
 	indexSignature := builder ensureClassNamed: #IndexSignature.
-	_array_type := builder ensureClassNamed: #Array_type.
+	arrayType := builder ensureClassNamed: #ArrayType.
 	_tuple_type := builder ensureClassNamed: #Tuple_type.
 	_readonly_type := builder ensureClassNamed: #Readonly_type.
 	unionType := builder ensureClassNamed: #UnionType.
@@ -501,7 +501,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_function_type --|> tExpression.
 	_predefined_type --|> tExpression.
 	_generic_type --|> tExpression.
-	_array_type --|> tExpression.
+	arrayType --|> tExpression.
 	_object_type --|> tExpression.
 	_private_property_identifier --|> tExpression.
 	propertyIdentifier --|> tExpression.
