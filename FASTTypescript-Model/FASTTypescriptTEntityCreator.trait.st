@@ -616,10 +616,10 @@ FASTTypescriptTEntityCreator >> newInterfaceBody [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newInterface_declaration [
+FASTTypescriptTEntityCreator >> newInterfaceDeclaration [
 
 	<generated>
-	^ self add: FASTTypescriptInterface_declaration new
+	^ self add: FASTTypescriptInterfaceDeclaration new
 ]
 
 { #category : 'entity creation' }

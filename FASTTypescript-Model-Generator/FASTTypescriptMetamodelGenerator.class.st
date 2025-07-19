@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_interface_declaration',
 		'_jsx_text',
 		'_export_clause',
 		'_switch_statement',
@@ -197,7 +196,8 @@ Class {
 		'restType',
 		'exportStatement',
 		'catchClause',
-		'methodSignature'
+		'methodSignature',
+		'interfaceDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -359,7 +359,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_internal_module := builder ensureClassNamed: #Internal_module.
 	_import_alias := builder ensureClassNamed: #Import_alias.
 	_nested_type_identifier := builder ensureClassNamed: #Nested_type_identifier.
-	_interface_declaration := builder ensureClassNamed: #Interface_declaration.
+	interfaceDeclaration := builder ensureClassNamed: #InterfaceDeclaration.
 	_extends_type_clause := builder ensureClassNamed: #Extends_type_clause.
 	
 	enumDeclaration := builder ensureClassNamed: #EnumDeclaration.
@@ -476,10 +476,10 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_class_declaration --|> tWithModifiers.
 	_class_declaration --|> tStatement.
 
-	_interface_declaration --|> tDeclaration.
-	_interface_declaration --|> tWithDeclarations.
-	_interface_declaration --|> tWithModifiers.
-	_interface_declaration --|> tStatement.
+	interfaceDeclaration --|> tDeclaration.
+	interfaceDeclaration --|> tWithDeclarations.
+	interfaceDeclaration --|> tWithModifiers.
+	interfaceDeclaration --|> tStatement.
 
 
 	enumDeclaration --|> tDeclaration.
@@ -556,7 +556,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((program property: #interfaceDeclarations) comment:
 		 'The interface declarations that I define')
-	<>-* ((_interface_declaration property: #parentProgram) comment:
+	<>-* ((interfaceDeclaration property: #parentProgram) comment:
 			 'The program that contains me').
 
 	((_for_in_statement property: #left) comment: 'The identifier')
@@ -786,12 +786,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The enum declaration that contains me').
 
 	"Interface"
-	((_interface_declaration property: #name) comment:
+	((interfaceDeclaration property: #name) comment:
 		 'My name')
 	<>- ((typeIdentifier property: #typeIdentifierOwner) comment:
 			 'My owner').
 
-	((_interface_declaration property: #body) comment:
+	((interfaceDeclaration property: #body) comment:
 		 'The body of the interface')
 	<>- ((interfaceBody property: #bodyParent) comment:
 			 'The interface declaration that contains me').

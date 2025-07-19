@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `bodyParent` | `FASTTypescriptInterfaceBody` | `body` | `FASTTypescriptInterface_declaration` | The interface declaration that contains me|
+| `bodyParent` | `FASTTypescriptInterfaceBody` | `body` | `FASTTypescriptInterfaceDeclaration` | The interface declaration that contains me|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypescriptInterfaceBody',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#bodyParent => FMOne type: #FASTTypescriptInterface_declaration opposite: #body'
+		'#bodyParent => FMOne type: #FASTTypescriptInterfaceDeclaration opposite: #body'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -40,7 +40,7 @@ FASTTypescriptInterfaceBody class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptInterfaceBody >> bodyParent [
-	"Relation named: #bodyParent type: #FASTTypescriptInterface_declaration opposite: #body"
+	"Relation named: #bodyParent type: #FASTTypescriptInterfaceDeclaration opposite: #body"
 
 	<generated>
 	<FMComment: 'The interface declaration that contains me'>

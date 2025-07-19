@@ -7,7 +7,7 @@
 |---|
 | `classDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptClass_declaration` | The class declarations that I define|
 | `enumDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptEnumDeclaration` | The enum declarations that I define|
-| `interfaceDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptInterface_declaration` | The interface declarations that I define|
+| `interfaceDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptInterfaceDeclaration` | The interface declarations that I define|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -33,7 +33,7 @@ Class {
 	#instVars : [
 		'#classDeclarations => FMMany type: #FASTTypescriptClass_declaration opposite: #parentProgram',
 		'#enumDeclarations => FMMany type: #FASTTypescriptEnumDeclaration opposite: #parentProgram',
-		'#interfaceDeclarations => FMMany type: #FASTTypescriptInterface_declaration opposite: #parentProgram'
+		'#interfaceDeclarations => FMMany type: #FASTTypescriptInterfaceDeclaration opposite: #parentProgram'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -117,7 +117,7 @@ FASTTypescriptProgram >> enumDeclarationsGroup [
 
 { #category : 'accessing' }
 FASTTypescriptProgram >> interfaceDeclarations [
-	"Relation named: #interfaceDeclarations type: #FASTTypescriptInterface_declaration opposite: #parentProgram"
+	"Relation named: #interfaceDeclarations type: #FASTTypescriptInterfaceDeclaration opposite: #parentProgram"
 
 	<generated>
 	<FMComment: 'The interface declarations that I define'>
