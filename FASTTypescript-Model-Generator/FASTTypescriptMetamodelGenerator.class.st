@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_type_predicate_annotation',
 		'_enum_body',
 		'_rest_type',
 		'_export_statement',
@@ -197,7 +196,8 @@ Class {
 		'functionDeclaration',
 		'arrayType',
 		'newExpression',
-		'literalType'
+		'literalType',
+		'typePredicateAnnotation'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -391,7 +391,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_conditional_type := builder ensureClassNamed: #Conditional_type.
 	_generic_type := builder ensureClassNamed: #Generic_type.
 	_type_predicate := builder ensureClassNamed: #Type_predicate.
-	_type_predicate_annotation := builder ensureClassNamed: #Type_predicate_annotation.
+	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation.
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	_call_expression := builder ensureClassNamed: #Call_expression.
 	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
