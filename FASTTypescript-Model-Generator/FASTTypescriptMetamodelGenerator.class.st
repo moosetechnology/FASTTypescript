@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_rest_pattern',
 		'_satisfies_expression',
 		'_switch_default',
 		'_enum_declaration',
@@ -197,7 +196,8 @@ Class {
 		'templateString',
 		'indexSignature',
 		'importStatement',
-		'debuggerStatement'
+		'debuggerStatement',
+		'restPattern'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -335,7 +335,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_class_body := builder ensureClassNamed: #Class_body.
 	formalParameters := builder ensureClassNamed: #FormalParameters.
 	_class_static_block := builder ensureClassNamed: #Class_static_block.
-	_rest_pattern := builder ensureClassNamed: #Rest_pattern.
+	restPattern := builder ensureClassNamed: #RestPattern.
 	_method_definition := builder ensureClassNamed: #Method_definition.
 	pair := builder ensureClassNamed: #Pair.
 	_pair_pattern := builder ensureClassNamed: #Pair_pattern.

@@ -959,10 +959,10 @@ FASTTypescriptTEntityCreator >> newRequired_parameter [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newRest_pattern [
+FASTTypescriptTEntityCreator >> newRestPattern [
 
 	<generated>
-	^ self add: FASTTypescriptRest_pattern new
+	^ self add: FASTTypescriptRestPattern new
 ]
 
 { #category : 'entity creation' }
