@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_jsx_text',
 		'_export_clause',
 		'_switch_statement',
 		'_for_statement',
@@ -197,7 +196,8 @@ Class {
 		'exportStatement',
 		'catchClause',
 		'methodSignature',
-		'interfaceDeclaration'
+		'interfaceDeclaration',
+		'jsxText'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -250,7 +250,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	undefined := builder ensureClassNamed: #Undefined.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	_html_comment := builder ensureClassNamed: #Html_comment.
-	_jsx_text := builder ensureClassNamed: #Jsx_text.
+	jsxText := builder ensureClassNamed: #JsxText.
 	
 	exportStatement := builder ensureClassNamed: #ExportStatement.
 	_namespace_export := builder ensureClassNamed: #Namespace_export.

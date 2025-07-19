@@ -637,10 +637,10 @@ FASTTypescriptTEntityCreator >> newIntersection_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newJsx_text [
+FASTTypescriptTEntityCreator >> newJsxText [
 
 	<generated>
-	^ self add: FASTTypescriptJsx_text new
+	^ self add: FASTTypescriptJsxText new
 ]
 
 { #category : 'entity creation' }
