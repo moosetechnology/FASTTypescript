@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_statement_identifier',
 		'_existential_type',
 		'_meta_property',
 		'_type_parameters',
@@ -197,7 +196,8 @@ Class {
 		'abstractClassDeclaration',
 		'callSignature',
 		'labeledStatement',
-		'formalParameters'
+		'formalParameters',
+		'statementIdentifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -426,7 +426,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	propertyIdentifier := builder ensureClassNamed: #PropertyIdentifier.
 	_shorthand_property_identifier := builder ensureClassNamed: #Shorthand_property_identifier.
 	_shorthand_property_identifier_pattern := builder ensureClassNamed: #Shorthand_property_identifier_pattern.
-	_statement_identifier := builder ensureClassNamed: #Statement_identifier.
+	statementIdentifier := builder ensureClassNamed: #StatementIdentifier.
 	_this_type := builder ensureClassNamed: #This_type.
 	_type_identifier := builder ensureClassNamed: #Type_identifier.
 	_ERROR := builder ensureClassNamed: #ERROR.
