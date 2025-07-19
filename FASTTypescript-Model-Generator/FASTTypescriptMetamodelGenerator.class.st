@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_existential_type',
 		'_meta_property',
 		'_type_parameters',
 		'_as_expression',
@@ -197,7 +196,8 @@ Class {
 		'callSignature',
 		'labeledStatement',
 		'formalParameters',
-		'statementIdentifier'
+		'statementIdentifier',
+		'existentialType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -402,7 +402,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_mapped_type_clause := builder ensureClassNamed: #Mapped_type_clause.
 	_literal_type := builder ensureClassNamed: #Literal_type.
 	_unary_expression := builder ensureClassNamed: #Unary_expression.
-	_existential_type := builder ensureClassNamed: #Existential_type.
+	existentialType := builder ensureClassNamed: #ExistentialType.
 	_flow_maybe_type := builder ensureClassNamed: #Flow_maybe_type.
 	_parenthesized_type := builder ensureClassNamed: #Parenthesized_type.
 	_predefined_type := builder ensureClassNamed: #Predefined_type.

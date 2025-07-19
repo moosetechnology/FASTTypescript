@@ -350,10 +350,10 @@ FASTTypescriptTEntityCreator >> newEscape_sequence [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newExistential_type [
+FASTTypescriptTEntityCreator >> newExistentialType [
 
 	<generated>
-	^ self add: FASTTypescriptExistential_type new
+	^ self add: FASTTypescriptExistentialType new
 ]
 
 { #category : 'entity creation' }
