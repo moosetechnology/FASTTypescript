@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_export_statement',
 		'_catch_clause',
 		'_method_signature',
 		'_interface_declaration',
@@ -197,7 +196,8 @@ Class {
 		'literalType',
 		'typePredicateAnnotation',
 		'enumBody',
-		'restType'
+		'restType',
+		'exportStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -252,7 +252,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_html_comment := builder ensureClassNamed: #Html_comment.
 	_jsx_text := builder ensureClassNamed: #Jsx_text.
 	
-	_export_statement := builder ensureClassNamed: #Export_statement.
+	exportStatement := builder ensureClassNamed: #ExportStatement.
 	_namespace_export := builder ensureClassNamed: #Namespace_export.
 	_export_clause := builder ensureClassNamed: #Export_clause.
 	_export_specifier := builder ensureClassNamed: #Export_specifier.
