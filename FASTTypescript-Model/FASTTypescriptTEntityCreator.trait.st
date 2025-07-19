@@ -294,10 +294,10 @@ FASTTypescriptTEntityCreator >> newDefault_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newDo_statement [
+FASTTypescriptTEntityCreator >> newDoStatement [
 
 	<generated>
-	^ self add: FASTTypescriptDo_statement new
+	^ self add: FASTTypescriptDoStatement new
 ]
 
 { #category : 'entity creation' }
@@ -1162,6 +1162,13 @@ FASTTypescriptTEntityCreator >> newTuple_type [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newTypeAssertion [
+
+	<generated>
+	^ self add: FASTTypescriptTypeAssertion new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newTypeParameters [
 
 	<generated>
@@ -1187,13 +1194,6 @@ FASTTypescriptTEntityCreator >> newType_arguments [
 
 	<generated>
 	^ self add: FASTTypescriptType_arguments new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newType_assertion [
-
-	<generated>
-	^ self add: FASTTypescriptType_assertion new
 ]
 
 { #category : 'entity creation' }

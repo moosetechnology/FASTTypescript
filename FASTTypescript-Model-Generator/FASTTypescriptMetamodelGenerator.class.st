@@ -3,8 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_do_statement',
-		'_type_assertion',
 		'_lookup_type',
 		'_lexical_declaration',
 		'_template_string',
@@ -197,7 +195,9 @@ Class {
 		'existentialType',
 		'metaProperty',
 		'typeParameters',
-		'asExpression'
+		'asExpression',
+		'doStatement',
+		'typeAssertion'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -274,7 +274,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_for_statement := builder ensureClassNamed: #For_statement.
 	_for_in_statement := builder ensureClassNamed: #For_in_statement.
 	_while_statement := builder ensureClassNamed: #While_statement.
-	_do_statement := builder ensureClassNamed: #Do_statement.
+	doStatement := builder ensureClassNamed: #DoStatement.
 	_try_statement := builder ensureClassNamed: #Try_statement.
 	_with_statement := builder ensureClassNamed: #With_statement.
 	breakStatement := builder ensureClassNamed: #BreakStatement.
@@ -346,7 +346,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_abstract_method_signature := builder ensureClassNamed: #Abstract_method_signature.
 	_function_signature := builder ensureClassNamed: #Function_signature.
 	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
-	_type_assertion := builder ensureClassNamed: #Type_assertion.
+	typeAssertion := builder ensureClassNamed: #TypeAssertion.
 	asExpression := builder ensureClassNamed: #AsExpression.
 	_satisfies_expression := builder ensureClassNamed: #Satisfies_expression.
 	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.

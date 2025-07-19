@@ -23,15 +23,15 @@
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
 | `genericTypeOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptGeneric_type` | The owner of this type identifier|
 | `indexSignatureOwner` | `FASTTypescriptType_identifier` | `index_type` | `FASTTypescriptIndex_signature` | The owner of this index type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
-| `typeIdentifierOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptClass_declaration` | My owner|
 | `typeIdentifierOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptInterface_declaration` | My owner|
+| `typeIdentifierOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptClass_declaration` | My owner|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnary_expression` | The owner of this class|
 
 
