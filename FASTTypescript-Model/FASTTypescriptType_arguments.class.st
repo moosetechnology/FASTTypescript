@@ -9,7 +9,7 @@
 | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
 | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptGeneric_type` | The owner of this type arguments|
 | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptExtends_clause` | My owner|
-| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptNew_expression` | The owner of these type arguments|
+| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptNewExpression` | The owner of these type arguments|
 
 
 
@@ -20,7 +20,7 @@ Class {
 	#traits : 'FASTTypescriptTOptionalField',
 	#classTraits : 'FASTTypescriptTOptionalField classTrait',
 	#instVars : [
-		'#typeArgumentsOwner => FMOne type: #FASTTypescriptNew_expression opposite: #type_arguments'
+		'#typeArgumentsOwner => FMOne type: #FASTTypescriptNewExpression opposite: #type_arguments'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -38,7 +38,7 @@ FASTTypescriptType_arguments class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptType_arguments >> typeArgumentsOwner [
-	"Relation named: #typeArgumentsOwner type: #FASTTypescriptNew_expression opposite: #type_arguments"
+	"Relation named: #typeArgumentsOwner type: #FASTTypescriptNewExpression opposite: #type_arguments"
 
 	<generated>
 	<FMComment: 'The owner of these type arguments'>

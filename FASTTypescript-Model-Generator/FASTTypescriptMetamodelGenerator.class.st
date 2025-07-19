@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_new_expression',
 		'_literal_type',
 		'_type_predicate_annotation',
 		'_enum_body',
@@ -197,7 +196,8 @@ Class {
 		'interfaceBody',
 		'typeIdentifier',
 		'functionDeclaration',
-		'arrayType'
+		'arrayType',
+		'newExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -311,7 +311,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	arrowFunction := builder ensureClassNamed: #ArrowFunction.
 	_optional_chain := builder ensureClassNamed: #Optional_chain.
 	_call_expression := builder ensureClassNamed: #Call_expression.
-	_new_expression := builder ensureClassNamed: #New_expression.
+	newExpression := builder ensureClassNamed: #NewExpression.
 	_await_expression := builder ensureClassNamed: #Await_expression.
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	subscriptExpression := builder ensureClassNamed: #SubscriptExpression.
@@ -522,7 +522,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_await_expression --|> expression.
 	_function_expression --|> expression.
 	_instantiation_expression --|> expression.
-	_new_expression --|> expression.
+	newExpression --|> expression.
 	_non_null_expression --|> expression.
 	_parenthesized_expression --|> expression.
 	satisfiesExpression --|> expression.
@@ -578,17 +578,17 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((tExpression property: #binaryExpressionRightOwner) comment:
 			 'The right operand (if possible)').
 
-	((_new_expression property: #constructor) comment:
+	((newExpression property: #constructor) comment:
 		 'The constructor of the new expression')
 	<>- ((identifier property: #typescriptNewExpressionOwner) comment:
 			 'The owner of this constructor').
 			
-	((_new_expression property: #arguments) comment:
+	((newExpression property: #arguments) comment:
 		 'The arguments of the new expression')
 	<>- ((arguments property: #argumentsOwner) comment:
 			 'The owner of these arguments').
 	
-	((_new_expression property: #type_arguments) comment:
+	((newExpression property: #type_arguments) comment:
 		 'The type arguments of the new expression if they exist between <>')
 	<>- ((_type_arguments property: #typeArgumentsOwner) comment:
 			 'The owner of these type arguments').

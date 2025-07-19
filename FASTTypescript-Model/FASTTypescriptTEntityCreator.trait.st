@@ -756,10 +756,10 @@ FASTTypescriptTEntityCreator >> newNested_type_identifier [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newNew_expression [
+FASTTypescriptTEntityCreator >> newNewExpression [
 
 	<generated>
-	^ self add: FASTTypescriptNew_expression new
+	^ self add: FASTTypescriptNewExpression new
 ]
 
 { #category : 'entity creation' }

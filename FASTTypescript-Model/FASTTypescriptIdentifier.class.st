@@ -20,9 +20,9 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
-| `identifierOwner` | `FASTTypescriptIdentifier` | `value` | `FASTTypescriptExtends_clause` | My owner|
-| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
 | `identifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptIndexSignature` | The owner of this identifier|
+| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
+| `identifierOwner` | `FASTTypescriptIdentifier` | `value` | `FASTTypescriptExtends_clause` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNested_identifier` | The owner of this identifier|
@@ -34,7 +34,7 @@
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
-| `typescriptNewExpressionOwner` | `FASTTypescriptIdentifier` | `constructor` | `FASTTypescriptNew_expression` | The owner of this constructor|
+| `typescriptNewExpressionOwner` | `FASTTypescriptIdentifier` | `constructor` | `FASTTypescriptNewExpression` | The owner of this constructor|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnary_expression` | The owner of this class|
 
 
@@ -58,7 +58,7 @@ Class {
 		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #object',
 		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptional_parameter opposite: #pattern',
 		'#parentEnum => FMOne type: #FASTTypescriptEnumDeclaration opposite: #identifier',
-		'#typescriptNewExpressionOwner => FMOne type: #FASTTypescriptNew_expression opposite: #constructor'
+		'#typescriptNewExpressionOwner => FMOne type: #FASTTypescriptNewExpression opposite: #constructor'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -201,7 +201,7 @@ FASTTypescriptIdentifier >> parentEnumGroup [
 
 { #category : 'accessing' }
 FASTTypescriptIdentifier >> typescriptNewExpressionOwner [
-	"Relation named: #typescriptNewExpressionOwner type: #FASTTypescriptNew_expression opposite: #constructor"
+	"Relation named: #typescriptNewExpressionOwner type: #FASTTypescriptNewExpression opposite: #constructor"
 
 	<generated>
 	<FMComment: 'The owner of this constructor'>

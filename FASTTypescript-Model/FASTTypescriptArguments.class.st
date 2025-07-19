@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `argumentsOwner` | `FASTTypescriptArguments` | `arguments` | `FASTTypescriptNew_expression` | The owner of these arguments|
+| `argumentsOwner` | `FASTTypescriptArguments` | `arguments` | `FASTTypescriptNewExpression` | The owner of these arguments|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypescriptArguments',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#argumentsOwner => FMOne type: #FASTTypescriptNew_expression opposite: #arguments'
+		'#argumentsOwner => FMOne type: #FASTTypescriptNewExpression opposite: #arguments'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -32,7 +32,7 @@ FASTTypescriptArguments class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptArguments >> argumentsOwner [
-	"Relation named: #argumentsOwner type: #FASTTypescriptNew_expression opposite: #arguments"
+	"Relation named: #argumentsOwner type: #FASTTypescriptNewExpression opposite: #arguments"
 
 	<generated>
 	<FMComment: 'The owner of these arguments'>

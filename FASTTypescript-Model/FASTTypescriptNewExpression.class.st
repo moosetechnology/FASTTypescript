@@ -5,19 +5,19 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `arguments` | `FASTTypescriptNew_expression` | `argumentsOwner` | `FASTTypescriptArguments` | The arguments of the new expression|
-| `constructor` | `FASTTypescriptNew_expression` | `typescriptNewExpressionOwner` | `FASTTypescriptIdentifier` | The constructor of the new expression|
-| `type_arguments` | `FASTTypescriptNew_expression` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | The type arguments of the new expression if they exist between <>|
+| `arguments` | `FASTTypescriptNewExpression` | `argumentsOwner` | `FASTTypescriptArguments` | The arguments of the new expression|
+| `constructor` | `FASTTypescriptNewExpression` | `typescriptNewExpressionOwner` | `FASTTypescriptIdentifier` | The constructor of the new expression|
+| `type_arguments` | `FASTTypescriptNewExpression` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | The type arguments of the new expression if they exist between <>|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptNew_expression',
+	#name : 'FASTTypescriptNewExpression',
 	#superclass : 'FASTTypescriptExpression',
 	#instVars : [
-		'#arguments => FMOne type: #FASTTypescriptArguments opposite: #argumentsOwner',
 		'#constructor => FMOne type: #FASTTypescriptIdentifier opposite: #typescriptNewExpressionOwner',
+		'#arguments => FMOne type: #FASTTypescriptArguments opposite: #argumentsOwner',
 		'#type_arguments => FMOne type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -26,16 +26,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptNew_expression class >> annotation [
+FASTTypescriptNewExpression class >> annotation [
 
-	<FMClass: #New_expression super: #FASTTypescriptExpression>
+	<FMClass: #NewExpression super: #FASTTypescriptExpression>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptNewExpression class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptNew_expression }
+]
+
 { #category : 'accessing' }
-FASTTypescriptNew_expression >> arguments [
+FASTTypescriptNewExpression >> arguments [
 	"Relation named: #arguments type: #FASTTypescriptArguments opposite: #argumentsOwner"
 
 	<generated>
@@ -44,21 +50,21 @@ FASTTypescriptNew_expression >> arguments [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptNew_expression >> arguments: anObject [
+FASTTypescriptNewExpression >> arguments: anObject [
 
 	<generated>
 	arguments := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptNew_expression >> argumentsGroup [
+FASTTypescriptNewExpression >> argumentsGroup [
 	<generated>
 	<navigation: 'Arguments'>
 	^ MooseSpecializedGroup with: self arguments
 ]
 
 { #category : 'accessing' }
-FASTTypescriptNew_expression >> constructor [
+FASTTypescriptNewExpression >> constructor [
 	"Relation named: #constructor type: #FASTTypescriptIdentifier opposite: #typescriptNewExpressionOwner"
 
 	<generated>
@@ -67,21 +73,21 @@ FASTTypescriptNew_expression >> constructor [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptNew_expression >> constructor: anObject [
+FASTTypescriptNewExpression >> constructor: anObject [
 
 	<generated>
 	constructor := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptNew_expression >> constructorGroup [
+FASTTypescriptNewExpression >> constructorGroup [
 	<generated>
 	<navigation: 'Constructor'>
 	^ MooseSpecializedGroup with: self constructor
 ]
 
 { #category : 'accessing' }
-FASTTypescriptNew_expression >> type_arguments [
+FASTTypescriptNewExpression >> type_arguments [
 	"Relation named: #type_arguments type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner"
 
 	<generated>
@@ -90,14 +96,14 @@ FASTTypescriptNew_expression >> type_arguments [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptNew_expression >> type_arguments: anObject [
+FASTTypescriptNewExpression >> type_arguments: anObject [
 
 	<generated>
 	type_arguments := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptNew_expression >> type_argumentsGroup [
+FASTTypescriptNewExpression >> type_argumentsGroup [
 	<generated>
 	<navigation: 'Type_arguments'>
 	^ MooseSpecializedGroup with: self type_arguments
