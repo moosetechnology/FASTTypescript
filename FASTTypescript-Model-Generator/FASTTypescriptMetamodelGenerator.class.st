@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_union_type',
 		'_interface_body',
 		'_type_identifier',
 		'_function_declaration',
@@ -197,7 +196,8 @@ Class {
 		'switchDefault',
 		'enumDeclaration',
 		'switchBody',
-		'subscriptExpression'
+		'subscriptExpression',
+		'unionType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -418,7 +418,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_array_type := builder ensureClassNamed: #Array_type.
 	_tuple_type := builder ensureClassNamed: #Tuple_type.
 	_readonly_type := builder ensureClassNamed: #Readonly_type.
-	_union_type := builder ensureClassNamed: #Union_type.
+	unionType := builder ensureClassNamed: #UnionType.
 	_intersection_type := builder ensureClassNamed: #Intersection_type.
 	_function_type := builder ensureClassNamed: #Function_type.
 	_interface_body := builder ensureClassNamed: #Interface_body.

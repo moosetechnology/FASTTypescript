@@ -1246,10 +1246,10 @@ FASTTypescriptTEntityCreator >> newUndefined [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newUnion_type [
+FASTTypescriptTEntityCreator >> newUnionType [
 
 	<generated>
-	^ self add: FASTTypescriptUnion_type new
+	^ self add: FASTTypescriptUnionType new
 ]
 
 { #category : 'entity creation' }
