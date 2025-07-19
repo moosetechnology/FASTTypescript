@@ -1057,17 +1057,17 @@ FASTTypescriptTEntityCreator >> newSuper [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newSwitchBody [
+
+	<generated>
+	^ self add: FASTTypescriptSwitchBody new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newSwitchDefault [
 
 	<generated>
 	^ self add: FASTTypescriptSwitchDefault new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newSwitch_body [
-
-	<generated>
-	^ self add: FASTTypescriptSwitch_body new
 ]
 
 { #category : 'entity creation' }
