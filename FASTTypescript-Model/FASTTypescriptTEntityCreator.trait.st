@@ -357,17 +357,17 @@ FASTTypescriptTEntityCreator >> newExistentialType [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newExportClause [
+
+	<generated>
+	^ self add: FASTTypescriptExportClause new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newExportStatement [
 
 	<generated>
 	^ self add: FASTTypescriptExportStatement new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newExport_clause [
-
-	<generated>
-	^ self add: FASTTypescriptExport_clause new
 ]
 
 { #category : 'entity creation' }

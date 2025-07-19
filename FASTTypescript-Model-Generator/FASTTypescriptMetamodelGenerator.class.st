@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_export_clause',
 		'_switch_statement',
 		'_for_statement',
 		'_accessibility_modifier',
@@ -197,7 +196,8 @@ Class {
 		'catchClause',
 		'methodSignature',
 		'interfaceDeclaration',
-		'jsxText'
+		'jsxText',
+		'exportClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -254,7 +254,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	
 	exportStatement := builder ensureClassNamed: #ExportStatement.
 	_namespace_export := builder ensureClassNamed: #Namespace_export.
-	_export_clause := builder ensureClassNamed: #Export_clause.
+	exportClause := builder ensureClassNamed: #ExportClause.
 	_export_specifier := builder ensureClassNamed: #Export_specifier.
 	import := builder ensureClassNamed: #Import.
 	importStatement := builder ensureClassNamed: #ImportStatement.
