@@ -665,10 +665,10 @@ FASTTypescriptTEntityCreator >> newLiteral [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newLiteral_type [
+FASTTypescriptTEntityCreator >> newLiteralType [
 
 	<generated>
-	^ self add: FASTTypescriptLiteral_type new
+	^ self add: FASTTypescriptLiteralType new
 ]
 
 { #category : 'entity creation' }
