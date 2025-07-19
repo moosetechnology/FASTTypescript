@@ -700,17 +700,17 @@ FASTTypescriptTEntityCreator >> newMetaProperty [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newMethodSignature [
+
+	<generated>
+	^ self add: FASTTypescriptMethodSignature new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newMethod_definition [
 
 	<generated>
 	^ self add: FASTTypescriptMethod_definition new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newMethod_signature [
-
-	<generated>
-	^ self add: FASTTypescriptMethod_signature new
 ]
 
 { #category : 'entity creation' }

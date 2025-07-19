@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_method_signature',
 		'_interface_declaration',
 		'_jsx_text',
 		'_export_clause',
@@ -197,7 +196,8 @@ Class {
 		'enumBody',
 		'restType',
 		'exportStatement',
-		'catchClause'
+		'catchClause',
+		'methodSignature'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -342,7 +342,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_computed_property_name := builder ensureClassNamed: #Computed_property_name.
 	_public_field_definition := builder ensureClassNamed: #Public_field_definition.
 	_non_null_expression := builder ensureClassNamed: #Non_null_expression.
-	_method_signature := builder ensureClassNamed: #Method_signature.
+	methodSignature := builder ensureClassNamed: #MethodSignature.
 	_abstract_method_signature := builder ensureClassNamed: #Abstract_method_signature.
 	_function_signature := builder ensureClassNamed: #Function_signature.
 	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
