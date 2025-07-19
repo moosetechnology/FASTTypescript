@@ -5,20 +5,20 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `index_type` | `FASTTypescriptIndex_signature` | `indexSignatureOwner` | `FASTTypescriptType_identifier` | My type|
-| `name` | `FASTTypescriptIndex_signature` | `identifierOwner` | `FASTTypescriptIdentifier` | My name|
-| `type` | `FASTTypescriptIndex_signature` | `indexSignatureOwner` | `FASTTypescriptType_annotation` | My annotation type|
+| `index_type` | `FASTTypescriptIndexSignature` | `indexSignatureOwner` | `FASTTypescriptType_identifier` | My type|
+| `name` | `FASTTypescriptIndexSignature` | `identifierOwner` | `FASTTypescriptIdentifier` | My name|
+| `type` | `FASTTypescriptIndexSignature` | `indexSignatureOwner` | `FASTTypescriptType_annotation` | My annotation type|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptIndex_signature',
+	#name : 'FASTTypescriptIndexSignature',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#index_type => FMOne type: #FASTTypescriptType_identifier opposite: #indexSignatureOwner',
-		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #identifierOwner',
-		'#type => FMOne type: #FASTTypescriptType_annotation opposite: #indexSignatureOwner'
+		'#type => FMOne type: #FASTTypescriptType_annotation opposite: #indexSignatureOwner',
+		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #identifierOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -26,16 +26,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptIndex_signature class >> annotation [
+FASTTypescriptIndexSignature class >> annotation [
 
-	<FMClass: #Index_signature super: #FASTTypescriptEntity>
+	<FMClass: #IndexSignature super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptIndexSignature class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptIndex_signature }
+]
+
 { #category : 'accessing' }
-FASTTypescriptIndex_signature >> index_type [
+FASTTypescriptIndexSignature >> index_type [
 	"Relation named: #index_type type: #FASTTypescriptType_identifier opposite: #indexSignatureOwner"
 
 	<generated>
@@ -44,21 +50,21 @@ FASTTypescriptIndex_signature >> index_type [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptIndex_signature >> index_type: anObject [
+FASTTypescriptIndexSignature >> index_type: anObject [
 
 	<generated>
 	index_type := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptIndex_signature >> index_typeGroup [
+FASTTypescriptIndexSignature >> index_typeGroup [
 	<generated>
 	<navigation: 'Index_type'>
 	^ MooseSpecializedGroup with: self index_type
 ]
 
 { #category : 'accessing' }
-FASTTypescriptIndex_signature >> name [
+FASTTypescriptIndexSignature >> name [
 	"Relation named: #name type: #FASTTypescriptIdentifier opposite: #identifierOwner"
 
 	<generated>
@@ -67,21 +73,21 @@ FASTTypescriptIndex_signature >> name [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptIndex_signature >> name: anObject [
+FASTTypescriptIndexSignature >> name: anObject [
 
 	<generated>
 	name := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptIndex_signature >> nameGroup [
+FASTTypescriptIndexSignature >> nameGroup [
 	<generated>
 	<navigation: 'Name'>
 	^ MooseSpecializedGroup with: self name
 ]
 
 { #category : 'accessing' }
-FASTTypescriptIndex_signature >> type [
+FASTTypescriptIndexSignature >> type [
 	"Relation named: #type type: #FASTTypescriptType_annotation opposite: #indexSignatureOwner"
 
 	<generated>
@@ -90,14 +96,14 @@ FASTTypescriptIndex_signature >> type [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptIndex_signature >> type: anObject [
+FASTTypescriptIndexSignature >> type: anObject [
 
 	<generated>
 	type := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptIndex_signature >> typeGroup [
+FASTTypescriptIndexSignature >> typeGroup [
 	<generated>
 	<navigation: 'Type'>
 	^ MooseSpecializedGroup with: self type

@@ -22,9 +22,9 @@
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
 | `genericTypeOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptGeneric_type` | The owner of this type identifier|
-| `indexSignatureOwner` | `FASTTypescriptType_identifier` | `index_type` | `FASTTypescriptIndex_signature` | The owner of this index type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `indexSignatureOwner` | `FASTTypescriptType_identifier` | `index_type` | `FASTTypescriptIndexSignature` | The owner of this index type|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
@@ -53,7 +53,7 @@ Class {
 		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructor_type opposite: #type',
 		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
 		'#genericTypeOwner => FMOne type: #FASTTypescriptGeneric_type opposite: #name',
-		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #index_type',
+		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #index_type',
 		'#typeIdentifierOwner => FMOne type: #FASTTypescriptClass_declaration opposite: #name'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -147,7 +147,7 @@ FASTTypescriptType_identifier >> genericTypeOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptType_identifier >> indexSignatureOwner [
-	"Relation named: #indexSignatureOwner type: #FASTTypescriptIndex_signature opposite: #index_type"
+	"Relation named: #indexSignatureOwner type: #FASTTypescriptIndexSignature opposite: #index_type"
 
 	<generated>
 	<FMComment: 'The owner of this index type'>

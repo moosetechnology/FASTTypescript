@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_index_signature',
 		'_import_statement',
 		'_true',
 		'_debugger_statement',
@@ -197,7 +196,8 @@ Class {
 		'typeAssertion',
 		'lookupType',
 		'lexicalDeclaration',
-		'templateString'
+		'templateString',
+		'indexSignature'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -415,7 +415,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_default_type := builder ensureClassNamed: #Default_type.
 	constraint := builder ensureClassNamed: #Constraint.
 	_construct_signature := builder ensureClassNamed: #Construct_signature.
-	_index_signature := builder ensureClassNamed: #Index_signature.
+	indexSignature := builder ensureClassNamed: #IndexSignature.
 	_array_type := builder ensureClassNamed: #Array_type.
 	_tuple_type := builder ensureClassNamed: #Tuple_type.
 	_readonly_type := builder ensureClassNamed: #Readonly_type.
@@ -594,15 +594,15 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((_type_arguments property: #typeArgumentsOwner) comment:
 			 'The owner of these type arguments').
 
-	((_index_signature property: #index_type) comment: 'My type')
+	((indexSignature property: #index_type) comment: 'My type')
 	<>- ((_type_identifier property: #indexSignatureOwner) comment:
 			 'The owner of this index type').
 
-	((_index_signature property: #type) comment: 'My annotation type')
+	((indexSignature property: #type) comment: 'My annotation type')
 	<>- ((_type_annotation property: #indexSignatureOwner) comment:
 			 'The owner of this annotation type').
 	
-	((_index_signature property: #name) comment: 'My name')
+	((indexSignature property: #name) comment: 'My name')
 	<>- ((identifier property: #identifierOwner) comment:
 			 'The owner of this identifier').
 

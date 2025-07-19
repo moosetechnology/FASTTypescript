@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
-| `indexSignatureOwner` | `FASTTypescriptType_annotation` | `type` | `FASTTypescriptIndex_signature` | The owner of this annotation type|
+| `indexSignatureOwner` | `FASTTypescriptType_annotation` | `type` | `FASTTypescriptIndexSignature` | The owner of this annotation type|
 | `optionalParameterOwner` | `FASTTypescriptType_annotation` | `type` | `FASTTypescriptOptional_parameter` | The owner of this type annotation|
 | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
 
@@ -19,7 +19,7 @@ Class {
 	#traits : 'FASTTypescriptTOptionalField',
 	#classTraits : 'FASTTypescriptTOptionalField classTrait',
 	#instVars : [
-		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndex_signature opposite: #type',
+		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #type',
 		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptional_parameter opposite: #type'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -38,7 +38,7 @@ FASTTypescriptType_annotation class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptType_annotation >> indexSignatureOwner [
-	"Relation named: #indexSignatureOwner type: #FASTTypescriptIndex_signature opposite: #type"
+	"Relation named: #indexSignatureOwner type: #FASTTypescriptIndexSignature opposite: #type"
 
 	<generated>
 	<FMComment: 'The owner of this annotation type'>

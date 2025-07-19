@@ -581,10 +581,10 @@ FASTTypescriptTEntityCreator >> newImport_statement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newIndex_signature [
+FASTTypescriptTEntityCreator >> newIndexSignature [
 
 	<generated>
-	^ self add: FASTTypescriptIndex_signature new
+	^ self add: FASTTypescriptIndexSignature new
 ]
 
 { #category : 'entity creation' }
