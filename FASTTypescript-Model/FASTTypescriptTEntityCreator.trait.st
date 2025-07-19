@@ -273,10 +273,10 @@ FASTTypescriptTEntityCreator >> newContinue_statement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newDebugger_statement [
+FASTTypescriptTEntityCreator >> newDebuggerStatement [
 
 	<generated>
-	^ self add: FASTTypescriptDebugger_statement new
+	^ self add: FASTTypescriptDebuggerStatement new
 ]
 
 { #category : 'entity creation' }

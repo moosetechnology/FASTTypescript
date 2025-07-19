@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_debugger_statement',
 		'_rest_pattern',
 		'_satisfies_expression',
 		'_switch_default',
@@ -197,7 +196,8 @@ Class {
 		'lexicalDeclaration',
 		'templateString',
 		'indexSignature',
-		'importStatement'
+		'importStatement',
+		'debuggerStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -279,7 +279,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_with_statement := builder ensureClassNamed: #With_statement.
 	breakStatement := builder ensureClassNamed: #BreakStatement.
 	_continue_statement := builder ensureClassNamed: #Continue_statement.
-	_debugger_statement := builder ensureClassNamed: #Debugger_statement.
+	debuggerStatement := builder ensureClassNamed: #DebuggerStatement.
 	_return_statement := builder ensureClassNamed: #Return_statement.
 	_throw_statement := builder ensureClassNamed: #Throw_statement.
 	_empty_statement := builder ensureClassNamed: #Empty_statement.
