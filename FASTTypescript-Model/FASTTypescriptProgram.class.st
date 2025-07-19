@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `classDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptClass_declaration` | The class declarations that I define|
-| `enumDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptEnum_declaration` | The enum declarations that I define|
+| `enumDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptEnumDeclaration` | The enum declarations that I define|
 | `interfaceDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptInterface_declaration` | The interface declarations that I define|
 
 ### Other
@@ -32,7 +32,7 @@ Class {
 	#classTraits : '(FASTTEntity classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
 		'#classDeclarations => FMMany type: #FASTTypescriptClass_declaration opposite: #parentProgram',
-		'#enumDeclarations => FMMany type: #FASTTypescriptEnum_declaration opposite: #parentProgram',
+		'#enumDeclarations => FMMany type: #FASTTypescriptEnumDeclaration opposite: #parentProgram',
 		'#interfaceDeclarations => FMMany type: #FASTTypescriptInterface_declaration opposite: #parentProgram'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -93,7 +93,7 @@ FASTTypescriptProgram >> classDeclarationsGroup [
 
 { #category : 'accessing' }
 FASTTypescriptProgram >> enumDeclarations [
-	"Relation named: #enumDeclarations type: #FASTTypescriptEnum_declaration opposite: #parentProgram"
+	"Relation named: #enumDeclarations type: #FASTTypescriptEnumDeclaration opposite: #parentProgram"
 
 	<generated>
 	<FMComment: 'The enum declarations that I define'>

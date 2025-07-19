@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_enum_declaration',
 		'_switch_body',
 		'_subscript_expression',
 		'_union_type',
@@ -197,7 +196,8 @@ Class {
 		'debuggerStatement',
 		'restPattern',
 		'satisfiesExpression',
-		'switchDefault'
+		'switchDefault',
+		'enumDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -362,8 +362,8 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_interface_declaration := builder ensureClassNamed: #Interface_declaration.
 	_extends_type_clause := builder ensureClassNamed: #Extends_type_clause.
 	
-	_enum_declaration := builder ensureClassNamed: #Enum_declaration.
-	_enum_declaration withTesting.
+	enumDeclaration := builder ensureClassNamed: #EnumDeclaration.
+	enumDeclaration withTesting.
 	
 	_enum_body := builder ensureClassNamed: #Enum_body.
 	_enum_assignment := builder ensureClassNamed: #Enum_assignment.
@@ -483,10 +483,10 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_interface_declaration --|> tStatement.
 
 
-	_enum_declaration --|> tDeclaration.
-	_enum_declaration --|> tWithDeclarations.
-	_enum_declaration --|> tWithModifiers.
-	_enum_declaration --|> tStatement.
+	enumDeclaration --|> tDeclaration.
+	enumDeclaration --|> tWithDeclarations.
+	enumDeclaration --|> tWithModifiers.
+	enumDeclaration --|> tStatement.
 	
 	_type_annotation --|> tOptionalField.
 	identifier --|> tOptionalField.
@@ -552,7 +552,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((program property: #enumDeclarations) comment:
 		 'The enum declarations that I define')
-	<>-* ((_enum_declaration property: #parentProgram) comment:
+	<>-* ((enumDeclaration property: #parentProgram) comment:
 			 'The program that contains me').
 
 	((program property: #interfaceDeclarations) comment:
@@ -777,12 +777,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'My owner').
 
 	"Enum"
-	((_enum_declaration property: #identifier) comment:
+	((enumDeclaration property: #identifier) comment:
 		 'The identifier I define')
 	<>- ((identifier property: #parentEnum) comment:
 			 'The enum that contains me').
 
-	((_enum_declaration property: #body) comment: 'The body of the enum')
+	((enumDeclaration property: #body) comment: 'The body of the enum')
 	<>- ((_enum_body property: #bodyParent) comment:
 			 'The enum declaration that contains me').
 

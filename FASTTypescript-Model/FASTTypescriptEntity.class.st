@@ -145,7 +145,7 @@ FASTTypescriptEntity >> isCompilationUnit [
 ]
 
 { #category : 'testing' }
-FASTTypescriptEntity >> isEnum_declaration [
+FASTTypescriptEntity >> isEnumDeclaration [
 
 	<generated>
 	^ false

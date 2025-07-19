@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `bodyParent` | `FASTTypescriptEnum_body` | `body` | `FASTTypescriptEnum_declaration` | The enum declaration that contains me|
+| `bodyParent` | `FASTTypescriptEnum_body` | `body` | `FASTTypescriptEnumDeclaration` | The enum declaration that contains me|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypescriptEnum_body',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#bodyParent => FMOne type: #FASTTypescriptEnum_declaration opposite: #body'
+		'#bodyParent => FMOne type: #FASTTypescriptEnumDeclaration opposite: #body'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -32,7 +32,7 @@ FASTTypescriptEnum_body class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptEnum_body >> bodyParent [
-	"Relation named: #bodyParent type: #FASTTypescriptEnum_declaration opposite: #body"
+	"Relation named: #bodyParent type: #FASTTypescriptEnumDeclaration opposite: #body"
 
 	<generated>
 	<FMComment: 'The enum declaration that contains me'>

@@ -6,16 +6,16 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `parentLoopStatement` | `FASTTStatement` | `body` | `FASTTLoopStatement` | Optional loop of which this statement is the body|
-| `parentProgram` | `FASTTypescriptEnum_declaration` | `enumDeclarations` | `FASTTypescriptProgram` | The program that contains me|
+| `parentProgram` | `FASTTypescriptEnumDeclaration` | `enumDeclarations` | `FASTTypescriptProgram` | The program that contains me|
 | `statementContainer` | `FASTTStatement` | `statements` | `FASTTStatementBlock` | Block containing this statement.|
 | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | `declarations` | `FASTTypescriptTWithDeclarations` | The element that declares me|
 
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptEnum_declaration` | `bodyParent` | `FASTTypescriptEnum_body` | The body of the enum|
+| `body` | `FASTTypescriptEnumDeclaration` | `bodyParent` | `FASTTypescriptEnum_body` | The body of the enum|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
-| `identifier` | `FASTTypescriptEnum_declaration` | `parentEnum` | `FASTTypescriptIdentifier` | The identifier I define|
+| `identifier` | `FASTTypescriptEnumDeclaration` | `parentEnum` | `FASTTypescriptIdentifier` | The identifier I define|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
 
 
@@ -29,14 +29,14 @@
 
 "
 Class {
-	#name : 'FASTTypescriptEnum_declaration',
+	#name : 'FASTTypescriptEnumDeclaration',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers',
 	#classTraits : 'FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait',
 	#instVars : [
-		'#body => FMOne type: #FASTTypescriptEnum_body opposite: #bodyParent',
+		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #enumDeclarations',
 		'#identifier => FMOne type: #FASTTypescriptIdentifier opposite: #parentEnum',
-		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #enumDeclarations'
+		'#body => FMOne type: #FASTTypescriptEnum_body opposite: #bodyParent'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -44,16 +44,24 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptEnum_declaration class >> annotation [
+FASTTypescriptEnumDeclaration class >> annotation [
 
-	<FMClass: #Enum_declaration super: #FASTTypescriptEntity>
+	<FMClass: #EnumDeclaration super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptEnumDeclaration class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptEnum_declaration }
+
+
+]
+
 { #category : 'accessing' }
-FASTTypescriptEnum_declaration >> body [
+FASTTypescriptEnumDeclaration >> body [
 	"Relation named: #body type: #FASTTypescriptEnum_body opposite: #bodyParent"
 
 	<generated>
@@ -62,21 +70,21 @@ FASTTypescriptEnum_declaration >> body [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptEnum_declaration >> body: anObject [
+FASTTypescriptEnumDeclaration >> body: anObject [
 
 	<generated>
 	body := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptEnum_declaration >> bodyGroup [
+FASTTypescriptEnumDeclaration >> bodyGroup [
 	<generated>
 	<navigation: 'Body'>
 	^ MooseSpecializedGroup with: self body
 ]
 
 { #category : 'accessing' }
-FASTTypescriptEnum_declaration >> identifier [
+FASTTypescriptEnumDeclaration >> identifier [
 	"Relation named: #identifier type: #FASTTypescriptIdentifier opposite: #parentEnum"
 
 	<generated>
@@ -85,28 +93,28 @@ FASTTypescriptEnum_declaration >> identifier [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptEnum_declaration >> identifier: anObject [
+FASTTypescriptEnumDeclaration >> identifier: anObject [
 
 	<generated>
 	identifier := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptEnum_declaration >> identifierGroup [
+FASTTypescriptEnumDeclaration >> identifierGroup [
 	<generated>
 	<navigation: 'Identifier'>
 	^ MooseSpecializedGroup with: self identifier
 ]
 
 { #category : 'testing' }
-FASTTypescriptEnum_declaration >> isEnum_declaration [
+FASTTypescriptEnumDeclaration >> isEnumDeclaration [
 
 	<generated>
 	^ true
 ]
 
 { #category : 'accessing' }
-FASTTypescriptEnum_declaration >> parentProgram [
+FASTTypescriptEnumDeclaration >> parentProgram [
 	"Relation named: #parentProgram type: #FASTTypescriptProgram opposite: #enumDeclarations"
 
 	<generated>
@@ -116,14 +124,14 @@ FASTTypescriptEnum_declaration >> parentProgram [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptEnum_declaration >> parentProgram: anObject [
+FASTTypescriptEnumDeclaration >> parentProgram: anObject [
 
 	<generated>
 	parentProgram := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptEnum_declaration >> parentProgramGroup [
+FASTTypescriptEnumDeclaration >> parentProgramGroup [
 	<generated>
 	<navigation: 'ParentProgram'>
 	^ MooseSpecializedGroup with: self parentProgram
