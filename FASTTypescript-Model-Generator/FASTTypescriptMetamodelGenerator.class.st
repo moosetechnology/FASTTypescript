@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_function_declaration',
 		'_array_type',
 		'_new_expression',
 		'_literal_type',
@@ -197,7 +196,8 @@ Class {
 		'subscriptExpression',
 		'unionType',
 		'interfaceBody',
-		'typeIdentifier'
+		'typeIdentifier',
+		'functionDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -305,7 +305,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	
 	_class_heritage := builder ensureClassNamed: #Class_heritage.
 	_function_expression := builder ensureClassNamed: #Function_expression.
-	_function_declaration := builder ensureClassNamed: #Function_declaration.
+	functionDeclaration := builder ensureClassNamed: #FunctionDeclaration.
 	_generator_function := builder ensureClassNamed: #Generator_function.
 	_generator_function_declaration := builder ensureClassNamed: #Generator_function_declaration.
 	arrowFunction := builder ensureClassNamed: #ArrowFunction.
