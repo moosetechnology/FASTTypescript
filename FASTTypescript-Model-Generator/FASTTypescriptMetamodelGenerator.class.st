@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_lookup_type',
 		'_lexical_declaration',
 		'_template_string',
 		'_index_signature',
@@ -197,7 +196,8 @@ Class {
 		'typeParameters',
 		'asExpression',
 		'doStatement',
-		'typeAssertion'
+		'typeAssertion',
+		'lookupType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -398,7 +398,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
 	_type_query := builder ensureClassNamed: #Type_query.
 	_index_type_query := builder ensureClassNamed: #Index_type_query.
-	_lookup_type := builder ensureClassNamed: #Lookup_type.
+	lookupType := builder ensureClassNamed: #LookupType.
 	_mapped_type_clause := builder ensureClassNamed: #Mapped_type_clause.
 	_literal_type := builder ensureClassNamed: #Literal_type.
 	_unary_expression := builder ensureClassNamed: #Unary_expression.

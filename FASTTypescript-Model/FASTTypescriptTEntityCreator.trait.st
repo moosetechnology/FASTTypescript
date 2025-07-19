@@ -672,10 +672,10 @@ FASTTypescriptTEntityCreator >> newLiteral_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newLookup_type [
+FASTTypescriptTEntityCreator >> newLookupType [
 
 	<generated>
-	^ self add: FASTTypescriptLookup_type new
+	^ self add: FASTTypescriptLookupType new
 ]
 
 { #category : 'entity creation' }
