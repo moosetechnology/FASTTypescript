@@ -14,3 +14,11 @@ FASTTypescriptRestType class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'class initialization' }
+FASTTypescriptRestType class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptRest_type }
+	
+
+]
