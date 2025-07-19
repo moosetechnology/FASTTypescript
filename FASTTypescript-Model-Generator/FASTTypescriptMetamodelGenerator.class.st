@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_formal_parameters',
 		'_statement_identifier',
 		'_existential_type',
 		'_meta_property',
@@ -197,7 +196,8 @@ Class {
 		'arrowFunction',
 		'abstractClassDeclaration',
 		'callSignature',
-		'labeledStatement'
+		'labeledStatement',
+		'formalParameters'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -333,7 +333,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	_call_expression := builder ensureClassNamed: #Call_expression.
 	_class_body := builder ensureClassNamed: #Class_body.
-	_formal_parameters := builder ensureClassNamed: #Formal_parameters.
+	formalParameters := builder ensureClassNamed: #FormalParameters.
 	_class_static_block := builder ensureClassNamed: #Class_static_block.
 	_rest_pattern := builder ensureClassNamed: #Rest_pattern.
 	_method_definition := builder ensureClassNamed: #Method_definition.
@@ -611,7 +611,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The owner of this type').
 
 	((_function_type property: #parameters) comment: 'My parameters')
-	<>- ((_formal_parameters property: #formalParametersOwner) comment:
+	<>- ((formalParameters property: #formalParametersOwner) comment:
 			 'My owner').
 
 	((_unary_expression property: #argument) comment: 'My argument')
@@ -661,7 +661,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			
 	((_constructor_type property: #parameters) comment:
 		 'My parameters')
-	<>- ((_formal_parameters property: #formalParametersOwner) comment:
+	<>- ((formalParameters property: #formalParametersOwner) comment:
 			 'The owner of these formal parameters').
 
 	((_optional_parameter property: #type) comment:
@@ -751,7 +751,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_method_definition property: #parameters) comment:
 		 'My parameters')
-	<>- ((_formal_parameters property: #formalParametersOwner) comment: 'My owner'). 
+	<>- ((formalParameters property: #formalParametersOwner) comment: 'My owner'). 
 	
 	((_finally_clause property: #body) comment:
 		 'My body')

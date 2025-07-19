@@ -31,7 +31,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `parameters` | `FASTTypescriptFunction_type` | `formalParametersOwner` | `FASTTypescriptFormal_parameters` | My parameters|
+| `parameters` | `FASTTypescriptFunction_type` | `formalParametersOwner` | `FASTTypescriptFormalParameters` | My parameters|
 | `return_type` | `FASTTypescriptFunction_type` | `functionTypeOwner` | `FASTTExpression` | My return type|
 
 
@@ -50,7 +50,7 @@ Class {
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
-		'#parameters => FMOne type: #FASTTypescriptFormal_parameters opposite: #formalParametersOwner'
+		'#parameters => FMOne type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -68,7 +68,7 @@ FASTTypescriptFunction_type class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptFunction_type >> parameters [
-	"Relation named: #parameters type: #FASTTypescriptFormal_parameters opposite: #formalParametersOwner"
+	"Relation named: #parameters type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner"
 
 	<generated>
 	<FMComment: 'My parameters'>

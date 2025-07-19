@@ -441,10 +441,10 @@ FASTTypescriptTEntityCreator >> newFor_statement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newFormal_parameters [
+FASTTypescriptTEntityCreator >> newFormalParameters [
 
 	<generated>
-	^ self add: FASTTypescriptFormal_parameters new
+	^ self add: FASTTypescriptFormalParameters new
 ]
 
 { #category : 'entity creation' }

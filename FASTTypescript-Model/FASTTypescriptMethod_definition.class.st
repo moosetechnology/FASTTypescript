@@ -7,7 +7,7 @@
 |---|
 | `body` | `FASTTypescriptMethod_definition` | `statementBlockOwner` | `FASTTypescriptStatement_block` | My body|
 | `name` | `FASTTypescriptMethod_definition` | `propertyIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | My name|
-| `parameters` | `FASTTypescriptMethod_definition` | `formalParametersOwner` | `FASTTypescriptFormal_parameters` | My parameters|
+| `parameters` | `FASTTypescriptMethod_definition` | `formalParametersOwner` | `FASTTypescriptFormalParameters` | My parameters|
 | `return_type` | `FASTTypescriptMethod_definition` | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | My return type in case it exists|
 
 
@@ -19,7 +19,7 @@ Class {
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner',
 		'#name => FMOne type: #FASTTypescriptPropertyIdentifier opposite: #propertyIdentifierOwner',
-		'#parameters => FMOne type: #FASTTypescriptFormal_parameters opposite: #formalParametersOwner',
+		'#parameters => FMOne type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner',
 		'#return_type => FMOne type: #FASTTypescriptTOptionalField opposite: #typeAnnotationOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -84,7 +84,7 @@ FASTTypescriptMethod_definition >> nameGroup [
 
 { #category : 'accessing' }
 FASTTypescriptMethod_definition >> parameters [
-	"Relation named: #parameters type: #FASTTypescriptFormal_parameters opposite: #formalParametersOwner"
+	"Relation named: #parameters type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner"
 
 	<generated>
 	<FMComment: 'My parameters'>
