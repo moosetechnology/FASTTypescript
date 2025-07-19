@@ -980,10 +980,10 @@ FASTTypescriptTEntityCreator >> newReturn_statement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newSatisfies_expression [
+FASTTypescriptTEntityCreator >> newSatisfiesExpression [
 
 	<generated>
-	^ self add: FASTTypescriptSatisfies_expression new
+	^ self add: FASTTypescriptSatisfiesExpression new
 ]
 
 { #category : 'entity creation' }

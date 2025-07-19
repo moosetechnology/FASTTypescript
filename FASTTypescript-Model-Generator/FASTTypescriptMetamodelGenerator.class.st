@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_satisfies_expression',
 		'_switch_default',
 		'_enum_declaration',
 		'_switch_body',
@@ -197,7 +196,8 @@ Class {
 		'indexSignature',
 		'importStatement',
 		'debuggerStatement',
-		'restPattern'
+		'restPattern',
+		'satisfiesExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -348,7 +348,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
 	typeAssertion := builder ensureClassNamed: #TypeAssertion.
 	asExpression := builder ensureClassNamed: #AsExpression.
-	_satisfies_expression := builder ensureClassNamed: #Satisfies_expression.
+	satisfiesExpression := builder ensureClassNamed: #SatisfiesExpression.
 	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
 	_import_require_clause := builder ensureClassNamed: #Import_require_clause.
 	_extends_clause := builder ensureClassNamed: #Extends_clause.
@@ -526,7 +526,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_new_expression --|> expression.
 	_non_null_expression --|> expression.
 	_parenthesized_expression --|> expression.
-	_satisfies_expression --|> expression.
+	satisfiesExpression --|> expression.
 	_sequence_expression --|> expression.
 	_subscript_expression --|> expression.
 	_ternary_expression --|> expression.
