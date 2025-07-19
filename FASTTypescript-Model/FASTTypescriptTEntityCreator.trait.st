@@ -1085,17 +1085,17 @@ FASTTypescriptTEntityCreator >> newSwitch_statement [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newTemplateString [
+
+	<generated>
+	^ self add: FASTTypescriptTemplateString new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newTemplate_literal_type [
 
 	<generated>
 	^ self add: FASTTypescriptTemplate_literal_type new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newTemplate_string [
-
-	<generated>
-	^ self add: FASTTypescriptTemplate_string new
 ]
 
 { #category : 'entity creation' }
