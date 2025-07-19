@@ -322,6 +322,13 @@ FASTTypescriptTEntityCreator >> newEmpty_statement [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newEnumBody [
+
+	<generated>
+	^ self add: FASTTypescriptEnumBody new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newEnumDeclaration [
 
 	<generated>
@@ -333,13 +340,6 @@ FASTTypescriptTEntityCreator >> newEnum_assignment [
 
 	<generated>
 	^ self add: FASTTypescriptEnum_assignment new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newEnum_body [
-
-	<generated>
-	^ self add: FASTTypescriptEnum_body new
 ]
 
 { #category : 'entity creation' }

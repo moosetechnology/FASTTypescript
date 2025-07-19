@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_enum_body',
 		'_rest_type',
 		'_export_statement',
 		'_catch_clause',
@@ -197,7 +196,8 @@ Class {
 		'arrayType',
 		'newExpression',
 		'literalType',
-		'typePredicateAnnotation'
+		'typePredicateAnnotation',
+		'enumBody'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -365,7 +365,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	enumDeclaration := builder ensureClassNamed: #EnumDeclaration.
 	enumDeclaration withTesting.
 	
-	_enum_body := builder ensureClassNamed: #Enum_body.
+	enumBody := builder ensureClassNamed: #EnumBody.
 	_enum_assignment := builder ensureClassNamed: #Enum_assignment.
 	_type_alias_declaration := builder ensureClassNamed: #Type_alias_declaration.
 	_accessibility_modifier := builder ensureClassNamed: #Accessibility_modifier.
@@ -782,7 +782,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The enum that contains me').
 
 	((enumDeclaration property: #body) comment: 'The body of the enum')
-	<>- ((_enum_body property: #bodyParent) comment:
+	<>- ((enumBody property: #bodyParent) comment:
 			 'The enum declaration that contains me').
 
 	"Interface"

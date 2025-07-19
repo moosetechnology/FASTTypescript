@@ -13,7 +13,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptEnumDeclaration` | `bodyParent` | `FASTTypescriptEnum_body` | The body of the enum|
+| `body` | `FASTTypescriptEnumDeclaration` | `bodyParent` | `FASTTypescriptEnumBody` | The body of the enum|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `identifier` | `FASTTypescriptEnumDeclaration` | `parentEnum` | `FASTTypescriptIdentifier` | The identifier I define|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
@@ -34,9 +34,9 @@ Class {
 	#traits : 'FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers',
 	#classTraits : 'FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait',
 	#instVars : [
-		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #enumDeclarations',
+		'#body => FMOne type: #FASTTypescriptEnumBody opposite: #bodyParent',
 		'#identifier => FMOne type: #FASTTypescriptIdentifier opposite: #parentEnum',
-		'#body => FMOne type: #FASTTypescriptEnum_body opposite: #bodyParent'
+		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #enumDeclarations'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -62,7 +62,7 @@ FASTTypescriptEnumDeclaration class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptEnumDeclaration >> body [
-	"Relation named: #body type: #FASTTypescriptEnum_body opposite: #bodyParent"
+	"Relation named: #body type: #FASTTypescriptEnumBody opposite: #bodyParent"
 
 	<generated>
 	<FMComment: 'The body of the enum'>
