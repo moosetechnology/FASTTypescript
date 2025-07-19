@@ -91,10 +91,10 @@ FASTTypescriptTEntityCreator >> newArrowFunction [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAs_expression [
+FASTTypescriptTEntityCreator >> newAsExpression [
 
 	<generated>
-	^ self add: FASTTypescriptAs_expression new
+	^ self add: FASTTypescriptAsExpression new
 ]
 
 { #category : 'entity creation' }

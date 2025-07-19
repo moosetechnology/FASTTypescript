@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_as_expression',
 		'_do_statement',
 		'_type_assertion',
 		'_lookup_type',
@@ -197,7 +196,8 @@ Class {
 		'statementIdentifier',
 		'existentialType',
 		'metaProperty',
-		'typeParameters'
+		'typeParameters',
+		'asExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -347,7 +347,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_function_signature := builder ensureClassNamed: #Function_signature.
 	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
 	_type_assertion := builder ensureClassNamed: #Type_assertion.
-	_as_expression := builder ensureClassNamed: #As_expression.
+	asExpression := builder ensureClassNamed: #AsExpression.
 	_satisfies_expression := builder ensureClassNamed: #Satisfies_expression.
 	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
 	_import_require_clause := builder ensureClassNamed: #Import_require_clause.
@@ -517,7 +517,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_unary_expression --|> expression.
 	_member_expression --|> expression.
 	_call_expression --|> expression.
-	_as_expression --|> expression.
+	asExpression --|> expression.
 	_assignment_expression --|> expression.
 	_augmented_assignment_expression --|> expression.
 	_await_expression --|> expression.
