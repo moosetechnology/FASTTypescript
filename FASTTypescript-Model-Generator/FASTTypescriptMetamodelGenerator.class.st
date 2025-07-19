@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_switch_default',
 		'_enum_declaration',
 		'_switch_body',
 		'_subscript_expression',
@@ -197,7 +196,8 @@ Class {
 		'importStatement',
 		'debuggerStatement',
 		'restPattern',
-		'satisfiesExpression'
+		'satisfiesExpression',
+		'switchDefault'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -286,7 +286,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	labeledStatement := builder ensureClassNamed: #LabeledStatement.
 	_switch_body := builder ensureClassNamed: #Switch_body.
 	_switch_case := builder ensureClassNamed: #Switch_case.
-	_switch_default := builder ensureClassNamed: #Switch_default.
+	switchDefault := builder ensureClassNamed: #SwitchDefault.
 	_catch_clause := builder ensureClassNamed: #Catch_clause.
 	_finally_clause := builder ensureClassNamed: #Finally_clause.
 	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
