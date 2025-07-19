@@ -13,7 +13,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptInterface_declaration` | `bodyParent` | `FASTTypescriptInterface_body` | The body of the interface|
+| `body` | `FASTTypescriptInterface_declaration` | `bodyParent` | `FASTTypescriptInterfaceBody` | The body of the interface|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
 | `name` | `FASTTypescriptInterface_declaration` | `typeIdentifierOwner` | `FASTTypescriptType_identifier` | My name|
@@ -34,7 +34,7 @@ Class {
 	#traits : 'FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers',
 	#classTraits : 'FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait',
 	#instVars : [
-		'#body => FMOne type: #FASTTypescriptInterface_body opposite: #bodyParent',
+		'#body => FMOne type: #FASTTypescriptInterfaceBody opposite: #bodyParent',
 		'#name => FMOne type: #FASTTypescriptType_identifier opposite: #typeIdentifierOwner',
 		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #interfaceDeclarations'
 	],
@@ -54,7 +54,7 @@ FASTTypescriptInterface_declaration class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptInterface_declaration >> body [
-	"Relation named: #body type: #FASTTypescriptInterface_body opposite: #bodyParent"
+	"Relation named: #body type: #FASTTypescriptInterfaceBody opposite: #bodyParent"
 
 	<generated>
 	<FMComment: 'The body of the interface'>

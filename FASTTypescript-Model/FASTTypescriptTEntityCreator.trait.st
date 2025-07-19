@@ -609,10 +609,10 @@ FASTTypescriptTEntityCreator >> newInstantiation_expression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newInterface_body [
+FASTTypescriptTEntityCreator >> newInterfaceBody [
 
 	<generated>
-	^ self add: FASTTypescriptInterface_body new
+	^ self add: FASTTypescriptInterfaceBody new
 ]
 
 { #category : 'entity creation' }

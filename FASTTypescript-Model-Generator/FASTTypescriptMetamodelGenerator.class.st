@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_interface_body',
 		'_type_identifier',
 		'_function_declaration',
 		'_array_type',
@@ -197,7 +196,8 @@ Class {
 		'enumDeclaration',
 		'switchBody',
 		'subscriptExpression',
-		'unionType'
+		'unionType',
+		'interfaceBody'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -421,7 +421,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	unionType := builder ensureClassNamed: #UnionType.
 	_intersection_type := builder ensureClassNamed: #Intersection_type.
 	_function_type := builder ensureClassNamed: #Function_type.
-	_interface_body := builder ensureClassNamed: #Interface_body.
+	interfaceBody := builder ensureClassNamed: #InterfaceBody.
 	propertyIdentifier := builder ensureClassNamed: #PropertyIdentifier.
 	_shorthand_property_identifier := builder ensureClassNamed: #Shorthand_property_identifier.
 	_shorthand_property_identifier_pattern := builder ensureClassNamed: #Shorthand_property_identifier_pattern.
@@ -793,7 +793,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_interface_declaration property: #body) comment:
 		 'The body of the interface')
-	<>- ((_interface_body property: #bodyParent) comment:
+	<>- ((interfaceBody property: #bodyParent) comment:
 			 'The interface declaration that contains me').
 
 	"Traits"
