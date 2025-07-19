@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_type_identifier',
 		'_function_declaration',
 		'_array_type',
 		'_new_expression',
@@ -197,7 +196,8 @@ Class {
 		'switchBody',
 		'subscriptExpression',
 		'unionType',
-		'interfaceBody'
+		'interfaceBody',
+		'typeIdentifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -427,7 +427,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_shorthand_property_identifier_pattern := builder ensureClassNamed: #Shorthand_property_identifier_pattern.
 	statementIdentifier := builder ensureClassNamed: #StatementIdentifier.
 	_this_type := builder ensureClassNamed: #This_type.
-	_type_identifier := builder ensureClassNamed: #Type_identifier.
+	typeIdentifier := builder ensureClassNamed: #TypeIdentifier.
 	_ERROR := builder ensureClassNamed: #ERROR.
 	expression := builder ensureClassNamed: #Expression.
 	compilationUnit := builder ensureClassNamed: #CompilationUnit.
@@ -494,7 +494,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	identifier --|> tExpression.
 	expression --|> tExpression.
 	_array_pattern --|> tExpression.
-	_type_identifier --|> tExpression.
+	typeIdentifier --|> tExpression.
 	_conditional_type --|> tExpression.
 	_flow_maybe_type --|> tExpression.
 	_parenthesized_type --|> tExpression.
@@ -594,7 +594,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The owner of these type arguments').
 
 	((indexSignature property: #index_type) comment: 'My type')
-	<>- ((_type_identifier property: #indexSignatureOwner) comment:
+	<>- ((typeIdentifier property: #indexSignatureOwner) comment:
 			 'The owner of this index type').
 
 	((indexSignature property: #type) comment: 'My annotation type')
@@ -618,7 +618,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The owner of this class').
 
 	((_extends_type_clause property: #type) comment: 'My type identifier')
-	<>- ((_type_identifier property: #extendsTypeClauseOwner) comment:
+	<>- ((typeIdentifier property: #extendsTypeClauseOwner) comment:
 			 'The owner of this type identifier').
 
 	((_with_statement property: #object) comment:
@@ -645,7 +645,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_generic_type property: #name) comment:
 		 'My name as type identifier')
-	<>- ((_type_identifier property: #genericTypeOwner) comment:
+	<>- ((typeIdentifier property: #genericTypeOwner) comment:
 			 'The owner of this type identifier').
 	
 	((_generic_type property: #type_arguments) comment:
@@ -655,7 +655,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((_constructor_type property: #type) comment:
 		 'My type as type identifier')
-	<>- ((_type_identifier property: #constructorTypeOwner) comment:
+	<>- ((typeIdentifier property: #constructorTypeOwner) comment:
 			 'The owner of this type identifier').
 			
 	((_constructor_type property: #parameters) comment:
@@ -772,7 +772,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((_class_declaration property: #name) comment:
 		 'The name of the class')
-	<>- ((_type_identifier property: #typeIdentifierOwner) comment:
+	<>- ((typeIdentifier property: #typeIdentifierOwner) comment:
 			 'My owner').
 
 	"Enum"
@@ -788,7 +788,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	"Interface"
 	((_interface_declaration property: #name) comment:
 		 'My name')
-	<>- ((_type_identifier property: #typeIdentifierOwner) comment:
+	<>- ((typeIdentifier property: #typeIdentifierOwner) comment:
 			 'My owner').
 
 	((_interface_declaration property: #body) comment:

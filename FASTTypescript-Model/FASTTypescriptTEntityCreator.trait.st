@@ -1169,6 +1169,13 @@ FASTTypescriptTEntityCreator >> newTypeAssertion [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newTypeIdentifier [
+
+	<generated>
+	^ self add: FASTTypescriptTypeIdentifier new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newTypeParameters [
 
 	<generated>
@@ -1194,13 +1201,6 @@ FASTTypescriptTEntityCreator >> newType_arguments [
 
 	<generated>
 	^ self add: FASTTypescriptType_arguments new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newType_identifier [
-
-	<generated>
-	^ self add: FASTTypescriptType_identifier new
 ]
 
 { #category : 'entity creation' }

@@ -16,7 +16,7 @@
 | `body` | `FASTTypescriptInterface_declaration` | `bodyParent` | `FASTTypescriptInterfaceBody` | The body of the interface|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
-| `name` | `FASTTypescriptInterface_declaration` | `typeIdentifierOwner` | `FASTTypescriptType_identifier` | My name|
+| `name` | `FASTTypescriptInterface_declaration` | `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | My name|
 
 
 ## Properties
@@ -35,7 +35,7 @@ Class {
 	#classTraits : 'FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait',
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptInterfaceBody opposite: #bodyParent',
-		'#name => FMOne type: #FASTTypescriptType_identifier opposite: #typeIdentifierOwner',
+		'#name => FMOne type: #FASTTypescriptTypeIdentifier opposite: #typeIdentifierOwner',
 		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #interfaceDeclarations'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -77,7 +77,7 @@ FASTTypescriptInterface_declaration >> bodyGroup [
 
 { #category : 'accessing' }
 FASTTypescriptInterface_declaration >> name [
-	"Relation named: #name type: #FASTTypescriptType_identifier opposite: #typeIdentifierOwner"
+	"Relation named: #name type: #FASTTypescriptTypeIdentifier opposite: #typeIdentifierOwner"
 
 	<generated>
 	<FMComment: 'My name'>

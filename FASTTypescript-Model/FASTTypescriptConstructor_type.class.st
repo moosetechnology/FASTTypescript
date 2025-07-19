@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `parameters` | `FASTTypescriptConstructor_type` | `formalParametersOwner` | `FASTTypescriptFormalParameters` | My parameters|
-| `type` | `FASTTypescriptConstructor_type` | `constructorTypeOwner` | `FASTTypescriptType_identifier` | My type as type identifier|
+| `type` | `FASTTypescriptConstructor_type` | `constructorTypeOwner` | `FASTTypescriptTypeIdentifier` | My type as type identifier|
 
 
 
@@ -16,7 +16,7 @@ Class {
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#parameters => FMOne type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner',
-		'#type => FMOne type: #FASTTypescriptType_identifier opposite: #constructorTypeOwner'
+		'#type => FMOne type: #FASTTypescriptTypeIdentifier opposite: #constructorTypeOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -57,7 +57,7 @@ FASTTypescriptConstructor_type >> parametersGroup [
 
 { #category : 'accessing' }
 FASTTypescriptConstructor_type >> type [
-	"Relation named: #type type: #FASTTypescriptType_identifier opposite: #constructorTypeOwner"
+	"Relation named: #type type: #FASTTypescriptTypeIdentifier opposite: #constructorTypeOwner"
 
 	<generated>
 	<FMComment: 'My type as type identifier'>

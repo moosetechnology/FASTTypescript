@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `index_type` | `FASTTypescriptIndexSignature` | `indexSignatureOwner` | `FASTTypescriptType_identifier` | My type|
+| `index_type` | `FASTTypescriptIndexSignature` | `indexSignatureOwner` | `FASTTypescriptTypeIdentifier` | My type|
 | `name` | `FASTTypescriptIndexSignature` | `identifierOwner` | `FASTTypescriptIdentifier` | My name|
 | `type` | `FASTTypescriptIndexSignature` | `indexSignatureOwner` | `FASTTypescriptType_annotation` | My annotation type|
 
@@ -16,9 +16,9 @@ Class {
 	#name : 'FASTTypescriptIndexSignature',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#index_type => FMOne type: #FASTTypescriptType_identifier opposite: #indexSignatureOwner',
-		'#type => FMOne type: #FASTTypescriptType_annotation opposite: #indexSignatureOwner',
-		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #identifierOwner'
+		'#index_type => FMOne type: #FASTTypescriptTypeIdentifier opposite: #indexSignatureOwner',
+		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #identifierOwner',
+		'#type => FMOne type: #FASTTypescriptType_annotation opposite: #indexSignatureOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -42,7 +42,7 @@ FASTTypescriptIndexSignature class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptIndexSignature >> index_type [
-	"Relation named: #index_type type: #FASTTypescriptType_identifier opposite: #indexSignatureOwner"
+	"Relation named: #index_type type: #FASTTypescriptTypeIdentifier opposite: #indexSignatureOwner"
 
 	<generated>
 	<FMComment: 'My type'>

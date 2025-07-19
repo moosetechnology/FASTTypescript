@@ -15,14 +15,14 @@
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptConditional_type` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptConditional_type` | The right operand (if possible)|
 | `consequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypescriptConditional_type` | Consequence owner|
-| `constructorTypeOwner` | `FASTTypescriptType_identifier` | `type` | `FASTTypescriptConstructor_type` | The owner of this type identifier|
+| `constructorTypeOwner` | `FASTTypescriptTypeIdentifier` | `type` | `FASTTypescriptConstructor_type` | The owner of this type identifier|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
-| `extendsTypeClauseOwner` | `FASTTypescriptType_identifier` | `type` | `FASTTypescriptExtends_type_clause` | The owner of this type identifier|
+| `extendsTypeClauseOwner` | `FASTTypescriptTypeIdentifier` | `type` | `FASTTypescriptExtends_type_clause` | The owner of this type identifier|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
-| `genericTypeOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptGeneric_type` | The owner of this type identifier|
-| `indexSignatureOwner` | `FASTTypescriptType_identifier` | `index_type` | `FASTTypescriptIndexSignature` | The owner of this index type|
+| `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptGeneric_type` | The owner of this type identifier|
+| `indexSignatureOwner` | `FASTTypescriptTypeIdentifier` | `index_type` | `FASTTypescriptIndexSignature` | The owner of this index type|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
@@ -30,8 +30,8 @@
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
-| `typeIdentifierOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptClass_declaration` | My owner|
-| `typeIdentifierOwner` | `FASTTypescriptType_identifier` | `name` | `FASTTypescriptInterface_declaration` | My owner|
+| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptInterface_declaration` | My owner|
+| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptClass_declaration` | My owner|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnary_expression` | The owner of this class|
 
 
@@ -45,15 +45,15 @@
 
 "
 Class {
-	#name : 'FASTTypescriptType_identifier',
+	#name : 'FASTTypescriptTypeIdentifier',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
-		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructor_type opposite: #type',
+		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #index_type',
 		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
 		'#genericTypeOwner => FMOne type: #FASTTypescriptGeneric_type opposite: #name',
-		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #index_type',
+		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructor_type opposite: #type',
 		'#typeIdentifierOwner => FMOne type: #FASTTypescriptClass_declaration opposite: #name'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -62,16 +62,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptType_identifier class >> annotation [
+FASTTypescriptTypeIdentifier class >> annotation [
 
-	<FMClass: #Type_identifier super: #FASTTypescriptEntity>
+	<FMClass: #TypeIdentifier super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptTypeIdentifier class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptType_identifier }
+]
+
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> constructorTypeOwner [
+FASTTypescriptTypeIdentifier >> constructorTypeOwner [
 	"Relation named: #constructorTypeOwner type: #FASTTypescriptConstructor_type opposite: #type"
 
 	<generated>
@@ -82,21 +88,21 @@ FASTTypescriptType_identifier >> constructorTypeOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> constructorTypeOwner: anObject [
+FASTTypescriptTypeIdentifier >> constructorTypeOwner: anObject [
 
 	<generated>
 	constructorTypeOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptType_identifier >> constructorTypeOwnerGroup [
+FASTTypescriptTypeIdentifier >> constructorTypeOwnerGroup [
 	<generated>
 	<navigation: 'ConstructorTypeOwner'>
 	^ MooseSpecializedGroup with: self constructorTypeOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> extendsTypeClauseOwner [
+FASTTypescriptTypeIdentifier >> extendsTypeClauseOwner [
 	"Relation named: #extendsTypeClauseOwner type: #FASTTypescriptExtends_type_clause opposite: #type"
 
 	<generated>
@@ -107,21 +113,21 @@ FASTTypescriptType_identifier >> extendsTypeClauseOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> extendsTypeClauseOwner: anObject [
+FASTTypescriptTypeIdentifier >> extendsTypeClauseOwner: anObject [
 
 	<generated>
 	extendsTypeClauseOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptType_identifier >> extendsTypeClauseOwnerGroup [
+FASTTypescriptTypeIdentifier >> extendsTypeClauseOwnerGroup [
 	<generated>
 	<navigation: 'ExtendsTypeClauseOwner'>
 	^ MooseSpecializedGroup with: self extendsTypeClauseOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> genericTypeOwner [
+FASTTypescriptTypeIdentifier >> genericTypeOwner [
 	"Relation named: #genericTypeOwner type: #FASTTypescriptGeneric_type opposite: #name"
 
 	<generated>
@@ -132,21 +138,21 @@ FASTTypescriptType_identifier >> genericTypeOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> genericTypeOwner: anObject [
+FASTTypescriptTypeIdentifier >> genericTypeOwner: anObject [
 
 	<generated>
 	genericTypeOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptType_identifier >> genericTypeOwnerGroup [
+FASTTypescriptTypeIdentifier >> genericTypeOwnerGroup [
 	<generated>
 	<navigation: 'GenericTypeOwner'>
 	^ MooseSpecializedGroup with: self genericTypeOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> indexSignatureOwner [
+FASTTypescriptTypeIdentifier >> indexSignatureOwner [
 	"Relation named: #indexSignatureOwner type: #FASTTypescriptIndexSignature opposite: #index_type"
 
 	<generated>
@@ -157,21 +163,21 @@ FASTTypescriptType_identifier >> indexSignatureOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> indexSignatureOwner: anObject [
+FASTTypescriptTypeIdentifier >> indexSignatureOwner: anObject [
 
 	<generated>
 	indexSignatureOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptType_identifier >> indexSignatureOwnerGroup [
+FASTTypescriptTypeIdentifier >> indexSignatureOwnerGroup [
 	<generated>
 	<navigation: 'IndexSignatureOwner'>
 	^ MooseSpecializedGroup with: self indexSignatureOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> typeIdentifierOwner [
+FASTTypescriptTypeIdentifier >> typeIdentifierOwner [
 	"Relation named: #typeIdentifierOwner type: #FASTTypescriptClass_declaration opposite: #name"
 
 	<generated>
@@ -182,14 +188,14 @@ FASTTypescriptType_identifier >> typeIdentifierOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_identifier >> typeIdentifierOwner: anObject [
+FASTTypescriptTypeIdentifier >> typeIdentifierOwner: anObject [
 
 	<generated>
 	typeIdentifierOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptType_identifier >> typeIdentifierOwnerGroup [
+FASTTypescriptTypeIdentifier >> typeIdentifierOwnerGroup [
 	<generated>
 	<navigation: 'TypeIdentifierOwner'>
 	^ MooseSpecializedGroup with: self typeIdentifierOwner
