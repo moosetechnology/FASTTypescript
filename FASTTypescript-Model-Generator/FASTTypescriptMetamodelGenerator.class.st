@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_type_parameters',
 		'_as_expression',
 		'_do_statement',
 		'_type_assertion',
@@ -197,7 +196,8 @@ Class {
 		'formalParameters',
 		'statementIdentifier',
 		'existentialType',
-		'metaProperty'
+		'metaProperty',
+		'typeParameters'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -410,7 +410,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_object_type := builder ensureClassNamed: #Object_type.
 	callSignature := builder ensureClassNamed: #CallSignature.
 	_property_signature := builder ensureClassNamed: #Property_signature.
-	_type_parameters := builder ensureClassNamed: #Type_parameters.
+	typeParameters := builder ensureClassNamed: #TypeParameters.
 	_type_parameter := builder ensureClassNamed: #Type_parameter.
 	_default_type := builder ensureClassNamed: #Default_type.
 	constraint := builder ensureClassNamed: #Constraint.

@@ -1162,6 +1162,13 @@ FASTTypescriptTEntityCreator >> newTuple_type [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newTypeParameters [
+
+	<generated>
+	^ self add: FASTTypescriptTypeParameters new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newType_alias_declaration [
 
 	<generated>
@@ -1201,13 +1208,6 @@ FASTTypescriptTEntityCreator >> newType_parameter [
 
 	<generated>
 	^ self add: FASTTypescriptType_parameter new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newType_parameters [
-
-	<generated>
-	^ self add: FASTTypescriptType_parameters new
 ]
 
 { #category : 'entity creation' }
