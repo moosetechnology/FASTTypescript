@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_rest_type',
 		'_export_statement',
 		'_catch_clause',
 		'_method_signature',
@@ -197,7 +196,8 @@ Class {
 		'newExpression',
 		'literalType',
 		'typePredicateAnnotation',
-		'enumBody'
+		'enumBody',
+		'restType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -383,7 +383,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
 	_optional_parameter := builder ensureClassNamed: #Optional_parameter.
 	_optional_type := builder ensureClassNamed: #Optional_type.
-	_rest_type := builder ensureClassNamed: #Rest_type.
+	restType := builder ensureClassNamed: #RestType.
 	_constructor_type := builder ensureClassNamed: #Constructor_type.
 	_template_type := builder ensureClassNamed: #Template_type.
 	_template_literal_type := builder ensureClassNamed: #Template_literal_type.

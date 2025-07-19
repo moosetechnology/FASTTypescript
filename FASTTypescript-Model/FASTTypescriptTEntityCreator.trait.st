@@ -966,10 +966,10 @@ FASTTypescriptTEntityCreator >> newRestPattern [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newRest_type [
+FASTTypescriptTEntityCreator >> newRestType [
 
 	<generated>
-	^ self add: FASTTypescriptRest_type new
+	^ self add: FASTTypescriptRestType new
 ]
 
 { #category : 'entity creation' }

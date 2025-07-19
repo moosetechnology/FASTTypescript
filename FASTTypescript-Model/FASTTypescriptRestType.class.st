@@ -1,5 +1,5 @@
 Class {
-	#name : 'FASTTypescriptRest_type',
+	#name : 'FASTTypescriptRestType',
 	#superclass : 'FASTTypescriptEntity',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -7,9 +7,9 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptRest_type class >> annotation [
+FASTTypescriptRestType class >> annotation [
 
-	<FMClass: #Rest_type super: #FASTTypescriptEntity>
+	<FMClass: #RestType super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
