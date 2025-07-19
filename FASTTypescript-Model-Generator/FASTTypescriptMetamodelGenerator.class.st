@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_import_statement',
 		'_true',
 		'_debugger_statement',
 		'_rest_pattern',
@@ -197,7 +196,8 @@ Class {
 		'lookupType',
 		'lexicalDeclaration',
 		'templateString',
-		'indexSignature'
+		'indexSignature',
+		'importStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -257,7 +257,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_export_clause := builder ensureClassNamed: #Export_clause.
 	_export_specifier := builder ensureClassNamed: #Export_specifier.
 	import := builder ensureClassNamed: #Import.
-	_import_statement := builder ensureClassNamed: #Import_statement.
+	importStatement := builder ensureClassNamed: #ImportStatement.
 	_import_clause := builder ensureClassNamed: #Import_clause.
 	_namespace_import := builder ensureClassNamed: #Namespace_import.
 	_named_imports := builder ensureClassNamed: #Named_imports.

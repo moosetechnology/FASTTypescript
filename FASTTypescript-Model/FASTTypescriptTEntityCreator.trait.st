@@ -539,6 +539,13 @@ FASTTypescriptTEntityCreator >> newImport [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newImportStatement [
+
+	<generated>
+	^ self add: FASTTypescriptImportStatement new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newImport_alias [
 
 	<generated>
@@ -571,13 +578,6 @@ FASTTypescriptTEntityCreator >> newImport_specifier [
 
 	<generated>
 	^ self add: FASTTypescriptImport_specifier new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newImport_statement [
-
-	<generated>
-	^ self add: FASTTypescriptImport_statement new
 ]
 
 { #category : 'entity creation' }
