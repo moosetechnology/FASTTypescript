@@ -1043,10 +1043,10 @@ FASTTypescriptTEntityCreator >> newString_fragment [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newSubscript_expression [
+FASTTypescriptTEntityCreator >> newSubscriptExpression [
 
 	<generated>
-	^ self add: FASTTypescriptSubscript_expression new
+	^ self add: FASTTypescriptSubscriptExpression new
 ]
 
 { #category : 'entity creation' }

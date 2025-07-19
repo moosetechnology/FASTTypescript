@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_subscript_expression',
 		'_union_type',
 		'_interface_body',
 		'_type_identifier',
@@ -197,7 +196,8 @@ Class {
 		'satisfiesExpression',
 		'switchDefault',
 		'enumDeclaration',
-		'switchBody'
+		'switchBody',
+		'subscriptExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -314,7 +314,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_new_expression := builder ensureClassNamed: #New_expression.
 	_await_expression := builder ensureClassNamed: #Await_expression.
 	_member_expression := builder ensureClassNamed: #Member_expression.
-	_subscript_expression := builder ensureClassNamed: #Subscript_expression.
+	subscriptExpression := builder ensureClassNamed: #SubscriptExpression.
 	_assignment_expression := builder ensureClassNamed: #Assignment_expression.
 	_augmented_assignment_expression := builder ensureClassNamed: #Augmented_assignment_expression.
 	spreadElement := builder ensureClassNamed: #SpreadElement.
@@ -393,7 +393,6 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_type_predicate := builder ensureClassNamed: #Type_predicate.
 	_type_predicate_annotation := builder ensureClassNamed: #Type_predicate_annotation.
 	_member_expression := builder ensureClassNamed: #Member_expression.
-	_subscript_expression := builder ensureClassNamed: #Subscript_expression.
 	_call_expression := builder ensureClassNamed: #Call_expression.
 	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
 	_type_query := builder ensureClassNamed: #Type_query.
@@ -528,7 +527,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_parenthesized_expression --|> expression.
 	satisfiesExpression --|> expression.
 	_sequence_expression --|> expression.
-	_subscript_expression --|> expression.
+	subscriptExpression --|> expression.
 	_ternary_expression --|> expression.
 	_update_expression --|> expression.
 	_yield_expression --|> expression.
