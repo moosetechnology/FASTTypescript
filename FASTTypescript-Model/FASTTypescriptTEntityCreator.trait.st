@@ -175,10 +175,10 @@ FASTTypescriptTEntityCreator >> newCall_expression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newCatch_clause [
+FASTTypescriptTEntityCreator >> newCatchClause [
 
 	<generated>
-	^ self add: FASTTypescriptCatch_clause new
+	^ self add: FASTTypescriptCatchClause new
 ]
 
 { #category : 'entity creation' }

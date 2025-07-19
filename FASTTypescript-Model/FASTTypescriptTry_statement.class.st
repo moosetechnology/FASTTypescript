@@ -7,7 +7,7 @@
 |---|
 | `body` | `FASTTypescriptTry_statement` | `tryStatementOwner` | `FASTTypescriptStatement_block` | Body|
 | `finalizer` | `FASTTypescriptTry_statement` | `tryStatementOwner` | `FASTTypescriptFinally_clause` | Finalizer|
-| `handler` | `FASTTypescriptTry_statement` | `tryStatementOwner` | `FASTTypescriptCatch_clause` | Handler|
+| `handler` | `FASTTypescriptTry_statement` | `tryStatementOwner` | `FASTTypescriptCatchClause` | Handler|
 
 
 
@@ -18,7 +18,7 @@ Class {
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #tryStatementOwner',
 		'#finalizer => FMOne type: #FASTTypescriptFinally_clause opposite: #tryStatementOwner',
-		'#handler => FMOne type: #FASTTypescriptCatch_clause opposite: #tryStatementOwner'
+		'#handler => FMOne type: #FASTTypescriptCatchClause opposite: #tryStatementOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -82,7 +82,7 @@ FASTTypescriptTry_statement >> finalizerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptTry_statement >> handler [
-	"Relation named: #handler type: #FASTTypescriptCatch_clause opposite: #tryStatementOwner"
+	"Relation named: #handler type: #FASTTypescriptCatchClause opposite: #tryStatementOwner"
 
 	<generated>
 	<FMComment: 'Handler'>

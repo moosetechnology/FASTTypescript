@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_catch_clause',
 		'_method_signature',
 		'_interface_declaration',
 		'_jsx_text',
@@ -197,7 +196,8 @@ Class {
 		'typePredicateAnnotation',
 		'enumBody',
 		'restType',
-		'exportStatement'
+		'exportStatement',
+		'catchClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -287,7 +287,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	switchBody := builder ensureClassNamed: #SwitchBody.
 	_switch_case := builder ensureClassNamed: #Switch_case.
 	switchDefault := builder ensureClassNamed: #SwitchDefault.
-	_catch_clause := builder ensureClassNamed: #Catch_clause.
+	catchClause := builder ensureClassNamed: #CatchClause.
 	_finally_clause := builder ensureClassNamed: #Finally_clause.
 	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
 	_yield_expression := builder ensureClassNamed: #Yield_expression.
@@ -714,7 +714,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'Try statement owner').
 
 	((_try_statement property: #handler) comment: 'Handler')
-	<>- ((_catch_clause property: #tryStatementOwner) comment:
+	<>- ((catchClause property: #tryStatementOwner) comment:
 			 'Try statement owner').
 
 	((_try_statement property: #finalizer) comment: 'Finalizer')

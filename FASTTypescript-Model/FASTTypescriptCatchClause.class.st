@@ -5,13 +5,13 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `tryStatementOwner` | `FASTTypescriptCatch_clause` | `handler` | `FASTTypescriptTry_statement` | Try statement owner|
+| `tryStatementOwner` | `FASTTypescriptCatchClause` | `handler` | `FASTTypescriptTry_statement` | Try statement owner|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptCatch_clause',
+	#name : 'FASTTypescriptCatchClause',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#tryStatementOwner => FMOne type: #FASTTypescriptTry_statement opposite: #handler'
@@ -22,16 +22,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptCatch_clause class >> annotation [
+FASTTypescriptCatchClause class >> annotation [
 
-	<FMClass: #Catch_clause super: #FASTTypescriptEntity>
+	<FMClass: #CatchClause super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptCatchClause class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptCatch_clause }
+]
+
 { #category : 'accessing' }
-FASTTypescriptCatch_clause >> tryStatementOwner [
+FASTTypescriptCatchClause >> tryStatementOwner [
 	"Relation named: #tryStatementOwner type: #FASTTypescriptTry_statement opposite: #handler"
 
 	<generated>
@@ -42,14 +48,14 @@ FASTTypescriptCatch_clause >> tryStatementOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptCatch_clause >> tryStatementOwner: anObject [
+FASTTypescriptCatchClause >> tryStatementOwner: anObject [
 
 	<generated>
 	tryStatementOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptCatch_clause >> tryStatementOwnerGroup [
+FASTTypescriptCatchClause >> tryStatementOwnerGroup [
 	<generated>
 	<navigation: 'TryStatementOwner'>
 	^ MooseSpecializedGroup with: self tryStatementOwner
