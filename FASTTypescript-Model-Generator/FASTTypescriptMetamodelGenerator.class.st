@@ -3,7 +3,6 @@ Class {
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
-		'_lexical_declaration',
 		'_template_string',
 		'_index_signature',
 		'_import_statement',
@@ -197,7 +196,8 @@ Class {
 		'asExpression',
 		'doStatement',
 		'typeAssertion',
-		'lookupType'
+		'lookupType',
+		'lexicalDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -265,7 +265,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_import_attribute := builder ensureClassNamed: #Import_attribute.
 	_expression_statement := builder ensureClassNamed: #Expression_statement.
 	_variable_declaration := builder ensureClassNamed: #Variable_declaration.
-	_lexical_declaration := builder ensureClassNamed: #Lexical_declaration.
+	lexicalDeclaration := builder ensureClassNamed: #LexicalDeclaration.
 	_variable_declarator := builder ensureClassNamed: #Variable_declarator.
 	_statement_block := builder ensureClassNamed: #Statement_block.
 	_else_clause := builder ensureClassNamed: #Else_clause.

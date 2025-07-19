@@ -651,10 +651,10 @@ FASTTypescriptTEntityCreator >> newLabeledStatement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newLexical_declaration [
+FASTTypescriptTEntityCreator >> newLexicalDeclaration [
 
 	<generated>
-	^ self add: FASTTypescriptLexical_declaration new
+	^ self add: FASTTypescriptLexicalDeclaration new
 ]
 
 { #category : 'entity creation' }
