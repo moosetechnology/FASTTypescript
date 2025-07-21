@@ -343,10 +343,10 @@ FASTTypescriptTEntityCreator >> newEnum_assignment [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newEscape_sequence [
+FASTTypescriptTEntityCreator >> newEscapeSequence [
 
 	<generated>
-	^ self add: FASTTypescriptEscape_sequence new
+	^ self add: FASTTypescriptEscapeSequence new
 ]
 
 { #category : 'entity creation' }

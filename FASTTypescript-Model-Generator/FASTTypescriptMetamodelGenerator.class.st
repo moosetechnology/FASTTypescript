@@ -4,8 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_function_type',
-		'_escape_sequence',
 		'_type_query',
 		'_shorthand_property_identifier_pattern',
 		'_binary_expression',
@@ -197,7 +195,9 @@ Class {
 		'forStatement',
 		'accessibilityModifier',
 		'functionExpression',
-		'generatorFunctionDeclaration'
+		'generatorFunctionDeclaration',
+		'functionType',
+		'escapeSequence'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -232,7 +232,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_hash_bang_line := builder ensureClassNamed: #Hash_bang_line.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
-	_escape_sequence := builder ensureClassNamed: #Escape_sequence.
+	escapeSequence := builder ensureClassNamed: #EscapeSequence.
 	comment := builder ensureClassNamed: #Comment.
 	_regex_pattern := builder ensureClassNamed: #Regex_pattern.
 	_regex_flags := builder ensureClassNamed: #Regex_flags.
@@ -420,7 +420,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_readonly_type := builder ensureClassNamed: #Readonly_type.
 	unionType := builder ensureClassNamed: #UnionType.
 	_intersection_type := builder ensureClassNamed: #Intersection_type.
-	_function_type := builder ensureClassNamed: #Function_type.
+	functionType := builder ensureClassNamed: #Function_type.
 	interfaceBody := builder ensureClassNamed: #InterfaceBody.
 	propertyIdentifier := builder ensureClassNamed: #PropertyIdentifier.
 	_shorthand_property_identifier := builder ensureClassNamed: #Shorthand_property_identifier.
@@ -498,7 +498,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_conditional_type --|> tExpression.
 	_flow_maybe_type --|> tExpression.
 	_parenthesized_type --|> tExpression.
-	_function_type --|> tExpression.
+	functionType --|> tExpression.
 	_predefined_type --|> tExpression.
 	_generic_type --|> tExpression.
 	arrayType --|> tExpression.
@@ -605,11 +605,11 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((identifier property: #identifierOwner) comment:
 			 'The owner of this identifier').
 
-	((_function_type property: #return_type) comment: 'My return type')
+	((functionType property: #return_type) comment: 'My return type')
 	<>- ((tExpression property: #functionTypeOwner) comment:
 			 'The owner of this type').
 
-	((_function_type property: #parameters) comment: 'My parameters')
+	((functionType property: #parameters) comment: 'My parameters')
 	<>- ((formalParameters property: #formalParametersOwner) comment:
 			 'My owner').
 
