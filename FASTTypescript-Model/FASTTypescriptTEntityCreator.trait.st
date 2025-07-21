@@ -196,17 +196,17 @@ FASTTypescriptTEntityCreator >> newClassDeclaration [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newClassHeritage [
+
+	<generated>
+	^ self add: FASTTypescriptClassHeritage new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newClass_body [
 
 	<generated>
 	^ self add: FASTTypescriptClass_body new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newClass_heritage [
-
-	<generated>
-	^ self add: FASTTypescriptClass_heritage new
 ]
 
 { #category : 'entity creation' }

@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_class_heritage',
 		'_regex_pattern',
 		'_omitting_type_annotation',
 		'_else_clause',
@@ -197,7 +196,8 @@ Class {
 		'returnStatement',
 		'assignmentExpression',
 		'unaryExpression',
-		'variableDeclarator'
+		'variableDeclarator',
+		'classHeritage'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -303,7 +303,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	classDeclaration := builder ensureClassNamed: #ClassDeclaration.
 	classDeclaration withTesting.
 	
-	_class_heritage := builder ensureClassNamed: #Class_heritage.
+	classHeritage := builder ensureClassNamed: #ClassHeritage.
 	functionExpression := builder ensureClassNamed: #FunctionExpression.
 	functionDeclaration := builder ensureClassNamed: #FunctionDeclaration.
 	_generator_function := builder ensureClassNamed: #Generator_function.
