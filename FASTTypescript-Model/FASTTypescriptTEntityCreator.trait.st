@@ -455,10 +455,10 @@ FASTTypescriptTEntityCreator >> newFunctionDeclaration [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newFunction_expression [
+FASTTypescriptTEntityCreator >> newFunctionExpression [
 
 	<generated>
-	^ self add: FASTTypescriptFunction_expression new
+	^ self add: FASTTypescriptFunctionExpression new
 ]
 
 { #category : 'entity creation' }

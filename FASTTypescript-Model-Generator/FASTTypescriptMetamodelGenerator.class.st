@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_function_expression',
 		'_generator_function_declaration',
 		'_function_type',
 		'_escape_sequence',
@@ -197,7 +196,8 @@ Class {
 		'exportClause',
 		'switchStatement',
 		'forStatement',
-		'accessibilityModifier'
+		'accessibilityModifier',
+		'functionExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -304,7 +304,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_class_declaration withTesting.
 	
 	_class_heritage := builder ensureClassNamed: #Class_heritage.
-	_function_expression := builder ensureClassNamed: #Function_expression.
+	functionExpression := builder ensureClassNamed: #FunctionExpression.
 	functionDeclaration := builder ensureClassNamed: #FunctionDeclaration.
 	_generator_function := builder ensureClassNamed: #Generator_function.
 	_generator_function_declaration := builder ensureClassNamed: #Generator_function_declaration.
@@ -520,7 +520,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_assignment_expression --|> expression.
 	_augmented_assignment_expression --|> expression.
 	_await_expression --|> expression.
-	_function_expression --|> expression.
+	functionExpression --|> expression.
 	_instantiation_expression --|> expression.
 	newExpression --|> expression.
 	_non_null_expression --|> expression.
