@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_public_field_definition',
 		'_import_alias',
 		'_try_statement',
 		'_type_alias_declaration',
@@ -197,7 +196,8 @@ Class {
 		'optionalChain',
 		'templateLiteralType',
 		'assignmentPattern',
-		'nestedIdentifier'
+		'nestedIdentifier',
+		'publicFieldDefinition'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -340,7 +340,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	pair := builder ensureClassNamed: #Pair.
 	_pair_pattern := builder ensureClassNamed: #Pair_pattern.
 	_computed_property_name := builder ensureClassNamed: #Computed_property_name.
-	_public_field_definition := builder ensureClassNamed: #Public_field_definition.
+	publicFieldDefinition := builder ensureClassNamed: #PublicFieldDefinition.
 	_non_null_expression := builder ensureClassNamed: #Non_null_expression.
 	methodSignature := builder ensureClassNamed: #MethodSignature.
 	_abstract_method_signature := builder ensureClassNamed: #Abstract_method_signature.

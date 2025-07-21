@@ -917,10 +917,10 @@ FASTTypescriptTEntityCreator >> newProperty_signature [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newPublic_field_definition [
+FASTTypescriptTEntityCreator >> newPublicFieldDefinition [
 
 	<generated>
-	^ self add: FASTTypescriptPublic_field_definition new
+	^ self add: FASTTypescriptPublicFieldDefinition new
 ]
 
 { #category : 'entity creation' }
