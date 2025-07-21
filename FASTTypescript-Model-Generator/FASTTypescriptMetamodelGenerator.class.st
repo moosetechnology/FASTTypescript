@@ -4,8 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_empty_statement',
-		'_readonly_type',
 		'_class_body',
 		'_import_clause',
 		'_optional_chain',
@@ -197,7 +195,9 @@ Class {
 		'privatePropertyIdentifier',
 		'throwStatement',
 		'hashBangLine',
-		'nestedTypeIdentifier'
+		'nestedTypeIdentifier',
+		'emptyStatement',
+		'readonlyType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -282,7 +282,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	debuggerStatement := builder ensureClassNamed: #DebuggerStatement.
 	returnStatement := builder ensureClassNamed: #ReturnStatement.
 	throwStatement := builder ensureClassNamed: #ThrowStatement.
-	_empty_statement := builder ensureClassNamed: #Empty_statement.
+	emptyStatement := builder ensureClassNamed: #EmptyStatement.
 	labeledStatement := builder ensureClassNamed: #LabeledStatement.
 	switchBody := builder ensureClassNamed: #SwitchBody.
 	_switch_case := builder ensureClassNamed: #Switch_case.
@@ -415,7 +415,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	indexSignature := builder ensureClassNamed: #IndexSignature.
 	arrayType := builder ensureClassNamed: #ArrayType.
 	_tuple_type := builder ensureClassNamed: #Tuple_type.
-	_readonly_type := builder ensureClassNamed: #Readonly_type.
+	readonlyType := builder ensureClassNamed: #ReadonlyType.
 	unionType := builder ensureClassNamed: #UnionType.
 	_intersection_type := builder ensureClassNamed: #Intersection_type.
 	functionType := builder ensureClassNamed: #FunctionType.

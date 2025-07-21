@@ -315,10 +315,10 @@ FASTTypescriptTEntityCreator >> newElseClause [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newEmpty_statement [
+FASTTypescriptTEntityCreator >> newEmptyStatement [
 
 	<generated>
-	^ self add: FASTTypescriptEmpty_statement new
+	^ self add: FASTTypescriptEmptyStatement new
 ]
 
 { #category : 'entity creation' }
@@ -924,10 +924,10 @@ FASTTypescriptTEntityCreator >> newPublic_field_definition [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newReadonly_type [
+FASTTypescriptTEntityCreator >> newReadonlyType [
 
 	<generated>
-	^ self add: FASTTypescriptReadonly_type new
+	^ self add: FASTTypescriptReadonlyType new
 ]
 
 { #category : 'entity creation' }
