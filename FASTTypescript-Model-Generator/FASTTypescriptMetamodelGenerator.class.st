@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_import_alias',
 		'_try_statement',
 		'_type_alias_declaration',
 		'_optional_parameter',
@@ -197,7 +196,8 @@ Class {
 		'templateLiteralType',
 		'assignmentPattern',
 		'nestedIdentifier',
-		'publicFieldDefinition'
+		'publicFieldDefinition',
+		'importAlias'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -356,7 +356,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	abstractClassDeclaration := builder ensureClassNamed: #AbstractClassDeclaration.
 	module := builder ensureClassNamed: #Module.
 	_internal_module := builder ensureClassNamed: #Internal_module.
-	_import_alias := builder ensureClassNamed: #Import_alias.
+	importAlias := builder ensureClassNamed: #ImportAlias.
 	nestedTypeIdentifier := builder ensureClassNamed: #NestedTypeIdentifier.
 	interfaceDeclaration := builder ensureClassNamed: #InterfaceDeclaration.
 	_extends_type_clause := builder ensureClassNamed: #Extends_type_clause.
