@@ -1134,10 +1134,10 @@ FASTTypescriptTEntityCreator >> newThisType [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newThrow_statement [
+FASTTypescriptTEntityCreator >> newThrowStatement [
 
 	<generated>
-	^ self add: FASTTypescriptThrow_statement new
+	^ self add: FASTTypescriptThrowStatement new
 ]
 
 { #category : 'entity creation' }

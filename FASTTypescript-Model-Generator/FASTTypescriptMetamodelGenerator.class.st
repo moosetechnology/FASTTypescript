@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_throw_statement',
 		'_hash_bang_line',
 		'_nested_type_identifier',
 		'_empty_statement',
@@ -197,7 +196,8 @@ Class {
 		'elseClause',
 		'thisType',
 		'withStatement',
-		'privatePropertyIdentifier'
+		'privatePropertyIdentifier',
+		'throwStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -281,7 +281,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_continue_statement := builder ensureClassNamed: #Continue_statement.
 	debuggerStatement := builder ensureClassNamed: #DebuggerStatement.
 	returnStatement := builder ensureClassNamed: #ReturnStatement.
-	_throw_statement := builder ensureClassNamed: #Throw_statement.
+	throwStatement := builder ensureClassNamed: #ThrowStatement.
 	_empty_statement := builder ensureClassNamed: #Empty_statement.
 	labeledStatement := builder ensureClassNamed: #LabeledStatement.
 	switchBody := builder ensureClassNamed: #SwitchBody.

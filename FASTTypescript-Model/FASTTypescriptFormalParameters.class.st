@@ -6,8 +6,8 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptFunctionType` | My owner|
-| `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptMethod_definition` | My owner|
 | `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptConstructor_type` | The owner of these formal parameters|
+| `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptMethod_definition` | My owner|
 
 
 
