@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_omitting_type_annotation',
 		'_else_clause',
 		'_this_type',
 		'_with_statement',
@@ -197,7 +196,8 @@ Class {
 		'unaryExpression',
 		'variableDeclarator',
 		'classHeritage',
-		'regexPattern'
+		'regexPattern',
+		'omittingTypeAnnotation'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -371,7 +371,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_override_modifier := builder ensureClassNamed: #Override_modifier.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
 	_optional_parameter := builder ensureClassNamed: #Optional_parameter.
-	_omitting_type_annotation := builder ensureClassNamed: #Omitting_type_annotation.
+	omittingTypeAnnotation := builder ensureClassNamed: #OmittingTypeAnnotation.
 	_adding_type_annotation := builder ensureClassNamed: #Adding_type_annotation.
 	_opting_type_annotation := builder ensureClassNamed: #Opting_type_annotation.
 	_type_annotation := builder ensureClassNamed: #Type_annotation.

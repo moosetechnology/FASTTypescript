@@ -812,10 +812,10 @@ FASTTypescriptTEntityCreator >> newObject_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newOmitting_type_annotation [
+FASTTypescriptTEntityCreator >> newOmittingTypeAnnotation [
 
 	<generated>
-	^ self add: FASTTypescriptOmitting_type_annotation new
+	^ self add: FASTTypescriptOmittingTypeAnnotation new
 ]
 
 { #category : 'entity creation' }
