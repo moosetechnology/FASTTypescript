@@ -6,11 +6,11 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `ifStatementOwner` | `FASTTypescriptStatement_block` | `consequence` | `FASTTypescriptIf_statement` | The owner of this statement block|
-| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFinally_clause` | My owner|
-| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptMethod_definition` | My owner|
 | `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFor_in_statement` | The owner of this body is a for_in_statment|
+| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptMethod_definition` | My owner|
+| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFinally_clause` | My owner|
 | `tryStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptTry_statement` | Try statement owner|
-| `withStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptWith_statement` | The owner of this statement block|
+| `withStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptWithStatement` | The owner of this statement block|
 
 
 
@@ -22,7 +22,7 @@ Class {
 		'#ifStatementOwner => FMOne type: #FASTTypescriptIf_statement opposite: #consequence',
 		'#statementBlockOwner => FMOne type: #FASTTypescriptFor_in_statement opposite: #body',
 		'#tryStatementOwner => FMOne type: #FASTTypescriptTry_statement opposite: #body',
-		'#withStatementOwner => FMOne type: #FASTTypescriptWith_statement opposite: #body'
+		'#withStatementOwner => FMOne type: #FASTTypescriptWithStatement opposite: #body'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -115,7 +115,7 @@ FASTTypescriptStatement_block >> tryStatementOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptStatement_block >> withStatementOwner [
-	"Relation named: #withStatementOwner type: #FASTTypescriptWith_statement opposite: #body"
+	"Relation named: #withStatementOwner type: #FASTTypescriptWithStatement opposite: #body"
 
 	<generated>
 	<FMComment: 'The owner of this statement block'>

@@ -1281,10 +1281,10 @@ FASTTypescriptTEntityCreator >> newWhile_statement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newWith_statement [
+FASTTypescriptTEntityCreator >> newWithStatement [
 
 	<generated>
-	^ self add: FASTTypescriptWith_statement new
+	^ self add: FASTTypescriptWithStatement new
 ]
 
 { #category : 'entity creation' }

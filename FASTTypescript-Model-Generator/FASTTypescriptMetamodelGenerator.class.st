@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_with_statement',
 		'_private_property_identifier',
 		'_throw_statement',
 		'_hash_bang_line',
@@ -197,7 +196,8 @@ Class {
 		'regexPattern',
 		'omittingTypeAnnotation',
 		'elseClause',
-		'thisType'
+		'thisType',
+		'withStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -276,7 +276,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_while_statement := builder ensureClassNamed: #While_statement.
 	doStatement := builder ensureClassNamed: #DoStatement.
 	_try_statement := builder ensureClassNamed: #Try_statement.
-	_with_statement := builder ensureClassNamed: #With_statement.
+	withStatement := builder ensureClassNamed: #WithStatement.
 	breakStatement := builder ensureClassNamed: #BreakStatement.
 	_continue_statement := builder ensureClassNamed: #Continue_statement.
 	debuggerStatement := builder ensureClassNamed: #DebuggerStatement.
@@ -619,13 +619,13 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((typeIdentifier property: #extendsTypeClauseOwner) comment:
 			 'The owner of this type identifier').
 
-	((_with_statement property: #object) comment:
+	((withStatement property: #object) comment:
 		 'My object as parenthesized expression')
 	<>-
 		((parenthesizedExpression property: #withStatementOwner) comment:
 			 'The owner of this type parenthesized expression').
 
-	((_with_statement property: #body) comment:
+	((withStatement property: #body) comment:
 		 'My body as statement block')
 	<>- ((_statement_block property: #withStatementOwner) comment:
 			 'The owner of this statement block').

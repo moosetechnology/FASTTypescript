@@ -5,18 +5,18 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptWith_statement` | `withStatementOwner` | `FASTTypescriptStatement_block` | My body as statement block|
-| `object` | `FASTTypescriptWith_statement` | `withStatementOwner` | `FASTTypescriptParenthesizedExpression` | My object as parenthesized expression|
+| `body` | `FASTTypescriptWithStatement` | `withStatementOwner` | `FASTTypescriptStatement_block` | My body as statement block|
+| `object` | `FASTTypescriptWithStatement` | `withStatementOwner` | `FASTTypescriptParenthesizedExpression` | My object as parenthesized expression|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptWith_statement',
+	#name : 'FASTTypescriptWithStatement',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #withStatementOwner',
-		'#object => FMOne type: #FASTTypescriptParenthesizedExpression opposite: #withStatementOwner'
+		'#object => FMOne type: #FASTTypescriptParenthesizedExpression opposite: #withStatementOwner',
+		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #withStatementOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -24,16 +24,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptWith_statement class >> annotation [
+FASTTypescriptWithStatement class >> annotation [
 
-	<FMClass: #With_statement super: #FASTTypescriptEntity>
+	<FMClass: #WithStatement super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptWithStatement class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptWith_statement }
+]
+
 { #category : 'accessing' }
-FASTTypescriptWith_statement >> body [
+FASTTypescriptWithStatement >> body [
 	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #withStatementOwner"
 
 	<generated>
@@ -42,21 +48,21 @@ FASTTypescriptWith_statement >> body [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptWith_statement >> body: anObject [
+FASTTypescriptWithStatement >> body: anObject [
 
 	<generated>
 	body := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptWith_statement >> bodyGroup [
+FASTTypescriptWithStatement >> bodyGroup [
 	<generated>
 	<navigation: 'Body'>
 	^ MooseSpecializedGroup with: self body
 ]
 
 { #category : 'accessing' }
-FASTTypescriptWith_statement >> object [
+FASTTypescriptWithStatement >> object [
 	"Relation named: #object type: #FASTTypescriptParenthesizedExpression opposite: #withStatementOwner"
 
 	<generated>
@@ -65,14 +71,14 @@ FASTTypescriptWith_statement >> object [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptWith_statement >> object: anObject [
+FASTTypescriptWithStatement >> object: anObject [
 
 	<generated>
 	object := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptWith_statement >> objectGroup [
+FASTTypescriptWithStatement >> objectGroup [
 	<generated>
 	<navigation: 'Object'>
 	^ MooseSpecializedGroup with: self object
