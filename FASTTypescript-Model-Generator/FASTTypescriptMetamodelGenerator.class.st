@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_private_property_identifier',
 		'_throw_statement',
 		'_hash_bang_line',
 		'_nested_type_identifier',
@@ -197,7 +196,8 @@ Class {
 		'omittingTypeAnnotation',
 		'elseClause',
 		'thisType',
-		'withStatement'
+		'withStatement',
+		'privatePropertyIdentifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -237,7 +237,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	regexPattern := builder ensureClassNamed: #RegexPattern.
 	_regex_flags := builder ensureClassNamed: #Regex_flags.
 	number := builder ensureClassNamed: #Number.
-	_private_property_identifier := builder ensureClassNamed: #Private_property_identifier.
+	privatePropertyIdentifier := builder ensureClassNamed: #PrivatePropertyIdentifier.
 	this := builder ensureClassNamed: #This.
 	_super := builder ensureClassNamed: #Super.
 	
@@ -501,7 +501,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_generic_type --|> tExpression.
 	arrayType --|> tExpression.
 	_object_type --|> tExpression.
-	_private_property_identifier --|> tExpression.
+	privatePropertyIdentifier --|> tExpression.
 	propertyIdentifier --|> tExpression.
 	class --|> tExpression.
 	this --|> tExpression.

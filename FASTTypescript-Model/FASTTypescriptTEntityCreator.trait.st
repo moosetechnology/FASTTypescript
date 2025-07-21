@@ -889,10 +889,10 @@ FASTTypescriptTEntityCreator >> newPredefined_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newPrivate_property_identifier [
+FASTTypescriptTEntityCreator >> newPrivatePropertyIdentifier [
 
 	<generated>
-	^ self add: FASTTypescriptPrivate_property_identifier new
+	^ self add: FASTTypescriptPrivatePropertyIdentifier new
 ]
 
 { #category : 'entity creation' }
