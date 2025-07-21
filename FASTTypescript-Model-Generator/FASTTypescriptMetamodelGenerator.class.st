@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_import_clause',
 		'_optional_chain',
 		'_template_literal_type',
 		'_assignment_pattern',
@@ -197,7 +196,8 @@ Class {
 		'nestedTypeIdentifier',
 		'emptyStatement',
 		'readonlyType',
-		'classBody'
+		'classBody',
+		'importClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -258,7 +258,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_export_specifier := builder ensureClassNamed: #Export_specifier.
 	import := builder ensureClassNamed: #Import.
 	importStatement := builder ensureClassNamed: #ImportStatement.
-	_import_clause := builder ensureClassNamed: #Import_clause.
+	importClause := builder ensureClassNamed: #ImportClause.
 	_namespace_import := builder ensureClassNamed: #Namespace_import.
 	_named_imports := builder ensureClassNamed: #Named_imports.
 	_import_specifier := builder ensureClassNamed: #Import_specifier.
