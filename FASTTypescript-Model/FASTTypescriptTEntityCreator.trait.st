@@ -1071,17 +1071,17 @@ FASTTypescriptTEntityCreator >> newSwitchDefault [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newSwitchStatement [
+
+	<generated>
+	^ self add: FASTTypescriptSwitchStatement new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newSwitch_case [
 
 	<generated>
 	^ self add: FASTTypescriptSwitch_case new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newSwitch_statement [
-
-	<generated>
-	^ self add: FASTTypescriptSwitch_statement new
 ]
 
 { #category : 'entity creation' }

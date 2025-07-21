@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_switch_statement',
 		'_for_statement',
 		'_accessibility_modifier',
 		'_function_expression',
@@ -197,7 +196,8 @@ Class {
 		'methodSignature',
 		'interfaceDeclaration',
 		'jsxText',
-		'exportClause'
+		'exportClause',
+		'switchStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -270,7 +270,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_statement_block := builder ensureClassNamed: #Statement_block.
 	_else_clause := builder ensureClassNamed: #Else_clause.
 	_if_statement := builder ensureClassNamed: #If_statement.
-	_switch_statement := builder ensureClassNamed: #Switch_statement.
+	switchStatement := builder ensureClassNamed: #SwitchStatement.
 	_for_statement := builder ensureClassNamed: #For_statement.
 	_for_in_statement := builder ensureClassNamed: #For_in_statement.
 	_while_statement := builder ensureClassNamed: #While_statement.
