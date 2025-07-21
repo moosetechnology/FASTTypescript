@@ -973,10 +973,10 @@ FASTTypescriptTEntityCreator >> newRestType [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newReturn_statement [
+FASTTypescriptTEntityCreator >> newReturnStatement [
 
 	<generated>
-	^ self add: FASTTypescriptReturn_statement new
+	^ self add: FASTTypescriptReturnStatement new
 ]
 
 { #category : 'entity creation' }

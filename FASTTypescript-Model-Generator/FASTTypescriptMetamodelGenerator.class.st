@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_return_statement',
 		'_assignment_expression',
 		'_unary_expression',
 		'_variable_declarator',
@@ -197,7 +196,8 @@ Class {
 		'shorthandPropertyIdentifierPattern',
 		'binaryExpression',
 		'parenthesizedExpression',
-		'classDeclaration'
+		'classDeclaration',
+		'returnStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -280,7 +280,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	breakStatement := builder ensureClassNamed: #BreakStatement.
 	_continue_statement := builder ensureClassNamed: #Continue_statement.
 	debuggerStatement := builder ensureClassNamed: #DebuggerStatement.
-	_return_statement := builder ensureClassNamed: #Return_statement.
+	returnStatement := builder ensureClassNamed: #ReturnStatement.
 	_throw_statement := builder ensureClassNamed: #Throw_statement.
 	_empty_statement := builder ensureClassNamed: #Empty_statement.
 	labeledStatement := builder ensureClassNamed: #LabeledStatement.
