@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_hash_bang_line',
 		'_nested_type_identifier',
 		'_empty_statement',
 		'_readonly_type',
@@ -197,7 +196,8 @@ Class {
 		'thisType',
 		'withStatement',
 		'privatePropertyIdentifier',
-		'throwStatement'
+		'throwStatement',
+		'hashBangLine'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -229,7 +229,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	program := builder ensureClassNamed: #Program.
 	
 	identifier := builder ensureClassNamed: #Identifier.
-	_hash_bang_line := builder ensureClassNamed: #Hash_bang_line.
+	hashBangLine := builder ensureClassNamed: #HashBangLine.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	escapeSequence := builder ensureClassNamed: #EscapeSequence.

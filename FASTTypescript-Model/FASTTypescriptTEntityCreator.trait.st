@@ -497,10 +497,10 @@ FASTTypescriptTEntityCreator >> newGeneric_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newHash_bang_line [
+FASTTypescriptTEntityCreator >> newHashBangLine [
 
 	<generated>
-	^ self add: FASTTypescriptHash_bang_line new
+	^ self add: FASTTypescriptHashBangLine new
 ]
 
 { #category : 'entity creation' }
