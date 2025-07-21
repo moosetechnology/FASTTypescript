@@ -1260,17 +1260,17 @@ FASTTypescriptTEntityCreator >> newUpdate_expression [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newVariableDeclarator [
+
+	<generated>
+	^ self add: FASTTypescriptVariableDeclarator new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newVariable_declaration [
 
 	<generated>
 	^ self add: FASTTypescriptVariable_declaration new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newVariable_declarator [
-
-	<generated>
-	^ self add: FASTTypescriptVariable_declarator new
 ]
 
 { #category : 'entity creation' }

@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_variable_declarator',
 		'_class_heritage',
 		'_regex_pattern',
 		'_omitting_type_annotation',
@@ -197,7 +196,8 @@ Class {
 		'classDeclaration',
 		'returnStatement',
 		'assignmentExpression',
-		'unaryExpression'
+		'unaryExpression',
+		'variableDeclarator'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -266,7 +266,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_expression_statement := builder ensureClassNamed: #Expression_statement.
 	_variable_declaration := builder ensureClassNamed: #Variable_declaration.
 	lexicalDeclaration := builder ensureClassNamed: #LexicalDeclaration.
-	_variable_declarator := builder ensureClassNamed: #Variable_declarator.
+	variableDeclarator := builder ensureClassNamed: #VariableDeclarator.
 	_statement_block := builder ensureClassNamed: #Statement_block.
 	_else_clause := builder ensureClassNamed: #Else_clause.
 	_if_statement := builder ensureClassNamed: #If_statement.
