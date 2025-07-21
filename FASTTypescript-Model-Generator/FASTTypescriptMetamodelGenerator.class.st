@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_class_body',
 		'_import_clause',
 		'_optional_chain',
 		'_template_literal_type',
@@ -197,7 +196,8 @@ Class {
 		'hashBangLine',
 		'nestedTypeIdentifier',
 		'emptyStatement',
-		'readonlyType'
+		'readonlyType',
+		'classBody'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -332,7 +332,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	decorator := builder ensureClassNamed: #Decorator.
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	_call_expression := builder ensureClassNamed: #Call_expression.
-	_class_body := builder ensureClassNamed: #Class_body.
+	classBody := builder ensureClassNamed: #ClassBody.
 	formalParameters := builder ensureClassNamed: #FormalParameters.
 	_class_static_block := builder ensureClassNamed: #Class_static_block.
 	restPattern := builder ensureClassNamed: #RestPattern.
@@ -765,7 +765,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	"class declaration"
 	((classDeclaration property: #body) comment:
 		 'The body of the class')
-	<>- ((_class_body property: #parent) comment:
+	<>- ((classBody property: #parent) comment:
 			 'The class declaration that contains me').
 	
 	((classDeclaration property: #name) comment:

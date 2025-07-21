@@ -13,7 +13,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptClassDeclaration` | `parent` | `FASTTypescriptClass_body` | The body of the class|
+| `body` | `FASTTypescriptClassDeclaration` | `parent` | `FASTTypescriptClassBody` | The body of the class|
 | `declarations` | `FASTTypescriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypescriptTDeclaration` | The elements I declare|
 | `modifiers` | `FASTTypescriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypescriptTModifier` | My modifiers|
 | `name` | `FASTTypescriptClassDeclaration` | `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | The name of the class|
@@ -34,9 +34,9 @@ Class {
 	#traits : 'FASTTStatement + FASTTypescriptTDeclaration + FASTTypescriptTWithDeclarations + FASTTypescriptTWithModifiers',
 	#classTraits : 'FASTTStatement classTrait + FASTTypescriptTDeclaration classTrait + FASTTypescriptTWithDeclarations classTrait + FASTTypescriptTWithModifiers classTrait',
 	#instVars : [
-		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #classDeclarations',
-		'#body => FMOne type: #FASTTypescriptClass_body opposite: #parent',
-		'#name => FMOne type: #FASTTypescriptTypeIdentifier opposite: #typeIdentifierOwner'
+		'#body => FMOne type: #FASTTypescriptClassBody opposite: #parent',
+		'#name => FMOne type: #FASTTypescriptTypeIdentifier opposite: #typeIdentifierOwner',
+		'#parentProgram => FMOne type: #FASTTypescriptProgram opposite: #classDeclarations'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -60,7 +60,7 @@ FASTTypescriptClassDeclaration class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptClassDeclaration >> body [
-	"Relation named: #body type: #FASTTypescriptClass_body opposite: #parent"
+	"Relation named: #body type: #FASTTypescriptClassBody opposite: #parent"
 
 	<generated>
 	<FMComment: 'The body of the class'>
