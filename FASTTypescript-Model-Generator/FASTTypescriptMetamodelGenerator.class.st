@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_nested_type_identifier',
 		'_empty_statement',
 		'_readonly_type',
 		'_class_body',
@@ -197,7 +196,8 @@ Class {
 		'withStatement',
 		'privatePropertyIdentifier',
 		'throwStatement',
-		'hashBangLine'
+		'hashBangLine',
+		'nestedTypeIdentifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -357,7 +357,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	module := builder ensureClassNamed: #Module.
 	_internal_module := builder ensureClassNamed: #Internal_module.
 	_import_alias := builder ensureClassNamed: #Import_alias.
-	_nested_type_identifier := builder ensureClassNamed: #Nested_type_identifier.
+	nestedTypeIdentifier := builder ensureClassNamed: #NestedTypeIdentifier.
 	interfaceDeclaration := builder ensureClassNamed: #InterfaceDeclaration.
 	_extends_type_clause := builder ensureClassNamed: #Extends_type_clause.
 	
