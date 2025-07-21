@@ -140,10 +140,10 @@ FASTTypescriptTEntityCreator >> newAwait_expression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newBinary_expression [
+FASTTypescriptTEntityCreator >> newBinaryExpression [
 
 	<generated>
-	^ self add: FASTTypescriptBinary_expression new
+	^ self add: FASTTypescriptBinaryExpression new
 ]
 
 { #category : 'entity creation' }

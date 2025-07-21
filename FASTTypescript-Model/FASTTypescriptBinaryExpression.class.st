@@ -5,14 +5,14 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `left` | `FASTTypescriptBinary_expression` | `binaryExpressionLeftOwner` | `FASTTExpression` | left|
-| `right` | `FASTTypescriptBinary_expression` | `binaryExpressionRightOwner` | `FASTTExpression` | right|
+| `left` | `FASTTypescriptBinaryExpression` | `binaryExpressionLeftOwner` | `FASTTExpression` | left|
+| `right` | `FASTTypescriptBinaryExpression` | `binaryExpressionRightOwner` | `FASTTExpression` | right|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptBinary_expression',
+	#name : 'FASTTypescriptBinaryExpression',
 	#superclass : 'FASTTypescriptExpression',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -20,16 +20,24 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptBinary_expression class >> annotation [
+FASTTypescriptBinaryExpression class >> annotation [
 
-	<FMClass: #Binary_expression super: #FASTTypescriptExpression>
+	<FMClass: #BinaryExpression super: #FASTTypescriptExpression>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptBinaryExpression class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptBinary_expression }
+
+
+]
+
 { #category : 'accessing' }
-FASTTypescriptBinary_expression >> left [
+FASTTypescriptBinaryExpression >> left [
 	"Relation named: #left type: #FASTTExpression opposite: #binaryExpressionLeftOwner"
 
 	<generated>
@@ -39,7 +47,7 @@ FASTTypescriptBinary_expression >> left [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptBinary_expression >> left: anObject [
+FASTTypescriptBinaryExpression >> left: anObject [
 
 	<generated>
 	(self attributeAt: #left ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -53,14 +61,14 @@ FASTTypescriptBinary_expression >> left: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptBinary_expression >> leftGroup [
+FASTTypescriptBinaryExpression >> leftGroup [
 	<generated>
 	<navigation: 'Left'>
 	^ MooseSpecializedGroup with: self left
 ]
 
 { #category : 'accessing' }
-FASTTypescriptBinary_expression >> right [
+FASTTypescriptBinaryExpression >> right [
 	"Relation named: #right type: #FASTTExpression opposite: #binaryExpressionRightOwner"
 
 	<generated>
@@ -70,7 +78,7 @@ FASTTypescriptBinary_expression >> right [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptBinary_expression >> right: anObject [
+FASTTypescriptBinaryExpression >> right: anObject [
 
 	<generated>
 	(self attributeAt: #right ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -84,7 +92,7 @@ FASTTypescriptBinary_expression >> right: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptBinary_expression >> rightGroup [
+FASTTypescriptBinaryExpression >> rightGroup [
 	<generated>
 	<navigation: 'Right'>
 	^ MooseSpecializedGroup with: self right

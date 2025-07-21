@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_binary_expression',
 		'_parenthesized_expression',
 		'_class_declaration',
 		'_return_statement',
@@ -197,7 +196,8 @@ Class {
 		'functionType',
 		'escapeSequence',
 		'typeQuery',
-		'shorthandPropertyIdentifierPattern'
+		'shorthandPropertyIdentifierPattern',
+		'binaryExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -319,7 +319,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_augmented_assignment_expression := builder ensureClassNamed: #Augmented_assignment_expression.
 	spreadElement := builder ensureClassNamed: #SpreadElement.
 	_ternary_expression := builder ensureClassNamed: #Ternary_expression.
-	_binary_expression := builder ensureClassNamed: #Binary_expression.
+	binaryExpression := builder ensureClassNamed: #BinaryExpression.
 	_unary_expression := builder ensureClassNamed: #Unary_expression.
 	_update_expression := builder ensureClassNamed: #Update_expression.
 	_sequence_expression := builder ensureClassNamed: #Sequence_expression.
@@ -512,7 +512,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	undefined --|> tExpression.
 	regex --|> tExpression.
 
-	_binary_expression --|> expression.
+	binaryExpression --|> expression.
 	_unary_expression --|> expression.
 	_member_expression --|> expression.
 	_call_expression --|> expression.
@@ -571,10 +571,10 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((_statement_block property: #statementBlockOwner) comment:
 			 'The owner of this body is a for_in_statment').
 
-	((_binary_expression property: #left) comment: 'left')
+	((binaryExpression property: #left) comment: 'left')
 	<>- ((tExpression property: #binaryExpressionLeftOwner) comment:
 			 'The left operand (if possible)').
-	((_binary_expression property: #right) comment: 'right')
+	((binaryExpression property: #right) comment: 'right')
 	<>- ((tExpression property: #binaryExpressionRightOwner) comment:
 			 'The right operand (if possible)').
 
