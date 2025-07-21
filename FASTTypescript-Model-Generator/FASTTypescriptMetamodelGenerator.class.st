@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_shorthand_property_identifier_pattern',
 		'_binary_expression',
 		'_parenthesized_expression',
 		'_class_declaration',
@@ -197,7 +196,8 @@ Class {
 		'generatorFunctionDeclaration',
 		'functionType',
 		'escapeSequence',
-		'typeQuery'
+		'typeQuery',
+		'shorthandPropertyIdentifierPattern'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -424,7 +424,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	interfaceBody := builder ensureClassNamed: #InterfaceBody.
 	propertyIdentifier := builder ensureClassNamed: #PropertyIdentifier.
 	_shorthand_property_identifier := builder ensureClassNamed: #Shorthand_property_identifier.
-	_shorthand_property_identifier_pattern := builder ensureClassNamed: #Shorthand_property_identifier_pattern.
+	shorthandPropertyIdentifierPattern := builder ensureClassNamed: #ShorthandPropertyIdentifierPattern.
 	statementIdentifier := builder ensureClassNamed: #StatementIdentifier.
 	_this_type := builder ensureClassNamed: #This_type.
 	typeIdentifier := builder ensureClassNamed: #TypeIdentifier.

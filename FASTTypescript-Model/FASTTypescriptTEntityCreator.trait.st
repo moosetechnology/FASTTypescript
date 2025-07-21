@@ -994,17 +994,17 @@ FASTTypescriptTEntityCreator >> newSequence_expression [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newShorthandPropertyIdentifierPattern [
+
+	<generated>
+	^ self add: FASTTypescriptShorthandPropertyIdentifierPattern new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newShorthand_property_identifier [
 
 	<generated>
 	^ self add: FASTTypescriptShorthand_property_identifier new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newShorthand_property_identifier_pattern [
-
-	<generated>
-	^ self add: FASTTypescriptShorthand_property_identifier_pattern new
 ]
 
 { #category : 'entity creation' }
