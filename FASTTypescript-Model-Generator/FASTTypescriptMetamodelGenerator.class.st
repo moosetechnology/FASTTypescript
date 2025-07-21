@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_assignment_pattern',
 		'_nested_identifier',
 		'_public_field_definition',
 		'_import_alias',
@@ -197,7 +196,8 @@ Class {
 		'classBody',
 		'importClause',
 		'optionalChain',
-		'templateLiteralType'
+		'templateLiteralType',
+		'assignmentPattern'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -293,7 +293,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_yield_expression := builder ensureClassNamed: #Yield_expression.
 	object := builder ensureClassNamed: #Object.
 	_object_pattern := builder ensureClassNamed: #Object_pattern.
-	_assignment_pattern := builder ensureClassNamed: #Assignment_pattern.
+	assignmentPattern := builder ensureClassNamed: #AssignmentPattern.
 	_object_assignment_pattern := builder ensureClassNamed: #Object_assignment_pattern.
 	array := builder ensureClassNamed: #Array.
 	_array_pattern := builder ensureClassNamed: #Array_pattern.
