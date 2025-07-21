@@ -1190,6 +1190,13 @@ FASTTypescriptTEntityCreator >> newTypePredicateAnnotation [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newTypeQuery [
+
+	<generated>
+	^ self add: FASTTypescriptTypeQuery new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newType_alias_declaration [
 
 	<generated>
@@ -1222,13 +1229,6 @@ FASTTypescriptTEntityCreator >> newType_predicate [
 
 	<generated>
 	^ self add: FASTTypescriptType_predicate new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newType_query [
-
-	<generated>
-	^ self add: FASTTypescriptType_query new
 ]
 
 { #category : 'entity creation' }

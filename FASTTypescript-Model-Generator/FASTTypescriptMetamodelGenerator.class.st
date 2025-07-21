@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_type_query',
 		'_shorthand_property_identifier_pattern',
 		'_binary_expression',
 		'_parenthesized_expression',
@@ -197,7 +196,8 @@ Class {
 		'functionExpression',
 		'generatorFunctionDeclaration',
 		'functionType',
-		'escapeSequence'
+		'escapeSequence',
+		'typeQuery'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -395,7 +395,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	_call_expression := builder ensureClassNamed: #Call_expression.
 	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
-	_type_query := builder ensureClassNamed: #Type_query.
+	typeQuery := builder ensureClassNamed: #TypeQuery.
 	_index_type_query := builder ensureClassNamed: #Index_type_query.
 	lookupType := builder ensureClassNamed: #LookupType.
 	_mapped_type_clause := builder ensureClassNamed: #Mapped_type_clause.
