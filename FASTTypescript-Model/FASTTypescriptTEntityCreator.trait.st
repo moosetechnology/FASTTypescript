@@ -112,10 +112,10 @@ FASTTypescriptTEntityCreator >> newAsserts_annotation [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAssignment_expression [
+FASTTypescriptTEntityCreator >> newAssignmentExpression [
 
 	<generated>
-	^ self add: FASTTypescriptAssignment_expression new
+	^ self add: FASTTypescriptAssignmentExpression new
 ]
 
 { #category : 'entity creation' }

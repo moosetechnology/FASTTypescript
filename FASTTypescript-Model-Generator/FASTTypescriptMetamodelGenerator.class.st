@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_assignment_expression',
 		'_unary_expression',
 		'_variable_declarator',
 		'_class_heritage',
@@ -197,7 +196,8 @@ Class {
 		'binaryExpression',
 		'parenthesizedExpression',
 		'classDeclaration',
-		'returnStatement'
+		'returnStatement',
+		'assignmentExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -315,7 +315,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_await_expression := builder ensureClassNamed: #Await_expression.
 	_member_expression := builder ensureClassNamed: #Member_expression.
 	subscriptExpression := builder ensureClassNamed: #SubscriptExpression.
-	_assignment_expression := builder ensureClassNamed: #Assignment_expression.
+	assignmentExpression := builder ensureClassNamed: #AssignmentExpression.
 	_augmented_assignment_expression := builder ensureClassNamed: #Augmented_assignment_expression.
 	spreadElement := builder ensureClassNamed: #SpreadElement.
 	_ternary_expression := builder ensureClassNamed: #Ternary_expression.
@@ -516,7 +516,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_member_expression --|> expression.
 	_call_expression --|> expression.
 	asExpression --|> expression.
-	_assignment_expression --|> expression.
+	assignmentExpression --|> expression.
 	_augmented_assignment_expression --|> expression.
 	_await_expression --|> expression.
 	functionExpression --|> expression.
