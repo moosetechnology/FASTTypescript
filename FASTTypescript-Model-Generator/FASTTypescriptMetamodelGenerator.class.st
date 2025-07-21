@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_this_type',
 		'_with_statement',
 		'_private_property_identifier',
 		'_throw_statement',
@@ -197,7 +196,8 @@ Class {
 		'classHeritage',
 		'regexPattern',
 		'omittingTypeAnnotation',
-		'elseClause'
+		'elseClause',
+		'thisType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -424,7 +424,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_shorthand_property_identifier := builder ensureClassNamed: #Shorthand_property_identifier.
 	shorthandPropertyIdentifierPattern := builder ensureClassNamed: #ShorthandPropertyIdentifierPattern.
 	statementIdentifier := builder ensureClassNamed: #StatementIdentifier.
-	_this_type := builder ensureClassNamed: #This_type.
+	thisType := builder ensureClassNamed: #ThisType.
 	typeIdentifier := builder ensureClassNamed: #TypeIdentifier.
 	_ERROR := builder ensureClassNamed: #ERROR.
 	expression := builder ensureClassNamed: #Expression.

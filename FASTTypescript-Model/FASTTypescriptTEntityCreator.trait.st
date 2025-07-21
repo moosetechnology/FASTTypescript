@@ -1127,10 +1127,10 @@ FASTTypescriptTEntityCreator >> newThis [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newThis_type [
+FASTTypescriptTEntityCreator >> newThisType [
 
 	<generated>
-	^ self add: FASTTypescriptThis_type new
+	^ self add: FASTTypescriptThisType new
 ]
 
 { #category : 'entity creation' }
