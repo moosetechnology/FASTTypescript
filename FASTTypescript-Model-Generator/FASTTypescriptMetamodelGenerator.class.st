@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_generator_function_declaration',
 		'_function_type',
 		'_escape_sequence',
 		'_type_query',
@@ -197,7 +196,8 @@ Class {
 		'switchStatement',
 		'forStatement',
 		'accessibilityModifier',
-		'functionExpression'
+		'functionExpression',
+		'generatorFunctionDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -307,7 +307,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	functionExpression := builder ensureClassNamed: #FunctionExpression.
 	functionDeclaration := builder ensureClassNamed: #FunctionDeclaration.
 	_generator_function := builder ensureClassNamed: #Generator_function.
-	_generator_function_declaration := builder ensureClassNamed: #Generator_function_declaration.
+	generatorFunctionDeclaration := builder ensureClassNamed: #GeneratorFunctionDeclaration.
 	arrowFunction := builder ensureClassNamed: #ArrowFunction.
 	_optional_chain := builder ensureClassNamed: #Optional_chain.
 	_call_expression := builder ensureClassNamed: #Call_expression.
