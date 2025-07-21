@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_unary_expression',
 		'_variable_declarator',
 		'_class_heritage',
 		'_regex_pattern',
@@ -197,7 +196,8 @@ Class {
 		'parenthesizedExpression',
 		'classDeclaration',
 		'returnStatement',
-		'assignmentExpression'
+		'assignmentExpression',
+		'unaryExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -320,7 +320,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	spreadElement := builder ensureClassNamed: #SpreadElement.
 	_ternary_expression := builder ensureClassNamed: #Ternary_expression.
 	binaryExpression := builder ensureClassNamed: #BinaryExpression.
-	_unary_expression := builder ensureClassNamed: #Unary_expression.
+	unaryExpression := builder ensureClassNamed: #UnaryExpression.
 	_update_expression := builder ensureClassNamed: #Update_expression.
 	_sequence_expression := builder ensureClassNamed: #Sequence_expression.
 	string := builder ensureClassNamed: #String.
@@ -398,8 +398,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_index_type_query := builder ensureClassNamed: #Index_type_query.
 	lookupType := builder ensureClassNamed: #LookupType.
 	_mapped_type_clause := builder ensureClassNamed: #Mapped_type_clause.
-	literalType := builder ensureClassNamed: #LiteralType.
-	_unary_expression := builder ensureClassNamed: #Unary_expression.
+	literalType := builder ensureClassNamed: #LiteralType. 
 	existentialType := builder ensureClassNamed: #ExistentialType.
 	_flow_maybe_type := builder ensureClassNamed: #Flow_maybe_type.
 	_parenthesized_type := builder ensureClassNamed: #Parenthesized_type.
@@ -512,7 +511,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	regex --|> tExpression.
 
 	binaryExpression --|> expression.
-	_unary_expression --|> expression.
+	unaryExpression --|> expression.
 	_member_expression --|> expression.
 	_call_expression --|> expression.
 	asExpression --|> expression.
@@ -612,7 +611,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((formalParameters property: #formalParametersOwner) comment:
 			 'My owner').
 
-	((_unary_expression property: #argument) comment: 'My argument')
+	((unaryExpression property: #argument) comment: 'My argument')
 	<>- ((tExpression property: #unaryExpressionOwner) comment:
 			 'The owner of this class').
 

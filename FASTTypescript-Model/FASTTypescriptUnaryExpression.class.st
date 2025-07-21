@@ -5,13 +5,13 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `argument` | `FASTTypescriptUnary_expression` | `unaryExpressionOwner` | `FASTTExpression` | My argument|
+| `argument` | `FASTTypescriptUnaryExpression` | `unaryExpressionOwner` | `FASTTExpression` | My argument|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptUnary_expression',
+	#name : 'FASTTypescriptUnaryExpression',
 	#superclass : 'FASTTypescriptExpression',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -19,16 +19,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptUnary_expression class >> annotation [
+FASTTypescriptUnaryExpression class >> annotation [
 
-	<FMClass: #Unary_expression super: #FASTTypescriptExpression>
+	<FMClass: #UnaryExpression super: #FASTTypescriptExpression>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptUnaryExpression class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptUnary_expression }
+]
+
 { #category : 'accessing' }
-FASTTypescriptUnary_expression >> argument [
+FASTTypescriptUnaryExpression >> argument [
 	"Relation named: #argument type: #FASTTExpression opposite: #unaryExpressionOwner"
 
 	<generated>
@@ -38,7 +44,7 @@ FASTTypescriptUnary_expression >> argument [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptUnary_expression >> argument: anObject [
+FASTTypescriptUnaryExpression >> argument: anObject [
 
 	<generated>
 	(self attributeAt: #argument ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -52,7 +58,7 @@ FASTTypescriptUnary_expression >> argument: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptUnary_expression >> argumentGroup [
+FASTTypescriptUnaryExpression >> argumentGroup [
 	<generated>
 	<navigation: 'Argument'>
 	^ MooseSpecializedGroup with: self argument

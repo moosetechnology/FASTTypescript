@@ -1232,10 +1232,10 @@ FASTTypescriptTEntityCreator >> newType_predicate [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newUnary_expression [
+FASTTypescriptTEntityCreator >> newUnaryExpression [
 
 	<generated>
-	^ self add: FASTTypescriptUnary_expression new
+	^ self add: FASTTypescriptUnaryExpression new
 ]
 
 { #category : 'entity creation' }
