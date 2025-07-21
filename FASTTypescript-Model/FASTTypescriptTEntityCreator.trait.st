@@ -826,10 +826,10 @@ FASTTypescriptTEntityCreator >> newOpting_type_annotation [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newOptional_chain [
+FASTTypescriptTEntityCreator >> newOptionalChain [
 
 	<generated>
-	^ self add: FASTTypescriptOptional_chain new
+	^ self add: FASTTypescriptOptionalChain new
 ]
 
 { #category : 'entity creation' }

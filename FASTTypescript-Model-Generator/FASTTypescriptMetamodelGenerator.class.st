@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_optional_chain',
 		'_template_literal_type',
 		'_assignment_pattern',
 		'_nested_identifier',
@@ -197,7 +196,8 @@ Class {
 		'emptyStatement',
 		'readonlyType',
 		'classBody',
-		'importClause'
+		'importClause',
+		'optionalChain'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -309,7 +309,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_generator_function := builder ensureClassNamed: #Generator_function.
 	generatorFunctionDeclaration := builder ensureClassNamed: #GeneratorFunctionDeclaration.
 	arrowFunction := builder ensureClassNamed: #ArrowFunction.
-	_optional_chain := builder ensureClassNamed: #Optional_chain.
+	optionalChain := builder ensureClassNamed: #OptionalChain.
 	_call_expression := builder ensureClassNamed: #Call_expression.
 	newExpression := builder ensureClassNamed: #NewExpression.
 	_await_expression := builder ensureClassNamed: #Await_expression.
