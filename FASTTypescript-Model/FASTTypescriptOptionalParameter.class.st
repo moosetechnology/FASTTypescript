@@ -5,14 +5,14 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `pattern` | `FASTTypescriptOptional_parameter` | `optionalParameterOwner` | `FASTTypescriptIdentifier` | My pattern as identifier|
-| `type` | `FASTTypescriptOptional_parameter` | `optionalParameterOwner` | `FASTTypescriptType_annotation` | My type as type annotation|
+| `pattern` | `FASTTypescriptOptionalParameter` | `optionalParameterOwner` | `FASTTypescriptIdentifier` | My pattern as identifier|
+| `type` | `FASTTypescriptOptionalParameter` | `optionalParameterOwner` | `FASTTypescriptType_annotation` | My type as type annotation|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptOptional_parameter',
+	#name : 'FASTTypescriptOptionalParameter',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#pattern => FMOne type: #FASTTypescriptIdentifier opposite: #optionalParameterOwner',
@@ -24,16 +24,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptOptional_parameter class >> annotation [
+FASTTypescriptOptionalParameter class >> annotation [
 
-	<FMClass: #Optional_parameter super: #FASTTypescriptEntity>
+	<FMClass: #OptionalParameter super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptOptionalParameter class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptOptional_parameter }
+]
+
 { #category : 'accessing' }
-FASTTypescriptOptional_parameter >> pattern [
+FASTTypescriptOptionalParameter >> pattern [
 	"Relation named: #pattern type: #FASTTypescriptIdentifier opposite: #optionalParameterOwner"
 
 	<generated>
@@ -42,21 +48,21 @@ FASTTypescriptOptional_parameter >> pattern [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptOptional_parameter >> pattern: anObject [
+FASTTypescriptOptionalParameter >> pattern: anObject [
 
 	<generated>
 	pattern := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptOptional_parameter >> patternGroup [
+FASTTypescriptOptionalParameter >> patternGroup [
 	<generated>
 	<navigation: 'Pattern'>
 	^ MooseSpecializedGroup with: self pattern
 ]
 
 { #category : 'accessing' }
-FASTTypescriptOptional_parameter >> type [
+FASTTypescriptOptionalParameter >> type [
 	"Relation named: #type type: #FASTTypescriptType_annotation opposite: #optionalParameterOwner"
 
 	<generated>
@@ -65,14 +71,14 @@ FASTTypescriptOptional_parameter >> type [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptOptional_parameter >> type: anObject [
+FASTTypescriptOptionalParameter >> type: anObject [
 
 	<generated>
 	type := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptOptional_parameter >> typeGroup [
+FASTTypescriptOptionalParameter >> typeGroup [
 	<generated>
 	<navigation: 'Type'>
 	^ MooseSpecializedGroup with: self type

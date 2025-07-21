@@ -20,13 +20,13 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
-| `identifierOwner` | `FASTTypescriptIdentifier` | `value` | `FASTTypescriptExtends_clause` | My owner|
-| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
 | `identifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptIndexSignature` | The owner of this identifier|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
+| `identifierOwner` | `FASTTypescriptIdentifier` | `value` | `FASTTypescriptExtends_clause` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNestedIdentifier` | The owner of this identifier|
-| `optionalParameterOwner` | `FASTTypescriptIdentifier` | `pattern` | `FASTTypescriptOptional_parameter` | The owner of this identifier|
+| `optionalParameterOwner` | `FASTTypescriptIdentifier` | `pattern` | `FASTTypescriptOptionalParameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentEnum` | `FASTTypescriptIdentifier` | `identifier` | `FASTTypescriptEnumDeclaration` | The enum that contains me|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
@@ -56,7 +56,7 @@ Class {
 		'#exportSpecifierOwner => FMOne type: #FASTTypescriptExport_specifier opposite: #name',
 		'#identifierOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #name',
 		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNestedIdentifier opposite: #object',
-		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptional_parameter opposite: #pattern',
+		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptionalParameter opposite: #pattern',
 		'#parentEnum => FMOne type: #FASTTypescriptEnumDeclaration opposite: #identifier',
 		'#typescriptNewExpressionOwner => FMOne type: #FASTTypescriptNewExpression opposite: #constructor'
 	],
@@ -151,7 +151,7 @@ FASTTypescriptIdentifier >> nestedIdentifierOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptIdentifier >> optionalParameterOwner [
-	"Relation named: #optionalParameterOwner type: #FASTTypescriptOptional_parameter opposite: #pattern"
+	"Relation named: #optionalParameterOwner type: #FASTTypescriptOptionalParameter opposite: #pattern"
 
 	<generated>
 	<FMComment: 'The owner of this identifier'>

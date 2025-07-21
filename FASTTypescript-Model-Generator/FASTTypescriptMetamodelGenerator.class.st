@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_optional_parameter',
 		'_constructor_type',
 		'_conditional_type',
 		'_parenthesized_type',
@@ -197,7 +196,8 @@ Class {
 		'publicFieldDefinition',
 		'importAlias',
 		'tryStatement',
-		'typeAliasDeclaration'
+		'typeAliasDeclaration',
+		'optionalParameter'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -370,7 +370,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	accessibilityModifier := builder ensureClassNamed: #AccessibilityModifier.
 	_override_modifier := builder ensureClassNamed: #Override_modifier.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
-	_optional_parameter := builder ensureClassNamed: #Optional_parameter.
+	optionalParameter := builder ensureClassNamed: #OptionalParameter.
 	omittingTypeAnnotation := builder ensureClassNamed: #OmittingTypeAnnotation.
 	_adding_type_annotation := builder ensureClassNamed: #Adding_type_annotation.
 	_opting_type_annotation := builder ensureClassNamed: #Opting_type_annotation.
@@ -380,7 +380,6 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	asserts := builder ensureClassNamed: #Asserts.
 	_asserts_annotation := builder ensureClassNamed: #Asserts_annotation.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
-	_optional_parameter := builder ensureClassNamed: #Optional_parameter.
 	_optional_type := builder ensureClassNamed: #Optional_type.
 	restType := builder ensureClassNamed: #RestType.
 	_constructor_type := builder ensureClassNamed: #Constructor_type.
@@ -661,12 +660,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((formalParameters property: #formalParametersOwner) comment:
 			 'The owner of these formal parameters').
 
-	((_optional_parameter property: #type) comment:
+	((optionalParameter property: #type) comment:
 		 'My type as type annotation')
 	<>- ((_type_annotation property: #optionalParameterOwner) comment:
 			 'The owner of this type annotation').
 
-	((_optional_parameter property: #pattern) comment:
+	((optionalParameter property: #pattern) comment:
 		 'My pattern as identifier')
 	<>- ((identifier property: #optionalParameterOwner) comment:
 			 'The owner of this identifier').
