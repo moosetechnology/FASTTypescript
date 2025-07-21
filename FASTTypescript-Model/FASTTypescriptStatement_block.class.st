@@ -6,10 +6,10 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `ifStatementOwner` | `FASTTypescriptStatement_block` | `consequence` | `FASTTypescriptIf_statement` | The owner of this statement block|
-| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFor_in_statement` | The owner of this body is a for_in_statment|
 | `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFinally_clause` | My owner|
+| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFor_in_statement` | The owner of this body is a for_in_statment|
 | `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptMethod_definition` | My owner|
-| `tryStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptTry_statement` | Try statement owner|
+| `tryStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptTryStatement` | Try statement owner|
 | `withStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptWithStatement` | The owner of this statement block|
 
 
@@ -21,7 +21,7 @@ Class {
 	#instVars : [
 		'#ifStatementOwner => FMOne type: #FASTTypescriptIf_statement opposite: #consequence',
 		'#statementBlockOwner => FMOne type: #FASTTypescriptFor_in_statement opposite: #body',
-		'#tryStatementOwner => FMOne type: #FASTTypescriptTry_statement opposite: #body',
+		'#tryStatementOwner => FMOne type: #FASTTypescriptTryStatement opposite: #body',
 		'#withStatementOwner => FMOne type: #FASTTypescriptWithStatement opposite: #body'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -90,7 +90,7 @@ FASTTypescriptStatement_block >> statementBlockOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptStatement_block >> tryStatementOwner [
-	"Relation named: #tryStatementOwner type: #FASTTypescriptTry_statement opposite: #body"
+	"Relation named: #tryStatementOwner type: #FASTTypescriptTryStatement opposite: #body"
 
 	<generated>
 	<FMComment: 'Try statement owner'>

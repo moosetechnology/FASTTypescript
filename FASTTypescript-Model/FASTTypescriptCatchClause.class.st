@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `tryStatementOwner` | `FASTTypescriptCatchClause` | `handler` | `FASTTypescriptTry_statement` | Try statement owner|
+| `tryStatementOwner` | `FASTTypescriptCatchClause` | `handler` | `FASTTypescriptTryStatement` | Try statement owner|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypescriptCatchClause',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#tryStatementOwner => FMOne type: #FASTTypescriptTry_statement opposite: #handler'
+		'#tryStatementOwner => FMOne type: #FASTTypescriptTryStatement opposite: #handler'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -38,7 +38,7 @@ FASTTypescriptCatchClause class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptCatchClause >> tryStatementOwner [
-	"Relation named: #tryStatementOwner type: #FASTTypescriptTry_statement opposite: #handler"
+	"Relation named: #tryStatementOwner type: #FASTTypescriptTryStatement opposite: #handler"
 
 	<generated>
 	<FMComment: 'Try statement owner'>

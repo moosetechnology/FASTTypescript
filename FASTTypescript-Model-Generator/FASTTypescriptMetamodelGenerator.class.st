@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_try_statement',
 		'_type_alias_declaration',
 		'_optional_parameter',
 		'_constructor_type',
@@ -197,7 +196,8 @@ Class {
 		'assignmentPattern',
 		'nestedIdentifier',
 		'publicFieldDefinition',
-		'importAlias'
+		'importAlias',
+		'tryStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -275,7 +275,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_for_in_statement := builder ensureClassNamed: #For_in_statement.
 	_while_statement := builder ensureClassNamed: #While_statement.
 	doStatement := builder ensureClassNamed: #DoStatement.
-	_try_statement := builder ensureClassNamed: #Try_statement.
+	tryStatement := builder ensureClassNamed: #TryStatement.
 	withStatement := builder ensureClassNamed: #WithStatement.
 	breakStatement := builder ensureClassNamed: #BreakStatement.
 	_continue_statement := builder ensureClassNamed: #Continue_statement.
@@ -707,15 +707,15 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((tExpression property: #consequenceOwner) comment:
 			 'Consequence owner').
 
-	((_try_statement property: #body) comment: 'Body')
+	((tryStatement property: #body) comment: 'Body')
 	<>- ((_statement_block property: #tryStatementOwner) comment:
 			 'Try statement owner').
 
-	((_try_statement property: #handler) comment: 'Handler')
+	((tryStatement property: #handler) comment: 'Handler')
 	<>- ((catchClause property: #tryStatementOwner) comment:
 			 'Try statement owner').
 
-	((_try_statement property: #finalizer) comment: 'Finalizer')
+	((tryStatement property: #finalizer) comment: 'Finalizer')
 	<>- ((_finally_clause property: #tryStatementOwner) comment:
 			 'Try statement owner').
 

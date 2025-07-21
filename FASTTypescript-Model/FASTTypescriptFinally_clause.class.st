@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `tryStatementOwner` | `FASTTypescriptFinally_clause` | `finalizer` | `FASTTypescriptTry_statement` | Try statement owner|
+| `tryStatementOwner` | `FASTTypescriptFinally_clause` | `finalizer` | `FASTTypescriptTryStatement` | Try statement owner|
 
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
@@ -20,7 +20,7 @@ Class {
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner',
-		'#tryStatementOwner => FMOne type: #FASTTypescriptTry_statement opposite: #finalizer'
+		'#tryStatementOwner => FMOne type: #FASTTypescriptTryStatement opposite: #finalizer'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -61,7 +61,7 @@ FASTTypescriptFinally_clause >> bodyGroup [
 
 { #category : 'accessing' }
 FASTTypescriptFinally_clause >> tryStatementOwner [
-	"Relation named: #tryStatementOwner type: #FASTTypescriptTry_statement opposite: #finalizer"
+	"Relation named: #tryStatementOwner type: #FASTTypescriptTryStatement opposite: #finalizer"
 
 	<generated>
 	<FMComment: 'Try statement owner'>

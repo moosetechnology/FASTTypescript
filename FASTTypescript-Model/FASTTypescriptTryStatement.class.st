@@ -5,20 +5,20 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptTry_statement` | `tryStatementOwner` | `FASTTypescriptStatement_block` | Body|
-| `finalizer` | `FASTTypescriptTry_statement` | `tryStatementOwner` | `FASTTypescriptFinally_clause` | Finalizer|
-| `handler` | `FASTTypescriptTry_statement` | `tryStatementOwner` | `FASTTypescriptCatchClause` | Handler|
+| `body` | `FASTTypescriptTryStatement` | `tryStatementOwner` | `FASTTypescriptStatement_block` | Body|
+| `finalizer` | `FASTTypescriptTryStatement` | `tryStatementOwner` | `FASTTypescriptFinally_clause` | Finalizer|
+| `handler` | `FASTTypescriptTryStatement` | `tryStatementOwner` | `FASTTypescriptCatchClause` | Handler|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptTry_statement',
+	#name : 'FASTTypescriptTryStatement',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #tryStatementOwner',
-		'#finalizer => FMOne type: #FASTTypescriptFinally_clause opposite: #tryStatementOwner',
-		'#handler => FMOne type: #FASTTypescriptCatchClause opposite: #tryStatementOwner'
+		'#handler => FMOne type: #FASTTypescriptCatchClause opposite: #tryStatementOwner',
+		'#finalizer => FMOne type: #FASTTypescriptFinally_clause opposite: #tryStatementOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -26,16 +26,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptTry_statement class >> annotation [
+FASTTypescriptTryStatement class >> annotation [
 
-	<FMClass: #Try_statement super: #FASTTypescriptEntity>
+	<FMClass: #TryStatement super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptTryStatement class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptTry_statement }
+]
+
 { #category : 'accessing' }
-FASTTypescriptTry_statement >> body [
+FASTTypescriptTryStatement >> body [
 	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #tryStatementOwner"
 
 	<generated>
@@ -44,21 +50,21 @@ FASTTypescriptTry_statement >> body [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptTry_statement >> body: anObject [
+FASTTypescriptTryStatement >> body: anObject [
 
 	<generated>
 	body := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptTry_statement >> bodyGroup [
+FASTTypescriptTryStatement >> bodyGroup [
 	<generated>
 	<navigation: 'Body'>
 	^ MooseSpecializedGroup with: self body
 ]
 
 { #category : 'accessing' }
-FASTTypescriptTry_statement >> finalizer [
+FASTTypescriptTryStatement >> finalizer [
 	"Relation named: #finalizer type: #FASTTypescriptFinally_clause opposite: #tryStatementOwner"
 
 	<generated>
@@ -67,21 +73,21 @@ FASTTypescriptTry_statement >> finalizer [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptTry_statement >> finalizer: anObject [
+FASTTypescriptTryStatement >> finalizer: anObject [
 
 	<generated>
 	finalizer := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptTry_statement >> finalizerGroup [
+FASTTypescriptTryStatement >> finalizerGroup [
 	<generated>
 	<navigation: 'Finalizer'>
 	^ MooseSpecializedGroup with: self finalizer
 ]
 
 { #category : 'accessing' }
-FASTTypescriptTry_statement >> handler [
+FASTTypescriptTryStatement >> handler [
 	"Relation named: #handler type: #FASTTypescriptCatchClause opposite: #tryStatementOwner"
 
 	<generated>
@@ -90,14 +96,14 @@ FASTTypescriptTry_statement >> handler [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptTry_statement >> handler: anObject [
+FASTTypescriptTryStatement >> handler: anObject [
 
 	<generated>
 	handler := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptTry_statement >> handlerGroup [
+FASTTypescriptTryStatement >> handlerGroup [
 	<generated>
 	<navigation: 'Handler'>
 	^ MooseSpecializedGroup with: self handler

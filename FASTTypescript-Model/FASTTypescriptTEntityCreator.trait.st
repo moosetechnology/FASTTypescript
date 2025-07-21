@@ -1148,10 +1148,10 @@ FASTTypescriptTEntityCreator >> newTrue [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newTry_statement [
+FASTTypescriptTEntityCreator >> newTryStatement [
 
 	<generated>
-	^ self add: FASTTypescriptTry_statement new
+	^ self add: FASTTypescriptTryStatement new
 ]
 
 { #category : 'entity creation' }
