@@ -131,7 +131,7 @@ FASTTypescriptEntity >> isBooleanLiteral [
 ]
 
 { #category : 'testing' }
-FASTTypescriptEntity >> isClass_declaration [
+FASTTypescriptEntity >> isClassDeclaration [
 
 	<generated>
 	^ false

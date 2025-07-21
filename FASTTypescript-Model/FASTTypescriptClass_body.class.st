@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `parent` | `FASTTypescriptClass_body` | `body` | `FASTTypescriptClass_declaration` | The class declaration that contains me|
+| `parent` | `FASTTypescriptClass_body` | `body` | `FASTTypescriptClassDeclaration` | The class declaration that contains me|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypescriptClass_body',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#parent => FMOne type: #FASTTypescriptClass_declaration opposite: #body'
+		'#parent => FMOne type: #FASTTypescriptClassDeclaration opposite: #body'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -32,7 +32,7 @@ FASTTypescriptClass_body class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptClass_body >> parent [
-	"Relation named: #parent type: #FASTTypescriptClass_declaration opposite: #body"
+	"Relation named: #parent type: #FASTTypescriptClassDeclaration opposite: #body"
 
 	<generated>
 	<FMComment: 'The class declaration that contains me'>

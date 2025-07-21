@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `classDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptClass_declaration` | The class declarations that I define|
+| `classDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptClassDeclaration` | The class declarations that I define|
 | `enumDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptEnumDeclaration` | The enum declarations that I define|
 | `interfaceDeclarations` | `FASTTypescriptProgram` | `parentProgram` | `FASTTypescriptInterfaceDeclaration` | The interface declarations that I define|
 
@@ -31,7 +31,7 @@ Class {
 	#traits : '(FASTTEntity + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
 	#classTraits : '(FASTTEntity classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
-		'#classDeclarations => FMMany type: #FASTTypescriptClass_declaration opposite: #parentProgram',
+		'#classDeclarations => FMMany type: #FASTTypescriptClassDeclaration opposite: #parentProgram',
 		'#enumDeclarations => FMMany type: #FASTTypescriptEnumDeclaration opposite: #parentProgram',
 		'#interfaceDeclarations => FMMany type: #FASTTypescriptInterfaceDeclaration opposite: #parentProgram'
 	],
@@ -69,7 +69,7 @@ FASTTypescriptProgram >> addInterfaceDeclaration: anObject [
 
 { #category : 'accessing' }
 FASTTypescriptProgram >> classDeclarations [
-	"Relation named: #classDeclarations type: #FASTTypescriptClass_declaration opposite: #parentProgram"
+	"Relation named: #classDeclarations type: #FASTTypescriptClassDeclaration opposite: #parentProgram"
 
 	<generated>
 	<FMComment: 'The class declarations that I define'>

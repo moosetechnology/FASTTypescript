@@ -1,6 +1,6 @@
 Class {
 	#name : 'FASTTypescriptAbstractClassDeclaration',
-	#superclass : 'FASTTypescriptClass_declaration',
+	#superclass : 'FASTTypescriptClassDeclaration',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
 	#tag : 'Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : 'meta' }
 FASTTypescriptAbstractClassDeclaration class >> annotation [
 
-	<FMClass: #AbstractClassDeclaration super: #FASTTypescriptClass_declaration>
+	<FMClass: #AbstractClassDeclaration super: #FASTTypescriptClassDeclaration>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self

@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_class_declaration',
 		'_return_statement',
 		'_assignment_expression',
 		'_unary_expression',
@@ -197,7 +196,8 @@ Class {
 		'typeQuery',
 		'shorthandPropertyIdentifierPattern',
 		'binaryExpression',
-		'parenthesizedExpression'
+		'parenthesizedExpression',
+		'classDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -300,8 +300,8 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_nested_identifier := builder ensureClassNamed: #Nested_identifier.
 	class := builder ensureClassNamed: #Class.
 
-	_class_declaration := builder ensureClassNamed: #Class_declaration.
-	_class_declaration withTesting.
+	classDeclaration := builder ensureClassNamed: #ClassDeclaration.
+	classDeclaration withTesting.
 	
 	_class_heritage := builder ensureClassNamed: #Class_heritage.
 	functionExpression := builder ensureClassNamed: #FunctionExpression.
@@ -455,7 +455,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_true --|> boolean.
 	_false --|> boolean.
 
-	abstractClassDeclaration --|> _class_declaration.
+	abstractClassDeclaration --|> classDeclaration.
 
 	"Traits"
 	_literal --|> tLiteral.
@@ -470,10 +470,10 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_ERROR --|> #THasImmediateSource.
 	program withPrecedenceOf: #THasImmediateSource.
 
-	_class_declaration --|> tDeclaration.
-	_class_declaration --|> tWithDeclarations.
-	_class_declaration --|> tWithModifiers.
-	_class_declaration --|> tStatement.
+	classDeclaration --|> tDeclaration.
+	classDeclaration --|> tWithDeclarations.
+	classDeclaration --|> tWithModifiers.
+	classDeclaration --|> tStatement.
 
 	interfaceDeclaration --|> tDeclaration.
 	interfaceDeclaration --|> tWithDeclarations.
@@ -545,7 +545,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((program property: #classDeclarations) comment:
 		 'The class declarations that I define')
-	<>-* ((_class_declaration property: #parentProgram) comment:
+	<>-* ((classDeclaration property: #parentProgram) comment:
 			 'The program that contains me').
 
 	((program property: #enumDeclarations) comment:
@@ -764,12 +764,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((_type_arguments property: #typeArgumentsOwner) comment: 'My owner'). 
 	
 	"class declaration"
-	((_class_declaration property: #body) comment:
+	((classDeclaration property: #body) comment:
 		 'The body of the class')
 	<>- ((_class_body property: #parent) comment:
 			 'The class declaration that contains me').
 	
-	((_class_declaration property: #name) comment:
+	((classDeclaration property: #name) comment:
 		 'The name of the class')
 	<>- ((typeIdentifier property: #typeIdentifierOwner) comment:
 			 'My owner').

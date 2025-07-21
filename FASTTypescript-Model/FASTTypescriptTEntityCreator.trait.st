@@ -189,17 +189,17 @@ FASTTypescriptTEntityCreator >> newClass [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newClassDeclaration [
+
+	<generated>
+	^ self add: FASTTypescriptClassDeclaration new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newClass_body [
 
 	<generated>
 	^ self add: FASTTypescriptClass_body new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newClass_declaration [
-
-	<generated>
-	^ self add: FASTTypescriptClass_declaration new
 ]
 
 { #category : 'entity creation' }

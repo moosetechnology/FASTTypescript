@@ -31,7 +31,7 @@
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptInterfaceDeclaration` | My owner|
-| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptClass_declaration` | My owner|
+| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptClassDeclaration` | My owner|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnary_expression` | The owner of this class|
 
 
@@ -50,11 +50,11 @@ Class {
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
-		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #index_type',
+		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructor_type opposite: #type',
 		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
 		'#genericTypeOwner => FMOne type: #FASTTypescriptGeneric_type opposite: #name',
-		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructor_type opposite: #type',
-		'#typeIdentifierOwner => FMOne type: #FASTTypescriptClass_declaration opposite: #name'
+		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #index_type',
+		'#typeIdentifierOwner => FMOne type: #FASTTypescriptClassDeclaration opposite: #name'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -178,7 +178,7 @@ FASTTypescriptTypeIdentifier >> indexSignatureOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptTypeIdentifier >> typeIdentifierOwner [
-	"Relation named: #typeIdentifierOwner type: #FASTTypescriptClass_declaration opposite: #name"
+	"Relation named: #typeIdentifierOwner type: #FASTTypescriptClassDeclaration opposite: #name"
 
 	<generated>
 	<FMComment: 'My owner'>
