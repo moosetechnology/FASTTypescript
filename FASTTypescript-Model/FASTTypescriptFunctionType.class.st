@@ -18,9 +18,9 @@
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
-| `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunction_type` | The owner of this type|
-| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
@@ -31,8 +31,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `parameters` | `FASTTypescriptFunction_type` | `formalParametersOwner` | `FASTTypescriptFormalParameters` | My parameters|
-| `return_type` | `FASTTypescriptFunction_type` | `functionTypeOwner` | `FASTTExpression` | My return type|
+| `parameters` | `FASTTypescriptFunctionType` | `formalParametersOwner` | `FASTTypescriptFormalParameters` | My parameters|
+| `return_type` | `FASTTypescriptFunctionType` | `functionTypeOwner` | `FASTTExpression` | My return type|
 
 
 ## Properties
@@ -45,7 +45,7 @@
 
 "
 Class {
-	#name : 'FASTTypescriptFunction_type',
+	#name : 'FASTTypescriptFunctionType',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
@@ -58,16 +58,24 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptFunction_type class >> annotation [
+FASTTypescriptFunctionType class >> annotation [
 
-	<FMClass: #Function_type super: #FASTTypescriptEntity>
+	<FMClass: #FunctionType super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptFunctionType class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptFunction_type }
+
+
+]
+
 { #category : 'accessing' }
-FASTTypescriptFunction_type >> parameters [
+FASTTypescriptFunctionType >> parameters [
 	"Relation named: #parameters type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner"
 
 	<generated>
@@ -76,21 +84,21 @@ FASTTypescriptFunction_type >> parameters [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptFunction_type >> parameters: anObject [
+FASTTypescriptFunctionType >> parameters: anObject [
 
 	<generated>
 	parameters := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptFunction_type >> parametersGroup [
+FASTTypescriptFunctionType >> parametersGroup [
 	<generated>
 	<navigation: 'Parameters'>
 	^ MooseSpecializedGroup with: self parameters
 ]
 
 { #category : 'accessing' }
-FASTTypescriptFunction_type >> return_type [
+FASTTypescriptFunctionType >> return_type [
 	"Relation named: #return_type type: #FASTTExpression opposite: #functionTypeOwner"
 
 	<generated>
@@ -100,7 +108,7 @@ FASTTypescriptFunction_type >> return_type [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptFunction_type >> return_type: anObject [
+FASTTypescriptFunctionType >> return_type: anObject [
 
 	<generated>
 	(self attributeAt: #return_type ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -114,7 +122,7 @@ FASTTypescriptFunction_type >> return_type: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptFunction_type >> return_typeGroup [
+FASTTypescriptFunctionType >> return_typeGroup [
 	<generated>
 	<navigation: 'Return_type'>
 	^ MooseSpecializedGroup with: self return_type

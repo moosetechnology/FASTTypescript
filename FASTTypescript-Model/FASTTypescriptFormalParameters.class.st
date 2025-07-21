@@ -5,9 +5,9 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptMethod_definition` | My owner|
-| `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptFunction_type` | My owner|
 | `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptConstructor_type` | The owner of these formal parameters|
+| `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptFunctionType` | My owner|
+| `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptMethod_definition` | My owner|
 
 
 
@@ -16,7 +16,7 @@ Class {
 	#name : 'FASTTypescriptFormalParameters',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#formalParametersOwner => FMOne type: #FASTTypescriptFunction_type opposite: #parameters'
+		'#formalParametersOwner => FMOne type: #FASTTypescriptFunctionType opposite: #parameters'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -40,7 +40,7 @@ FASTTypescriptFormalParameters class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptFormalParameters >> formalParametersOwner [
-	"Relation named: #formalParametersOwner type: #FASTTypescriptFunction_type opposite: #parameters"
+	"Relation named: #formalParametersOwner type: #FASTTypescriptFunctionType opposite: #parameters"
 
 	<generated>
 	<FMComment: 'My owner'>

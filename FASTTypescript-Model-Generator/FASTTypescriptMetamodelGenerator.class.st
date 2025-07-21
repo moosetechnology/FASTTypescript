@@ -420,7 +420,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_readonly_type := builder ensureClassNamed: #Readonly_type.
 	unionType := builder ensureClassNamed: #UnionType.
 	_intersection_type := builder ensureClassNamed: #Intersection_type.
-	functionType := builder ensureClassNamed: #Function_type.
+	functionType := builder ensureClassNamed: #FunctionType.
 	interfaceBody := builder ensureClassNamed: #InterfaceBody.
 	propertyIdentifier := builder ensureClassNamed: #PropertyIdentifier.
 	_shorthand_property_identifier := builder ensureClassNamed: #Shorthand_property_identifier.
