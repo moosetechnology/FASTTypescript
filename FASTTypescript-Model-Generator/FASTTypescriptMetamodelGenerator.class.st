@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_nested_identifier',
 		'_public_field_definition',
 		'_import_alias',
 		'_try_statement',
@@ -197,7 +196,8 @@ Class {
 		'importClause',
 		'optionalChain',
 		'templateLiteralType',
-		'assignmentPattern'
+		'assignmentPattern',
+		'nestedIdentifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -297,7 +297,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_object_assignment_pattern := builder ensureClassNamed: #Object_assignment_pattern.
 	array := builder ensureClassNamed: #Array.
 	_array_pattern := builder ensureClassNamed: #Array_pattern.
-	_nested_identifier := builder ensureClassNamed: #Nested_identifier.
+	nestedIdentifier := builder ensureClassNamed: #NestedIdentifier.
 	class := builder ensureClassNamed: #Class.
 
 	classDeclaration := builder ensureClassNamed: #ClassDeclaration.
@@ -630,12 +630,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((_statement_block property: #withStatementOwner) comment:
 			 'The owner of this statement block').
 
-	((_nested_identifier property: #object) comment:
+	((nestedIdentifier property: #object) comment:
 		 'My object as identifier')
 	<>- ((identifier property: #nestedIdentifierOwner) comment:
 			 'The owner of this identifier').
 
-	((_nested_identifier property: #property) comment:
+	((nestedIdentifier property: #property) comment:
 		 'My property as property identifier')
 	<>-
 		((propertyIdentifier property: #nestedIdentifierOwner) comment:

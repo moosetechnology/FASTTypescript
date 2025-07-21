@@ -19,9 +19,9 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
-| `nestedIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | `property` | `FASTTypescriptNested_identifier` | The owner of this  property identifier|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `nestedIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | `property` | `FASTTypescriptNestedIdentifier` | The owner of this  property identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
@@ -46,7 +46,7 @@ Class {
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
-		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #property',
+		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNestedIdentifier opposite: #property',
 		'#propertyIdentifierOwner => FMOne type: #FASTTypescriptMethod_definition opposite: #name'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -71,7 +71,7 @@ FASTTypescriptPropertyIdentifier class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptPropertyIdentifier >> nestedIdentifierOwner [
-	"Relation named: #nestedIdentifierOwner type: #FASTTypescriptNested_identifier opposite: #property"
+	"Relation named: #nestedIdentifierOwner type: #FASTTypescriptNestedIdentifier opposite: #property"
 
 	<generated>
 	<FMComment: 'The owner of this  property identifier'>

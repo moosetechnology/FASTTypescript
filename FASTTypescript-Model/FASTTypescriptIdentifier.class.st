@@ -20,12 +20,12 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
+| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
 | `identifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptIndexSignature` | The owner of this identifier|
 | `identifierOwner` | `FASTTypescriptIdentifier` | `value` | `FASTTypescriptExtends_clause` | My owner|
-| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
-| `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNested_identifier` | The owner of this identifier|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNestedIdentifier` | The owner of this identifier|
 | `optionalParameterOwner` | `FASTTypescriptIdentifier` | `pattern` | `FASTTypescriptOptional_parameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentEnum` | `FASTTypescriptIdentifier` | `identifier` | `FASTTypescriptEnumDeclaration` | The enum that contains me|
@@ -55,7 +55,7 @@ Class {
 	#instVars : [
 		'#exportSpecifierOwner => FMOne type: #FASTTypescriptExport_specifier opposite: #name',
 		'#identifierOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #name',
-		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNested_identifier opposite: #object',
+		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNestedIdentifier opposite: #object',
 		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptional_parameter opposite: #pattern',
 		'#parentEnum => FMOne type: #FASTTypescriptEnumDeclaration opposite: #identifier',
 		'#typescriptNewExpressionOwner => FMOne type: #FASTTypescriptNewExpression opposite: #constructor'
@@ -126,7 +126,7 @@ FASTTypescriptIdentifier >> identifierOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptIdentifier >> nestedIdentifierOwner [
-	"Relation named: #nestedIdentifierOwner type: #FASTTypescriptNested_identifier opposite: #object"
+	"Relation named: #nestedIdentifierOwner type: #FASTTypescriptNestedIdentifier opposite: #object"
 
 	<generated>
 	<FMComment: 'The owner of this identifier'>

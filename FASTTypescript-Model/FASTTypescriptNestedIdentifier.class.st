@@ -5,14 +5,14 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `object` | `FASTTypescriptNested_identifier` | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | My object as identifier|
-| `property` | `FASTTypescriptNested_identifier` | `nestedIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | My property as property identifier|
+| `object` | `FASTTypescriptNestedIdentifier` | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | My object as identifier|
+| `property` | `FASTTypescriptNestedIdentifier` | `nestedIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | My property as property identifier|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptNested_identifier',
+	#name : 'FASTTypescriptNestedIdentifier',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#object => FMOne type: #FASTTypescriptIdentifier opposite: #nestedIdentifierOwner',
@@ -24,16 +24,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptNested_identifier class >> annotation [
+FASTTypescriptNestedIdentifier class >> annotation [
 
-	<FMClass: #Nested_identifier super: #FASTTypescriptEntity>
+	<FMClass: #NestedIdentifier super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptNestedIdentifier class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptNested_identifier }
+]
+
 { #category : 'accessing' }
-FASTTypescriptNested_identifier >> object [
+FASTTypescriptNestedIdentifier >> object [
 	"Relation named: #object type: #FASTTypescriptIdentifier opposite: #nestedIdentifierOwner"
 
 	<generated>
@@ -42,21 +48,21 @@ FASTTypescriptNested_identifier >> object [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptNested_identifier >> object: anObject [
+FASTTypescriptNestedIdentifier >> object: anObject [
 
 	<generated>
 	object := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptNested_identifier >> objectGroup [
+FASTTypescriptNestedIdentifier >> objectGroup [
 	<generated>
 	<navigation: 'Object'>
 	^ MooseSpecializedGroup with: self object
 ]
 
 { #category : 'accessing' }
-FASTTypescriptNested_identifier >> property [
+FASTTypescriptNestedIdentifier >> property [
 	"Relation named: #property type: #FASTTypescriptPropertyIdentifier opposite: #nestedIdentifierOwner"
 
 	<generated>
@@ -65,14 +71,14 @@ FASTTypescriptNested_identifier >> property [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptNested_identifier >> property: anObject [
+FASTTypescriptNestedIdentifier >> property: anObject [
 
 	<generated>
 	property := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptNested_identifier >> propertyGroup [
+FASTTypescriptNestedIdentifier >> propertyGroup [
 	<generated>
 	<navigation: 'Property'>
 	^ MooseSpecializedGroup with: self property

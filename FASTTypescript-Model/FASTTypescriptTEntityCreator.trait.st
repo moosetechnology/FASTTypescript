@@ -742,17 +742,17 @@ FASTTypescriptTEntityCreator >> newNamespace_import [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newNestedIdentifier [
+
+	<generated>
+	^ self add: FASTTypescriptNestedIdentifier new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newNestedTypeIdentifier [
 
 	<generated>
 	^ self add: FASTTypescriptNestedTypeIdentifier new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newNested_identifier [
-
-	<generated>
-	^ self add: FASTTypescriptNested_identifier new
 ]
 
 { #category : 'entity creation' }
