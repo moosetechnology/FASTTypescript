@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_template_literal_type',
 		'_assignment_pattern',
 		'_nested_identifier',
 		'_public_field_definition',
@@ -197,7 +196,8 @@ Class {
 		'readonlyType',
 		'classBody',
 		'importClause',
-		'optionalChain'
+		'optionalChain',
+		'templateLiteralType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -385,7 +385,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	restType := builder ensureClassNamed: #RestType.
 	_constructor_type := builder ensureClassNamed: #Constructor_type.
 	_template_type := builder ensureClassNamed: #Template_type.
-	_template_literal_type := builder ensureClassNamed: #Template_literal_type.
+	templateLiteralType := builder ensureClassNamed: #TemplateLiteralType.
 	_infer_type := builder ensureClassNamed: #Infer_type.
 	_conditional_type := builder ensureClassNamed: #Conditional_type.
 	_generic_type := builder ensureClassNamed: #Generic_type.
