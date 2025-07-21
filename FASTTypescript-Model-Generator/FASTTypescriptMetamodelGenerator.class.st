@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_type_alias_declaration',
 		'_optional_parameter',
 		'_constructor_type',
 		'_conditional_type',
@@ -197,7 +196,8 @@ Class {
 		'nestedIdentifier',
 		'publicFieldDefinition',
 		'importAlias',
-		'tryStatement'
+		'tryStatement',
+		'typeAliasDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -366,7 +366,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	
 	enumBody := builder ensureClassNamed: #EnumBody.
 	_enum_assignment := builder ensureClassNamed: #Enum_assignment.
-	_type_alias_declaration := builder ensureClassNamed: #Type_alias_declaration.
+	typeAliasDeclaration := builder ensureClassNamed: #TypeAliasDeclaration.
 	accessibilityModifier := builder ensureClassNamed: #AccessibilityModifier.
 	_override_modifier := builder ensureClassNamed: #Override_modifier.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
