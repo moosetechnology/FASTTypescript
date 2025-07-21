@@ -308,10 +308,10 @@ FASTTypescriptTEntityCreator >> newERROR [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newElse_clause [
+FASTTypescriptTEntityCreator >> newElseClause [
 
 	<generated>
-	^ self add: FASTTypescriptElse_clause new
+	^ self add: FASTTypescriptElseClause new
 ]
 
 { #category : 'entity creation' }
