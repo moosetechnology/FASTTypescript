@@ -1,5 +1,5 @@
 Class {
-	#name : 'FASTTypescriptRegex_pattern',
+	#name : 'FASTTypescriptRegexPattern',
 	#superclass : 'FASTTypescriptEntity',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -7,9 +7,9 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptRegex_pattern class >> annotation [
+FASTTypescriptRegexPattern class >> annotation [
 
-	<FMClass: #Regex_pattern super: #FASTTypescriptEntity>
+	<FMClass: #RegexPattern super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self

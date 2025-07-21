@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_regex_pattern',
 		'_omitting_type_annotation',
 		'_else_clause',
 		'_this_type',
@@ -197,7 +196,8 @@ Class {
 		'assignmentExpression',
 		'unaryExpression',
 		'variableDeclarator',
-		'classHeritage'
+		'classHeritage',
+		'regexPattern'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -234,7 +234,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_string_fragment := builder ensureClassNamed: #String_fragment.
 	escapeSequence := builder ensureClassNamed: #EscapeSequence.
 	comment := builder ensureClassNamed: #Comment.
-	_regex_pattern := builder ensureClassNamed: #Regex_pattern.
+	regexPattern := builder ensureClassNamed: #RegexPattern.
 	_regex_flags := builder ensureClassNamed: #Regex_flags.
 	number := builder ensureClassNamed: #Number.
 	_private_property_identifier := builder ensureClassNamed: #Private_property_identifier.
