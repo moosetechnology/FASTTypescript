@@ -5,14 +5,14 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `ifStatementOwner` | `FASTTypescriptParenthesized_expression` | `condition` | `FASTTypescriptIf_statement` | The owner of this  parenthesized expression|
-| `withStatementOwner` | `FASTTypescriptParenthesized_expression` | `object` | `FASTTypescriptWith_statement` | The owner of this type parenthesized expression|
+| `ifStatementOwner` | `FASTTypescriptParenthesizedExpression` | `condition` | `FASTTypescriptIf_statement` | The owner of this  parenthesized expression|
+| `withStatementOwner` | `FASTTypescriptParenthesizedExpression` | `object` | `FASTTypescriptWith_statement` | The owner of this type parenthesized expression|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptParenthesized_expression',
+	#name : 'FASTTypescriptParenthesizedExpression',
 	#superclass : 'FASTTypescriptExpression',
 	#instVars : [
 		'#ifStatementOwner => FMOne type: #FASTTypescriptIf_statement opposite: #condition',
@@ -24,16 +24,25 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptParenthesized_expression class >> annotation [
+FASTTypescriptParenthesizedExpression class >> annotation [
 
-	<FMClass: #Parenthesized_expression super: #FASTTypescriptExpression>
+	<FMClass: #ParenthesizedExpression super: #FASTTypescriptExpression>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptParenthesizedExpression class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptParenthesized_expression }
+
+
+
+]
+
 { #category : 'accessing' }
-FASTTypescriptParenthesized_expression >> ifStatementOwner [
+FASTTypescriptParenthesizedExpression >> ifStatementOwner [
 	"Relation named: #ifStatementOwner type: #FASTTypescriptIf_statement opposite: #condition"
 
 	<generated>
@@ -44,21 +53,21 @@ FASTTypescriptParenthesized_expression >> ifStatementOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptParenthesized_expression >> ifStatementOwner: anObject [
+FASTTypescriptParenthesizedExpression >> ifStatementOwner: anObject [
 
 	<generated>
 	ifStatementOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptParenthesized_expression >> ifStatementOwnerGroup [
+FASTTypescriptParenthesizedExpression >> ifStatementOwnerGroup [
 	<generated>
 	<navigation: 'IfStatementOwner'>
 	^ MooseSpecializedGroup with: self ifStatementOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptParenthesized_expression >> withStatementOwner [
+FASTTypescriptParenthesizedExpression >> withStatementOwner [
 	"Relation named: #withStatementOwner type: #FASTTypescriptWith_statement opposite: #object"
 
 	<generated>
@@ -69,14 +78,14 @@ FASTTypescriptParenthesized_expression >> withStatementOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptParenthesized_expression >> withStatementOwner: anObject [
+FASTTypescriptParenthesizedExpression >> withStatementOwner: anObject [
 
 	<generated>
 	withStatementOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptParenthesized_expression >> withStatementOwnerGroup [
+FASTTypescriptParenthesizedExpression >> withStatementOwnerGroup [
 	<generated>
 	<navigation: 'WithStatementOwner'>
 	^ MooseSpecializedGroup with: self withStatementOwner

@@ -868,10 +868,10 @@ FASTTypescriptTEntityCreator >> newPair_pattern [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newParenthesized_expression [
+FASTTypescriptTEntityCreator >> newParenthesizedExpression [
 
 	<generated>
-	^ self add: FASTTypescriptParenthesized_expression new
+	^ self add: FASTTypescriptParenthesizedExpression new
 ]
 
 { #category : 'entity creation' }

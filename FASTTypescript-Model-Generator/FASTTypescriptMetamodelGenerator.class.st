@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_parenthesized_expression',
 		'_class_declaration',
 		'_return_statement',
 		'_assignment_expression',
@@ -197,7 +196,8 @@ Class {
 		'escapeSequence',
 		'typeQuery',
 		'shorthandPropertyIdentifierPattern',
-		'binaryExpression'
+		'binaryExpression',
+		'parenthesizedExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -289,7 +289,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	switchDefault := builder ensureClassNamed: #SwitchDefault.
 	catchClause := builder ensureClassNamed: #CatchClause.
 	_finally_clause := builder ensureClassNamed: #Finally_clause.
-	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
+	parenthesizedExpression := builder ensureClassNamed: #ParenthesizedExpression.
 	_yield_expression := builder ensureClassNamed: #Yield_expression.
 	object := builder ensureClassNamed: #Object.
 	_object_pattern := builder ensureClassNamed: #Object_pattern.
@@ -344,8 +344,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_non_null_expression := builder ensureClassNamed: #Non_null_expression.
 	methodSignature := builder ensureClassNamed: #MethodSignature.
 	_abstract_method_signature := builder ensureClassNamed: #Abstract_method_signature.
-	_function_signature := builder ensureClassNamed: #Function_signature.
-	_parenthesized_expression := builder ensureClassNamed: #Parenthesized_expression.
+	_function_signature := builder ensureClassNamed: #Function_signature. 
 	typeAssertion := builder ensureClassNamed: #TypeAssertion.
 	asExpression := builder ensureClassNamed: #AsExpression.
 	satisfiesExpression := builder ensureClassNamed: #SatisfiesExpression.
@@ -524,7 +523,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_instantiation_expression --|> expression.
 	newExpression --|> expression.
 	_non_null_expression --|> expression.
-	_parenthesized_expression --|> expression.
+	parenthesizedExpression --|> expression.
 	satisfiesExpression --|> expression.
 	_sequence_expression --|> expression.
 	subscriptExpression --|> expression.
@@ -624,7 +623,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_with_statement property: #object) comment:
 		 'My object as parenthesized expression')
 	<>-
-		((_parenthesized_expression property: #withStatementOwner) comment:
+		((parenthesizedExpression property: #withStatementOwner) comment:
 			 'The owner of this type parenthesized expression').
 
 	((_with_statement property: #body) comment:
@@ -676,7 +675,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	((_if_statement property: #condition) comment:
 		 'My condition as parenthesized expression')
 	<>-
-		((_parenthesized_expression property: #ifStatementOwner) comment:
+		((parenthesizedExpression property: #ifStatementOwner) comment:
 			 'The owner of this  parenthesized expression').
 
 	((_if_statement property: #consequence) comment:

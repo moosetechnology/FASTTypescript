@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `body` | `FASTTypescriptWith_statement` | `withStatementOwner` | `FASTTypescriptStatement_block` | My body as statement block|
-| `object` | `FASTTypescriptWith_statement` | `withStatementOwner` | `FASTTypescriptParenthesized_expression` | My object as parenthesized expression|
+| `object` | `FASTTypescriptWith_statement` | `withStatementOwner` | `FASTTypescriptParenthesizedExpression` | My object as parenthesized expression|
 
 
 
@@ -16,7 +16,7 @@ Class {
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #withStatementOwner',
-		'#object => FMOne type: #FASTTypescriptParenthesized_expression opposite: #withStatementOwner'
+		'#object => FMOne type: #FASTTypescriptParenthesizedExpression opposite: #withStatementOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -57,7 +57,7 @@ FASTTypescriptWith_statement >> bodyGroup [
 
 { #category : 'accessing' }
 FASTTypescriptWith_statement >> object [
-	"Relation named: #object type: #FASTTypescriptParenthesized_expression opposite: #withStatementOwner"
+	"Relation named: #object type: #FASTTypescriptParenthesizedExpression opposite: #withStatementOwner"
 
 	<generated>
 	<FMComment: 'My object as parenthesized expression'>
