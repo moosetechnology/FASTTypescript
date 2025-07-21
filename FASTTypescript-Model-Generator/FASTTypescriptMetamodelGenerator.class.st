@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_constructor_type',
 		'_conditional_type',
 		'_parenthesized_type',
 		'_construct_signature',
@@ -197,7 +196,8 @@ Class {
 		'importAlias',
 		'tryStatement',
 		'typeAliasDeclaration',
-		'optionalParameter'
+		'optionalParameter',
+		'constructorType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -382,7 +382,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
 	_optional_type := builder ensureClassNamed: #Optional_type.
 	restType := builder ensureClassNamed: #RestType.
-	_constructor_type := builder ensureClassNamed: #Constructor_type.
+	constructorType := builder ensureClassNamed: #ConstructorType.
 	_template_type := builder ensureClassNamed: #Template_type.
 	templateLiteralType := builder ensureClassNamed: #TemplateLiteralType.
 	_infer_type := builder ensureClassNamed: #Infer_type.
@@ -650,12 +650,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((_type_arguments property: #typeArgumentsOwner) comment:
 			 'The owner of this type arguments').
 
-	((_constructor_type property: #type) comment:
+	((constructorType property: #type) comment:
 		 'My type as type identifier')
 	<>- ((typeIdentifier property: #constructorTypeOwner) comment:
 			 'The owner of this type identifier').
 			
-	((_constructor_type property: #parameters) comment:
+	((constructorType property: #parameters) comment:
 		 'My parameters')
 	<>- ((formalParameters property: #formalParametersOwner) comment:
 			 'The owner of these formal parameters').

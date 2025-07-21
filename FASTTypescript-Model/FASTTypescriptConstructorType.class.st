@@ -5,18 +5,18 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `parameters` | `FASTTypescriptConstructor_type` | `formalParametersOwner` | `FASTTypescriptFormalParameters` | My parameters|
-| `type` | `FASTTypescriptConstructor_type` | `constructorTypeOwner` | `FASTTypescriptTypeIdentifier` | My type as type identifier|
+| `parameters` | `FASTTypescriptConstructorType` | `formalParametersOwner` | `FASTTypescriptFormalParameters` | My parameters|
+| `type` | `FASTTypescriptConstructorType` | `constructorTypeOwner` | `FASTTypescriptTypeIdentifier` | My type as type identifier|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptConstructor_type',
+	#name : 'FASTTypescriptConstructorType',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#parameters => FMOne type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner',
-		'#type => FMOne type: #FASTTypescriptTypeIdentifier opposite: #constructorTypeOwner'
+		'#type => FMOne type: #FASTTypescriptTypeIdentifier opposite: #constructorTypeOwner',
+		'#parameters => FMOne type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -24,16 +24,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptConstructor_type class >> annotation [
+FASTTypescriptConstructorType class >> annotation [
 
-	<FMClass: #Constructor_type super: #FASTTypescriptEntity>
+	<FMClass: #ConstructorType super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptConstructorType class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptConstructor_type }
+]
+
 { #category : 'accessing' }
-FASTTypescriptConstructor_type >> parameters [
+FASTTypescriptConstructorType >> parameters [
 	"Relation named: #parameters type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner"
 
 	<generated>
@@ -42,21 +48,21 @@ FASTTypescriptConstructor_type >> parameters [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConstructor_type >> parameters: anObject [
+FASTTypescriptConstructorType >> parameters: anObject [
 
 	<generated>
 	parameters := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptConstructor_type >> parametersGroup [
+FASTTypescriptConstructorType >> parametersGroup [
 	<generated>
 	<navigation: 'Parameters'>
 	^ MooseSpecializedGroup with: self parameters
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConstructor_type >> type [
+FASTTypescriptConstructorType >> type [
 	"Relation named: #type type: #FASTTypescriptTypeIdentifier opposite: #constructorTypeOwner"
 
 	<generated>
@@ -65,14 +71,14 @@ FASTTypescriptConstructor_type >> type [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConstructor_type >> type: anObject [
+FASTTypescriptConstructorType >> type: anObject [
 
 	<generated>
 	type := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptConstructor_type >> typeGroup [
+FASTTypescriptConstructorType >> typeGroup [
 	<generated>
 	<navigation: 'Type'>
 	^ MooseSpecializedGroup with: self type

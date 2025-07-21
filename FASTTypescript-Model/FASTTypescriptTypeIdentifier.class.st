@@ -15,7 +15,7 @@
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptConditional_type` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptConditional_type` | The right operand (if possible)|
 | `consequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypescriptConditional_type` | Consequence owner|
-| `constructorTypeOwner` | `FASTTypescriptTypeIdentifier` | `type` | `FASTTypescriptConstructor_type` | The owner of this type identifier|
+| `constructorTypeOwner` | `FASTTypescriptTypeIdentifier` | `type` | `FASTTypescriptConstructorType` | The owner of this type identifier|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `extendsTypeClauseOwner` | `FASTTypescriptTypeIdentifier` | `type` | `FASTTypescriptExtends_type_clause` | The owner of this type identifier|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
@@ -50,7 +50,7 @@ Class {
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
-		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructor_type opposite: #type',
+		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructorType opposite: #type',
 		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
 		'#genericTypeOwner => FMOne type: #FASTTypescriptGeneric_type opposite: #name',
 		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #index_type',
@@ -78,7 +78,7 @@ FASTTypescriptTypeIdentifier class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptTypeIdentifier >> constructorTypeOwner [
-	"Relation named: #constructorTypeOwner type: #FASTTypescriptConstructor_type opposite: #type"
+	"Relation named: #constructorTypeOwner type: #FASTTypescriptConstructorType opposite: #type"
 
 	<generated>
 	<FMComment: 'The owner of this type identifier'>
