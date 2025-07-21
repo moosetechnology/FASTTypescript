@@ -35,10 +35,10 @@ FASTTypescriptTEntityCreator >> newAbstract_method_signature [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAccessibility_modifier [
+FASTTypescriptTEntityCreator >> newAccessibilityModifier [
 
 	<generated>
-	^ self add: FASTTypescriptAccessibility_modifier new
+	^ self add: FASTTypescriptAccessibilityModifier new
 ]
 
 { #category : 'entity creation' }

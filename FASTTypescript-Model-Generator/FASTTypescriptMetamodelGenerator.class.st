@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_accessibility_modifier',
 		'_function_expression',
 		'_generator_function_declaration',
 		'_function_type',
@@ -197,7 +196,8 @@ Class {
 		'jsxText',
 		'exportClause',
 		'switchStatement',
-		'forStatement'
+		'forStatement',
+		'accessibilityModifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -368,7 +368,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	enumBody := builder ensureClassNamed: #EnumBody.
 	_enum_assignment := builder ensureClassNamed: #Enum_assignment.
 	_type_alias_declaration := builder ensureClassNamed: #Type_alias_declaration.
-	_accessibility_modifier := builder ensureClassNamed: #Accessibility_modifier.
+	accessibilityModifier := builder ensureClassNamed: #AccessibilityModifier.
 	_override_modifier := builder ensureClassNamed: #Override_modifier.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
 	_optional_parameter := builder ensureClassNamed: #Optional_parameter.
