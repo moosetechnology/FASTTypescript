@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_non_null_expression',
 		'_object_type',
 		'_shorthand_property_identifier',
 		'_index_type_query',
@@ -197,7 +196,8 @@ Class {
 		'awaitExpression',
 		'pairPattern',
 		'importRequireClause',
-		'typeAnnotation'
+		'typeAnnotation',
+		'nonNullExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -339,7 +339,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	pairPattern := builder ensureClassNamed: #PairPattern.
 	computedPropertyName := builder ensureClassNamed: #ComputedPropertyName.
 	publicFieldDefinition := builder ensureClassNamed: #PublicFieldDefinition.
-	_non_null_expression := builder ensureClassNamed: #Non_null_expression.
+	nonNullExpression := builder ensureClassNamed: #NonNullExpression.
 	methodSignature := builder ensureClassNamed: #MethodSignature.
 	_abstract_method_signature := builder ensureClassNamed: #Abstract_method_signature.
 	_function_signature := builder ensureClassNamed: #Function_signature. 
@@ -516,7 +516,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	functionExpression --|> expression.
 	instantiationExpression --|> expression.
 	newExpression --|> expression.
-	_non_null_expression --|> expression.
+	nonNullExpression --|> expression.
 	parenthesizedExpression --|> expression.
 	satisfiesExpression --|> expression.
 	_sequence_expression --|> expression.

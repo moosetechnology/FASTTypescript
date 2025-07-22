@@ -770,10 +770,10 @@ FASTTypescriptTEntityCreator >> newNewExpression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newNon_null_expression [
+FASTTypescriptTEntityCreator >> newNonNullExpression [
 
 	<generated>
-	^ self add: FASTTypescriptNon_null_expression new
+	^ self add: FASTTypescriptNonNullExpression new
 ]
 
 { #category : 'entity creation' }
