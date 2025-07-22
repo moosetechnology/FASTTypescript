@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_if_statement',
 		'_named_imports',
 		'_object_pattern',
 		'_await_expression',
@@ -197,7 +196,8 @@ Class {
 		'callExpression',
 		'ambientDeclaration',
 		'templateType',
-		'inferType'
+		'inferType',
+		'ifStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -269,7 +269,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	variableDeclarator := builder ensureClassNamed: #VariableDeclarator.
 	_statement_block := builder ensureClassNamed: #Statement_block.
 	elseClause := builder ensureClassNamed: #ElseClause.
-	_if_statement := builder ensureClassNamed: #If_statement.
+	ifStatement := builder ensureClassNamed: #IfStatement.
 	switchStatement := builder ensureClassNamed: #SwitchStatement.
 	forStatement := builder ensureClassNamed: #ForStatement.
 	_for_in_statement := builder ensureClassNamed: #For_in_statement.
@@ -666,13 +666,13 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((identifier property: #optionalParameterOwner) comment:
 			 'The owner of this identifier').
 
-	((_if_statement property: #condition) comment:
+	((ifStatement property: #condition) comment:
 		 'My condition as parenthesized expression')
 	<>-
 		((parenthesizedExpression property: #ifStatementOwner) comment:
 			 'The owner of this  parenthesized expression').
 
-	((_if_statement property: #consequence) comment:
+	((ifStatement property: #consequence) comment:
 		 'My consequence as statement block')
 	<>- ((_statement_block property: #ifStatementOwner) comment:
 			 'The owner of this statement block').

@@ -5,10 +5,10 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `ifStatementOwner` | `FASTTypescriptStatement_block` | `consequence` | `FASTTypescriptIf_statement` | The owner of this statement block|
-| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptMethod_definition` | My owner|
-| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFinallyClause` | My owner|
+| `ifStatementOwner` | `FASTTypescriptStatement_block` | `consequence` | `FASTTypescriptIfStatement` | The owner of this statement block|
 | `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFor_in_statement` | The owner of this body is a for_in_statment|
+| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFinallyClause` | My owner|
+| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptMethod_definition` | My owner|
 | `tryStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptTryStatement` | Try statement owner|
 | `withStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptWithStatement` | The owner of this statement block|
 
@@ -19,7 +19,7 @@ Class {
 	#name : 'FASTTypescriptStatement_block',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#ifStatementOwner => FMOne type: #FASTTypescriptIf_statement opposite: #consequence',
+		'#ifStatementOwner => FMOne type: #FASTTypescriptIfStatement opposite: #consequence',
 		'#statementBlockOwner => FMOne type: #FASTTypescriptFor_in_statement opposite: #body',
 		'#tryStatementOwner => FMOne type: #FASTTypescriptTryStatement opposite: #body',
 		'#withStatementOwner => FMOne type: #FASTTypescriptWithStatement opposite: #body'
@@ -40,7 +40,7 @@ FASTTypescriptStatement_block class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptStatement_block >> ifStatementOwner [
-	"Relation named: #ifStatementOwner type: #FASTTypescriptIf_statement opposite: #consequence"
+	"Relation named: #ifStatementOwner type: #FASTTypescriptIfStatement opposite: #consequence"
 
 	<generated>
 	<FMComment: 'The owner of this statement block'>

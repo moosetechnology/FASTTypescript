@@ -518,10 +518,10 @@ FASTTypescriptTEntityCreator >> newIdentifier [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newIf_statement [
+FASTTypescriptTEntityCreator >> newIfStatement [
 
 	<generated>
-	^ self add: FASTTypescriptIf_statement new
+	^ self add: FASTTypescriptIfStatement new
 ]
 
 { #category : 'entity creation' }

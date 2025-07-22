@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `ifStatementOwner` | `FASTTypescriptParenthesizedExpression` | `condition` | `FASTTypescriptIf_statement` | The owner of this  parenthesized expression|
+| `ifStatementOwner` | `FASTTypescriptParenthesizedExpression` | `condition` | `FASTTypescriptIfStatement` | The owner of this  parenthesized expression|
 | `withStatementOwner` | `FASTTypescriptParenthesizedExpression` | `object` | `FASTTypescriptWithStatement` | The owner of this type parenthesized expression|
 
 
@@ -15,7 +15,7 @@ Class {
 	#name : 'FASTTypescriptParenthesizedExpression',
 	#superclass : 'FASTTypescriptExpression',
 	#instVars : [
-		'#ifStatementOwner => FMOne type: #FASTTypescriptIf_statement opposite: #condition',
+		'#ifStatementOwner => FMOne type: #FASTTypescriptIfStatement opposite: #condition',
 		'#withStatementOwner => FMOne type: #FASTTypescriptWithStatement opposite: #object'
 	],
 	#category : 'FASTTypescript-Model-Entities',
@@ -43,7 +43,7 @@ FASTTypescriptParenthesizedExpression class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptParenthesizedExpression >> ifStatementOwner [
-	"Relation named: #ifStatementOwner type: #FASTTypescriptIf_statement opposite: #condition"
+	"Relation named: #ifStatementOwner type: #FASTTypescriptIfStatement opposite: #condition"
 
 	<generated>
 	<FMComment: 'The owner of this  parenthesized expression'>

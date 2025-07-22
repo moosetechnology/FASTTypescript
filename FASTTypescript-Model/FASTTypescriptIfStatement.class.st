@@ -5,14 +5,14 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `condition` | `FASTTypescriptIf_statement` | `ifStatementOwner` | `FASTTypescriptParenthesizedExpression` | My condition as parenthesized expression|
-| `consequence` | `FASTTypescriptIf_statement` | `ifStatementOwner` | `FASTTypescriptStatement_block` | My consequence as statement block|
+| `condition` | `FASTTypescriptIfStatement` | `ifStatementOwner` | `FASTTypescriptParenthesizedExpression` | My condition as parenthesized expression|
+| `consequence` | `FASTTypescriptIfStatement` | `ifStatementOwner` | `FASTTypescriptStatement_block` | My consequence as statement block|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptIf_statement',
+	#name : 'FASTTypescriptIfStatement',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#condition => FMOne type: #FASTTypescriptParenthesizedExpression opposite: #ifStatementOwner',
@@ -24,16 +24,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptIf_statement class >> annotation [
+FASTTypescriptIfStatement class >> annotation [
 
-	<FMClass: #If_statement super: #FASTTypescriptEntity>
+	<FMClass: #IfStatement super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptIfStatement class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptIf_statement }
+]
+
 { #category : 'accessing' }
-FASTTypescriptIf_statement >> condition [
+FASTTypescriptIfStatement >> condition [
 	"Relation named: #condition type: #FASTTypescriptParenthesizedExpression opposite: #ifStatementOwner"
 
 	<generated>
@@ -42,21 +48,21 @@ FASTTypescriptIf_statement >> condition [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptIf_statement >> condition: anObject [
+FASTTypescriptIfStatement >> condition: anObject [
 
 	<generated>
 	condition := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptIf_statement >> conditionGroup [
+FASTTypescriptIfStatement >> conditionGroup [
 	<generated>
 	<navigation: 'Condition'>
 	^ MooseSpecializedGroup with: self condition
 ]
 
 { #category : 'accessing' }
-FASTTypescriptIf_statement >> consequence [
+FASTTypescriptIfStatement >> consequence [
 	"Relation named: #consequence type: #FASTTypescriptStatement_block opposite: #ifStatementOwner"
 
 	<generated>
@@ -65,14 +71,14 @@ FASTTypescriptIf_statement >> consequence [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptIf_statement >> consequence: anObject [
+FASTTypescriptIfStatement >> consequence: anObject [
 
 	<generated>
 	consequence := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptIf_statement >> consequenceGroup [
+FASTTypescriptIfStatement >> consequenceGroup [
 	<generated>
 	<navigation: 'Consequence'>
 	^ MooseSpecializedGroup with: self consequence
