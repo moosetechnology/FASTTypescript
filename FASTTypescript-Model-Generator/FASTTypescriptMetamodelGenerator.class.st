@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_named_imports',
 		'_object_pattern',
 		'_await_expression',
 		'_pair_pattern',
@@ -197,7 +196,8 @@ Class {
 		'ambientDeclaration',
 		'templateType',
 		'inferType',
-		'ifStatement'
+		'ifStatement',
+		'namedImports'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -260,7 +260,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	importStatement := builder ensureClassNamed: #ImportStatement.
 	importClause := builder ensureClassNamed: #ImportClause.
 	namespaceImport := builder ensureClassNamed: #NamespaceImport.
-	_named_imports := builder ensureClassNamed: #Named_imports.
+	namedImports := builder ensureClassNamed: #NamedImports.
 	_import_specifier := builder ensureClassNamed: #Import_specifier.
 	_import_attribute := builder ensureClassNamed: #Import_attribute.
 	_expression_statement := builder ensureClassNamed: #Expression_statement.

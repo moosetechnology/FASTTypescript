@@ -728,10 +728,10 @@ FASTTypescriptTEntityCreator >> newModule [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newNamed_imports [
+FASTTypescriptTEntityCreator >> newNamedImports [
 
 	<generated>
-	^ self add: FASTTypescriptNamed_imports new
+	^ self add: FASTTypescriptNamedImports new
 ]
 
 { #category : 'entity creation' }
