@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_implements_clause',
 		'_call_expression',
 		'_ambient_declaration',
 		'_template_type',
@@ -197,7 +196,8 @@ Class {
 		'typeParameter',
 		'templateSubstitution',
 		'instantiationExpression',
-		'memberExpression'
+		'memberExpression',
+		'implementsClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -350,7 +350,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	instantiationExpression := builder ensureClassNamed: #InstantiationExpression.
 	_import_require_clause := builder ensureClassNamed: #Import_require_clause.
 	extendsClause := builder ensureClassNamed: #ExtendsClause.
-	_implements_clause := builder ensureClassNamed: #Implements_clause.
+	implementsClause := builder ensureClassNamed: #ImplementsClause.
 	_ambient_declaration := builder ensureClassNamed: #Ambient_declaration.
 	abstractClassDeclaration := builder ensureClassNamed: #AbstractClassDeclaration.
 	module := builder ensureClassNamed: #Module.

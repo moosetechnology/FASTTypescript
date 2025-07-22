@@ -525,10 +525,10 @@ FASTTypescriptTEntityCreator >> newIf_statement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newImplements_clause [
+FASTTypescriptTEntityCreator >> newImplementsClause [
 
 	<generated>
-	^ self add: FASTTypescriptImplements_clause new
+	^ self add: FASTTypescriptImplementsClause new
 ]
 
 { #category : 'entity creation' }
