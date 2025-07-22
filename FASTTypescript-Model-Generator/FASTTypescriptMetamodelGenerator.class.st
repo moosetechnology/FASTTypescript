@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_call_expression',
 		'_ambient_declaration',
 		'_template_type',
 		'_infer_type',
@@ -197,7 +196,8 @@ Class {
 		'templateSubstitution',
 		'instantiationExpression',
 		'memberExpression',
-		'implementsClause'
+		'implementsClause',
+		'callExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -310,7 +310,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	generatorFunctionDeclaration := builder ensureClassNamed: #GeneratorFunctionDeclaration.
 	arrowFunction := builder ensureClassNamed: #ArrowFunction.
 	optionalChain := builder ensureClassNamed: #OptionalChain.
-	_call_expression := builder ensureClassNamed: #Call_expression.
+	callExpression := builder ensureClassNamed: #CallExpression.
 	newExpression := builder ensureClassNamed: #NewExpression.
 	_await_expression := builder ensureClassNamed: #Await_expression.
 	memberExpression := builder ensureClassNamed: #MemberExpression.
@@ -329,8 +329,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	regex := builder ensureClassNamed: #Regex.
 	metaProperty := builder ensureClassNamed: #MetaProperty.
 	arguments := builder ensureClassNamed: #Arguments.
-	decorator := builder ensureClassNamed: #Decorator.
-	_call_expression := builder ensureClassNamed: #Call_expression.
+	decorator := builder ensureClassNamed: #Decorator. 
 	classBody := builder ensureClassNamed: #ClassBody.
 	formalParameters := builder ensureClassNamed: #FormalParameters.
 	_class_static_block := builder ensureClassNamed: #Class_static_block.
@@ -375,7 +374,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_opting_type_annotation := builder ensureClassNamed: #Opting_type_annotation.
 	_type_annotation := builder ensureClassNamed: #Type_annotation.
 	memberExpression := builder ensureClassNamed: #Member_expression.
-	_call_expression := builder ensureClassNamed: #Call_expression.
+	callExpression := builder ensureClassNamed: #CallExpression.
 	asserts := builder ensureClassNamed: #Asserts.
 	_asserts_annotation := builder ensureClassNamed: #Asserts_annotation.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
@@ -389,8 +388,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	genericType := builder ensureClassNamed: #GenericType.
 	_type_predicate := builder ensureClassNamed: #Type_predicate.
 	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation.
-	memberExpression := builder ensureClassNamed: #Member_expression.
-	_call_expression := builder ensureClassNamed: #Call_expression. 
+	memberExpression := builder ensureClassNamed: #Member_expression. 
 	typeQuery := builder ensureClassNamed: #TypeQuery.
 	_index_type_query := builder ensureClassNamed: #Index_type_query.
 	lookupType := builder ensureClassNamed: #LookupType.
@@ -510,7 +508,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	binaryExpression --|> expression.
 	unaryExpression --|> expression.
 	memberExpression --|> expression.
-	_call_expression --|> expression.
+	callExpression --|> expression.
 	asExpression --|> expression.
 	assignmentExpression --|> expression.
 	_augmented_assignment_expression --|> expression.

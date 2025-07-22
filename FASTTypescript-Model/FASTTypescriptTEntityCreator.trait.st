@@ -161,17 +161,17 @@ FASTTypescriptTEntityCreator >> newBreakStatement [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newCallExpression [
+
+	<generated>
+	^ self add: FASTTypescriptCallExpression new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newCallSignature [
 
 	<generated>
 	^ self add: FASTTypescriptCallSignature new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newCall_expression [
-
-	<generated>
-	^ self add: FASTTypescriptCall_expression new
 ]
 
 { #category : 'entity creation' }
