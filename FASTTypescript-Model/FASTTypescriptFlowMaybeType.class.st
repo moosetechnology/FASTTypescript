@@ -19,8 +19,8 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
@@ -39,7 +39,7 @@
 
 "
 Class {
-	#name : 'FASTTypescriptFlow_maybe_type',
+	#name : 'FASTTypescriptFlowMaybeType',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
@@ -49,10 +49,16 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptFlow_maybe_type class >> annotation [
+FASTTypescriptFlowMaybeType class >> annotation [
 
-	<FMClass: #Flow_maybe_type super: #FASTTypescriptEntity>
+	<FMClass: #FlowMaybeType super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'class initialization' }
+FASTTypescriptFlowMaybeType class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptFlow_maybe_type }
 ]

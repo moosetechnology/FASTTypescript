@@ -420,10 +420,10 @@ FASTTypescriptTEntityCreator >> newFinally_clause [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newFlow_maybe_type [
+FASTTypescriptTEntityCreator >> newFlowMaybeType [
 
 	<generated>
-	^ self add: FASTTypescriptFlow_maybe_type new
+	^ self add: FASTTypescriptFlowMaybeType new
 ]
 
 { #category : 'entity creation' }
