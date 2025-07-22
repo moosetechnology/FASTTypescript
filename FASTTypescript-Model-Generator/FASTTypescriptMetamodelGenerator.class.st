@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_type_predicate',
 		'_type_arguments',
 		'_false',
 		'_regex_flags',
@@ -197,7 +196,8 @@ Class {
 		'shorthandPropertyIdentifier',
 		'indexTypeQuery',
 		'forInStatement',
-		'generatorFunction'
+		'generatorFunction',
+		'typePredicate'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -386,7 +386,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	inferType := builder ensureClassNamed: #InferType.
 	conditionalType := builder ensureClassNamed: #ConditionalType.
 	genericType := builder ensureClassNamed: #GenericType.
-	_type_predicate := builder ensureClassNamed: #Type_predicate.
+	typePredicate := builder ensureClassNamed: #TypePredicate.
 	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation.
 	memberExpression := builder ensureClassNamed: #Member_expression. 
 	typeQuery := builder ensureClassNamed: #TypeQuery.

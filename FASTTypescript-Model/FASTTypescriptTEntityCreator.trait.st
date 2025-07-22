@@ -1211,6 +1211,13 @@ FASTTypescriptTEntityCreator >> newTypeParameters [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newTypePredicate [
+
+	<generated>
+	^ self add: FASTTypescriptTypePredicate new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newTypePredicateAnnotation [
 
 	<generated>
@@ -1229,13 +1236,6 @@ FASTTypescriptTEntityCreator >> newType_arguments [
 
 	<generated>
 	^ self add: FASTTypescriptType_arguments new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newType_predicate [
-
-	<generated>
-	^ self add: FASTTypescriptType_predicate new
 ]
 
 { #category : 'entity creation' }
