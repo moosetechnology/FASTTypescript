@@ -546,6 +546,13 @@ FASTTypescriptTEntityCreator >> newImportAlias [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newImportAttribute [
+
+	<generated>
+	^ self add: FASTTypescriptImportAttribute new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newImportClause [
 
 	<generated>
@@ -571,13 +578,6 @@ FASTTypescriptTEntityCreator >> newImportStatement [
 
 	<generated>
 	^ self add: FASTTypescriptImportStatement new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newImport_attribute [
-
-	<generated>
-	^ self add: FASTTypescriptImport_attribute new
 ]
 
 { #category : 'entity creation' }
@@ -1043,10 +1043,10 @@ FASTTypescriptTEntityCreator >> newString [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newString_fragment [
+FASTTypescriptTEntityCreator >> newStringFragment [
 
 	<generated>
-	^ self add: FASTTypescriptString_fragment new
+	^ self add: FASTTypescriptStringFragment new
 ]
 
 { #category : 'entity creation' }

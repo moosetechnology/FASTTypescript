@@ -6,8 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_import_attribute',
-		'_string_fragment',
 		'_default_type',
 		'_ternary_expression',
 		'_while_statement',
@@ -197,7 +195,9 @@ Class {
 		'htmlComment',
 		'enumAssignment',
 		'namespaceExport',
-		'requiredParameter'
+		'requiredParameter',
+		'importAttribute',
+		'stringFragment'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -230,8 +230,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	
 	identifier := builder ensureClassNamed: #Identifier.
 	hashBangLine := builder ensureClassNamed: #HashBangLine.
-	_string_fragment := builder ensureClassNamed: #String_fragment.
-	_string_fragment := builder ensureClassNamed: #String_fragment.
+	stringFragment := builder ensureClassNamed: #StringFragment. 
 	escapeSequence := builder ensureClassNamed: #EscapeSequence.
 	comment := builder ensureClassNamed: #Comment.
 	regexPattern := builder ensureClassNamed: #RegexPattern.
@@ -248,7 +247,6 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	
 	null := builder ensureClassNamed: #Null.
 	undefined := builder ensureClassNamed: #Undefined.
-	_string_fragment := builder ensureClassNamed: #String_fragment.
 	htmlComment := builder ensureClassNamed: #HtmlComment.
 	jsxText := builder ensureClassNamed: #JsxText.
 	
@@ -262,7 +260,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	namespaceImport := builder ensureClassNamed: #NamespaceImport.
 	namedImports := builder ensureClassNamed: #NamedImports.
 	importSpecifier := builder ensureClassNamed: #ImportSpecifier.
-	_import_attribute := builder ensureClassNamed: #Import_attribute.
+	importAttribute := builder ensureClassNamed: #ImportAttribute.
 	expressionStatement := builder ensureClassNamed: #ExpressionStatement.
 	variableDeclaration := builder ensureClassNamed: #VariableDeclaration.
 	lexicalDeclaration := builder ensureClassNamed: #LexicalDeclaration.
