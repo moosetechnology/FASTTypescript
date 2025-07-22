@@ -6,9 +6,9 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `ifStatementOwner` | `FASTTypescriptStatementBlock` | `consequence` | `FASTTypescriptIfStatement` | The owner of this statement block|
-| `statementBlockOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptForInStatement` | The owner of this body is a for_in_statment|
-| `statementBlockOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptFinallyClause` | My owner|
 | `statementBlockOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptMethod_definition` | My owner|
+| `statementBlockOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptFinallyClause` | My owner|
+| `statementBlockOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptForInStatement` | The owner of this body is a for_in_statment|
 | `tryStatementOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptTryStatement` | Try statement owner|
 | `withStatementOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptWithStatement` | The owner of this statement block|
 

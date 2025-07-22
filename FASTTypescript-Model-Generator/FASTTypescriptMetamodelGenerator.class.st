@@ -6,7 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_namespace_export',
 		'_required_parameter',
 		'_import_attribute',
 		'_string_fragment',
@@ -197,7 +196,8 @@ Class {
 		'intersectionType',
 		'updateExpression',
 		'htmlComment',
-		'enumAssignment'
+		'enumAssignment',
+		'namespaceExport'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -253,7 +253,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	jsxText := builder ensureClassNamed: #JsxText.
 	
 	exportStatement := builder ensureClassNamed: #ExportStatement.
-	_namespace_export := builder ensureClassNamed: #Namespace_export.
+	namespaceExport := builder ensureClassNamed: #NamespaceExport.
 	exportClause := builder ensureClassNamed: #ExportClause.
 	exportSpecifier := builder ensureClassNamed: #ExportSpecifier.
 	import := builder ensureClassNamed: #Import.
