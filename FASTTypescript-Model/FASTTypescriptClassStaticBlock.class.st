@@ -18,5 +18,5 @@ FASTTypescriptClassStaticBlock class >> annotation [
 { #category : 'class initialization' }
 FASTTypescriptClassStaticBlock class >> initialize [ 
 
-	self deprecatedAliases: { #FASTTypescriptclassStatic_block }
+	self deprecatedAliases: { #FASTTypescriptClass_static_block }
 ]
