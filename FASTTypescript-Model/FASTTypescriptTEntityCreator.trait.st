@@ -623,10 +623,10 @@ FASTTypescriptTEntityCreator >> newInterfaceDeclaration [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newInternal_module [
+FASTTypescriptTEntityCreator >> newInternalModule [
 
 	<generated>
-	^ self add: FASTTypescriptInternal_module new
+	^ self add: FASTTypescriptInternalModule new
 ]
 
 { #category : 'entity creation' }

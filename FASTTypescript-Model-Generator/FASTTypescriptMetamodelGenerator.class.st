@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_internal_module',
 		'_predefined_type',
 		'_import_specifier',
 		'_abstract_method_signature',
@@ -197,7 +196,8 @@ Class {
 		'regexFlags',
 		'sequenceExpression',
 		'tupleType',
-		'optingTypeAnnotation'
+		'optingTypeAnnotation',
+		'internalModule'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -353,7 +353,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	ambientDeclaration := builder ensureClassNamed: #AmbientDeclaration.
 	abstractClassDeclaration := builder ensureClassNamed: #AbstractClassDeclaration.
 	module := builder ensureClassNamed: #Module.
-	_internal_module := builder ensureClassNamed: #Internal_module.
+	internalModule := builder ensureClassNamed: #InternalModule.
 	importAlias := builder ensureClassNamed: #ImportAlias.
 	nestedTypeIdentifier := builder ensureClassNamed: #NestedTypeIdentifier.
 	interfaceDeclaration := builder ensureClassNamed: #InterfaceDeclaration.
