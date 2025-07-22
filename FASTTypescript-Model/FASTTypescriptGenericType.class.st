@@ -19,8 +19,8 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
@@ -31,8 +31,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `name` | `FASTTypescriptGeneric_type` | `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | My name as type identifier|
-| `type_arguments` | `FASTTypescriptGeneric_type` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | My name as type identifier|
+| `name` | `FASTTypescriptGenericType` | `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | My name as type identifier|
+| `type_arguments` | `FASTTypescriptGenericType` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | My name as type identifier|
 
 
 ## Properties
@@ -45,7 +45,7 @@
 
 "
 Class {
-	#name : 'FASTTypescriptGeneric_type',
+	#name : 'FASTTypescriptGenericType',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
@@ -59,16 +59,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptGeneric_type class >> annotation [
+FASTTypescriptGenericType class >> annotation [
 
-	<FMClass: #Generic_type super: #FASTTypescriptEntity>
+	<FMClass: #GenericType super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptGenericType class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptGeneric_type }
+]
+
 { #category : 'accessing' }
-FASTTypescriptGeneric_type >> name [
+FASTTypescriptGenericType >> name [
 	"Relation named: #name type: #FASTTypescriptTypeIdentifier opposite: #genericTypeOwner"
 
 	<generated>
@@ -77,21 +83,21 @@ FASTTypescriptGeneric_type >> name [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptGeneric_type >> name: anObject [
+FASTTypescriptGenericType >> name: anObject [
 
 	<generated>
 	name := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptGeneric_type >> nameGroup [
+FASTTypescriptGenericType >> nameGroup [
 	<generated>
 	<navigation: 'Name'>
 	^ MooseSpecializedGroup with: self name
 ]
 
 { #category : 'accessing' }
-FASTTypescriptGeneric_type >> type_arguments [
+FASTTypescriptGenericType >> type_arguments [
 	"Relation named: #type_arguments type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner"
 
 	<generated>
@@ -100,14 +106,14 @@ FASTTypescriptGeneric_type >> type_arguments [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptGeneric_type >> type_arguments: anObject [
+FASTTypescriptGenericType >> type_arguments: anObject [
 
 	<generated>
 	type_arguments := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptGeneric_type >> type_argumentsGroup [
+FASTTypescriptGenericType >> type_argumentsGroup [
 	<generated>
 	<navigation: 'Type_arguments'>
 	^ MooseSpecializedGroup with: self type_arguments

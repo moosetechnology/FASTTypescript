@@ -21,10 +21,10 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
-| `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptGeneric_type` | The owner of this type identifier|
+| `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptGenericType` | The owner of this type identifier|
 | `indexSignatureOwner` | `FASTTypescriptTypeIdentifier` | `index_type` | `FASTTypescriptIndexSignature` | The owner of this index type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
@@ -52,7 +52,7 @@ Class {
 	#instVars : [
 		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructorType opposite: #type',
 		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
-		'#genericTypeOwner => FMOne type: #FASTTypescriptGeneric_type opposite: #name',
+		'#genericTypeOwner => FMOne type: #FASTTypescriptGenericType opposite: #name',
 		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #index_type',
 		'#typeIdentifierOwner => FMOne type: #FASTTypescriptClassDeclaration opposite: #name'
 	],
@@ -128,7 +128,7 @@ FASTTypescriptTypeIdentifier >> extendsTypeClauseOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptTypeIdentifier >> genericTypeOwner [
-	"Relation named: #genericTypeOwner type: #FASTTypescriptGeneric_type opposite: #name"
+	"Relation named: #genericTypeOwner type: #FASTTypescriptGenericType opposite: #name"
 
 	<generated>
 	<FMComment: 'The owner of this type identifier'>

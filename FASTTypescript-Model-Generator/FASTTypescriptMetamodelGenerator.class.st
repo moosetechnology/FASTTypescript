@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_generic_type',
 		'_namespace_import',
 		'_object_assignment_pattern',
 		'_computed_property_name',
@@ -197,7 +196,8 @@ Class {
 		'flowMaybeType',
 		'arrayPattern',
 		'finallyClause',
-		'extendsClause'
+		'extendsClause',
+		'genericType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -387,7 +387,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	templateLiteralType := builder ensureClassNamed: #TemplateLiteralType.
 	_infer_type := builder ensureClassNamed: #Infer_type.
 	conditionalType := builder ensureClassNamed: #ConditionalType.
-	_generic_type := builder ensureClassNamed: #Generic_type.
+	genericType := builder ensureClassNamed: #GenericType.
 	_type_predicate := builder ensureClassNamed: #Type_predicate.
 	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation.
 	_member_expression := builder ensureClassNamed: #Member_expression.
@@ -497,7 +497,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	parenthesizedType --|> tExpression.
 	functionType --|> tExpression.
 	_predefined_type --|> tExpression.
-	_generic_type --|> tExpression.
+	genericType --|> tExpression.
 	arrayType --|> tExpression.
 	_object_type --|> tExpression.
 	privatePropertyIdentifier --|> tExpression.
@@ -640,12 +640,12 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		((propertyIdentifier property: #nestedIdentifierOwner) comment:
 			 'The owner of this  property identifier').
 
-	((_generic_type property: #name) comment:
+	((genericType property: #name) comment:
 		 'My name as type identifier')
 	<>- ((typeIdentifier property: #genericTypeOwner) comment:
 			 'The owner of this type identifier').
 	
-	((_generic_type property: #type_arguments) comment:
+	((genericType property: #type_arguments) comment:
 		 'My name as type identifier')
 	<>- ((_type_arguments property: #typeArgumentsOwner) comment:
 			 'The owner of this type arguments').

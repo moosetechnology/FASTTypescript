@@ -490,10 +490,10 @@ FASTTypescriptTEntityCreator >> newGenerator_function [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newGeneric_type [
+FASTTypescriptTEntityCreator >> newGenericType [
 
 	<generated>
-	^ self add: FASTTypescriptGeneric_type new
+	^ self add: FASTTypescriptGenericType new
 ]
 
 { #category : 'entity creation' }
