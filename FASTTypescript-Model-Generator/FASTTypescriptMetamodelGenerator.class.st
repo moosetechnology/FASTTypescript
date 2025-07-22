@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_regex_flags',
 		'_sequence_expression',
 		'_tuple_type',
 		'_opting_type_annotation',
@@ -197,7 +196,8 @@ Class {
 		'forInStatement',
 		'generatorFunction',
 		'typePredicate',
-		'typeArguments'
+		'typeArguments',
+		'regexFlags'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -235,7 +235,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	escapeSequence := builder ensureClassNamed: #EscapeSequence.
 	comment := builder ensureClassNamed: #Comment.
 	regexPattern := builder ensureClassNamed: #RegexPattern.
-	_regex_flags := builder ensureClassNamed: #Regex_flags.
+	regexFlags := builder ensureClassNamed: #RegexFlags.
 	number := builder ensureClassNamed: #Number.
 	privatePropertyIdentifier := builder ensureClassNamed: #PrivatePropertyIdentifier.
 	this := builder ensureClassNamed: #This.

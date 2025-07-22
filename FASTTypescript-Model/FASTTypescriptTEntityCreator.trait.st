@@ -945,17 +945,17 @@ FASTTypescriptTEntityCreator >> newRegex [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newRegexFlags [
+
+	<generated>
+	^ self add: FASTTypescriptRegexFlags new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newRegexPattern [
 
 	<generated>
 	^ self add: FASTTypescriptRegexPattern new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newRegex_flags [
-
-	<generated>
-	^ self add: FASTTypescriptRegex_flags new
 ]
 
 { #category : 'entity creation' }
