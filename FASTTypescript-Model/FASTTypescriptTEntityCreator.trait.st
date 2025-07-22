@@ -427,17 +427,17 @@ FASTTypescriptTEntityCreator >> newFlowMaybeType [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newForInStatement [
+
+	<generated>
+	^ self add: FASTTypescriptForInStatement new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newForStatement [
 
 	<generated>
 	^ self add: FASTTypescriptForStatement new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newFor_in_statement [
-
-	<generated>
-	^ self add: FASTTypescriptFor_in_statement new
 ]
 
 { #category : 'entity creation' }

@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_for_in_statement',
 		'_generator_function',
 		'_type_predicate',
 		'_type_arguments',
@@ -197,7 +196,8 @@ Class {
 		'nonNullExpression',
 		'objectType',
 		'shorthandPropertyIdentifier',
-		'indexTypeQuery'
+		'indexTypeQuery',
+		'forInStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -272,7 +272,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	ifStatement := builder ensureClassNamed: #IfStatement.
 	switchStatement := builder ensureClassNamed: #SwitchStatement.
 	forStatement := builder ensureClassNamed: #ForStatement.
-	_for_in_statement := builder ensureClassNamed: #For_in_statement.
+	forInStatement := builder ensureClassNamed: #ForInStatement.
 	_while_statement := builder ensureClassNamed: #While_statement.
 	doStatement := builder ensureClassNamed: #DoStatement.
 	tryStatement := builder ensureClassNamed: #TryStatement.
@@ -552,15 +552,15 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>-* ((interfaceDeclaration property: #parentProgram) comment:
 			 'The program that contains me').
 
-	((_for_in_statement property: #left) comment: 'The identifier')
+	((forInStatement property: #left) comment: 'The identifier')
 	<>- ((tExpression property: #forStatementLeftOwner) comment:
 			 'The left operand (if possible)').
 
-	((_for_in_statement property: #right) comment: 'The identifier')
+	((forInStatement property: #right) comment: 'The identifier')
 	<>- ((tExpression property: #forStatementRightOwner) comment:
 			 'The right operand (if possible)').
 	
-	((_for_in_statement property: #body) comment: 'The body')
+	((forInStatement property: #body) comment: 'The body')
 	<>- ((_statement_block property: #statementBlockOwner) comment:
 			 'The owner of this body is a for_in_statment').
 

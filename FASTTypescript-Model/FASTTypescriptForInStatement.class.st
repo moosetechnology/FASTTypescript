@@ -5,15 +5,15 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptFor_in_statement` | `statementBlockOwner` | `FASTTypescriptStatement_block` | The body|
-| `left` | `FASTTypescriptFor_in_statement` | `forStatementLeftOwner` | `FASTTExpression` | The identifier|
-| `right` | `FASTTypescriptFor_in_statement` | `forStatementRightOwner` | `FASTTExpression` | The identifier|
+| `body` | `FASTTypescriptForInStatement` | `statementBlockOwner` | `FASTTypescriptStatement_block` | The body|
+| `left` | `FASTTypescriptForInStatement` | `forStatementLeftOwner` | `FASTTExpression` | The identifier|
+| `right` | `FASTTypescriptForInStatement` | `forStatementRightOwner` | `FASTTExpression` | The identifier|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptFor_in_statement',
+	#name : 'FASTTypescriptForInStatement',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner'
@@ -24,16 +24,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptFor_in_statement class >> annotation [
+FASTTypescriptForInStatement class >> annotation [
 
-	<FMClass: #For_in_statement super: #FASTTypescriptEntity>
+	<FMClass: #ForInStatement super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptForInStatement class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptFor_in_statement }
+]
+
 { #category : 'accessing' }
-FASTTypescriptFor_in_statement >> body [
+FASTTypescriptForInStatement >> body [
 	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #statementBlockOwner"
 
 	<generated>
@@ -42,21 +48,21 @@ FASTTypescriptFor_in_statement >> body [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptFor_in_statement >> body: anObject [
+FASTTypescriptForInStatement >> body: anObject [
 
 	<generated>
 	body := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptFor_in_statement >> bodyGroup [
+FASTTypescriptForInStatement >> bodyGroup [
 	<generated>
 	<navigation: 'Body'>
 	^ MooseSpecializedGroup with: self body
 ]
 
 { #category : 'accessing' }
-FASTTypescriptFor_in_statement >> left [
+FASTTypescriptForInStatement >> left [
 	"Relation named: #left type: #FASTTExpression opposite: #forStatementLeftOwner"
 
 	<generated>
@@ -66,7 +72,7 @@ FASTTypescriptFor_in_statement >> left [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptFor_in_statement >> left: anObject [
+FASTTypescriptForInStatement >> left: anObject [
 
 	<generated>
 	(self attributeAt: #left ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -80,14 +86,14 @@ FASTTypescriptFor_in_statement >> left: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptFor_in_statement >> leftGroup [
+FASTTypescriptForInStatement >> leftGroup [
 	<generated>
 	<navigation: 'Left'>
 	^ MooseSpecializedGroup with: self left
 ]
 
 { #category : 'accessing' }
-FASTTypescriptFor_in_statement >> right [
+FASTTypescriptForInStatement >> right [
 	"Relation named: #right type: #FASTTExpression opposite: #forStatementRightOwner"
 
 	<generated>
@@ -97,7 +103,7 @@ FASTTypescriptFor_in_statement >> right [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptFor_in_statement >> right: anObject [
+FASTTypescriptForInStatement >> right: anObject [
 
 	<generated>
 	(self attributeAt: #right ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -111,7 +117,7 @@ FASTTypescriptFor_in_statement >> right: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptFor_in_statement >> rightGroup [
+FASTTypescriptForInStatement >> rightGroup [
 	<generated>
 	<navigation: 'Right'>
 	^ MooseSpecializedGroup with: self right
