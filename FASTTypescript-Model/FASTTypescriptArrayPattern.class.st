@@ -39,7 +39,7 @@
 
 "
 Class {
-	#name : 'FASTTypescriptArray_pattern',
+	#name : 'FASTTypescriptArrayPattern',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
@@ -49,10 +49,16 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptArray_pattern class >> annotation [
+FASTTypescriptArrayPattern class >> annotation [
 
-	<FMClass: #Array_pattern super: #FASTTypescriptEntity>
+	<FMClass: #ArrayPattern super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'class initialization' }
+FASTTypescriptArrayPattern class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptArray_pattern }
 ]

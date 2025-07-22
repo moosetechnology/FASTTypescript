@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_array_pattern',
 		'_finally_clause',
 		'_extends_clause',
 		'_generic_type',
@@ -197,7 +196,8 @@ Class {
 		'conditionalType',
 		'parenthesizedType',
 		'constructSignature',
-		'flowMaybeType'
+		'flowMaybeType',
+		'arrayPattern'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -296,7 +296,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	assignmentPattern := builder ensureClassNamed: #AssignmentPattern.
 	_object_assignment_pattern := builder ensureClassNamed: #Object_assignment_pattern.
 	array := builder ensureClassNamed: #Array.
-	_array_pattern := builder ensureClassNamed: #Array_pattern.
+	arrayPattern := builder ensureClassNamed: #ArrayPattern.
 	nestedIdentifier := builder ensureClassNamed: #NestedIdentifier.
 	class := builder ensureClassNamed: #Class.
 
@@ -490,7 +490,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	
 	identifier --|> tExpression.
 	expression --|> tExpression.
-	_array_pattern --|> tExpression.
+	arrayPattern --|> tExpression.
 	typeIdentifier --|> tExpression.
 	conditionalType --|> tExpression.
 	flowMaybeType --|> tExpression.

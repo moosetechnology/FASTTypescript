@@ -70,17 +70,17 @@ FASTTypescriptTEntityCreator >> newArray [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newArrayPattern [
+
+	<generated>
+	^ self add: FASTTypescriptArrayPattern new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newArrayType [
 
 	<generated>
 	^ self add: FASTTypescriptArrayType new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newArray_pattern [
-
-	<generated>
-	^ self add: FASTTypescriptArray_pattern new
 ]
 
 { #category : 'entity creation' }
