@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_import_require_clause',
 		'_type_annotation',
 		'_non_null_expression',
 		'_object_type',
@@ -197,7 +196,8 @@ Class {
 		'namedImports',
 		'objectPattern',
 		'awaitExpression',
-		'pairPattern'
+		'pairPattern',
+		'importRequireClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -347,7 +347,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	asExpression := builder ensureClassNamed: #AsExpression.
 	satisfiesExpression := builder ensureClassNamed: #SatisfiesExpression.
 	instantiationExpression := builder ensureClassNamed: #InstantiationExpression.
-	_import_require_clause := builder ensureClassNamed: #Import_require_clause.
+	importRequireClause := builder ensureClassNamed: #ImportRequireClause.
 	extendsClause := builder ensureClassNamed: #ExtendsClause.
 	implementsClause := builder ensureClassNamed: #ImplementsClause.
 	ambientDeclaration := builder ensureClassNamed: #AmbientDeclaration.

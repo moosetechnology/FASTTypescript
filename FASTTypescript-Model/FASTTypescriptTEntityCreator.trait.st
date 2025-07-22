@@ -553,6 +553,13 @@ FASTTypescriptTEntityCreator >> newImportClause [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newImportRequireClause [
+
+	<generated>
+	^ self add: FASTTypescriptImportRequireClause new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newImportStatement [
 
 	<generated>
@@ -564,13 +571,6 @@ FASTTypescriptTEntityCreator >> newImport_attribute [
 
 	<generated>
 	^ self add: FASTTypescriptImport_attribute new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newImport_require_clause [
-
-	<generated>
-	^ self add: FASTTypescriptImport_require_clause new
 ]
 
 { #category : 'entity creation' }
