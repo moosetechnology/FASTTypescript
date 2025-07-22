@@ -28,10 +28,10 @@ FASTTypescriptTEntityCreator >> newAbstractClassDeclaration [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAbstract_method_signature [
+FASTTypescriptTEntityCreator >> newAbstractMethodSignature [
 
 	<generated>
-	^ self add: FASTTypescriptAbstract_method_signature new
+	^ self add: FASTTypescriptAbstractMethodSignature new
 ]
 
 { #category : 'entity creation' }

@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_abstract_method_signature',
 		'_asserts_annotation',
 		'_yield_expression',
 		'_override_modifier',
@@ -197,7 +196,8 @@ Class {
 		'optingTypeAnnotation',
 		'internalModule',
 		'predefinedType',
-		'importSpecifier'
+		'importSpecifier',
+		'abstractMethodSignature'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -341,7 +341,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	publicFieldDefinition := builder ensureClassNamed: #PublicFieldDefinition.
 	nonNullExpression := builder ensureClassNamed: #NonNullExpression.
 	methodSignature := builder ensureClassNamed: #MethodSignature.
-	_abstract_method_signature := builder ensureClassNamed: #Abstract_method_signature.
+	abstractMethodSignature := builder ensureClassNamed: #AbstractMethodSignature.
 	_function_signature := builder ensureClassNamed: #Function_signature. 
 	typeAssertion := builder ensureClassNamed: #TypeAssertion.
 	asExpression := builder ensureClassNamed: #AsExpression.
