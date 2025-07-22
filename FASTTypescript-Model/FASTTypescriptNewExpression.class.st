@@ -7,7 +7,7 @@
 |---|
 | `arguments` | `FASTTypescriptNewExpression` | `argumentsOwner` | `FASTTypescriptArguments` | The arguments of the new expression|
 | `constructor` | `FASTTypescriptNewExpression` | `typescriptNewExpressionOwner` | `FASTTypescriptIdentifier` | The constructor of the new expression|
-| `type_arguments` | `FASTTypescriptNewExpression` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | The type arguments of the new expression if they exist between <>|
+| `type_arguments` | `FASTTypescriptNewExpression` | `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | The type arguments of the new expression if they exist between <>|
 
 
 
@@ -16,9 +16,9 @@ Class {
 	#name : 'FASTTypescriptNewExpression',
 	#superclass : 'FASTTypescriptExpression',
 	#instVars : [
-		'#constructor => FMOne type: #FASTTypescriptIdentifier opposite: #typescriptNewExpressionOwner',
 		'#arguments => FMOne type: #FASTTypescriptArguments opposite: #argumentsOwner',
-		'#type_arguments => FMOne type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner'
+		'#constructor => FMOne type: #FASTTypescriptIdentifier opposite: #typescriptNewExpressionOwner',
+		'#type_arguments => FMOne type: #FASTTypescriptTypeArguments opposite: #typeArgumentsOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -88,7 +88,7 @@ FASTTypescriptNewExpression >> constructorGroup [
 
 { #category : 'accessing' }
 FASTTypescriptNewExpression >> type_arguments [
-	"Relation named: #type_arguments type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner"
+	"Relation named: #type_arguments type: #FASTTypescriptTypeArguments opposite: #typeArgumentsOwner"
 
 	<generated>
 	<FMComment: 'The type arguments of the new expression if they exist between <>'>

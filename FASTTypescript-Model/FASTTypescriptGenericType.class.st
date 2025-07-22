@@ -32,7 +32,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `name` | `FASTTypescriptGenericType` | `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | My name as type identifier|
-| `type_arguments` | `FASTTypescriptGenericType` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | My name as type identifier|
+| `type_arguments` | `FASTTypescriptGenericType` | `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | My name as type identifier|
 
 
 ## Properties
@@ -51,7 +51,7 @@ Class {
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
 		'#name => FMOne type: #FASTTypescriptTypeIdentifier opposite: #genericTypeOwner',
-		'#type_arguments => FMOne type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner'
+		'#type_arguments => FMOne type: #FASTTypescriptTypeArguments opposite: #typeArgumentsOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -98,7 +98,7 @@ FASTTypescriptGenericType >> nameGroup [
 
 { #category : 'accessing' }
 FASTTypescriptGenericType >> type_arguments [
-	"Relation named: #type_arguments type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner"
+	"Relation named: #type_arguments type: #FASTTypescriptTypeArguments opposite: #typeArgumentsOwner"
 
 	<generated>
 	<FMComment: 'My name as type identifier'>

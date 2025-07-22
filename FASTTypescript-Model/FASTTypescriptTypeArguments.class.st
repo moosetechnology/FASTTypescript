@@ -7,15 +7,15 @@
 |---|
 | `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
 | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
-| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptGenericType` | The owner of this type arguments|
-| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptNewExpression` | The owner of these type arguments|
-| `typeArgumentsOwner` | `FASTTypescriptType_arguments` | `type_arguments` | `FASTTypescriptExtendsClause` | My owner|
+| `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | `type_arguments` | `FASTTypescriptNewExpression` | The owner of these type arguments|
+| `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | `type_arguments` | `FASTTypescriptGenericType` | The owner of this type arguments|
+| `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | `type_arguments` | `FASTTypescriptExtendsClause` | My owner|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptType_arguments',
+	#name : 'FASTTypescriptTypeArguments',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTypescriptTOptionalField',
 	#classTraits : 'FASTTypescriptTOptionalField classTrait',
@@ -28,16 +28,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptType_arguments class >> annotation [
+FASTTypescriptTypeArguments class >> annotation [
 
-	<FMClass: #Type_arguments super: #FASTTypescriptEntity>
+	<FMClass: #TypeArguments super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptTypeArguments class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptType_arguments }
+]
+
 { #category : 'accessing' }
-FASTTypescriptType_arguments >> typeArgumentsOwner [
+FASTTypescriptTypeArguments >> typeArgumentsOwner [
 	"Relation named: #typeArgumentsOwner type: #FASTTypescriptNewExpression opposite: #type_arguments"
 
 	<generated>
@@ -48,14 +54,14 @@ FASTTypescriptType_arguments >> typeArgumentsOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_arguments >> typeArgumentsOwner: anObject [
+FASTTypescriptTypeArguments >> typeArgumentsOwner: anObject [
 
 	<generated>
 	typeArgumentsOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptType_arguments >> typeArgumentsOwnerGroup [
+FASTTypescriptTypeArguments >> typeArgumentsOwnerGroup [
 	<generated>
 	<navigation: 'TypeArgumentsOwner'>
 	^ MooseSpecializedGroup with: self typeArgumentsOwner

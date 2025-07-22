@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_type_arguments',
 		'_false',
 		'_regex_flags',
 		'_sequence_expression',
@@ -197,7 +196,8 @@ Class {
 		'indexTypeQuery',
 		'forInStatement',
 		'generatorFunction',
-		'typePredicate'
+		'typePredicate',
+		'typeArguments'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -398,7 +398,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	flowMaybeType := builder ensureClassNamed: #FlowMaybeType.
 	parenthesizedType := builder ensureClassNamed: #ParenthesizedType.
 	_predefined_type := builder ensureClassNamed: #Predefined_type.
-	_type_arguments := builder ensureClassNamed: #Type_arguments.
+	typeArguments := builder ensureClassNamed: #TypeArguments.
 	objectType := builder ensureClassNamed: #ObjectType.
 	callSignature := builder ensureClassNamed: #CallSignature.
 	_property_signature := builder ensureClassNamed: #Property_signature.
@@ -482,7 +482,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	
 	typeAnnotation --|> tOptionalField.
 	identifier --|> tOptionalField.
-	_type_arguments --|> tOptionalField.
+	typeArguments --|> tOptionalField.
 	
 	identifier --|> tExpression.
 	expression --|> tExpression.
@@ -583,7 +583,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((newExpression property: #type_arguments) comment:
 		 'The type arguments of the new expression if they exist between <>')
-	<>- ((_type_arguments property: #typeArgumentsOwner) comment:
+	<>- ((typeArguments property: #typeArgumentsOwner) comment:
 			 'The owner of these type arguments').
 
 	((indexSignature property: #index_type) comment: 'My type')
@@ -643,7 +643,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((genericType property: #type_arguments) comment:
 		 'My name as type identifier')
-	<>- ((_type_arguments property: #typeArgumentsOwner) comment:
+	<>- ((typeArguments property: #typeArgumentsOwner) comment:
 			 'The owner of this type arguments').
 
 	((constructorType property: #type) comment:
@@ -755,7 +755,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((extendsClause property: #type_arguments) comment:
 		 'My arguments')
-	<>- ((_type_arguments property: #typeArgumentsOwner) comment: 'My owner'). 
+	<>- ((typeArguments property: #typeArgumentsOwner) comment: 'My owner'). 
 	
 	"class declaration"
 	((classDeclaration property: #body) comment:

@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `type_arguments` | `FASTTypescriptExtendsClause` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | My arguments|
+| `type_arguments` | `FASTTypescriptExtendsClause` | `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | My arguments|
 | `value` | `FASTTypescriptExtendsClause` | `identifierOwner` | `FASTTypescriptIdentifier` | My value|
 
 
@@ -15,7 +15,7 @@ Class {
 	#name : 'FASTTypescriptExtendsClause',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#type_arguments => FMOne type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner'
+		'#type_arguments => FMOne type: #FASTTypescriptTypeArguments opposite: #typeArgumentsOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -39,7 +39,7 @@ FASTTypescriptExtendsClause class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptExtendsClause >> type_arguments [
-	"Relation named: #type_arguments type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner"
+	"Relation named: #type_arguments type: #FASTTypescriptTypeArguments opposite: #typeArgumentsOwner"
 
 	<generated>
 	<FMComment: 'My arguments'>
