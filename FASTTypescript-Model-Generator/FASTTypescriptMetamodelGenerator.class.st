@@ -6,7 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_default_type',
 		'_ternary_expression',
 		'_while_statement',
 		'_method_definition',
@@ -197,7 +196,8 @@ Class {
 		'namespaceExport',
 		'requiredParameter',
 		'importAttribute',
-		'stringFragment'
+		'stringFragment',
+		'defaultType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -401,7 +401,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_property_signature := builder ensureClassNamed: #Property_signature.
 	typeParameters := builder ensureClassNamed: #TypeParameters.
 	typeParameter := builder ensureClassNamed: #TypeParameter.
-	_default_type := builder ensureClassNamed: #Default_type.
+	defaultType := builder ensureClassNamed: #DefaultType.
 	constraint := builder ensureClassNamed: #Constraint.
 	constructSignature := builder ensureClassNamed: #ConstructSignature.
 	indexSignature := builder ensureClassNamed: #IndexSignature.

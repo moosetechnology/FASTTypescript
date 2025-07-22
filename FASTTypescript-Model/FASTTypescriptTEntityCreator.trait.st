@@ -287,10 +287,10 @@ FASTTypescriptTEntityCreator >> newDecorator [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newDefault_type [
+FASTTypescriptTEntityCreator >> newDefaultType [
 
 	<generated>
-	^ self add: FASTTypescriptDefault_type new
+	^ self add: FASTTypescriptDefaultType new
 ]
 
 { #category : 'entity creation' }
