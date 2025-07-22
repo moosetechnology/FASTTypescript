@@ -1113,10 +1113,10 @@ FASTTypescriptTEntityCreator >> newTemplateSubstitution [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newTemplate_type [
+FASTTypescriptTEntityCreator >> newTemplateType [
 
 	<generated>
-	^ self add: FASTTypescriptTemplate_type new
+	^ self add: FASTTypescriptTemplateType new
 ]
 
 { #category : 'entity creation' }
