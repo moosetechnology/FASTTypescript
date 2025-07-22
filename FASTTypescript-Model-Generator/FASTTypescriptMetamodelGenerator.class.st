@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_opting_type_annotation',
 		'_internal_module',
 		'_predefined_type',
 		'_import_specifier',
@@ -197,7 +196,8 @@ Class {
 		'typeArguments',
 		'regexFlags',
 		'sequenceExpression',
-		'tupleType'
+		'tupleType',
+		'optingTypeAnnotation'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -371,7 +371,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	optionalParameter := builder ensureClassNamed: #OptionalParameter.
 	omittingTypeAnnotation := builder ensureClassNamed: #OmittingTypeAnnotation.
 	_adding_type_annotation := builder ensureClassNamed: #Adding_type_annotation.
-	_opting_type_annotation := builder ensureClassNamed: #Opting_type_annotation.
+	optingTypeAnnotation := builder ensureClassNamed: #OptingTypeAnnotation.
 	typeAnnotation := builder ensureClassNamed: #TypeAnnotation.
 	memberExpression := builder ensureClassNamed: #Member_expression.
 	callExpression := builder ensureClassNamed: #CallExpression.

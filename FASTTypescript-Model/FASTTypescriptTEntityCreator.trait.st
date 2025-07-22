@@ -826,10 +826,10 @@ FASTTypescriptTEntityCreator >> newOmittingTypeAnnotation [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newOpting_type_annotation [
+FASTTypescriptTEntityCreator >> newOptingTypeAnnotation [
 
 	<generated>
-	^ self add: FASTTypescriptOpting_type_annotation new
+	^ self add: FASTTypescriptOptingTypeAnnotation new
 ]
 
 { #category : 'entity creation' }
