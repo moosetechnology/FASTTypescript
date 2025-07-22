@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_predefined_type',
 		'_import_specifier',
 		'_abstract_method_signature',
 		'_asserts_annotation',
@@ -197,7 +196,8 @@ Class {
 		'sequenceExpression',
 		'tupleType',
 		'optingTypeAnnotation',
-		'internalModule'
+		'internalModule',
+		'predefinedType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -397,7 +397,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	existentialType := builder ensureClassNamed: #ExistentialType.
 	flowMaybeType := builder ensureClassNamed: #FlowMaybeType.
 	parenthesizedType := builder ensureClassNamed: #ParenthesizedType.
-	_predefined_type := builder ensureClassNamed: #Predefined_type.
+	predefinedType := builder ensureClassNamed: #PredefinedType.
 	typeArguments := builder ensureClassNamed: #TypeArguments.
 	objectType := builder ensureClassNamed: #ObjectType.
 	callSignature := builder ensureClassNamed: #CallSignature.
@@ -492,7 +492,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	flowMaybeType --|> tExpression.
 	parenthesizedType --|> tExpression.
 	functionType --|> tExpression.
-	_predefined_type --|> tExpression.
+	predefinedType --|> tExpression.
 	genericType --|> tExpression.
 	arrayType --|> tExpression.
 	objectType --|> tExpression.

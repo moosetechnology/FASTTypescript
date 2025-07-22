@@ -889,10 +889,10 @@ FASTTypescriptTEntityCreator >> newParenthesizedType [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newPredefined_type [
+FASTTypescriptTEntityCreator >> newPredefinedType [
 
 	<generated>
-	^ self add: FASTTypescriptPredefined_type new
+	^ self add: FASTTypescriptPredefinedType new
 ]
 
 { #category : 'entity creation' }
