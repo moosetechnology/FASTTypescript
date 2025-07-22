@@ -5,24 +5,24 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `ifStatementOwner` | `FASTTypescriptStatement_block` | `consequence` | `FASTTypescriptIfStatement` | The owner of this statement block|
-| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptMethod_definition` | My owner|
-| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptForInStatement` | The owner of this body is a for_in_statment|
-| `statementBlockOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptFinallyClause` | My owner|
-| `tryStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptTryStatement` | Try statement owner|
-| `withStatementOwner` | `FASTTypescriptStatement_block` | `body` | `FASTTypescriptWithStatement` | The owner of this statement block|
+| `ifStatementOwner` | `FASTTypescriptStatementBlock` | `consequence` | `FASTTypescriptIfStatement` | The owner of this statement block|
+| `statementBlockOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptForInStatement` | The owner of this body is a for_in_statment|
+| `statementBlockOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptFinallyClause` | My owner|
+| `statementBlockOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptMethod_definition` | My owner|
+| `tryStatementOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptTryStatement` | Try statement owner|
+| `withStatementOwner` | `FASTTypescriptStatementBlock` | `body` | `FASTTypescriptWithStatement` | The owner of this statement block|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptStatement_block',
+	#name : 'FASTTypescriptStatementBlock',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#ifStatementOwner => FMOne type: #FASTTypescriptIfStatement opposite: #consequence',
 		'#statementBlockOwner => FMOne type: #FASTTypescriptForInStatement opposite: #body',
-		'#tryStatementOwner => FMOne type: #FASTTypescriptTryStatement opposite: #body',
-		'#withStatementOwner => FMOne type: #FASTTypescriptWithStatement opposite: #body'
+		'#withStatementOwner => FMOne type: #FASTTypescriptWithStatement opposite: #body',
+		'#ifStatementOwner => FMOne type: #FASTTypescriptIfStatement opposite: #consequence',
+		'#tryStatementOwner => FMOne type: #FASTTypescriptTryStatement opposite: #body'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -30,16 +30,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptStatement_block class >> annotation [
+FASTTypescriptStatementBlock class >> annotation [
 
-	<FMClass: #Statement_block super: #FASTTypescriptEntity>
+	<FMClass: #StatementBlock super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptStatementBlock class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptStatement_block }
+]
+
 { #category : 'accessing' }
-FASTTypescriptStatement_block >> ifStatementOwner [
+FASTTypescriptStatementBlock >> ifStatementOwner [
 	"Relation named: #ifStatementOwner type: #FASTTypescriptIfStatement opposite: #consequence"
 
 	<generated>
@@ -50,21 +56,21 @@ FASTTypescriptStatement_block >> ifStatementOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptStatement_block >> ifStatementOwner: anObject [
+FASTTypescriptStatementBlock >> ifStatementOwner: anObject [
 
 	<generated>
 	ifStatementOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptStatement_block >> ifStatementOwnerGroup [
+FASTTypescriptStatementBlock >> ifStatementOwnerGroup [
 	<generated>
 	<navigation: 'IfStatementOwner'>
 	^ MooseSpecializedGroup with: self ifStatementOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptStatement_block >> statementBlockOwner [
+FASTTypescriptStatementBlock >> statementBlockOwner [
 	"Relation named: #statementBlockOwner type: #FASTTypescriptForInStatement opposite: #body"
 
 	<generated>
@@ -75,21 +81,21 @@ FASTTypescriptStatement_block >> statementBlockOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptStatement_block >> statementBlockOwner: anObject [
+FASTTypescriptStatementBlock >> statementBlockOwner: anObject [
 
 	<generated>
 	statementBlockOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptStatement_block >> statementBlockOwnerGroup [
+FASTTypescriptStatementBlock >> statementBlockOwnerGroup [
 	<generated>
 	<navigation: 'StatementBlockOwner'>
 	^ MooseSpecializedGroup with: self statementBlockOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptStatement_block >> tryStatementOwner [
+FASTTypescriptStatementBlock >> tryStatementOwner [
 	"Relation named: #tryStatementOwner type: #FASTTypescriptTryStatement opposite: #body"
 
 	<generated>
@@ -100,21 +106,21 @@ FASTTypescriptStatement_block >> tryStatementOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptStatement_block >> tryStatementOwner: anObject [
+FASTTypescriptStatementBlock >> tryStatementOwner: anObject [
 
 	<generated>
 	tryStatementOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptStatement_block >> tryStatementOwnerGroup [
+FASTTypescriptStatementBlock >> tryStatementOwnerGroup [
 	<generated>
 	<navigation: 'TryStatementOwner'>
 	^ MooseSpecializedGroup with: self tryStatementOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptStatement_block >> withStatementOwner [
+FASTTypescriptStatementBlock >> withStatementOwner [
 	"Relation named: #withStatementOwner type: #FASTTypescriptWithStatement opposite: #body"
 
 	<generated>
@@ -125,14 +131,14 @@ FASTTypescriptStatement_block >> withStatementOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptStatement_block >> withStatementOwner: anObject [
+FASTTypescriptStatementBlock >> withStatementOwner: anObject [
 
 	<generated>
 	withStatementOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptStatement_block >> withStatementOwnerGroup [
+FASTTypescriptStatementBlock >> withStatementOwnerGroup [
 	<generated>
 	<navigation: 'WithStatementOwner'>
 	^ MooseSpecializedGroup with: self withStatementOwner

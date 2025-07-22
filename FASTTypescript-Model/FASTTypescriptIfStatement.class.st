@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `condition` | `FASTTypescriptIfStatement` | `ifStatementOwner` | `FASTTypescriptParenthesizedExpression` | My condition as parenthesized expression|
-| `consequence` | `FASTTypescriptIfStatement` | `ifStatementOwner` | `FASTTypescriptStatement_block` | My consequence as statement block|
+| `consequence` | `FASTTypescriptIfStatement` | `ifStatementOwner` | `FASTTypescriptStatementBlock` | My consequence as statement block|
 
 
 
@@ -16,7 +16,7 @@ Class {
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#condition => FMOne type: #FASTTypescriptParenthesizedExpression opposite: #ifStatementOwner',
-		'#consequence => FMOne type: #FASTTypescriptStatement_block opposite: #ifStatementOwner'
+		'#consequence => FMOne type: #FASTTypescriptStatementBlock opposite: #ifStatementOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -63,7 +63,7 @@ FASTTypescriptIfStatement >> conditionGroup [
 
 { #category : 'accessing' }
 FASTTypescriptIfStatement >> consequence [
-	"Relation named: #consequence type: #FASTTypescriptStatement_block opposite: #ifStatementOwner"
+	"Relation named: #consequence type: #FASTTypescriptStatementBlock opposite: #ifStatementOwner"
 
 	<generated>
 	<FMComment: 'My consequence as statement block'>

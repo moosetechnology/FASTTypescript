@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptWithStatement` | `withStatementOwner` | `FASTTypescriptStatement_block` | My body as statement block|
+| `body` | `FASTTypescriptWithStatement` | `withStatementOwner` | `FASTTypescriptStatementBlock` | My body as statement block|
 | `object` | `FASTTypescriptWithStatement` | `withStatementOwner` | `FASTTypescriptParenthesizedExpression` | My object as parenthesized expression|
 
 
@@ -15,8 +15,8 @@ Class {
 	#name : 'FASTTypescriptWithStatement',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#object => FMOne type: #FASTTypescriptParenthesizedExpression opposite: #withStatementOwner',
-		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #withStatementOwner'
+		'#body => FMOne type: #FASTTypescriptStatementBlock opposite: #withStatementOwner',
+		'#object => FMOne type: #FASTTypescriptParenthesizedExpression opposite: #withStatementOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -40,7 +40,7 @@ FASTTypescriptWithStatement class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptWithStatement >> body [
-	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #withStatementOwner"
+	"Relation named: #body type: #FASTTypescriptStatementBlock opposite: #withStatementOwner"
 
 	<generated>
 	<FMComment: 'My body as statement block'>

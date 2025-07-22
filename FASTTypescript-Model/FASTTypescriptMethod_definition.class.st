@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptMethod_definition` | `statementBlockOwner` | `FASTTypescriptStatement_block` | My body|
+| `body` | `FASTTypescriptMethod_definition` | `statementBlockOwner` | `FASTTypescriptStatementBlock` | My body|
 | `name` | `FASTTypescriptMethod_definition` | `propertyIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | My name|
 | `parameters` | `FASTTypescriptMethod_definition` | `formalParametersOwner` | `FASTTypescriptFormalParameters` | My parameters|
 | `return_type` | `FASTTypescriptMethod_definition` | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | My return type in case it exists|
@@ -17,7 +17,7 @@ Class {
 	#name : 'FASTTypescriptMethod_definition',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner',
+		'#body => FMOne type: #FASTTypescriptStatementBlock opposite: #statementBlockOwner',
 		'#name => FMOne type: #FASTTypescriptPropertyIdentifier opposite: #propertyIdentifierOwner',
 		'#parameters => FMOne type: #FASTTypescriptFormalParameters opposite: #formalParametersOwner',
 		'#return_type => FMOne type: #FASTTypescriptTOptionalField opposite: #typeAnnotationOwner'
@@ -38,7 +38,7 @@ FASTTypescriptMethod_definition class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptMethod_definition >> body [
-	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #statementBlockOwner"
+	"Relation named: #body type: #FASTTypescriptStatementBlock opposite: #statementBlockOwner"
 
 	<generated>
 	<FMComment: 'My body'>

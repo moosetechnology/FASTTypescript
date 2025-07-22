@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_statement_block',
 		'_function_signature',
 		'_continue_statement',
 		'_optional_type',
@@ -197,7 +196,8 @@ Class {
 		'assertsAnnotation',
 		'yieldExpression',
 		'overrideModifier',
-		'mappedTypeClause'
+		'mappedTypeClause',
+		'statementBlock'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -267,7 +267,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_variable_declaration := builder ensureClassNamed: #Variable_declaration.
 	lexicalDeclaration := builder ensureClassNamed: #LexicalDeclaration.
 	variableDeclarator := builder ensureClassNamed: #VariableDeclarator.
-	_statement_block := builder ensureClassNamed: #Statement_block.
+	statementBlock := builder ensureClassNamed: #StatementBlock.
 	elseClause := builder ensureClassNamed: #ElseClause.
 	ifStatement := builder ensureClassNamed: #IfStatement.
 	switchStatement := builder ensureClassNamed: #SwitchStatement.
@@ -561,7 +561,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The right operand (if possible)').
 	
 	((forInStatement property: #body) comment: 'The body')
-	<>- ((_statement_block property: #statementBlockOwner) comment:
+	<>- ((statementBlock property: #statementBlockOwner) comment:
 			 'The owner of this body is a for_in_statment').
 
 	((binaryExpression property: #left) comment: 'left')
@@ -622,7 +622,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((withStatement property: #body) comment:
 		 'My body as statement block')
-	<>- ((_statement_block property: #withStatementOwner) comment:
+	<>- ((statementBlock property: #withStatementOwner) comment:
 			 'The owner of this statement block').
 
 	((nestedIdentifier property: #object) comment:
@@ -674,7 +674,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((ifStatement property: #consequence) comment:
 		 'My consequence as statement block')
-	<>- ((_statement_block property: #ifStatementOwner) comment:
+	<>- ((statementBlock property: #ifStatementOwner) comment:
 			 'The owner of this statement block').
 
 	((_augmented_assignment_expression property: #left) comment: 'left')
@@ -703,7 +703,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'Consequence owner').
 
 	((tryStatement property: #body) comment: 'Body')
-	<>- ((_statement_block property: #tryStatementOwner) comment:
+	<>- ((statementBlock property: #tryStatementOwner) comment:
 			 'Try statement owner').
 
 	((tryStatement property: #handler) comment: 'Handler')
@@ -739,7 +739,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((_method_definition property: #body) comment:
 		 'My body')
-	<>- ((_statement_block property: #statementBlockOwner) comment: 'My owner').
+	<>- ((statementBlock property: #statementBlockOwner) comment: 'My owner').
 
 	((_method_definition property: #parameters) comment:
 		 'My parameters')
@@ -747,7 +747,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	
 	((finallyClause property: #body) comment:
 		 'My body')
-	<>- ((_statement_block property: #statementBlockOwner) comment: 'My owner'). 
+	<>- ((statementBlock property: #statementBlockOwner) comment: 'My owner'). 
 	
 	((extendsClause property: #value) comment:
 		 'My value')

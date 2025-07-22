@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptForInStatement` | `statementBlockOwner` | `FASTTypescriptStatement_block` | The body|
+| `body` | `FASTTypescriptForInStatement` | `statementBlockOwner` | `FASTTypescriptStatementBlock` | The body|
 | `left` | `FASTTypescriptForInStatement` | `forStatementLeftOwner` | `FASTTExpression` | The identifier|
 | `right` | `FASTTypescriptForInStatement` | `forStatementRightOwner` | `FASTTExpression` | The identifier|
 
@@ -16,7 +16,7 @@ Class {
 	#name : 'FASTTypescriptForInStatement',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #statementBlockOwner'
+		'#body => FMOne type: #FASTTypescriptStatementBlock opposite: #statementBlockOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -40,7 +40,7 @@ FASTTypescriptForInStatement class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptForInStatement >> body [
-	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #statementBlockOwner"
+	"Relation named: #body type: #FASTTypescriptStatementBlock opposite: #statementBlockOwner"
 
 	<generated>
 	<FMComment: 'The body'>

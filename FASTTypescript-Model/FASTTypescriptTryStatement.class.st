@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypescriptTryStatement` | `tryStatementOwner` | `FASTTypescriptStatement_block` | Body|
+| `body` | `FASTTypescriptTryStatement` | `tryStatementOwner` | `FASTTypescriptStatementBlock` | Body|
 | `finalizer` | `FASTTypescriptTryStatement` | `tryStatementOwner` | `FASTTypescriptFinallyClause` | Finalizer|
 | `handler` | `FASTTypescriptTryStatement` | `tryStatementOwner` | `FASTTypescriptCatchClause` | Handler|
 
@@ -16,7 +16,7 @@ Class {
 	#name : 'FASTTypescriptTryStatement',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#body => FMOne type: #FASTTypescriptStatement_block opposite: #tryStatementOwner',
+		'#body => FMOne type: #FASTTypescriptStatementBlock opposite: #tryStatementOwner',
 		'#finalizer => FMOne type: #FASTTypescriptFinallyClause opposite: #tryStatementOwner',
 		'#handler => FMOne type: #FASTTypescriptCatchClause opposite: #tryStatementOwner'
 	],
@@ -42,7 +42,7 @@ FASTTypescriptTryStatement class >> initialize [
 
 { #category : 'accessing' }
 FASTTypescriptTryStatement >> body [
-	"Relation named: #body type: #FASTTypescriptStatement_block opposite: #tryStatementOwner"
+	"Relation named: #body type: #FASTTypescriptStatementBlock opposite: #tryStatementOwner"
 
 	<generated>
 	<FMComment: 'Body'>

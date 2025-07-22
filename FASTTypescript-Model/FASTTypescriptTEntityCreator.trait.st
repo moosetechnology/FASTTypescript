@@ -1022,17 +1022,17 @@ FASTTypescriptTEntityCreator >> newSpreadElement [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newStatementBlock [
+
+	<generated>
+	^ self add: FASTTypescriptStatementBlock new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newStatementIdentifier [
 
 	<generated>
 	^ self add: FASTTypescriptStatementIdentifier new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newStatement_block [
-
-	<generated>
-	^ self add: FASTTypescriptStatement_block new
 ]
 
 { #category : 'entity creation' }
