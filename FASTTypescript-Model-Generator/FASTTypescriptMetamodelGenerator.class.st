@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_adding_type_annotation',
 		'_augmented_assignment_expression',
 		'_variable_declaration',
 		'_export_specifier',
@@ -197,7 +196,8 @@ Class {
 		'optionalType',
 		'expressionStatement',
 		'classStaticBlock',
-		'extendsTypeClause'
+		'extendsTypeClause',
+		'addingTypeAnnotation'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -370,7 +370,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
 	optionalParameter := builder ensureClassNamed: #OptionalParameter.
 	omittingTypeAnnotation := builder ensureClassNamed: #OmittingTypeAnnotation.
-	_adding_type_annotation := builder ensureClassNamed: #Adding_type_annotation.
+	addingTypeAnnotation := builder ensureClassNamed: #AddingTypeAnnotation.
 	optingTypeAnnotation := builder ensureClassNamed: #OptingTypeAnnotation.
 	typeAnnotation := builder ensureClassNamed: #TypeAnnotation.
 	memberExpression := builder ensureClassNamed: #Member_expression.

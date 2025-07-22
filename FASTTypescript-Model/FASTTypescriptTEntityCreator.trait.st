@@ -42,10 +42,10 @@ FASTTypescriptTEntityCreator >> newAccessibilityModifier [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAdding_type_annotation [
+FASTTypescriptTEntityCreator >> newAddingTypeAnnotation [
 
 	<generated>
-	^ self add: FASTTypescriptAdding_type_annotation new
+	^ self add: FASTTypescriptAddingTypeAnnotation new
 ]
 
 { #category : 'entity creation' }
