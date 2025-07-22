@@ -210,10 +210,10 @@ FASTTypescriptTEntityCreator >> newClassHeritage [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newClass_static_block [
+FASTTypescriptTEntityCreator >> newClassStaticBlock [
 
 	<generated>
-	^ self add: FASTTypescriptClass_static_block new
+	^ self add: FASTTypescriptClassStaticBlock new
 ]
 
 { #category : 'entity creation' }

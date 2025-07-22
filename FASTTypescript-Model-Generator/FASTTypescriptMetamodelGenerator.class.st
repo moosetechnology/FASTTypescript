@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_class_static_block',
 		'_extends_type_clause',
 		'_adding_type_annotation',
 		'_augmented_assignment_expression',
@@ -197,7 +196,8 @@ Class {
 		'functionSignature',
 		'continueStatement',
 		'optionalType',
-		'expressionStatement'
+		'expressionStatement',
+		'classStaticBlock'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -332,7 +332,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	decorator := builder ensureClassNamed: #Decorator. 
 	classBody := builder ensureClassNamed: #ClassBody.
 	formalParameters := builder ensureClassNamed: #FormalParameters.
-	_class_static_block := builder ensureClassNamed: #Class_static_block.
+	classStaticBlock := builder ensureClassNamed: #ClassStaticBlock.
 	restPattern := builder ensureClassNamed: #RestPattern.
 	_method_definition := builder ensureClassNamed: #Method_definition.
 	pair := builder ensureClassNamed: #Pair.
