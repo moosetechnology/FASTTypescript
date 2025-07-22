@@ -1162,10 +1162,10 @@ FASTTypescriptTEntityCreator >> newTryStatement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newTuple_type [
+FASTTypescriptTEntityCreator >> newTupleType [
 
 	<generated>
-	^ self add: FASTTypescriptTuple_type new
+	^ self add: FASTTypescriptTupleType new
 ]
 
 { #category : 'entity creation' }

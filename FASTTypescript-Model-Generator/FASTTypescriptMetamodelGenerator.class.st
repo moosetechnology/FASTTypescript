@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_tuple_type',
 		'_opting_type_annotation',
 		'_internal_module',
 		'_predefined_type',
@@ -197,7 +196,8 @@ Class {
 		'typePredicate',
 		'typeArguments',
 		'regexFlags',
-		'sequenceExpression'
+		'sequenceExpression',
+		'tupleType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -409,7 +409,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	constructSignature := builder ensureClassNamed: #ConstructSignature.
 	indexSignature := builder ensureClassNamed: #IndexSignature.
 	arrayType := builder ensureClassNamed: #ArrayType.
-	_tuple_type := builder ensureClassNamed: #Tuple_type.
+	tupleType := builder ensureClassNamed: #TupleType .
 	readonlyType := builder ensureClassNamed: #ReadonlyType.
 	unionType := builder ensureClassNamed: #UnionType.
 	_intersection_type := builder ensureClassNamed: #Intersection_type.
