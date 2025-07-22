@@ -17,6 +17,5 @@ FASTTypescriptTypeParameters class >> annotation [
 
 { #category : 'class initialization' }
 FASTTypescriptTypeParameters class >> initialize [ 
-
 	self deprecatedAliases: { #FASTTypescriptType_parameters }
 ]

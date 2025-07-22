@@ -17,6 +17,5 @@ FASTTypescriptThrowStatement class >> annotation [
 
 { #category : 'class initialization' }
 FASTTypescriptThrowStatement class >> initialize [ 
-
 	self deprecatedAliases: { #FASTTypescriptThrow_statement }
 ]
