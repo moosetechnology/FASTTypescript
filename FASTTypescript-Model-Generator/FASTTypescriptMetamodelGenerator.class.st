@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_variable_declaration',
 		'_export_specifier',
 		'_intersection_type',
 		'_super',
@@ -197,7 +196,8 @@ Class {
 		'classStaticBlock',
 		'extendsTypeClause',
 		'addingTypeAnnotation',
-		'augmentedAssignmentExpression'
+		'augmentedAssignmentExpression',
+		'variableDeclaration'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -264,7 +264,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	importSpecifier := builder ensureClassNamed: #ImportSpecifier.
 	_import_attribute := builder ensureClassNamed: #Import_attribute.
 	expressionStatement := builder ensureClassNamed: #ExpressionStatement.
-	_variable_declaration := builder ensureClassNamed: #Variable_declaration.
+	variableDeclaration := builder ensureClassNamed: #VariableDeclaration.
 	lexicalDeclaration := builder ensureClassNamed: #LexicalDeclaration.
 	variableDeclarator := builder ensureClassNamed: #VariableDeclarator.
 	statementBlock := builder ensureClassNamed: #StatementBlock.
