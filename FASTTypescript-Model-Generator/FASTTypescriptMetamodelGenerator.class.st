@@ -6,7 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_ternary_expression',
 		'_while_statement',
 		'_method_definition',
 		'_property_signature',
@@ -197,7 +196,8 @@ Class {
 		'requiredParameter',
 		'importAttribute',
 		'stringFragment',
-		'defaultType'
+		'defaultType',
+		'ternaryExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -316,7 +316,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	assignmentExpression := builder ensureClassNamed: #AssignmentExpression.
 	augmentedAssignmentExpression := builder ensureClassNamed: #AugmentedAssignmentExpression.
 	spreadElement := builder ensureClassNamed: #SpreadElement.
-	_ternary_expression := builder ensureClassNamed: #Ternary_expression.
+	ternaryExpression := builder ensureClassNamed: #TernaryExpression.
 	binaryExpression := builder ensureClassNamed: #BinaryExpression.
 	unaryExpression := builder ensureClassNamed: #UnaryExpression.
 	updateExpression := builder ensureClassNamed: #UpdateExpression.
@@ -518,7 +518,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	satisfiesExpression --|> expression.
 	sequenceExpression --|> expression.
 	subscriptExpression --|> expression.
-	_ternary_expression --|> expression.
+	ternaryExpression --|> expression.
 	updateExpression --|> expression.
 	yieldExpression --|> expression.
 	object --|> expression.

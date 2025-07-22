@@ -1120,10 +1120,10 @@ FASTTypescriptTEntityCreator >> newTemplateType [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newTernary_expression [
+FASTTypescriptTEntityCreator >> newTernaryExpression [
 
 	<generated>
-	^ self add: FASTTypescriptTernary_expression new
+	^ self add: FASTTypescriptTernaryExpression new
 ]
 
 { #category : 'entity creation' }
