@@ -133,10 +133,10 @@ FASTTypescriptTEntityCreator >> newAugmented_assignment_expression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAwait_expression [
+FASTTypescriptTEntityCreator >> newAwaitExpression [
 
 	<generated>
-	^ self add: FASTTypescriptAwait_expression new
+	^ self add: FASTTypescriptAwaitExpression new
 ]
 
 { #category : 'entity creation' }

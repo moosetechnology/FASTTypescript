@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_await_expression',
 		'_pair_pattern',
 		'_import_require_clause',
 		'_type_annotation',
@@ -197,7 +196,8 @@ Class {
 		'inferType',
 		'ifStatement',
 		'namedImports',
-		'objectPattern'
+		'objectPattern',
+		'awaitExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -312,7 +312,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	optionalChain := builder ensureClassNamed: #OptionalChain.
 	callExpression := builder ensureClassNamed: #CallExpression.
 	newExpression := builder ensureClassNamed: #NewExpression.
-	_await_expression := builder ensureClassNamed: #Await_expression.
+	awaitExpression := builder ensureClassNamed: #AwaitExpression.
 	memberExpression := builder ensureClassNamed: #MemberExpression.
 	subscriptExpression := builder ensureClassNamed: #SubscriptExpression.
 	assignmentExpression := builder ensureClassNamed: #AssignmentExpression.
@@ -512,7 +512,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	asExpression --|> expression.
 	assignmentExpression --|> expression.
 	_augmented_assignment_expression --|> expression.
-	_await_expression --|> expression.
+	awaitExpression --|> expression.
 	functionExpression --|> expression.
 	instantiationExpression --|> expression.
 	newExpression --|> expression.
