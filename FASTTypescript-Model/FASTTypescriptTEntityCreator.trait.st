@@ -392,10 +392,10 @@ FASTTypescriptTEntityCreator >> newExpression_statement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newExtends_clause [
+FASTTypescriptTEntityCreator >> newExtendsClause [
 
 	<generated>
-	^ self add: FASTTypescriptExtends_clause new
+	^ self add: FASTTypescriptExtendsClause new
 ]
 
 { #category : 'entity creation' }

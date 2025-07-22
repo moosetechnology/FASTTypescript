@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_extends_clause',
 		'_generic_type',
 		'_namespace_import',
 		'_object_assignment_pattern',
@@ -197,7 +196,8 @@ Class {
 		'constructSignature',
 		'flowMaybeType',
 		'arrayPattern',
-		'finallyClause'
+		'finallyClause',
+		'extendsClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -350,7 +350,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	satisfiesExpression := builder ensureClassNamed: #SatisfiesExpression.
 	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
 	_import_require_clause := builder ensureClassNamed: #Import_require_clause.
-	_extends_clause := builder ensureClassNamed: #Extends_clause.
+	extendsClause := builder ensureClassNamed: #ExtendsClause.
 	_implements_clause := builder ensureClassNamed: #Implements_clause.
 	_ambient_declaration := builder ensureClassNamed: #Ambient_declaration.
 	abstractClassDeclaration := builder ensureClassNamed: #AbstractClassDeclaration.
@@ -753,11 +753,11 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'My body')
 	<>- ((_statement_block property: #statementBlockOwner) comment: 'My owner'). 
 	
-	((_extends_clause property: #value) comment:
+	((extendsClause property: #value) comment:
 		 'My value')
 	<>- ((identifier property: #identifierOwner) comment: 'My owner'). 
 	
-	((_extends_clause property: #type_arguments) comment:
+	((extendsClause property: #type_arguments) comment:
 		 'My arguments')
 	<>- ((_type_arguments property: #typeArgumentsOwner) comment: 'My owner'). 
 	

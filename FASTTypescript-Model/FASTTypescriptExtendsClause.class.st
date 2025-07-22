@@ -5,14 +5,14 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `type_arguments` | `FASTTypescriptExtends_clause` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | My arguments|
-| `value` | `FASTTypescriptExtends_clause` | `identifierOwner` | `FASTTypescriptIdentifier` | My value|
+| `type_arguments` | `FASTTypescriptExtendsClause` | `typeArgumentsOwner` | `FASTTypescriptType_arguments` | My arguments|
+| `value` | `FASTTypescriptExtendsClause` | `identifierOwner` | `FASTTypescriptIdentifier` | My value|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptExtends_clause',
+	#name : 'FASTTypescriptExtendsClause',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#type_arguments => FMOne type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner'
@@ -23,16 +23,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptExtends_clause class >> annotation [
+FASTTypescriptExtendsClause class >> annotation [
 
-	<FMClass: #Extends_clause super: #FASTTypescriptEntity>
+	<FMClass: #ExtendsClause super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptExtendsClause class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptExtends_clause }
+]
+
 { #category : 'accessing' }
-FASTTypescriptExtends_clause >> type_arguments [
+FASTTypescriptExtendsClause >> type_arguments [
 	"Relation named: #type_arguments type: #FASTTypescriptType_arguments opposite: #typeArgumentsOwner"
 
 	<generated>
@@ -41,21 +47,21 @@ FASTTypescriptExtends_clause >> type_arguments [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptExtends_clause >> type_arguments: anObject [
+FASTTypescriptExtendsClause >> type_arguments: anObject [
 
 	<generated>
 	type_arguments := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptExtends_clause >> type_argumentsGroup [
+FASTTypescriptExtendsClause >> type_argumentsGroup [
 	<generated>
 	<navigation: 'Type_arguments'>
 	^ MooseSpecializedGroup with: self type_arguments
 ]
 
 { #category : 'accessing' }
-FASTTypescriptExtends_clause >> value [
+FASTTypescriptExtendsClause >> value [
 	"Relation named: #value type: #FASTTypescriptIdentifier opposite: #identifierOwner"
 
 	<generated>
@@ -64,14 +70,14 @@ FASTTypescriptExtends_clause >> value [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptExtends_clause >> value: anObject [
+FASTTypescriptExtendsClause >> value: anObject [
 
 	<generated>
 	value := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptExtends_clause >> valueGroup [
+FASTTypescriptExtendsClause >> valueGroup [
 	<generated>
 	<navigation: 'Value'>
 	^ MooseSpecializedGroup with: self value
