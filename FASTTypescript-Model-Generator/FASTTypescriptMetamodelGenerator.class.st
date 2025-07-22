@@ -376,8 +376,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	memberExpression := builder ensureClassNamed: #Member_expression.
 	callExpression := builder ensureClassNamed: #CallExpression.
 	asserts := builder ensureClassNamed: #Asserts.
-	assertsAnnotation := builder ensureClassNamed: #AssertsAnnotation.
-	requiredParameter := builder ensureClassNamed: #Required_parameter.
+	assertsAnnotation := builder ensureClassNamed: #AssertsAnnotation. 
 	optionalType := builder ensureClassNamed: #OptionalType.
 	restType := builder ensureClassNamed: #RestType.
 	constructorType := builder ensureClassNamed: #ConstructorType.

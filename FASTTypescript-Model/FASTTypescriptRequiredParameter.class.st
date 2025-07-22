@@ -14,3 +14,9 @@ FASTTypescriptRequiredParameter class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'class initialization' }
+FASTTypescriptRequiredParameter class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptRequired_parameter }
+]
