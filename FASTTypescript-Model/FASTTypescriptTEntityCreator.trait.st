@@ -686,6 +686,13 @@ FASTTypescriptTEntityCreator >> newMapped_type_clause [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newMemberExpression [
+
+	<generated>
+	^ self add: FASTTypescriptMemberExpression new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newMember_expression [
 
 	<generated>
