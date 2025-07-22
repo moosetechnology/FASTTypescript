@@ -105,10 +105,10 @@ FASTTypescriptTEntityCreator >> newAsserts [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAsserts_annotation [
+FASTTypescriptTEntityCreator >> newAssertsAnnotation [
 
 	<generated>
-	^ self add: FASTTypescriptAsserts_annotation new
+	^ self add: FASTTypescriptAssertsAnnotation new
 ]
 
 { #category : 'entity creation' }

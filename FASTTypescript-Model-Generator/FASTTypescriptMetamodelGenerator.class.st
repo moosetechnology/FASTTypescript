@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_asserts_annotation',
 		'_yield_expression',
 		'_override_modifier',
 		'_mapped_type_clause',
@@ -197,7 +196,8 @@ Class {
 		'internalModule',
 		'predefinedType',
 		'importSpecifier',
-		'abstractMethodSignature'
+		'abstractMethodSignature',
+		'assertsAnnotation'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -376,7 +376,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	memberExpression := builder ensureClassNamed: #Member_expression.
 	callExpression := builder ensureClassNamed: #CallExpression.
 	asserts := builder ensureClassNamed: #Asserts.
-	_asserts_annotation := builder ensureClassNamed: #Asserts_annotation.
+	assertsAnnotation := builder ensureClassNamed: #AssertsAnnotation.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
 	_optional_type := builder ensureClassNamed: #Optional_type.
 	restType := builder ensureClassNamed: #RestType.
