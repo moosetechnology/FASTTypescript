@@ -1260,10 +1260,10 @@ FASTTypescriptTEntityCreator >> newUnionType [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newUpdate_expression [
+FASTTypescriptTEntityCreator >> newUpdateExpression [
 
 	<generated>
-	^ self add: FASTTypescriptUpdate_expression new
+	^ self add: FASTTypescriptUpdateExpression new
 ]
 
 { #category : 'entity creation' }

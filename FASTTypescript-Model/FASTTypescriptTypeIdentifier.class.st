@@ -23,8 +23,8 @@
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
 | `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptGenericType` | The owner of this type identifier|
 | `indexSignatureOwner` | `FASTTypescriptTypeIdentifier` | `index_type` | `FASTTypescriptIndexSignature` | The owner of this index type|
-| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|

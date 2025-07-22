@@ -6,7 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_update_expression',
 		'_html_comment',
 		'_enum_assignment',
 		'_namespace_export',
@@ -197,7 +196,8 @@ Class {
 		'augmentedAssignmentExpression',
 		'variableDeclaration',
 		'exportSpecifier',
-		'intersectionType'
+		'intersectionType',
+		'updateExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -321,7 +321,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_ternary_expression := builder ensureClassNamed: #Ternary_expression.
 	binaryExpression := builder ensureClassNamed: #BinaryExpression.
 	unaryExpression := builder ensureClassNamed: #UnaryExpression.
-	_update_expression := builder ensureClassNamed: #Update_expression.
+	updateExpression := builder ensureClassNamed: #UpdateExpression.
 	sequenceExpression := builder ensureClassNamed: #SequenceExpression.
 	string := builder ensureClassNamed: #String.
 	templateString := builder ensureClassNamed: #TemplateString.
@@ -522,7 +522,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	sequenceExpression --|> expression.
 	subscriptExpression --|> expression.
 	_ternary_expression --|> expression.
-	_update_expression --|> expression.
+	updateExpression --|> expression.
 	yieldExpression --|> expression.
 	object --|> expression.
 
