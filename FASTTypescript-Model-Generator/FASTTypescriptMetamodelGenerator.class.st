@@ -6,7 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_required_parameter',
 		'_import_attribute',
 		'_string_fragment',
 		'_default_type',
@@ -197,7 +196,8 @@ Class {
 		'updateExpression',
 		'htmlComment',
 		'enumAssignment',
-		'namespaceExport'
+		'namespaceExport',
+		'requiredParameter'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -367,7 +367,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	typeAliasDeclaration := builder ensureClassNamed: #TypeAliasDeclaration.
 	accessibilityModifier := builder ensureClassNamed: #AccessibilityModifier.
 	overrideModifier := builder ensureClassNamed: #OverrideModifier.
-	_required_parameter := builder ensureClassNamed: #Required_parameter.
+	requiredParameter := builder ensureClassNamed: #RequiredParameter.
 	optionalParameter := builder ensureClassNamed: #OptionalParameter.
 	omittingTypeAnnotation := builder ensureClassNamed: #OmittingTypeAnnotation.
 	addingTypeAnnotation := builder ensureClassNamed: #AddingTypeAnnotation.
@@ -377,7 +377,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	callExpression := builder ensureClassNamed: #CallExpression.
 	asserts := builder ensureClassNamed: #Asserts.
 	assertsAnnotation := builder ensureClassNamed: #AssertsAnnotation.
-	_required_parameter := builder ensureClassNamed: #Required_parameter.
+	requiredParameter := builder ensureClassNamed: #Required_parameter.
 	optionalType := builder ensureClassNamed: #OptionalType.
 	restType := builder ensureClassNamed: #RestType.
 	constructorType := builder ensureClassNamed: #ConstructorType.

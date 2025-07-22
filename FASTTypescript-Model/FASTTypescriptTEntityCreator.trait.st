@@ -959,6 +959,13 @@ FASTTypescriptTEntityCreator >> newRegexPattern [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newRequiredParameter [
+
+	<generated>
+	^ self add: FASTTypescriptRequiredParameter new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newRequired_parameter [
 
 	<generated>
