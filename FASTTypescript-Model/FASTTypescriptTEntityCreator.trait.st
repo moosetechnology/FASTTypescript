@@ -854,10 +854,10 @@ FASTTypescriptTEntityCreator >> newOptional_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newOverride_modifier [
+FASTTypescriptTEntityCreator >> newOverrideModifier [
 
 	<generated>
-	^ self add: FASTTypescriptOverride_modifier new
+	^ self add: FASTTypescriptOverrideModifier new
 ]
 
 { #category : 'entity creation' }

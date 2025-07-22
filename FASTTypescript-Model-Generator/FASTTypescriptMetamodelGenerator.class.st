@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_override_modifier',
 		'_mapped_type_clause',
 		'_statement_block',
 		'_function_signature',
@@ -197,7 +196,8 @@ Class {
 		'importSpecifier',
 		'abstractMethodSignature',
 		'assertsAnnotation',
-		'yieldExpression'
+		'yieldExpression',
+		'overrideModifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -366,7 +366,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_enum_assignment := builder ensureClassNamed: #Enum_assignment.
 	typeAliasDeclaration := builder ensureClassNamed: #TypeAliasDeclaration.
 	accessibilityModifier := builder ensureClassNamed: #AccessibilityModifier.
-	_override_modifier := builder ensureClassNamed: #Override_modifier.
+	overrideModifier := builder ensureClassNamed: #OverrideModifier.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
 	optionalParameter := builder ensureClassNamed: #OptionalParameter.
 	omittingTypeAnnotation := builder ensureClassNamed: #OmittingTypeAnnotation.
