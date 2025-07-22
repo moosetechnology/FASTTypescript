@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_instantiation_expression',
 		'_member_expression',
 		'_implements_clause',
 		'_call_expression',
@@ -197,7 +196,8 @@ Class {
 		'objectAssignmentPattern',
 		'computedPropertyName',
 		'typeParameter',
-		'templateSubstitution'
+		'templateSubstitution',
+		'instantiationExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -348,7 +348,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	typeAssertion := builder ensureClassNamed: #TypeAssertion.
 	asExpression := builder ensureClassNamed: #AsExpression.
 	satisfiesExpression := builder ensureClassNamed: #SatisfiesExpression.
-	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
+	instantiationExpression := builder ensureClassNamed: #InstantiationExpression.
 	_import_require_clause := builder ensureClassNamed: #Import_require_clause.
 	extendsClause := builder ensureClassNamed: #ExtendsClause.
 	_implements_clause := builder ensureClassNamed: #Implements_clause.
@@ -391,8 +391,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_type_predicate := builder ensureClassNamed: #Type_predicate.
 	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation.
 	_member_expression := builder ensureClassNamed: #Member_expression.
-	_call_expression := builder ensureClassNamed: #Call_expression.
-	_instantiation_expression := builder ensureClassNamed: #Instantiation_expression.
+	_call_expression := builder ensureClassNamed: #Call_expression. 
 	typeQuery := builder ensureClassNamed: #TypeQuery.
 	_index_type_query := builder ensureClassNamed: #Index_type_query.
 	lookupType := builder ensureClassNamed: #LookupType.
@@ -518,7 +517,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_augmented_assignment_expression --|> expression.
 	_await_expression --|> expression.
 	functionExpression --|> expression.
-	_instantiation_expression --|> expression.
+	instantiationExpression --|> expression.
 	newExpression --|> expression.
 	_non_null_expression --|> expression.
 	parenthesizedExpression --|> expression.

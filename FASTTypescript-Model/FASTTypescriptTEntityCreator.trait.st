@@ -602,10 +602,10 @@ FASTTypescriptTEntityCreator >> newInfer_type [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newInstantiation_expression [
+FASTTypescriptTEntityCreator >> newInstantiationExpression [
 
 	<generated>
-	^ self add: FASTTypescriptInstantiation_expression new
+	^ self add: FASTTypescriptInstantiationExpression new
 ]
 
 { #category : 'entity creation' }
