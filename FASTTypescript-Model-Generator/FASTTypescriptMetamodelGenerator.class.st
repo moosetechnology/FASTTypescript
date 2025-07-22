@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_sequence_expression',
 		'_tuple_type',
 		'_opting_type_annotation',
 		'_internal_module',
@@ -197,7 +196,8 @@ Class {
 		'generatorFunction',
 		'typePredicate',
 		'typeArguments',
-		'regexFlags'
+		'regexFlags',
+		'sequenceExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -322,7 +322,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	binaryExpression := builder ensureClassNamed: #BinaryExpression.
 	unaryExpression := builder ensureClassNamed: #UnaryExpression.
 	_update_expression := builder ensureClassNamed: #Update_expression.
-	_sequence_expression := builder ensureClassNamed: #Sequence_expression.
+	sequenceExpression := builder ensureClassNamed: #SequenceExpression.
 	string := builder ensureClassNamed: #String.
 	templateString := builder ensureClassNamed: #TemplateString.
 	templateSubstitution := builder ensureClassNamed: #TemplateSubstitution.
@@ -519,7 +519,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	nonNullExpression --|> expression.
 	parenthesizedExpression --|> expression.
 	satisfiesExpression --|> expression.
-	_sequence_expression --|> expression.
+	sequenceExpression --|> expression.
 	subscriptExpression --|> expression.
 	_ternary_expression --|> expression.
 	_update_expression --|> expression.

@@ -994,10 +994,10 @@ FASTTypescriptTEntityCreator >> newSatisfiesExpression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newSequence_expression [
+FASTTypescriptTEntityCreator >> newSequenceExpression [
 
 	<generated>
-	^ self add: FASTTypescriptSequence_expression new
+	^ self add: FASTTypescriptSequenceExpression new
 ]
 
 { #category : 'entity creation' }
