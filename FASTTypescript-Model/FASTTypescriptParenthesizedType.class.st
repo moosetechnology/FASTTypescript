@@ -39,7 +39,7 @@
 
 "
 Class {
-	#name : 'FASTTypescriptParenthesized_type',
+	#name : 'FASTTypescriptParenthesizedType',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
@@ -49,10 +49,16 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptParenthesized_type class >> annotation [
+FASTTypescriptParenthesizedType class >> annotation [
 
-	<FMClass: #Parenthesized_type super: #FASTTypescriptEntity>
+	<FMClass: #ParenthesizedType super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
+]
+
+{ #category : 'class initialization' }
+FASTTypescriptParenthesizedType class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptParenthesized_type }
 ]

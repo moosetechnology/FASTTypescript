@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_parenthesized_type',
 		'_construct_signature',
 		'_flow_maybe_type',
 		'_array_pattern',
@@ -197,7 +196,8 @@ Class {
 		'typeAliasDeclaration',
 		'optionalParameter',
 		'constructorType',
-		'conditionalType'
+		'conditionalType',
+		'parenthesizedType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -400,7 +400,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	literalType := builder ensureClassNamed: #LiteralType. 
 	existentialType := builder ensureClassNamed: #ExistentialType.
 	_flow_maybe_type := builder ensureClassNamed: #Flow_maybe_type.
-	_parenthesized_type := builder ensureClassNamed: #Parenthesized_type.
+	parenthesizedType := builder ensureClassNamed: #ParenthesizedType.
 	_predefined_type := builder ensureClassNamed: #Predefined_type.
 	_type_arguments := builder ensureClassNamed: #Type_arguments.
 	_object_type := builder ensureClassNamed: #Object_type.
@@ -494,7 +494,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	typeIdentifier --|> tExpression.
 	conditionalType --|> tExpression.
 	_flow_maybe_type --|> tExpression.
-	_parenthesized_type --|> tExpression.
+	parenthesizedType --|> tExpression.
 	functionType --|> tExpression.
 	_predefined_type --|> tExpression.
 	_generic_type --|> tExpression.

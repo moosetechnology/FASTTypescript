@@ -875,10 +875,10 @@ FASTTypescriptTEntityCreator >> newParenthesizedExpression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newParenthesized_type [
+FASTTypescriptTEntityCreator >> newParenthesizedType [
 
 	<generated>
-	^ self add: FASTTypescriptParenthesized_type new
+	^ self add: FASTTypescriptParenthesizedType new
 ]
 
 { #category : 'entity creation' }
