@@ -679,10 +679,10 @@ FASTTypescriptTEntityCreator >> newLookupType [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newMapped_type_clause [
+FASTTypescriptTEntityCreator >> newMappedTypeClause [
 
 	<generated>
-	^ self add: FASTTypescriptMapped_type_clause new
+	^ self add: FASTTypescriptMappedTypeClause new
 ]
 
 { #category : 'entity creation' }

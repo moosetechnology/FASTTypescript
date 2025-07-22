@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_mapped_type_clause',
 		'_statement_block',
 		'_function_signature',
 		'_continue_statement',
@@ -197,7 +196,8 @@ Class {
 		'abstractMethodSignature',
 		'assertsAnnotation',
 		'yieldExpression',
-		'overrideModifier'
+		'overrideModifier',
+		'mappedTypeClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -392,7 +392,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	typeQuery := builder ensureClassNamed: #TypeQuery.
 	indexTypeQuery := builder ensureClassNamed: #IndexTypeQuery.
 	lookupType := builder ensureClassNamed: #LookupType.
-	_mapped_type_clause := builder ensureClassNamed: #Mapped_type_clause.
+	mappedTypeClause := builder ensureClassNamed: #MappedTypeClause.
 	literalType := builder ensureClassNamed: #LiteralType. 
 	existentialType := builder ensureClassNamed: #ExistentialType.
 	flowMaybeType := builder ensureClassNamed: #FlowMaybeType.
