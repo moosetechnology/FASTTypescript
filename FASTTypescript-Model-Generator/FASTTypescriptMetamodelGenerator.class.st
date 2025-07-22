@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_finally_clause',
 		'_extends_clause',
 		'_generic_type',
 		'_namespace_import',
@@ -197,7 +196,8 @@ Class {
 		'parenthesizedType',
 		'constructSignature',
 		'flowMaybeType',
-		'arrayPattern'
+		'arrayPattern',
+		'finallyClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -288,7 +288,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_switch_case := builder ensureClassNamed: #Switch_case.
 	switchDefault := builder ensureClassNamed: #SwitchDefault.
 	catchClause := builder ensureClassNamed: #CatchClause.
-	_finally_clause := builder ensureClassNamed: #Finally_clause.
+	finallyClause := builder ensureClassNamed: #FinallyClause.
 	parenthesizedExpression := builder ensureClassNamed: #ParenthesizedExpression.
 	_yield_expression := builder ensureClassNamed: #Yield_expression.
 	object := builder ensureClassNamed: #Object.
@@ -715,7 +715,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'Try statement owner').
 
 	((tryStatement property: #finalizer) comment: 'Finalizer')
-	<>- ((_finally_clause property: #tryStatementOwner) comment:
+	<>- ((finallyClause property: #tryStatementOwner) comment:
 			 'Try statement owner').
 
 	((_member_expression property: #object) comment: 'Object')
@@ -749,7 +749,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'My parameters')
 	<>- ((formalParameters property: #formalParametersOwner) comment: 'My owner'). 
 	
-	((_finally_clause property: #body) comment:
+	((finallyClause property: #body) comment:
 		 'My body')
 	<>- ((_statement_block property: #statementBlockOwner) comment: 'My owner'). 
 	

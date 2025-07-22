@@ -413,10 +413,10 @@ FASTTypescriptTEntityCreator >> newFalse [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newFinally_clause [
+FASTTypescriptTEntityCreator >> newFinallyClause [
 
 	<generated>
-	^ self add: FASTTypescriptFinally_clause new
+	^ self add: FASTTypescriptFinallyClause new
 ]
 
 { #category : 'entity creation' }
