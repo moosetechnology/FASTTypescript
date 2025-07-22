@@ -17,7 +17,6 @@ Class {
 		'tWithModifiers',
 		'tNamedEntity',
 		'tLiteral',
-		'_literal',
 		'_ERROR',
 		'tExpression',
 		'tWithParameters',
@@ -197,7 +196,8 @@ Class {
 		'whileStatement',
 		'methodDefinition',
 		'propertySignature',
-		'switchCase'
+		'switchCase',
+		'literal'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -240,7 +240,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	this := builder ensureClassNamed: #This.
 	_super := builder ensureClassNamed: #Super.
 	
-	_literal := builder ensureClassNamed: #Literal.
+	literal := builder ensureClassNamed: #Literal.
 	boolean := builder ensureClassNamed: #Boolean.
 	_true := builder ensureClassNamed: #True.
 	_false := builder ensureClassNamed: #False.
@@ -439,17 +439,17 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 
 	program --|> tEntity.
 
-	number --|> _literal.
-	string --|> _literal.
-	null --|> _literal.
-	boolean --|> _literal.
+	number --|> literal.
+	string --|> literal.
+	null --|> literal.
+	boolean --|> literal.
 	_true --|> boolean.
 	_false --|> boolean.
 
 	abstractClassDeclaration --|> classDeclaration.
 
 	"Traits"
-	_literal --|> tLiteral.
+	literal --|> tLiteral.
 	string --|> #TStringLiteral.
 	boolean --|> #TBooleanLiteral.
 	null --|> #TNullPointerLiteral.
