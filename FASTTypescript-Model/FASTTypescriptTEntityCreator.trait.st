@@ -385,10 +385,10 @@ FASTTypescriptTEntityCreator >> newExpression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newExpression_statement [
+FASTTypescriptTEntityCreator >> newExpressionStatement [
 
 	<generated>
-	^ self add: FASTTypescriptExpression_statement new
+	^ self add: FASTTypescriptExpressionStatement new
 ]
 
 { #category : 'entity creation' }

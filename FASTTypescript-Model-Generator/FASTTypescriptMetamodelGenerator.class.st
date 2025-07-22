@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_expression_statement',
 		'_class_static_block',
 		'_extends_type_clause',
 		'_adding_type_annotation',
@@ -197,7 +196,8 @@ Class {
 		'statementBlock',
 		'functionSignature',
 		'continueStatement',
-		'optionalType'
+		'optionalType',
+		'expressionStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -263,7 +263,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	namedImports := builder ensureClassNamed: #NamedImports.
 	importSpecifier := builder ensureClassNamed: #ImportSpecifier.
 	_import_attribute := builder ensureClassNamed: #Import_attribute.
-	_expression_statement := builder ensureClassNamed: #Expression_statement.
+	expressionStatement := builder ensureClassNamed: #ExpressionStatement.
 	_variable_declaration := builder ensureClassNamed: #Variable_declaration.
 	lexicalDeclaration := builder ensureClassNamed: #LexicalDeclaration.
 	variableDeclarator := builder ensureClassNamed: #VariableDeclarator.
