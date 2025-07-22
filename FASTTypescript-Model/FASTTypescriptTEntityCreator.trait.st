@@ -868,10 +868,10 @@ FASTTypescriptTEntityCreator >> newPair [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newPair_pattern [
+FASTTypescriptTEntityCreator >> newPairPattern [
 
 	<generated>
-	^ self add: FASTTypescriptPair_pattern new
+	^ self add: FASTTypescriptPairPattern new
 ]
 
 { #category : 'entity creation' }

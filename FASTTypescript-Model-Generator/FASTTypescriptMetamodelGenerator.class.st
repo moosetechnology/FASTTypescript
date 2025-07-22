@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_pair_pattern',
 		'_import_require_clause',
 		'_type_annotation',
 		'_non_null_expression',
@@ -197,7 +196,8 @@ Class {
 		'ifStatement',
 		'namedImports',
 		'objectPattern',
-		'awaitExpression'
+		'awaitExpression',
+		'pairPattern'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -336,7 +336,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	restPattern := builder ensureClassNamed: #RestPattern.
 	_method_definition := builder ensureClassNamed: #Method_definition.
 	pair := builder ensureClassNamed: #Pair.
-	_pair_pattern := builder ensureClassNamed: #Pair_pattern.
+	pairPattern := builder ensureClassNamed: #PairPattern.
 	computedPropertyName := builder ensureClassNamed: #ComputedPropertyName.
 	publicFieldDefinition := builder ensureClassNamed: #PublicFieldDefinition.
 	_non_null_expression := builder ensureClassNamed: #Non_null_expression.
