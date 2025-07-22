@@ -6,8 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_while_statement',
-		'_method_definition',
 		'_property_signature',
 		'_switch_case',
 		'entity',
@@ -197,7 +195,9 @@ Class {
 		'importAttribute',
 		'stringFragment',
 		'defaultType',
-		'ternaryExpression'
+		'ternaryExpression',
+		'whileStatement',
+		'methodDefinition'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -271,7 +271,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	switchStatement := builder ensureClassNamed: #SwitchStatement.
 	forStatement := builder ensureClassNamed: #ForStatement.
 	forInStatement := builder ensureClassNamed: #ForInStatement.
-	_while_statement := builder ensureClassNamed: #While_statement.
+	whileStatement := builder ensureClassNamed: #WhileStatement.
 	doStatement := builder ensureClassNamed: #DoStatement.
 	tryStatement := builder ensureClassNamed: #TryStatement.
 	withStatement := builder ensureClassNamed: #WithStatement.
@@ -332,7 +332,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	formalParameters := builder ensureClassNamed: #FormalParameters.
 	classStaticBlock := builder ensureClassNamed: #ClassStaticBlock.
 	restPattern := builder ensureClassNamed: #RestPattern.
-	_method_definition := builder ensureClassNamed: #Method_definition.
+	methodDefinition := builder ensureClassNamed: #MethodDefinition.
 	pair := builder ensureClassNamed: #Pair.
 	pairPattern := builder ensureClassNamed: #PairPattern.
 	computedPropertyName := builder ensureClassNamed: #ComputedPropertyName.
@@ -726,19 +726,19 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		 'My alias in case it exists')
 	<>- ((tOptionalField property: #identifierOwner) comment: 'My owner').
 	
-	((_method_definition property: #return_type) comment:
+	((methodDefinition property: #return_type) comment:
 		 'My return type in case it exists')
 	<>- ((tOptionalField property: #typeAnnotationOwner) comment: 'My owner').
 	
-	((_method_definition property: #name) comment:
+	((methodDefinition property: #name) comment:
 		 'My name')
 	<>- ((propertyIdentifier property: #propertyIdentifierOwner) comment: 'My owner').
 	
-	((_method_definition property: #body) comment:
+	((methodDefinition property: #body) comment:
 		 'My body')
 	<>- ((statementBlock property: #statementBlockOwner) comment: 'My owner').
 
-	((_method_definition property: #parameters) comment:
+	((methodDefinition property: #parameters) comment:
 		 'My parameters')
 	<>- ((formalParameters property: #formalParametersOwner) comment: 'My owner'). 
 	

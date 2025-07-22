@@ -26,7 +26,7 @@
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
-| `propertyIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | `name` | `FASTTypescriptMethod_definition` | My owner|
+| `propertyIdentifierOwner` | `FASTTypescriptPropertyIdentifier` | `name` | `FASTTypescriptMethodDefinition` | My owner|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnaryExpression` | The owner of this class|
 
@@ -47,7 +47,7 @@ Class {
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
 		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNestedIdentifier opposite: #property',
-		'#propertyIdentifierOwner => FMOne type: #FASTTypescriptMethod_definition opposite: #name'
+		'#propertyIdentifierOwner => FMOne type: #FASTTypescriptMethodDefinition opposite: #name'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -96,7 +96,7 @@ FASTTypescriptPropertyIdentifier >> nestedIdentifierOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptPropertyIdentifier >> propertyIdentifierOwner [
-	"Relation named: #propertyIdentifierOwner type: #FASTTypescriptMethod_definition opposite: #name"
+	"Relation named: #propertyIdentifierOwner type: #FASTTypescriptMethodDefinition opposite: #name"
 
 	<generated>
 	<FMComment: 'My owner'>

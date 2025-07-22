@@ -8,7 +8,7 @@
 | `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExportSpecifier` | My owner|
 | `indexSignatureOwner` | `FASTTypescriptTypeAnnotation` | `type` | `FASTTypescriptIndexSignature` | The owner of this annotation type|
 | `optionalParameterOwner` | `FASTTypescriptTypeAnnotation` | `type` | `FASTTypescriptOptionalParameter` | The owner of this type annotation|
-| `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
+| `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethodDefinition` | My owner|
 
 
 
