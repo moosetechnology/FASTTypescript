@@ -231,10 +231,10 @@ FASTTypescriptTEntityCreator >> newCompilationUnit [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newComputed_property_name [
+FASTTypescriptTEntityCreator >> newComputedPropertyName [
 
 	<generated>
-	^ self add: FASTTypescriptComputed_property_name new
+	^ self add: FASTTypescriptComputedPropertyName new
 ]
 
 { #category : 'entity creation' }

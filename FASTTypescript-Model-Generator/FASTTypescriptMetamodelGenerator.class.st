@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_computed_property_name',
 		'_type_parameter',
 		'_template_substitution',
 		'_instantiation_expression',
@@ -197,7 +196,8 @@ Class {
 		'extendsClause',
 		'genericType',
 		'namespaceImport',
-		'objectAssignmentPattern'
+		'objectAssignmentPattern',
+		'computedPropertyName'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -339,7 +339,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_method_definition := builder ensureClassNamed: #Method_definition.
 	pair := builder ensureClassNamed: #Pair.
 	_pair_pattern := builder ensureClassNamed: #Pair_pattern.
-	_computed_property_name := builder ensureClassNamed: #Computed_property_name.
+	computedPropertyName := builder ensureClassNamed: #ComputedPropertyName.
 	publicFieldDefinition := builder ensureClassNamed: #PublicFieldDefinition.
 	_non_null_expression := builder ensureClassNamed: #Non_null_expression.
 	methodSignature := builder ensureClassNamed: #MethodSignature.
