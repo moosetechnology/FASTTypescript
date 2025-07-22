@@ -49,10 +49,10 @@ FASTTypescriptTEntityCreator >> newAdding_type_annotation [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAmbient_declaration [
+FASTTypescriptTEntityCreator >> newAmbientDeclaration [
 
 	<generated>
-	^ self add: FASTTypescriptAmbient_declaration new
+	^ self add: FASTTypescriptAmbientDeclaration new
 ]
 
 { #category : 'entity creation' }
