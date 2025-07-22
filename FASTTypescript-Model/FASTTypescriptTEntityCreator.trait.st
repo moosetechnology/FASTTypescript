@@ -1099,10 +1099,10 @@ FASTTypescriptTEntityCreator >> newTemplateString [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newTemplate_substitution [
+FASTTypescriptTEntityCreator >> newTemplateSubstitution [
 
 	<generated>
-	^ self add: FASTTypescriptTemplate_substitution new
+	^ self add: FASTTypescriptTemplateSubstitution new
 ]
 
 { #category : 'entity creation' }

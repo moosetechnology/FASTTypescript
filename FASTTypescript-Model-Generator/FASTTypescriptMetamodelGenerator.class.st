@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_template_substitution',
 		'_instantiation_expression',
 		'_member_expression',
 		'_implements_clause',
@@ -197,7 +196,8 @@ Class {
 		'namespaceImport',
 		'objectAssignmentPattern',
 		'computedPropertyName',
-		'typeParameter'
+		'typeParameter',
+		'templateSubstitution'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -325,7 +325,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_sequence_expression := builder ensureClassNamed: #Sequence_expression.
 	string := builder ensureClassNamed: #String.
 	templateString := builder ensureClassNamed: #TemplateString.
-	_template_substitution := builder ensureClassNamed: #Template_substitution.
+	templateSubstitution := builder ensureClassNamed: #TemplateSubstitution.
 	regex := builder ensureClassNamed: #Regex.
 	metaProperty := builder ensureClassNamed: #MetaProperty.
 	arguments := builder ensureClassNamed: #Arguments.
