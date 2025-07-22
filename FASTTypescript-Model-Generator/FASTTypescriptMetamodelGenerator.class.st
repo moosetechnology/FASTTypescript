@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_conditional_type',
 		'_parenthesized_type',
 		'_construct_signature',
 		'_flow_maybe_type',
@@ -197,7 +196,8 @@ Class {
 		'tryStatement',
 		'typeAliasDeclaration',
 		'optionalParameter',
-		'constructorType'
+		'constructorType',
+		'conditionalType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -386,7 +386,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_template_type := builder ensureClassNamed: #Template_type.
 	templateLiteralType := builder ensureClassNamed: #TemplateLiteralType.
 	_infer_type := builder ensureClassNamed: #Infer_type.
-	_conditional_type := builder ensureClassNamed: #Conditional_type.
+	conditionalType := builder ensureClassNamed: #ConditionalType.
 	_generic_type := builder ensureClassNamed: #Generic_type.
 	_type_predicate := builder ensureClassNamed: #Type_predicate.
 	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation.
@@ -492,7 +492,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	expression --|> tExpression.
 	_array_pattern --|> tExpression.
 	typeIdentifier --|> tExpression.
-	_conditional_type --|> tExpression.
+	conditionalType --|> tExpression.
 	_flow_maybe_type --|> tExpression.
 	_parenthesized_type --|> tExpression.
 	functionType --|> tExpression.
@@ -690,19 +690,19 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 		((tExpression property: #augmentedAssignmentExpressionRightOwner)
 			 comment: 'The right operand (if possible)').
 
-	((_conditional_type property: #left) comment: 'left')
+	((conditionalType property: #left) comment: 'left')
 	<>- ((tExpression property: #conditionalTypeLeftOwner) comment:
 			 'The left operand (if possible)').
 
-	((_conditional_type property: #right) comment: 'right')
+	((conditionalType property: #right) comment: 'right')
 	<>- ((tExpression property: #conditionalTypeRightOwner) comment:
 			 'The right operand (if possible)').
 
-	((_conditional_type property: #alternative) comment: 'alternative')
+	((conditionalType property: #alternative) comment: 'alternative')
 	<>- ((tExpression property: #alternativeOwner) comment:
 			 'Alternative owner').
 
-	((_conditional_type property: #consequence) comment: 'consequence')
+	((conditionalType property: #consequence) comment: 'consequence')
 	<>- ((tExpression property: #consequenceOwner) comment:
 			 'Consequence owner').
 

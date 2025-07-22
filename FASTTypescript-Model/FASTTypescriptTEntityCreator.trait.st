@@ -238,10 +238,10 @@ FASTTypescriptTEntityCreator >> newComputed_property_name [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newConditional_type [
+FASTTypescriptTEntityCreator >> newConditionalType [
 
 	<generated>
-	^ self add: FASTTypescriptConditional_type new
+	^ self add: FASTTypescriptConditionalType new
 ]
 
 { #category : 'entity creation' }

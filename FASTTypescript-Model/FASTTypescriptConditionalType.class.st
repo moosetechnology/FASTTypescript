@@ -5,22 +5,22 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `alternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypescriptConditional_type` | Alternative owner|
+| `alternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypescriptConditionalType` | Alternative owner|
 | `argumentOwner` | `FASTTExpression` | `arguments` | `FASTTWithArguments` | my owner|
 | `assignedIn` | `FASTTExpression` | `expression` | `FASTTAssignment` | Optional assignment where this expression is used|
 | `augmentedAssignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptAugmented_assignment_expression` | The left operand (if possible)|
 | `augmentedAssignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptAugmented_assignment_expression` | The right operand (if possible)|
 | `binaryExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptBinaryExpression` | The left operand (if possible)|
 | `binaryExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptBinaryExpression` | The right operand (if possible)|
-| `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptConditional_type` | The left operand (if possible)|
-| `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptConditional_type` | The right operand (if possible)|
-| `consequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypescriptConditional_type` | Consequence owner|
+| `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptConditionalType` | The left operand (if possible)|
+| `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptConditionalType` | The right operand (if possible)|
+| `consequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypescriptConditionalType` | Consequence owner|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptFor_in_statement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptFor_in_statement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
-| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
@@ -31,10 +31,10 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `alternative` | `FASTTypescriptConditional_type` | `alternativeOwner` | `FASTTExpression` | alternative|
-| `consequence` | `FASTTypescriptConditional_type` | `consequenceOwner` | `FASTTExpression` | consequence|
-| `left` | `FASTTypescriptConditional_type` | `conditionalTypeLeftOwner` | `FASTTExpression` | left|
-| `right` | `FASTTypescriptConditional_type` | `conditionalTypeRightOwner` | `FASTTExpression` | right|
+| `alternative` | `FASTTypescriptConditionalType` | `alternativeOwner` | `FASTTExpression` | alternative|
+| `consequence` | `FASTTypescriptConditionalType` | `consequenceOwner` | `FASTTExpression` | consequence|
+| `left` | `FASTTypescriptConditionalType` | `conditionalTypeLeftOwner` | `FASTTExpression` | left|
+| `right` | `FASTTypescriptConditionalType` | `conditionalTypeRightOwner` | `FASTTExpression` | right|
 
 
 ## Properties
@@ -47,7 +47,7 @@
 
 "
 Class {
-	#name : 'FASTTypescriptConditional_type',
+	#name : 'FASTTypescriptConditionalType',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
@@ -57,16 +57,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptConditional_type class >> annotation [
+FASTTypescriptConditionalType class >> annotation [
 
-	<FMClass: #Conditional_type super: #FASTTypescriptEntity>
+	<FMClass: #ConditionalType super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptConditionalType class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptConditional_type }
+]
+
 { #category : 'accessing' }
-FASTTypescriptConditional_type >> alternative [
+FASTTypescriptConditionalType >> alternative [
 	"Relation named: #alternative type: #FASTTExpression opposite: #alternativeOwner"
 
 	<generated>
@@ -76,7 +82,7 @@ FASTTypescriptConditional_type >> alternative [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConditional_type >> alternative: anObject [
+FASTTypescriptConditionalType >> alternative: anObject [
 
 	<generated>
 	(self attributeAt: #alternative ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -90,14 +96,14 @@ FASTTypescriptConditional_type >> alternative: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptConditional_type >> alternativeGroup [
+FASTTypescriptConditionalType >> alternativeGroup [
 	<generated>
 	<navigation: 'Alternative'>
 	^ MooseSpecializedGroup with: self alternative
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConditional_type >> consequence [
+FASTTypescriptConditionalType >> consequence [
 	"Relation named: #consequence type: #FASTTExpression opposite: #consequenceOwner"
 
 	<generated>
@@ -107,7 +113,7 @@ FASTTypescriptConditional_type >> consequence [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConditional_type >> consequence: anObject [
+FASTTypescriptConditionalType >> consequence: anObject [
 
 	<generated>
 	(self attributeAt: #consequence ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -121,14 +127,14 @@ FASTTypescriptConditional_type >> consequence: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptConditional_type >> consequenceGroup [
+FASTTypescriptConditionalType >> consequenceGroup [
 	<generated>
 	<navigation: 'Consequence'>
 	^ MooseSpecializedGroup with: self consequence
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConditional_type >> left [
+FASTTypescriptConditionalType >> left [
 	"Relation named: #left type: #FASTTExpression opposite: #conditionalTypeLeftOwner"
 
 	<generated>
@@ -138,7 +144,7 @@ FASTTypescriptConditional_type >> left [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConditional_type >> left: anObject [
+FASTTypescriptConditionalType >> left: anObject [
 
 	<generated>
 	(self attributeAt: #left ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -152,14 +158,14 @@ FASTTypescriptConditional_type >> left: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptConditional_type >> leftGroup [
+FASTTypescriptConditionalType >> leftGroup [
 	<generated>
 	<navigation: 'Left'>
 	^ MooseSpecializedGroup with: self left
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConditional_type >> right [
+FASTTypescriptConditionalType >> right [
 	"Relation named: #right type: #FASTTExpression opposite: #conditionalTypeRightOwner"
 
 	<generated>
@@ -169,7 +175,7 @@ FASTTypescriptConditional_type >> right [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptConditional_type >> right: anObject [
+FASTTypescriptConditionalType >> right: anObject [
 
 	<generated>
 	(self attributeAt: #right ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
@@ -183,7 +189,7 @@ FASTTypescriptConditional_type >> right: anObject [
 ]
 
 { #category : 'navigation' }
-FASTTypescriptConditional_type >> rightGroup [
+FASTTypescriptConditionalType >> rightGroup [
 	<generated>
 	<navigation: 'Right'>
 	^ MooseSpecializedGroup with: self right
