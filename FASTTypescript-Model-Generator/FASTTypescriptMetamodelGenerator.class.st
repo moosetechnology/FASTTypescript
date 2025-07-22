@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_export_specifier',
 		'_intersection_type',
 		'_super',
 		'_update_expression',
@@ -197,7 +196,8 @@ Class {
 		'extendsTypeClause',
 		'addingTypeAnnotation',
 		'augmentedAssignmentExpression',
-		'variableDeclaration'
+		'variableDeclaration',
+		'exportSpecifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -255,7 +255,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	exportStatement := builder ensureClassNamed: #ExportStatement.
 	_namespace_export := builder ensureClassNamed: #Namespace_export.
 	exportClause := builder ensureClassNamed: #ExportClause.
-	_export_specifier := builder ensureClassNamed: #Export_specifier.
+	exportSpecifier := builder ensureClassNamed: #ExportSpecifier.
 	import := builder ensureClassNamed: #Import.
 	importStatement := builder ensureClassNamed: #ImportStatement.
 	importClause := builder ensureClassNamed: #ImportClause.
@@ -721,11 +721,11 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>-
 	((tExpression property: #memberExpressionOwner) comment: 'My owner').
 
-	((_export_specifier property: #name) comment: 'name')
+	((exportSpecifier property: #name) comment: 'name')
 	<>-
 	((identifier property: #exportSpecifierOwner) comment: 'My owner').
 	
-	((_export_specifier property: #alias) comment:
+	((exportSpecifier property: #alias) comment:
 		 'My alias in case it exists')
 	<>- ((tOptionalField property: #identifierOwner) comment: 'My owner').
 	

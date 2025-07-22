@@ -15,14 +15,14 @@
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptConditionalType` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptConditionalType` | The right operand (if possible)|
 | `consequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypescriptConditionalType` | Consequence owner|
-| `exportSpecifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptExport_specifier` | My owner|
+| `exportSpecifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptExportSpecifier` | My owner|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptForInStatement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptForInStatement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
 | `identifierOwner` | `FASTTypescriptIdentifier` | `value` | `FASTTypescriptExtendsClause` | My owner|
+| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExportSpecifier` | My owner|
 | `identifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptIndexSignature` | The owner of this identifier|
-| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `nestedIdentifierOwner` | `FASTTypescriptIdentifier` | `object` | `FASTTypescriptNestedIdentifier` | The owner of this identifier|
@@ -53,7 +53,7 @@ Class {
 	#traits : 'FASTTExpression + FASTTypescriptTOptionalField',
 	#classTraits : 'FASTTExpression classTrait + FASTTypescriptTOptionalField classTrait',
 	#instVars : [
-		'#exportSpecifierOwner => FMOne type: #FASTTypescriptExport_specifier opposite: #name',
+		'#exportSpecifierOwner => FMOne type: #FASTTypescriptExportSpecifier opposite: #name',
 		'#identifierOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #name',
 		'#nestedIdentifierOwner => FMOne type: #FASTTypescriptNestedIdentifier opposite: #object',
 		'#optionalParameterOwner => FMOne type: #FASTTypescriptOptionalParameter opposite: #pattern',
@@ -76,7 +76,7 @@ FASTTypescriptIdentifier class >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptIdentifier >> exportSpecifierOwner [
-	"Relation named: #exportSpecifierOwner type: #FASTTypescriptExport_specifier opposite: #name"
+	"Relation named: #exportSpecifierOwner type: #FASTTypescriptExportSpecifier opposite: #name"
 
 	<generated>
 	<FMComment: 'My owner'>

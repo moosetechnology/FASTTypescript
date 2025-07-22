@@ -7,7 +7,7 @@ I represent optional field in Typescript
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
+| `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExportSpecifier` | My owner|
 | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
 
 
@@ -16,7 +16,7 @@ I represent optional field in Typescript
 Trait {
 	#name : 'FASTTypescriptTOptionalField',
 	#instVars : [
-		'#identifierOwner => FMOne type: #FASTTypescriptExport_specifier opposite: #alias',
+		'#identifierOwner => FMOne type: #FASTTypescriptExportSpecifier opposite: #alias',
 		'#typeAnnotationOwner => FMOne type: #FASTTypescriptMethod_definition opposite: #return_type'
 	],
 	#category : 'FASTTypescript-Model-Traits',
@@ -35,7 +35,7 @@ FASTTypescriptTOptionalField classSide >> annotation [
 
 { #category : 'accessing' }
 FASTTypescriptTOptionalField >> identifierOwner [
-	"Relation named: #identifierOwner type: #FASTTypescriptExport_specifier opposite: #alias"
+	"Relation named: #identifierOwner type: #FASTTypescriptExportSpecifier opposite: #alias"
 
 	<generated>
 	<FMComment: 'My owner'>

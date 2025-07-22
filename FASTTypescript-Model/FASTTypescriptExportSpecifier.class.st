@@ -5,18 +5,18 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `alias` | `FASTTypescriptExport_specifier` | `identifierOwner` | `FASTTypescriptTOptionalField` | My alias in case it exists|
-| `name` | `FASTTypescriptExport_specifier` | `exportSpecifierOwner` | `FASTTypescriptIdentifier` | name|
+| `alias` | `FASTTypescriptExportSpecifier` | `identifierOwner` | `FASTTypescriptTOptionalField` | My alias in case it exists|
+| `name` | `FASTTypescriptExportSpecifier` | `exportSpecifierOwner` | `FASTTypescriptIdentifier` | name|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptExport_specifier',
+	#name : 'FASTTypescriptExportSpecifier',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
-		'#alias => FMOne type: #FASTTypescriptTOptionalField opposite: #identifierOwner',
-		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #exportSpecifierOwner'
+		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #exportSpecifierOwner',
+		'#alias => FMOne type: #FASTTypescriptTOptionalField opposite: #identifierOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -24,16 +24,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptExport_specifier class >> annotation [
+FASTTypescriptExportSpecifier class >> annotation [
 
-	<FMClass: #Export_specifier super: #FASTTypescriptEntity>
+	<FMClass: #ExportSpecifier super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptExportSpecifier class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptExport_specifier }
+]
+
 { #category : 'accessing' }
-FASTTypescriptExport_specifier >> alias [
+FASTTypescriptExportSpecifier >> alias [
 	"Relation named: #alias type: #FASTTypescriptTOptionalField opposite: #identifierOwner"
 
 	<generated>
@@ -42,21 +48,21 @@ FASTTypescriptExport_specifier >> alias [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptExport_specifier >> alias: anObject [
+FASTTypescriptExportSpecifier >> alias: anObject [
 
 	<generated>
 	alias := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptExport_specifier >> aliasGroup [
+FASTTypescriptExportSpecifier >> aliasGroup [
 	<generated>
 	<navigation: 'Alias'>
 	^ MooseSpecializedGroup with: self alias
 ]
 
 { #category : 'accessing' }
-FASTTypescriptExport_specifier >> name [
+FASTTypescriptExportSpecifier >> name [
 	"Relation named: #name type: #FASTTypescriptIdentifier opposite: #exportSpecifierOwner"
 
 	<generated>
@@ -65,14 +71,14 @@ FASTTypescriptExport_specifier >> name [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptExport_specifier >> name: anObject [
+FASTTypescriptExportSpecifier >> name: anObject [
 
 	<generated>
 	name := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptExport_specifier >> nameGroup [
+FASTTypescriptExportSpecifier >> nameGroup [
 	<generated>
 	<navigation: 'Name'>
 	^ MooseSpecializedGroup with: self name
