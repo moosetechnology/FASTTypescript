@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_index_type_query',
 		'_for_in_statement',
 		'_generator_function',
 		'_type_predicate',
@@ -197,7 +196,8 @@ Class {
 		'typeAnnotation',
 		'nonNullExpression',
 		'objectType',
-		'shorthandPropertyIdentifier'
+		'shorthandPropertyIdentifier',
+		'indexTypeQuery'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -390,7 +390,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation.
 	memberExpression := builder ensureClassNamed: #Member_expression. 
 	typeQuery := builder ensureClassNamed: #TypeQuery.
-	_index_type_query := builder ensureClassNamed: #Index_type_query.
+	indexTypeQuery := builder ensureClassNamed: #IndexTypeQuery.
 	lookupType := builder ensureClassNamed: #LookupType.
 	_mapped_type_clause := builder ensureClassNamed: #Mapped_type_clause.
 	literalType := builder ensureClassNamed: #LiteralType. 

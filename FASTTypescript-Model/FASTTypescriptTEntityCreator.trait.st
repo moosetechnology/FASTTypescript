@@ -588,10 +588,10 @@ FASTTypescriptTEntityCreator >> newIndexSignature [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newIndex_type_query [
+FASTTypescriptTEntityCreator >> newIndexTypeQuery [
 
 	<generated>
-	^ self add: FASTTypescriptIndex_type_query new
+	^ self add: FASTTypescriptIndexTypeQuery new
 ]
 
 { #category : 'entity creation' }
