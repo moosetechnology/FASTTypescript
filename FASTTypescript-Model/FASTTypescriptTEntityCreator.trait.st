@@ -847,10 +847,10 @@ FASTTypescriptTEntityCreator >> newOptionalParameter [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newOptional_type [
+FASTTypescriptTEntityCreator >> newOptionalType [
 
 	<generated>
-	^ self add: FASTTypescriptOptional_type new
+	^ self add: FASTTypescriptOptionalType new
 ]
 
 { #category : 'entity creation' }

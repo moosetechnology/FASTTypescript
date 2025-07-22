@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_optional_type',
 		'_expression_statement',
 		'_class_static_block',
 		'_extends_type_clause',
@@ -197,7 +196,8 @@ Class {
 		'mappedTypeClause',
 		'statementBlock',
 		'functionSignature',
-		'continueStatement'
+		'continueStatement',
+		'optionalType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -378,7 +378,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	asserts := builder ensureClassNamed: #Asserts.
 	assertsAnnotation := builder ensureClassNamed: #AssertsAnnotation.
 	_required_parameter := builder ensureClassNamed: #Required_parameter.
-	_optional_type := builder ensureClassNamed: #Optional_type.
+	optionalType := builder ensureClassNamed: #OptionalType.
 	restType := builder ensureClassNamed: #RestType.
 	constructorType := builder ensureClassNamed: #ConstructorType.
 	templateType := builder ensureClassNamed: #TemplateType.
