@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_object_type',
 		'_shorthand_property_identifier',
 		'_index_type_query',
 		'_for_in_statement',
@@ -197,7 +196,8 @@ Class {
 		'pairPattern',
 		'importRequireClause',
 		'typeAnnotation',
-		'nonNullExpression'
+		'nonNullExpression',
+		'objectType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -399,7 +399,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	parenthesizedType := builder ensureClassNamed: #ParenthesizedType.
 	_predefined_type := builder ensureClassNamed: #Predefined_type.
 	_type_arguments := builder ensureClassNamed: #Type_arguments.
-	_object_type := builder ensureClassNamed: #Object_type.
+	objectType := builder ensureClassNamed: #ObjectType.
 	callSignature := builder ensureClassNamed: #CallSignature.
 	_property_signature := builder ensureClassNamed: #Property_signature.
 	typeParameters := builder ensureClassNamed: #TypeParameters.
@@ -495,7 +495,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	_predefined_type --|> tExpression.
 	genericType --|> tExpression.
 	arrayType --|> tExpression.
-	_object_type --|> tExpression.
+	objectType --|> tExpression.
 	privatePropertyIdentifier --|> tExpression.
 	propertyIdentifier --|> tExpression.
 	class --|> tExpression.

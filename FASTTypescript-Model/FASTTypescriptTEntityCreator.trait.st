@@ -812,10 +812,10 @@ FASTTypescriptTEntityCreator >> newObjectPattern [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newObject_type [
+FASTTypescriptTEntityCreator >> newObjectType [
 
 	<generated>
-	^ self add: FASTTypescriptObject_type new
+	^ self add: FASTTypescriptObjectType new
 ]
 
 { #category : 'entity creation' }
