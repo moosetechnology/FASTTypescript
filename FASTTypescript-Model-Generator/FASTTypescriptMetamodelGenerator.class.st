@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_continue_statement',
 		'_optional_type',
 		'_expression_statement',
 		'_class_static_block',
@@ -197,7 +196,8 @@ Class {
 		'overrideModifier',
 		'mappedTypeClause',
 		'statementBlock',
-		'functionSignature'
+		'functionSignature',
+		'continueStatement'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -278,7 +278,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	tryStatement := builder ensureClassNamed: #TryStatement.
 	withStatement := builder ensureClassNamed: #WithStatement.
 	breakStatement := builder ensureClassNamed: #BreakStatement.
-	_continue_statement := builder ensureClassNamed: #Continue_statement.
+	continueStatement := builder ensureClassNamed: #ContinueStatement.
 	debuggerStatement := builder ensureClassNamed: #DebuggerStatement.
 	returnStatement := builder ensureClassNamed: #ReturnStatement.
 	throwStatement := builder ensureClassNamed: #ThrowStatement.

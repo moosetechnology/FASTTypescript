@@ -266,10 +266,10 @@ FASTTypescriptTEntityCreator >> newConstructorType [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newContinue_statement [
+FASTTypescriptTEntityCreator >> newContinueStatement [
 
 	<generated>
-	^ self add: FASTTypescriptContinue_statement new
+	^ self add: FASTTypescriptContinueStatement new
 ]
 
 { #category : 'entity creation' }
