@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_augmented_assignment_expression',
 		'_variable_declaration',
 		'_export_specifier',
 		'_intersection_type',
@@ -197,7 +196,8 @@ Class {
 		'expressionStatement',
 		'classStaticBlock',
 		'extendsTypeClause',
-		'addingTypeAnnotation'
+		'addingTypeAnnotation',
+		'augmentedAssignmentExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -316,7 +316,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	memberExpression := builder ensureClassNamed: #MemberExpression.
 	subscriptExpression := builder ensureClassNamed: #SubscriptExpression.
 	assignmentExpression := builder ensureClassNamed: #AssignmentExpression.
-	_augmented_assignment_expression := builder ensureClassNamed: #Augmented_assignment_expression.
+	augmentedAssignmentExpression := builder ensureClassNamed: #AugmentedAssignmentExpression.
 	spreadElement := builder ensureClassNamed: #SpreadElement.
 	_ternary_expression := builder ensureClassNamed: #Ternary_expression.
 	binaryExpression := builder ensureClassNamed: #BinaryExpression.
@@ -511,7 +511,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	callExpression --|> expression.
 	asExpression --|> expression.
 	assignmentExpression --|> expression.
-	_augmented_assignment_expression --|> expression.
+	augmentedAssignmentExpression --|> expression.
 	awaitExpression --|> expression.
 	functionExpression --|> expression.
 	instantiationExpression --|> expression.
@@ -677,11 +677,11 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((statementBlock property: #ifStatementOwner) comment:
 			 'The owner of this statement block').
 
-	((_augmented_assignment_expression property: #left) comment: 'left')
+	((augmentedAssignmentExpression property: #left) comment: 'left')
 	<>- ((tExpression property: #augmentedAssignmentExpressionLeftOwner)
 			 comment: 'The left operand (if possible)').
 
-	((_augmented_assignment_expression property: #right) comment: 'right')
+	((augmentedAssignmentExpression property: #right) comment: 'right')
 	<>-
 		((tExpression property: #augmentedAssignmentExpressionRightOwner)
 			 comment: 'The right operand (if possible)').

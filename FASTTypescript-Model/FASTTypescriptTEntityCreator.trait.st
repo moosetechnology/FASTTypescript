@@ -126,10 +126,10 @@ FASTTypescriptTEntityCreator >> newAssignmentPattern [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newAugmented_assignment_expression [
+FASTTypescriptTEntityCreator >> newAugmentedAssignmentExpression [
 
 	<generated>
-	^ self add: FASTTypescriptAugmented_assignment_expression new
+	^ self add: FASTTypescriptAugmentedAssignmentExpression new
 ]
 
 { #category : 'entity creation' }

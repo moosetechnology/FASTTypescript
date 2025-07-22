@@ -8,8 +8,8 @@
 | `alternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypescriptConditionalType` | Alternative owner|
 | `argumentOwner` | `FASTTExpression` | `arguments` | `FASTTWithArguments` | my owner|
 | `assignedIn` | `FASTTExpression` | `expression` | `FASTTAssignment` | Optional assignment where this expression is used|
-| `augmentedAssignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptAugmented_assignment_expression` | The left operand (if possible)|
-| `augmentedAssignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptAugmented_assignment_expression` | The right operand (if possible)|
+| `augmentedAssignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptAugmentedAssignmentExpression` | The left operand (if possible)|
+| `augmentedAssignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptAugmentedAssignmentExpression` | The right operand (if possible)|
 | `binaryExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptBinaryExpression` | The left operand (if possible)|
 | `binaryExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptBinaryExpression` | The right operand (if possible)|
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptConditionalType` | The left operand (if possible)|
@@ -23,15 +23,15 @@
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
 | `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptGenericType` | The owner of this type identifier|
 | `indexSignatureOwner` | `FASTTypescriptTypeIdentifier` | `index_type` | `FASTTypescriptIndexSignature` | The owner of this index type|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
+| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
-| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptInterfaceDeclaration` | My owner|
 | `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptClassDeclaration` | My owner|
+| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptInterfaceDeclaration` | My owner|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnaryExpression` | The owner of this class|
 
 
