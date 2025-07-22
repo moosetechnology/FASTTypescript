@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_infer_type',
 		'_if_statement',
 		'_named_imports',
 		'_object_pattern',
@@ -197,7 +196,8 @@ Class {
 		'implementsClause',
 		'callExpression',
 		'ambientDeclaration',
-		'templateType'
+		'templateType',
+		'inferType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -383,7 +383,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	constructorType := builder ensureClassNamed: #ConstructorType.
 	templateType := builder ensureClassNamed: #TemplateType.
 	templateLiteralType := builder ensureClassNamed: #TemplateLiteralType.
-	_infer_type := builder ensureClassNamed: #Infer_type.
+	inferType := builder ensureClassNamed: #InferType.
 	conditionalType := builder ensureClassNamed: #ConditionalType.
 	genericType := builder ensureClassNamed: #GenericType.
 	_type_predicate := builder ensureClassNamed: #Type_predicate.

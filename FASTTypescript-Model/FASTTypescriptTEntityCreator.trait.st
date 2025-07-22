@@ -595,10 +595,10 @@ FASTTypescriptTEntityCreator >> newIndex_type_query [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newInfer_type [
+FASTTypescriptTEntityCreator >> newInferType [
 
 	<generated>
-	^ self add: FASTTypescriptInfer_type new
+	^ self add: FASTTypescriptInferType new
 ]
 
 { #category : 'entity creation' }
