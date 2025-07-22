@@ -6,7 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_property_signature',
 		'_switch_case',
 		'entity',
 		'compilationUnit',
@@ -197,7 +196,8 @@ Class {
 		'defaultType',
 		'ternaryExpression',
 		'whileStatement',
-		'methodDefinition'
+		'methodDefinition',
+		'propertySignature'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -398,7 +398,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	typeArguments := builder ensureClassNamed: #TypeArguments.
 	objectType := builder ensureClassNamed: #ObjectType.
 	callSignature := builder ensureClassNamed: #CallSignature.
-	_property_signature := builder ensureClassNamed: #Property_signature.
+	propertySignature := builder ensureClassNamed: #PropertySignature.
 	typeParameters := builder ensureClassNamed: #TypeParameters.
 	typeParameter := builder ensureClassNamed: #TypeParameter.
 	defaultType := builder ensureClassNamed: #DefaultType.

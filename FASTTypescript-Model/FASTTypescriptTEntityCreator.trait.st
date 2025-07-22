@@ -917,10 +917,10 @@ FASTTypescriptTEntityCreator >> newPropertyIdentifier [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newProperty_signature [
+FASTTypescriptTEntityCreator >> newPropertySignature [
 
 	<generated>
-	^ self add: FASTTypescriptProperty_signature new
+	^ self add: FASTTypescriptPropertySignature new
 ]
 
 { #category : 'entity creation' }
