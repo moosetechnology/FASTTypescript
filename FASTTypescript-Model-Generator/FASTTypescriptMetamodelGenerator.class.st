@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_namespace_import',
 		'_object_assignment_pattern',
 		'_computed_property_name',
 		'_type_parameter',
@@ -197,7 +196,8 @@ Class {
 		'arrayPattern',
 		'finallyClause',
 		'extendsClause',
-		'genericType'
+		'genericType',
+		'namespaceImport'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -259,7 +259,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	import := builder ensureClassNamed: #Import.
 	importStatement := builder ensureClassNamed: #ImportStatement.
 	importClause := builder ensureClassNamed: #ImportClause.
-	_namespace_import := builder ensureClassNamed: #Namespace_import.
+	namespaceImport := builder ensureClassNamed: #NamespaceImport.
 	_named_imports := builder ensureClassNamed: #Named_imports.
 	_import_specifier := builder ensureClassNamed: #Import_specifier.
 	_import_attribute := builder ensureClassNamed: #Import_attribute.

@@ -728,17 +728,17 @@ FASTTypescriptTEntityCreator >> newNamed_imports [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newNamespaceImport [
+
+	<generated>
+	^ self add: FASTTypescriptNamespaceImport new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newNamespace_export [
 
 	<generated>
 	^ self add: FASTTypescriptNamespace_export new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newNamespace_import [
-
-	<generated>
-	^ self add: FASTTypescriptNamespace_import new
 ]
 
 { #category : 'entity creation' }
