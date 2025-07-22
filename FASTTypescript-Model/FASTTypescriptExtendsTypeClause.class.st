@@ -5,13 +5,13 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `type` | `FASTTypescriptExtends_type_clause` | `extendsTypeClauseOwner` | `FASTTypescriptTypeIdentifier` | My type identifier|
+| `type` | `FASTTypescriptExtendsTypeClause` | `extendsTypeClauseOwner` | `FASTTypescriptTypeIdentifier` | My type identifier|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptExtends_type_clause',
+	#name : 'FASTTypescriptExtendsTypeClause',
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#type => FMOne type: #FASTTypescriptTypeIdentifier opposite: #extendsTypeClauseOwner'
@@ -22,16 +22,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptExtends_type_clause class >> annotation [
+FASTTypescriptExtendsTypeClause class >> annotation [
 
-	<FMClass: #Extends_type_clause super: #FASTTypescriptEntity>
+	<FMClass: #ExtendsTypeClause super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptExtendsTypeClause class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptExtends_type_clause }
+]
+
 { #category : 'accessing' }
-FASTTypescriptExtends_type_clause >> type [
+FASTTypescriptExtendsTypeClause >> type [
 	"Relation named: #type type: #FASTTypescriptTypeIdentifier opposite: #extendsTypeClauseOwner"
 
 	<generated>
@@ -40,14 +46,14 @@ FASTTypescriptExtends_type_clause >> type [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptExtends_type_clause >> type: anObject [
+FASTTypescriptExtendsTypeClause >> type: anObject [
 
 	<generated>
 	type := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptExtends_type_clause >> typeGroup [
+FASTTypescriptExtendsTypeClause >> typeGroup [
 	<generated>
 	<navigation: 'Type'>
 	^ MooseSpecializedGroup with: self type

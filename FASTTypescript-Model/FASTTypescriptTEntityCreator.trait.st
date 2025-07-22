@@ -399,10 +399,10 @@ FASTTypescriptTEntityCreator >> newExtendsClause [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newExtends_type_clause [
+FASTTypescriptTEntityCreator >> newExtendsTypeClause [
 
 	<generated>
-	^ self add: FASTTypescriptExtends_type_clause new
+	^ self add: FASTTypescriptExtendsTypeClause new
 ]
 
 { #category : 'entity creation' }

@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_extends_type_clause',
 		'_adding_type_annotation',
 		'_augmented_assignment_expression',
 		'_variable_declaration',
@@ -197,7 +196,8 @@ Class {
 		'continueStatement',
 		'optionalType',
 		'expressionStatement',
-		'classStaticBlock'
+		'classStaticBlock',
+		'extendsTypeClause'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -357,7 +357,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	importAlias := builder ensureClassNamed: #ImportAlias.
 	nestedTypeIdentifier := builder ensureClassNamed: #NestedTypeIdentifier.
 	interfaceDeclaration := builder ensureClassNamed: #InterfaceDeclaration.
-	_extends_type_clause := builder ensureClassNamed: #Extends_type_clause.
+	extendsTypeClause := builder ensureClassNamed: #ExtendsTypeClause.
 	
 	enumDeclaration := builder ensureClassNamed: #EnumDeclaration.
 	enumDeclaration withTesting.
@@ -610,7 +610,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 	<>- ((tExpression property: #unaryExpressionOwner) comment:
 			 'The owner of this class').
 
-	((_extends_type_clause property: #type) comment: 'My type identifier')
+	((extendsTypeClause property: #type) comment: 'My type identifier')
 	<>- ((typeIdentifier property: #extendsTypeClauseOwner) comment:
 			 'The owner of this type identifier').
 

@@ -17,21 +17,21 @@
 | `consequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypescriptConditionalType` | Consequence owner|
 | `constructorTypeOwner` | `FASTTypescriptTypeIdentifier` | `type` | `FASTTypescriptConstructorType` | The owner of this type identifier|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
-| `extendsTypeClauseOwner` | `FASTTypescriptTypeIdentifier` | `type` | `FASTTypescriptExtends_type_clause` | The owner of this type identifier|
+| `extendsTypeClauseOwner` | `FASTTypescriptTypeIdentifier` | `type` | `FASTTypescriptExtendsTypeClause` | The owner of this type identifier|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptForInStatement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptForInStatement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
 | `genericTypeOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptGenericType` | The owner of this type identifier|
 | `indexSignatureOwner` | `FASTTypescriptTypeIdentifier` | `index_type` | `FASTTypescriptIndexSignature` | The owner of this index type|
-| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
+| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
-| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptClassDeclaration` | My owner|
 | `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptInterfaceDeclaration` | My owner|
+| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptClassDeclaration` | My owner|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnaryExpression` | The owner of this class|
 
 
@@ -51,7 +51,7 @@ Class {
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
 		'#constructorTypeOwner => FMOne type: #FASTTypescriptConstructorType opposite: #type',
-		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtends_type_clause opposite: #type',
+		'#extendsTypeClauseOwner => FMOne type: #FASTTypescriptExtendsTypeClause opposite: #type',
 		'#genericTypeOwner => FMOne type: #FASTTypescriptGenericType opposite: #name',
 		'#indexSignatureOwner => FMOne type: #FASTTypescriptIndexSignature opposite: #index_type',
 		'#typeIdentifierOwner => FMOne type: #FASTTypescriptClassDeclaration opposite: #name'
@@ -103,7 +103,7 @@ FASTTypescriptTypeIdentifier >> constructorTypeOwnerGroup [
 
 { #category : 'accessing' }
 FASTTypescriptTypeIdentifier >> extendsTypeClauseOwner [
-	"Relation named: #extendsTypeClauseOwner type: #FASTTypescriptExtends_type_clause opposite: #type"
+	"Relation named: #extendsTypeClauseOwner type: #FASTTypescriptExtendsTypeClause opposite: #type"
 
 	<generated>
 	<FMComment: 'The owner of this type identifier'>
