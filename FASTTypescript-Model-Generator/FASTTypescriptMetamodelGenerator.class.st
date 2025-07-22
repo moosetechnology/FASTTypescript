@@ -6,7 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_switch_case',
 		'entity',
 		'compilationUnit',
 		'tEntity',
@@ -197,7 +196,8 @@ Class {
 		'ternaryExpression',
 		'whileStatement',
 		'methodDefinition',
-		'propertySignature'
+		'propertySignature',
+		'switchCase'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -283,7 +283,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	emptyStatement := builder ensureClassNamed: #EmptyStatement.
 	labeledStatement := builder ensureClassNamed: #LabeledStatement.
 	switchBody := builder ensureClassNamed: #SwitchBody.
-	_switch_case := builder ensureClassNamed: #Switch_case.
+	switchCase := builder ensureClassNamed: #SwitchCase.
 	switchDefault := builder ensureClassNamed: #SwitchDefault.
 	catchClause := builder ensureClassNamed: #CatchClause.
 	finallyClause := builder ensureClassNamed: #FinallyClause.

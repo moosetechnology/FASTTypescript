@@ -1071,6 +1071,13 @@ FASTTypescriptTEntityCreator >> newSwitchBody [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newSwitchCase [
+
+	<generated>
+	^ self add: FASTTypescriptSwitchCase new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newSwitchDefault [
 
 	<generated>
@@ -1082,13 +1089,6 @@ FASTTypescriptTEntityCreator >> newSwitchStatement [
 
 	<generated>
 	^ self add: FASTTypescriptSwitchStatement new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newSwitch_case [
-
-	<generated>
-	^ self add: FASTTypescriptSwitch_case new
 ]
 
 { #category : 'entity creation' }
