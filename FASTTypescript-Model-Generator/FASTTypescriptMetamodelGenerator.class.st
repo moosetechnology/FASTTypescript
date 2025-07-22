@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_yield_expression',
 		'_override_modifier',
 		'_mapped_type_clause',
 		'_statement_block',
@@ -197,7 +196,8 @@ Class {
 		'predefinedType',
 		'importSpecifier',
 		'abstractMethodSignature',
-		'assertsAnnotation'
+		'assertsAnnotation',
+		'yieldExpression'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -290,7 +290,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	catchClause := builder ensureClassNamed: #CatchClause.
 	finallyClause := builder ensureClassNamed: #FinallyClause.
 	parenthesizedExpression := builder ensureClassNamed: #ParenthesizedExpression.
-	_yield_expression := builder ensureClassNamed: #Yield_expression.
+	yieldExpression := builder ensureClassNamed: #YieldExpression.
 	object := builder ensureClassNamed: #Object.
 	objectPattern := builder ensureClassNamed: #ObjectPattern.
 	assignmentPattern := builder ensureClassNamed: #AssignmentPattern.
@@ -523,7 +523,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	subscriptExpression --|> expression.
 	_ternary_expression --|> expression.
 	_update_expression --|> expression.
-	_yield_expression --|> expression.
+	yieldExpression --|> expression.
 	object --|> expression.
 
 	"_function_type  --|> tWithParameters.	"

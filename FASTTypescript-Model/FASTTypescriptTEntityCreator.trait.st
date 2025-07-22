@@ -1295,8 +1295,8 @@ FASTTypescriptTEntityCreator >> newWithStatement [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newYield_expression [
+FASTTypescriptTEntityCreator >> newYieldExpression [
 
 	<generated>
-	^ self add: FASTTypescriptYield_expression new
+	^ self add: FASTTypescriptYieldExpression new
 ]
