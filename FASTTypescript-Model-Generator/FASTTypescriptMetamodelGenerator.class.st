@@ -371,7 +371,6 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	addingTypeAnnotation := builder ensureClassNamed: #AddingTypeAnnotation.
 	optingTypeAnnotation := builder ensureClassNamed: #OptingTypeAnnotation.
 	typeAnnotation := builder ensureClassNamed: #TypeAnnotation.
-	memberExpression := builder ensureClassNamed: #Member_expression.
 	callExpression := builder ensureClassNamed: #CallExpression.
 	asserts := builder ensureClassNamed: #Asserts.
 	assertsAnnotation := builder ensureClassNamed: #AssertsAnnotation. 
