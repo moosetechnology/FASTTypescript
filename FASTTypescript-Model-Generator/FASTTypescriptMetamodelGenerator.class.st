@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_import_specifier',
 		'_abstract_method_signature',
 		'_asserts_annotation',
 		'_yield_expression',
@@ -197,7 +196,8 @@ Class {
 		'tupleType',
 		'optingTypeAnnotation',
 		'internalModule',
-		'predefinedType'
+		'predefinedType',
+		'importSpecifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -261,7 +261,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	importClause := builder ensureClassNamed: #ImportClause.
 	namespaceImport := builder ensureClassNamed: #NamespaceImport.
 	namedImports := builder ensureClassNamed: #NamedImports.
-	_import_specifier := builder ensureClassNamed: #Import_specifier.
+	importSpecifier := builder ensureClassNamed: #ImportSpecifier.
 	_import_attribute := builder ensureClassNamed: #Import_attribute.
 	_expression_statement := builder ensureClassNamed: #Expression_statement.
 	_variable_declaration := builder ensureClassNamed: #Variable_declaration.

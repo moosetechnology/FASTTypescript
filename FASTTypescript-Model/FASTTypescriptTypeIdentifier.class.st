@@ -30,8 +30,8 @@
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
-| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptClassDeclaration` | My owner|
 | `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptInterfaceDeclaration` | My owner|
+| `typeIdentifierOwner` | `FASTTypescriptTypeIdentifier` | `name` | `FASTTypescriptClassDeclaration` | My owner|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypescriptUnaryExpression` | The owner of this class|
 
 
