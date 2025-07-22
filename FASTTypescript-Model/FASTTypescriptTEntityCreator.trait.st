@@ -252,10 +252,10 @@ FASTTypescriptTEntityCreator >> newConstraint [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newConstruct_signature [
+FASTTypescriptTEntityCreator >> newConstructSignature [
 
 	<generated>
-	^ self add: FASTTypescriptConstruct_signature new
+	^ self add: FASTTypescriptConstructSignature new
 ]
 
 { #category : 'entity creation' }

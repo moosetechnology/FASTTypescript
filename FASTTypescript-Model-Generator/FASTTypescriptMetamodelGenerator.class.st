@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_construct_signature',
 		'_flow_maybe_type',
 		'_array_pattern',
 		'_finally_clause',
@@ -197,7 +196,8 @@ Class {
 		'optionalParameter',
 		'constructorType',
 		'conditionalType',
-		'parenthesizedType'
+		'parenthesizedType',
+		'constructSignature'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -410,7 +410,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	_type_parameter := builder ensureClassNamed: #Type_parameter.
 	_default_type := builder ensureClassNamed: #Default_type.
 	constraint := builder ensureClassNamed: #Constraint.
-	_construct_signature := builder ensureClassNamed: #Construct_signature.
+	constructSignature := builder ensureClassNamed: #ConstructSignature.
 	indexSignature := builder ensureClassNamed: #IndexSignature.
 	arrayType := builder ensureClassNamed: #ArrayType.
 	_tuple_type := builder ensureClassNamed: #Tuple_type.
