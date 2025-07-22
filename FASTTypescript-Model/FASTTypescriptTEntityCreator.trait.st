@@ -791,10 +791,10 @@ FASTTypescriptTEntityCreator >> newObject [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newObject_assignment_pattern [
+FASTTypescriptTEntityCreator >> newObjectAssignmentPattern [
 
 	<generated>
-	^ self add: FASTTypescriptObject_assignment_pattern new
+	^ self add: FASTTypescriptObjectAssignmentPattern new
 ]
 
 { #category : 'entity creation' }
