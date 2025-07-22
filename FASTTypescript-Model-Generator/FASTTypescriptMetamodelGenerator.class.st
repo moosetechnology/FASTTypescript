@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_type_parameter',
 		'_template_substitution',
 		'_instantiation_expression',
 		'_member_expression',
@@ -197,7 +196,8 @@ Class {
 		'genericType',
 		'namespaceImport',
 		'objectAssignmentPattern',
-		'computedPropertyName'
+		'computedPropertyName',
+		'typeParameter'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -407,7 +407,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	callSignature := builder ensureClassNamed: #CallSignature.
 	_property_signature := builder ensureClassNamed: #Property_signature.
 	typeParameters := builder ensureClassNamed: #TypeParameters.
-	_type_parameter := builder ensureClassNamed: #Type_parameter.
+	typeParameter := builder ensureClassNamed: #TypeParameter.
 	_default_type := builder ensureClassNamed: #Default_type.
 	constraint := builder ensureClassNamed: #Constraint.
 	constructSignature := builder ensureClassNamed: #ConstructSignature.
