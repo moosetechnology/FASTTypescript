@@ -7,7 +7,7 @@
 |---|
 | `index_type` | `FASTTypescriptIndexSignature` | `indexSignatureOwner` | `FASTTypescriptTypeIdentifier` | My type|
 | `name` | `FASTTypescriptIndexSignature` | `identifierOwner` | `FASTTypescriptIdentifier` | My name|
-| `type` | `FASTTypescriptIndexSignature` | `indexSignatureOwner` | `FASTTypescriptType_annotation` | My annotation type|
+| `type` | `FASTTypescriptIndexSignature` | `indexSignatureOwner` | `FASTTypescriptTypeAnnotation` | My annotation type|
 
 
 
@@ -18,7 +18,7 @@ Class {
 	#instVars : [
 		'#index_type => FMOne type: #FASTTypescriptTypeIdentifier opposite: #indexSignatureOwner',
 		'#name => FMOne type: #FASTTypescriptIdentifier opposite: #identifierOwner',
-		'#type => FMOne type: #FASTTypescriptType_annotation opposite: #indexSignatureOwner'
+		'#type => FMOne type: #FASTTypescriptTypeAnnotation opposite: #indexSignatureOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -88,7 +88,7 @@ FASTTypescriptIndexSignature >> nameGroup [
 
 { #category : 'accessing' }
 FASTTypescriptIndexSignature >> type [
-	"Relation named: #type type: #FASTTypescriptType_annotation opposite: #indexSignatureOwner"
+	"Relation named: #type type: #FASTTypescriptTypeAnnotation opposite: #indexSignatureOwner"
 
 	<generated>
 	<FMComment: 'My annotation type'>

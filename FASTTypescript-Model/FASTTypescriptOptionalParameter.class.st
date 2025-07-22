@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `pattern` | `FASTTypescriptOptionalParameter` | `optionalParameterOwner` | `FASTTypescriptIdentifier` | My pattern as identifier|
-| `type` | `FASTTypescriptOptionalParameter` | `optionalParameterOwner` | `FASTTypescriptType_annotation` | My type as type annotation|
+| `type` | `FASTTypescriptOptionalParameter` | `optionalParameterOwner` | `FASTTypescriptTypeAnnotation` | My type as type annotation|
 
 
 
@@ -16,7 +16,7 @@ Class {
 	#superclass : 'FASTTypescriptEntity',
 	#instVars : [
 		'#pattern => FMOne type: #FASTTypescriptIdentifier opposite: #optionalParameterOwner',
-		'#type => FMOne type: #FASTTypescriptType_annotation opposite: #optionalParameterOwner'
+		'#type => FMOne type: #FASTTypescriptTypeAnnotation opposite: #optionalParameterOwner'
 	],
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -63,7 +63,7 @@ FASTTypescriptOptionalParameter >> patternGroup [
 
 { #category : 'accessing' }
 FASTTypescriptOptionalParameter >> type [
-	"Relation named: #type type: #FASTTypescriptType_annotation opposite: #optionalParameterOwner"
+	"Relation named: #type type: #FASTTypescriptTypeAnnotation opposite: #optionalParameterOwner"
 
 	<generated>
 	<FMComment: 'My type as type annotation'>

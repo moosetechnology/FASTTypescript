@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_type_annotation',
 		'_non_null_expression',
 		'_object_type',
 		'_shorthand_property_identifier',
@@ -197,7 +196,8 @@ Class {
 		'objectPattern',
 		'awaitExpression',
 		'pairPattern',
-		'importRequireClause'
+		'importRequireClause',
+		'typeAnnotation'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -372,7 +372,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	omittingTypeAnnotation := builder ensureClassNamed: #OmittingTypeAnnotation.
 	_adding_type_annotation := builder ensureClassNamed: #Adding_type_annotation.
 	_opting_type_annotation := builder ensureClassNamed: #Opting_type_annotation.
-	_type_annotation := builder ensureClassNamed: #Type_annotation.
+	typeAnnotation := builder ensureClassNamed: #TypeAnnotation.
 	memberExpression := builder ensureClassNamed: #Member_expression.
 	callExpression := builder ensureClassNamed: #CallExpression.
 	asserts := builder ensureClassNamed: #Asserts.
@@ -480,7 +480,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 	enumDeclaration --|> tWithModifiers.
 	enumDeclaration --|> tStatement.
 	
-	_type_annotation --|> tOptionalField.
+	typeAnnotation --|> tOptionalField.
 	identifier --|> tOptionalField.
 	_type_arguments --|> tOptionalField.
 	
@@ -591,7 +591,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 			 'The owner of this index type').
 
 	((indexSignature property: #type) comment: 'My annotation type')
-	<>- ((_type_annotation property: #indexSignatureOwner) comment:
+	<>- ((typeAnnotation property: #indexSignatureOwner) comment:
 			 'The owner of this annotation type').
 	
 	((indexSignature property: #name) comment: 'My name')
@@ -658,7 +658,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 
 	((optionalParameter property: #type) comment:
 		 'My type as type annotation')
-	<>- ((_type_annotation property: #optionalParameterOwner) comment:
+	<>- ((typeAnnotation property: #optionalParameterOwner) comment:
 			 'The owner of this type annotation').
 
 	((optionalParameter property: #pattern) comment:

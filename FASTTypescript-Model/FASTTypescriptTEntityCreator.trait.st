@@ -1176,6 +1176,13 @@ FASTTypescriptTEntityCreator >> newTypeAliasDeclaration [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newTypeAnnotation [
+
+	<generated>
+	^ self add: FASTTypescriptTypeAnnotation new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newTypeAssertion [
 
 	<generated>
@@ -1215,13 +1222,6 @@ FASTTypescriptTEntityCreator >> newTypeQuery [
 
 	<generated>
 	^ self add: FASTTypescriptTypeQuery new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newType_annotation [
-
-	<generated>
-	^ self add: FASTTypescriptType_annotation new
 ]
 
 { #category : 'entity creation' }

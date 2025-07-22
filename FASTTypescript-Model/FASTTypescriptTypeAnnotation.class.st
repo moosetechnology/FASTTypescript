@@ -6,15 +6,15 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExport_specifier` | My owner|
-| `indexSignatureOwner` | `FASTTypescriptType_annotation` | `type` | `FASTTypescriptIndexSignature` | The owner of this annotation type|
-| `optionalParameterOwner` | `FASTTypescriptType_annotation` | `type` | `FASTTypescriptOptionalParameter` | The owner of this type annotation|
+| `indexSignatureOwner` | `FASTTypescriptTypeAnnotation` | `type` | `FASTTypescriptIndexSignature` | The owner of this annotation type|
+| `optionalParameterOwner` | `FASTTypescriptTypeAnnotation` | `type` | `FASTTypescriptOptionalParameter` | The owner of this type annotation|
 | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethod_definition` | My owner|
 
 
 
 "
 Class {
-	#name : 'FASTTypescriptType_annotation',
+	#name : 'FASTTypescriptTypeAnnotation',
 	#superclass : 'FASTTypescriptEntity',
 	#traits : 'FASTTypescriptTOptionalField',
 	#classTraits : 'FASTTypescriptTOptionalField classTrait',
@@ -28,16 +28,22 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptType_annotation class >> annotation [
+FASTTypescriptTypeAnnotation class >> annotation [
 
-	<FMClass: #Type_annotation super: #FASTTypescriptEntity>
+	<FMClass: #TypeAnnotation super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypescriptTypeAnnotation class >> initialize [ 
+
+	self deprecatedAliases: { #FASTTypescriptType_annotation }
+]
+
 { #category : 'accessing' }
-FASTTypescriptType_annotation >> indexSignatureOwner [
+FASTTypescriptTypeAnnotation >> indexSignatureOwner [
 	"Relation named: #indexSignatureOwner type: #FASTTypescriptIndexSignature opposite: #type"
 
 	<generated>
@@ -48,21 +54,21 @@ FASTTypescriptType_annotation >> indexSignatureOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_annotation >> indexSignatureOwner: anObject [
+FASTTypescriptTypeAnnotation >> indexSignatureOwner: anObject [
 
 	<generated>
 	indexSignatureOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptType_annotation >> indexSignatureOwnerGroup [
+FASTTypescriptTypeAnnotation >> indexSignatureOwnerGroup [
 	<generated>
 	<navigation: 'IndexSignatureOwner'>
 	^ MooseSpecializedGroup with: self indexSignatureOwner
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_annotation >> optionalParameterOwner [
+FASTTypescriptTypeAnnotation >> optionalParameterOwner [
 	"Relation named: #optionalParameterOwner type: #FASTTypescriptOptionalParameter opposite: #type"
 
 	<generated>
@@ -73,14 +79,14 @@ FASTTypescriptType_annotation >> optionalParameterOwner [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptType_annotation >> optionalParameterOwner: anObject [
+FASTTypescriptTypeAnnotation >> optionalParameterOwner: anObject [
 
 	<generated>
 	optionalParameterOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypescriptType_annotation >> optionalParameterOwnerGroup [
+FASTTypescriptTypeAnnotation >> optionalParameterOwnerGroup [
 	<generated>
 	<navigation: 'OptionalParameterOwner'>
 	^ MooseSpecializedGroup with: self optionalParameterOwner
