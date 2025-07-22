@@ -476,17 +476,17 @@ FASTTypescriptTEntityCreator >> newFunction_signature [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newGeneratorFunction [
+
+	<generated>
+	^ self add: FASTTypescriptGeneratorFunction new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newGeneratorFunctionDeclaration [
 
 	<generated>
 	^ self add: FASTTypescriptGeneratorFunctionDeclaration new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newGenerator_function [
-
-	<generated>
-	^ self add: FASTTypescriptGenerator_function new
 ]
 
 { #category : 'entity creation' }

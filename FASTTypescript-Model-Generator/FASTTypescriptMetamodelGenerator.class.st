@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_generator_function',
 		'_type_predicate',
 		'_type_arguments',
 		'_false',
@@ -197,7 +196,8 @@ Class {
 		'objectType',
 		'shorthandPropertyIdentifier',
 		'indexTypeQuery',
-		'forInStatement'
+		'forInStatement',
+		'generatorFunction'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -306,7 +306,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	classHeritage := builder ensureClassNamed: #ClassHeritage.
 	functionExpression := builder ensureClassNamed: #FunctionExpression.
 	functionDeclaration := builder ensureClassNamed: #FunctionDeclaration.
-	_generator_function := builder ensureClassNamed: #Generator_function.
+	generatorFunction := builder ensureClassNamed: #GeneratorFunction.
 	generatorFunctionDeclaration := builder ensureClassNamed: #GeneratorFunctionDeclaration.
 	arrowFunction := builder ensureClassNamed: #ArrowFunction.
 	optionalChain := builder ensureClassNamed: #OptionalChain.
