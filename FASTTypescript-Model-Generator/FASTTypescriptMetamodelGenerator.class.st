@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_intersection_type',
 		'_super',
 		'_update_expression',
 		'_html_comment',
@@ -197,7 +196,8 @@ Class {
 		'addingTypeAnnotation',
 		'augmentedAssignmentExpression',
 		'variableDeclaration',
-		'exportSpecifier'
+		'exportSpecifier',
+		'intersectionType'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -412,7 +412,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	tupleType := builder ensureClassNamed: #TupleType .
 	readonlyType := builder ensureClassNamed: #ReadonlyType.
 	unionType := builder ensureClassNamed: #UnionType.
-	_intersection_type := builder ensureClassNamed: #Intersection_type.
+	intersectionType := builder ensureClassNamed: #IntersectionType.
 	functionType := builder ensureClassNamed: #FunctionType.
 	interfaceBody := builder ensureClassNamed: #InterfaceBody.
 	propertyIdentifier := builder ensureClassNamed: #PropertyIdentifier.

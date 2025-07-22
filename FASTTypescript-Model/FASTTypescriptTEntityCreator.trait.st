@@ -630,10 +630,10 @@ FASTTypescriptTEntityCreator >> newInternalModule [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newIntersection_type [
+FASTTypescriptTEntityCreator >> newIntersectionType [
 
 	<generated>
-	^ self add: FASTTypescriptIntersection_type new
+	^ self add: FASTTypescriptIntersectionType new
 ]
 
 { #category : 'entity creation' }
