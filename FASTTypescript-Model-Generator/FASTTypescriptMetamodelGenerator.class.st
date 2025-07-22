@@ -5,7 +5,6 @@ Class {
 		'propertyIdentifier',
 		'_true',
 		'_false',
-		'_function_signature',
 		'_continue_statement',
 		'_optional_type',
 		'_expression_statement',
@@ -197,7 +196,8 @@ Class {
 		'yieldExpression',
 		'overrideModifier',
 		'mappedTypeClause',
-		'statementBlock'
+		'statementBlock',
+		'functionSignature'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -342,7 +342,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	nonNullExpression := builder ensureClassNamed: #NonNullExpression.
 	methodSignature := builder ensureClassNamed: #MethodSignature.
 	abstractMethodSignature := builder ensureClassNamed: #AbstractMethodSignature.
-	_function_signature := builder ensureClassNamed: #Function_signature. 
+	functionSignature := builder ensureClassNamed: #FunctionSignature. 
 	typeAssertion := builder ensureClassNamed: #TypeAssertion.
 	asExpression := builder ensureClassNamed: #AsExpression.
 	satisfiesExpression := builder ensureClassNamed: #SatisfiesExpression.
