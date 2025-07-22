@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_object_pattern',
 		'_await_expression',
 		'_pair_pattern',
 		'_import_require_clause',
@@ -197,7 +196,8 @@ Class {
 		'templateType',
 		'inferType',
 		'ifStatement',
-		'namedImports'
+		'namedImports',
+		'objectPattern'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -292,7 +292,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	parenthesizedExpression := builder ensureClassNamed: #ParenthesizedExpression.
 	_yield_expression := builder ensureClassNamed: #Yield_expression.
 	object := builder ensureClassNamed: #Object.
-	_object_pattern := builder ensureClassNamed: #Object_pattern.
+	objectPattern := builder ensureClassNamed: #ObjectPattern.
 	assignmentPattern := builder ensureClassNamed: #AssignmentPattern.
 	objectAssignmentPattern := builder ensureClassNamed: #ObjectAssignmentPattern.
 	array := builder ensureClassNamed: #Array.
