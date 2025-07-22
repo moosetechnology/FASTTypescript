@@ -20,8 +20,8 @@
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypescriptForInStatement` | The left operand (if possible)|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypescriptForInStatement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypescriptFunctionType` | The owner of this type|
-| `identifierOwner` | `FASTTypescriptIdentifier` | `value` | `FASTTypescriptExtendsClause` | My owner|
 | `identifierOwner` | `FASTTypescriptIdentifier` | `name` | `FASTTypescriptIndexSignature` | The owner of this identifier|
+| `identifierOwner` | `FASTTypescriptIdentifier` | `value` | `FASTTypescriptExtendsClause` | My owner|
 | `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExportSpecifier` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypescriptMember_expression` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypescriptMember_expression` | This owner|

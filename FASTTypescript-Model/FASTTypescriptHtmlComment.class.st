@@ -1,5 +1,5 @@
 Class {
-	#name : 'FASTTypescriptHtml_comment',
+	#name : 'FASTTypescriptHtmlComment',
 	#superclass : 'FASTTypescriptEntity',
 	#category : 'FASTTypescript-Model-Entities',
 	#package : 'FASTTypescript-Model',
@@ -7,9 +7,9 @@ Class {
 }
 
 { #category : 'meta' }
-FASTTypescriptHtml_comment class >> annotation [
+FASTTypescriptHtmlComment class >> annotation [
 
-	<FMClass: #Html_comment super: #FASTTypescriptEntity>
+	<FMClass: #HtmlComment super: #FASTTypescriptEntity>
 	<package: #'FASTTypescript-Model'>
 	<generated>
 	^ self

@@ -504,10 +504,10 @@ FASTTypescriptTEntityCreator >> newHashBangLine [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newHtml_comment [
+FASTTypescriptTEntityCreator >> newHtmlComment [
 
 	<generated>
-	^ self add: FASTTypescriptHtml_comment new
+	^ self add: FASTTypescriptHtmlComment new
 ]
 
 { #category : 'entity creation' }
