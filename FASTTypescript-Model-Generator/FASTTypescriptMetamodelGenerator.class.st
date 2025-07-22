@@ -6,7 +6,6 @@ Class {
 		'_true',
 		'_false',
 		'_super',
-		'_enum_assignment',
 		'_namespace_export',
 		'_required_parameter',
 		'_import_attribute',
@@ -197,7 +196,8 @@ Class {
 		'exportSpecifier',
 		'intersectionType',
 		'updateExpression',
-		'htmlComment'
+		'htmlComment',
+		'enumAssignment'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -363,7 +363,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	enumDeclaration withTesting.
 	
 	enumBody := builder ensureClassNamed: #EnumBody.
-	_enum_assignment := builder ensureClassNamed: #Enum_assignment.
+	enumAssignment := builder ensureClassNamed: #EnumAssignment.
 	typeAliasDeclaration := builder ensureClassNamed: #TypeAliasDeclaration.
 	accessibilityModifier := builder ensureClassNamed: #AccessibilityModifier.
 	overrideModifier := builder ensureClassNamed: #OverrideModifier.
