@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'propertyIdentifier',
 		'_true',
-		'_shorthand_property_identifier',
 		'_index_type_query',
 		'_for_in_statement',
 		'_generator_function',
@@ -197,7 +196,8 @@ Class {
 		'importRequireClause',
 		'typeAnnotation',
 		'nonNullExpression',
-		'objectType'
+		'objectType',
+		'shorthandPropertyIdentifier'
 	],
 	#category : 'FASTTypescript-Model-Generator',
 	#package : 'FASTTypescript-Model-Generator'
@@ -416,7 +416,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	functionType := builder ensureClassNamed: #FunctionType.
 	interfaceBody := builder ensureClassNamed: #InterfaceBody.
 	propertyIdentifier := builder ensureClassNamed: #PropertyIdentifier.
-	_shorthand_property_identifier := builder ensureClassNamed: #Shorthand_property_identifier.
+	shorthandPropertyIdentifier := builder ensureClassNamed: #ShorthandPropertyIdentifier.
 	shorthandPropertyIdentifierPattern := builder ensureClassNamed: #ShorthandPropertyIdentifierPattern.
 	statementIdentifier := builder ensureClassNamed: #StatementIdentifier.
 	thisType := builder ensureClassNamed: #ThisType.

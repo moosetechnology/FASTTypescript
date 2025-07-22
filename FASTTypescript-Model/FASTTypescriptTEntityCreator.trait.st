@@ -1001,17 +1001,17 @@ FASTTypescriptTEntityCreator >> newSequence_expression [
 ]
 
 { #category : 'entity creation' }
+FASTTypescriptTEntityCreator >> newShorthandPropertyIdentifier [
+
+	<generated>
+	^ self add: FASTTypescriptShorthandPropertyIdentifier new
+]
+
+{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newShorthandPropertyIdentifierPattern [
 
 	<generated>
 	^ self add: FASTTypescriptShorthandPropertyIdentifierPattern new
-]
-
-{ #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newShorthand_property_identifier [
-
-	<generated>
-	^ self add: FASTTypescriptShorthand_property_identifier new
 ]
 
 { #category : 'entity creation' }
