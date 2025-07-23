@@ -5,9 +5,9 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptFunctionType` | My owner|
 | `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptConstructorType` | The owner of these formal parameters|
 | `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptMethodDefinition` | My owner|
+| `formalParametersOwner` | `FASTTypescriptFormalParameters` | `parameters` | `FASTTypescriptFunctionType` | My owner|
 
 
 

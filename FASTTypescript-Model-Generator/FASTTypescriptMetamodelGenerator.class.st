@@ -383,8 +383,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	conditionalType := builder ensureClassNamed: #ConditionalType.
 	genericType := builder ensureClassNamed: #GenericType.
 	typePredicate := builder ensureClassNamed: #TypePredicate.
-	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation.
-	memberExpression := builder ensureClassNamed: #Member_expression. 
+	typePredicateAnnotation := builder ensureClassNamed: #TypePredicateAnnotation. 
 	typeQuery := builder ensureClassNamed: #TypeQuery.
 	indexTypeQuery := builder ensureClassNamed: #IndexTypeQuery.
 	lookupType := builder ensureClassNamed: #LookupType.

@@ -7,9 +7,9 @@
 |---|
 | `identifierOwner` | `FASTTypescriptTOptionalField` | `alias` | `FASTTypescriptExportSpecifier` | My owner|
 | `typeAnnotationOwner` | `FASTTypescriptTOptionalField` | `return_type` | `FASTTypescriptMethodDefinition` | My owner|
-| `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | `type_arguments` | `FASTTypescriptNewExpression` | The owner of these type arguments|
 | `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | `type_arguments` | `FASTTypescriptExtendsClause` | My owner|
 | `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | `type_arguments` | `FASTTypescriptGenericType` | The owner of this type arguments|
+| `typeArgumentsOwner` | `FASTTypescriptTypeArguments` | `type_arguments` | `FASTTypescriptNewExpression` | The owner of these type arguments|
 
 
 

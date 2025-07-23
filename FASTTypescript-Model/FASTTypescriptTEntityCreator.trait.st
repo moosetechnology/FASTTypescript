@@ -693,13 +693,6 @@ FASTTypescriptTEntityCreator >> newMemberExpression [
 ]
 
 { #category : 'entity creation' }
-FASTTypescriptTEntityCreator >> newMember_expression [
-
-	<generated>
-	^ self add: FASTTypescriptMember_expression new
-]
-
-{ #category : 'entity creation' }
 FASTTypescriptTEntityCreator >> newMetaProperty [
 
 	<generated>
