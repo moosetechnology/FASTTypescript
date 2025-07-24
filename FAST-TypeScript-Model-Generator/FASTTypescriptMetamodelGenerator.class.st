@@ -417,7 +417,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 	thisType := builder ensureClassNamed: #ThisType.
 	typeIdentifier := builder ensureClassNamed: #TypeIdentifier.
 	_ERROR := builder ensureClassNamed: #ERROR.
-	expression := builder ensureClassNamed: #Expression.
+	expression := builder ensureClassNamed: #Expression. 
 	compilationUnit := builder ensureClassNamed: #CompilationUnit.
 	compilationUnit withTesting.
 	
