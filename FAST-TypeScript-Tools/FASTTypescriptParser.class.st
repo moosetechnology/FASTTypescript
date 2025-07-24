@@ -69,7 +69,7 @@ newFASTTree := fastParser parse: newString usingOldTree: aTree.
 
 "
 Class {
-	#name : 'FASTTypescriptParser',
+	#name : 'FASTTypeScriptParser',
 	#superclass : 'Object',
 	#instVars : [
 		'representations',
@@ -80,13 +80,13 @@ Class {
 }
 
 { #category : 'as yet unclassified' }
-FASTTypescriptParser >> deleteTreeSitterParser [
+FASTTypeScriptParser >> deleteTreeSitterParser [
 	
 	self tsParser delete 
 ]
 
 { #category : 'as yet unclassified' }
-FASTTypescriptParser >> editTree: aFastTree using: inputEdit [
+FASTTypeScriptParser >> editTree: aFastTree using: inputEdit [
 	
 	|treeRepresentation |
 	 
@@ -104,7 +104,7 @@ FASTTypescriptParser >> editTree: aFastTree using: inputEdit [
 ]
 
 { #category : 'utilities' }
-FASTTypescriptParser >> getASTFromString: string [
+FASTTypeScriptParser >> getASTFromString: string [
 
 	| parser tsLanguage importer |
 	self
@@ -128,7 +128,7 @@ FASTTypescriptParser >> getASTFromString: string [
 ]
 
 { #category : 'as yet unclassified' }
-FASTTypescriptParser >> importToFAST: tsTree usingSourceCode: aString [
+FASTTypeScriptParser >> importToFAST: tsTree usingSourceCode: aString [
 
 	| tsLanguage importer |
 	
@@ -144,14 +144,14 @@ FASTTypescriptParser >> importToFAST: tsTree usingSourceCode: aString [
 ]
 
 { #category : 'as yet unclassified' }
-FASTTypescriptParser >> initialiseTreeSitterParser [
+FASTTypeScriptParser >> initialiseTreeSitterParser [
 
 	self tsParser: TSParser new.
 	self tsParser language: TSLanguage typescript.
 ]
 
 { #category : 'initialization' }
-FASTTypescriptParser >> initialize [
+FASTTypeScriptParser >> initialize [
 	
 	super initialize.
 	self representations: OrderedCollection new.
@@ -159,7 +159,7 @@ FASTTypescriptParser >> initialize [
 ]
 
 { #category : 'parsing' }
-FASTTypescriptParser >> parse: aString [
+FASTTypeScriptParser >> parse: aString [
 	
 	|tsTree fastTree|
 	
@@ -187,7 +187,7 @@ FASTTypescriptParser >> parse: aString [
 ]
 
 { #category : 'as yet unclassified' }
-FASTTypescriptParser >> parse: aString usingOldTree: aFastTree [
+FASTTypeScriptParser >> parse: aString usingOldTree: aFastTree [
 
 	| treeRepresentation newFastTree newTreeSitterTree |
 	
@@ -214,25 +214,25 @@ FASTTypescriptParser >> parse: aString usingOldTree: aFastTree [
 ]
 
 { #category : 'accessing' }
-FASTTypescriptParser >> representations [
+FASTTypeScriptParser >> representations [
 
 	^ representations
 ]
 
 { #category : 'accessing' }
-FASTTypescriptParser >> representations: anObject [
+FASTTypeScriptParser >> representations: anObject [
 
 	representations := anObject
 ]
 
 { #category : 'accessing' }
-FASTTypescriptParser >> tsParser [
+FASTTypeScriptParser >> tsParser [
 
 	^ tsParser
 ]
 
 { #category : 'accessing' }
-FASTTypescriptParser >> tsParser: anObject [
+FASTTypeScriptParser >> tsParser: anObject [
 
 	tsParser := anObject
 ]

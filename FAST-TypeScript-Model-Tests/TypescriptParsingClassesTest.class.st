@@ -1,5 +1,5 @@
 Class {
-	#name : 'TypescriptParsingClassesTest',
+	#name : 'TypeScriptParsingClassesTest',
 	#superclass : 'TestCase',
 	#instVars : [
 		'parser'
@@ -9,22 +9,22 @@ Class {
 }
 
 { #category : 'running' }
-TypescriptParsingClassesTest >> setUp [
+TypeScriptParsingClassesTest >> setUp [
 
 	super setUp.
 
-	parser := FASTTypescriptParser new
+	parser := FASTTypeScriptParser new
 ]
 
 { #category : 'running' }
-TypescriptParsingClassesTest >> tearDown [
+TypeScriptParsingClassesTest >> tearDown [
 
 	"perhaps we should reset the TreeSitter parse here ..."
 	super tearDown
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingArray [
+TypeScriptParsingClassesTest >> testParsingArray [
 
 	| res string  |
 
@@ -41,7 +41,7 @@ TypescriptParsingClassesTest >> testParsingArray [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingArrayType [
+TypeScriptParsingClassesTest >> testParsingArrayType [
 
 	| res string  |
  
@@ -55,7 +55,7 @@ const miscArray: ?T[];'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingAugmentedAssignmentExpression [
+TypeScriptParsingClassesTest >> testParsingAugmentedAssignmentExpression [
 
 	| res string node |
  
@@ -73,7 +73,7 @@ TypescriptParsingClassesTest >> testParsingAugmentedAssignmentExpression [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingBinaryExpression [
+TypeScriptParsingClassesTest >> testParsingBinaryExpression [
 
 	| res string node |
  
@@ -91,7 +91,7 @@ TypescriptParsingClassesTest >> testParsingBinaryExpression [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingClassDeclaration [
+TypeScriptParsingClassesTest >> testParsingClassDeclaration [
 
 	| res string node |
  
@@ -109,7 +109,7 @@ TypescriptParsingClassesTest >> testParsingClassDeclaration [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingClassHeritage [
+TypeScriptParsingClassesTest >> testParsingClassHeritage [
 
 	| res string |
  
@@ -124,7 +124,7 @@ TypescriptParsingClassesTest >> testParsingClassHeritage [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingConditionalType [
+TypeScriptParsingClassesTest >> testParsingConditionalType [
 
 	| res string node |
  
@@ -144,7 +144,7 @@ TypescriptParsingClassesTest >> testParsingConditionalType [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingConstraint [
+TypeScriptParsingClassesTest >> testParsingConstraint [
 
 	| res string  |
 
@@ -157,7 +157,7 @@ TypescriptParsingClassesTest >> testParsingConstraint [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingConstructorType [
+TypeScriptParsingClassesTest >> testParsingConstructorType [
 
 	| res string node |
  
@@ -175,7 +175,7 @@ TypescriptParsingClassesTest >> testParsingConstructorType [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingEmptyStatement [
+TypeScriptParsingClassesTest >> testParsingEmptyStatement [
 
 	| res string  |
  
@@ -194,7 +194,7 @@ declare module Foo {
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingExportClause [
+TypeScriptParsingClassesTest >> testParsingExportClause [
 
 	| res string |
  
@@ -207,7 +207,7 @@ TypescriptParsingClassesTest >> testParsingExportClause [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingExportSpecifier [
+TypeScriptParsingClassesTest >> testParsingExportSpecifier [
 
 	| res string node node2|
  
@@ -231,7 +231,7 @@ export type {A as B } from ''mymodule'';'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingExtendsClause [
+TypeScriptParsingClassesTest >> testParsingExtendsClause [
 
 	| res string node node2|
  
@@ -253,7 +253,7 @@ class A extends B<C>(D)<E> implements C {}'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
+TypeScriptParsingClassesTest >> testParsingExtendsTypeClause [
 
 	| res string node |
  
@@ -270,7 +270,7 @@ TypescriptParsingClassesTest >> testParsingExtendsTypeClause [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingFalse [ 
+TypeScriptParsingClassesTest >> testParsingFalse [ 
 
 	| res string node |
 
@@ -286,7 +286,7 @@ TypescriptParsingClassesTest >> testParsingFalse [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingFinallyClause [
+TypeScriptParsingClassesTest >> testParsingFinallyClause [
 
 	| res string node |
  
@@ -305,7 +305,7 @@ finally {console.log("Done")}'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingForInStatement [
+TypeScriptParsingClassesTest >> testParsingForInStatement [
 
 	| res string forNode |
  
@@ -324,7 +324,7 @@ TypescriptParsingClassesTest >> testParsingForInStatement [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingFunctionType [
+TypeScriptParsingClassesTest >> testParsingFunctionType [
 
 	| res string forNode |
  
@@ -345,7 +345,7 @@ TypescriptParsingClassesTest >> testParsingFunctionType [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingGenericType [
+TypeScriptParsingClassesTest >> testParsingGenericType [
 
 	| res string node |
  
@@ -368,7 +368,7 @@ TypescriptParsingClassesTest >> testParsingGenericType [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingIfStatement [
+TypeScriptParsingClassesTest >> testParsingIfStatement [
 
 	| res string node |
  
@@ -388,7 +388,7 @@ TypescriptParsingClassesTest >> testParsingIfStatement [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingImplementsClause [
+TypeScriptParsingClassesTest >> testParsingImplementsClause [
 
 	| res string | 
 
@@ -408,7 +408,7 @@ export class A extends B<C, D> implements C {}'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingImportAlias [
+TypeScriptParsingClassesTest >> testParsingImportAlias [
 
 	| res string | 
 
@@ -422,7 +422,7 @@ TypescriptParsingClassesTest >> testParsingImportAlias [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingImportClause [
+TypeScriptParsingClassesTest >> testParsingImportClause [
 
 	| res string  |
 
@@ -442,7 +442,7 @@ import type, {addUser, type User} from "./User.js";'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingIndexSignature [
+TypeScriptParsingClassesTest >> testParsingIndexSignature [
 
 	| res string forNode |
 
@@ -464,7 +464,7 @@ TypescriptParsingClassesTest >> testParsingIndexSignature [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingInterfaceDeclaration [
+TypeScriptParsingClassesTest >> testParsingInterfaceDeclaration [
 
 	| res string node |
 
@@ -487,7 +487,7 @@ TypescriptParsingClassesTest >> testParsingInterfaceDeclaration [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingMemberExpression [
+TypeScriptParsingClassesTest >> testParsingMemberExpression [
 
 	| res string node|
 
@@ -512,7 +512,7 @@ TypescriptParsingClassesTest >> testParsingMemberExpression [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingMethodDefinition [
+TypeScriptParsingClassesTest >> testParsingMethodDefinition [
 
 	| res string node  |
 	string := 'class Foo { 
@@ -534,7 +534,7 @@ TypescriptParsingClassesTest >> testParsingMethodDefinition [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingNestedIdentifier [
+TypeScriptParsingClassesTest >> testParsingNestedIdentifier [
 
 	| res string node |
 
@@ -552,7 +552,7 @@ TypescriptParsingClassesTest >> testParsingNestedIdentifier [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingNewExpression [
+TypeScriptParsingClassesTest >> testParsingNewExpression [
 
 	| res string node node2|
 	
@@ -576,7 +576,7 @@ TypescriptParsingClassesTest >> testParsingNewExpression [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingObject [
+TypeScriptParsingClassesTest >> testParsingObject [
 
 	| res string  |
 
@@ -593,7 +593,7 @@ TypescriptParsingClassesTest >> testParsingObject [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingObjectType [
+TypeScriptParsingClassesTest >> testParsingObjectType [
 
 	| res string  |
 
@@ -612,7 +612,7 @@ T as {} & { [t: T]: T } & { [g: G]: G }'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingOptionalParameter [
+TypeScriptParsingClassesTest >> testParsingOptionalParameter [
 
 	| res string node |
 
@@ -630,7 +630,7 @@ TypescriptParsingClassesTest >> testParsingOptionalParameter [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingParenthesizedType [
+TypeScriptParsingClassesTest >> testParsingParenthesizedType [
 
 	| res string  |
 
@@ -648,7 +648,7 @@ var x: ({a: any});'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingPropertyIdentifier [
+TypeScriptParsingClassesTest >> testParsingPropertyIdentifier [
 
 	| res string  |
 
@@ -671,7 +671,7 @@ declare class Linter {
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingReadOnlyType [
+TypeScriptParsingClassesTest >> testParsingReadOnlyType [
 
 	| res string |
 
@@ -687,7 +687,7 @@ type t = readonly (readonly a[]) []'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingReturnStatement [
+TypeScriptParsingClassesTest >> testParsingReturnStatement [
 
 	| res string |
 
@@ -702,7 +702,7 @@ TypescriptParsingClassesTest >> testParsingReturnStatement [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingStringFragment [
+TypeScriptParsingClassesTest >> testParsingStringFragment [
 
 	| res string |
 
@@ -717,7 +717,7 @@ TypescriptParsingClassesTest >> testParsingStringFragment [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingTemplateType [
+TypeScriptParsingClassesTest >> testParsingTemplateType [
 
 	| res string node |
 
@@ -733,7 +733,7 @@ TypescriptParsingClassesTest >> testParsingTemplateType [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingThis [
+TypeScriptParsingClassesTest >> testParsingThis [
 
 	| res string |
 
@@ -754,7 +754,7 @@ TypescriptParsingClassesTest >> testParsingThis [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingThrowStatement [
+TypeScriptParsingClassesTest >> testParsingThrowStatement [
 
 	| res string |
 
@@ -771,7 +771,7 @@ TypescriptParsingClassesTest >> testParsingThrowStatement [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingTrue [ 
+TypeScriptParsingClassesTest >> testParsingTrue [ 
 
 	| res string node |
 
@@ -787,7 +787,7 @@ TypescriptParsingClassesTest >> testParsingTrue [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingTryStatement [
+TypeScriptParsingClassesTest >> testParsingTryStatement [
 
 	| res string node |
 
@@ -809,7 +809,7 @@ TypescriptParsingClassesTest >> testParsingTryStatement [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingTypeIdentifier [
+TypeScriptParsingClassesTest >> testParsingTypeIdentifier [
 
 	| res string |
 
@@ -826,7 +826,7 @@ TypescriptParsingClassesTest >> testParsingTypeIdentifier [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingTypePredicateAnnotation [
+TypeScriptParsingClassesTest >> testParsingTypePredicateAnnotation [
 
 	| res string |
 
@@ -843,7 +843,7 @@ function isFish(object: Fish): object is Fish {
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingUnaryExpression [
+TypeScriptParsingClassesTest >> testParsingUnaryExpression [
 
 	| res string node |
 
@@ -860,7 +860,7 @@ TypescriptParsingClassesTest >> testParsingUnaryExpression [
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingUnionType [
+TypeScriptParsingClassesTest >> testParsingUnionType [
 
 	| res string |
 
@@ -875,7 +875,7 @@ type Z = | "foo";'.
 ]
 
 { #category : 'tests' }
-TypescriptParsingClassesTest >> testParsingWithStatement [
+TypeScriptParsingClassesTest >> testParsingWithStatement [
 
 	| res string node |
 

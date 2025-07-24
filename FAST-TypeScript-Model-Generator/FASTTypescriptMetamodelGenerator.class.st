@@ -1,5 +1,5 @@
 Class {
-	#name : 'FASTTypescriptMetamodelGenerator',
+	#name : 'FASTTypeScriptMetamodelGenerator',
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'propertyIdentifier',
@@ -204,25 +204,25 @@ Class {
 }
 
 { #category : 'accessing' }
-FASTTypescriptMetamodelGenerator class >> packageName [
+FASTTypeScriptMetamodelGenerator class >> packageName [
 
 	^ #'FAST-TypeScript-Model'
 ]
 
 { #category : 'accessing' }
-FASTTypescriptMetamodelGenerator class >> prefix [
+FASTTypeScriptMetamodelGenerator class >> prefix [
 
 	^ #FASTTypeScript
 ]
 
 { #category : 'accessing' }
-FASTTypescriptMetamodelGenerator class >> submetamodels [
+FASTTypeScriptMetamodelGenerator class >> submetamodels [
 
 	^ { FASTMetamodelGenerator }
 ]
 
 { #category : 'definition' }
-FASTTypescriptMetamodelGenerator >> defineClasses [
+FASTTypeScriptMetamodelGenerator >> defineClasses [
 
 	entity := self newClassNamed: #Entity.
 
@@ -425,7 +425,7 @@ FASTTypescriptMetamodelGenerator >> defineClasses [
 ]
 
 { #category : 'definition' }
-FASTTypescriptMetamodelGenerator >> defineHierarchy [
+FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	"define class hierarchy"
 
 	super defineHierarchy.
@@ -525,7 +525,7 @@ FASTTypescriptMetamodelGenerator >> defineHierarchy [
 ]
 
 { #category : 'definition' }
-FASTTypescriptMetamodelGenerator >> defineRelations [
+FASTTypeScriptMetamodelGenerator >> defineRelations [
 
 	super defineRelations.
 	(entity property: #genericChildren)
@@ -796,7 +796,7 @@ FASTTypescriptMetamodelGenerator >> defineRelations [
 ]
 
 { #category : 'definition' }
-FASTTypescriptMetamodelGenerator >> defineTraits [
+FASTTypeScriptMetamodelGenerator >> defineTraits [
 
 	super defineTraits.
 
