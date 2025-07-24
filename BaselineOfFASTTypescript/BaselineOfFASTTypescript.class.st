@@ -58,29 +58,29 @@ BaselineOfFASTTypescript >> defineGroups: spec [
 
 	spec
 		group: 'core'
-		with: #( 'FASTTypescript-Model' 'FASTTypescript-Model-Extension'
-			   'FASTTypescript-Model-Generator'
-			   'FASTTypescript-Model-Tests' );
-		group: 'tools' with: #( 'core' 'FASTTypescript-Tools' )
+		with: #( 'FAST-Typescript-Model' 'FAST-Typescript-Model-Extension'
+			   'FAST-Typescript-Model-Generator'
+			   'FAST-Typescript-Model-Tests' );
+		group: 'tools' with: #( 'core' 'FAST-Typescript-Tools' )
 ]
 
 { #category : 'baselines' }
 BaselineOfFASTTypescript >> definePackages: spec [
 
 	spec
-		package: 'FASTTypescript-Model'
+		package: 'FAST-Typescript-Model'
 		with: [ spec requires: #( 'FAST' ) ];
-		package: 'FASTTypescript-Model-Generator';
-		package: 'FASTTypescript-Model-Extension'
-		with: [ spec requires: #( 'FASTTypescript-Model' ) ];
-		package: 'FASTTypescript-Tools'
+		package: 'FAST-Typescript-Model-Generator';
+		package: 'FAST-Typescript-Model-Extension'
+		with: [ spec requires: #( 'FAST-Typescript-Model' ) ];
+		package: 'FAST-Typescript-Tools'
 		with: [ spec requires: #( 'TreeSitter' ) ];
-		package: 'FASTTypescript-Model-Tests'
-		with: [ spec requires: #( 'FASTTypescript-Model' ) ].
+		package: 'FAST-Typescript-Model-Tests'
+		with: [ spec requires: #( 'FAST-Typescript-Model' ) ].
 
 	"In case of no Famix loaded"
 	spec for: #NeedsMoose do: [
 			spec
-				package: 'FASTTypescript-Model'
+				package: 'FAST-Typescript-Model'
 				with: [ spec requires: #( 'FAST' 'Famix' ) ] ]
 ]
