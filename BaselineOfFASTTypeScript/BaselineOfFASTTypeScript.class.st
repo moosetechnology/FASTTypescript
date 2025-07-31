@@ -1,17 +1,17 @@
 Class {
-	#name : 'BaselineOfFASTTypescript',
+	#name : 'BaselineOfFASTTypeScript',
 	#superclass : 'BaselineOf',
-	#category : 'BaselineOfFASTTypescript',
-	#package : 'BaselineOfFASTTypescript'
+	#category : 'BaselineOfFASTTypeScript',
+	#package : 'BaselineOfFASTTypeScript'
 }
 
 { #category : 'baselines' }
-BaselineOfFASTTypescript >> baseline: spec [
+BaselineOfFASTTypeScript >> baseline: spec [
 	<baseline>
 	spec
 		for: #common
 		do: [ 
-			spec description: 'Developement version of FAST Typescript using TreeSitter for Pharo'.
+			spec description: 'Developement version of FAST TypeScript using TreeSitter for Pharo'.
 			spec author: 'AlessHosry'.
 			self defineDependencies: spec.
 			self definePackages: spec.
@@ -19,7 +19,7 @@ BaselineOfFASTTypescript >> baseline: spec [
 ]
 
 { #category : 'accessing' }
-BaselineOfFASTTypescript >> customProjectAttributes [
+BaselineOfFASTTypeScript >> customProjectAttributes [
 
 	^ PackageOrganizer default packages
 		  detect: [ :package | package name = 'BaselineOfFamix' ]
@@ -28,7 +28,7 @@ BaselineOfFASTTypescript >> customProjectAttributes [
 ]
 
 { #category : 'baselines' }
-BaselineOfFASTTypescript >> defineDependencies: spec [
+BaselineOfFASTTypeScript >> defineDependencies: spec [
 
 	spec baseline: 'FAST' with: [ 
 		spec
@@ -54,7 +54,7 @@ BaselineOfFASTTypescript >> defineDependencies: spec [
 ]
 
 { #category : 'baselines' }
-BaselineOfFASTTypescript >> defineGroups: spec [
+BaselineOfFASTTypeScript >> defineGroups: spec [
 
 	spec
 		group: 'core'
@@ -65,7 +65,7 @@ BaselineOfFASTTypescript >> defineGroups: spec [
 ]
 
 { #category : 'baselines' }
-BaselineOfFASTTypescript >> definePackages: spec [
+BaselineOfFASTTypeScript >> definePackages: spec [
 
 	spec
 		package: 'FAST-TypeScript-Model'
