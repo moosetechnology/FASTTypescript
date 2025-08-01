@@ -5,7 +5,10 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `body` | `FASTTypeScriptFunctionDeclaration` | `statementBlockOwner` | `FASTTypeScriptStatementBlock` | The body of the function|
 | `name` | `FASTTypeScriptFunctionDeclaration` | `identifierOwner` | `FASTTypeScriptIdentifier` | The name of the function|
+| `parameters` | `FASTTypeScriptFunctionDeclaration` | `formalParametersOwner` | `FASTTypeScriptFormalParameters` | The parameters of the function|
+| `return_type` | `FASTTypeScriptFunctionDeclaration` | `typeAnnotationOwner` | `FASTTypeScriptTypeAnnotation` | The return type of the function (in case it exists)|
 
 
 
@@ -14,7 +17,10 @@ Class {
 	#name : 'FASTTypeScriptFunctionDeclaration',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #identifierOwner'
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner',
+		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #identifierOwner',
+		'#parameters => FMOne type: #FASTTypeScriptFormalParameters opposite: #formalParametersOwner',
+		'#return_type => FMOne type: #FASTTypeScriptTypeAnnotation opposite: #typeAnnotationOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -39,6 +45,29 @@ FASTTypeScriptFunctionDeclaration class >> initialize [
 ]
 
 { #category : 'accessing' }
+FASTTypeScriptFunctionDeclaration >> body [
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner"
+
+	<generated>
+	<FMComment: 'The body of the function'>
+	^ body
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFunctionDeclaration >> body: anObject [
+
+	<generated>
+	body := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptFunctionDeclaration >> bodyGroup [
+	<generated>
+	<navigation: 'Body'>
+	^ MooseSpecializedGroup with: self body
+]
+
+{ #category : 'accessing' }
 FASTTypeScriptFunctionDeclaration >> name [
 	"Relation named: #name type: #FASTTypeScriptIdentifier opposite: #identifierOwner"
 
@@ -59,4 +88,50 @@ FASTTypeScriptFunctionDeclaration >> nameGroup [
 	<generated>
 	<navigation: 'Name'>
 	^ MooseSpecializedGroup with: self name
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFunctionDeclaration >> parameters [
+	"Relation named: #parameters type: #FASTTypeScriptFormalParameters opposite: #formalParametersOwner"
+
+	<generated>
+	<FMComment: 'The parameters of the function'>
+	^ parameters
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFunctionDeclaration >> parameters: anObject [
+
+	<generated>
+	parameters := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptFunctionDeclaration >> parametersGroup [
+	<generated>
+	<navigation: 'Parameters'>
+	^ MooseSpecializedGroup with: self parameters
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFunctionDeclaration >> return_type [
+	"Relation named: #return_type type: #FASTTypeScriptTypeAnnotation opposite: #typeAnnotationOwner"
+
+	<generated>
+	<FMComment: 'The return type of the function (in case it exists)'>
+	^ return_type
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFunctionDeclaration >> return_type: anObject [
+
+	<generated>
+	return_type := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptFunctionDeclaration >> return_typeGroup [
+	<generated>
+	<navigation: 'Return_type'>
+	^ MooseSpecializedGroup with: self return_type
 ]

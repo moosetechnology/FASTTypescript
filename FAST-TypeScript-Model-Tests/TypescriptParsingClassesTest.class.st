@@ -324,6 +324,29 @@ TypeScriptParsingClassesTest >> testParsingForInStatement [
 ]
 
 { #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingFunctionDeclaration [
+
+	| res string node |
+
+	string := 'function add(a: number, b: number): number{
+  return a + b;
+}'.
+	res := parser parse: string.
+
+	"Checking if FASTTypeScriptFunctionDeclaration parsed correctly"
+	self assert:
+		(res allWithType: FASTTypeScriptFunctionDeclaration) isNotEmpty.
+	
+	"Checking properties of FASTTypeScriptFunctionDeclaration"	
+	node := (res allWithType: FASTTypeScriptFunctionDeclaration) first.
+	
+	self assert: node name class equals: FASTTypeScriptIdentifier. 
+	self assert: node parameters class equals: FASTTypeScriptFormalParameters. 
+	self assert: node return_type class equals: FASTTypeScriptTypeAnnotation. 
+	self assert: node body class equals: FASTTypeScriptStatementBlock.
+]
+
+{ #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingFunctionType [
 
 	| res string forNode |

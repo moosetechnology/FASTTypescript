@@ -757,8 +757,23 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	((functionDeclaration property: #name) comment:
 		 'The name of the function')
 	<>- ((identifier property: #identifierOwner) comment:
-			 'My owner').  
+			 'My owner'). 
+	
+	((functionDeclaration property: #parameters) comment:
+		 'The parameters of the function')
+	<>- ((formalParameters property: #formalParametersOwner) comment:
+			 'My owner'). 
+			
+	((functionDeclaration property: #body) comment:
+		 'The body of the function')
+	<>- ((statementBlock property: #statementBlockOwner) comment:
+			 'My owner'). 
 		
+	((functionDeclaration property: #return_type) comment:
+		 'The return type of the function (in case it exists)')
+	<>- ((typeAnnotation property: #typeAnnotationOwner) comment:
+			 'My owner').
+	
 	"class declaration"
 	((classDeclaration property: #body) comment:
 		 'The body of the class')
@@ -769,7 +784,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		 'The name of the class')
 	<>- ((typeIdentifier property: #typeIdentifierOwner) comment:
 			 'My owner').
-	
+		
 	"Enum"
 	((enumDeclaration property: #identifier) comment:
 		 'The identifier I define')
