@@ -752,6 +752,13 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		 'My arguments')
 	<>- ((typeArguments property: #typeArgumentsOwner) comment: 'My owner'). 
 	
+	
+	"function declaration"
+	((functionDeclaration property: #name) comment:
+		 'The name of the function')
+	<>- ((identifier property: #identifierOwner) comment:
+			 'My owner').  
+		
 	"class declaration"
 	((classDeclaration property: #body) comment:
 		 'The body of the class')
@@ -762,7 +769,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		 'The name of the class')
 	<>- ((typeIdentifier property: #typeIdentifierOwner) comment:
 			 'My owner').
-
+	
 	"Enum"
 	((enumDeclaration property: #identifier) comment:
 		 'The identifier I define')
