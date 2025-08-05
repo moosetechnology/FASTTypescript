@@ -20,3 +20,10 @@ MooseAbstractGroup >> allFASTTypeScriptFunctionDeclaration [
 	<package: #FAST>
 	^ self allWithType: FASTTypeScriptFunctionDeclaration 
 ]
+
+{ #category : '*FAST-TypeScript-Model-Extension' }
+MooseAbstractGroup >> allFASTTypeScriptInterfaceDeclaration [
+	<navigation: 'All FASTTypeScriptInterfaceDeclaration entities'>
+	<package: #FAST>
+	^ self allWithType: FASTTypeScriptInterfaceDeclaration 
+]
