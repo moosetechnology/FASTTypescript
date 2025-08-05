@@ -55,6 +55,24 @@ const miscArray: ?T[];'.
 ]
 
 { #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingAssignmentExpression [
+
+	| res string node |
+ 
+	string := 'x = { name, description, private: private_ }'.
+	res := parser parse: string.
+
+	"Checking if FASTTypeScriptAssignmentExpression parsed correctly"
+	self assert:
+		(res allWithType: FASTTypeScriptAssignmentExpression) isNotEmpty.
+	
+	"Checking properties of FASTTypeScriptAssignmentExpression"	
+	node := (res allWithType: FASTTypeScriptAssignmentExpression) first.
+	self assert: node right class equals: FASTTypeScriptObject.
+	self assert: node left class equals: FASTTypeScriptObject. 
+]
+
+{ #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingAugmentedAssignmentExpression [
 
 	| res string node |

@@ -5,10 +5,10 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `formalParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptFunctionType` | My owner|
-| `formalParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptConstructorType` | The owner of these formal parameters|
 | `formalParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptMethodDefinition` | My owner|
+| `formalParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptConstructorType` | The owner of these formal parameters|
 | `formalParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptFunctionDeclaration` | My owner|
+| `formalParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptFunctionType` | My owner|
 
 
 

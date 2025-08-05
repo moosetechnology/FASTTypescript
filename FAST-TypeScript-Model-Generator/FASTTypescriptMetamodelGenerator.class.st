@@ -752,6 +752,13 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		 'My arguments')
 	<>- ((typeArguments property: #typeArgumentsOwner) comment: 'My owner'). 
 	
+	((assignmentExpression property: #left) comment: 'The left operand')
+	<>- ((tExpression property: #expressionOwner) comment:
+			 'The expression parent').
+
+	((assignmentExpression property: #right) comment: 'The right operand')
+	<>- ((tExpression property: #expressionOwner) comment:
+			 'The expression parent').
 	
 	"function declaration"
 	((functionDeclaration property: #name) comment:

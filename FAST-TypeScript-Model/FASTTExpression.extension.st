@@ -217,6 +217,33 @@ FASTTExpression >> consequenceOwner: anObject [
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> expressionOwner [
+	"Relation named: #expressionOwner type: #FASTTypeScriptAssignmentExpression opposite: #left"
+
+	<generated>
+	<FMComment: 'The expression parent'>
+	<container>
+	<derived>
+	<FMProperty: #expressionOwner type: #FASTTypeScriptAssignmentExpression opposite: #left>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #expressionOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> expressionOwner: anObject [
+
+	<generated>
+	(self attributeAt: #expressionOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self expressionOwner.
+		self attributeAt: #expressionOwner put: anObject.
+		otherSide left: nil ]
+	ifNotNil: [ 
+		self attributeAt: #expressionOwner put: anObject.
+		anObject left: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
 FASTTExpression >> forStatementLeftOwner [
 	"Relation named: #forStatementLeftOwner type: #FASTTypeScriptForInStatement opposite: #left"
 
