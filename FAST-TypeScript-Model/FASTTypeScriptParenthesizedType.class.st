@@ -29,6 +29,7 @@
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
+| `variableExpressionOwner` | `FASTTExpression` | `value` | `FASTTypeScriptVariableDeclarator` | My owner|
 
 
 ## Properties

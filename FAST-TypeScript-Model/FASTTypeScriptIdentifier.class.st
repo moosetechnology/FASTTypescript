@@ -23,9 +23,10 @@
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptForInStatement` | The right operand (if possible)|
 | `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypeScriptFunctionType` | The owner of this type|
 | `identifierOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptFunctionDeclaration` | My owner|
+| `identifierOwner` | `FASTTypeScriptIdentifier` | `value` | `FASTTypeScriptExtendsClause` | My owner|
 | `identifierOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptIndexSignature` | The owner of this identifier|
 | `identifierOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
-| `identifierOwner` | `FASTTypeScriptIdentifier` | `value` | `FASTTypeScriptExtendsClause` | My owner|
+| `identifierOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptVariableDeclarator` | My owner|
 | `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypeScriptMemberExpression` | This owner|
 | `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypeScriptMemberExpression` | My owner|
 | `nestedIdentifierOwner` | `FASTTypeScriptIdentifier` | `object` | `FASTTypeScriptNestedIdentifier` | The owner of this identifier|
@@ -39,6 +40,7 @@
 | `typeAnnotationOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
 | `typescriptNewExpressionOwner` | `FASTTypeScriptIdentifier` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
+| `variableExpressionOwner` | `FASTTExpression` | `value` | `FASTTypeScriptVariableDeclarator` | My owner|
 
 
 ## Properties

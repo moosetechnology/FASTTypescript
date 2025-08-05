@@ -31,6 +31,7 @@
 | `propertyIdentifierOwner` | `FASTTypeScriptPropertyIdentifier` | `name` | `FASTTypeScriptMethodDefinition` | My owner|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
+| `variableExpressionOwner` | `FASTTExpression` | `value` | `FASTTypeScriptVariableDeclarator` | My owner|
 
 
 ## Properties

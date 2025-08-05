@@ -916,6 +916,35 @@ type Z = | "foo";'.
 ]
 
 { #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingVariableDeclarator [
+
+	| res string node nodeFourth nodeFifth|
+
+	string := 'var a = b
+  , c = d
+  , e = f; 
+const makeHammerBox = makeBox<Hammer>; 
+const lines = new Array<DiffLine>();'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypeScriptVariableDeclarator parsed correctly"
+	self assert:
+		(res allWithType: FASTTypeScriptVariableDeclarator) isNotEmpty.
+	
+	"Checking properties of FASTTypeScriptVariableDeclarator"	
+	node := (res allWithType: FASTTypeScriptVariableDeclarator) first.
+	self assert: node name class equals: FASTTypeScriptIdentifier. 
+	self assert: node value class equals: FASTTypeScriptIdentifier. 
+		 
+	nodeFourth := (res allWithType: FASTTypeScriptVariableDeclarator) fourth. 
+	self assert: nodeFourth value class equals: FASTTypeScriptInstantiationExpression. 
+	
+	nodeFifth := (res allWithType: FASTTypeScriptVariableDeclarator) fifth. 
+	self assert: nodeFifth value class equals: FASTTypeScriptNewExpression. 
+]
+
+{ #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingWithStatement [
 
 	| res string node |

@@ -759,7 +759,17 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	((assignmentExpression property: #right) comment: 'The right operand')
 	<>- ((tExpression property: #expressionOwner) comment:
 			 'The expression parent').
+				
+	((variableDeclarator property: #name) comment:
+		 'The identifier')
+	<>- ((identifier property: #identifierOwner) comment:
+			 'My owner'). 
 	
+	((variableDeclarator property: #value) comment:
+		 'The value')
+	<>- ((tExpression property: #variableExpressionOwner) comment:
+			 'My owner').  
+			
 	"function declaration"
 	((functionDeclaration property: #name) comment:
 		 'The name of the function')
