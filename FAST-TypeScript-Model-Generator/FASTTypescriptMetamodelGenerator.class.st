@@ -521,6 +521,8 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	yieldExpression --|> expression.
 	object --|> expression.
 
+	typePredicateAnnotation --|> typeAnnotation.
+	
 	"_function_type  --|> tWithParameters.	"
 ]
 

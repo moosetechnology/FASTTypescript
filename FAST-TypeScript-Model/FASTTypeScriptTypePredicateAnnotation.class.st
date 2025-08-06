@@ -1,6 +1,6 @@
 Class {
 	#name : 'FASTTypeScriptTypePredicateAnnotation',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptTypeAnnotation',
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptTypePredicateAnnotation class >> annotation [
 
-	<FMClass: #TypePredicateAnnotation super: #FASTTypeScriptEntity>
+	<FMClass: #TypePredicateAnnotation super: #FASTTypeScriptTypeAnnotation>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self
