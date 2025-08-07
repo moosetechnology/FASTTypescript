@@ -32,8 +32,6 @@ FASTTypeScriptAugmentedAssignmentExpression class >> annotation [
 FASTTypeScriptAugmentedAssignmentExpression class >> initialize [ 
 
 	self deprecatedAliases: { #FASTTypescriptAugmented_assignment_expression }
- 
- 
 ]
 
 { #category : 'accessing' }

@@ -5,8 +5,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `left` | `FASTTypeScriptAssignmentExpression` | `expressionOwner` | `FASTTExpression` | The left operand|
-| `right` | `FASTTypeScriptAssignmentExpression` | `expressionOwner` | `FASTTExpression` | The right operand|
+| `left` | `FASTTypeScriptAssignmentExpression` | `expressionOwnerLeft` | `FASTTExpression` | The left operand|
+| `right` | `FASTTypeScriptAssignmentExpression` | `expressionOwnerRight` | `FASTTExpression` | The right operand|
 
 
 
@@ -32,17 +32,15 @@ FASTTypeScriptAssignmentExpression class >> annotation [
 FASTTypeScriptAssignmentExpression class >> initialize [ 
 
 	self deprecatedAliases: { #FASTTypescriptAssignment_expression }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptAssignmentExpression >> left [
-	"Relation named: #left type: #FASTTExpression opposite: #expressionOwner"
+	"Relation named: #left type: #FASTTExpression opposite: #expressionOwnerLeft"
 
 	<generated>
 	<FMComment: 'The left operand'>
-	<FMProperty: #left type: #FASTTExpression opposite: #expressionOwner>
+	<FMProperty: #left type: #FASTTExpression opposite: #expressionOwnerLeft>
 	^ self attributeAt: #left ifAbsent: [ nil ]
 ]
 
@@ -54,10 +52,10 @@ FASTTypeScriptAssignmentExpression >> left: anObject [
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self left.
 		self attributeAt: #left put: anObject.
-		otherSide expressionOwner: nil ]
+		otherSide expressionOwnerLeft: nil ]
 	ifNotNil: [ 
 		self attributeAt: #left put: anObject.
-		anObject expressionOwner: self ]
+		anObject expressionOwnerLeft: self ]
 ]
 
 { #category : 'navigation' }
@@ -69,11 +67,11 @@ FASTTypeScriptAssignmentExpression >> leftGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptAssignmentExpression >> right [
-	"Relation named: #right type: #FASTTExpression opposite: #expressionOwner"
+	"Relation named: #right type: #FASTTExpression opposite: #expressionOwnerRight"
 
 	<generated>
 	<FMComment: 'The right operand'>
-	<FMProperty: #right type: #FASTTExpression opposite: #expressionOwner>
+	<FMProperty: #right type: #FASTTExpression opposite: #expressionOwnerRight>
 	^ self attributeAt: #right ifAbsent: [ nil ]
 ]
 
@@ -85,10 +83,10 @@ FASTTypeScriptAssignmentExpression >> right: anObject [
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self right.
 		self attributeAt: #right put: anObject.
-		otherSide expressionOwner: nil ]
+		otherSide expressionOwnerRight: nil ]
 	ifNotNil: [ 
 		self attributeAt: #right put: anObject.
-		anObject expressionOwner: self ]
+		anObject expressionOwnerRight: self ]
 ]
 
 { #category : 'navigation' }

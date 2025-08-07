@@ -217,30 +217,57 @@ FASTTExpression >> consequenceOwner: anObject [
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> expressionOwner [
-	"Relation named: #expressionOwner type: #FASTTypeScriptAssignmentExpression opposite: #left"
+FASTTExpression >> expressionOwnerLeft [
+	"Relation named: #expressionOwnerLeft type: #FASTTypeScriptAssignmentExpression opposite: #left"
 
 	<generated>
 	<FMComment: 'The expression parent'>
 	<container>
 	<derived>
-	<FMProperty: #expressionOwner type: #FASTTypeScriptAssignmentExpression opposite: #left>
+	<FMProperty: #expressionOwnerLeft type: #FASTTypeScriptAssignmentExpression opposite: #left>
 	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #expressionOwner ifAbsent: [ nil ]
+	^ self attributeAt: #expressionOwnerLeft ifAbsent: [ nil ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> expressionOwner: anObject [
+FASTTExpression >> expressionOwnerLeft: anObject [
 
 	<generated>
-	(self attributeAt: #expressionOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	(self attributeAt: #expressionOwnerLeft ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
-		otherSide :=  self expressionOwner.
-		self attributeAt: #expressionOwner put: anObject.
+		otherSide :=  self expressionOwnerLeft.
+		self attributeAt: #expressionOwnerLeft put: anObject.
 		otherSide left: nil ]
 	ifNotNil: [ 
-		self attributeAt: #expressionOwner put: anObject.
+		self attributeAt: #expressionOwnerLeft put: anObject.
 		anObject left: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> expressionOwnerRight [
+	"Relation named: #expressionOwnerRight type: #FASTTypeScriptAssignmentExpression opposite: #right"
+
+	<generated>
+	<FMComment: 'The expression parent'>
+	<container>
+	<derived>
+	<FMProperty: #expressionOwnerRight type: #FASTTypeScriptAssignmentExpression opposite: #right>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #expressionOwnerRight ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> expressionOwnerRight: anObject [
+
+	<generated>
+	(self attributeAt: #expressionOwnerRight ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self expressionOwnerRight.
+		self attributeAt: #expressionOwnerRight put: anObject.
+		otherSide right: nil ]
+	ifNotNil: [ 
+		self attributeAt: #expressionOwnerRight put: anObject.
+		anObject right: self ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }

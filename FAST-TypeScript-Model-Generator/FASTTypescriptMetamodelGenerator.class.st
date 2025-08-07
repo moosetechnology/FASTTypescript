@@ -755,11 +755,11 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	<>- ((typeArguments property: #typeArgumentsOwner) comment: 'My owner'). 
 	
 	((assignmentExpression property: #left) comment: 'The left operand')
-	<>- ((tExpression property: #expressionOwner) comment:
+	<>- ((tExpression property: #expressionOwnerLeft) comment:
 			 'The expression parent').
 
 	((assignmentExpression property: #right) comment: 'The right operand')
-	<>- ((tExpression property: #expressionOwner) comment:
+	<>- ((tExpression property: #expressionOwnerRight) comment:
 			 'The expression parent').
 				
 	((variableDeclarator property: #name) comment:
