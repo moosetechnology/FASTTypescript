@@ -14,3 +14,9 @@ FASTTypeScriptHtmlComment class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'class initialization' }
+FASTTypeScriptHtmlComment class >> initialize [
+
+	self deprecatedAliases: { #FASTTypeScriptHtml_comment } 
+]

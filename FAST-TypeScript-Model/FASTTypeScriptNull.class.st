@@ -60,3 +60,10 @@ FASTTypeScriptNull class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'class initialization' }
+FASTTypeScriptNull class >> initialize [  
+
+	self deprecatedAliases: { #FASTTypescriptNull }
+ 
+]

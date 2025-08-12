@@ -14,3 +14,9 @@ FASTTypeScriptObject class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'class initialization' }
+FASTTypeScriptObject class >> initialize [  
+
+	self deprecatedAliases: { #FASTTypescriptObject } 
+]

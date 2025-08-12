@@ -59,3 +59,9 @@ FASTTypeScriptUndefined class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'class initialization' }
+FASTTypeScriptUndefined class >> initialize [
+
+	self deprecatedAliases: { #FASTTypescriptUndefined }
+]
