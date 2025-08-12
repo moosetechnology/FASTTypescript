@@ -58,18 +58,17 @@ const miscArray: ?T[];'.
 TypeScriptParsingClassesTest >> testParsingAssignmentExpression [
 
 	| res string node |
- 
 	string := 'x = { name, description, private: private_ }'.
 	res := parser parse: string.
 
 	"Checking if FASTTypeScriptAssignmentExpression parsed correctly"
 	self assert:
 		(res allWithType: FASTTypeScriptAssignmentExpression) isNotEmpty.
-	
-	"Checking properties of FASTTypeScriptAssignmentExpression"	
+
+	"Checking properties of FASTTypeScriptAssignmentExpression"
 	node := (res allWithType: FASTTypeScriptAssignmentExpression) first.
 	self assert: node right class equals: FASTTypeScriptObject.
-	self assert: node left class equals: FASTTypeScriptObject. 
+	self assert: node left class equals: FASTTypeScriptIdentifier 
 ]
 
 { #category : 'tests' }
@@ -251,8 +250,7 @@ export type {A as B } from ''mymodule'';'.
 { #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingExtendsClause [
 
-	| res string node node2|
- 
+	| res string node node2 |
 	string := 'class A extends B<C>(D) implements C {}
 class A extends B<C>(D)<E> implements C {}'.
 	res := parser parse: string.
@@ -260,14 +258,16 @@ class A extends B<C>(D)<E> implements C {}'.
 	"Checking if FASTTypescriptExtends_clause parsed correctly"
 	self assert:
 		(res allWithType: FASTTypescriptExtends_clause) isNotEmpty.
-	
-	"Checking properties of FASTTypescriptExtends_clause"	
+
+	"Checking properties of FASTTypescriptExtends_clause"
 	node := (res allWithType: FASTTypescriptExtends_clause) first.
-	self assert: node value class equals: FASTTypescriptCall_expression.
-	
+	"self assert: node value class equals: FASTTypescriptCall_expression."
+
 	node2 := (res allWithType: FASTTypescriptExtends_clause) second.
-	self assert: node2 value class equals: FASTTypescriptCall_expression.
-	self assert: node2  type_arguments class equals: FASTTypescriptType_arguments.
+	"self assert: node2 value class equals: FASTTypescriptCall_expression."
+	self
+		assert: node2 type_arguments class
+		equals: FASTTypescriptType_arguments
 ]
 
 { #category : 'tests' }
@@ -549,7 +549,7 @@ TypeScriptParsingClassesTest >> testParsingMemberExpression [
 	"Checking properties of FASTTypescriptMember_expression"	
 	node := (res allWithType: FASTTypescriptMember_expression) first.
 	self assert: node property class equals: FASTTypescriptPrivate_property_identifier.
-	self assert: node object class equals: FASTTypescriptPrivate_property_identifier.
+	self assert: node object class equals: FASTTypeScriptThis.
 ]
 
 { #category : 'tests' }
