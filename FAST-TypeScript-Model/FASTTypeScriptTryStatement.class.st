@@ -5,9 +5,9 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptTryStatement` | `tryStatementOwner` | `FASTTypeScriptStatementBlock` | Body|
-| `finalizer` | `FASTTypeScriptTryStatement` | `tryStatementOwner` | `FASTTypeScriptFinallyClause` | Finalizer|
-| `handler` | `FASTTypeScriptTryStatement` | `tryStatementOwner` | `FASTTypeScriptCatchClause` | Handler|
+| `body` | `FASTTypeScriptTryStatement` | `tryStatementBodyOwner` | `FASTTypeScriptStatementBlock` | Body|
+| `finalizer` | `FASTTypeScriptTryStatement` | `tryStatementFinalizerOwner` | `FASTTypeScriptFinallyClause` | Finalizer|
+| `handler` | `FASTTypeScriptTryStatement` | `tryStatementHandlerOwner` | `FASTTypeScriptCatchClause` | Handler|
 
 
 
@@ -16,9 +16,9 @@ Class {
 	#name : 'FASTTypeScriptTryStatement',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #tryStatementOwner',
-		'#finalizer => FMOne type: #FASTTypeScriptFinallyClause opposite: #tryStatementOwner',
-		'#handler => FMOne type: #FASTTypeScriptCatchClause opposite: #tryStatementOwner'
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #tryStatementBodyOwner',
+		'#handler => FMOne type: #FASTTypeScriptCatchClause opposite: #tryStatementHandlerOwner',
+		'#finalizer => FMOne type: #FASTTypeScriptFinallyClause opposite: #tryStatementFinalizerOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -44,7 +44,7 @@ FASTTypeScriptTryStatement class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #tryStatementOwner"
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #tryStatementBodyOwner"
 
 	<generated>
 	<FMComment: 'Body'>
@@ -67,7 +67,7 @@ FASTTypeScriptTryStatement >> bodyGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> finalizer [
-	"Relation named: #finalizer type: #FASTTypeScriptFinallyClause opposite: #tryStatementOwner"
+	"Relation named: #finalizer type: #FASTTypeScriptFinallyClause opposite: #tryStatementFinalizerOwner"
 
 	<generated>
 	<FMComment: 'Finalizer'>
@@ -90,7 +90,7 @@ FASTTypeScriptTryStatement >> finalizerGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> handler [
-	"Relation named: #handler type: #FASTTypeScriptCatchClause opposite: #tryStatementOwner"
+	"Relation named: #handler type: #FASTTypeScriptCatchClause opposite: #tryStatementHandlerOwner"
 
 	<generated>
 	<FMComment: 'Handler'>

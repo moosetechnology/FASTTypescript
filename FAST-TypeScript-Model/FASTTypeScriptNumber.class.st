@@ -14,9 +14,3 @@ FASTTypeScriptNumber class >> annotation [
 	<generated>
 	^ self
 ]
-
-{ #category : 'class initialization' }
-FASTTypeScriptNumber class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptNumber }
-]

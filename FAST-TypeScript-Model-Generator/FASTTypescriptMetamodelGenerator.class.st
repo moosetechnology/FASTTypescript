@@ -536,142 +536,149 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 
 	((program property: #classDeclarations) comment:
 		 'The class declarations that I define')
-	<>-* ((classDeclaration property: #parentProgram) comment:
-			 'The program that contains me').
+	<>-*
+		((classDeclaration property: #programClassDeclarationOwner)
+			 comment: 'The program that contains me').
 
 	((program property: #enumDeclarations) comment:
 		 'The enum declarations that I define')
-	<>-* ((enumDeclaration property: #parentProgram) comment:
+	<>-*
+		((enumDeclaration property: #programEnumDeclarationOwner) comment:
 			 'The program that contains me').
 
 	((program property: #interfaceDeclarations) comment:
 		 'The interface declarations that I define')
-	<>-* ((interfaceDeclaration property: #parentProgram) comment:
-			 'The program that contains me').
+	<>-*
+		((interfaceDeclaration property: #programInterfaceDeclarationOwner)
+			 comment: 'The program that contains me').
 
-	((forInStatement property: #left) comment: 'The identifier')
-	<>- ((tExpression property: #forStatementLeftOwner) comment:
-			 'The left operand (if possible)').
+	((forInStatement property: #left) comment:
+		 'The left operand (if possible)')
+	<>-
+	((tExpression property: #forStatementLeftOwner) comment: 'My owner').
 
-	((forInStatement property: #right) comment: 'The identifier')
-	<>- ((tExpression property: #forStatementRightOwner) comment:
-			 'The right operand (if possible)').
-	
-	((forInStatement property: #body) comment: 'The body')
-	<>- ((statementBlock property: #forInStatementBlockOwner) comment:
-			 'The owner of this body is a for_in_statment').
+	((forInStatement property: #right) comment:
+		 'The right operand (if possible)')
+	<>-
+	((tExpression property: #forStatementRightOwner) comment: 'My owner').
 
-	((binaryExpression property: #left) comment: 'left')
+	((forInStatement property: #body) comment: 'My body')
+	<>- ((statementBlock property: #forInStatementBodyOwner) comment:
+			 'The owner of this body').
+
+	((binaryExpression property: #left) comment:
+		 'The left operand (if possible)')
 	<>- ((tExpression property: #binaryExpressionLeftOwner) comment:
-			 'The left operand (if possible)').
-	((binaryExpression property: #right) comment: 'right')
+			 'My Owner').
+	((binaryExpression property: #right) comment:
+		 'The right operand (if possible)')
 	<>- ((tExpression property: #binaryExpressionRightOwner) comment:
-			 'The right operand (if possible)').
+			 'My Owner').
 
 	((newExpression property: #constructor) comment:
 		 'The constructor of the new expression')
-	<>- ((identifier property: #typescriptNewExpressionOwner) comment:
+	<>- ((identifier property: #newExpressionConstructorOwner) comment:
 			 'The owner of this constructor').
-			
+
 	((newExpression property: #arguments) comment:
 		 'The arguments of the new expression')
-	<>- ((arguments property: #argumentsOwner) comment:
+	<>- ((arguments property: #newExpressionArgumentsOwner) comment:
 			 'The owner of these arguments').
-	
+
 	((newExpression property: #type_arguments) comment:
 		 'The type arguments of the new expression if they exist between <>')
-	<>- ((typeArguments property: #typeArgumentsOwner) comment:
-			 'The owner of these type arguments').
+	<>-
+		((typeArguments property: #newExpressionTypeArgumentsOwner)
+			 comment: 'The owner of these type arguments').
 
-	((indexSignature property: #index_type) comment: 'My type')
-	<>- ((typeIdentifier property: #indexSignatureOwner) comment:
+	((indexSignature property: #index_type) comment: 'My type idetifier')
+	<>-
+		((typeIdentifier property: #indexSignatureIndexTypeOwner) comment:
 			 'The owner of this index type').
 
 	((indexSignature property: #type) comment: 'My annotation type')
-	<>- ((typeAnnotation property: #indexSignatureOwner) comment:
-			 'The owner of this annotation type').
-	
+	<>- ((typeAnnotation property: #indexSignatureTypeOwner) comment:
+			 'The owner of this type').
+
 	((indexSignature property: #name) comment: 'My name')
-	<>- ((identifier property: #identifierOwner) comment:
+	<>- ((identifier property: #indexSignatureNameOwner) comment:
 			 'The owner of this identifier').
 
 	((functionType property: #return_type) comment: 'My return type')
-	<>- ((tExpression property: #functionTypeOwner) comment:
+	<>- ((tExpression property: #functionTypeReturnTypeOwner) comment:
 			 'The owner of this type').
 
 	((functionType property: #parameters) comment: 'My parameters')
-	<>- ((formalParameters property: #formalParametersOwner) comment:
+	<>-
+		((formalParameters property: #functionTypeParametersOwner) comment:
 			 'My owner').
 
 	((unaryExpression property: #argument) comment: 'My argument')
-	<>- ((tExpression property: #unaryExpressionOwner) comment:
+	<>- ((tExpression property: #unaryExpressionArgumentOwner) comment:
 			 'The owner of this class').
 
 	((extendsTypeClause property: #type) comment: 'My type identifier')
-	<>- ((typeIdentifier property: #extendsTypeClauseOwner) comment:
+	<>- ((typeIdentifier property: #extendsTypeClauseTypeOwner) comment:
 			 'The owner of this type identifier').
 
 	((withStatement property: #object) comment:
 		 'My object as parenthesized expression')
-	<>-
-		((parenthesizedExpression property: #withStatementOwner) comment:
-			 'The owner of this type parenthesized expression').
+	<>- ((parenthesizedExpression property: #withStatementObjectOwner)
+			 comment: 'The owner of this type parenthesized expression').
 
 	((withStatement property: #body) comment:
 		 'My body as statement block')
-	<>- ((statementBlock property: #withStatementOwner) comment:
+	<>- ((statementBlock property: #withStatementBodyOwner) comment:
 			 'The owner of this statement block').
 
 	((nestedIdentifier property: #object) comment:
 		 'My object as identifier')
-	<>- ((identifier property: #nestedIdentifierOwner) comment:
+	<>- ((identifier property: #nestedIdentifierObjectOwner) comment:
 			 'The owner of this identifier').
 
 	((nestedIdentifier property: #property) comment:
 		 'My property as property identifier')
-	<>-
-		((propertyIdentifier property: #nestedIdentifierOwner) comment:
-			 'The owner of this  property identifier').
+	<>- ((propertyIdentifier property: #nestedIdentifierPropertyOwner)
+			 comment: 'The owner of this  property identifier').
 
-	((genericType property: #name) comment:
-		 'My name as type identifier')
-	<>- ((typeIdentifier property: #genericTypeOwner) comment:
+	((genericType property: #name) comment: 'My name as type identifier')
+	<>- ((typeIdentifier property: #genericTypeNameOwner) comment:
 			 'The owner of this type identifier').
-	
+
 	((genericType property: #type_arguments) comment:
 		 'My name as type identifier')
-	<>- ((typeArguments property: #typeArgumentsOwner) comment:
+	<>-
+		((typeArguments property: #genericTypeTypeArgumentsOwner) comment:
 			 'The owner of this type arguments').
 
 	((constructorType property: #type) comment:
 		 'My type as type identifier')
-	<>- ((typeIdentifier property: #constructorTypeOwner) comment:
+	<>- ((typeIdentifier property: #constructorTypeTypeOwner) comment:
 			 'The owner of this type identifier').
-			
-	((constructorType property: #parameters) comment:
-		 'My parameters')
-	<>- ((formalParameters property: #formalParametersOwner) comment:
-			 'The owner of these formal parameters').
+
+	((constructorType property: #parameters) comment: 'My parameters')
+	<>- ((formalParameters property: #constructorTypeParametersOwner)
+			 comment: 'The owner of these formal parameters').
 
 	((optionalParameter property: #type) comment:
 		 'My type as type annotation')
-	<>- ((typeAnnotation property: #optionalParameterOwner) comment:
+	<>- ((typeAnnotation property: #optionalParameterTypeOwner) comment:
 			 'The owner of this type annotation').
 
 	((optionalParameter property: #pattern) comment:
 		 'My pattern as identifier')
-	<>- ((identifier property: #optionalParameterOwner) comment:
+	<>- ((identifier property: #optionalParameterPatternOwner) comment:
 			 'The owner of this identifier').
 
 	((ifStatement property: #condition) comment:
 		 'My condition as parenthesized expression')
-	<>-
-		((parenthesizedExpression property: #ifStatementOwner) comment:
-			 'The owner of this  parenthesized expression').
+	<>- ((parenthesizedExpression property: #ifStatementConditionOwner)
+			 comment: 'The owner of this  parenthesized expression').
 
 	((ifStatement property: #consequence) comment:
 		 'My consequence as statement block')
-	<>- ((statementBlock property: #ifStatementOwner) comment:
+	<>-
+		((statementBlock property: #ifStatementConsequenceOwner) comment:
 			 'The owner of this statement block').
 
 	((augmentedAssignmentExpression property: #left) comment: 'left')
@@ -692,148 +699,156 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 			 'The right operand (if possible)').
 
 	((conditionalType property: #alternative) comment: 'alternative')
-	<>- ((tExpression property: #alternativeOwner) comment:
+	<>-
+		((tExpression property: #conditionalTypeAlternativeOwner) comment:
 			 'Alternative owner').
 
 	((conditionalType property: #consequence) comment: 'consequence')
-	<>- ((tExpression property: #consequenceOwner) comment:
+	<>-
+		((tExpression property: #conditionalTypeConsequenceOwner) comment:
 			 'Consequence owner').
 
 	((tryStatement property: #body) comment: 'Body')
-	<>- ((statementBlock property: #tryStatementOwner) comment:
+	<>- ((statementBlock property: #tryStatementBodyOwner) comment:
 			 'Try statement owner').
 
 	((tryStatement property: #handler) comment: 'Handler')
-	<>- ((catchClause property: #tryStatementOwner) comment:
+	<>- ((catchClause property: #tryStatementHandlerOwner) comment:
 			 'Try statement owner').
 
 	((tryStatement property: #finalizer) comment: 'Finalizer')
-	<>- ((finallyClause property: #tryStatementOwner) comment:
+	<>- ((finallyClause property: #tryStatementFinalizerOwner) comment:
 			 'Try statement owner').
 
 	((memberExpression property: #object) comment: 'Object')
-	<>- ((tExpression property: #memberExpressionOwner) comment: 'This owner').
+	<>- ((tExpression property: #memberExpressionObjectOwner) comment:
+			 'This owner').
 
 	((memberExpression property: #property) comment: 'Property')
-	<>-
-	((tExpression property: #memberExpressionOwner) comment: 'My owner').
+	<>- ((tExpression property: #memberExpressionPropertyOwner) comment:
+			 'My owner').
 
-	((exportSpecifier property: #name) comment: 'name')
+	((exportSpecifier property: #name) comment: 'Name')
 	<>-
-	((identifier property: #exportSpecifierOwner) comment: 'My owner').
-	
+	((identifier property: #exportSpecifierNameOwner) comment: 'My owner').
+
 	((exportSpecifier property: #alias) comment:
 		 'My alias in case it exists')
-	<>- ((tOptionalField property: #identifierOwner) comment: 'My owner').
+	<>- ((tOptionalField property: #exportSpecifierAliasOwner) comment:
+			 'My owner').
 	
 	((methodDefinition property: #return_type) comment:
 		 'My return type in case it exists')
-	<>- ((tOptionalField property: #typeAnnotationOwner) comment: 'My owner').
+	<>- ((tOptionalField property: #methodDefinitionReturnTypeOwner) comment: 'My owner').
 	
 	((methodDefinition property: #name) comment:
 		 'My name')
-	<>- ((propertyIdentifier property: #propertyIdentifierOwner) comment: 'My owner').
+	<>- ((propertyIdentifier property: #methodDefinitionNameOwner) comment: 'My owner').
 	
 	((methodDefinition property: #body) comment:
 		 'My body')
-	<>- ((statementBlock property: #methodDefinitionOwner) comment: 'My owner').
+	<>- ((statementBlock property: #methodDefinitionBodyOwner) comment: 'My owner').
 
 	((methodDefinition property: #parameters) comment:
 		 'My parameters')
-	<>- ((formalParameters property: #formalParametersOwner) comment: 'My owner'). 
+	<>- ((formalParameters property: #methodDefinitionParametersOwner) comment: 'My owner'). 
 	
 	((finallyClause property: #body) comment:
 		 'My body')
-	<>- ((statementBlock property: #finallyClauseOwner) comment: 'My owner'). 
-	
-	((extendsClause property: #value) comment:
-		 'My value')
-	<>- ((identifier property: #identifierOwner) comment: 'My owner'). 
-	
+	<>- ((statementBlock property: #finallyClauseBodyOwner) comment: 'My owner'). 
+	   
 	((extendsClause property: #type_arguments) comment:
-		 'My arguments')
-	<>- ((typeArguments property: #typeArgumentsOwner) comment: 'My owner'). 
+		 'My type arguments')
+	<>- ((typeArguments property: #extendsClauseTypeArgumentsOwner) comment: 'My owner'). 
+	
+	"((extendsClause property: #value) comment:
+		 'My value')
+	<>- ((identifier property: #extendsClauseValueOwner) comment: 'My owner')." 
 	
 	((assignmentExpression property: #left) comment: 'The left operand')
-	<>- ((tExpression property: #expressionOwnerLeft) comment:
+	<>- ((tExpression property: #assignmentExpressionLeftOwner) comment:
 			 'The expression parent').
 
 	((assignmentExpression property: #right) comment: 'The right operand')
-	<>- ((tExpression property: #expressionOwnerRight) comment:
+	<>- ((tExpression property: #assignmentExpressionRightOwner) comment:
 			 'The expression parent').
-				
+			
 	((variableDeclarator property: #name) comment:
 		 'The identifier')
-	<>- ((identifier property: #identifierOwner) comment:
+	<>- ((identifier property: #variableDeclaratorNameOwner) comment:
 			 'My owner'). 
 	
 	((variableDeclarator property: #value) comment:
 		 'The value')
-	<>- ((tExpression property: #variableExpressionOwner) comment:
-			 'My owner').  
+	<>- ((tExpression property: #variableDeclaratorValueOwner) comment:
+			 'My owner'). 
 			
 	"function declaration"
 	((functionDeclaration property: #name) comment:
 		 'The name of the function')
-	<>- ((identifier property: #identifierOwner) comment:
+	<>- ((identifier property: #functionDeclarationNameOwner) comment:
 			 'My owner'). 
 	
 	((functionDeclaration property: #parameters) comment:
 		 'The parameters of the function')
-	<>- ((formalParameters property: #formalParametersOwner) comment:
+	<>- ((formalParameters property: #functionDeclarationParametersOwner) comment:
 			 'My owner'). 
 			
 	((functionDeclaration property: #body) comment:
 		 'The body of the function')
-	<>- ((statementBlock property: #functionDeclarationOwner) comment:
+	<>- ((statementBlock property: #functionDeclarationBodyOwner) comment:
 			 'My owner'). 
 		
 	((functionDeclaration property: #return_type) comment:
 		 'The return type of the function (in case it exists)')
-	<>- ((typeAnnotation property: #typeAnnotationOwner) comment:
+	<>- ((typeAnnotation property: #functionDeclarationReturnTypeOwner) comment:
 			 'My owner').
 	
 	"class declaration"
 	((classDeclaration property: #body) comment:
 		 'The body of the class')
-	<>- ((classBody property: #parent) comment:
+	<>- ((classBody property: #classDeclarationBodyOwner) comment:
 			 'The class declaration that contains me').
 	
 	((classDeclaration property: #name) comment:
 		 'The name of the class')
-	<>- ((typeIdentifier property: #typeIdentifierOwner) comment:
+	<>- ((typeIdentifier property: #classDeclarationNameOwner) comment:
 			 'My owner').
 		
 	"Enum"
 	((enumDeclaration property: #identifier) comment:
 		 'The identifier I define')
-	<>- ((identifier property: #parentEnum) comment:
+	<>- ((identifier property: #enumDeclarationIdentifierOwner) comment:
 			 'The enum that contains me').
 
 	((enumDeclaration property: #body) comment: 'The body of the enum')
-	<>- ((enumBody property: #bodyParent) comment:
+	<>- ((enumBody property: #enumDeclarationBodyOwner) comment:
 			 'The enum declaration that contains me').
 
 	"Interface"
 	((interfaceDeclaration property: #name) comment:
 		 'My name')
-	<>- ((typeIdentifier property: #typeIdentifierOwner) comment:
+	<>- ((typeIdentifier property: #interfaceDeclarationNameOwner) comment:
 			 'My owner').
 
 	((interfaceDeclaration property: #body) comment:
 		 'The body of the interface')
-	<>- ((interfaceBody property: #bodyParent) comment:
+	<>- ((interfaceBody property: #interfaceDeclarationBodyOwner) comment:
 			 'The interface declaration that contains me').
 
 	"Traits"
 	((tWithDeclarations property: #declarations) comment:
 		 'The elements I declare')
-	<>-* ((tDeclaration property: #typescriptDeclarationOwner) comment:
+	<>-* ((tDeclaration property: #tWithDeclarationsDeclarationsOwner) comment:
 			 'The element that declares me').
 
 	((tWithModifiers property: #modifiers) comment: 'My modifiers')
-	<>-* ((tModifier property: #typescriptModifierOwner) comment:
+	<>-* ((tModifier property: #tWithModifiersModifiersOwner) comment:
 			 'The owner of the modifier')
+
+
+
+
 ]
 
 { #category : 'definition' }

@@ -6,17 +6,17 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `parentLoopStatement` | `FASTTStatement` | `body` | `FASTTLoopStatement` | Optional loop of which this statement is the body|
-| `parentProgram` | `FASTTypeScriptEnumDeclaration` | `enumDeclarations` | `FASTTypeScriptProgram` | The program that contains me|
+| `programEnumDeclarationOwner` | `FASTTypeScriptEnumDeclaration` | `enumDeclarations` | `FASTTypeScriptProgram` | The program that contains me|
 | `statementContainer` | `FASTTStatement` | `statements` | `FASTTStatementBlock` | Block containing this statement.|
-| `typescriptDeclarationOwner` | `FASTTypeScriptTDeclaration` | `declarations` | `FASTTypeScriptTWithDeclarations` | The element that declares me|
+| `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | `declarations` | `FASTTypeScriptTWithDeclarations` | The element that declares me|
 
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptEnumDeclaration` | `bodyParent` | `FASTTypeScriptEnumBody` | The body of the enum|
-| `declarations` | `FASTTypeScriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypeScriptTDeclaration` | The elements I declare|
-| `identifier` | `FASTTypeScriptEnumDeclaration` | `parentEnum` | `FASTTypeScriptIdentifier` | The identifier I define|
-| `modifiers` | `FASTTypeScriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypeScriptTModifier` | My modifiers|
+| `body` | `FASTTypeScriptEnumDeclaration` | `enumDeclarationBodyOwner` | `FASTTypeScriptEnumBody` | The body of the enum|
+| `declarations` | `FASTTypeScriptTWithDeclarations` | `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | The elements I declare|
+| `identifier` | `FASTTypeScriptEnumDeclaration` | `enumDeclarationIdentifierOwner` | `FASTTypeScriptIdentifier` | The identifier I define|
+| `modifiers` | `FASTTypeScriptTWithModifiers` | `tWithModifiersModifiersOwner` | `FASTTypeScriptTModifier` | My modifiers|
 
 
 ## Properties
@@ -34,9 +34,9 @@ Class {
 	#traits : 'FASTTStatement + FASTTypeScriptTDeclaration + FASTTypeScriptTWithDeclarations + FASTTypeScriptTWithModifiers',
 	#classTraits : 'FASTTStatement classTrait + FASTTypeScriptTDeclaration classTrait + FASTTypeScriptTWithDeclarations classTrait + FASTTypeScriptTWithModifiers classTrait',
 	#instVars : [
-		'#parentProgram => FMOne type: #FASTTypeScriptProgram opposite: #enumDeclarations',
-		'#identifier => FMOne type: #FASTTypeScriptIdentifier opposite: #parentEnum',
-		'#body => FMOne type: #FASTTypeScriptEnumBody opposite: #bodyParent'
+		'#programEnumDeclarationOwner => FMOne type: #FASTTypeScriptProgram opposite: #enumDeclarations',
+		'#identifier => FMOne type: #FASTTypeScriptIdentifier opposite: #enumDeclarationIdentifierOwner',
+		'#body => FMOne type: #FASTTypeScriptEnumBody opposite: #enumDeclarationBodyOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -63,7 +63,7 @@ FASTTypeScriptEnumDeclaration class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptEnumDeclaration >> body [
-	"Relation named: #body type: #FASTTypeScriptEnumBody opposite: #bodyParent"
+	"Relation named: #body type: #FASTTypeScriptEnumBody opposite: #enumDeclarationBodyOwner"
 
 	<generated>
 	<FMComment: 'The body of the enum'>
@@ -86,7 +86,7 @@ FASTTypeScriptEnumDeclaration >> bodyGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptEnumDeclaration >> identifier [
-	"Relation named: #identifier type: #FASTTypeScriptIdentifier opposite: #parentEnum"
+	"Relation named: #identifier type: #FASTTypeScriptIdentifier opposite: #enumDeclarationIdentifierOwner"
 
 	<generated>
 	<FMComment: 'The identifier I define'>
@@ -115,25 +115,25 @@ FASTTypeScriptEnumDeclaration >> isEnumDeclaration [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptEnumDeclaration >> parentProgram [
-	"Relation named: #parentProgram type: #FASTTypeScriptProgram opposite: #enumDeclarations"
+FASTTypeScriptEnumDeclaration >> programEnumDeclarationOwner [
+	"Relation named: #programEnumDeclarationOwner type: #FASTTypeScriptProgram opposite: #enumDeclarations"
 
 	<generated>
 	<FMComment: 'The program that contains me'>
 	<container>
-	^ parentProgram
+	^ programEnumDeclarationOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptEnumDeclaration >> parentProgram: anObject [
+FASTTypeScriptEnumDeclaration >> programEnumDeclarationOwner: anObject [
 
 	<generated>
-	parentProgram := anObject
+	programEnumDeclarationOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptEnumDeclaration >> parentProgramGroup [
+FASTTypeScriptEnumDeclaration >> programEnumDeclarationOwnerGroup [
 	<generated>
-	<navigation: 'ParentProgram'>
-	^ MooseSpecializedGroup with: self parentProgram
+	<navigation: 'ProgramEnumDeclarationOwner'>
+	^ MooseSpecializedGroup with: self programEnumDeclarationOwner
 ]

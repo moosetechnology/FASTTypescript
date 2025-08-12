@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `bodyParent` | `FASTTypeScriptEnumBody` | `body` | `FASTTypeScriptEnumDeclaration` | The enum declaration that contains me|
+| `enumDeclarationBodyOwner` | `FASTTypeScriptEnumBody` | `body` | `FASTTypeScriptEnumDeclaration` | The enum declaration that contains me|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypeScriptEnumBody',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#bodyParent => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #body'
+		'#enumDeclarationBodyOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #body'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -40,26 +40,26 @@ FASTTypeScriptEnumBody class >> initialize [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptEnumBody >> bodyParent [
-	"Relation named: #bodyParent type: #FASTTypeScriptEnumDeclaration opposite: #body"
+FASTTypeScriptEnumBody >> enumDeclarationBodyOwner [
+	"Relation named: #enumDeclarationBodyOwner type: #FASTTypeScriptEnumDeclaration opposite: #body"
 
 	<generated>
 	<FMComment: 'The enum declaration that contains me'>
 	<container>
 	<derived>
-	^ bodyParent
+	^ enumDeclarationBodyOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptEnumBody >> bodyParent: anObject [
+FASTTypeScriptEnumBody >> enumDeclarationBodyOwner: anObject [
 
 	<generated>
-	bodyParent := anObject
+	enumDeclarationBodyOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptEnumBody >> bodyParentGroup [
+FASTTypeScriptEnumBody >> enumDeclarationBodyOwnerGroup [
 	<generated>
-	<navigation: 'BodyParent'>
-	^ MooseSpecializedGroup with: self bodyParent
+	<navigation: 'EnumDeclarationBodyOwner'>
+	^ MooseSpecializedGroup with: self enumDeclarationBodyOwner
 ]

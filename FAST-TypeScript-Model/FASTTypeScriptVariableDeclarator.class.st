@@ -5,8 +5,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `name` | `FASTTypeScriptVariableDeclarator` | `identifierOwner` | `FASTTypeScriptIdentifier` | The identifier|
-| `value` | `FASTTypeScriptVariableDeclarator` | `variableExpressionOwner` | `FASTTExpression` | The value|
+| `name` | `FASTTypeScriptVariableDeclarator` | `variableDeclaratorNameOwner` | `FASTTypeScriptIdentifier` | The identifier|
+| `value` | `FASTTypeScriptVariableDeclarator` | `variableDeclaratorValueOwner` | `FASTTExpression` | The value|
 
 
 
@@ -15,7 +15,7 @@ Class {
 	#name : 'FASTTypeScriptVariableDeclarator',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #identifierOwner'
+		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #variableDeclaratorNameOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -41,7 +41,7 @@ FASTTypeScriptVariableDeclarator class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptVariableDeclarator >> name [
-	"Relation named: #name type: #FASTTypeScriptIdentifier opposite: #identifierOwner"
+	"Relation named: #name type: #FASTTypeScriptIdentifier opposite: #variableDeclaratorNameOwner"
 
 	<generated>
 	<FMComment: 'The identifier'>
@@ -64,11 +64,11 @@ FASTTypeScriptVariableDeclarator >> nameGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptVariableDeclarator >> value [
-	"Relation named: #value type: #FASTTExpression opposite: #variableExpressionOwner"
+	"Relation named: #value type: #FASTTExpression opposite: #variableDeclaratorValueOwner"
 
 	<generated>
 	<FMComment: 'The value'>
-	<FMProperty: #value type: #FASTTExpression opposite: #variableExpressionOwner>
+	<FMProperty: #value type: #FASTTExpression opposite: #variableDeclaratorValueOwner>
 	^ self attributeAt: #value ifAbsent: [ nil ]
 ]
 
@@ -80,10 +80,10 @@ FASTTypeScriptVariableDeclarator >> value: anObject [
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self value.
 		self attributeAt: #value put: anObject.
-		otherSide variableExpressionOwner: nil ]
+		otherSide variableDeclaratorValueOwner: nil ]
 	ifNotNil: [ 
 		self attributeAt: #value put: anObject.
-		anObject variableExpressionOwner: self ]
+		anObject variableDeclaratorValueOwner: self ]
 ]
 
 { #category : 'navigation' }

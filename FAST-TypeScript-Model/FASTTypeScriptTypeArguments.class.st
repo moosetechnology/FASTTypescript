@@ -5,11 +5,11 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `identifierOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
-| `typeAnnotationOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
-| `typeArgumentsOwner` | `FASTTypeScriptTypeArguments` | `type_arguments` | `FASTTypeScriptExtendsClause` | My owner|
-| `typeArgumentsOwner` | `FASTTypeScriptTypeArguments` | `type_arguments` | `FASTTypeScriptNewExpression` | The owner of these type arguments|
-| `typeArgumentsOwner` | `FASTTypeScriptTypeArguments` | `type_arguments` | `FASTTypeScriptGenericType` | The owner of this type arguments|
+| `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
+| `extendsClauseTypeArgumentsOwner` | `FASTTypeScriptTypeArguments` | `type_arguments` | `FASTTypeScriptExtendsClause` | My owner|
+| `genericTypeTypeArgumentsOwner` | `FASTTypeScriptTypeArguments` | `type_arguments` | `FASTTypeScriptGenericType` | The owner of this type arguments|
+| `methodDefinitionReturnTypeOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
+| `newExpressionTypeArgumentsOwner` | `FASTTypeScriptTypeArguments` | `type_arguments` | `FASTTypeScriptNewExpression` | The owner of these type arguments|
 
 
 
@@ -20,7 +20,9 @@ Class {
 	#traits : 'FASTTypeScriptTOptionalField',
 	#classTraits : 'FASTTypeScriptTOptionalField classTrait',
 	#instVars : [
-		'#typeArgumentsOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #type_arguments'
+		'#newExpressionTypeArgumentsOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #type_arguments',
+		'#genericTypeTypeArgumentsOwner => FMOne type: #FASTTypeScriptGenericType opposite: #type_arguments',
+		'#extendsClauseTypeArgumentsOwner => FMOne type: #FASTTypeScriptExtendsClause opposite: #type_arguments'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -45,26 +47,76 @@ FASTTypeScriptTypeArguments class >> initialize [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTypeArguments >> typeArgumentsOwner [
-	"Relation named: #typeArgumentsOwner type: #FASTTypeScriptNewExpression opposite: #type_arguments"
+FASTTypeScriptTypeArguments >> extendsClauseTypeArgumentsOwner [
+	"Relation named: #extendsClauseTypeArgumentsOwner type: #FASTTypeScriptExtendsClause opposite: #type_arguments"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ extendsClauseTypeArgumentsOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeArguments >> extendsClauseTypeArgumentsOwner: anObject [
+
+	<generated>
+	extendsClauseTypeArgumentsOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptTypeArguments >> extendsClauseTypeArgumentsOwnerGroup [
+	<generated>
+	<navigation: 'ExtendsClauseTypeArgumentsOwner'>
+	^ MooseSpecializedGroup with: self extendsClauseTypeArgumentsOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeArguments >> genericTypeTypeArgumentsOwner [
+	"Relation named: #genericTypeTypeArgumentsOwner type: #FASTTypeScriptGenericType opposite: #type_arguments"
+
+	<generated>
+	<FMComment: 'The owner of this type arguments'>
+	<container>
+	<derived>
+	^ genericTypeTypeArgumentsOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeArguments >> genericTypeTypeArgumentsOwner: anObject [
+
+	<generated>
+	genericTypeTypeArgumentsOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptTypeArguments >> genericTypeTypeArgumentsOwnerGroup [
+	<generated>
+	<navigation: 'GenericTypeTypeArgumentsOwner'>
+	^ MooseSpecializedGroup with: self genericTypeTypeArgumentsOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeArguments >> newExpressionTypeArgumentsOwner [
+	"Relation named: #newExpressionTypeArgumentsOwner type: #FASTTypeScriptNewExpression opposite: #type_arguments"
 
 	<generated>
 	<FMComment: 'The owner of these type arguments'>
 	<container>
 	<derived>
-	^ typeArgumentsOwner
+	^ newExpressionTypeArgumentsOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTypeArguments >> typeArgumentsOwner: anObject [
+FASTTypeScriptTypeArguments >> newExpressionTypeArgumentsOwner: anObject [
 
 	<generated>
-	typeArgumentsOwner := anObject
+	newExpressionTypeArgumentsOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptTypeArguments >> typeArgumentsOwnerGroup [
+FASTTypeScriptTypeArguments >> newExpressionTypeArgumentsOwnerGroup [
 	<generated>
-	<navigation: 'TypeArgumentsOwner'>
-	^ MooseSpecializedGroup with: self typeArgumentsOwner
+	<navigation: 'NewExpressionTypeArgumentsOwner'>
+	^ MooseSpecializedGroup with: self newExpressionTypeArgumentsOwner
 ]

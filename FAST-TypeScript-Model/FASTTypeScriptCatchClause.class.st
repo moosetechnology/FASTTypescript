@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `tryStatementOwner` | `FASTTypeScriptCatchClause` | `handler` | `FASTTypeScriptTryStatement` | Try statement owner|
+| `tryStatementHandlerOwner` | `FASTTypeScriptCatchClause` | `handler` | `FASTTypeScriptTryStatement` | Try statement owner|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypeScriptCatchClause',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#tryStatementOwner => FMOne type: #FASTTypeScriptTryStatement opposite: #handler'
+		'#tryStatementHandlerOwner => FMOne type: #FASTTypeScriptTryStatement opposite: #handler'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -39,26 +39,26 @@ FASTTypeScriptCatchClause class >> initialize [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptCatchClause >> tryStatementOwner [
-	"Relation named: #tryStatementOwner type: #FASTTypeScriptTryStatement opposite: #handler"
+FASTTypeScriptCatchClause >> tryStatementHandlerOwner [
+	"Relation named: #tryStatementHandlerOwner type: #FASTTypeScriptTryStatement opposite: #handler"
 
 	<generated>
 	<FMComment: 'Try statement owner'>
 	<container>
 	<derived>
-	^ tryStatementOwner
+	^ tryStatementHandlerOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptCatchClause >> tryStatementOwner: anObject [
+FASTTypeScriptCatchClause >> tryStatementHandlerOwner: anObject [
 
 	<generated>
-	tryStatementOwner := anObject
+	tryStatementHandlerOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptCatchClause >> tryStatementOwnerGroup [
+FASTTypeScriptCatchClause >> tryStatementHandlerOwnerGroup [
 	<generated>
-	<navigation: 'TryStatementOwner'>
-	^ MooseSpecializedGroup with: self tryStatementOwner
+	<navigation: 'TryStatementHandlerOwner'>
+	^ MooseSpecializedGroup with: self tryStatementHandlerOwner
 ]

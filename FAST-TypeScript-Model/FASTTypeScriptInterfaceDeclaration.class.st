@@ -6,17 +6,17 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `parentLoopStatement` | `FASTTStatement` | `body` | `FASTTLoopStatement` | Optional loop of which this statement is the body|
-| `parentProgram` | `FASTTypeScriptInterfaceDeclaration` | `interfaceDeclarations` | `FASTTypeScriptProgram` | The program that contains me|
+| `programInterfaceDeclarationOwner` | `FASTTypeScriptInterfaceDeclaration` | `interfaceDeclarations` | `FASTTypeScriptProgram` | The program that contains me|
 | `statementContainer` | `FASTTStatement` | `statements` | `FASTTStatementBlock` | Block containing this statement.|
-| `typescriptDeclarationOwner` | `FASTTypeScriptTDeclaration` | `declarations` | `FASTTypeScriptTWithDeclarations` | The element that declares me|
+| `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | `declarations` | `FASTTypeScriptTWithDeclarations` | The element that declares me|
 
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptInterfaceDeclaration` | `bodyParent` | `FASTTypeScriptInterfaceBody` | The body of the interface|
-| `declarations` | `FASTTypeScriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypeScriptTDeclaration` | The elements I declare|
-| `modifiers` | `FASTTypeScriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypeScriptTModifier` | My modifiers|
-| `name` | `FASTTypeScriptInterfaceDeclaration` | `typeIdentifierOwner` | `FASTTypeScriptTypeIdentifier` | My name|
+| `body` | `FASTTypeScriptInterfaceDeclaration` | `interfaceDeclarationBodyOwner` | `FASTTypeScriptInterfaceBody` | The body of the interface|
+| `declarations` | `FASTTypeScriptTWithDeclarations` | `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | The elements I declare|
+| `modifiers` | `FASTTypeScriptTWithModifiers` | `tWithModifiersModifiersOwner` | `FASTTypeScriptTModifier` | My modifiers|
+| `name` | `FASTTypeScriptInterfaceDeclaration` | `interfaceDeclarationNameOwner` | `FASTTypeScriptTypeIdentifier` | My name|
 
 
 ## Properties
@@ -34,9 +34,9 @@ Class {
 	#traits : 'FASTTStatement + FASTTypeScriptTDeclaration + FASTTypeScriptTWithDeclarations + FASTTypeScriptTWithModifiers',
 	#classTraits : 'FASTTStatement classTrait + FASTTypeScriptTDeclaration classTrait + FASTTypeScriptTWithDeclarations classTrait + FASTTypeScriptTWithModifiers classTrait',
 	#instVars : [
-		'#parentProgram => FMOne type: #FASTTypeScriptProgram opposite: #interfaceDeclarations',
-		'#name => FMOne type: #FASTTypeScriptTypeIdentifier opposite: #typeIdentifierOwner',
-		'#body => FMOne type: #FASTTypeScriptInterfaceBody opposite: #bodyParent'
+		'#programInterfaceDeclarationOwner => FMOne type: #FASTTypeScriptProgram opposite: #interfaceDeclarations',
+		'#name => FMOne type: #FASTTypeScriptTypeIdentifier opposite: #interfaceDeclarationNameOwner',
+		'#body => FMOne type: #FASTTypeScriptInterfaceBody opposite: #interfaceDeclarationBodyOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -63,7 +63,7 @@ FASTTypeScriptInterfaceDeclaration class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptInterfaceDeclaration >> body [
-	"Relation named: #body type: #FASTTypeScriptInterfaceBody opposite: #bodyParent"
+	"Relation named: #body type: #FASTTypeScriptInterfaceBody opposite: #interfaceDeclarationBodyOwner"
 
 	<generated>
 	<FMComment: 'The body of the interface'>
@@ -86,7 +86,7 @@ FASTTypeScriptInterfaceDeclaration >> bodyGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptInterfaceDeclaration >> name [
-	"Relation named: #name type: #FASTTypeScriptTypeIdentifier opposite: #typeIdentifierOwner"
+	"Relation named: #name type: #FASTTypeScriptTypeIdentifier opposite: #interfaceDeclarationNameOwner"
 
 	<generated>
 	<FMComment: 'My name'>
@@ -108,25 +108,25 @@ FASTTypeScriptInterfaceDeclaration >> nameGroup [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptInterfaceDeclaration >> parentProgram [
-	"Relation named: #parentProgram type: #FASTTypeScriptProgram opposite: #interfaceDeclarations"
+FASTTypeScriptInterfaceDeclaration >> programInterfaceDeclarationOwner [
+	"Relation named: #programInterfaceDeclarationOwner type: #FASTTypeScriptProgram opposite: #interfaceDeclarations"
 
 	<generated>
 	<FMComment: 'The program that contains me'>
 	<container>
-	^ parentProgram
+	^ programInterfaceDeclarationOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptInterfaceDeclaration >> parentProgram: anObject [
+FASTTypeScriptInterfaceDeclaration >> programInterfaceDeclarationOwner: anObject [
 
 	<generated>
-	parentProgram := anObject
+	programInterfaceDeclarationOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptInterfaceDeclaration >> parentProgramGroup [
+FASTTypeScriptInterfaceDeclaration >> programInterfaceDeclarationOwnerGroup [
 	<generated>
-	<navigation: 'ParentProgram'>
-	^ MooseSpecializedGroup with: self parentProgram
+	<navigation: 'ProgramInterfaceDeclarationOwner'>
+	^ MooseSpecializedGroup with: self programInterfaceDeclarationOwner
 ]

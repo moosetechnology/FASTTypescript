@@ -7,7 +7,7 @@ I have declarations
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `declarations` | `FASTTypeScriptTWithDeclarations` | `typescriptDeclarationOwner` | `FASTTypeScriptTDeclaration` | The elements I declare|
+| `declarations` | `FASTTypeScriptTWithDeclarations` | `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | The elements I declare|
 
 
 
@@ -15,7 +15,7 @@ I have declarations
 Trait {
 	#name : 'FASTTypeScriptTWithDeclarations',
 	#instVars : [
-		'#declarations => FMMany type: #FASTTypeScriptTDeclaration opposite: #typescriptDeclarationOwner'
+		'#declarations => FMMany type: #FASTTypeScriptTDeclaration opposite: #tWithDeclarationsDeclarationsOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Traits',
 	#package : 'FAST-TypeScript-Model',
@@ -39,7 +39,7 @@ FASTTypeScriptTWithDeclarations >> addDeclaration: anObject [
 
 { #category : 'accessing' }
 FASTTypeScriptTWithDeclarations >> declarations [
-	"Relation named: #declarations type: #FASTTypeScriptTDeclaration opposite: #typescriptDeclarationOwner"
+	"Relation named: #declarations type: #FASTTypeScriptTDeclaration opposite: #tWithDeclarationsDeclarationsOwner"
 
 	<generated>
 	<FMComment: 'The elements I declare'>

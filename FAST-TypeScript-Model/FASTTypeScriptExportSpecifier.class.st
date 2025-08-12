@@ -5,8 +5,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `alias` | `FASTTypeScriptExportSpecifier` | `identifierOwner` | `FASTTypeScriptTOptionalField` | My alias in case it exists|
-| `name` | `FASTTypeScriptExportSpecifier` | `exportSpecifierOwner` | `FASTTypeScriptIdentifier` | name|
+| `alias` | `FASTTypeScriptExportSpecifier` | `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | My alias in case it exists|
+| `name` | `FASTTypeScriptExportSpecifier` | `exportSpecifierNameOwner` | `FASTTypeScriptIdentifier` | Name|
 
 
 
@@ -15,8 +15,8 @@ Class {
 	#name : 'FASTTypeScriptExportSpecifier',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #exportSpecifierOwner',
-		'#alias => FMOne type: #FASTTypeScriptTOptionalField opposite: #identifierOwner'
+		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #exportSpecifierNameOwner',
+		'#alias => FMOne type: #FASTTypeScriptTOptionalField opposite: #exportSpecifierAliasOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -42,7 +42,7 @@ FASTTypeScriptExportSpecifier class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptExportSpecifier >> alias [
-	"Relation named: #alias type: #FASTTypeScriptTOptionalField opposite: #identifierOwner"
+	"Relation named: #alias type: #FASTTypeScriptTOptionalField opposite: #exportSpecifierAliasOwner"
 
 	<generated>
 	<FMComment: 'My alias in case it exists'>
@@ -65,10 +65,10 @@ FASTTypeScriptExportSpecifier >> aliasGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptExportSpecifier >> name [
-	"Relation named: #name type: #FASTTypeScriptIdentifier opposite: #exportSpecifierOwner"
+	"Relation named: #name type: #FASTTypeScriptIdentifier opposite: #exportSpecifierNameOwner"
 
 	<generated>
-	<FMComment: 'name'>
+	<FMComment: 'Name'>
 	^ name
 ]
 

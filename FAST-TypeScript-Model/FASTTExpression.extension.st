@@ -1,30 +1,57 @@
 Extension { #name : 'FASTTExpression' }
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> alternativeOwner [
-	"Relation named: #alternativeOwner type: #FASTTypeScriptConditionalType opposite: #alternative"
+FASTTExpression >> assignmentExpressionLeftOwner [
+	"Relation named: #assignmentExpressionLeftOwner type: #FASTTypeScriptAssignmentExpression opposite: #left"
 
 	<generated>
-	<FMComment: 'Alternative owner'>
+	<FMComment: 'The expression parent'>
 	<container>
 	<derived>
-	<FMProperty: #alternativeOwner type: #FASTTypeScriptConditionalType opposite: #alternative>
+	<FMProperty: #assignmentExpressionLeftOwner type: #FASTTypeScriptAssignmentExpression opposite: #left>
 	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #alternativeOwner ifAbsent: [ nil ]
+	^ self attributeAt: #assignmentExpressionLeftOwner ifAbsent: [ nil ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> alternativeOwner: anObject [
+FASTTExpression >> assignmentExpressionLeftOwner: anObject [
 
 	<generated>
-	(self attributeAt: #alternativeOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	(self attributeAt: #assignmentExpressionLeftOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
-		otherSide :=  self alternativeOwner.
-		self attributeAt: #alternativeOwner put: anObject.
-		otherSide alternative: nil ]
+		otherSide :=  self assignmentExpressionLeftOwner.
+		self attributeAt: #assignmentExpressionLeftOwner put: anObject.
+		otherSide left: nil ]
 	ifNotNil: [ 
-		self attributeAt: #alternativeOwner put: anObject.
-		anObject alternative: self ]
+		self attributeAt: #assignmentExpressionLeftOwner put: anObject.
+		anObject left: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> assignmentExpressionRightOwner [
+	"Relation named: #assignmentExpressionRightOwner type: #FASTTypeScriptAssignmentExpression opposite: #right"
+
+	<generated>
+	<FMComment: 'The expression parent'>
+	<container>
+	<derived>
+	<FMProperty: #assignmentExpressionRightOwner type: #FASTTypeScriptAssignmentExpression opposite: #right>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #assignmentExpressionRightOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> assignmentExpressionRightOwner: anObject [
+
+	<generated>
+	(self attributeAt: #assignmentExpressionRightOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self assignmentExpressionRightOwner.
+		self attributeAt: #assignmentExpressionRightOwner put: anObject.
+		otherSide right: nil ]
+	ifNotNil: [ 
+		self attributeAt: #assignmentExpressionRightOwner put: anObject.
+		anObject right: self ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
@@ -86,7 +113,7 @@ FASTTExpression >> binaryExpressionLeftOwner [
 	"Relation named: #binaryExpressionLeftOwner type: #FASTTypeScriptBinaryExpression opposite: #left"
 
 	<generated>
-	<FMComment: 'The left operand (if possible)'>
+	<FMComment: 'My Owner'>
 	<container>
 	<derived>
 	<FMProperty: #binaryExpressionLeftOwner type: #FASTTypeScriptBinaryExpression opposite: #left>
@@ -113,7 +140,7 @@ FASTTExpression >> binaryExpressionRightOwner [
 	"Relation named: #binaryExpressionRightOwner type: #FASTTypeScriptBinaryExpression opposite: #right"
 
 	<generated>
-	<FMComment: 'The right operand (if possible)'>
+	<FMComment: 'My Owner'>
 	<container>
 	<derived>
 	<FMProperty: #binaryExpressionRightOwner type: #FASTTypeScriptBinaryExpression opposite: #right>
@@ -133,6 +160,60 @@ FASTTExpression >> binaryExpressionRightOwner: anObject [
 	ifNotNil: [ 
 		self attributeAt: #binaryExpressionRightOwner put: anObject.
 		anObject right: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> conditionalTypeAlternativeOwner [
+	"Relation named: #conditionalTypeAlternativeOwner type: #FASTTypeScriptConditionalType opposite: #alternative"
+
+	<generated>
+	<FMComment: 'Alternative owner'>
+	<container>
+	<derived>
+	<FMProperty: #conditionalTypeAlternativeOwner type: #FASTTypeScriptConditionalType opposite: #alternative>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #conditionalTypeAlternativeOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> conditionalTypeAlternativeOwner: anObject [
+
+	<generated>
+	(self attributeAt: #conditionalTypeAlternativeOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self conditionalTypeAlternativeOwner.
+		self attributeAt: #conditionalTypeAlternativeOwner put: anObject.
+		otherSide alternative: nil ]
+	ifNotNil: [ 
+		self attributeAt: #conditionalTypeAlternativeOwner put: anObject.
+		anObject alternative: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> conditionalTypeConsequenceOwner [
+	"Relation named: #conditionalTypeConsequenceOwner type: #FASTTypeScriptConditionalType opposite: #consequence"
+
+	<generated>
+	<FMComment: 'Consequence owner'>
+	<container>
+	<derived>
+	<FMProperty: #conditionalTypeConsequenceOwner type: #FASTTypeScriptConditionalType opposite: #consequence>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #conditionalTypeConsequenceOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> conditionalTypeConsequenceOwner: anObject [
+
+	<generated>
+	(self attributeAt: #conditionalTypeConsequenceOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self conditionalTypeConsequenceOwner.
+		self attributeAt: #conditionalTypeConsequenceOwner put: anObject.
+		otherSide consequence: nil ]
+	ifNotNil: [ 
+		self attributeAt: #conditionalTypeConsequenceOwner put: anObject.
+		anObject consequence: self ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
@@ -190,92 +271,11 @@ FASTTExpression >> conditionalTypeRightOwner: anObject [
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> consequenceOwner [
-	"Relation named: #consequenceOwner type: #FASTTypeScriptConditionalType opposite: #consequence"
-
-	<generated>
-	<FMComment: 'Consequence owner'>
-	<container>
-	<derived>
-	<FMProperty: #consequenceOwner type: #FASTTypeScriptConditionalType opposite: #consequence>
-	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #consequenceOwner ifAbsent: [ nil ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> consequenceOwner: anObject [
-
-	<generated>
-	(self attributeAt: #consequenceOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
-	anObject ifNil: [ | otherSide |
-		otherSide :=  self consequenceOwner.
-		self attributeAt: #consequenceOwner put: anObject.
-		otherSide consequence: nil ]
-	ifNotNil: [ 
-		self attributeAt: #consequenceOwner put: anObject.
-		anObject consequence: self ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> expressionOwnerLeft [
-	"Relation named: #expressionOwnerLeft type: #FASTTypeScriptAssignmentExpression opposite: #left"
-
-	<generated>
-	<FMComment: 'The expression parent'>
-	<container>
-	<derived>
-	<FMProperty: #expressionOwnerLeft type: #FASTTypeScriptAssignmentExpression opposite: #left>
-	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #expressionOwnerLeft ifAbsent: [ nil ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> expressionOwnerLeft: anObject [
-
-	<generated>
-	(self attributeAt: #expressionOwnerLeft ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
-	anObject ifNil: [ | otherSide |
-		otherSide :=  self expressionOwnerLeft.
-		self attributeAt: #expressionOwnerLeft put: anObject.
-		otherSide left: nil ]
-	ifNotNil: [ 
-		self attributeAt: #expressionOwnerLeft put: anObject.
-		anObject left: self ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> expressionOwnerRight [
-	"Relation named: #expressionOwnerRight type: #FASTTypeScriptAssignmentExpression opposite: #right"
-
-	<generated>
-	<FMComment: 'The expression parent'>
-	<container>
-	<derived>
-	<FMProperty: #expressionOwnerRight type: #FASTTypeScriptAssignmentExpression opposite: #right>
-	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #expressionOwnerRight ifAbsent: [ nil ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> expressionOwnerRight: anObject [
-
-	<generated>
-	(self attributeAt: #expressionOwnerRight ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
-	anObject ifNil: [ | otherSide |
-		otherSide :=  self expressionOwnerRight.
-		self attributeAt: #expressionOwnerRight put: anObject.
-		otherSide right: nil ]
-	ifNotNil: [ 
-		self attributeAt: #expressionOwnerRight put: anObject.
-		anObject right: self ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
 FASTTExpression >> forStatementLeftOwner [
 	"Relation named: #forStatementLeftOwner type: #FASTTypeScriptForInStatement opposite: #left"
 
 	<generated>
-	<FMComment: 'The left operand (if possible)'>
+	<FMComment: 'My owner'>
 	<container>
 	<derived>
 	<FMProperty: #forStatementLeftOwner type: #FASTTypeScriptForInStatement opposite: #left>
@@ -302,7 +302,7 @@ FASTTExpression >> forStatementRightOwner [
 	"Relation named: #forStatementRightOwner type: #FASTTypeScriptForInStatement opposite: #right"
 
 	<generated>
-	<FMComment: 'The right operand (if possible)'>
+	<FMComment: 'My owner'>
 	<container>
 	<derived>
 	<FMProperty: #forStatementRightOwner type: #FASTTypeScriptForInStatement opposite: #right>
@@ -325,109 +325,136 @@ FASTTExpression >> forStatementRightOwner: anObject [
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> functionTypeOwner [
-	"Relation named: #functionTypeOwner type: #FASTTypeScriptFunctionType opposite: #return_type"
+FASTTExpression >> functionTypeReturnTypeOwner [
+	"Relation named: #functionTypeReturnTypeOwner type: #FASTTypeScriptFunctionType opposite: #return_type"
 
 	<generated>
 	<FMComment: 'The owner of this type'>
 	<container>
 	<derived>
-	<FMProperty: #functionTypeOwner type: #FASTTypeScriptFunctionType opposite: #return_type>
+	<FMProperty: #functionTypeReturnTypeOwner type: #FASTTypeScriptFunctionType opposite: #return_type>
 	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #functionTypeOwner ifAbsent: [ nil ]
+	^ self attributeAt: #functionTypeReturnTypeOwner ifAbsent: [ nil ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> functionTypeOwner: anObject [
+FASTTExpression >> functionTypeReturnTypeOwner: anObject [
 
 	<generated>
-	(self attributeAt: #functionTypeOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	(self attributeAt: #functionTypeReturnTypeOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
-		otherSide :=  self functionTypeOwner.
-		self attributeAt: #functionTypeOwner put: anObject.
+		otherSide :=  self functionTypeReturnTypeOwner.
+		self attributeAt: #functionTypeReturnTypeOwner put: anObject.
 		otherSide return_type: nil ]
 	ifNotNil: [ 
-		self attributeAt: #functionTypeOwner put: anObject.
+		self attributeAt: #functionTypeReturnTypeOwner put: anObject.
 		anObject return_type: self ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> memberExpressionOwner [
-	"Relation named: #memberExpressionOwner type: #FASTTypeScriptMemberExpression opposite: #object"
+FASTTExpression >> memberExpressionObjectOwner [
+	"Relation named: #memberExpressionObjectOwner type: #FASTTypeScriptMemberExpression opposite: #object"
 
 	<generated>
 	<FMComment: 'This owner'>
 	<container>
 	<derived>
-	<FMProperty: #memberExpressionOwner type: #FASTTypeScriptMemberExpression opposite: #object>
+	<FMProperty: #memberExpressionObjectOwner type: #FASTTypeScriptMemberExpression opposite: #object>
 	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #memberExpressionOwner ifAbsent: [ nil ]
+	^ self attributeAt: #memberExpressionObjectOwner ifAbsent: [ nil ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> memberExpressionOwner: anObject [
+FASTTExpression >> memberExpressionObjectOwner: anObject [
 
 	<generated>
-	(self attributeAt: #memberExpressionOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	(self attributeAt: #memberExpressionObjectOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
-		otherSide :=  self memberExpressionOwner.
-		self attributeAt: #memberExpressionOwner put: anObject.
+		otherSide :=  self memberExpressionObjectOwner.
+		self attributeAt: #memberExpressionObjectOwner put: anObject.
 		otherSide object: nil ]
 	ifNotNil: [ 
-		self attributeAt: #memberExpressionOwner put: anObject.
+		self attributeAt: #memberExpressionObjectOwner put: anObject.
 		anObject object: self ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> unaryExpressionOwner [
-	"Relation named: #unaryExpressionOwner type: #FASTTypeScriptUnaryExpression opposite: #argument"
-
-	<generated>
-	<FMComment: 'The owner of this class'>
-	<container>
-	<derived>
-	<FMProperty: #unaryExpressionOwner type: #FASTTypeScriptUnaryExpression opposite: #argument>
-	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #unaryExpressionOwner ifAbsent: [ nil ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> unaryExpressionOwner: anObject [
-
-	<generated>
-	(self attributeAt: #unaryExpressionOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
-	anObject ifNil: [ | otherSide |
-		otherSide :=  self unaryExpressionOwner.
-		self attributeAt: #unaryExpressionOwner put: anObject.
-		otherSide argument: nil ]
-	ifNotNil: [ 
-		self attributeAt: #unaryExpressionOwner put: anObject.
-		anObject argument: self ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> variableExpressionOwner [
-	"Relation named: #variableExpressionOwner type: #FASTTypeScriptVariableDeclarator opposite: #value"
+FASTTExpression >> memberExpressionPropertyOwner [
+	"Relation named: #memberExpressionPropertyOwner type: #FASTTypeScriptMemberExpression opposite: #property"
 
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
 	<derived>
-	<FMProperty: #variableExpressionOwner type: #FASTTypeScriptVariableDeclarator opposite: #value>
+	<FMProperty: #memberExpressionPropertyOwner type: #FASTTypeScriptMemberExpression opposite: #property>
 	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #variableExpressionOwner ifAbsent: [ nil ]
+	^ self attributeAt: #memberExpressionPropertyOwner ifAbsent: [ nil ]
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> variableExpressionOwner: anObject [
+FASTTExpression >> memberExpressionPropertyOwner: anObject [
 
 	<generated>
-	(self attributeAt: #variableExpressionOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	(self attributeAt: #memberExpressionPropertyOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
-		otherSide :=  self variableExpressionOwner.
-		self attributeAt: #variableExpressionOwner put: anObject.
+		otherSide :=  self memberExpressionPropertyOwner.
+		self attributeAt: #memberExpressionPropertyOwner put: anObject.
+		otherSide property: nil ]
+	ifNotNil: [ 
+		self attributeAt: #memberExpressionPropertyOwner put: anObject.
+		anObject property: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> unaryExpressionArgumentOwner [
+	"Relation named: #unaryExpressionArgumentOwner type: #FASTTypeScriptUnaryExpression opposite: #argument"
+
+	<generated>
+	<FMComment: 'The owner of this class'>
+	<container>
+	<derived>
+	<FMProperty: #unaryExpressionArgumentOwner type: #FASTTypeScriptUnaryExpression opposite: #argument>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #unaryExpressionArgumentOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> unaryExpressionArgumentOwner: anObject [
+
+	<generated>
+	(self attributeAt: #unaryExpressionArgumentOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self unaryExpressionArgumentOwner.
+		self attributeAt: #unaryExpressionArgumentOwner put: anObject.
+		otherSide argument: nil ]
+	ifNotNil: [ 
+		self attributeAt: #unaryExpressionArgumentOwner put: anObject.
+		anObject argument: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> variableDeclaratorValueOwner [
+	"Relation named: #variableDeclaratorValueOwner type: #FASTTypeScriptVariableDeclarator opposite: #value"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	<FMProperty: #variableDeclaratorValueOwner type: #FASTTypeScriptVariableDeclarator opposite: #value>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #variableDeclaratorValueOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> variableDeclaratorValueOwner: anObject [
+
+	<generated>
+	(self attributeAt: #variableDeclaratorValueOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self variableDeclaratorValueOwner.
+		self attributeAt: #variableDeclaratorValueOwner put: anObject.
 		otherSide value: nil ]
 	ifNotNil: [ 
-		self attributeAt: #variableExpressionOwner put: anObject.
+		self attributeAt: #variableDeclaratorValueOwner put: anObject.
 		anObject value: self ]
 ]

@@ -5,11 +5,11 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `identifierOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
-| `indexSignatureOwner` | `FASTTypeScriptTypeAnnotation` | `type` | `FASTTypeScriptIndexSignature` | The owner of this annotation type|
-| `optionalParameterOwner` | `FASTTypeScriptTypeAnnotation` | `type` | `FASTTypeScriptOptionalParameter` | The owner of this type annotation|
-| `typeAnnotationOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
-| `typeAnnotationOwner` | `FASTTypeScriptTypeAnnotation` | `return_type` | `FASTTypeScriptFunctionDeclaration` | My owner|
+| `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
+| `functionDeclarationReturnTypeOwner` | `FASTTypeScriptTypeAnnotation` | `return_type` | `FASTTypeScriptFunctionDeclaration` | My owner|
+| `indexSignatureTypeOwner` | `FASTTypeScriptTypeAnnotation` | `type` | `FASTTypeScriptIndexSignature` | The owner of this type|
+| `methodDefinitionReturnTypeOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
+| `optionalParameterTypeOwner` | `FASTTypeScriptTypeAnnotation` | `type` | `FASTTypeScriptOptionalParameter` | The owner of this type annotation|
 
 
 
@@ -20,9 +20,9 @@ Class {
 	#traits : 'FASTTypeScriptTOptionalField',
 	#classTraits : 'FASTTypeScriptTOptionalField classTrait',
 	#instVars : [
-		'#indexSignatureOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #type',
-		'#optionalParameterOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #type',
-		'#typeAnnotationOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #return_type'
+		'#indexSignatureTypeOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #type',
+		'#optionalParameterTypeOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #type',
+		'#functionDeclarationReturnTypeOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #return_type'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -47,76 +47,76 @@ FASTTypeScriptTypeAnnotation class >> initialize [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTypeAnnotation >> indexSignatureOwner [
-	"Relation named: #indexSignatureOwner type: #FASTTypeScriptIndexSignature opposite: #type"
-
-	<generated>
-	<FMComment: 'The owner of this annotation type'>
-	<container>
-	<derived>
-	^ indexSignatureOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeAnnotation >> indexSignatureOwner: anObject [
-
-	<generated>
-	indexSignatureOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTypeAnnotation >> indexSignatureOwnerGroup [
-	<generated>
-	<navigation: 'IndexSignatureOwner'>
-	^ MooseSpecializedGroup with: self indexSignatureOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeAnnotation >> optionalParameterOwner [
-	"Relation named: #optionalParameterOwner type: #FASTTypeScriptOptionalParameter opposite: #type"
-
-	<generated>
-	<FMComment: 'The owner of this type annotation'>
-	<container>
-	<derived>
-	^ optionalParameterOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeAnnotation >> optionalParameterOwner: anObject [
-
-	<generated>
-	optionalParameterOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTypeAnnotation >> optionalParameterOwnerGroup [
-	<generated>
-	<navigation: 'OptionalParameterOwner'>
-	^ MooseSpecializedGroup with: self optionalParameterOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeAnnotation >> typeAnnotationOwner [
-	"Relation named: #typeAnnotationOwner type: #FASTTypeScriptFunctionDeclaration opposite: #return_type"
+FASTTypeScriptTypeAnnotation >> functionDeclarationReturnTypeOwner [
+	"Relation named: #functionDeclarationReturnTypeOwner type: #FASTTypeScriptFunctionDeclaration opposite: #return_type"
 
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
 	<derived>
-	^ typeAnnotationOwner
+	^ functionDeclarationReturnTypeOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTypeAnnotation >> typeAnnotationOwner: anObject [
+FASTTypeScriptTypeAnnotation >> functionDeclarationReturnTypeOwner: anObject [
 
 	<generated>
-	typeAnnotationOwner := anObject
+	functionDeclarationReturnTypeOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptTypeAnnotation >> typeAnnotationOwnerGroup [
+FASTTypeScriptTypeAnnotation >> functionDeclarationReturnTypeOwnerGroup [
 	<generated>
-	<navigation: 'TypeAnnotationOwner'>
-	^ MooseSpecializedGroup with: self typeAnnotationOwner
+	<navigation: 'FunctionDeclarationReturnTypeOwner'>
+	^ MooseSpecializedGroup with: self functionDeclarationReturnTypeOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeAnnotation >> indexSignatureTypeOwner [
+	"Relation named: #indexSignatureTypeOwner type: #FASTTypeScriptIndexSignature opposite: #type"
+
+	<generated>
+	<FMComment: 'The owner of this type'>
+	<container>
+	<derived>
+	^ indexSignatureTypeOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeAnnotation >> indexSignatureTypeOwner: anObject [
+
+	<generated>
+	indexSignatureTypeOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptTypeAnnotation >> indexSignatureTypeOwnerGroup [
+	<generated>
+	<navigation: 'IndexSignatureTypeOwner'>
+	^ MooseSpecializedGroup with: self indexSignatureTypeOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeAnnotation >> optionalParameterTypeOwner [
+	"Relation named: #optionalParameterTypeOwner type: #FASTTypeScriptOptionalParameter opposite: #type"
+
+	<generated>
+	<FMComment: 'The owner of this type annotation'>
+	<container>
+	<derived>
+	^ optionalParameterTypeOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeAnnotation >> optionalParameterTypeOwner: anObject [
+
+	<generated>
+	optionalParameterTypeOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptTypeAnnotation >> optionalParameterTypeOwnerGroup [
+	<generated>
+	<navigation: 'OptionalParameterTypeOwner'>
+	^ MooseSpecializedGroup with: self optionalParameterTypeOwner
 ]

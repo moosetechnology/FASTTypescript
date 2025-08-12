@@ -5,8 +5,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `object` | `FASTTypeScriptNestedIdentifier` | `nestedIdentifierOwner` | `FASTTypeScriptIdentifier` | My object as identifier|
-| `property` | `FASTTypeScriptNestedIdentifier` | `nestedIdentifierOwner` | `FASTTypeScriptPropertyIdentifier` | My property as property identifier|
+| `object` | `FASTTypeScriptNestedIdentifier` | `nestedIdentifierObjectOwner` | `FASTTypeScriptIdentifier` | My object as identifier|
+| `property` | `FASTTypeScriptNestedIdentifier` | `nestedIdentifierPropertyOwner` | `FASTTypeScriptPropertyIdentifier` | My property as property identifier|
 
 
 
@@ -15,8 +15,8 @@ Class {
 	#name : 'FASTTypeScriptNestedIdentifier',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#object => FMOne type: #FASTTypeScriptIdentifier opposite: #nestedIdentifierOwner',
-		'#property => FMOne type: #FASTTypeScriptPropertyIdentifier opposite: #nestedIdentifierOwner'
+		'#object => FMOne type: #FASTTypeScriptIdentifier opposite: #nestedIdentifierObjectOwner',
+		'#property => FMOne type: #FASTTypeScriptPropertyIdentifier opposite: #nestedIdentifierPropertyOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -42,7 +42,7 @@ FASTTypeScriptNestedIdentifier class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptNestedIdentifier >> object [
-	"Relation named: #object type: #FASTTypeScriptIdentifier opposite: #nestedIdentifierOwner"
+	"Relation named: #object type: #FASTTypeScriptIdentifier opposite: #nestedIdentifierObjectOwner"
 
 	<generated>
 	<FMComment: 'My object as identifier'>
@@ -65,7 +65,7 @@ FASTTypeScriptNestedIdentifier >> objectGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptNestedIdentifier >> property [
-	"Relation named: #property type: #FASTTypeScriptPropertyIdentifier opposite: #nestedIdentifierOwner"
+	"Relation named: #property type: #FASTTypeScriptPropertyIdentifier opposite: #nestedIdentifierPropertyOwner"
 
 	<generated>
 	<FMComment: 'My property as property identifier'>

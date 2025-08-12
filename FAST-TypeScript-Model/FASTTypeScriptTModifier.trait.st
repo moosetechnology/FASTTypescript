@@ -7,7 +7,7 @@ I am a modifier
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `typescriptModifierOwner` | `FASTTypeScriptTModifier` | `modifiers` | `FASTTypeScriptTWithModifiers` | The owner of the modifier|
+| `tWithModifiersModifiersOwner` | `FASTTypeScriptTModifier` | `modifiers` | `FASTTypeScriptTWithModifiers` | The owner of the modifier|
 
 
 
@@ -15,7 +15,7 @@ I am a modifier
 Trait {
 	#name : 'FASTTypeScriptTModifier',
 	#instVars : [
-		'#typescriptModifierOwner => FMOne type: #FASTTypeScriptTWithModifiers opposite: #modifiers'
+		'#tWithModifiersModifiersOwner => FMOne type: #FASTTypeScriptTWithModifiers opposite: #modifiers'
 	],
 	#category : 'FAST-TypeScript-Model-Traits',
 	#package : 'FAST-TypeScript-Model',
@@ -32,25 +32,25 @@ FASTTypeScriptTModifier classSide >> annotation [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTModifier >> typescriptModifierOwner [
-	"Relation named: #typescriptModifierOwner type: #FASTTypeScriptTWithModifiers opposite: #modifiers"
+FASTTypeScriptTModifier >> tWithModifiersModifiersOwner [
+	"Relation named: #tWithModifiersModifiersOwner type: #FASTTypeScriptTWithModifiers opposite: #modifiers"
 
 	<generated>
 	<FMComment: 'The owner of the modifier'>
 	<container>
-	^ typescriptModifierOwner
+	^ tWithModifiersModifiersOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTModifier >> typescriptModifierOwner: anObject [
+FASTTypeScriptTModifier >> tWithModifiersModifiersOwner: anObject [
 
 	<generated>
-	typescriptModifierOwner := anObject
+	tWithModifiersModifiersOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptTModifier >> typescriptModifierOwnerGroup [
+FASTTypeScriptTModifier >> tWithModifiersModifiersOwnerGroup [
 	<generated>
-	<navigation: 'TypescriptModifierOwner'>
-	^ MooseSpecializedGroup with: self typescriptModifierOwner
+	<navigation: 'TWithModifiersModifiersOwner'>
+	^ MooseSpecializedGroup with: self tWithModifiersModifiersOwner
 ]

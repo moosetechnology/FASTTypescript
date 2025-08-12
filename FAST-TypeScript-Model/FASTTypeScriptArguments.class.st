@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `argumentsOwner` | `FASTTypeScriptArguments` | `arguments` | `FASTTypeScriptNewExpression` | The owner of these arguments|
+| `newExpressionArgumentsOwner` | `FASTTypeScriptArguments` | `arguments` | `FASTTypeScriptNewExpression` | The owner of these arguments|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypeScriptArguments',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#argumentsOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #arguments'
+		'#newExpressionArgumentsOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #arguments'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -37,26 +37,26 @@ FASTTypeScriptArguments class >> initialize [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptArguments >> argumentsOwner [
-	"Relation named: #argumentsOwner type: #FASTTypeScriptNewExpression opposite: #arguments"
+FASTTypeScriptArguments >> newExpressionArgumentsOwner [
+	"Relation named: #newExpressionArgumentsOwner type: #FASTTypeScriptNewExpression opposite: #arguments"
 
 	<generated>
 	<FMComment: 'The owner of these arguments'>
 	<container>
 	<derived>
-	^ argumentsOwner
+	^ newExpressionArgumentsOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptArguments >> argumentsOwner: anObject [
+FASTTypeScriptArguments >> newExpressionArgumentsOwner: anObject [
 
 	<generated>
-	argumentsOwner := anObject
+	newExpressionArgumentsOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptArguments >> argumentsOwnerGroup [
+FASTTypeScriptArguments >> newExpressionArgumentsOwnerGroup [
 	<generated>
-	<navigation: 'ArgumentsOwner'>
-	^ MooseSpecializedGroup with: self argumentsOwner
+	<navigation: 'NewExpressionArgumentsOwner'>
+	^ MooseSpecializedGroup with: self newExpressionArgumentsOwner
 ]

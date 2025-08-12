@@ -5,9 +5,9 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptForInStatement` | `forInStatementBlockOwner` | `FASTTypeScriptStatementBlock` | The body|
-| `left` | `FASTTypeScriptForInStatement` | `forStatementLeftOwner` | `FASTTExpression` | The identifier|
-| `right` | `FASTTypeScriptForInStatement` | `forStatementRightOwner` | `FASTTExpression` | The identifier|
+| `body` | `FASTTypeScriptForInStatement` | `forInStatementBodyOwner` | `FASTTypeScriptStatementBlock` | My body|
+| `left` | `FASTTypeScriptForInStatement` | `forStatementLeftOwner` | `FASTTExpression` | The left operand (if possible)|
+| `right` | `FASTTypeScriptForInStatement` | `forStatementRightOwner` | `FASTTExpression` | The right operand (if possible)|
 
 
 
@@ -16,7 +16,7 @@ Class {
 	#name : 'FASTTypeScriptForInStatement',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #forInStatementBlockOwner'
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #forInStatementBodyOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -42,10 +42,10 @@ FASTTypeScriptForInStatement class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptForInStatement >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #forInStatementBlockOwner"
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #forInStatementBodyOwner"
 
 	<generated>
-	<FMComment: 'The body'>
+	<FMComment: 'My body'>
 	^ body
 ]
 
@@ -68,7 +68,7 @@ FASTTypeScriptForInStatement >> left [
 	"Relation named: #left type: #FASTTExpression opposite: #forStatementLeftOwner"
 
 	<generated>
-	<FMComment: 'The identifier'>
+	<FMComment: 'The left operand (if possible)'>
 	<FMProperty: #left type: #FASTTExpression opposite: #forStatementLeftOwner>
 	^ self attributeAt: #left ifAbsent: [ nil ]
 ]
@@ -99,7 +99,7 @@ FASTTypeScriptForInStatement >> right [
 	"Relation named: #right type: #FASTTExpression opposite: #forStatementRightOwner"
 
 	<generated>
-	<FMComment: 'The identifier'>
+	<FMComment: 'The right operand (if possible)'>
 	<FMProperty: #right type: #FASTTExpression opposite: #forStatementRightOwner>
 	^ self attributeAt: #right ifAbsent: [ nil ]
 ]
