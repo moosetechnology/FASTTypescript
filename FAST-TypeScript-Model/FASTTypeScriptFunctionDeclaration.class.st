@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptFunctionDeclaration` | `statementBlockOwner` | `FASTTypeScriptStatementBlock` | The body of the function|
+| `body` | `FASTTypeScriptFunctionDeclaration` | `functionDeclarationOwner` | `FASTTypeScriptStatementBlock` | The body of the function|
 | `name` | `FASTTypeScriptFunctionDeclaration` | `identifierOwner` | `FASTTypeScriptIdentifier` | The name of the function|
 | `parameters` | `FASTTypeScriptFunctionDeclaration` | `formalParametersOwner` | `FASTTypeScriptFormalParameters` | The parameters of the function|
 | `return_type` | `FASTTypeScriptFunctionDeclaration` | `typeAnnotationOwner` | `FASTTypeScriptTypeAnnotation` | The return type of the function (in case it exists)|
@@ -17,9 +17,9 @@ Class {
 	#name : 'FASTTypeScriptFunctionDeclaration',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner',
 		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #identifierOwner',
 		'#parameters => FMOne type: #FASTTypeScriptFormalParameters opposite: #formalParametersOwner',
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #functionDeclarationOwner',
 		'#return_type => FMOne type: #FASTTypeScriptTypeAnnotation opposite: #typeAnnotationOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
@@ -40,13 +40,11 @@ FASTTypeScriptFunctionDeclaration class >> annotation [
 FASTTypeScriptFunctionDeclaration class >> initialize [ 
 
 	self deprecatedAliases: { #FASTTypescriptFunction_declaration }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptFunctionDeclaration >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner"
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #functionDeclarationOwner"
 
 	<generated>
 	<FMComment: 'The body of the function'>

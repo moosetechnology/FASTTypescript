@@ -558,7 +558,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 			 'The right operand (if possible)').
 	
 	((forInStatement property: #body) comment: 'The body')
-	<>- ((statementBlock property: #statementBlockOwner) comment:
+	<>- ((statementBlock property: #forInStatementBlockOwner) comment:
 			 'The owner of this body is a for_in_statment').
 
 	((binaryExpression property: #left) comment: 'left')
@@ -736,7 +736,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	
 	((methodDefinition property: #body) comment:
 		 'My body')
-	<>- ((statementBlock property: #statementBlockOwner) comment: 'My owner').
+	<>- ((statementBlock property: #methodDefinitionOwner) comment: 'My owner').
 
 	((methodDefinition property: #parameters) comment:
 		 'My parameters')
@@ -744,7 +744,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	
 	((finallyClause property: #body) comment:
 		 'My body')
-	<>- ((statementBlock property: #statementBlockOwner) comment: 'My owner'). 
+	<>- ((statementBlock property: #finallyClauseOwner) comment: 'My owner'). 
 	
 	((extendsClause property: #value) comment:
 		 'My value')
@@ -785,7 +785,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 			
 	((functionDeclaration property: #body) comment:
 		 'The body of the function')
-	<>- ((statementBlock property: #statementBlockOwner) comment:
+	<>- ((statementBlock property: #functionDeclarationOwner) comment:
 			 'My owner'). 
 		
 	((functionDeclaration property: #return_type) comment:

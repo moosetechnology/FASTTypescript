@@ -17,8 +17,8 @@ Class {
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
 		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #tryStatementOwner',
-		'#handler => FMOne type: #FASTTypeScriptCatchClause opposite: #tryStatementOwner',
-		'#finalizer => FMOne type: #FASTTypeScriptFinallyClause opposite: #tryStatementOwner'
+		'#finalizer => FMOne type: #FASTTypeScriptFinallyClause opposite: #tryStatementOwner',
+		'#handler => FMOne type: #FASTTypeScriptCatchClause opposite: #tryStatementOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',

@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptMethodDefinition` | `statementBlockOwner` | `FASTTypeScriptStatementBlock` | My body|
+| `body` | `FASTTypeScriptMethodDefinition` | `methodDefinitionOwner` | `FASTTypeScriptStatementBlock` | My body|
 | `name` | `FASTTypeScriptMethodDefinition` | `propertyIdentifierOwner` | `FASTTypeScriptPropertyIdentifier` | My name|
 | `parameters` | `FASTTypeScriptMethodDefinition` | `formalParametersOwner` | `FASTTypeScriptFormalParameters` | My parameters|
 | `return_type` | `FASTTypeScriptMethodDefinition` | `typeAnnotationOwner` | `FASTTypeScriptTOptionalField` | My return type in case it exists|
@@ -19,7 +19,7 @@ Class {
 	#instVars : [
 		'#return_type => FMOne type: #FASTTypeScriptTOptionalField opposite: #typeAnnotationOwner',
 		'#name => FMOne type: #FASTTypeScriptPropertyIdentifier opposite: #propertyIdentifierOwner',
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner',
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #methodDefinitionOwner',
 		'#parameters => FMOne type: #FASTTypeScriptFormalParameters opposite: #formalParametersOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
@@ -46,7 +46,7 @@ FASTTypeScriptMethodDefinition class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptMethodDefinition >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner"
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #methodDefinitionOwner"
 
 	<generated>
 	<FMComment: 'My body'>

@@ -15,8 +15,8 @@ Class {
 	#name : 'FASTTypeScriptWithStatement',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#object => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementOwner',
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #withStatementOwner'
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #withStatementOwner',
+		'#object => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',

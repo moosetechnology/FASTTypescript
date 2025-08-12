@@ -10,7 +10,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptFinallyClause` | `statementBlockOwner` | `FASTTypeScriptStatementBlock` | My body|
+| `body` | `FASTTypeScriptFinallyClause` | `finallyClauseOwner` | `FASTTypeScriptStatementBlock` | My body|
 
 
 
@@ -19,8 +19,8 @@ Class {
 	#name : 'FASTTypeScriptFinallyClause',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#tryStatementOwner => FMOne type: #FASTTypeScriptTryStatement opposite: #finalizer',
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner'
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #finallyClauseOwner',
+		'#tryStatementOwner => FMOne type: #FASTTypeScriptTryStatement opposite: #finalizer'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -46,7 +46,7 @@ FASTTypeScriptFinallyClause class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptFinallyClause >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner"
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #finallyClauseOwner"
 
 	<generated>
 	<FMComment: 'My body'>
