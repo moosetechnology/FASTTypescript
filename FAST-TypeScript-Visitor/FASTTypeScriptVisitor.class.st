@@ -21,6 +21,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptAmbientDeclaration: aFASTTypeScriptA
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptArguments: aFASTTypeScriptArguments [
+	^ self visitFASTTExpression: aFASTTypeScriptArguments
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [
 	self halt.
 	^ self visitFASTTExpression: aFASTTypeScriptAssignmentExpression
