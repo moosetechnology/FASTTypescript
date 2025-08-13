@@ -28,8 +28,8 @@
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
+| `subscriptExpressionIndexOwner` | `FASTTypeScriptLiteral` | `index` | `FASTTypeScriptSubscriptExpression` | My owner|
 | `unaryExpressionArgumentOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
-| `variableDeclaratorValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptVariableDeclarator` | My owner|
 
 
 ## Properties
@@ -47,6 +47,9 @@ Class {
 	#superclass : 'FASTTypeScriptEntity',
 	#traits : 'FASTTLiteral',
 	#classTraits : 'FASTTLiteral classTrait',
+	#instVars : [
+		'#subscriptExpressionIndexOwner => FMOne type: #FASTTypeScriptSubscriptExpression opposite: #index'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -65,4 +68,29 @@ FASTTypeScriptLiteral class >> annotation [
 FASTTypeScriptLiteral class >> initialize [ 
 
 	self deprecatedAliases: { #FASTTypescriptLiteral }
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptLiteral >> subscriptExpressionIndexOwner [
+	"Relation named: #subscriptExpressionIndexOwner type: #FASTTypeScriptSubscriptExpression opposite: #index"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ subscriptExpressionIndexOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptLiteral >> subscriptExpressionIndexOwner: anObject [
+
+	<generated>
+	subscriptExpressionIndexOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptLiteral >> subscriptExpressionIndexOwnerGroup [
+	<generated>
+	<navigation: 'SubscriptExpressionIndexOwner'>
+	^ MooseSpecializedGroup with: self subscriptExpressionIndexOwner
 ]

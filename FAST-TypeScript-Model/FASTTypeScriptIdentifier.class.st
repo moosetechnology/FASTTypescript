@@ -37,9 +37,8 @@
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
+| `subscriptExpressionObjectOwner` | `FASTTypeScriptIdentifier` | `object` | `FASTTypeScriptSubscriptExpression` | My owner|
 | `unaryExpressionArgumentOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
-| `variableDeclaratorNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptVariableDeclarator` | My owner|
-| `variableDeclaratorValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptVariableDeclarator` | My owner|
 
 
 ## Properties
@@ -57,14 +56,14 @@ Class {
 	#traits : 'FASTTExpression + FASTTypeScriptTOptionalField',
 	#classTraits : 'FASTTExpression classTrait + FASTTypeScriptTOptionalField classTrait',
 	#instVars : [
-		'#newExpressionConstructorOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #constructor',
+		'#enumDeclarationIdentifierOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #identifier',
+		'#exportSpecifierNameOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #name',
+		'#functionDeclarationNameOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #name',
 		'#indexSignatureNameOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #name',
 		'#nestedIdentifierObjectOwner => FMOne type: #FASTTypeScriptNestedIdentifier opposite: #object',
+		'#newExpressionConstructorOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #constructor',
 		'#optionalParameterPatternOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #pattern',
-		'#exportSpecifierNameOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #name',
-		'#variableDeclaratorNameOwner => FMOne type: #FASTTypeScriptVariableDeclarator opposite: #name',
-		'#functionDeclarationNameOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #name',
-		'#enumDeclarationIdentifierOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #identifier'
+		'#subscriptExpressionObjectOwner => FMOne type: #FASTTypeScriptSubscriptExpression opposite: #object'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -259,6 +258,31 @@ FASTTypeScriptIdentifier >> optionalParameterPatternOwnerGroup [
 	<generated>
 	<navigation: 'OptionalParameterPatternOwner'>
 	^ MooseSpecializedGroup with: self optionalParameterPatternOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> subscriptExpressionObjectOwner [
+	"Relation named: #subscriptExpressionObjectOwner type: #FASTTypeScriptSubscriptExpression opposite: #object"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ subscriptExpressionObjectOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> subscriptExpressionObjectOwner: anObject [
+
+	<generated>
+	subscriptExpressionObjectOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptIdentifier >> subscriptExpressionObjectOwnerGroup [
+	<generated>
+	<navigation: 'SubscriptExpressionObjectOwner'>
+	^ MooseSpecializedGroup with: self subscriptExpressionObjectOwner
 ]
 
 { #category : 'accessing' }

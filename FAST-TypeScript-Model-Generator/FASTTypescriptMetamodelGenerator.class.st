@@ -761,6 +761,14 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		 'My type arguments')
 	<>- ((typeArguments property: #extendsClauseTypeArgumentsOwner) comment: 'My owner'). 
 	
+	((subscriptExpression property: #object) comment:
+		 'My identifier')
+	<>- ((identifier property: #subscriptExpressionObjectOwner) comment: 'My owner').
+	
+	((subscriptExpression property: #index) comment:
+		 'My index')
+	<>- ((literal property: #subscriptExpressionIndexOwner) comment: 'My owner').
+	
 	"((extendsClause property: #value) comment:
 		 'My value')
 	<>- ((identifier property: #extendsClauseValueOwner) comment: 'My owner')." 
@@ -773,7 +781,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	<>- ((tExpression property: #assignmentExpressionRightOwner) comment:
 			 'The expression parent').
 			
-	((variableDeclarator property: #name) comment:
+	"((variableDeclarator property: #name) comment:
 		 'The identifier')
 	<>- ((identifier property: #variableDeclaratorNameOwner) comment:
 			 'My owner'). 
@@ -781,7 +789,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	((variableDeclarator property: #value) comment:
 		 'The value')
 	<>- ((tExpression property: #variableDeclaratorValueOwner) comment:
-			 'My owner'). 
+			 'My owner'). "
 			
 	"function declaration"
 	((functionDeclaration property: #name) comment:

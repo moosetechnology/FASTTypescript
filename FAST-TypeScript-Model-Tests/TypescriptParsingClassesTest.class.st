@@ -758,6 +758,33 @@ TypeScriptParsingClassesTest >> testParsingStringFragment [
 ]
 
 { #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingSubscriptExpression [
+
+	| res string node nodeSecond|
+
+	string := 'class AssignmentExamples { 
+  arrayElementAssignment() { 
+    arr[1] = 99; 
+	 obj["y"] = 20;
+}'.
+	
+	res := parser parse: string.
+
+	"Checking if FASTTypeScriptSubscriptExpression parsed correctly"
+	self assert:
+		(res allWithType: FASTTypeScriptSubscriptExpression) isNotEmpty.
+	
+	"Checking properties of FASTTypeScriptSubscriptExpression"	
+	node := (res allWithType: FASTTypeScriptSubscriptExpression) first.
+	self assert: node index class equals: FASTTypeScriptNumber. 
+	self assert: node object class equals: FASTTypeScriptIdentifier. 
+		 
+	nodeSecond := (res allWithType: FASTTypeScriptSubscriptExpression) second. 
+	self assert: nodeSecond index class equals: FASTTypeScriptString. 
+	 
+]
+
+{ #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingTemplateType [
 
 	| res string node |
