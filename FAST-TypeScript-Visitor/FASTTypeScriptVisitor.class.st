@@ -92,6 +92,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptDecorator: aFASTTypeScriptDecorator 
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptDoStatement: aFASTTypeScriptDoStatement [
+	^ self visitFASTTStatement: aFASTTypeScriptDoStatement
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]
