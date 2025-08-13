@@ -102,6 +102,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptElseClause: aFASTTypeScriptElseClaus
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptEmptyStatement: aFASTTypeScriptEmptyStatement [
+	^ self visitFASTTStatement: aFASTTypeScriptEmptyStatement
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptEnumAssignment: aFASTTypeScriptEnumAssignment [
 	^ self visitFASTTExpression: aFASTTypeScriptEnumAssignment
 ]
