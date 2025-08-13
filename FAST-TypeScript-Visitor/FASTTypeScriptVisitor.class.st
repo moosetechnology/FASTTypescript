@@ -87,6 +87,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptDebuggerStatement: aFASTTypeScriptDe
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptDecorator: aFASTTypeScriptDecorator [
+	^ self visitFASTTExpression: aFASTTypeScriptDecorator
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]
