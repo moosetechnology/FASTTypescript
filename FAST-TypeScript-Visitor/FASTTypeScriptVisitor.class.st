@@ -31,6 +31,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptArray: aFASTTypeScriptArray [
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptArrowFunction: aFASTTypeScriptArrowFunction [
+	^ self visitFASTTExpression: aFASTTypeScriptArrowFunction
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [
 	self halt.
 	^ self visitFASTTExpression: aFASTTypeScriptAssignmentExpression
