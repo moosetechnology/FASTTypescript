@@ -8,7 +8,7 @@
 | `body` | `FASTTypeScriptFunctionDeclaration` | `functionDeclarationBodyOwner` | `FASTTypeScriptStatementBlock` | The body of the function|
 | `name` | `FASTTypeScriptFunctionDeclaration` | `functionDeclarationNameOwner` | `FASTTypeScriptIdentifier` | The name of the function|
 | `parameters` | `FASTTypeScriptFunctionDeclaration` | `functionDeclarationParametersOwner` | `FASTTypeScriptFormalParameters` | The parameters of the function|
-| `return_type` | `FASTTypeScriptFunctionDeclaration` | `functionDeclarationReturnTypeOwner` | `FASTTypeScriptTypeAnnotation` | The return type of the function (in case it exists)|
+| `return_type` | `FASTTypeScriptFunctionDeclaration` | `functionDeclarationReturnTypeOwner` | `FASTTypeScriptTReturnType` | The return type of the function (in case it exists)|
 
 
 
@@ -17,10 +17,10 @@ Class {
 	#name : 'FASTTypeScriptFunctionDeclaration',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #functionDeclarationBodyOwner',
 		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #functionDeclarationNameOwner',
 		'#parameters => FMOne type: #FASTTypeScriptFormalParameters opposite: #functionDeclarationParametersOwner',
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #functionDeclarationBodyOwner',
-		'#return_type => FMOne type: #FASTTypeScriptTypeAnnotation opposite: #functionDeclarationReturnTypeOwner'
+		'#return_type => FMOne type: #FASTTypeScriptTReturnType opposite: #functionDeclarationReturnTypeOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -113,7 +113,7 @@ FASTTypeScriptFunctionDeclaration >> parametersGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptFunctionDeclaration >> return_type [
-	"Relation named: #return_type type: #FASTTypeScriptTypeAnnotation opposite: #functionDeclarationReturnTypeOwner"
+	"Relation named: #return_type type: #FASTTypeScriptTReturnType opposite: #functionDeclarationReturnTypeOwner"
 
 	<generated>
 	<FMComment: 'The return type of the function (in case it exists)'>

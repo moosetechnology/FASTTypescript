@@ -476,6 +476,10 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	enumDeclaration --|> tStatement.
 	
 	typeAnnotation --|> tOptionalField.
+	typeAnnotation --|> tReturnType.
+	
+	assertsAnnotation --|> tReturnType.
+		
 	identifier --|> tOptionalField.
 	typeArguments --|> tOptionalField.
 	
@@ -809,7 +813,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		
 	((functionDeclaration property: #return_type) comment:
 		 'The return type of the function (in case it exists)')
-	<>- ((typeAnnotation property: #functionDeclarationReturnTypeOwner) comment:
+	<>- ((tReturnType property: #functionDeclarationReturnTypeOwner) comment:
 			 'My owner').
 	
 	"class declaration"

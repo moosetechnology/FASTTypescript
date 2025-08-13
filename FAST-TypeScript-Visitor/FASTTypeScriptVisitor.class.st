@@ -36,6 +36,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptArrowFunction: aFASTTypeScriptArrowF
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAssertsAnnotation: aFASTTypeScriptAssertsAnnotation [
+	^ self visitFASTTExpression: aFASTTypeScriptAssertsAnnotation 
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [
 	self halt.
 	^ self visitFASTTExpression: aFASTTypeScriptAssignmentExpression
