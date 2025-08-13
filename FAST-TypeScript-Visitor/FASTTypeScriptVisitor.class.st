@@ -72,6 +72,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptClassStaticBlock: aFASTTypeScriptCla
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptCompilationUnit: aFASTTypeScriptCompilationUnit [
+	^ self visitFASTTEntity: aFASTTypeScriptCompilationUnit
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptContinueStatement: aFASTTypeScriptContinueStatement [
 	^ self visitFASTTStatement: aFASTTypeScriptContinueStatement
 ]
