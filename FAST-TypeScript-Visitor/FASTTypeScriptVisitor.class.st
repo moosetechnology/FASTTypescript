@@ -113,6 +113,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptExtendsTypeClause: aFASTTypeScriptEx
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptFormalParameters: aFASTTypeScriptFormalParameters [
+	^ self visitFASTTExpression: aFASTTypeScriptFormalParameters
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]
