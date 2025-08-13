@@ -52,6 +52,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptBreakStatement: aFASTTypeScriptBreak
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptCatchClause: aFASTTypeScriptCatchClause [
+	^ self visitFASTTStatement: aFASTTypeScriptCatchClause
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptClassBody: aFASTTypeScriptClassBody [
 	^ self visitFASTTStatement: aFASTTypeScriptClassBody
 ]
