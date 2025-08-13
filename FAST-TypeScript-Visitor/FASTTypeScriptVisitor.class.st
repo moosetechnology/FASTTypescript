@@ -41,8 +41,7 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptAssertsAnnotation: aFASTTypeScriptAs
 ]
 
 { #category : 'visiting' }
-FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [
-	self halt.
+FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [ 
 	^ self visitFASTTExpression: aFASTTypeScriptAssignmentExpression
 ]
 
@@ -124,6 +123,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptEnumDeclaration: aFASTTypeScriptEnum
 { #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptExistentialType: aFASTTypeScriptExistentialType [
 	^ self visitFASTTExpression: aFASTTypeScriptExistentialType
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptExportStatement: aFASTTypeScriptExportStatement [
+	^ self visitFASTTStatement: aFASTTypeScriptExportStatement
 ]
 
 { #category : 'visiting' }
