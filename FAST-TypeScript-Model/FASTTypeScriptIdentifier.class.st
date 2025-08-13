@@ -284,28 +284,3 @@ FASTTypeScriptIdentifier >> subscriptExpressionObjectOwnerGroup [
 	<navigation: 'SubscriptExpressionObjectOwner'>
 	^ MooseSpecializedGroup with: self subscriptExpressionObjectOwner
 ]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> variableDeclaratorNameOwner [
-	"Relation named: #variableDeclaratorNameOwner type: #FASTTypeScriptVariableDeclarator opposite: #name"
-
-	<generated>
-	<FMComment: 'My owner'>
-	<container>
-	<derived>
-	^ variableDeclaratorNameOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> variableDeclaratorNameOwner: anObject [
-
-	<generated>
-	variableDeclaratorNameOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIdentifier >> variableDeclaratorNameOwnerGroup [
-	<generated>
-	<navigation: 'VariableDeclaratorNameOwner'>
-	^ MooseSpecializedGroup with: self variableDeclaratorNameOwner
-]

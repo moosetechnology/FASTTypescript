@@ -431,30 +431,3 @@ FASTTExpression >> unaryExpressionArgumentOwner: anObject [
 		self attributeAt: #unaryExpressionArgumentOwner put: anObject.
 		anObject argument: self ]
 ]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> variableDeclaratorValueOwner [
-	"Relation named: #variableDeclaratorValueOwner type: #FASTTypeScriptVariableDeclarator opposite: #value"
-
-	<generated>
-	<FMComment: 'My owner'>
-	<container>
-	<derived>
-	<FMProperty: #variableDeclaratorValueOwner type: #FASTTypeScriptVariableDeclarator opposite: #value>
-	<package: #'FAST-TypeScript-Model'>
-	^ self attributeAt: #variableDeclaratorValueOwner ifAbsent: [ nil ]
-]
-
-{ #category : '*FAST-TypeScript-Model-accessing' }
-FASTTExpression >> variableDeclaratorValueOwner: anObject [
-
-	<generated>
-	(self attributeAt: #variableDeclaratorValueOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
-	anObject ifNil: [ | otherSide |
-		otherSide :=  self variableDeclaratorValueOwner.
-		self attributeAt: #variableDeclaratorValueOwner put: anObject.
-		otherSide value: nil ]
-	ifNotNil: [ 
-		self attributeAt: #variableDeclaratorValueOwner put: anObject.
-		anObject value: self ]
-]
