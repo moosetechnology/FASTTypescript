@@ -97,6 +97,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptDoStatement: aFASTTypeScriptDoStatem
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptElseClause: aFASTTypeScriptElseClause [
+	^ self visitFASTTStatement: aFASTTypeScriptElseClause
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]
