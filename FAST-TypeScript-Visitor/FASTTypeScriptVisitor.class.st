@@ -113,6 +113,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptExtendsTypeClause: aFASTTypeScriptEx
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptFinallyClause: aFASTTypeScriptFinallyClause [
+	^ self visitFASTTStatement: aFASTTypeScriptFinallyClause
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptFormalParameters: aFASTTypeScriptFormalParameters [
 	^ self visitFASTTExpression: aFASTTypeScriptFormalParameters
 ]
