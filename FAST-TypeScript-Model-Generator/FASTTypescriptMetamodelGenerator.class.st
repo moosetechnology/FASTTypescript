@@ -197,7 +197,8 @@ Class {
 		'methodDefinition',
 		'propertySignature',
 		'switchCase',
-		'literal'
+		'literal',
+		'statement'
 	],
 	#category : 'FAST-TypeScript-Model-Generator',
 	#package : 'FAST-TypeScript-Model-Generator'
@@ -420,6 +421,8 @@ FASTTypeScriptMetamodelGenerator >> defineClasses [
 	expression := builder ensureClassNamed: #Expression. 
 	compilationUnit := builder ensureClassNamed: #CompilationUnit.
 	compilationUnit withTesting.
+	statement := builder ensureClassNamed: #Statement. 
+	
 	
 
 ]
@@ -455,7 +458,7 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	program --|> tEntity.
 	program --|> #THasImmediateSource.
 	program withPrecedenceOf: #THasImmediateSource.
-	
+
 	_ERROR --|> #THasImmediateSource.
 	program withPrecedenceOf: #THasImmediateSource.
 
@@ -474,15 +477,15 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	enumDeclaration --|> tWithDeclarations.
 	enumDeclaration --|> tWithModifiers.
 	enumDeclaration --|> tStatement.
-	
+
 	typeAnnotation --|> tOptionalField.
 	typeAnnotation --|> tReturnType.
-	
+
 	assertsAnnotation --|> tReturnType.
-		
+
 	identifier --|> tOptionalField.
 	typeArguments --|> tOptionalField.
-	
+
 	identifier --|> tExpression.
 	expression --|> tExpression.
 	arrayPattern --|> tExpression.
@@ -525,8 +528,30 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	yieldExpression --|> expression.
 	object --|> expression.
 
-	typePredicateAnnotation --|> typeAnnotation.
-	
+	statement --|> tStatement.
+	breakStatement --|> statement.
+	labeledStatement --|> statement.
+	statementIdentifier --|> statement.
+	doStatement --|> statement.
+	importStatement --|> statement.
+	debuggerStatement --|> statement.
+	exportStatement --|> statement.
+	switchStatement --|> statement.
+	forStatement --|> statement.
+	returnStatement --|> statement.
+	withStatement --|> statement.
+	throwStatement --|> statement.
+	emptyStatement --|> statement.
+	tryStatement --|> statement.
+	ifStatement --|> statement.
+	forInStatement --|> statement.
+	statementBlock --|> statement.
+	continueStatement --|> statement.
+	expressionStatement --|> statement.
+	whileStatement --|> statement.
+
+	typePredicateAnnotation --|> typeAnnotation
+
 	"_function_type  --|> tWithParameters.	"
 ]
 

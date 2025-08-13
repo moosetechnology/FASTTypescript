@@ -46,11 +46,6 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScrip
 ]
 
 { #category : 'visiting' }
-FASTTypeScriptVisitor >> visitFASTTypeScriptBreakStatement: aFASTTypeScriptBreakStatement [
-	^ self visitFASTTStatement: aFASTTypeScriptBreakStatement
-]
-
-{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptCatchClause: aFASTTypeScriptCatchClause [
 	^ self visitFASTTStatement: aFASTTypeScriptCatchClause
 ]
@@ -76,33 +71,13 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptCompilationUnit: aFASTTypeScriptComp
 ]
 
 { #category : 'visiting' }
-FASTTypeScriptVisitor >> visitFASTTypeScriptContinueStatement: aFASTTypeScriptContinueStatement [
-	^ self visitFASTTStatement: aFASTTypeScriptContinueStatement
-]
-
-{ #category : 'visiting' }
-FASTTypeScriptVisitor >> visitFASTTypeScriptDebuggerStatement: aFASTTypeScriptDebuggerStatement [
-	^ self visitFASTTStatement: aFASTTypeScriptDebuggerStatement
-]
-
-{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptDecorator: aFASTTypeScriptDecorator [
 	^ self visitFASTTExpression: aFASTTypeScriptDecorator
 ]
 
 { #category : 'visiting' }
-FASTTypeScriptVisitor >> visitFASTTypeScriptDoStatement: aFASTTypeScriptDoStatement [
-	^ self visitFASTTStatement: aFASTTypeScriptDoStatement
-]
-
-{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptElseClause: aFASTTypeScriptElseClause [
 	^ self visitFASTTStatement: aFASTTypeScriptElseClause
-]
-
-{ #category : 'visiting' }
-FASTTypeScriptVisitor >> visitFASTTypeScriptEmptyStatement: aFASTTypeScriptEmptyStatement [
-	^ self visitFASTTStatement: aFASTTypeScriptEmptyStatement
 ]
 
 { #category : 'visiting' }
@@ -123,11 +98,6 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptEnumDeclaration: aFASTTypeScriptEnum
 { #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptExistentialType: aFASTTypeScriptExistentialType [
 	^ self visitFASTTExpression: aFASTTypeScriptExistentialType
-]
-
-{ #category : 'visiting' }
-FASTTypeScriptVisitor >> visitFASTTypeScriptExportStatement: aFASTTypeScriptExportStatement [
-	^ self visitFASTTStatement: aFASTTypeScriptExportStatement
 ]
 
 { #category : 'visiting' }

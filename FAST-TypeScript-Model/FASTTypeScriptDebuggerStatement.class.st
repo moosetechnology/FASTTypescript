@@ -1,6 +1,6 @@
 Class {
 	#name : 'FASTTypeScriptDebuggerStatement',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptDebuggerStatement class >> annotation [
 
-	<FMClass: #DebuggerStatement super: #FASTTypeScriptEntity>
+	<FMClass: #DebuggerStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self

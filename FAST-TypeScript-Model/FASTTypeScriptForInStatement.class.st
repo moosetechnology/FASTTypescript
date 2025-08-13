@@ -14,7 +14,7 @@
 "
 Class {
 	#name : 'FASTTypeScriptForInStatement',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
 		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #forInStatementBodyOwner'
 	],
@@ -26,7 +26,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptForInStatement class >> annotation [
 
-	<FMClass: #ForInStatement super: #FASTTypeScriptEntity>
+	<FMClass: #ForInStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self

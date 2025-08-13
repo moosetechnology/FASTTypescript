@@ -13,10 +13,10 @@
 "
 Class {
 	#name : 'FASTTypeScriptWithStatement',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
-		'#object => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementObjectOwner',
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #withStatementBodyOwner'
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #withStatementBodyOwner',
+		'#object => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementObjectOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -26,7 +26,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptWithStatement class >> annotation [
 
-	<FMClass: #WithStatement super: #FASTTypeScriptEntity>
+	<FMClass: #WithStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self

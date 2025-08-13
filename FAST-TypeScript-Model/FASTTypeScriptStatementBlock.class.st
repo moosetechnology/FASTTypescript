@@ -18,15 +18,15 @@
 "
 Class {
 	#name : 'FASTTypeScriptStatementBlock',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
-		'#forInStatementBodyOwner => FMOne type: #FASTTypeScriptForInStatement opposite: #body',
-		'#withStatementBodyOwner => FMOne type: #FASTTypeScriptWithStatement opposite: #body',
-		'#ifStatementConsequenceOwner => FMOne type: #FASTTypeScriptIfStatement opposite: #consequence',
-		'#tryStatementBodyOwner => FMOne type: #FASTTypeScriptTryStatement opposite: #body',
-		'#methodDefinitionBodyOwner => FMOne type: #FASTTypeScriptMethodDefinition opposite: #body',
 		'#finallyClauseBodyOwner => FMOne type: #FASTTypeScriptFinallyClause opposite: #body',
-		'#functionDeclarationBodyOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #body'
+		'#forInStatementBodyOwner => FMOne type: #FASTTypeScriptForInStatement opposite: #body',
+		'#functionDeclarationBodyOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #body',
+		'#ifStatementConsequenceOwner => FMOne type: #FASTTypeScriptIfStatement opposite: #consequence',
+		'#methodDefinitionBodyOwner => FMOne type: #FASTTypeScriptMethodDefinition opposite: #body',
+		'#tryStatementBodyOwner => FMOne type: #FASTTypeScriptTryStatement opposite: #body',
+		'#withStatementBodyOwner => FMOne type: #FASTTypeScriptWithStatement opposite: #body'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -36,7 +36,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptStatementBlock class >> annotation [
 
-	<FMClass: #StatementBlock super: #FASTTypeScriptEntity>
+	<FMClass: #StatementBlock super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self

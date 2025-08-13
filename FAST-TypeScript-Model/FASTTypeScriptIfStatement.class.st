@@ -13,7 +13,7 @@
 "
 Class {
 	#name : 'FASTTypeScriptIfStatement',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
 		'#condition => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #ifStatementConditionOwner',
 		'#consequence => FMOne type: #FASTTypeScriptStatementBlock opposite: #ifStatementConsequenceOwner'
@@ -26,7 +26,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptIfStatement class >> annotation [
 
-	<FMClass: #IfStatement super: #FASTTypeScriptEntity>
+	<FMClass: #IfStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self

@@ -14,11 +14,11 @@
 "
 Class {
 	#name : 'FASTTypeScriptTryStatement',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
 		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #tryStatementBodyOwner',
-		'#handler => FMOne type: #FASTTypeScriptCatchClause opposite: #tryStatementHandlerOwner',
-		'#finalizer => FMOne type: #FASTTypeScriptFinallyClause opposite: #tryStatementFinalizerOwner'
+		'#finalizer => FMOne type: #FASTTypeScriptFinallyClause opposite: #tryStatementFinalizerOwner',
+		'#handler => FMOne type: #FASTTypeScriptCatchClause opposite: #tryStatementHandlerOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -28,7 +28,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptTryStatement class >> annotation [
 
-	<FMClass: #TryStatement super: #FASTTypeScriptEntity>
+	<FMClass: #TryStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self
