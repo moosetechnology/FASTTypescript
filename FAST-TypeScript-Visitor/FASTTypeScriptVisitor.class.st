@@ -6,6 +6,11 @@ Class {
 }
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAbstractMethodSignature: aFASTTypeScriptAbstractMethodSignature [ 
+	^ self visitFASTTypeScriptMethodSignature: aFASTTypeScriptAbstractMethodSignature 
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [
 	self halt.
 	^ self visitFASTTExpression: aFASTTypeScriptAssignmentExpression
