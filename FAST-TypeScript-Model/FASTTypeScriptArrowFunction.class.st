@@ -22,8 +22,3 @@ FASTTypeScriptArrowFunction class >> initialize [
  
  
 ]
-
-{ #category : 'visiting' }
-FASTTypeScriptArrowFunction >> accept: aFASTTypeScriptVisitor [
-	^ aFASTTypeScriptVisitor visitFASTTypeScriptArrowFunction: self 
-]

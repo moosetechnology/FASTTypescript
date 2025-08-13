@@ -64,8 +64,3 @@ FASTTypeScriptArray class >> initialize [
 
 	self deprecatedAliases: { #FASTTypescriptArray }
 ]
-
-{ #category : 'visiting' }
-FASTTypeScriptArray >> accept: aFASTTypeScriptVisitor [
-	^ aFASTTypeScriptVisitor visitFASTTypeScriptArray: self 
-]

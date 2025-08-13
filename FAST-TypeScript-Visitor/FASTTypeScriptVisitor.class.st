@@ -67,6 +67,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptClassDeclaration: aFASTTypeScriptCla
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptClassStaticBlock: aFASTTypeScriptClassStaticBlock [
+	^ self visitFASTTStatement: aFASTTypeScriptClassStaticBlock
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]

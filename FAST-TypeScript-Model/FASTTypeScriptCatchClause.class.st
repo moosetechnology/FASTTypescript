@@ -38,11 +38,6 @@ FASTTypeScriptCatchClause class >> initialize [
  
 ]
 
-{ #category : 'visiting' }
-FASTTypeScriptCatchClause >> accept: aFASTTypeScriptVisitor [
-	^ aFASTTypeScriptVisitor visitFASTTypeScriptCatchClause: self 
-]
-
 { #category : 'accessing' }
 FASTTypeScriptCatchClause >> tryStatementHandlerOwner [
 	"Relation named: #tryStatementHandlerOwner type: #FASTTypeScriptTryStatement opposite: #handler"
