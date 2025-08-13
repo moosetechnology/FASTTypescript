@@ -82,6 +82,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptContinueStatement: aFASTTypeScriptCo
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptDebuggerStatement: aFASTTypeScriptDebuggerStatement [
+	^ self visitFASTTStatement: aFASTTypeScriptDebuggerStatement
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]
