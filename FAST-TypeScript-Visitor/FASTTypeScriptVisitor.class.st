@@ -102,6 +102,21 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptElseClause: aFASTTypeScriptElseClaus
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptEnumAssignment: aFASTTypeScriptEnumAssignment [
+	^ self visitFASTTExpression: aFASTTypeScriptEnumAssignment
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptEnumBody: aFASTTypeScriptEnumBody [
+	^ self visitFASTTStatement: aFASTTypeScriptEnumBody
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptEnumDeclaration: aFASTTypeScriptEnumDeclaration [
+	^ self visitFASTTStatement: aFASTTypeScriptEnumDeclaration
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]
