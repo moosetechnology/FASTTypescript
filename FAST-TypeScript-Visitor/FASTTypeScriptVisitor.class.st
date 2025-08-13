@@ -101,6 +101,18 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptExistentialType: aFASTTypeScriptExis
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptExtendsClause: aFASTTypeScriptExtendsClause [
+
+	^ self visitFASTTExpression: aFASTTypeScriptExtendsClause
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptExtendsTypeClause: aFASTTypeScriptExtendsTypeClause [
+
+	^ self visitFASTTExpression: aFASTTypeScriptExtendsTypeClause
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]

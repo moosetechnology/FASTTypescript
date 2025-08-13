@@ -38,6 +38,11 @@ FASTTypeScriptExtendsClause class >> initialize [
  
 ]
 
+{ #category : 'visiting' }
+FASTTypeScriptExtendsClause >> accept: aFASTTypeScriptVisitor [
+	^ aFASTTypeScriptVisitor visitFASTTypeScriptExtendsClause: self
+]
+
 { #category : 'accessing' }
 FASTTypeScriptExtendsClause >> type_arguments [
 	"Relation named: #type_arguments type: #FASTTypeScriptTypeArguments opposite: #extendsClauseTypeArgumentsOwner"
