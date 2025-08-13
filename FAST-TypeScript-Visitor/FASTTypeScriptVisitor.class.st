@@ -16,6 +16,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptAccessibilityModifier: aFASTTypeScri
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAmbientDeclaration: aFASTTypeScriptAmbientDeclaration [
+	^ self visitFASTTStatement: aFASTTypeScriptAmbientDeclaration 
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [
 	self halt.
 	^ self visitFASTTExpression: aFASTTypeScriptAssignmentExpression
