@@ -11,6 +11,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptAbstractMethodSignature: aFASTTypeSc
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAccessibilityModifier: aFASTTypeScriptAccessibilityModifier [
+	^ self visitFASTTExpression: aFASTTypeScriptAccessibilityModifier 
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [
 	self halt.
 	^ self visitFASTTExpression: aFASTTypeScriptAssignmentExpression
