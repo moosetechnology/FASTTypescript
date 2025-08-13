@@ -47,6 +47,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScrip
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptBreakStatement: aFASTTypeScriptBreakStatement [
+	^ self visitFASTTStatement: aFASTTypeScriptBreakStatement
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptClassBody: aFASTTypeScriptClassBody [
 	^ self visitFASTTStatement: aFASTTypeScriptClassBody
 ]

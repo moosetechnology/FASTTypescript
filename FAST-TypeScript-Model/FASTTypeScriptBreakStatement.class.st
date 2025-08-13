@@ -22,3 +22,8 @@ FASTTypeScriptBreakStatement class >> initialize [
  
  
 ]
+
+{ #category : 'visiting' }
+FASTTypeScriptBreakStatement >> accept: aFASTTypeScriptVisitor [
+	^ aFASTTypeScriptVisitor visitFASTTypeScriptBreakStatement: self 
+]
