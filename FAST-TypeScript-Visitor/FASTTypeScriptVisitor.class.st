@@ -122,6 +122,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptEnumDeclaration: aFASTTypeScriptEnum
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptExistentialType: aFASTTypeScriptExistentialType [
+	^ self visitFASTTExpression: aFASTTypeScriptExistentialType
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]
