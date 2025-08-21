@@ -406,6 +406,60 @@ FASTTExpression >> memberExpressionPropertyOwner: anObject [
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> subscriptExpressionIndexOwner [
+	"Relation named: #subscriptExpressionIndexOwner type: #FASTTypeScriptSubscriptExpression opposite: #index"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	<FMProperty: #subscriptExpressionIndexOwner type: #FASTTypeScriptSubscriptExpression opposite: #index>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #subscriptExpressionIndexOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> subscriptExpressionIndexOwner: anObject [
+
+	<generated>
+	(self attributeAt: #subscriptExpressionIndexOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self subscriptExpressionIndexOwner.
+		self attributeAt: #subscriptExpressionIndexOwner put: anObject.
+		otherSide index: nil ]
+	ifNotNil: [ 
+		self attributeAt: #subscriptExpressionIndexOwner put: anObject.
+		anObject index: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> subscriptExpressionObjectOwner [
+	"Relation named: #subscriptExpressionObjectOwner type: #FASTTypeScriptSubscriptExpression opposite: #object"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	<FMProperty: #subscriptExpressionObjectOwner type: #FASTTypeScriptSubscriptExpression opposite: #object>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #subscriptExpressionObjectOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> subscriptExpressionObjectOwner: anObject [
+
+	<generated>
+	(self attributeAt: #subscriptExpressionObjectOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self subscriptExpressionObjectOwner.
+		self attributeAt: #subscriptExpressionObjectOwner put: anObject.
+		otherSide object: nil ]
+	ifNotNil: [ 
+		self attributeAt: #subscriptExpressionObjectOwner put: anObject.
+		anObject object: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
 FASTTExpression >> unaryExpressionArgumentOwner [
 	"Relation named: #unaryExpressionArgumentOwner type: #FASTTypeScriptUnaryExpression opposite: #argument"
 

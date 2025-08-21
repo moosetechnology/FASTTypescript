@@ -37,7 +37,8 @@
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
-| `subscriptExpressionObjectOwner` | `FASTTypeScriptIdentifier` | `object` | `FASTTypeScriptSubscriptExpression` | My owner|
+| `subscriptExpressionIndexOwner` | `FASTTExpression` | `index` | `FASTTypeScriptSubscriptExpression` | My owner|
+| `subscriptExpressionObjectOwner` | `FASTTExpression` | `object` | `FASTTypeScriptSubscriptExpression` | My owner|
 | `unaryExpressionArgumentOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
 
 
@@ -62,8 +63,7 @@ Class {
 		'#indexSignatureNameOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #name',
 		'#nestedIdentifierObjectOwner => FMOne type: #FASTTypeScriptNestedIdentifier opposite: #object',
 		'#newExpressionConstructorOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #constructor',
-		'#optionalParameterPatternOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #pattern',
-		'#subscriptExpressionObjectOwner => FMOne type: #FASTTypeScriptSubscriptExpression opposite: #object'
+		'#optionalParameterPatternOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #pattern'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -258,29 +258,4 @@ FASTTypeScriptIdentifier >> optionalParameterPatternOwnerGroup [
 	<generated>
 	<navigation: 'OptionalParameterPatternOwner'>
 	^ MooseSpecializedGroup with: self optionalParameterPatternOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> subscriptExpressionObjectOwner [
-	"Relation named: #subscriptExpressionObjectOwner type: #FASTTypeScriptSubscriptExpression opposite: #object"
-
-	<generated>
-	<FMComment: 'My owner'>
-	<container>
-	<derived>
-	^ subscriptExpressionObjectOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> subscriptExpressionObjectOwner: anObject [
-
-	<generated>
-	subscriptExpressionObjectOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIdentifier >> subscriptExpressionObjectOwnerGroup [
-	<generated>
-	<navigation: 'SubscriptExpressionObjectOwner'>
-	^ MooseSpecializedGroup with: self subscriptExpressionObjectOwner
 ]

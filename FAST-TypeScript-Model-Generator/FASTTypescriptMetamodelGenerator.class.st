@@ -484,6 +484,7 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	assertsAnnotation --|> tReturnType.
 
 	identifier --|> tOptionalField.
+	
 	typeArguments --|> tOptionalField.
 
 	identifier --|> tExpression.
@@ -506,6 +507,7 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	array --|> tExpression.
 	undefined --|> tExpression.
 	regex --|> tExpression.
+	arrowFunction --|> tExpression.
 
 	binaryExpression --|> expression.
 	unaryExpression --|> expression.
@@ -792,11 +794,11 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	
 	((subscriptExpression property: #object) comment:
 		 'My identifier')
-	<>- ((identifier property: #subscriptExpressionObjectOwner) comment: 'My owner').
+	<>- ((tExpression property: #subscriptExpressionObjectOwner) comment: 'My owner').
 	
 	((subscriptExpression property: #index) comment:
 		 'My index')
-	<>- ((literal property: #subscriptExpressionIndexOwner) comment: 'My owner').
+	<>- ((tExpression property: #subscriptExpressionIndexOwner) comment: 'My owner').
 	
 	"((extendsClause property: #value) comment:
 		 'My value')
