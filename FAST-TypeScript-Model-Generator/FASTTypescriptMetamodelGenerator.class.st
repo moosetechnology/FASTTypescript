@@ -484,7 +484,7 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	assertsAnnotation --|> tReturnType.
 
 	identifier --|> tOptionalField.
-	
+
 	typeArguments --|> tOptionalField.
 
 	identifier --|> tExpression.
@@ -508,6 +508,24 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	undefined --|> tExpression.
 	regex --|> tExpression.
 	arrowFunction --|> tExpression.
+	
+	unionType --|> tExpression.
+	typeArguments --|> tExpression.
+	typeAssertion --|> tExpression.
+	typeParameter --|> tExpression.
+	typeParameters --|> tExpression.
+	typePredicate --|> tExpression.
+	typePredicateAnnotation --|> tExpression.
+	typeQuery --|> tExpression.
+	typeAnnotation --|> tExpression.
+	tupleType --|> tExpression.
+	thisType --|> tExpression.
+	templateType --|> tExpression.
+	templateLiteralType --|> tExpression.
+	readonlyType --|> tExpression.
+	restType --|> tExpression.
+	optionalType --|> tExpression.
+	
 
 	binaryExpression --|> expression.
 	unaryExpression --|> expression.
