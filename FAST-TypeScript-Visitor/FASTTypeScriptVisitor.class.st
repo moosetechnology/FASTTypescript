@@ -123,6 +123,24 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptFormalParameters: aFASTTypeScriptFor
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptFunctionDeclaration: aFASTTypeScriptFunctionDeclaration [
+
+	^ self visitFASTTStatement: aFASTTypeScriptFunctionDeclaration
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptFunctionSignature: aFASTTypeScriptFunctionSignature [
+
+	^ self visitFASTTStatement: aFASTTypeScriptFunctionSignature
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptImplementsClause: aFASTTypeScriptImplementsClause [
+
+	^ self visitFASTTExpression: aFASTTypeScriptImplementsClause
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]
