@@ -1,7 +1,6 @@
 Extension { #name : 'FASTTypeScriptAssignmentExpression' }
 
 { #category : '*FAST-TypeScript-Visitor' }
-FASTTypeScriptAssignmentExpression >> accept: aFASTTypeScriptVisitor [
-	self halt.
+FASTTypeScriptAssignmentExpression >> accept: aFASTTypeScriptVisitor [ 
 	^ aFASTTypeScriptVisitor visitFASTTypeScriptAssignmentExpression: self
 ]
