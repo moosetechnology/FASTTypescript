@@ -141,6 +141,11 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptImplementsClause: aFASTTypeScriptImp
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptMethodDefinition: aFASTTypeScriptMethodDefinition [
+	^ self visitFASTTStatement: aFASTTypeScriptMethodDefinition
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
 	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
 ]

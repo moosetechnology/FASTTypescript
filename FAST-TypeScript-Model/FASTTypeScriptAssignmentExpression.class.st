@@ -41,6 +41,7 @@ FASTTypeScriptAssignmentExpression >> left [
 	<generated>
 	<FMComment: 'The left operand'>
 	<FMProperty: #left type: #FASTTExpression opposite: #assignmentExpressionLeftOwner>
+	<package: #'Carrefour-TypeScript-Model'>
 	^ self attributeAt: #left ifAbsent: [ nil ]
 ]
 
@@ -72,6 +73,7 @@ FASTTypeScriptAssignmentExpression >> right [
 	<generated>
 	<FMComment: 'The right operand'>
 	<FMProperty: #right type: #FASTTExpression opposite: #assignmentExpressionRightOwner>
+	<package: #'Carrefour-TypeScript-Model'>
 	^ self attributeAt: #right ifAbsent: [ nil ]
 ]
 
