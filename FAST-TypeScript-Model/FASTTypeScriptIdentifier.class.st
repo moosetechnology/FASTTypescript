@@ -30,7 +30,7 @@
 | `memberExpressionPropertyOwner` | `FASTTExpression` | `property` | `FASTTypeScriptMemberExpression` | My owner|
 | `methodDefinitionReturnTypeOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
 | `nestedIdentifierObjectOwner` | `FASTTypeScriptIdentifier` | `object` | `FASTTypeScriptNestedIdentifier` | The owner of this identifier|
-| `newExpressionConstructorOwner` | `FASTTypeScriptIdentifier` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
+| `newExpressionConstructorOwner` | `FASTTExpression` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
 | `optionalParameterPatternOwner` | `FASTTypeScriptIdentifier` | `pattern` | `FASTTypeScriptOptionalParameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
@@ -62,7 +62,6 @@ Class {
 		'#functionDeclarationNameOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #name',
 		'#indexSignatureNameOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #name',
 		'#nestedIdentifierObjectOwner => FMOne type: #FASTTypeScriptNestedIdentifier opposite: #object',
-		'#newExpressionConstructorOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #constructor',
 		'#optionalParameterPatternOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #pattern'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
@@ -186,6 +185,12 @@ FASTTypeScriptIdentifier >> indexSignatureNameOwnerGroup [
 ]
 
 { #category : 'accessing' }
+FASTTypeScriptIdentifier >> name [
+
+	^ self sourceCode 
+]
+
+{ #category : 'accessing' }
 FASTTypeScriptIdentifier >> nestedIdentifierObjectOwner [
 	"Relation named: #nestedIdentifierObjectOwner type: #FASTTypeScriptNestedIdentifier opposite: #object"
 
@@ -208,31 +213,6 @@ FASTTypeScriptIdentifier >> nestedIdentifierObjectOwnerGroup [
 	<generated>
 	<navigation: 'NestedIdentifierObjectOwner'>
 	^ MooseSpecializedGroup with: self nestedIdentifierObjectOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> newExpressionConstructorOwner [
-	"Relation named: #newExpressionConstructorOwner type: #FASTTypeScriptNewExpression opposite: #constructor"
-
-	<generated>
-	<FMComment: 'The owner of this constructor'>
-	<container>
-	<derived>
-	^ newExpressionConstructorOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> newExpressionConstructorOwner: anObject [
-
-	<generated>
-	newExpressionConstructorOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIdentifier >> newExpressionConstructorOwnerGroup [
-	<generated>
-	<navigation: 'NewExpressionConstructorOwner'>
-	^ MooseSpecializedGroup with: self newExpressionConstructorOwner
 ]
 
 { #category : 'accessing' }

@@ -406,6 +406,33 @@ FASTTExpression >> memberExpressionPropertyOwner: anObject [
 ]
 
 { #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> newExpressionConstructorOwner [
+	"Relation named: #newExpressionConstructorOwner type: #FASTTypeScriptNewExpression opposite: #constructor"
+
+	<generated>
+	<FMComment: 'The owner of this constructor'>
+	<container>
+	<derived>
+	<FMProperty: #newExpressionConstructorOwner type: #FASTTypeScriptNewExpression opposite: #constructor>
+	<package: #'FAST-TypeScript-Model'>
+	^ self attributeAt: #newExpressionConstructorOwner ifAbsent: [ nil ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
+FASTTExpression >> newExpressionConstructorOwner: anObject [
+
+	<generated>
+	(self attributeAt: #newExpressionConstructorOwner ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self newExpressionConstructorOwner.
+		self attributeAt: #newExpressionConstructorOwner put: anObject.
+		otherSide constructor: nil ]
+	ifNotNil: [ 
+		self attributeAt: #newExpressionConstructorOwner put: anObject.
+		anObject constructor: self ]
+]
+
+{ #category : '*FAST-TypeScript-Model-accessing' }
 FASTTExpression >> subscriptExpressionIndexOwner [
 	"Relation named: #subscriptExpressionIndexOwner type: #FASTTypeScriptSubscriptExpression opposite: #index"
 

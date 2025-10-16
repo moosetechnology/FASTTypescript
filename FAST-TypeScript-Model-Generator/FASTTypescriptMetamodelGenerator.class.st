@@ -626,7 +626,7 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 
 	((newExpression property: #constructor) comment:
 		 'The constructor of the new expression')
-	<>- ((identifier property: #newExpressionConstructorOwner) comment:
+	<>- ((tExpression property: #newExpressionConstructorOwner) comment:
 			 'The owner of this constructor').
 
 	((newExpression property: #arguments) comment:
@@ -785,51 +785,58 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		 'My alias in case it exists')
 	<>- ((tOptionalField property: #exportSpecifierAliasOwner) comment:
 			 'My owner').
-	
+
 	((methodDefinition property: #return_type) comment:
 		 'My return type in case it exists')
-	<>- ((tOptionalField property: #methodDefinitionReturnTypeOwner) comment: 'My owner').
-	
-	((methodDefinition property: #name) comment:
-		 'My name')
-	<>- ((propertyIdentifier property: #methodDefinitionNameOwner) comment: 'My owner').
-	
-	((methodDefinition property: #body) comment:
-		 'My body')
-	<>- ((statementBlock property: #methodDefinitionBodyOwner) comment: 'My owner').
+	<>-
+		((tOptionalField property: #methodDefinitionReturnTypeOwner)
+			 comment: 'My owner').
 
-	((methodDefinition property: #parameters) comment:
-		 'My parameters')
-	<>- ((formalParameters property: #methodDefinitionParametersOwner) comment: 'My owner'). 
-	
-	((finallyClause property: #body) comment:
-		 'My body')
-	<>- ((statementBlock property: #finallyClauseBodyOwner) comment: 'My owner'). 
-	   
+	((methodDefinition property: #name) comment: 'My name')
+	<>-
+		((propertyIdentifier property: #methodDefinitionNameOwner) comment:
+			 'My owner').
+
+	((methodDefinition property: #body) comment: 'My body')
+	<>- ((statementBlock property: #methodDefinitionBodyOwner) comment:
+			 'My owner').
+
+	((methodDefinition property: #parameters) comment: 'My parameters')
+	<>- ((formalParameters property: #methodDefinitionParametersOwner)
+			 comment: 'My owner').
+
+	((finallyClause property: #body) comment: 'My body')
+	<>- ((statementBlock property: #finallyClauseBodyOwner) comment:
+			 'My owner').
+
 	((extendsClause property: #type_arguments) comment:
 		 'My type arguments')
-	<>- ((typeArguments property: #extendsClauseTypeArgumentsOwner) comment: 'My owner'). 
-	
-	((subscriptExpression property: #object) comment:
-		 'My identifier')
-	<>- ((tExpression property: #subscriptExpressionObjectOwner) comment: 'My owner').
-	
-	((subscriptExpression property: #index) comment:
-		 'My index')
-	<>- ((tExpression property: #subscriptExpressionIndexOwner) comment: 'My owner').
-	
+	<>-
+		((typeArguments property: #extendsClauseTypeArgumentsOwner)
+			 comment: 'My owner').
+
+	((subscriptExpression property: #object) comment: 'My identifier')
+	<>-
+		((tExpression property: #subscriptExpressionObjectOwner) comment:
+			 'My owner').
+
+	((subscriptExpression property: #index) comment: 'My index')
+	<>- ((tExpression property: #subscriptExpressionIndexOwner) comment:
+			 'My owner').
+
 	"((extendsClause property: #value) comment:
 		 'My value')
-	<>- ((identifier property: #extendsClauseValueOwner) comment: 'My owner')." 
-	
+	<>- ((identifier property: #extendsClauseValueOwner) comment: 'My owner')."
+
 	((assignmentExpression property: #left) comment: 'The left operand')
 	<>- ((tExpression property: #assignmentExpressionLeftOwner) comment:
 			 'The expression parent').
 
 	((assignmentExpression property: #right) comment: 'The right operand')
-	<>- ((tExpression property: #assignmentExpressionRightOwner) comment:
+	<>-
+		((tExpression property: #assignmentExpressionRightOwner) comment:
 			 'The expression parent').
-			
+
 	"((variableDeclarator property: #name) comment:
 		 'The identifier')
 	<>- ((identifier property: #variableDeclaratorNameOwner) comment:
@@ -839,39 +846,40 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		 'The value')
 	<>- ((tExpression property: #variableDeclaratorValueOwner) comment:
 			 'My owner'). "
-			
+
 	"function declaration"
 	((functionDeclaration property: #name) comment:
 		 'The name of the function')
 	<>- ((identifier property: #functionDeclarationNameOwner) comment:
-			 'My owner'). 
-	
+			 'My owner').
+
 	((functionDeclaration property: #parameters) comment:
 		 'The parameters of the function')
-	<>- ((formalParameters property: #functionDeclarationParametersOwner) comment:
-			 'My owner'). 
-			
+	<>-
+		((formalParameters property: #functionDeclarationParametersOwner)
+			 comment: 'My owner').
+
 	((functionDeclaration property: #body) comment:
 		 'The body of the function')
-	<>- ((statementBlock property: #functionDeclarationBodyOwner) comment:
-			 'My owner'). 
-		
+	<>-
+		((statementBlock property: #functionDeclarationBodyOwner) comment:
+			 'My owner').
+
 	((functionDeclaration property: #return_type) comment:
 		 'The return type of the function (in case it exists)')
-	<>- ((tReturnType property: #functionDeclarationReturnTypeOwner) comment:
-			 'My owner').
-	
+	<>-
+		((tReturnType property: #functionDeclarationReturnTypeOwner)
+			 comment: 'My owner').
+
 	"class declaration"
-	((classDeclaration property: #body) comment:
-		 'The body of the class')
+	((classDeclaration property: #body) comment: 'The body of the class')
 	<>- ((classBody property: #classDeclarationBodyOwner) comment:
 			 'The class declaration that contains me').
-	
-	((classDeclaration property: #name) comment:
-		 'The name of the class')
+
+	((classDeclaration property: #name) comment: 'The name of the class')
 	<>- ((typeIdentifier property: #classDeclarationNameOwner) comment:
 			 'My owner').
-		
+
 	"Enum"
 	((enumDeclaration property: #identifier) comment:
 		 'The identifier I define')
@@ -883,29 +891,26 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 			 'The enum declaration that contains me').
 
 	"Interface"
-	((interfaceDeclaration property: #name) comment:
-		 'My name')
-	<>- ((typeIdentifier property: #interfaceDeclarationNameOwner) comment:
+	((interfaceDeclaration property: #name) comment: 'My name')
+	<>-
+		((typeIdentifier property: #interfaceDeclarationNameOwner) comment:
 			 'My owner').
 
 	((interfaceDeclaration property: #body) comment:
 		 'The body of the interface')
-	<>- ((interfaceBody property: #interfaceDeclarationBodyOwner) comment:
+	<>-
+		((interfaceBody property: #interfaceDeclarationBodyOwner) comment:
 			 'The interface declaration that contains me').
 
 	"Traits"
 	((tWithDeclarations property: #declarations) comment:
 		 'The elements I declare')
-	<>-* ((tDeclaration property: #tWithDeclarationsDeclarationsOwner) comment:
-			 'The element that declares me').
+	<>-* ((tDeclaration property: #tWithDeclarationsDeclarationsOwner)
+			 comment: 'The element that declares me').
 
 	((tWithModifiers property: #modifiers) comment: 'My modifiers')
 	<>-* ((tModifier property: #tWithModifiersModifiersOwner) comment:
 			 'The owner of the modifier')
-
-
-
-
 ]
 
 { #category : 'definition' }

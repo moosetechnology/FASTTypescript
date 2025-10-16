@@ -6,7 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `arguments` | `FASTTypeScriptNewExpression` | `newExpressionArgumentsOwner` | `FASTTypeScriptArguments` | The arguments of the new expression|
-| `constructor` | `FASTTypeScriptNewExpression` | `newExpressionConstructorOwner` | `FASTTypeScriptIdentifier` | The constructor of the new expression|
+| `constructor` | `FASTTypeScriptNewExpression` | `newExpressionConstructorOwner` | `FASTTExpression` | The constructor of the new expression|
 | `type_arguments` | `FASTTypeScriptNewExpression` | `newExpressionTypeArgumentsOwner` | `FASTTypeScriptTypeArguments` | The type arguments of the new expression if they exist between <>|
 
 
@@ -16,7 +16,6 @@ Class {
 	#name : 'FASTTypeScriptNewExpression',
 	#superclass : 'FASTTypeScriptExpression',
 	#instVars : [
-		'#constructor => FMOne type: #FASTTypeScriptIdentifier opposite: #newExpressionConstructorOwner',
 		'#arguments => FMOne type: #FASTTypeScriptArguments opposite: #newExpressionArgumentsOwner',
 		'#type_arguments => FMOne type: #FASTTypeScriptTypeArguments opposite: #newExpressionTypeArgumentsOwner'
 	],
@@ -67,18 +66,26 @@ FASTTypeScriptNewExpression >> argumentsGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> constructor [
-	"Relation named: #constructor type: #FASTTypeScriptIdentifier opposite: #newExpressionConstructorOwner"
+	"Relation named: #constructor type: #FASTTExpression opposite: #newExpressionConstructorOwner"
 
 	<generated>
 	<FMComment: 'The constructor of the new expression'>
-	^ constructor
+	<FMProperty: #constructor type: #FASTTExpression opposite: #newExpressionConstructorOwner>
+	^ self attributeAt: #constructor ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> constructor: anObject [
 
 	<generated>
-	constructor := anObject
+	(self attributeAt: #constructor ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self constructor.
+		self attributeAt: #constructor put: anObject.
+		otherSide newExpressionConstructorOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #constructor put: anObject.
+		anObject newExpressionConstructorOwner: self ]
 ]
 
 { #category : 'navigation' }

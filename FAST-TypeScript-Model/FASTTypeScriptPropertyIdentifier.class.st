@@ -25,6 +25,7 @@
 | `memberExpressionPropertyOwner` | `FASTTExpression` | `property` | `FASTTypeScriptMemberExpression` | My owner|
 | `methodDefinitionNameOwner` | `FASTTypeScriptPropertyIdentifier` | `name` | `FASTTypeScriptMethodDefinition` | My owner|
 | `nestedIdentifierPropertyOwner` | `FASTTypeScriptPropertyIdentifier` | `property` | `FASTTypeScriptNestedIdentifier` | The owner of this  property identifier|
+| `newExpressionConstructorOwner` | `FASTTExpression` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
