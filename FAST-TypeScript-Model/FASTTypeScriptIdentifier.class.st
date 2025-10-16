@@ -17,7 +17,6 @@
 | `conditionalTypeConsequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypeScriptConditionalType` | Consequence owner|
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptConditionalType` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptConditionalType` | The right operand (if possible)|
-| `enumDeclarationIdentifierOwner` | `FASTTypeScriptIdentifier` | `identifier` | `FASTTypeScriptEnumDeclaration` | The enum that contains me|
 | `enumDeclarationNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptEnumDeclaration` | My owner|
 | `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
 | `exportSpecifierNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptExportSpecifier` | My owner|
@@ -58,7 +57,6 @@ Class {
 	#traits : 'FASTTExpression + FASTTypeScriptTOptionalField',
 	#classTraits : 'FASTTExpression classTrait + FASTTypeScriptTOptionalField classTrait',
 	#instVars : [
-		'#enumDeclarationIdentifierOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #identifier',
 		'#enumDeclarationNameOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #name',
 		'#exportSpecifierNameOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #name',
 		'#functionDeclarationNameOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #name',
@@ -84,31 +82,6 @@ FASTTypeScriptIdentifier class >> annotation [
 FASTTypeScriptIdentifier class >> initialize [ 
 
 	self deprecatedAliases: { #FASTTypescriptIdentifier }
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> enumDeclarationIdentifierOwner [
-	"Relation named: #enumDeclarationIdentifierOwner type: #FASTTypeScriptEnumDeclaration opposite: #identifier"
-
-	<generated>
-	<FMComment: 'The enum that contains me'>
-	<container>
-	<derived>
-	^ enumDeclarationIdentifierOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> enumDeclarationIdentifierOwner: anObject [
-
-	<generated>
-	enumDeclarationIdentifierOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIdentifier >> enumDeclarationIdentifierOwnerGroup [
-	<generated>
-	<navigation: 'EnumDeclarationIdentifierOwner'>
-	^ MooseSpecializedGroup with: self enumDeclarationIdentifierOwner
 ]
 
 { #category : 'accessing' }

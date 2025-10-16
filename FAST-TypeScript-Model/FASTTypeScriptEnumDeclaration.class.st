@@ -15,7 +15,6 @@
 |---|
 | `body` | `FASTTypeScriptEnumDeclaration` | `enumDeclarationBodyOwner` | `FASTTypeScriptEnumBody` | The body of the enum|
 | `declarations` | `FASTTypeScriptTWithDeclarations` | `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | The elements I declare|
-| `identifier` | `FASTTypeScriptEnumDeclaration` | `enumDeclarationIdentifierOwner` | `FASTTypeScriptIdentifier` | The identifier I define|
 | `modifiers` | `FASTTypeScriptTWithModifiers` | `tWithModifiersModifiersOwner` | `FASTTypeScriptTModifier` | My modifiers|
 | `name` | `FASTTypeScriptEnumDeclaration` | `enumDeclarationNameOwner` | `FASTTypeScriptIdentifier` | The name of the enum|
 
@@ -36,7 +35,6 @@ Class {
 	#classTraits : 'FASTTStatement classTrait + FASTTypeScriptTDeclaration classTrait + FASTTypeScriptTWithDeclarations classTrait + FASTTypeScriptTWithModifiers classTrait',
 	#instVars : [
 		'#body => FMOne type: #FASTTypeScriptEnumBody opposite: #enumDeclarationBodyOwner',
-		'#identifier => FMOne type: #FASTTypeScriptIdentifier opposite: #enumDeclarationIdentifierOwner',
 		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #enumDeclarationNameOwner',
 		'#programEnumDeclarationOwner => FMOne type: #FASTTypeScriptProgram opposite: #enumDeclarations'
 	],
@@ -84,29 +82,6 @@ FASTTypeScriptEnumDeclaration >> bodyGroup [
 	<generated>
 	<navigation: 'Body'>
 	^ MooseSpecializedGroup with: self body
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptEnumDeclaration >> identifier [
-	"Relation named: #identifier type: #FASTTypeScriptIdentifier opposite: #enumDeclarationIdentifierOwner"
-
-	<generated>
-	<FMComment: 'The identifier I define'>
-	^ identifier
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptEnumDeclaration >> identifier: anObject [
-
-	<generated>
-	identifier := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptEnumDeclaration >> identifierGroup [
-	<generated>
-	<navigation: 'Identifier'>
-	^ MooseSpecializedGroup with: self identifier
 ]
 
 { #category : 'testing' }
