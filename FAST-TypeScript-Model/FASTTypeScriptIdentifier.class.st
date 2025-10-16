@@ -18,6 +18,7 @@
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptConditionalType` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptConditionalType` | The right operand (if possible)|
 | `enumDeclarationIdentifierOwner` | `FASTTypeScriptIdentifier` | `identifier` | `FASTTypeScriptEnumDeclaration` | The enum that contains me|
+| `enumDeclarationNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptEnumDeclaration` | My owner|
 | `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
 | `exportSpecifierNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptExportSpecifier` | My owner|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
@@ -58,6 +59,7 @@ Class {
 	#classTraits : 'FASTTExpression classTrait + FASTTypeScriptTOptionalField classTrait',
 	#instVars : [
 		'#enumDeclarationIdentifierOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #identifier',
+		'#enumDeclarationNameOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #name',
 		'#exportSpecifierNameOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #name',
 		'#functionDeclarationNameOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #name',
 		'#indexSignatureNameOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #name',
@@ -107,6 +109,31 @@ FASTTypeScriptIdentifier >> enumDeclarationIdentifierOwnerGroup [
 	<generated>
 	<navigation: 'EnumDeclarationIdentifierOwner'>
 	^ MooseSpecializedGroup with: self enumDeclarationIdentifierOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> enumDeclarationNameOwner [
+	"Relation named: #enumDeclarationNameOwner type: #FASTTypeScriptEnumDeclaration opposite: #name"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ enumDeclarationNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> enumDeclarationNameOwner: anObject [
+
+	<generated>
+	enumDeclarationNameOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptIdentifier >> enumDeclarationNameOwnerGroup [
+	<generated>
+	<navigation: 'EnumDeclarationNameOwner'>
+	^ MooseSpecializedGroup with: self enumDeclarationNameOwner
 ]
 
 { #category : 'accessing' }
@@ -182,12 +209,6 @@ FASTTypeScriptIdentifier >> indexSignatureNameOwnerGroup [
 	<generated>
 	<navigation: 'IndexSignatureNameOwner'>
 	^ MooseSpecializedGroup with: self indexSignatureNameOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> name [
-
-	^ self sourceCode 
 ]
 
 { #category : 'accessing' }

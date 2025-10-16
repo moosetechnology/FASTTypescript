@@ -17,6 +17,7 @@
 | `declarations` | `FASTTypeScriptTWithDeclarations` | `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | The elements I declare|
 | `identifier` | `FASTTypeScriptEnumDeclaration` | `enumDeclarationIdentifierOwner` | `FASTTypeScriptIdentifier` | The identifier I define|
 | `modifiers` | `FASTTypeScriptTWithModifiers` | `tWithModifiersModifiersOwner` | `FASTTypeScriptTModifier` | My modifiers|
+| `name` | `FASTTypeScriptEnumDeclaration` | `enumDeclarationNameOwner` | `FASTTypeScriptIdentifier` | The name of the enum|
 
 
 ## Properties
@@ -34,9 +35,10 @@ Class {
 	#traits : 'FASTTStatement + FASTTypeScriptTDeclaration + FASTTypeScriptTWithDeclarations + FASTTypeScriptTWithModifiers',
 	#classTraits : 'FASTTStatement classTrait + FASTTypeScriptTDeclaration classTrait + FASTTypeScriptTWithDeclarations classTrait + FASTTypeScriptTWithModifiers classTrait',
 	#instVars : [
-		'#programEnumDeclarationOwner => FMOne type: #FASTTypeScriptProgram opposite: #enumDeclarations',
+		'#body => FMOne type: #FASTTypeScriptEnumBody opposite: #enumDeclarationBodyOwner',
 		'#identifier => FMOne type: #FASTTypeScriptIdentifier opposite: #enumDeclarationIdentifierOwner',
-		'#body => FMOne type: #FASTTypeScriptEnumBody opposite: #enumDeclarationBodyOwner'
+		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #enumDeclarationNameOwner',
+		'#programEnumDeclarationOwner => FMOne type: #FASTTypeScriptProgram opposite: #enumDeclarations'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -112,6 +114,29 @@ FASTTypeScriptEnumDeclaration >> isEnumDeclaration [
 
 	<generated>
 	^ true
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptEnumDeclaration >> name [
+	"Relation named: #name type: #FASTTypeScriptIdentifier opposite: #enumDeclarationNameOwner"
+
+	<generated>
+	<FMComment: 'The name of the enum'>
+	^ name
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptEnumDeclaration >> name: anObject [
+
+	<generated>
+	name := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptEnumDeclaration >> nameGroup [
+	<generated>
+	<navigation: 'Name'>
+	^ MooseSpecializedGroup with: self name
 ]
 
 { #category : 'accessing' }

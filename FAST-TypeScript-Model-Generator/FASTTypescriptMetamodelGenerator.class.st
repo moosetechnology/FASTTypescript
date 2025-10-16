@@ -890,6 +890,11 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	<>- ((enumBody property: #enumDeclarationBodyOwner) comment:
 			 'The enum declaration that contains me').
 
+
+	((enumDeclaration property: #name) comment: 'The name of the enum')
+	<>- ((identifier property: #enumDeclarationNameOwner) comment:
+			 'My owner').
+
 	"Interface"
 	((interfaceDeclaration property: #name) comment: 'My name')
 	<>-

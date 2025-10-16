@@ -55,11 +55,11 @@ Class {
 	#traits : 'FASTTExpression',
 	#classTraits : 'FASTTExpression classTrait',
 	#instVars : [
-		'#indexSignatureIndexTypeOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #index_type',
+		'#classDeclarationNameOwner => FMOne type: #FASTTypeScriptClassDeclaration opposite: #name',
+		'#constructorTypeTypeOwner => FMOne type: #FASTTypeScriptConstructorType opposite: #type',
 		'#extendsTypeClauseTypeOwner => FMOne type: #FASTTypeScriptExtendsTypeClause opposite: #type',
 		'#genericTypeNameOwner => FMOne type: #FASTTypeScriptGenericType opposite: #name',
-		'#constructorTypeTypeOwner => FMOne type: #FASTTypeScriptConstructorType opposite: #type',
-		'#classDeclarationNameOwner => FMOne type: #FASTTypeScriptClassDeclaration opposite: #name',
+		'#indexSignatureIndexTypeOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #index_type',
 		'#interfaceDeclarationNameOwner => FMOne type: #FASTTypeScriptInterfaceDeclaration opposite: #name'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
