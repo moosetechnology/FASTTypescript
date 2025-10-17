@@ -61,6 +61,12 @@ FASTTypeScriptInterfaceDeclaration class >> initialize [
  
 ]
 
+{ #category : 'visiting' }
+FASTTypeScriptInterfaceDeclaration >> accept: aVisitor [
+
+	^ aVisitor visitFASTTypeScriptInterfaceDeclaration: self
+]
+
 { #category : 'accessing' }
 FASTTypeScriptInterfaceDeclaration >> body [
 	"Relation named: #body type: #FASTTypeScriptInterfaceBody opposite: #interfaceDeclarationBodyOwner"

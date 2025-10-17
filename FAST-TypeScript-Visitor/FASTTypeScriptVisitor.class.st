@@ -141,6 +141,12 @@ FASTTypeScriptVisitor >> visitFASTTypeScriptImplementsClause: aFASTTypeScriptImp
 ]
 
 { #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptInterfaceDeclaration: aFASTTypeScriptInterfaceDeclaration [
+
+	^ self visitFASTTStatement: aFASTTypeScriptInterfaceDeclaration
+]
+
+{ #category : 'visiting' }
 FASTTypeScriptVisitor >> visitFASTTypeScriptMethodDefinition: aFASTTypeScriptMethodDefinition [
 	^ self visitFASTTStatement: aFASTTypeScriptMethodDefinition
 ]
