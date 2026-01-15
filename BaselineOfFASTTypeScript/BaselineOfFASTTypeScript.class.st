@@ -76,11 +76,13 @@ BaselineOfFASTTypeScript >> definePackages: spec [
 		package: 'FAST-TypeScript-Tools'
 		with: [ spec requires: #( 'TreeSitter' ) ];
 		package: 'FAST-TypeScript-Model-Tests'
+		with: [ spec requires: #( 'FAST-TypeScript-Model' ) ];
+		package: 'FAST-TypeScript-Visitor'
 		with: [ spec requires: #( 'FAST-TypeScript-Model' ) ].
 
 	"In case of no Famix loaded"
 	spec for: #NeedsMoose do: [
-			spec
-				package: 'FAST-TypeScript-Model'
-				with: [ spec requires: #( 'FAST' 'Famix' ) ] ]
+		spec
+			package: 'FAST-TypeScript-Model'
+			with: [ spec requires: #( 'FAST' 'Famix' ) ] ]
 ]
