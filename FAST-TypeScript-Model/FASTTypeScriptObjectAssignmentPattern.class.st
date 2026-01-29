@@ -18,7 +18,5 @@ FASTTypeScriptObjectAssignmentPattern class >> annotation [
 { #category : 'class initialization' }
 FASTTypeScriptObjectAssignmentPattern class >> initialize [ 
 
-	self deprecatedAliases: { #FASTTypescriptObject_assignment_pattern }
- 
- 
+	self deprecatedAliases: { #FASTTypescriptObject_assignment_pattern } 
 ]

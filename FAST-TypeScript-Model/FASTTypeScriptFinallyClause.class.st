@@ -5,12 +5,12 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `tryStatementOwner` | `FASTTypeScriptFinallyClause` | `finalizer` | `FASTTypeScriptTryStatement` | Try statement owner|
+| `tryStatementFinalizerOwner` | `FASTTypeScriptFinallyClause` | `finalizer` | `FASTTypeScriptTryStatement` | Try statement owner|
 
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptFinallyClause` | `statementBlockOwner` | `FASTTypeScriptStatementBlock` | My body|
+| `body` | `FASTTypeScriptFinallyClause` | `finallyClauseBodyOwner` | `FASTTypeScriptStatementBlock` | My body|
 
 
 
@@ -19,8 +19,8 @@ Class {
 	#name : 'FASTTypeScriptFinallyClause',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#tryStatementOwner => FMOne type: #FASTTypeScriptTryStatement opposite: #finalizer',
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner'
+		'#tryStatementFinalizerOwner => FMOne type: #FASTTypeScriptTryStatement opposite: #finalizer',
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #finallyClauseBodyOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -46,7 +46,7 @@ FASTTypeScriptFinallyClause class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptFinallyClause >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner"
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #finallyClauseBodyOwner"
 
 	<generated>
 	<FMComment: 'My body'>
@@ -68,26 +68,26 @@ FASTTypeScriptFinallyClause >> bodyGroup [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptFinallyClause >> tryStatementOwner [
-	"Relation named: #tryStatementOwner type: #FASTTypeScriptTryStatement opposite: #finalizer"
+FASTTypeScriptFinallyClause >> tryStatementFinalizerOwner [
+	"Relation named: #tryStatementFinalizerOwner type: #FASTTypeScriptTryStatement opposite: #finalizer"
 
 	<generated>
 	<FMComment: 'Try statement owner'>
 	<container>
 	<derived>
-	^ tryStatementOwner
+	^ tryStatementFinalizerOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptFinallyClause >> tryStatementOwner: anObject [
+FASTTypeScriptFinallyClause >> tryStatementFinalizerOwner: anObject [
 
 	<generated>
-	tryStatementOwner := anObject
+	tryStatementFinalizerOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptFinallyClause >> tryStatementOwnerGroup [
+FASTTypeScriptFinallyClause >> tryStatementFinalizerOwnerGroup [
 	<generated>
-	<navigation: 'TryStatementOwner'>
-	^ MooseSpecializedGroup with: self tryStatementOwner
+	<navigation: 'TryStatementFinalizerOwner'>
+	^ MooseSpecializedGroup with: self tryStatementFinalizerOwner
 ]

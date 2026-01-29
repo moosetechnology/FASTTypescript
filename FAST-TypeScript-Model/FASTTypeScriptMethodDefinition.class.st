@@ -5,10 +5,10 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptMethodDefinition` | `statementBlockOwner` | `FASTTypeScriptStatementBlock` | My body|
-| `name` | `FASTTypeScriptMethodDefinition` | `propertyIdentifierOwner` | `FASTTypeScriptPropertyIdentifier` | My name|
-| `parameters` | `FASTTypeScriptMethodDefinition` | `formalParametersOwner` | `FASTTypeScriptFormalParameters` | My parameters|
-| `return_type` | `FASTTypeScriptMethodDefinition` | `typeAnnotationOwner` | `FASTTypeScriptTOptionalField` | My return type in case it exists|
+| `body` | `FASTTypeScriptMethodDefinition` | `methodDefinitionBodyOwner` | `FASTTypeScriptStatementBlock` | My body|
+| `name` | `FASTTypeScriptMethodDefinition` | `methodDefinitionNameOwner` | `FASTTypeScriptPropertyIdentifier` | My name|
+| `parameters` | `FASTTypeScriptMethodDefinition` | `methodDefinitionParametersOwner` | `FASTTypeScriptFormalParameters` | My parameters|
+| `return_type` | `FASTTypeScriptMethodDefinition` | `methodDefinitionReturnTypeOwner` | `FASTTypeScriptTOptionalField` | My return type in case it exists|
 
 
 
@@ -17,10 +17,10 @@ Class {
 	#name : 'FASTTypeScriptMethodDefinition',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#return_type => FMOne type: #FASTTypeScriptTOptionalField opposite: #typeAnnotationOwner',
-		'#name => FMOne type: #FASTTypeScriptPropertyIdentifier opposite: #propertyIdentifierOwner',
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner',
-		'#parameters => FMOne type: #FASTTypeScriptFormalParameters opposite: #formalParametersOwner'
+		'#return_type => FMOne type: #FASTTypeScriptTOptionalField opposite: #methodDefinitionReturnTypeOwner',
+		'#name => FMOne type: #FASTTypeScriptPropertyIdentifier opposite: #methodDefinitionNameOwner',
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #methodDefinitionBodyOwner',
+		'#parameters => FMOne type: #FASTTypeScriptFormalParameters opposite: #methodDefinitionParametersOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -46,7 +46,7 @@ FASTTypeScriptMethodDefinition class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptMethodDefinition >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #statementBlockOwner"
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #methodDefinitionBodyOwner"
 
 	<generated>
 	<FMComment: 'My body'>
@@ -69,7 +69,7 @@ FASTTypeScriptMethodDefinition >> bodyGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptMethodDefinition >> name [
-	"Relation named: #name type: #FASTTypeScriptPropertyIdentifier opposite: #propertyIdentifierOwner"
+	"Relation named: #name type: #FASTTypeScriptPropertyIdentifier opposite: #methodDefinitionNameOwner"
 
 	<generated>
 	<FMComment: 'My name'>
@@ -92,7 +92,7 @@ FASTTypeScriptMethodDefinition >> nameGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptMethodDefinition >> parameters [
-	"Relation named: #parameters type: #FASTTypeScriptFormalParameters opposite: #formalParametersOwner"
+	"Relation named: #parameters type: #FASTTypeScriptFormalParameters opposite: #methodDefinitionParametersOwner"
 
 	<generated>
 	<FMComment: 'My parameters'>
@@ -115,7 +115,7 @@ FASTTypeScriptMethodDefinition >> parametersGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptMethodDefinition >> return_type [
-	"Relation named: #return_type type: #FASTTypeScriptTOptionalField opposite: #typeAnnotationOwner"
+	"Relation named: #return_type type: #FASTTypeScriptTOptionalField opposite: #methodDefinitionReturnTypeOwner"
 
 	<generated>
 	<FMComment: 'My return type in case it exists'>

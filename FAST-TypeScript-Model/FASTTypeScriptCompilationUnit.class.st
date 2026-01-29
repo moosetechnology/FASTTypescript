@@ -15,6 +15,12 @@ FASTTypeScriptCompilationUnit class >> annotation [
 	^ self
 ]
 
+{ #category : 'class initialization' }
+FASTTypeScriptCompilationUnit class >> initialize [
+
+	self deprecatedAliases: { #FASTTypeScriptCompilation_unit }
+]
+
 { #category : 'testing' }
 FASTTypeScriptCompilationUnit >> isCompilationUnit [
 

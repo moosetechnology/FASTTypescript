@@ -1,0 +1,36 @@
+Extension { #name : 'MooseAbstractGroup' }
+
+{ #category : '*FAST-TypeScript-Model-Extension' }
+MooseAbstractGroup >> allFASTTypeScriptClassDeclaration [
+	<navigation: 'All FASTTypeScriptClassDeclaration entities'>
+	<package: #FAST>
+	^ self allWithType: FASTTypeScriptClassDeclaration 
+]
+
+{ #category : '*FAST-TypeScript-Model-Extension' }
+MooseAbstractGroup >> allFASTTypeScriptEnumDeclaration [
+	<navigation: 'All FASTTypeScriptEnumDeclaration entities'>
+	<package: #FAST>
+	^ self allWithType: FASTTypeScriptEnumDeclaration 
+]
+
+{ #category : '*FAST-TypeScript-Model-Extension' }
+MooseAbstractGroup >> allFASTTypeScriptFunctionDeclaration [
+	<navigation: 'All FASTTypeScriptFunctionDeclaration entities'>
+	<package: #FAST>
+	^ self allWithType: FASTTypeScriptFunctionDeclaration 
+]
+
+{ #category : '*FAST-TypeScript-Model-Extension' }
+MooseAbstractGroup >> allFASTTypeScriptInterfaceDeclaration [
+	<navigation: 'All FASTTypeScriptInterfaceDeclaration entities'>
+	<package: #FAST>
+	^ self allWithType: FASTTypeScriptInterfaceDeclaration 
+]
+
+{ #category : '*FAST-TypeScript-Model-Extension' }
+MooseAbstractGroup >> allFASTTypeScriptMethodDefinition [
+	<navigation: 'All FASTTypeScriptMethodDeclaration entities'>
+	<package: #FAST>
+	^ self allWithType: FASTTypeScriptMethodDefinition 
+]

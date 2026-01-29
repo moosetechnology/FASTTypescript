@@ -1,6 +1,6 @@
 Class {
 	#name : 'FASTTypeScriptStatementIdentifier',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptStatementIdentifier class >> annotation [
 
-	<FMClass: #StatementIdentifier super: #FASTTypeScriptEntity>
+	<FMClass: #StatementIdentifier super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self

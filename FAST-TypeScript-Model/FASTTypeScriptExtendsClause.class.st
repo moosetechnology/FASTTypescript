@@ -5,8 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `type_arguments` | `FASTTypeScriptExtendsClause` | `typeArgumentsOwner` | `FASTTypeScriptTypeArguments` | My arguments|
-| `value` | `FASTTypeScriptExtendsClause` | `identifierOwner` | `FASTTypeScriptIdentifier` | My value|
+| `type_arguments` | `FASTTypeScriptExtendsClause` | `extendsClauseTypeArgumentsOwner` | `FASTTypeScriptTypeArguments` | My type arguments|
 
 
 
@@ -15,7 +14,7 @@ Class {
 	#name : 'FASTTypeScriptExtendsClause',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#type_arguments => FMOne type: #FASTTypeScriptTypeArguments opposite: #typeArgumentsOwner'
+		'#type_arguments => FMOne type: #FASTTypeScriptTypeArguments opposite: #extendsClauseTypeArgumentsOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -41,10 +40,10 @@ FASTTypeScriptExtendsClause class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptExtendsClause >> type_arguments [
-	"Relation named: #type_arguments type: #FASTTypeScriptTypeArguments opposite: #typeArgumentsOwner"
+	"Relation named: #type_arguments type: #FASTTypeScriptTypeArguments opposite: #extendsClauseTypeArgumentsOwner"
 
 	<generated>
-	<FMComment: 'My arguments'>
+	<FMComment: 'My type arguments'>
 	^ type_arguments
 ]
 
@@ -60,27 +59,4 @@ FASTTypeScriptExtendsClause >> type_argumentsGroup [
 	<generated>
 	<navigation: 'Type_arguments'>
 	^ MooseSpecializedGroup with: self type_arguments
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptExtendsClause >> value [
-	"Relation named: #value type: #FASTTypeScriptIdentifier opposite: #identifierOwner"
-
-	<generated>
-	<FMComment: 'My value'>
-	^ value
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptExtendsClause >> value: anObject [
-
-	<generated>
-	value := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptExtendsClause >> valueGroup [
-	<generated>
-	<navigation: 'Value'>
-	^ MooseSpecializedGroup with: self value
 ]

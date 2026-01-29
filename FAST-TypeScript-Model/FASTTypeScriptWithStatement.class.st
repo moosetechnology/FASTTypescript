@@ -5,18 +5,18 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptWithStatement` | `withStatementOwner` | `FASTTypeScriptStatementBlock` | My body as statement block|
-| `object` | `FASTTypeScriptWithStatement` | `withStatementOwner` | `FASTTypeScriptParenthesizedExpression` | My object as parenthesized expression|
+| `body` | `FASTTypeScriptWithStatement` | `withStatementBodyOwner` | `FASTTypeScriptStatementBlock` | My body as statement block|
+| `object` | `FASTTypeScriptWithStatement` | `withStatementObjectOwner` | `FASTTypeScriptParenthesizedExpression` | My object as parenthesized expression|
 
 
 
 "
 Class {
 	#name : 'FASTTypeScriptWithStatement',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
-		'#object => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementOwner',
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #withStatementOwner'
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #withStatementBodyOwner',
+		'#object => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementObjectOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -26,7 +26,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptWithStatement class >> annotation [
 
-	<FMClass: #WithStatement super: #FASTTypeScriptEntity>
+	<FMClass: #WithStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self
@@ -42,7 +42,7 @@ FASTTypeScriptWithStatement class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptWithStatement >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #withStatementOwner"
+	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #withStatementBodyOwner"
 
 	<generated>
 	<FMComment: 'My body as statement block'>
@@ -65,7 +65,7 @@ FASTTypeScriptWithStatement >> bodyGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptWithStatement >> object [
-	"Relation named: #object type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementOwner"
+	"Relation named: #object type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementObjectOwner"
 
 	<generated>
 	<FMComment: 'My object as parenthesized expression'>

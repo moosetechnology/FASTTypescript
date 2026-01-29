@@ -1,6 +1,20 @@
+"
+## Relations
+======================
+
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `functionDeclarationReturnTypeOwner` | `FASTTypeScriptTReturnType` | `return_type` | `FASTTypeScriptFunctionDeclaration` | My owner|
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptAssertsAnnotation',
 	#superclass : 'FASTTypeScriptEntity',
+	#traits : 'FASTTypeScriptTReturnType',
+	#classTraits : 'FASTTypeScriptTReturnType classTrait',
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'

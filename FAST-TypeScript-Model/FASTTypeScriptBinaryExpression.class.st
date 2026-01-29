@@ -5,8 +5,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `left` | `FASTTypeScriptBinaryExpression` | `binaryExpressionLeftOwner` | `FASTTExpression` | left|
-| `right` | `FASTTypeScriptBinaryExpression` | `binaryExpressionRightOwner` | `FASTTExpression` | right|
+| `left` | `FASTTypeScriptBinaryExpression` | `binaryExpressionLeftOwner` | `FASTTExpression` | The left operand (if possible)|
+| `right` | `FASTTypeScriptBinaryExpression` | `binaryExpressionRightOwner` | `FASTTExpression` | The right operand (if possible)|
 
 
 
@@ -42,7 +42,7 @@ FASTTypeScriptBinaryExpression >> left [
 	"Relation named: #left type: #FASTTExpression opposite: #binaryExpressionLeftOwner"
 
 	<generated>
-	<FMComment: 'left'>
+	<FMComment: 'The left operand (if possible)'>
 	<FMProperty: #left type: #FASTTExpression opposite: #binaryExpressionLeftOwner>
 	^ self attributeAt: #left ifAbsent: [ nil ]
 ]
@@ -73,7 +73,7 @@ FASTTypeScriptBinaryExpression >> right [
 	"Relation named: #right type: #FASTTExpression opposite: #binaryExpressionRightOwner"
 
 	<generated>
-	<FMComment: 'right'>
+	<FMComment: 'The right operand (if possible)'>
 	<FMProperty: #right type: #FASTTExpression opposite: #binaryExpressionRightOwner>
 	^ self attributeAt: #right ifAbsent: [ nil ]
 ]

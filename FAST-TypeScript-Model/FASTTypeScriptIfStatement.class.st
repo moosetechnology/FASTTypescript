@@ -5,18 +5,18 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `condition` | `FASTTypeScriptIfStatement` | `ifStatementOwner` | `FASTTypeScriptParenthesizedExpression` | My condition as parenthesized expression|
-| `consequence` | `FASTTypeScriptIfStatement` | `ifStatementOwner` | `FASTTypeScriptStatementBlock` | My consequence as statement block|
+| `condition` | `FASTTypeScriptIfStatement` | `ifStatementConditionOwner` | `FASTTypeScriptParenthesizedExpression` | My condition as parenthesized expression|
+| `consequence` | `FASTTypeScriptIfStatement` | `ifStatementConsequenceOwner` | `FASTTypeScriptStatementBlock` | My consequence as statement block|
 
 
 
 "
 Class {
 	#name : 'FASTTypeScriptIfStatement',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
-		'#condition => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #ifStatementOwner',
-		'#consequence => FMOne type: #FASTTypeScriptStatementBlock opposite: #ifStatementOwner'
+		'#condition => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #ifStatementConditionOwner',
+		'#consequence => FMOne type: #FASTTypeScriptStatementBlock opposite: #ifStatementConsequenceOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -26,7 +26,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptIfStatement class >> annotation [
 
-	<FMClass: #IfStatement super: #FASTTypeScriptEntity>
+	<FMClass: #IfStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self
@@ -42,7 +42,7 @@ FASTTypeScriptIfStatement class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptIfStatement >> condition [
-	"Relation named: #condition type: #FASTTypeScriptParenthesizedExpression opposite: #ifStatementOwner"
+	"Relation named: #condition type: #FASTTypeScriptParenthesizedExpression opposite: #ifStatementConditionOwner"
 
 	<generated>
 	<FMComment: 'My condition as parenthesized expression'>
@@ -65,7 +65,7 @@ FASTTypeScriptIfStatement >> conditionGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptIfStatement >> consequence [
-	"Relation named: #consequence type: #FASTTypeScriptStatementBlock opposite: #ifStatementOwner"
+	"Relation named: #consequence type: #FASTTypeScriptStatementBlock opposite: #ifStatementConsequenceOwner"
 
 	<generated>
 	<FMComment: 'My consequence as statement block'>

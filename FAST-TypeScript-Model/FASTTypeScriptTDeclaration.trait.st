@@ -7,7 +7,7 @@ I am a declaration in Typescript
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `typescriptDeclarationOwner` | `FASTTypeScriptTDeclaration` | `declarations` | `FASTTypeScriptTWithDeclarations` | The element that declares me|
+| `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | `declarations` | `FASTTypeScriptTWithDeclarations` | The element that declares me|
 
 
 
@@ -15,7 +15,7 @@ I am a declaration in Typescript
 Trait {
 	#name : 'FASTTypeScriptTDeclaration',
 	#instVars : [
-		'#typescriptDeclarationOwner => FMOne type: #FASTTypeScriptTWithDeclarations opposite: #declarations'
+		'#tWithDeclarationsDeclarationsOwner => FMOne type: #FASTTypeScriptTWithDeclarations opposite: #declarations'
 	],
 	#category : 'FAST-TypeScript-Model-Traits',
 	#package : 'FAST-TypeScript-Model',
@@ -32,25 +32,25 @@ FASTTypeScriptTDeclaration classSide >> annotation [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTDeclaration >> typescriptDeclarationOwner [
-	"Relation named: #typescriptDeclarationOwner type: #FASTTypeScriptTWithDeclarations opposite: #declarations"
+FASTTypeScriptTDeclaration >> tWithDeclarationsDeclarationsOwner [
+	"Relation named: #tWithDeclarationsDeclarationsOwner type: #FASTTypeScriptTWithDeclarations opposite: #declarations"
 
 	<generated>
 	<FMComment: 'The element that declares me'>
 	<container>
-	^ typescriptDeclarationOwner
+	^ tWithDeclarationsDeclarationsOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTDeclaration >> typescriptDeclarationOwner: anObject [
+FASTTypeScriptTDeclaration >> tWithDeclarationsDeclarationsOwner: anObject [
 
 	<generated>
-	typescriptDeclarationOwner := anObject
+	tWithDeclarationsDeclarationsOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptTDeclaration >> typescriptDeclarationOwnerGroup [
+FASTTypeScriptTDeclaration >> tWithDeclarationsDeclarationsOwnerGroup [
 	<generated>
-	<navigation: 'TypescriptDeclarationOwner'>
-	^ MooseSpecializedGroup with: self typescriptDeclarationOwner
+	<navigation: 'TWithDeclarationsDeclarationsOwner'>
+	^ MooseSpecializedGroup with: self tWithDeclarationsDeclarationsOwner
 ]

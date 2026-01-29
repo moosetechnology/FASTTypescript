@@ -7,8 +7,8 @@ I represent optional field in Typescript
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `identifierOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
-| `typeAnnotationOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
+| `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
+| `methodDefinitionReturnTypeOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
 
 
 
@@ -16,8 +16,8 @@ I represent optional field in Typescript
 Trait {
 	#name : 'FASTTypeScriptTOptionalField',
 	#instVars : [
-		'#identifierOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #alias',
-		'#typeAnnotationOwner => FMOne type: #FASTTypeScriptMethodDefinition opposite: #return_type'
+		'#exportSpecifierAliasOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #alias',
+		'#methodDefinitionReturnTypeOwner => FMOne type: #FASTTypeScriptMethodDefinition opposite: #return_type'
 	],
 	#category : 'FAST-TypeScript-Model-Traits',
 	#package : 'FAST-TypeScript-Model',
@@ -34,51 +34,51 @@ FASTTypeScriptTOptionalField classSide >> annotation [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTOptionalField >> identifierOwner [
-	"Relation named: #identifierOwner type: #FASTTypeScriptExportSpecifier opposite: #alias"
+FASTTypeScriptTOptionalField >> exportSpecifierAliasOwner [
+	"Relation named: #exportSpecifierAliasOwner type: #FASTTypeScriptExportSpecifier opposite: #alias"
 
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
 	<derived>
-	^ identifierOwner
+	^ exportSpecifierAliasOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTOptionalField >> identifierOwner: anObject [
+FASTTypeScriptTOptionalField >> exportSpecifierAliasOwner: anObject [
 
 	<generated>
-	identifierOwner := anObject
+	exportSpecifierAliasOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptTOptionalField >> identifierOwnerGroup [
+FASTTypeScriptTOptionalField >> exportSpecifierAliasOwnerGroup [
 	<generated>
-	<navigation: 'IdentifierOwner'>
-	^ MooseSpecializedGroup with: self identifierOwner
+	<navigation: 'ExportSpecifierAliasOwner'>
+	^ MooseSpecializedGroup with: self exportSpecifierAliasOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTOptionalField >> typeAnnotationOwner [
-	"Relation named: #typeAnnotationOwner type: #FASTTypeScriptMethodDefinition opposite: #return_type"
+FASTTypeScriptTOptionalField >> methodDefinitionReturnTypeOwner [
+	"Relation named: #methodDefinitionReturnTypeOwner type: #FASTTypeScriptMethodDefinition opposite: #return_type"
 
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
 	<derived>
-	^ typeAnnotationOwner
+	^ methodDefinitionReturnTypeOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTOptionalField >> typeAnnotationOwner: anObject [
+FASTTypeScriptTOptionalField >> methodDefinitionReturnTypeOwner: anObject [
 
 	<generated>
-	typeAnnotationOwner := anObject
+	methodDefinitionReturnTypeOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptTOptionalField >> typeAnnotationOwnerGroup [
+FASTTypeScriptTOptionalField >> methodDefinitionReturnTypeOwnerGroup [
 	<generated>
-	<navigation: 'TypeAnnotationOwner'>
-	^ MooseSpecializedGroup with: self typeAnnotationOwner
+	<navigation: 'MethodDefinitionReturnTypeOwner'>
+	^ MooseSpecializedGroup with: self methodDefinitionReturnTypeOwner
 ]

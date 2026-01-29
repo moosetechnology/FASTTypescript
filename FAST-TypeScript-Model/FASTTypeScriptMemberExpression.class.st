@@ -5,8 +5,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `object` | `FASTTypeScriptMemberExpression` | `memberExpressionOwner` | `FASTTExpression` | Object|
-| `property` | `FASTTypeScriptMemberExpression` | `memberExpressionOwner` | `FASTTExpression` | Property|
+| `object` | `FASTTypeScriptMemberExpression` | `memberExpressionObjectOwner` | `FASTTExpression` | Object|
+| `property` | `FASTTypeScriptMemberExpression` | `memberExpressionPropertyOwner` | `FASTTExpression` | Property|
 
 
 
@@ -38,11 +38,11 @@ FASTTypeScriptMemberExpression class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptMemberExpression >> object [
-	"Relation named: #object type: #FASTTExpression opposite: #memberExpressionOwner"
+	"Relation named: #object type: #FASTTExpression opposite: #memberExpressionObjectOwner"
 
 	<generated>
 	<FMComment: 'Object'>
-	<FMProperty: #object type: #FASTTExpression opposite: #memberExpressionOwner>
+	<FMProperty: #object type: #FASTTExpression opposite: #memberExpressionObjectOwner>
 	^ self attributeAt: #object ifAbsent: [ nil ]
 ]
 
@@ -54,10 +54,10 @@ FASTTypeScriptMemberExpression >> object: anObject [
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self object.
 		self attributeAt: #object put: anObject.
-		otherSide memberExpressionOwner: nil ]
+		otherSide memberExpressionObjectOwner: nil ]
 	ifNotNil: [ 
 		self attributeAt: #object put: anObject.
-		anObject memberExpressionOwner: self ]
+		anObject memberExpressionObjectOwner: self ]
 ]
 
 { #category : 'navigation' }
@@ -69,11 +69,11 @@ FASTTypeScriptMemberExpression >> objectGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptMemberExpression >> property [
-	"Relation named: #property type: #FASTTExpression opposite: #memberExpressionOwner"
+	"Relation named: #property type: #FASTTExpression opposite: #memberExpressionPropertyOwner"
 
 	<generated>
 	<FMComment: 'Property'>
-	<FMProperty: #property type: #FASTTExpression opposite: #memberExpressionOwner>
+	<FMProperty: #property type: #FASTTExpression opposite: #memberExpressionPropertyOwner>
 	^ self attributeAt: #property ifAbsent: [ nil ]
 ]
 
@@ -85,10 +85,10 @@ FASTTypeScriptMemberExpression >> property: anObject [
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self property.
 		self attributeAt: #property put: anObject.
-		otherSide memberExpressionOwner: nil ]
+		otherSide memberExpressionPropertyOwner: nil ]
 	ifNotNil: [ 
 		self attributeAt: #property put: anObject.
-		anObject memberExpressionOwner: self ]
+		anObject memberExpressionPropertyOwner: self ]
 ]
 
 { #category : 'navigation' }

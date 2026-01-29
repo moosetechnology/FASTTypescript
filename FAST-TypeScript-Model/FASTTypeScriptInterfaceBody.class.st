@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `bodyParent` | `FASTTypeScriptInterfaceBody` | `body` | `FASTTypeScriptInterfaceDeclaration` | The interface declaration that contains me|
+| `interfaceDeclarationBodyOwner` | `FASTTypeScriptInterfaceBody` | `body` | `FASTTypeScriptInterfaceDeclaration` | The interface declaration that contains me|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypeScriptInterfaceBody',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#bodyParent => FMOne type: #FASTTypeScriptInterfaceDeclaration opposite: #body'
+		'#interfaceDeclarationBodyOwner => FMOne type: #FASTTypeScriptInterfaceDeclaration opposite: #body'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -40,26 +40,26 @@ FASTTypeScriptInterfaceBody class >> initialize [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptInterfaceBody >> bodyParent [
-	"Relation named: #bodyParent type: #FASTTypeScriptInterfaceDeclaration opposite: #body"
+FASTTypeScriptInterfaceBody >> interfaceDeclarationBodyOwner [
+	"Relation named: #interfaceDeclarationBodyOwner type: #FASTTypeScriptInterfaceDeclaration opposite: #body"
 
 	<generated>
 	<FMComment: 'The interface declaration that contains me'>
 	<container>
 	<derived>
-	^ bodyParent
+	^ interfaceDeclarationBodyOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptInterfaceBody >> bodyParent: anObject [
+FASTTypeScriptInterfaceBody >> interfaceDeclarationBodyOwner: anObject [
 
 	<generated>
-	bodyParent := anObject
+	interfaceDeclarationBodyOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptInterfaceBody >> bodyParentGroup [
+FASTTypeScriptInterfaceBody >> interfaceDeclarationBodyOwnerGroup [
 	<generated>
-	<navigation: 'BodyParent'>
-	^ MooseSpecializedGroup with: self bodyParent
+	<navigation: 'InterfaceDeclarationBodyOwner'>
+	^ MooseSpecializedGroup with: self interfaceDeclarationBodyOwner
 ]

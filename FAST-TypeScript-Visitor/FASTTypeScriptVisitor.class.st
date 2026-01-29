@@ -1,0 +1,182 @@
+Class {
+	#name : 'FASTTypeScriptVisitor',
+	#superclass : 'FASTCoreVisitor',
+	#category : 'FAST-TypeScript-Visitor',
+	#package : 'FAST-TypeScript-Visitor'
+}
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAbstractMethodSignature: aFASTTypeScriptAbstractMethodSignature [ 
+	^ self visitFASTTypeScriptMethodSignature: aFASTTypeScriptAbstractMethodSignature 
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAccessibilityModifier: aFASTTypeScriptAccessibilityModifier [
+	^ self visitFASTTExpression: aFASTTypeScriptAccessibilityModifier 
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAmbientDeclaration: aFASTTypeScriptAmbientDeclaration [
+	^ self visitFASTTStatement: aFASTTypeScriptAmbientDeclaration 
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptArguments: aFASTTypeScriptArguments [
+	^ self visitFASTTExpression: aFASTTypeScriptArguments
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptArray: aFASTTypeScriptArray [
+	^ self visitFASTTExpression: aFASTTypeScriptArray
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptArrowFunction: aFASTTypeScriptArrowFunction [
+	^ self visitFASTTExpression: aFASTTypeScriptArrowFunction
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAssertsAnnotation: aFASTTypeScriptAssertsAnnotation [
+	^ self visitFASTTExpression: aFASTTypeScriptAssertsAnnotation 
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptAssignmentExpression: aFASTTypeScriptAssignmentExpression [ 
+	^ self visitFASTTExpression: aFASTTypeScriptAssignmentExpression
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptCatchClause: aFASTTypeScriptCatchClause [
+	^ self visitFASTTStatement: aFASTTypeScriptCatchClause
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptClassBody: aFASTTypeScriptClassBody [
+	^ self visitFASTTStatement: aFASTTypeScriptClassBody
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptClassDeclaration: aFASTTypeScriptClassDeclaration [
+	^ self visitFASTTStatement: aFASTTypeScriptClassDeclaration
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptClassStaticBlock: aFASTTypeScriptClassStaticBlock [
+	^ self visitFASTTStatement: aFASTTypeScriptClassStaticBlock
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptCompilationUnit: aFASTTypeScriptCompilationUnit [
+	^ self visitFASTTEntity: aFASTTypeScriptCompilationUnit
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptDecorator: aFASTTypeScriptDecorator [
+	^ self visitFASTTExpression: aFASTTypeScriptDecorator
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptElseClause: aFASTTypeScriptElseClause [
+	^ self visitFASTTStatement: aFASTTypeScriptElseClause
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptEnumAssignment: aFASTTypeScriptEnumAssignment [
+	^ self visitFASTTExpression: aFASTTypeScriptEnumAssignment
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptEnumBody: aFASTTypeScriptEnumBody [
+	^ self visitFASTTStatement: aFASTTypeScriptEnumBody
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptEnumDeclaration: aFASTTypeScriptEnumDeclaration [
+	^ self visitFASTTStatement: aFASTTypeScriptEnumDeclaration
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptExistentialType: aFASTTypeScriptExistentialType [
+	^ self visitFASTTExpression: aFASTTypeScriptExistentialType
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptExtendsClause: aFASTTypeScriptExtendsClause [
+
+	^ self visitFASTTExpression: aFASTTypeScriptExtendsClause
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptExtendsTypeClause: aFASTTypeScriptExtendsTypeClause [
+
+	^ self visitFASTTExpression: aFASTTypeScriptExtendsTypeClause
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptFinallyClause: aFASTTypeScriptFinallyClause [
+	^ self visitFASTTStatement: aFASTTypeScriptFinallyClause
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptFormalParameters: aFASTTypeScriptFormalParameters [
+	^ self visitFASTTExpression: aFASTTypeScriptFormalParameters
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptFunctionDeclaration: aFASTTypeScriptFunctionDeclaration [
+
+	^ self visitFASTTStatement: aFASTTypeScriptFunctionDeclaration
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptFunctionSignature: aFASTTypeScriptFunctionSignature [
+
+	^ self visitFASTTStatement: aFASTTypeScriptFunctionSignature
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptImplementsClause: aFASTTypeScriptImplementsClause [
+
+	^ self visitFASTTExpression: aFASTTypeScriptImplementsClause
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptInterfaceDeclaration: aFASTTypeScriptInterfaceDeclaration [
+
+	^ self visitFASTTStatement: aFASTTypeScriptInterfaceDeclaration
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptMethodDefinition: aFASTTypeScriptMethodDefinition [
+	^ self visitFASTTStatement: aFASTTypeScriptMethodDefinition
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptMethodSignature: aFASTTypeScriptMethodSignature [ 
+	^ self visitFASTTNamedBehaviouralEntity: aFASTTypeScriptMethodSignature 
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptPredefinedType: aFASTTypeScriptPredefinedType [
+	^ self visitFASTTVariableExpression: aFASTTypeScriptPredefinedType
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptPropertyIdentifier: aFASTTypeScriptPropertyIdentifier [
+	^ self visitFASTTEntity: aFASTTypeScriptPropertyIdentifier
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptPublicFieldDefinition: aFASTTypeScriptPublicFieldDefinition [
+	^ self visitFASTTStatement: aFASTTypeScriptPublicFieldDefinition
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptTypeAnnotation: aFASTTypeScriptTypeAnnotation [
+	^ self visitFASTTVariableExpression: aFASTTypeScriptTypeAnnotation
+]
+
+{ #category : 'visiting' }
+FASTTypeScriptVisitor >> visitFASTTypeScriptTypeIdentifier: aFASTTypeScriptTypeIdentifier [
+	^ self visitFASTTStatement: aFASTTypeScriptTypeIdentifier
+]

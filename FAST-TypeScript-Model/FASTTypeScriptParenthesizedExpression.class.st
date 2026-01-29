@@ -5,8 +5,8 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `ifStatementOwner` | `FASTTypeScriptParenthesizedExpression` | `condition` | `FASTTypeScriptIfStatement` | The owner of this  parenthesized expression|
-| `withStatementOwner` | `FASTTypeScriptParenthesizedExpression` | `object` | `FASTTypeScriptWithStatement` | The owner of this type parenthesized expression|
+| `ifStatementConditionOwner` | `FASTTypeScriptParenthesizedExpression` | `condition` | `FASTTypeScriptIfStatement` | The owner of this  parenthesized expression|
+| `withStatementObjectOwner` | `FASTTypeScriptParenthesizedExpression` | `object` | `FASTTypeScriptWithStatement` | The owner of this type parenthesized expression|
 
 
 
@@ -15,8 +15,8 @@ Class {
 	#name : 'FASTTypeScriptParenthesizedExpression',
 	#superclass : 'FASTTypeScriptExpression',
 	#instVars : [
-		'#withStatementOwner => FMOne type: #FASTTypeScriptWithStatement opposite: #object',
-		'#ifStatementOwner => FMOne type: #FASTTypeScriptIfStatement opposite: #condition'
+		'#withStatementObjectOwner => FMOne type: #FASTTypeScriptWithStatement opposite: #object',
+		'#ifStatementConditionOwner => FMOne type: #FASTTypeScriptIfStatement opposite: #condition'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -43,51 +43,51 @@ FASTTypeScriptParenthesizedExpression class >> initialize [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptParenthesizedExpression >> ifStatementOwner [
-	"Relation named: #ifStatementOwner type: #FASTTypeScriptIfStatement opposite: #condition"
+FASTTypeScriptParenthesizedExpression >> ifStatementConditionOwner [
+	"Relation named: #ifStatementConditionOwner type: #FASTTypeScriptIfStatement opposite: #condition"
 
 	<generated>
 	<FMComment: 'The owner of this  parenthesized expression'>
 	<container>
 	<derived>
-	^ ifStatementOwner
+	^ ifStatementConditionOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptParenthesizedExpression >> ifStatementOwner: anObject [
+FASTTypeScriptParenthesizedExpression >> ifStatementConditionOwner: anObject [
 
 	<generated>
-	ifStatementOwner := anObject
+	ifStatementConditionOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptParenthesizedExpression >> ifStatementOwnerGroup [
+FASTTypeScriptParenthesizedExpression >> ifStatementConditionOwnerGroup [
 	<generated>
-	<navigation: 'IfStatementOwner'>
-	^ MooseSpecializedGroup with: self ifStatementOwner
+	<navigation: 'IfStatementConditionOwner'>
+	^ MooseSpecializedGroup with: self ifStatementConditionOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptParenthesizedExpression >> withStatementOwner [
-	"Relation named: #withStatementOwner type: #FASTTypeScriptWithStatement opposite: #object"
+FASTTypeScriptParenthesizedExpression >> withStatementObjectOwner [
+	"Relation named: #withStatementObjectOwner type: #FASTTypeScriptWithStatement opposite: #object"
 
 	<generated>
 	<FMComment: 'The owner of this type parenthesized expression'>
 	<container>
 	<derived>
-	^ withStatementOwner
+	^ withStatementObjectOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptParenthesizedExpression >> withStatementOwner: anObject [
+FASTTypeScriptParenthesizedExpression >> withStatementObjectOwner: anObject [
 
 	<generated>
-	withStatementOwner := anObject
+	withStatementObjectOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptParenthesizedExpression >> withStatementOwnerGroup [
+FASTTypeScriptParenthesizedExpression >> withStatementObjectOwnerGroup [
 	<generated>
-	<navigation: 'WithStatementOwner'>
-	^ MooseSpecializedGroup with: self withStatementOwner
+	<navigation: 'WithStatementObjectOwner'>
+	^ MooseSpecializedGroup with: self withStatementObjectOwner
 ]

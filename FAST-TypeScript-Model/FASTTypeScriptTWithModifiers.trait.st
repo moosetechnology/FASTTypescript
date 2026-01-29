@@ -7,7 +7,7 @@ I have modifiers
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `modifiers` | `FASTTypeScriptTWithModifiers` | `typescriptModifierOwner` | `FASTTypeScriptTModifier` | My modifiers|
+| `modifiers` | `FASTTypeScriptTWithModifiers` | `tWithModifiersModifiersOwner` | `FASTTypeScriptTModifier` | My modifiers|
 
 
 
@@ -15,7 +15,7 @@ I have modifiers
 Trait {
 	#name : 'FASTTypeScriptTWithModifiers',
 	#instVars : [
-		'#modifiers => FMMany type: #FASTTypeScriptTModifier opposite: #typescriptModifierOwner'
+		'#modifiers => FMMany type: #FASTTypeScriptTModifier opposite: #tWithModifiersModifiersOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Traits',
 	#package : 'FAST-TypeScript-Model',
@@ -39,7 +39,7 @@ FASTTypeScriptTWithModifiers >> addModifier: anObject [
 
 { #category : 'accessing' }
 FASTTypeScriptTWithModifiers >> modifiers [
-	"Relation named: #modifiers type: #FASTTypeScriptTModifier opposite: #typescriptModifierOwner"
+	"Relation named: #modifiers type: #FASTTypeScriptTModifier opposite: #tWithModifiersModifiersOwner"
 
 	<generated>
 	<FMComment: 'My modifiers'>

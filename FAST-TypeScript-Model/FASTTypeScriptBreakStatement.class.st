@@ -1,6 +1,6 @@
 Class {
 	#name : 'FASTTypeScriptBreakStatement',
-	#superclass : 'FASTTypeScriptEntity',
+	#superclass : 'FASTTypeScriptStatement',
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptBreakStatement class >> annotation [
 
-	<FMClass: #BreakStatement super: #FASTTypeScriptEntity>
+	<FMClass: #BreakStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
 	^ self

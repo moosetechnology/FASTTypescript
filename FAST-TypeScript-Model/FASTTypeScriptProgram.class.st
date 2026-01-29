@@ -5,9 +5,9 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `classDeclarations` | `FASTTypeScriptProgram` | `parentProgram` | `FASTTypeScriptClassDeclaration` | The class declarations that I define|
-| `enumDeclarations` | `FASTTypeScriptProgram` | `parentProgram` | `FASTTypeScriptEnumDeclaration` | The enum declarations that I define|
-| `interfaceDeclarations` | `FASTTypeScriptProgram` | `parentProgram` | `FASTTypeScriptInterfaceDeclaration` | The interface declarations that I define|
+| `classDeclarations` | `FASTTypeScriptProgram` | `programClassDeclarationOwner` | `FASTTypeScriptClassDeclaration` | The class declarations that I define|
+| `enumDeclarations` | `FASTTypeScriptProgram` | `programEnumDeclarationOwner` | `FASTTypeScriptEnumDeclaration` | The enum declarations that I define|
+| `interfaceDeclarations` | `FASTTypeScriptProgram` | `programInterfaceDeclarationOwner` | `FASTTypeScriptInterfaceDeclaration` | The interface declarations that I define|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -31,9 +31,9 @@ Class {
 	#traits : '(FASTTEntity + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
 	#classTraits : '(FASTTEntity classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
-		'#classDeclarations => FMMany type: #FASTTypeScriptClassDeclaration opposite: #parentProgram',
-		'#enumDeclarations => FMMany type: #FASTTypeScriptEnumDeclaration opposite: #parentProgram',
-		'#interfaceDeclarations => FMMany type: #FASTTypeScriptInterfaceDeclaration opposite: #parentProgram'
+		'#classDeclarations => FMMany type: #FASTTypeScriptClassDeclaration opposite: #programClassDeclarationOwner',
+		'#enumDeclarations => FMMany type: #FASTTypeScriptEnumDeclaration opposite: #programEnumDeclarationOwner',
+		'#interfaceDeclarations => FMMany type: #FASTTypeScriptInterfaceDeclaration opposite: #programInterfaceDeclarationOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -75,7 +75,7 @@ FASTTypeScriptProgram >> addInterfaceDeclaration: anObject [
 
 { #category : 'accessing' }
 FASTTypeScriptProgram >> classDeclarations [
-	"Relation named: #classDeclarations type: #FASTTypeScriptClassDeclaration opposite: #parentProgram"
+	"Relation named: #classDeclarations type: #FASTTypeScriptClassDeclaration opposite: #programClassDeclarationOwner"
 
 	<generated>
 	<FMComment: 'The class declarations that I define'>
@@ -99,7 +99,7 @@ FASTTypeScriptProgram >> classDeclarationsGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptProgram >> enumDeclarations [
-	"Relation named: #enumDeclarations type: #FASTTypeScriptEnumDeclaration opposite: #parentProgram"
+	"Relation named: #enumDeclarations type: #FASTTypeScriptEnumDeclaration opposite: #programEnumDeclarationOwner"
 
 	<generated>
 	<FMComment: 'The enum declarations that I define'>
@@ -123,7 +123,7 @@ FASTTypeScriptProgram >> enumDeclarationsGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptProgram >> interfaceDeclarations [
-	"Relation named: #interfaceDeclarations type: #FASTTypeScriptInterfaceDeclaration opposite: #parentProgram"
+	"Relation named: #interfaceDeclarations type: #FASTTypeScriptInterfaceDeclaration opposite: #programInterfaceDeclarationOwner"
 
 	<generated>
 	<FMComment: 'The interface declarations that I define'>

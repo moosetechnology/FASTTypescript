@@ -14,3 +14,9 @@ FASTTypeScriptRegexPattern class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'class initialization' }
+FASTTypeScriptRegexPattern class >> initialize [
+
+	self deprecatedAliases: { #FASTTypescriptRegex_pattern }
+]

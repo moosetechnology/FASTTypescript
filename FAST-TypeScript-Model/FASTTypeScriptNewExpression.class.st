@@ -5,9 +5,9 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `arguments` | `FASTTypeScriptNewExpression` | `argumentsOwner` | `FASTTypeScriptArguments` | The arguments of the new expression|
-| `constructor` | `FASTTypeScriptNewExpression` | `typescriptNewExpressionOwner` | `FASTTypeScriptIdentifier` | The constructor of the new expression|
-| `type_arguments` | `FASTTypeScriptNewExpression` | `typeArgumentsOwner` | `FASTTypeScriptTypeArguments` | The type arguments of the new expression if they exist between <>|
+| `arguments` | `FASTTypeScriptNewExpression` | `newExpressionArgumentsOwner` | `FASTTypeScriptArguments` | The arguments of the new expression|
+| `constructor` | `FASTTypeScriptNewExpression` | `newExpressionConstructorOwner` | `FASTTExpression` | The constructor of the new expression|
+| `type_arguments` | `FASTTypeScriptNewExpression` | `newExpressionTypeArgumentsOwner` | `FASTTypeScriptTypeArguments` | The type arguments of the new expression if they exist between <>|
 
 
 
@@ -16,9 +16,8 @@ Class {
 	#name : 'FASTTypeScriptNewExpression',
 	#superclass : 'FASTTypeScriptExpression',
 	#instVars : [
-		'#constructor => FMOne type: #FASTTypeScriptIdentifier opposite: #typescriptNewExpressionOwner',
-		'#arguments => FMOne type: #FASTTypeScriptArguments opposite: #argumentsOwner',
-		'#type_arguments => FMOne type: #FASTTypeScriptTypeArguments opposite: #typeArgumentsOwner'
+		'#arguments => FMOne type: #FASTTypeScriptArguments opposite: #newExpressionArgumentsOwner',
+		'#type_arguments => FMOne type: #FASTTypeScriptTypeArguments opposite: #newExpressionTypeArgumentsOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -44,7 +43,7 @@ FASTTypeScriptNewExpression class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> arguments [
-	"Relation named: #arguments type: #FASTTypeScriptArguments opposite: #argumentsOwner"
+	"Relation named: #arguments type: #FASTTypeScriptArguments opposite: #newExpressionArgumentsOwner"
 
 	<generated>
 	<FMComment: 'The arguments of the new expression'>
@@ -67,18 +66,26 @@ FASTTypeScriptNewExpression >> argumentsGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> constructor [
-	"Relation named: #constructor type: #FASTTypeScriptIdentifier opposite: #typescriptNewExpressionOwner"
+	"Relation named: #constructor type: #FASTTExpression opposite: #newExpressionConstructorOwner"
 
 	<generated>
 	<FMComment: 'The constructor of the new expression'>
-	^ constructor
+	<FMProperty: #constructor type: #FASTTExpression opposite: #newExpressionConstructorOwner>
+	^ self attributeAt: #constructor ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> constructor: anObject [
 
 	<generated>
-	constructor := anObject
+	(self attributeAt: #constructor ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self constructor.
+		self attributeAt: #constructor put: anObject.
+		otherSide newExpressionConstructorOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #constructor put: anObject.
+		anObject newExpressionConstructorOwner: self ]
 ]
 
 { #category : 'navigation' }
@@ -90,7 +97,7 @@ FASTTypeScriptNewExpression >> constructorGroup [
 
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> type_arguments [
-	"Relation named: #type_arguments type: #FASTTypeScriptTypeArguments opposite: #typeArgumentsOwner"
+	"Relation named: #type_arguments type: #FASTTypeScriptTypeArguments opposite: #newExpressionTypeArgumentsOwner"
 
 	<generated>
 	<FMComment: 'The type arguments of the new expression if they exist between <>'>

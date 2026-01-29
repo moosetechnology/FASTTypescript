@@ -1,3 +1,16 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `name` | `FASTTypeScriptVariableDeclarator` | `variableDeclaratorNameOwner` | `FASTTypeScriptIdentifier` | The identifier|
+| `value` | `FASTTypeScriptVariableDeclarator` | `variableDeclaratorValueOwner` | `FASTTExpression` | The value|
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptVariableDeclarator',
 	#superclass : 'FASTTypeScriptEntity',

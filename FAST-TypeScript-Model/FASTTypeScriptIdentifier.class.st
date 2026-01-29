@@ -5,37 +5,41 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `alternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypeScriptConditionalType` | Alternative owner|
 | `argumentOwner` | `FASTTExpression` | `arguments` | `FASTTWithArguments` | my owner|
 | `assignedIn` | `FASTTExpression` | `expression` | `FASTTAssignment` | Optional assignment where this expression is used|
+| `assignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptAssignmentExpression` | The expression parent|
+| `assignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAssignmentExpression` | The expression parent|
 | `augmentedAssignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptAugmentedAssignmentExpression` | The left operand (if possible)|
 | `augmentedAssignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAugmentedAssignmentExpression` | The right operand (if possible)|
-| `binaryExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptBinaryExpression` | The left operand (if possible)|
-| `binaryExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptBinaryExpression` | The right operand (if possible)|
+| `binaryExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptBinaryExpression` | My Owner|
+| `binaryExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptBinaryExpression` | My Owner|
+| `conditionalTypeAlternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypeScriptConditionalType` | Alternative owner|
+| `conditionalTypeConsequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypeScriptConditionalType` | Consequence owner|
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptConditionalType` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptConditionalType` | The right operand (if possible)|
-| `consequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypeScriptConditionalType` | Consequence owner|
-| `exportSpecifierOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptExportSpecifier` | My owner|
+| `enumDeclarationNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptEnumDeclaration` | My owner|
+| `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
+| `exportSpecifierNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptExportSpecifier` | My owner|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
-| `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptForInStatement` | The left operand (if possible)|
-| `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptForInStatement` | The right operand (if possible)|
-| `functionTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypeScriptFunctionType` | The owner of this type|
-| `identifierOwner` | `FASTTypeScriptIdentifier` | `value` | `FASTTypeScriptExtendsClause` | My owner|
-| `identifierOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
-| `identifierOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptIndexSignature` | The owner of this identifier|
-| `memberExpressionOwner` | `FASTTExpression` | `object` | `FASTTypeScriptMemberExpression` | This owner|
-| `memberExpressionOwner` | `FASTTExpression` | `property` | `FASTTypeScriptMemberExpression` | My owner|
-| `nestedIdentifierOwner` | `FASTTypeScriptIdentifier` | `object` | `FASTTypeScriptNestedIdentifier` | The owner of this identifier|
-| `optionalParameterOwner` | `FASTTypeScriptIdentifier` | `pattern` | `FASTTypeScriptOptionalParameter` | The owner of this identifier|
+| `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptForInStatement` | My owner|
+| `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptForInStatement` | My owner|
+| `functionDeclarationNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptFunctionDeclaration` | My owner|
+| `functionTypeReturnTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypeScriptFunctionType` | The owner of this type|
+| `indexSignatureNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptIndexSignature` | The owner of this identifier|
+| `memberExpressionObjectOwner` | `FASTTExpression` | `object` | `FASTTypeScriptMemberExpression` | This owner|
+| `memberExpressionPropertyOwner` | `FASTTExpression` | `property` | `FASTTypeScriptMemberExpression` | My owner|
+| `methodDefinitionReturnTypeOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
+| `nestedIdentifierObjectOwner` | `FASTTypeScriptIdentifier` | `object` | `FASTTypeScriptNestedIdentifier` | The owner of this identifier|
+| `newExpressionConstructorOwner` | `FASTTExpression` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
+| `optionalParameterPatternOwner` | `FASTTypeScriptIdentifier` | `pattern` | `FASTTypeScriptOptionalParameter` | The owner of this identifier|
 | `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
-| `parentEnum` | `FASTTypeScriptIdentifier` | `identifier` | `FASTTypeScriptEnumDeclaration` | The enum that contains me|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
-| `typeAnnotationOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
-| `typescriptNewExpressionOwner` | `FASTTypeScriptIdentifier` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
-| `unaryExpressionOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
+| `subscriptExpressionIndexOwner` | `FASTTExpression` | `index` | `FASTTypeScriptSubscriptExpression` | My owner|
+| `subscriptExpressionObjectOwner` | `FASTTExpression` | `object` | `FASTTypeScriptSubscriptExpression` | My owner|
+| `unaryExpressionArgumentOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
 
 
 ## Properties
@@ -53,12 +57,12 @@ Class {
 	#traits : 'FASTTExpression + FASTTypeScriptTOptionalField',
 	#classTraits : 'FASTTExpression classTrait + FASTTypeScriptTOptionalField classTrait',
 	#instVars : [
-		'#typescriptNewExpressionOwner => FMOne type: #FASTTypeScriptNewExpression opposite: #constructor',
-		'#identifierOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #name',
-		'#nestedIdentifierOwner => FMOne type: #FASTTypeScriptNestedIdentifier opposite: #object',
-		'#optionalParameterOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #pattern',
-		'#exportSpecifierOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #name',
-		'#parentEnum => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #identifier'
+		'#enumDeclarationNameOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #name',
+		'#exportSpecifierNameOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #name',
+		'#functionDeclarationNameOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #name',
+		'#indexSignatureNameOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #name',
+		'#nestedIdentifierObjectOwner => FMOne type: #FASTTypeScriptNestedIdentifier opposite: #object',
+		'#optionalParameterPatternOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #pattern'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -81,151 +85,151 @@ FASTTypeScriptIdentifier class >> initialize [
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptIdentifier >> exportSpecifierOwner [
-	"Relation named: #exportSpecifierOwner type: #FASTTypeScriptExportSpecifier opposite: #name"
+FASTTypeScriptIdentifier >> enumDeclarationNameOwner [
+	"Relation named: #enumDeclarationNameOwner type: #FASTTypeScriptEnumDeclaration opposite: #name"
 
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
 	<derived>
-	^ exportSpecifierOwner
+	^ enumDeclarationNameOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptIdentifier >> exportSpecifierOwner: anObject [
+FASTTypeScriptIdentifier >> enumDeclarationNameOwner: anObject [
 
 	<generated>
-	exportSpecifierOwner := anObject
+	enumDeclarationNameOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptIdentifier >> exportSpecifierOwnerGroup [
+FASTTypeScriptIdentifier >> enumDeclarationNameOwnerGroup [
 	<generated>
-	<navigation: 'ExportSpecifierOwner'>
-	^ MooseSpecializedGroup with: self exportSpecifierOwner
+	<navigation: 'EnumDeclarationNameOwner'>
+	^ MooseSpecializedGroup with: self enumDeclarationNameOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptIdentifier >> identifierOwner [
-	"Relation named: #identifierOwner type: #FASTTypeScriptIndexSignature opposite: #name"
+FASTTypeScriptIdentifier >> exportSpecifierNameOwner [
+	"Relation named: #exportSpecifierNameOwner type: #FASTTypeScriptExportSpecifier opposite: #name"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ exportSpecifierNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> exportSpecifierNameOwner: anObject [
+
+	<generated>
+	exportSpecifierNameOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptIdentifier >> exportSpecifierNameOwnerGroup [
+	<generated>
+	<navigation: 'ExportSpecifierNameOwner'>
+	^ MooseSpecializedGroup with: self exportSpecifierNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> functionDeclarationNameOwner [
+	"Relation named: #functionDeclarationNameOwner type: #FASTTypeScriptFunctionDeclaration opposite: #name"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ functionDeclarationNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> functionDeclarationNameOwner: anObject [
+
+	<generated>
+	functionDeclarationNameOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptIdentifier >> functionDeclarationNameOwnerGroup [
+	<generated>
+	<navigation: 'FunctionDeclarationNameOwner'>
+	^ MooseSpecializedGroup with: self functionDeclarationNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> indexSignatureNameOwner [
+	"Relation named: #indexSignatureNameOwner type: #FASTTypeScriptIndexSignature opposite: #name"
 
 	<generated>
 	<FMComment: 'The owner of this identifier'>
 	<container>
 	<derived>
-	^ identifierOwner
+	^ indexSignatureNameOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptIdentifier >> identifierOwner: anObject [
+FASTTypeScriptIdentifier >> indexSignatureNameOwner: anObject [
 
 	<generated>
-	identifierOwner := anObject
+	indexSignatureNameOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptIdentifier >> identifierOwnerGroup [
+FASTTypeScriptIdentifier >> indexSignatureNameOwnerGroup [
 	<generated>
-	<navigation: 'IdentifierOwner'>
-	^ MooseSpecializedGroup with: self identifierOwner
+	<navigation: 'IndexSignatureNameOwner'>
+	^ MooseSpecializedGroup with: self indexSignatureNameOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptIdentifier >> nestedIdentifierOwner [
-	"Relation named: #nestedIdentifierOwner type: #FASTTypeScriptNestedIdentifier opposite: #object"
+FASTTypeScriptIdentifier >> nestedIdentifierObjectOwner [
+	"Relation named: #nestedIdentifierObjectOwner type: #FASTTypeScriptNestedIdentifier opposite: #object"
 
 	<generated>
 	<FMComment: 'The owner of this identifier'>
 	<container>
 	<derived>
-	^ nestedIdentifierOwner
+	^ nestedIdentifierObjectOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptIdentifier >> nestedIdentifierOwner: anObject [
+FASTTypeScriptIdentifier >> nestedIdentifierObjectOwner: anObject [
 
 	<generated>
-	nestedIdentifierOwner := anObject
+	nestedIdentifierObjectOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptIdentifier >> nestedIdentifierOwnerGroup [
+FASTTypeScriptIdentifier >> nestedIdentifierObjectOwnerGroup [
 	<generated>
-	<navigation: 'NestedIdentifierOwner'>
-	^ MooseSpecializedGroup with: self nestedIdentifierOwner
+	<navigation: 'NestedIdentifierObjectOwner'>
+	^ MooseSpecializedGroup with: self nestedIdentifierObjectOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptIdentifier >> optionalParameterOwner [
-	"Relation named: #optionalParameterOwner type: #FASTTypeScriptOptionalParameter opposite: #pattern"
+FASTTypeScriptIdentifier >> optionalParameterPatternOwner [
+	"Relation named: #optionalParameterPatternOwner type: #FASTTypeScriptOptionalParameter opposite: #pattern"
 
 	<generated>
 	<FMComment: 'The owner of this identifier'>
 	<container>
 	<derived>
-	^ optionalParameterOwner
+	^ optionalParameterPatternOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptIdentifier >> optionalParameterOwner: anObject [
+FASTTypeScriptIdentifier >> optionalParameterPatternOwner: anObject [
 
 	<generated>
-	optionalParameterOwner := anObject
+	optionalParameterPatternOwner := anObject
 ]
 
 { #category : 'navigation' }
-FASTTypeScriptIdentifier >> optionalParameterOwnerGroup [
+FASTTypeScriptIdentifier >> optionalParameterPatternOwnerGroup [
 	<generated>
-	<navigation: 'OptionalParameterOwner'>
-	^ MooseSpecializedGroup with: self optionalParameterOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> parentEnum [
-	"Relation named: #parentEnum type: #FASTTypeScriptEnumDeclaration opposite: #identifier"
-
-	<generated>
-	<FMComment: 'The enum that contains me'>
-	<container>
-	<derived>
-	^ parentEnum
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> parentEnum: anObject [
-
-	<generated>
-	parentEnum := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIdentifier >> parentEnumGroup [
-	<generated>
-	<navigation: 'ParentEnum'>
-	^ MooseSpecializedGroup with: self parentEnum
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> typescriptNewExpressionOwner [
-	"Relation named: #typescriptNewExpressionOwner type: #FASTTypeScriptNewExpression opposite: #constructor"
-
-	<generated>
-	<FMComment: 'The owner of this constructor'>
-	<container>
-	<derived>
-	^ typescriptNewExpressionOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptIdentifier >> typescriptNewExpressionOwner: anObject [
-
-	<generated>
-	typescriptNewExpressionOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIdentifier >> typescriptNewExpressionOwnerGroup [
-	<generated>
-	<navigation: 'TypescriptNewExpressionOwner'>
-	^ MooseSpecializedGroup with: self typescriptNewExpressionOwner
+	<navigation: 'OptionalParameterPatternOwner'>
+	^ MooseSpecializedGroup with: self optionalParameterPatternOwner
 ]

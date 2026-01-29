@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `argument` | `FASTTypeScriptUnaryExpression` | `unaryExpressionOwner` | `FASTTExpression` | My argument|
+| `argument` | `FASTTypeScriptUnaryExpression` | `unaryExpressionArgumentOwner` | `FASTTExpression` | My argument|
 
 
 
@@ -37,11 +37,11 @@ FASTTypeScriptUnaryExpression class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptUnaryExpression >> argument [
-	"Relation named: #argument type: #FASTTExpression opposite: #unaryExpressionOwner"
+	"Relation named: #argument type: #FASTTExpression opposite: #unaryExpressionArgumentOwner"
 
 	<generated>
 	<FMComment: 'My argument'>
-	<FMProperty: #argument type: #FASTTExpression opposite: #unaryExpressionOwner>
+	<FMProperty: #argument type: #FASTTExpression opposite: #unaryExpressionArgumentOwner>
 	^ self attributeAt: #argument ifAbsent: [ nil ]
 ]
 
@@ -53,10 +53,10 @@ FASTTypeScriptUnaryExpression >> argument: anObject [
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self argument.
 		self attributeAt: #argument put: anObject.
-		otherSide unaryExpressionOwner: nil ]
+		otherSide unaryExpressionArgumentOwner: nil ]
 	ifNotNil: [ 
 		self attributeAt: #argument put: anObject.
-		anObject unaryExpressionOwner: self ]
+		anObject unaryExpressionArgumentOwner: self ]
 ]
 
 { #category : 'navigation' }

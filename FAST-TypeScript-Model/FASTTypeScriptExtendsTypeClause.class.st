@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `type` | `FASTTypeScriptExtendsTypeClause` | `extendsTypeClauseOwner` | `FASTTypeScriptTypeIdentifier` | My type identifier|
+| `type` | `FASTTypeScriptExtendsTypeClause` | `extendsTypeClauseTypeOwner` | `FASTTypeScriptTypeIdentifier` | My type identifier|
 
 
 
@@ -14,7 +14,7 @@ Class {
 	#name : 'FASTTypeScriptExtendsTypeClause',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#type => FMOne type: #FASTTypeScriptTypeIdentifier opposite: #extendsTypeClauseOwner'
+		'#type => FMOne type: #FASTTypeScriptTypeIdentifier opposite: #extendsTypeClauseTypeOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -40,7 +40,7 @@ FASTTypeScriptExtendsTypeClause class >> initialize [
 
 { #category : 'accessing' }
 FASTTypeScriptExtendsTypeClause >> type [
-	"Relation named: #type type: #FASTTypeScriptTypeIdentifier opposite: #extendsTypeClauseOwner"
+	"Relation named: #type type: #FASTTypeScriptTypeIdentifier opposite: #extendsTypeClauseTypeOwner"
 
 	<generated>
 	<FMComment: 'My type identifier'>
