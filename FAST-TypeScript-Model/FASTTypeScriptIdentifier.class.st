@@ -6,6 +6,9 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `argumentOwner` | `FASTTExpression` | `arguments` | `FASTTWithArguments` | my owner|
+| `argumentsOwner` | `FASTTEntity` | `argumentsList` | `FASTTypeScriptArguments` | The arguments node that owns me|
+| `arrowFunctionBodyOwner` | `FASTTEntity` | `body` | `FASTTypeScriptArrowFunction` | My owner|
+| `arrowFunctionParameterOwner` | `FASTTypeScriptIdentifier` | `parameter` | `FASTTypeScriptArrowFunction` | My owner|
 | `assignedIn` | `FASTTExpression` | `expression` | `FASTTAssignment` | Optional assignment where this expression is used|
 | `assignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptAssignmentExpression` | The expression parent|
 | `assignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAssignmentExpression` | The expression parent|
@@ -21,6 +24,7 @@
 | `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
 | `exportSpecifierNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptExportSpecifier` | My owner|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
+| `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTypeScriptExpressionStatement` | |
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptForInStatement` | My owner|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptForInStatement` | My owner|
 | `functionDeclarationNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptFunctionDeclaration` | My owner|
@@ -32,10 +36,13 @@
 | `nestedIdentifierObjectOwner` | `FASTTypeScriptIdentifier` | `object` | `FASTTypeScriptNestedIdentifier` | The owner of this identifier|
 | `newExpressionConstructorOwner` | `FASTTExpression` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
 | `optionalParameterPatternOwner` | `FASTTypeScriptIdentifier` | `pattern` | `FASTTypeScriptOptionalParameter` | The owner of this identifier|
-| `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
+| `parentConditional` | `FASTTExpression` | `condition` | `FASTTWithCondition` | Optional condition statement/expression where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
+| `parentFormalParameters` | `FASTTEntity` | `parameters` | `FASTTypeScriptFormalParameters` | My owner|
+| `requiredParameterPatternOwner` | `FASTTypeScriptIdentifier` | `pattern` | `FASTTypeScriptRequiredParameter` | |
+| `requiredParameterTypeOwner` | `FASTTypeScriptTOptionalField` | `type` | `FASTTypeScriptRequiredParameter` | |
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `subscriptExpressionIndexOwner` | `FASTTExpression` | `index` | `FASTTypeScriptSubscriptExpression` | My owner|
 | `subscriptExpressionObjectOwner` | `FASTTExpression` | `object` | `FASTTypeScriptSubscriptExpression` | My owner|
@@ -57,12 +64,14 @@ Class {
 	#traits : 'FASTTExpression + FASTTypeScriptTOptionalField',
 	#classTraits : 'FASTTExpression classTrait + FASTTypeScriptTOptionalField classTrait',
 	#instVars : [
+		'#arrowFunctionParameterOwner => FMOne type: #FASTTypeScriptArrowFunction opposite: #parameter',
 		'#enumDeclarationNameOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #name',
 		'#exportSpecifierNameOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #name',
 		'#functionDeclarationNameOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #name',
 		'#indexSignatureNameOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #name',
 		'#nestedIdentifierObjectOwner => FMOne type: #FASTTypeScriptNestedIdentifier opposite: #object',
-		'#optionalParameterPatternOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #pattern'
+		'#optionalParameterPatternOwner => FMOne type: #FASTTypeScriptOptionalParameter opposite: #pattern',
+		'#requiredParameterPatternOwner => FMOne type: #FASTTypeScriptRequiredParameter opposite: #pattern'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -82,6 +91,31 @@ FASTTypeScriptIdentifier class >> annotation [
 FASTTypeScriptIdentifier class >> initialize [ 
 
 	self deprecatedAliases: { #FASTTypescriptIdentifier }
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> arrowFunctionParameterOwner [
+	"Relation named: #arrowFunctionParameterOwner type: #FASTTypeScriptArrowFunction opposite: #parameter"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ arrowFunctionParameterOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> arrowFunctionParameterOwner: anObject [
+
+	<generated>
+	arrowFunctionParameterOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptIdentifier >> arrowFunctionParameterOwnerGroup [
+	<generated>
+	<navigation: 'ArrowFunctionParameterOwner'>
+	^ MooseSpecializedGroup with: self arrowFunctionParameterOwner
 ]
 
 { #category : 'accessing' }
@@ -232,4 +266,28 @@ FASTTypeScriptIdentifier >> optionalParameterPatternOwnerGroup [
 	<generated>
 	<navigation: 'OptionalParameterPatternOwner'>
 	^ MooseSpecializedGroup with: self optionalParameterPatternOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> requiredParameterPatternOwner [
+	"Relation named: #requiredParameterPatternOwner type: #FASTTypeScriptRequiredParameter opposite: #pattern"
+
+	<generated>
+	<container>
+	<derived>
+	^ requiredParameterPatternOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIdentifier >> requiredParameterPatternOwner: anObject [
+
+	<generated>
+	requiredParameterPatternOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptIdentifier >> requiredParameterPatternOwnerGroup [
+	<generated>
+	<navigation: 'RequiredParameterPatternOwner'>
+	^ MooseSpecializedGroup with: self requiredParameterPatternOwner
 ]

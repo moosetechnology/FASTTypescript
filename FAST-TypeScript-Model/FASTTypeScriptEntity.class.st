@@ -5,7 +5,10 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `argumentsOwner` | `FASTTEntity` | `argumentsList` | `FASTTypeScriptArguments` | The arguments node that owns me|
+| `arrowFunctionBodyOwner` | `FASTTEntity` | `body` | `FASTTypeScriptArrowFunction` | My owner|
 | `genericParent` | `FASTTypeScriptEntity` | `genericChildren` | `FASTTypeScriptEntity` | |
+| `parentFormalParameters` | `FASTTEntity` | `parameters` | `FASTTypeScriptFormalParameters` | My owner|
 | `valueParent` | `FASTTypeScriptEntity` | `value` | `FASTTypeScriptEntity` | |
 
 ### Children
@@ -159,6 +162,13 @@ FASTTypeScriptEntity >> isEnumDeclaration [
 
 { #category : 'testing' }
 FASTTypeScriptEntity >> isExpression [
+
+	<generated>
+	^ false
+]
+
+{ #category : 'testing' }
+FASTTypeScriptEntity >> isExpressionStatement [
 
 	<generated>
 	^ false

@@ -24,6 +24,24 @@ TypeScriptParsingClassesTest >> tearDown [
 ]
 
 { #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingArguments [
+	| res string  argsNode|
+
+	string := 'aFonction(1, "test", ...monTableau);'.
+	res := parser parse: string.
+    
+    argsNode := (res allWithType: FASTTypeScriptArguments) first.
+    
+    self assert: argsNode argumentsList isNotEmpty.
+    
+    self assert: argsNode argumentsList size equals: 3.
+    
+    self assert: (argsNode argumentsList last isKindOf: FASTTypeScriptSpreadElement).
+    
+    self assert: argsNode genericChildren isEmpty.
+]
+
+{ #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingArray [
 
 	| res string  |
@@ -52,6 +70,29 @@ const miscArray: ?T[];'.
 	"Checking if FASTTypescriptArray_type parsed correctly"
 	self assert:
 		(res allWithType: FASTTypescriptArray_type) isNotEmpty.
+]
+
+{ #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingArrowFunction [
+
+	| res string node secondNode| 
+
+	string := 'x => x * 2;
+	(x, y) => { return x + y; };'.
+		
+	res := parser parse: string.
+
+	self assert:
+		(res allWithType: FASTTypeScriptArrowFunction ) isNotEmpty.
+	
+	node := (res allWithType: FASTTypeScriptArrowFunction ) first.
+	secondNode := (res allWithType: FASTTypeScriptArrowFunction ) second.
+	
+	self assert: node parameter sourceCode equals: 'x'.
+	self assert: node body sourceCode equals: 'x * 2'. 
+	
+	self assert: secondNode parameters sourceCode equals: '(x, y)'.
+	
 ]
 
 { #category : 'tests' }
@@ -192,6 +233,20 @@ TypeScriptParsingClassesTest >> testParsingConstructorType [
 ]
 
 { #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingDoStatement [
+
+	| res string |
+ 
+	string := 'do { x++; } while (x < 10);'.
+	res := parser parse: string.
+
+	self assert: (res allWithType: FASTTypeScriptDoStatement ) isNotEmpty. 
+	self assert: (res allWithType: FASTTypeScriptDoStatement )  asArray first condition sourceCode equals: '(x < 10)'.
+	self assert: (res allWithType: FASTTypeScriptDoStatement)  asArray first body sourceCode equals: '{ x++; }'.
+	
+]
+
+{ #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingEmptyStatement [
 
 	| res string  |
@@ -244,6 +299,24 @@ export type {A as B } from ''mymodule'';'.
 	node2 := (res allWithType: FASTTypescriptExport_specifier) second.
 	self assert: node2 name class equals: FASTTypescriptIdentifier. 
 	self assert: node2 alias class equals: FASTTypescriptIdentifier. 
+	
+]
+
+{ #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingExpressionStatement [
+
+	| res string node| 
+
+	string := 'x = 5'.
+		
+	res := parser parse: string.
+
+	self assert:
+		(res allWithType: FASTTypeScriptExpressionStatement ) isNotEmpty.
+	
+	node := (res allWithType: FASTTypeScriptExpressionStatement ) first.
+	
+	self assert: node expression sourceCode equals: 'x = 5'.
 	
 ]
 
@@ -342,6 +415,40 @@ TypeScriptParsingClassesTest >> testParsingForInStatement [
 ]
 
 { #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingForStatement [
+
+	| res string |
+ 
+	string := 'for (let i = 0; i < 10; i++) { console.log(i); }'.
+	res := parser parse: string.
+
+	self assert: (res allWithType: FASTTypeScriptForStatement) isNotEmpty. 
+	self assert: (res allWithType: FASTTypeScriptForStatement)  asArray first condition sourceCode equals: 'i < 10'.
+	self assert: (res allWithType: FASTTypeScriptForStatement)  asArray first increment sourceCode equals: 'i++'.
+	self assert: (res allWithType: FASTTypeScriptForStatement)  asArray first initializer sourceCode equals: 'let i = 0;'.
+	self assert: (res allWithType: FASTTypeScriptForStatement)  asArray first body sourceCode equals: '{ console.log(i); }'.
+	
+]
+
+{ #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingFormalParameters [
+
+	| res string node| 
+
+	string := '(x, y) => { return x + y; };'.
+		
+	res := parser parse: string.
+
+	self assert:
+		(res allWithType: FASTTypeScriptFormalParameters ) isNotEmpty.
+	
+	node := (res allWithType: FASTTypeScriptFormalParameters ) first.
+	
+	self assert: node parameters first sourceCode equals: 'x'.
+	
+]
+
+{ #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingFunctionDeclaration [
 
 	| res string node |
@@ -414,8 +521,9 @@ TypeScriptParsingClassesTest >> testParsingIfStatement [
 	| res string node |
  
 	string := 'if ( foo ) {
-	set[ 1 ].apply()
-}'.
+	set[ 1 ].apply();
+	}else {
+	console.log("hello");}'.
 	res := parser parse: string.
 
 	"Checking if FASTTypescriptIf_statement parsed correctly"
@@ -426,6 +534,7 @@ TypeScriptParsingClassesTest >> testParsingIfStatement [
 	node := (res allWithType: FASTTypescriptIf_statement) first.
 	self assert: node condition class equals: FASTTypescriptParenthesized_expression.
 	self assert: node consequence class equals: FASTTypescriptStatement_block .
+	self assert: node alternative class equals: FASTTypeScriptElseClause .
 ]
 
 { #category : 'tests' }
@@ -728,6 +837,25 @@ type t = readonly (readonly a[]) []'.
 ]
 
 { #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingRequiredParameter [
+
+	| res string node| 
+
+	string := '(x:number, y) => { return x + y; };'.
+		
+	res := parser parse: string.
+
+	self assert:
+		(res allWithType: FASTTypeScriptRequiredParameter ) isNotEmpty.
+	
+	node := (res allWithType: FASTTypeScriptRequiredParameter ) first.
+	
+	self assert: node pattern sourceCode equals: 'x'.
+	self assert: node type sourceCode equals: ':number'.
+	
+]
+
+{ #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingReturnStatement [
 
 	| res string |
@@ -945,7 +1073,7 @@ type Z = | "foo";'.
 { #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingVariableDeclarator [
 
-	| res string node nodeFourth nodeFifth|
+	| res string | " |node nodeFourth nodeFifth|"
 
 	string := 'var a = b
   , c = d
@@ -960,7 +1088,7 @@ const lines = new Array<DiffLine>();'.
 		(res allWithType: FASTTypeScriptVariableDeclarator) isNotEmpty.
 	
 	"Checking properties of FASTTypeScriptVariableDeclarator"	
-	node := (res allWithType: FASTTypeScriptVariableDeclarator) first.
+	"node := (res allWithType: FASTTypeScriptVariableDeclarator) first.
 	self assert: node name class equals: FASTTypeScriptIdentifier. 
 	self assert: node value class equals: FASTTypeScriptIdentifier. 
 		 
@@ -968,7 +1096,26 @@ const lines = new Array<DiffLine>();'.
 	self assert: nodeFourth value class equals: FASTTypeScriptInstantiationExpression. 
 	
 	nodeFifth := (res allWithType: FASTTypeScriptVariableDeclarator) fifth. 
-	self assert: nodeFifth value class equals: FASTTypeScriptNewExpression. 
+	self assert: nodeFifth value class equals: FASTTypeScriptNewExpression. "
+]
+
+{ #category : 'tests' }
+TypeScriptParsingClassesTest >> testParsingWhileStatement [
+
+    | ast whileNode |
+    
+    ast := FASTTypeScriptParser new parse: 'while (x < 10) { console.log("hello"); x++; }'.
+    
+    
+    whileNode := (ast allWithType: FASTTypeScriptWhileStatement) first.
+    
+
+    self assert: whileNode isNotNil.
+    self assert: whileNode condition isNotNil.
+    self assert: whileNode body isNotNil.
+    
+   
+    self assert: whileNode condition sourceCode equals: '(x < 10)'.
 ]
 
 { #category : 'tests' }

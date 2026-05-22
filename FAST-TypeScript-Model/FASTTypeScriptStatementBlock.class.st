@@ -6,6 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `finallyClauseBodyOwner` | `FASTTypeScriptStatementBlock` | `body` | `FASTTypeScriptFinallyClause` | My owner|
+| `forBodyOwner` | `FASTTypeScriptStatementBlock` | `body` | `FASTTypeScriptForStatement` | |
 | `forInStatementBodyOwner` | `FASTTypeScriptStatementBlock` | `body` | `FASTTypeScriptForInStatement` | The owner of this body|
 | `functionDeclarationBodyOwner` | `FASTTypeScriptStatementBlock` | `body` | `FASTTypeScriptFunctionDeclaration` | My owner|
 | `ifStatementConsequenceOwner` | `FASTTypeScriptStatementBlock` | `consequence` | `FASTTypeScriptIfStatement` | The owner of this statement block|
@@ -21,6 +22,7 @@ Class {
 	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
 		'#finallyClauseBodyOwner => FMOne type: #FASTTypeScriptFinallyClause opposite: #body',
+		'#forBodyOwner => FMOne type: #FASTTypeScriptForStatement opposite: #body',
 		'#forInStatementBodyOwner => FMOne type: #FASTTypeScriptForInStatement opposite: #body',
 		'#functionDeclarationBodyOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #body',
 		'#ifStatementConsequenceOwner => FMOne type: #FASTTypeScriptIfStatement opposite: #consequence',
@@ -73,6 +75,30 @@ FASTTypeScriptStatementBlock >> finallyClauseBodyOwnerGroup [
 	<generated>
 	<navigation: 'FinallyClauseBodyOwner'>
 	^ MooseSpecializedGroup with: self finallyClauseBodyOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptStatementBlock >> forBodyOwner [
+	"Relation named: #forBodyOwner type: #FASTTypeScriptForStatement opposite: #body"
+
+	<generated>
+	<container>
+	<derived>
+	^ forBodyOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptStatementBlock >> forBodyOwner: anObject [
+
+	<generated>
+	forBodyOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptStatementBlock >> forBodyOwnerGroup [
+	<generated>
+	<navigation: 'ForBodyOwner'>
+	^ MooseSpecializedGroup with: self forBodyOwner
 ]
 
 { #category : 'accessing' }

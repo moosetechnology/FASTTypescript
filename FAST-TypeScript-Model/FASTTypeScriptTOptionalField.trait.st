@@ -9,6 +9,7 @@ I represent optional field in Typescript
 |---|
 | `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
 | `methodDefinitionReturnTypeOwner` | `FASTTypeScriptTOptionalField` | `return_type` | `FASTTypeScriptMethodDefinition` | My owner|
+| `requiredParameterTypeOwner` | `FASTTypeScriptTOptionalField` | `type` | `FASTTypeScriptRequiredParameter` | |
 
 
 
@@ -17,7 +18,8 @@ Trait {
 	#name : 'FASTTypeScriptTOptionalField',
 	#instVars : [
 		'#exportSpecifierAliasOwner => FMOne type: #FASTTypeScriptExportSpecifier opposite: #alias',
-		'#methodDefinitionReturnTypeOwner => FMOne type: #FASTTypeScriptMethodDefinition opposite: #return_type'
+		'#methodDefinitionReturnTypeOwner => FMOne type: #FASTTypeScriptMethodDefinition opposite: #return_type',
+		'#requiredParameterTypeOwner => FMOne type: #FASTTypeScriptRequiredParameter opposite: #type'
 	],
 	#category : 'FAST-TypeScript-Model-Traits',
 	#package : 'FAST-TypeScript-Model',
@@ -81,4 +83,28 @@ FASTTypeScriptTOptionalField >> methodDefinitionReturnTypeOwnerGroup [
 	<generated>
 	<navigation: 'MethodDefinitionReturnTypeOwner'>
 	^ MooseSpecializedGroup with: self methodDefinitionReturnTypeOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTOptionalField >> requiredParameterTypeOwner [
+	"Relation named: #requiredParameterTypeOwner type: #FASTTypeScriptRequiredParameter opposite: #type"
+
+	<generated>
+	<container>
+	<derived>
+	^ requiredParameterTypeOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTOptionalField >> requiredParameterTypeOwner: anObject [
+
+	<generated>
+	requiredParameterTypeOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptTOptionalField >> requiredParameterTypeOwnerGroup [
+	<generated>
+	<navigation: 'RequiredParameterTypeOwner'>
+	^ MooseSpecializedGroup with: self requiredParameterTypeOwner
 ]

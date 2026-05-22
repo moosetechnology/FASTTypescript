@@ -2,6 +2,11 @@
 ## Relations
 ======================
 
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `forConditionOwner` | `FASTTypeScriptBinaryExpression` | `condition` | `FASTTypeScriptForStatement` | |
+
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -14,6 +19,9 @@
 Class {
 	#name : 'FASTTypeScriptBinaryExpression',
 	#superclass : 'FASTTypeScriptExpression',
+	#instVars : [
+		'#forConditionOwner => FMOne type: #FASTTypeScriptForStatement opposite: #condition'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -35,6 +43,30 @@ FASTTypeScriptBinaryExpression class >> initialize [
 
  
  
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptBinaryExpression >> forConditionOwner [
+	"Relation named: #forConditionOwner type: #FASTTypeScriptForStatement opposite: #condition"
+
+	<generated>
+	<container>
+	<derived>
+	^ forConditionOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptBinaryExpression >> forConditionOwner: anObject [
+
+	<generated>
+	forConditionOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptBinaryExpression >> forConditionOwnerGroup [
+	<generated>
+	<navigation: 'ForConditionOwner'>
+	^ MooseSpecializedGroup with: self forConditionOwner
 ]
 
 { #category : 'accessing' }

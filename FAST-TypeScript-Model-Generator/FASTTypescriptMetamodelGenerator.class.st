@@ -568,6 +568,7 @@ FASTTypeScriptMetamodelGenerator >> defineHierarchy [
 	statementBlock --|> statement.
 	continueStatement --|> statement.
 	expressionStatement --|> statement.
+	expressionStatement --|> #TExpressionStatement .
 	whileStatement --|> statement.
 
 	typePredicateAnnotation --|> typeAnnotation
@@ -623,6 +624,13 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		 'The right operand (if possible)')
 	<>- ((tExpression property: #binaryExpressionRightOwner) comment:
 			 'My Owner').
+			
+			"--- FOR STATEMENT RELATIONS ---"
+		(forStatement property: #initializer) <>- (lexicalDeclaration property: #forInitializerOwner).
+		(forStatement property: #condition) <>- (binaryExpression property: #forConditionOwner).
+    	(forStatement property: #increment) <>- (updateExpression property: #forIncrementOwner).
+    	(forStatement property: #body) <>- (statementBlock property: #forBodyOwner).
+
 
 	((newExpression property: #constructor) comment:
 		 'The constructor of the new expression')
@@ -870,6 +878,10 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 	<>-
 		((tReturnType property: #functionDeclarationReturnTypeOwner)
 			 comment: 'My owner').
+			
+	
+		
+		
 
 	"class declaration"
 	((classDeclaration property: #body) comment: 'The body of the class')
@@ -911,7 +923,44 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 
 	((tWithModifiers property: #modifiers) comment: 'My modifiers')
 	<>-* ((tModifier property: #tWithModifiersModifiersOwner) comment:
-			 'The owner of the modifier')
+			 'The owner of the modifier').
+			
+	"-----------------------"
+	"Arguments"
+	((arguments property: #argumentsList) comment: 'The list of arguments (expressions or spread elements)')
+	<>-* ((tEntity property: #argumentsOwner) comment: 'The arguments node that owns me').
+	
+	((arrowFunction property: #parameter) comment: 'The single parameter of the arrow function') 
+		<>- ((identifier property: #arrowFunctionParameterOwner) comment: 'My owner').
+		
+	((arrowFunction property: #parameters) comment: 'The parameters of the arrow function') 
+		<>- ((formalParameters property: #arrowFunctionParametersOwner) comment: 'My owner').
+		
+	((arrowFunction property: #body) comment: 'The body of the arrow function') 
+		<>- ((tEntity property: #arrowFunctionBodyOwner) comment: 'My owner').
+		
+
+	"DoStatement"	
+		(doStatement property: #condition) <>- (parenthesizedExpression property: #doConditionOwner).
+		(doStatement property: #body) <>- (tStatement property: #doBodyOwner).
+			
+	"ExpressionStatement"
+	((expressionStatement property: #expression) comment: 'The expression contained in the statement')
+		<>- (tExpression property: #expressionStatementOwner ).
+		
+	((formalParameters property: #parameters) comment: 'The list of parameters') 
+		<>-* ((tEntity property: #parentFormalParameters) comment: 'My owner').
+		
+	(ifStatement property: #alternative) <>- (elseClause property: #ifStatementAlternativeOwner ).
+	
+	"RequiredParameter"
+	((requiredParameter property: #pattern) comment: 'The pattern (the name) of the required parameter') 
+		<>- (identifier property: #requiredParameterPatternOwner ).
+	((requiredParameter property: #type) comment: 'The type of the parameter (optional)') 
+		<>- (tOptionalField property: #requiredParameterTypeOwner  ).
+	
+	(whileStatement property: #condition) <>- (parenthesizedExpression property: #whileConditionOwner).
+	(whileStatement property: #body) <>- (tStatement property: #whileBodyOwner).
 ]
 
 { #category : 'definition' }

@@ -5,10 +5,16 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `arrowFunctionParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptArrowFunction` | My owner|
 | `constructorTypeParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptConstructorType` | The owner of these formal parameters|
 | `functionDeclarationParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptFunctionDeclaration` | My owner|
 | `functionTypeParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptFunctionType` | My owner|
 | `methodDefinitionParametersOwner` | `FASTTypeScriptFormalParameters` | `parameters` | `FASTTypeScriptMethodDefinition` | My owner|
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `parameters` | `FASTTypeScriptFormalParameters` | `parentFormalParameters` | `FASTTEntity` | The list of parameters|
 
 
 
@@ -17,10 +23,11 @@ Class {
 	#name : 'FASTTypeScriptFormalParameters',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#functionTypeParametersOwner => FMOne type: #FASTTypeScriptFunctionType opposite: #parameters',
+		'#arrowFunctionParametersOwner => FMOne type: #FASTTypeScriptArrowFunction opposite: #parameters',
 		'#constructorTypeParametersOwner => FMOne type: #FASTTypeScriptConstructorType opposite: #parameters',
-		'#methodDefinitionParametersOwner => FMOne type: #FASTTypeScriptMethodDefinition opposite: #parameters',
-		'#functionDeclarationParametersOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #parameters'
+		'#functionDeclarationParametersOwner => FMOne type: #FASTTypeScriptFunctionDeclaration opposite: #parameters',
+		'#functionTypeParametersOwner => FMOne type: #FASTTypeScriptFunctionType opposite: #parameters',
+		'#methodDefinitionParametersOwner => FMOne type: #FASTTypeScriptMethodDefinition opposite: #parameters'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -42,6 +49,37 @@ FASTTypeScriptFormalParameters class >> initialize [
 	self deprecatedAliases: { #FASTTypescriptFormal_parameters }
  
  
+]
+
+{ #category : 'adding' }
+FASTTypeScriptFormalParameters >> addParameter: anObject [
+	<generated>
+	^ self parameters add: anObject
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFormalParameters >> arrowFunctionParametersOwner [
+	"Relation named: #arrowFunctionParametersOwner type: #FASTTypeScriptArrowFunction opposite: #parameters"
+
+	<generated>
+	<FMComment: 'My owner'>
+	<container>
+	<derived>
+	^ arrowFunctionParametersOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFormalParameters >> arrowFunctionParametersOwner: anObject [
+
+	<generated>
+	arrowFunctionParametersOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptFormalParameters >> arrowFunctionParametersOwnerGroup [
+	<generated>
+	<navigation: 'ArrowFunctionParametersOwner'>
+	^ MooseSpecializedGroup with: self arrowFunctionParametersOwner
 ]
 
 { #category : 'accessing' }
@@ -142,4 +180,29 @@ FASTTypeScriptFormalParameters >> methodDefinitionParametersOwnerGroup [
 	<generated>
 	<navigation: 'MethodDefinitionParametersOwner'>
 	^ MooseSpecializedGroup with: self methodDefinitionParametersOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFormalParameters >> parameters [
+	"Relation named: #parameters type: #FASTTEntity opposite: #parentFormalParameters"
+
+	<generated>
+	<FMComment: 'The list of parameters'>
+	<derived>
+	<FMProperty: #parameters type: #FASTTEntity opposite: #parentFormalParameters>
+	^ self attributeAt: #parameters ifAbsentPut: [ FMMultivalueLink on: self opposite: #parentFormalParameters: ]
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptFormalParameters >> parameters: anObject [
+
+	<generated>
+	self parameters value: anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptFormalParameters >> parametersGroup [
+	<generated>
+	<navigation: 'Parameters'>
+	^ MooseSpecializedGroup withAll: self parameters asSet
 ]

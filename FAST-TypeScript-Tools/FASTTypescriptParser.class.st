@@ -135,7 +135,7 @@ FASTTypeScriptParser >> importToFAST: tsTree usingSourceCode: aString [
 	"needs cleaning"
 	
 	tsLanguage := TSLanguage typescript.
-	importer := TSFASTImporter new.
+	importer := FASTTypeScriptCustomImporter new.
 	importer tsLanguage: tsLanguage.
 	importer languageName: 'TypeScript'.
 	importer originString: aString. 

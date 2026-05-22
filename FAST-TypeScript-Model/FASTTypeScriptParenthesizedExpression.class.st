@@ -5,7 +5,9 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `doConditionOwner` | `FASTTypeScriptParenthesizedExpression` | `condition` | `FASTTypeScriptDoStatement` | |
 | `ifStatementConditionOwner` | `FASTTypeScriptParenthesizedExpression` | `condition` | `FASTTypeScriptIfStatement` | The owner of this  parenthesized expression|
+| `whileConditionOwner` | `FASTTypeScriptParenthesizedExpression` | `condition` | `FASTTypeScriptWhileStatement` | |
 | `withStatementObjectOwner` | `FASTTypeScriptParenthesizedExpression` | `object` | `FASTTypeScriptWithStatement` | The owner of this type parenthesized expression|
 
 
@@ -15,8 +17,10 @@ Class {
 	#name : 'FASTTypeScriptParenthesizedExpression',
 	#superclass : 'FASTTypeScriptExpression',
 	#instVars : [
-		'#withStatementObjectOwner => FMOne type: #FASTTypeScriptWithStatement opposite: #object',
-		'#ifStatementConditionOwner => FMOne type: #FASTTypeScriptIfStatement opposite: #condition'
+		'#doConditionOwner => FMOne type: #FASTTypeScriptDoStatement opposite: #condition',
+		'#ifStatementConditionOwner => FMOne type: #FASTTypeScriptIfStatement opposite: #condition',
+		'#whileConditionOwner => FMOne type: #FASTTypeScriptWhileStatement opposite: #condition',
+		'#withStatementObjectOwner => FMOne type: #FASTTypeScriptWithStatement opposite: #object'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -43,6 +47,30 @@ FASTTypeScriptParenthesizedExpression class >> initialize [
 ]
 
 { #category : 'accessing' }
+FASTTypeScriptParenthesizedExpression >> doConditionOwner [
+	"Relation named: #doConditionOwner type: #FASTTypeScriptDoStatement opposite: #condition"
+
+	<generated>
+	<container>
+	<derived>
+	^ doConditionOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptParenthesizedExpression >> doConditionOwner: anObject [
+
+	<generated>
+	doConditionOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptParenthesizedExpression >> doConditionOwnerGroup [
+	<generated>
+	<navigation: 'DoConditionOwner'>
+	^ MooseSpecializedGroup with: self doConditionOwner
+]
+
+{ #category : 'accessing' }
 FASTTypeScriptParenthesizedExpression >> ifStatementConditionOwner [
 	"Relation named: #ifStatementConditionOwner type: #FASTTypeScriptIfStatement opposite: #condition"
 
@@ -65,6 +93,30 @@ FASTTypeScriptParenthesizedExpression >> ifStatementConditionOwnerGroup [
 	<generated>
 	<navigation: 'IfStatementConditionOwner'>
 	^ MooseSpecializedGroup with: self ifStatementConditionOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptParenthesizedExpression >> whileConditionOwner [
+	"Relation named: #whileConditionOwner type: #FASTTypeScriptWhileStatement opposite: #condition"
+
+	<generated>
+	<container>
+	<derived>
+	^ whileConditionOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptParenthesizedExpression >> whileConditionOwner: anObject [
+
+	<generated>
+	whileConditionOwner := anObject
+]
+
+{ #category : 'navigation' }
+FASTTypeScriptParenthesizedExpression >> whileConditionOwnerGroup [
+	<generated>
+	<navigation: 'WhileConditionOwner'>
+	^ MooseSpecializedGroup with: self whileConditionOwner
 ]
 
 { #category : 'accessing' }
