@@ -47,7 +47,7 @@ BaselineOfFASTTypeScript >> defineDependencies: spec [
 	
 	spec baseline: 'TreeSitter' with: [ 
 		spec
-			loads: #( 'default' );
+			loads: #( 'moose' );
 			repository: 'github://Evref-BL/Pharo-Tree-Sitter:main/src' ].
 		
 	
