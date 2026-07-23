@@ -1,16 +1,14 @@
 SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'FASTTypeScript',
-      #directory : 'src',
-      #ignoreImage : true,
-      #onConflict : #useIncoming,
-      #onUpgrade : #useIncoming
+      #baseline : 'FASTTypescript';
+      #directory : '.';
+      #platforms : [ #pharo ]
     }
   ],
   #testing : {
     #coverage : {
-      #packages : [ 'FAST-TypeScript.*' ],
+      #packages : [ 'FASTTypescript*' ],
       #format : #lcov
     }
   }
