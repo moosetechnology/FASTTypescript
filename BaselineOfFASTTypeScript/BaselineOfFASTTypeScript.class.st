@@ -15,7 +15,8 @@ BaselineOfFASTTypeScript >> baseline: spec [
 			spec author: 'AlessHosry'.
 			self defineDependencies: spec.
 			self definePackages: spec.
-			self defineGroups: spec ]
+			self defineGroups: spec.			
+		]
 ]
 
 { #category : 'accessing' }
