@@ -15,7 +15,10 @@ BaselineOfFASTTypeScript >> baseline: spec [
 			spec author: 'AlessHosry'.
 			self defineDependencies: spec.
 			self definePackages: spec.
-			self defineGroups: spec ]
+			self defineGroups: spec.
+			spec postLoadDoIt: #fixContainersMethod.
+			
+		]
 ]
 
 { #category : 'accessing' }
@@ -85,4 +88,23 @@ BaselineOfFASTTypeScript >> definePackages: spec [
 		spec
 			package: 'FAST-TypeScript-Model'
 			with: [ spec requires: #( 'FAST' 'Famix' ) ] ]
+]
+
+{ #category : 'as yet unclassified' }
+BaselineOfFASTTypeScript >> fixContainersMethod [
+    | targetClassName  |
+    "Identify the class. Likely FamixTEntity or a specific Famix header class"
+ 	
+    targetClassName := #TEntityMetaLevelDependency. 
+   
+    self class environment at: targetClassName ifPresent: [ :cls |
+        cls compile: 'containersOfType: aType
+	"I am used to return all the first encountered entities at a given famix class scope that are up in the containment tree of the metamodel"
+
+	^ self query ancestors ofType: aType'
+        classified: '*FAST-Moose12-Compatibility' 
+    ] ifAbsent: [ 
+        Transcript show: 'Warning: Could not find class to patch containersOfType:'; cr 
+    ].
+
 ]
