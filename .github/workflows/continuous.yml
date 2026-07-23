@@ -14,6 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         smalltalk: [ Pharo64-12, Pharo64-13, Pharo64-14, Moose64-12 ]
     name: ${{ matrix.smalltalk }}
