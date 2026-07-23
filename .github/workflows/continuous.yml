@@ -27,7 +27,9 @@ jobs:
         timeout-minutes: 15
       
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@v2
         if: ${{ matrix.smalltalk == 'Pharo64-12' }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./coverage/lcov.info
+          format: lcov
