@@ -23,8 +23,8 @@
 | `enumDeclarationNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptEnumDeclaration` | My owner|
 | `exportSpecifierAliasOwner` | `FASTTypeScriptTOptionalField` | `alias` | `FASTTypeScriptExportSpecifier` | My owner|
 | `exportSpecifierNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptExportSpecifier` | My owner|
-| `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTypeScriptExpressionStatement` | |
+| `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptForInStatement` | My owner|
 | `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptForInStatement` | My owner|
 | `functionDeclarationNameOwner` | `FASTTypeScriptIdentifier` | `name` | `FASTTypeScriptFunctionDeclaration` | My owner|
@@ -36,7 +36,7 @@
 | `nestedIdentifierObjectOwner` | `FASTTypeScriptIdentifier` | `object` | `FASTTypeScriptNestedIdentifier` | The owner of this identifier|
 | `newExpressionConstructorOwner` | `FASTTExpression` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
 | `optionalParameterPatternOwner` | `FASTTypeScriptIdentifier` | `pattern` | `FASTTypeScriptOptionalParameter` | The owner of this identifier|
-| `parentConditional` | `FASTTExpression` | `condition` | `FASTTWithCondition` | Optional condition statement/expression where this expression is used|
+| `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|

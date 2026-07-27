@@ -16,8 +16,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `expression` | `FASTTypeScriptExpressionStatement` | `expressionStatementOwner` | `FASTTExpression` | The expression contained in the statement|
 | `expression` | `FASTTExpressionStatement` | `expressionStatementOwner` | `FASTTExpression` | The expression of the statement|
+| `expression` | `FASTTypeScriptExpressionStatement` | `expressionStatementOwner` | `FASTTExpression` | The expression contained in the statement|
 
 
 ## Properties
