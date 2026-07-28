@@ -26,13 +26,13 @@ To use it, please ensure that you have installed the corresponding libraries for
 Normally, this has been automated for different operating systems.
 But for more details, you can have a look at this [blog-post][tree-sitter-blog].
 
-To use it in Pharo, you can check example below:
+To use it in Pharo, you can check the example below:
 
 ```smalltalk  
-res := FASTTypescriptParser new getASTFromString:  'class SimpleClass {
+res := FASTTypeScriptParser new parse: 'class SimpleClass {
     integerProperty = 1;
     doubleProperty = 1.2;
-    booleanProperty= true;
+    booleanProperty = true;
     stringProperty = "hello";
 }'. 
 ```  
