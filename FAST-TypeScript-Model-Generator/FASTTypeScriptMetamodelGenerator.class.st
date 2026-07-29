@@ -945,8 +945,8 @@ FASTTypeScriptMetamodelGenerator >> defineRelations [
 		(doStatement property: #body) <>- (tStatement property: #doBodyOwner).
 			
 	"ExpressionStatement"
-	((expressionStatement property: #expression) comment: 'The expression contained in the statement')
-		<>- (tExpression property: #expressionStatementOwner ).
+	"((expressionStatement property: #expression) comment: 'The expression contained in the statement')
+		<>- (tExpression property: #expressionStatementOwner )."
 		
 	((formalParameters property: #parameters) comment: 'The list of parameters') 
 		<>-* ((tEntity property: #parentFormalParameters) comment: 'My owner').

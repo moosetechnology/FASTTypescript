@@ -17,7 +17,6 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `expression` | `FASTTExpressionStatement` | `expressionStatementOwner` | `FASTTExpression` | The expression of the statement|
-| `expression` | `FASTTypeScriptExpressionStatement` | `expressionStatementOwner` | `FASTTExpression` | The expression contained in the statement|
 
 
 ## Properties
@@ -54,35 +53,4 @@ FASTTypeScriptExpressionStatement class >> initialize [
 	self deprecatedAliases: { #FASTTypescriptExpression_statement }
  
  
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptExpressionStatement >> expression [
-	"Relation named: #expression type: #FASTTExpression opposite: #expressionStatementOwner"
-
-	<generated>
-	<FMComment: 'The expression contained in the statement'>
-	<FMProperty: #expression type: #FASTTExpression opposite: #expressionStatementOwner>
-	^ self attributeAt: #expression ifAbsent: [ nil ]
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptExpressionStatement >> expression: anObject [
-
-	<generated>
-	(self attributeAt: #expression ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
-	anObject ifNil: [ | otherSide |
-		otherSide :=  self expression.
-		self attributeAt: #expression put: anObject.
-		otherSide expressionStatementOwner: nil ]
-	ifNotNil: [ 
-		self attributeAt: #expression put: anObject.
-		anObject expressionStatementOwner: self ]
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptExpressionStatement >> expressionGroup [
-	<generated>
-	<navigation: 'Expression'>
-	^ MooseSpecializedGroup with: self expression
 ]

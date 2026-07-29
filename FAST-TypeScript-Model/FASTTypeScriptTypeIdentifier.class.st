@@ -21,7 +21,6 @@
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptConditionalType` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptConditionalType` | The right operand (if possible)|
 | `constructorTypeTypeOwner` | `FASTTypeScriptTypeIdentifier` | `type` | `FASTTypeScriptConstructorType` | The owner of this type identifier|
-| `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTypeScriptExpressionStatement` | |
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
 | `extendsTypeClauseTypeOwner` | `FASTTypeScriptTypeIdentifier` | `type` | `FASTTypeScriptExtendsTypeClause` | The owner of this type identifier|
 | `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptForInStatement` | My owner|
