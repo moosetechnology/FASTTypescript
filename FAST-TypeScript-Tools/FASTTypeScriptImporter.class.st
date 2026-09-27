@@ -8,6 +8,54 @@ Class {
 	#package : 'FAST-TypeScript-Tools'
 }
 
+{ #category : 'initialization' }
+FASTTypeScriptImporter >> deleteTreeSitterParser [
+	
+	self tsParser delete 
+]
+
+{ #category : 'initialization' }
+FASTTypeScriptImporter >> editTree: aFastTree using: inputEdit [
+	
+	|treeRepresentation |
+	 
+	"1- create a parser"
+	self initialiseTreeSitterParser.
+	
+	"2- find treeSitter tree in representation collection"
+	treeRepresentation := (self representations select: [:each | each fastTree mooseID = aFastTree mooseID]) first.
+	
+	"3- edit treeSitterTree using inputEdits"
+	self tsParser editTree: treeRepresentation treeSitterTree usingInputEdit: inputEdit.
+	
+	"4- delete the TreeSitter Parser"
+	self deleteTreeSitterParser.
+]
+
+{ #category : 'utilities' }
+FASTTypeScriptImporter >> getASTFromString: string [
+
+	| parser tsLanguage importer |
+	self
+		deprecated: 'Use parse: instead of current one'
+		on: '24 June 2025'
+		in:
+		'Pharo-12.0.0+SNAPSHOT.build.1571.sha.cf5fcd22e66957962c97dffc58b0393b7f368147 (64 Bit)'.
+
+	Smalltalk image garbageCollect.
+
+	parser := TSParser new.
+	tsLanguage := TSLanguage typescript.
+	parser language: tsLanguage.
+
+	importer := TSFASTImporter new.
+	importer tsLanguage: tsLanguage.
+	importer languageName: 'Typescript'.
+	importer originString: string.
+
+	^ importer import: (parser parseString: string) rootNode
+]
+
 { #category : 'as yet unclassified' }
 FASTTypeScriptImporter >> importToFAST: tsTree usingSourceCode: aString [
 
@@ -19,6 +67,13 @@ FASTTypeScriptImporter >> importToFAST: tsTree usingSourceCode: aString [
 	importer originString: aString. 
 	
 	^ importer import: tsTree.
+]
+
+{ #category : 'initialization' }
+FASTTypeScriptImporter >> initialiseTreeSitterParser [
+
+	self tsParser: TSParser new.
+	self tsParser language: TSLanguage typescript.
 ]
 
 { #category : 'accessing' }
@@ -57,6 +112,33 @@ FASTTypeScriptImporter >> parse: aString [
 	
 ]
 
+{ #category : 'parsing' }
+FASTTypeScriptImporter >> parse: aString usingOldTree: aFastTree [
+
+	| treeRepresentation newFastTree newTreeSitterTree |
+	
+	"1- create a parser"
+	self initialiseTreeSitterParser.
+	
+	"2- find treeSitter tree in representation collection"
+	treeRepresentation := (self representations select: [:each | each fastTree mooseID = aFastTree mooseID]) first.
+		
+	"3- parseString using treeSitter tree"
+	newTreeSitterTree := self tsParser parseString: aString usingTree: treeRepresentation treeSitterTree.
+	
+	"4- convert treeSitter tree to fast"
+	newFastTree := self importToFAST: newTreeSitterTree rootNode usingSourceCode: aString.
+	
+	"5- update the representation collection: fill both new trees"
+	treeRepresentation treeSitterTree: newTreeSitterTree; fastTree: newFastTree.
+	
+	"6- delete the TreeSitter Parser"
+	self deleteTreeSitterParser.
+	
+	"7- return fastTree"
+	^ newFastTree.
+]
+
 { #category : 'accessing' }
 FASTTypeScriptImporter >> representations [
 
@@ -73,4 +155,16 @@ FASTTypeScriptImporter >> representations: anObject [
 FASTTypeScriptImporter >> tsLanguage [
 
 	^ TSLanguage typescript
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptImporter >> tsParser [
+
+	^ tsParser
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptImporter >> tsParser: anObject [
+
+	tsParser := anObject
 ]
