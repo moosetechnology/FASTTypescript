@@ -11,36 +11,63 @@
 | `assignedIn` | `FASTTExpression` | `expression` | `FASTTAssignment` | Optional assignment where this expression is used|
 | `assignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptAssignmentExpression` | The expression parent|
 | `assignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAssignmentExpression` | The expression parent|
+| `assignmentPatternRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAssignmentPattern` | |
 | `augmentedAssignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptAugmentedAssignmentExpression` | The left operand (if possible)|
 | `augmentedAssignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAugmentedAssignmentExpression` | The right operand (if possible)|
 | `binaryExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptBinaryExpression` | My Owner|
 | `binaryExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptBinaryExpression` | My Owner|
 | `classDeclarationNameOwner` | `FASTTypeScriptTypeIdentifier` | `name` | `FASTTypeScriptClassDeclaration` | My owner|
+| `classNameOwner` | `FASTTypeScriptTypeIdentifier` | `name` | `FASTTypeScriptClass` | |
 | `conditionalTypeAlternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypeScriptConditionalType` | Alternative owner|
 | `conditionalTypeConsequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypeScriptConditionalType` | Consequence owner|
 | `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptConditionalType` | The left operand (if possible)|
 | `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptConditionalType` | The right operand (if possible)|
-| `constructorTypeTypeOwner` | `FASTTypeScriptTypeIdentifier` | `type` | `FASTTypeScriptConstructorType` | The owner of this type identifier|
+| `constructorTypeTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptConstructorType` | The owner of this type identifier|
+| `enumAssignmentValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptEnumAssignment` | |
+| `exportStatementValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptExportStatement` | |
 | `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
-| `extendsTypeClauseTypeOwner` | `FASTTypeScriptTypeIdentifier` | `type` | `FASTTypeScriptExtendsTypeClause` | The owner of this type identifier|
-| `forStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptForInStatement` | My owner|
-| `forStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptForInStatement` | My owner|
+| `extendsClauseValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptExtendsClause` | |
+| `extendsTypeClauseTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptExtendsTypeClause` | The owner of this type identifier|
+| `forInStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptForInStatement` | My owner|
+| `forInStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptForInStatement` | My owner|
+| `forInStatementValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptForInStatement` | |
 | `functionTypeReturnTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypeScriptFunctionType` | The owner of this type|
-| `genericTypeNameOwner` | `FASTTypeScriptTypeIdentifier` | `name` | `FASTTypeScriptGenericType` | The owner of this type identifier|
-| `indexSignatureIndexTypeOwner` | `FASTTypeScriptTypeIdentifier` | `index_type` | `FASTTypeScriptIndexSignature` | The owner of this index type|
+| `genericTypeNameOwner` | `FASTTExpression` | `name` | `FASTTypeScriptGenericType` | The owner of this type identifier|
+| `indexSignatureIndexTypeOwner` | `FASTTExpression` | `index_type` | `FASTTypeScriptIndexSignature` | The owner of this index type|
+| `indexSignatureTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptIndexSignature` | The owner of this type|
 | `interfaceDeclarationNameOwner` | `FASTTypeScriptTypeIdentifier` | `name` | `FASTTypeScriptInterfaceDeclaration` | My owner|
+| `mappedTypeClauseAliasOwner` | `FASTTExpression` | `alias` | `FASTTypeScriptMappedTypeClause` | |
+| `mappedTypeClauseNameOwner` | `FASTTypeScriptTypeIdentifier` | `name` | `FASTTypeScriptMappedTypeClause` | |
+| `mappedTypeClauseTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptMappedTypeClause` | |
 | `memberExpressionObjectOwner` | `FASTTExpression` | `object` | `FASTTypeScriptMemberExpression` | This owner|
 | `memberExpressionPropertyOwner` | `FASTTExpression` | `property` | `FASTTypeScriptMemberExpression` | My owner|
+| `nestedTypeIdentifierNameOwner` | `FASTTypeScriptTypeIdentifier` | `name` | `FASTTypeScriptNestedTypeIdentifier` | |
 | `newExpressionConstructorOwner` | `FASTTExpression` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
-| `parentConditionalStatement` | `FASTTExpression` | `condition` | `FASTTConditionalStatement` | Optional condition statement where this expression is used|
+| `objectAssignmentPatternRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptObjectAssignmentPattern` | |
+| `optionalParameterPatternOwner` | `FASTTExpression` | `pattern` | `FASTTypeScriptOptionalParameter` | The owner of this identifier|
+| `optionalParameterValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptOptionalParameter` | |
+| `pairValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptPair` | |
+| `parentConditional` | `FASTTExpression` | `condition` | `FASTTWithCondition` | Optional condition statement/expression where this expression is used|
 | `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
 | `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
 | `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
 | `parentFormalParameters` | `FASTTEntity` | `parameters` | `FASTTypeScriptFormalParameters` | My owner|
+| `publicFieldDefinitionValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptPublicFieldDefinition` | |
+| `requiredParameterPatternOwner` | `FASTTExpression` | `pattern` | `FASTTypeScriptRequiredParameter` | |
+| `requiredParameterValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptRequiredParameter` | |
 | `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
 | `subscriptExpressionIndexOwner` | `FASTTExpression` | `index` | `FASTTypeScriptSubscriptExpression` | My owner|
 | `subscriptExpressionObjectOwner` | `FASTTExpression` | `object` | `FASTTypeScriptSubscriptExpression` | My owner|
+| `ternaryExpressionAlternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypeScriptTernaryExpression` | |
+| `ternaryExpressionConditionOwner` | `FASTTExpression` | `condition` | `FASTTypeScriptTernaryExpression` | |
+| `ternaryExpressionConsequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypeScriptTernaryExpression` | |
+| `typeAliasDeclarationNameOwner` | `FASTTypeScriptTypeIdentifier` | `name` | `FASTTypeScriptTypeAliasDeclaration` | |
+| `typeAliasDeclarationValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptTypeAliasDeclaration` | |
+| `typeParameterNameOwner` | `FASTTypeScriptTypeIdentifier` | `name` | `FASTTypeScriptTypeParameter` | |
+| `typePredicateTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptTypePredicate` | |
 | `unaryExpressionArgumentOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
+| `updateExpressionArgumentOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUpdateExpression` | |
+| `variableDeclaratorValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptVariableDeclarator` | |
 
 
 ## Properties
@@ -55,15 +82,16 @@
 Class {
 	#name : 'FASTTypeScriptTypeIdentifier',
 	#superclass : 'FASTTypeScriptEntity',
-	#traits : 'FASTTExpression',
-	#classTraits : 'FASTTExpression classTrait',
+	#traits : 'FASTTExpression + FASTTypeScriptTPrimaryType',
+	#classTraits : 'FASTTExpression classTrait + FASTTypeScriptTPrimaryType classTrait',
 	#instVars : [
 		'#classDeclarationNameOwner => FMOne type: #FASTTypeScriptClassDeclaration opposite: #name',
-		'#constructorTypeTypeOwner => FMOne type: #FASTTypeScriptConstructorType opposite: #type',
-		'#extendsTypeClauseTypeOwner => FMOne type: #FASTTypeScriptExtendsTypeClause opposite: #type',
-		'#genericTypeNameOwner => FMOne type: #FASTTypeScriptGenericType opposite: #name',
-		'#indexSignatureIndexTypeOwner => FMOne type: #FASTTypeScriptIndexSignature opposite: #index_type',
-		'#interfaceDeclarationNameOwner => FMOne type: #FASTTypeScriptInterfaceDeclaration opposite: #name'
+		'#classNameOwner => FMOne type: #FASTTypeScriptClass opposite: #name',
+		'#interfaceDeclarationNameOwner => FMOne type: #FASTTypeScriptInterfaceDeclaration opposite: #name',
+		'#mappedTypeClauseNameOwner => FMOne type: #FASTTypeScriptMappedTypeClause opposite: #name',
+		'#nestedTypeIdentifierNameOwner => FMOne type: #FASTTypeScriptNestedTypeIdentifier opposite: #name',
+		'#typeAliasDeclarationNameOwner => FMOne type: #FASTTypeScriptTypeAliasDeclaration opposite: #name',
+		'#typeParameterNameOwner => FMOne type: #FASTTypeScriptTypeParameter opposite: #name'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -73,24 +101,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptTypeIdentifier class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #TypeIdentifier super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptTypeIdentifier class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptType_identifier }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTypeIdentifier >> classDeclarationNameOwner [
 	"Relation named: #classDeclarationNameOwner type: #FASTTypeScriptClassDeclaration opposite: #name"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
@@ -101,121 +122,35 @@ FASTTypeScriptTypeIdentifier >> classDeclarationNameOwner [
 { #category : 'accessing' }
 FASTTypeScriptTypeIdentifier >> classDeclarationNameOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	classDeclarationNameOwner := anObject
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptTypeIdentifier >> classDeclarationNameOwnerGroup [
-	<generated>
-	<navigation: 'ClassDeclarationNameOwner'>
-	^ MooseSpecializedGroup with: self classDeclarationNameOwner
-]
-
 { #category : 'accessing' }
-FASTTypeScriptTypeIdentifier >> constructorTypeTypeOwner [
-	"Relation named: #constructorTypeTypeOwner type: #FASTTypeScriptConstructorType opposite: #type"
+FASTTypeScriptTypeIdentifier >> classNameOwner [
+	"Relation named: #classNameOwner type: #FASTTypeScriptClass opposite: #name"
 
+	<ignoreForCoverage>
 	<generated>
-	<FMComment: 'The owner of this type identifier'>
 	<container>
 	<derived>
-	^ constructorTypeTypeOwner
+	^ classNameOwner
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptTypeIdentifier >> constructorTypeTypeOwner: anObject [
+FASTTypeScriptTypeIdentifier >> classNameOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
-	constructorTypeTypeOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTypeIdentifier >> constructorTypeTypeOwnerGroup [
-	<generated>
-	<navigation: 'ConstructorTypeTypeOwner'>
-	^ MooseSpecializedGroup with: self constructorTypeTypeOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeIdentifier >> extendsTypeClauseTypeOwner [
-	"Relation named: #extendsTypeClauseTypeOwner type: #FASTTypeScriptExtendsTypeClause opposite: #type"
-
-	<generated>
-	<FMComment: 'The owner of this type identifier'>
-	<container>
-	<derived>
-	^ extendsTypeClauseTypeOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeIdentifier >> extendsTypeClauseTypeOwner: anObject [
-
-	<generated>
-	extendsTypeClauseTypeOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTypeIdentifier >> extendsTypeClauseTypeOwnerGroup [
-	<generated>
-	<navigation: 'ExtendsTypeClauseTypeOwner'>
-	^ MooseSpecializedGroup with: self extendsTypeClauseTypeOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeIdentifier >> genericTypeNameOwner [
-	"Relation named: #genericTypeNameOwner type: #FASTTypeScriptGenericType opposite: #name"
-
-	<generated>
-	<FMComment: 'The owner of this type identifier'>
-	<container>
-	<derived>
-	^ genericTypeNameOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeIdentifier >> genericTypeNameOwner: anObject [
-
-	<generated>
-	genericTypeNameOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTypeIdentifier >> genericTypeNameOwnerGroup [
-	<generated>
-	<navigation: 'GenericTypeNameOwner'>
-	^ MooseSpecializedGroup with: self genericTypeNameOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeIdentifier >> indexSignatureIndexTypeOwner [
-	"Relation named: #indexSignatureIndexTypeOwner type: #FASTTypeScriptIndexSignature opposite: #index_type"
-
-	<generated>
-	<FMComment: 'The owner of this index type'>
-	<container>
-	<derived>
-	^ indexSignatureIndexTypeOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptTypeIdentifier >> indexSignatureIndexTypeOwner: anObject [
-
-	<generated>
-	indexSignatureIndexTypeOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTypeIdentifier >> indexSignatureIndexTypeOwnerGroup [
-	<generated>
-	<navigation: 'IndexSignatureIndexTypeOwner'>
-	^ MooseSpecializedGroup with: self indexSignatureIndexTypeOwner
+	classNameOwner := anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTypeIdentifier >> interfaceDeclarationNameOwner [
 	"Relation named: #interfaceDeclarationNameOwner type: #FASTTypeScriptInterfaceDeclaration opposite: #name"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
@@ -226,13 +161,83 @@ FASTTypeScriptTypeIdentifier >> interfaceDeclarationNameOwner [
 { #category : 'accessing' }
 FASTTypeScriptTypeIdentifier >> interfaceDeclarationNameOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	interfaceDeclarationNameOwner := anObject
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptTypeIdentifier >> interfaceDeclarationNameOwnerGroup [
+{ #category : 'accessing' }
+FASTTypeScriptTypeIdentifier >> mappedTypeClauseNameOwner [
+	"Relation named: #mappedTypeClauseNameOwner type: #FASTTypeScriptMappedTypeClause opposite: #name"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'InterfaceDeclarationNameOwner'>
-	^ MooseSpecializedGroup with: self interfaceDeclarationNameOwner
+	<container>
+	<derived>
+	^ mappedTypeClauseNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeIdentifier >> mappedTypeClauseNameOwner: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	mappedTypeClauseNameOwner := anObject
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeIdentifier >> nestedTypeIdentifierNameOwner [
+	"Relation named: #nestedTypeIdentifierNameOwner type: #FASTTypeScriptNestedTypeIdentifier opposite: #name"
+
+	<ignoreForCoverage>
+	<generated>
+	<container>
+	<derived>
+	^ nestedTypeIdentifierNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeIdentifier >> nestedTypeIdentifierNameOwner: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	nestedTypeIdentifierNameOwner := anObject
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeIdentifier >> typeAliasDeclarationNameOwner [
+	"Relation named: #typeAliasDeclarationNameOwner type: #FASTTypeScriptTypeAliasDeclaration opposite: #name"
+
+	<ignoreForCoverage>
+	<generated>
+	<container>
+	<derived>
+	^ typeAliasDeclarationNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeIdentifier >> typeAliasDeclarationNameOwner: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	typeAliasDeclarationNameOwner := anObject
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeIdentifier >> typeParameterNameOwner [
+	"Relation named: #typeParameterNameOwner type: #FASTTypeScriptTypeParameter opposite: #name"
+
+	<ignoreForCoverage>
+	<generated>
+	<container>
+	<derived>
+	^ typeParameterNameOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptTypeIdentifier >> typeParameterNameOwner: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	typeParameterNameOwner := anObject
 ]

@@ -15,8 +15,8 @@ Class {
 	#name : 'FASTTypeScriptExportSpecifier',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #exportSpecifierNameOwner',
-		'#alias => FMOne type: #FASTTypeScriptTOptionalField opposite: #exportSpecifierAliasOwner'
+		'#alias => FMOne type: #FASTTypeScriptTOptionalField opposite: #exportSpecifierAliasOwner',
+		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #exportSpecifierNameOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -26,24 +26,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptExportSpecifier class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ExportSpecifier super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptExportSpecifier class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptExport_specifier }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptExportSpecifier >> alias [
 	"Relation named: #alias type: #FASTTypeScriptTOptionalField opposite: #exportSpecifierAliasOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My alias in case it exists'>
 	^ alias
@@ -52,21 +45,16 @@ FASTTypeScriptExportSpecifier >> alias [
 { #category : 'accessing' }
 FASTTypeScriptExportSpecifier >> alias: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	alias := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptExportSpecifier >> aliasGroup [
-	<generated>
-	<navigation: 'Alias'>
-	^ MooseSpecializedGroup with: self alias
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptExportSpecifier >> name [
 	"Relation named: #name type: #FASTTypeScriptIdentifier opposite: #exportSpecifierNameOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'Name'>
 	^ name
@@ -75,13 +63,7 @@ FASTTypeScriptExportSpecifier >> name [
 { #category : 'accessing' }
 FASTTypeScriptExportSpecifier >> name: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	name := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptExportSpecifier >> nameGroup [
-	<generated>
-	<navigation: 'Name'>
-	^ MooseSpecializedGroup with: self name
 ]

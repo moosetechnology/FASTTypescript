@@ -1,6 +1,21 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `childrenNodes` | `FASTTypeScriptSequenceExpression` | `sequenceExpressionOwner` | `FASTTypeScriptEntity` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptSequenceExpression',
 	#superclass : 'FASTTypeScriptExpression',
+	#instVars : [
+		'#childrenNodes => FMMany type: #FASTTypeScriptEntity opposite: #sequenceExpressionOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,16 +24,34 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptSequenceExpression class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #SequenceExpression super: #FASTTypeScriptExpression>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptSequenceExpression class >> initialize [ 
+{ #category : 'adding' }
+FASTTypeScriptSequenceExpression >> addChildrenNode: anObject [
 
-	self deprecatedAliases: { #FASTTypescriptSequence_expression }
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ self childrenNodes add: anObject
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptSequenceExpression >> childrenNodes [
+	"Relation named: #childrenNodes type: #FASTTypeScriptEntity opposite: #sequenceExpressionOwner"
+
+	<ignoreForCoverage>
+	<generated>
+	<derived>
+	^ childrenNodes
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptSequenceExpression >> childrenNodes: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	childrenNodes value: anObject
 ]

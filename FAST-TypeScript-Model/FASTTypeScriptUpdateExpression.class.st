@@ -2,10 +2,11 @@
 ## Relations
 ======================
 
-### Parents
+### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `forIncrementOwner` | `FASTTypeScriptUpdateExpression` | `increment` | `FASTTypeScriptForStatement` | |
+| `argument` | `FASTTypeScriptUpdateExpression` | `updateExpressionArgumentOwner` | `FASTTExpression` | |
+| `operator` | `FASTTypeScriptUpdateExpression` | `updateExpressionOperatorOwner` | `FASTTypeScriptEntity` | |
 
 
 
@@ -14,7 +15,7 @@ Class {
 	#name : 'FASTTypeScriptUpdateExpression',
 	#superclass : 'FASTTypeScriptExpression',
 	#instVars : [
-		'#forIncrementOwner => FMOne type: #FASTTypeScriptForStatement opposite: #increment'
+		'#operator => FMOne type: #FASTTypeScriptEntity opposite: #updateExpressionOperatorOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -24,40 +25,50 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptUpdateExpression class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #UpdateExpression super: #FASTTypeScriptExpression>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptUpdateExpression class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptUpdate_expression }
- 
- 
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptUpdateExpression >> forIncrementOwner [
-	"Relation named: #forIncrementOwner type: #FASTTypeScriptForStatement opposite: #increment"
+FASTTypeScriptUpdateExpression >> argument [
+	"Relation named: #argument type: #FASTTExpression opposite: #updateExpressionArgumentOwner"
 
+	<ignoreForCoverage>
 	<generated>
-	<container>
-	<derived>
-	^ forIncrementOwner
+	<FMProperty: #argument type: #FASTTExpression opposite: #updateExpressionArgumentOwner>
+	^ self attributeAt: #argument ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptUpdateExpression >> forIncrementOwner: anObject [
+FASTTypeScriptUpdateExpression >> argument: anObject [
 
+	<ignoreForCoverage>
 	<generated>
-	forIncrementOwner := anObject
+	(self attributeAt: #argument ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self argument.
+		self attributeAt: #argument put: anObject.
+		otherSide updateExpressionArgumentOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #argument put: anObject.
+		anObject updateExpressionArgumentOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptUpdateExpression >> forIncrementOwnerGroup [
+{ #category : 'accessing' }
+FASTTypeScriptUpdateExpression >> operator [
+	"Relation named: #operator type: #FASTTypeScriptEntity opposite: #updateExpressionOperatorOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'ForIncrementOwner'>
-	^ MooseSpecializedGroup with: self forIncrementOwner
+	^ operator
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptUpdateExpression >> operator: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	operator := anObject
 ]

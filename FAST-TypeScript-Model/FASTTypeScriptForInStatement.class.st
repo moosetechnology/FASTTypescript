@@ -6,8 +6,11 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `body` | `FASTTypeScriptForInStatement` | `forInStatementBodyOwner` | `FASTTypeScriptStatementBlock` | My body|
-| `left` | `FASTTypeScriptForInStatement` | `forStatementLeftOwner` | `FASTTExpression` | The left operand (if possible)|
-| `right` | `FASTTypeScriptForInStatement` | `forStatementRightOwner` | `FASTTExpression` | The right operand (if possible)|
+| `kind` | `FASTTypeScriptForInStatement` | `forInStatementKindOwner` | `FASTTypeScriptEntity` | |
+| `left` | `FASTTypeScriptForInStatement` | `forInStatementLeftOwner` | `FASTTExpression` | The left operand (if possible)|
+| `operator` | `FASTTypeScriptForInStatement` | `forInStatementOperatorOwner` | `FASTTypeScriptEntity` | |
+| `right` | `FASTTypeScriptForInStatement` | `forInStatementRightOwner` | `FASTTExpression` | The right operand (if possible)|
+| `value` | `FASTTypeScriptForInStatement` | `forInStatementValueOwner` | `FASTTExpression` | |
 
 
 
@@ -16,7 +19,9 @@ Class {
 	#name : 'FASTTypeScriptForInStatement',
 	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #forInStatementBodyOwner'
+		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #forInStatementBodyOwner',
+		'#kind => FMOne type: #FASTTypeScriptEntity opposite: #forInStatementKindOwner',
+		'#operator => FMOne type: #FASTTypeScriptEntity opposite: #forInStatementOperatorOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -26,24 +31,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptForInStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ForInStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptForInStatement class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptFor_in_statement }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForInStatement >> body [
 	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #forInStatementBodyOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My body'>
 	^ body
@@ -52,75 +50,118 @@ FASTTypeScriptForInStatement >> body [
 { #category : 'accessing' }
 FASTTypeScriptForInStatement >> body: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	body := anObject
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptForInStatement >> bodyGroup [
+{ #category : 'accessing' }
+FASTTypeScriptForInStatement >> kind [
+	"Relation named: #kind type: #FASTTypeScriptEntity opposite: #forInStatementKindOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'Body'>
-	^ MooseSpecializedGroup with: self body
+	^ kind
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptForInStatement >> kind: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	kind := anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForInStatement >> left [
-	"Relation named: #left type: #FASTTExpression opposite: #forStatementLeftOwner"
+	"Relation named: #left type: #FASTTExpression opposite: #forInStatementLeftOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The left operand (if possible)'>
-	<FMProperty: #left type: #FASTTExpression opposite: #forStatementLeftOwner>
+	<FMProperty: #left type: #FASTTExpression opposite: #forInStatementLeftOwner>
 	^ self attributeAt: #left ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForInStatement >> left: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #left ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self left.
 		self attributeAt: #left put: anObject.
-		otherSide forStatementLeftOwner: nil ]
+		otherSide forInStatementLeftOwner: nil ]
 	ifNotNil: [ 
 		self attributeAt: #left put: anObject.
-		anObject forStatementLeftOwner: self ]
+		anObject forInStatementLeftOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptForInStatement >> leftGroup [
+{ #category : 'accessing' }
+FASTTypeScriptForInStatement >> operator [
+	"Relation named: #operator type: #FASTTypeScriptEntity opposite: #forInStatementOperatorOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'Left'>
-	^ MooseSpecializedGroup with: self left
+	^ operator
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptForInStatement >> operator: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	operator := anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForInStatement >> right [
-	"Relation named: #right type: #FASTTExpression opposite: #forStatementRightOwner"
+	"Relation named: #right type: #FASTTExpression opposite: #forInStatementRightOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The right operand (if possible)'>
-	<FMProperty: #right type: #FASTTExpression opposite: #forStatementRightOwner>
+	<FMProperty: #right type: #FASTTExpression opposite: #forInStatementRightOwner>
 	^ self attributeAt: #right ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForInStatement >> right: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #right ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self right.
 		self attributeAt: #right put: anObject.
-		otherSide forStatementRightOwner: nil ]
+		otherSide forInStatementRightOwner: nil ]
 	ifNotNil: [ 
 		self attributeAt: #right put: anObject.
-		anObject forStatementRightOwner: self ]
+		anObject forInStatementRightOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptForInStatement >> rightGroup [
+{ #category : 'accessing' }
+FASTTypeScriptForInStatement >> value [
+	"Relation named: #value type: #FASTTExpression opposite: #forInStatementValueOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'Right'>
-	^ MooseSpecializedGroup with: self right
+	<FMProperty: #value type: #FASTTExpression opposite: #forInStatementValueOwner>
+	^ self attributeAt: #value ifAbsent: [ nil ]
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptForInStatement >> value: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	(self attributeAt: #value ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self value.
+		self attributeAt: #value put: anObject.
+		otherSide forInStatementValueOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #value put: anObject.
+		anObject forInStatementValueOwner: self ]
 ]

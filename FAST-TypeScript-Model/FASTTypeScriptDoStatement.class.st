@@ -5,8 +5,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptDoStatement` | `doBodyOwner` | `FASTTStatement` | |
-| `condition` | `FASTTypeScriptDoStatement` | `doConditionOwner` | `FASTTypeScriptParenthesizedExpression` | |
+| `body` | `FASTTypeScriptDoStatement` | `doStatementBodyOwner` | `FASTTStatement` | |
+| `condition` | `FASTTypeScriptDoStatement` | `doStatementConditionOwner` | `FASTTypeScriptParenthesizedExpression` | |
 
 
 
@@ -15,7 +15,7 @@ Class {
 	#name : 'FASTTypeScriptDoStatement',
 	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
-		'#condition => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #doConditionOwner'
+		'#condition => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #doStatementConditionOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -25,54 +25,42 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptDoStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #DoStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptDoStatement class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptDo_statement }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptDoStatement >> body [
-	"Relation named: #body type: #FASTTStatement opposite: #doBodyOwner"
+	"Relation named: #body type: #FASTTStatement opposite: #doStatementBodyOwner"
 
+	<ignoreForCoverage>
 	<generated>
-	<FMProperty: #body type: #FASTTStatement opposite: #doBodyOwner>
+	<FMProperty: #body type: #FASTTStatement opposite: #doStatementBodyOwner>
 	^ self attributeAt: #body ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptDoStatement >> body: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #body ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self body.
 		self attributeAt: #body put: anObject.
-		otherSide doBodyOwner: nil ]
+		otherSide doStatementBodyOwner: nil ]
 	ifNotNil: [ 
 		self attributeAt: #body put: anObject.
-		anObject doBodyOwner: self ]
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptDoStatement >> bodyGroup [
-	<generated>
-	<navigation: 'Body'>
-	^ MooseSpecializedGroup with: self body
+		anObject doStatementBodyOwner: self ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptDoStatement >> condition [
-	"Relation named: #condition type: #FASTTypeScriptParenthesizedExpression opposite: #doConditionOwner"
+	"Relation named: #condition type: #FASTTypeScriptParenthesizedExpression opposite: #doStatementConditionOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	^ condition
 ]
@@ -80,13 +68,7 @@ FASTTypeScriptDoStatement >> condition [
 { #category : 'accessing' }
 FASTTypeScriptDoStatement >> condition: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	condition := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptDoStatement >> conditionGroup [
-	<generated>
-	<navigation: 'Condition'>
-	^ MooseSpecializedGroup with: self condition
 ]

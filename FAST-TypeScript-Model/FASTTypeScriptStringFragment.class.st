@@ -9,16 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptStringFragment class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #StringFragment super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptStringFragment class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptString_fragment }
- 
- 
 ]

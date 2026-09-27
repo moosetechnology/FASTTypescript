@@ -7,6 +7,11 @@
 |---|
 | `ifStatementAlternativeOwner` | `FASTTypeScriptElseClause` | `alternative` | `FASTTypeScriptIfStatement` | |
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `childrenNode` | `FASTTypeScriptElseClause` | `elseClauseOwner` | `FASTTypeScriptEntity` | |
+
 
 
 "
@@ -14,6 +19,7 @@ Class {
 	#name : 'FASTTypeScriptElseClause',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
+		'#childrenNode => FMOne type: #FASTTypeScriptEntity opposite: #elseClauseOwner',
 		'#ifStatementAlternativeOwner => FMOne type: #FASTTypeScriptIfStatement opposite: #alternative'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
@@ -24,26 +30,34 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptElseClause class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ElseClause super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptElseClause class >> initialize [ 
+{ #category : 'accessing' }
+FASTTypeScriptElseClause >> childrenNode [
+	"Relation named: #childrenNode type: #FASTTypeScriptEntity opposite: #elseClauseOwner"
 
-	self deprecatedAliases: { #FASTTypescriptElse_clause}
+	<ignoreForCoverage>
+	<generated>
+	^ childrenNode
+]
 
+{ #category : 'accessing' }
+FASTTypeScriptElseClause >> childrenNode: anObject [
 
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	childrenNode := anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptElseClause >> ifStatementAlternativeOwner [
 	"Relation named: #ifStatementAlternativeOwner type: #FASTTypeScriptIfStatement opposite: #alternative"
 
+	<ignoreForCoverage>
 	<generated>
 	<container>
 	<derived>
@@ -53,13 +67,7 @@ FASTTypeScriptElseClause >> ifStatementAlternativeOwner [
 { #category : 'accessing' }
 FASTTypeScriptElseClause >> ifStatementAlternativeOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	ifStatementAlternativeOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptElseClause >> ifStatementAlternativeOwnerGroup [
-	<generated>
-	<navigation: 'IfStatementAlternativeOwner'>
-	^ MooseSpecializedGroup with: self ifStatementAlternativeOwner
 ]

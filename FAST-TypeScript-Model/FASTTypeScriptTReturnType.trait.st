@@ -25,16 +25,17 @@ Trait {
 { #category : 'meta' }
 FASTTypeScriptTReturnType classSide >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #TReturnType super: #Object>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTReturnType >> functionDeclarationReturnTypeOwner [
 	"Relation named: #functionDeclarationReturnTypeOwner type: #FASTTypeScriptFunctionDeclaration opposite: #return_type"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
@@ -45,13 +46,7 @@ FASTTypeScriptTReturnType >> functionDeclarationReturnTypeOwner [
 { #category : 'accessing' }
 FASTTypeScriptTReturnType >> functionDeclarationReturnTypeOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	functionDeclarationReturnTypeOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTReturnType >> functionDeclarationReturnTypeOwnerGroup [
-	<generated>
-	<navigation: 'FunctionDeclarationReturnTypeOwner'>
-	^ MooseSpecializedGroup with: self functionDeclarationReturnTypeOwner
 ]

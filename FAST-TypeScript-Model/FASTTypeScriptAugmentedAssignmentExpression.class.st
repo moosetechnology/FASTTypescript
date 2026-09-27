@@ -6,6 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `left` | `FASTTypeScriptAugmentedAssignmentExpression` | `augmentedAssignmentExpressionLeftOwner` | `FASTTExpression` | left|
+| `operator` | `FASTTypeScriptAugmentedAssignmentExpression` | `augmentedAssignmentExpressionOperatorOwner` | `FASTTypeScriptEntity` | |
 | `right` | `FASTTypeScriptAugmentedAssignmentExpression` | `augmentedAssignmentExpressionRightOwner` | `FASTTExpression` | right|
 
 
@@ -14,6 +15,9 @@
 Class {
 	#name : 'FASTTypeScriptAugmentedAssignmentExpression',
 	#superclass : 'FASTTypeScriptExpression',
+	#instVars : [
+		'#operator => FMOne type: #FASTTypeScriptEntity opposite: #augmentedAssignmentExpressionOperatorOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -22,22 +26,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptAugmentedAssignmentExpression class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #AugmentedAssignmentExpression super: #FASTTypeScriptExpression>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptAugmentedAssignmentExpression class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptAugmented_assignment_expression }
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptAugmentedAssignmentExpression >> left [
 	"Relation named: #left type: #FASTTExpression opposite: #augmentedAssignmentExpressionLeftOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'left'>
 	<FMProperty: #left type: #FASTTExpression opposite: #augmentedAssignmentExpressionLeftOwner>
@@ -47,6 +46,7 @@ FASTTypeScriptAugmentedAssignmentExpression >> left [
 { #category : 'accessing' }
 FASTTypeScriptAugmentedAssignmentExpression >> left: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #left ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -58,17 +58,28 @@ FASTTypeScriptAugmentedAssignmentExpression >> left: anObject [
 		anObject augmentedAssignmentExpressionLeftOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptAugmentedAssignmentExpression >> leftGroup [
+{ #category : 'accessing' }
+FASTTypeScriptAugmentedAssignmentExpression >> operator [
+	"Relation named: #operator type: #FASTTypeScriptEntity opposite: #augmentedAssignmentExpressionOperatorOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'Left'>
-	^ MooseSpecializedGroup with: self left
+	^ operator
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptAugmentedAssignmentExpression >> operator: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	operator := anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptAugmentedAssignmentExpression >> right [
 	"Relation named: #right type: #FASTTExpression opposite: #augmentedAssignmentExpressionRightOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'right'>
 	<FMProperty: #right type: #FASTTExpression opposite: #augmentedAssignmentExpressionRightOwner>
@@ -78,6 +89,7 @@ FASTTypeScriptAugmentedAssignmentExpression >> right [
 { #category : 'accessing' }
 FASTTypeScriptAugmentedAssignmentExpression >> right: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #right ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -87,11 +99,4 @@ FASTTypeScriptAugmentedAssignmentExpression >> right: anObject [
 	ifNotNil: [ 
 		self attributeAt: #right put: anObject.
 		anObject augmentedAssignmentExpressionRightOwner: self ]
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptAugmentedAssignmentExpression >> rightGroup [
-	<generated>
-	<navigation: 'Right'>
-	^ MooseSpecializedGroup with: self right
 ]

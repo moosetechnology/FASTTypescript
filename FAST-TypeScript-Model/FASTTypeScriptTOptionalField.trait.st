@@ -29,16 +29,17 @@ Trait {
 { #category : 'meta' }
 FASTTypeScriptTOptionalField classSide >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #TOptionalField super: #Object>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTOptionalField >> exportSpecifierAliasOwner [
 	"Relation named: #exportSpecifierAliasOwner type: #FASTTypeScriptExportSpecifier opposite: #alias"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
@@ -49,21 +50,16 @@ FASTTypeScriptTOptionalField >> exportSpecifierAliasOwner [
 { #category : 'accessing' }
 FASTTypeScriptTOptionalField >> exportSpecifierAliasOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	exportSpecifierAliasOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTOptionalField >> exportSpecifierAliasOwnerGroup [
-	<generated>
-	<navigation: 'ExportSpecifierAliasOwner'>
-	^ MooseSpecializedGroup with: self exportSpecifierAliasOwner
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTOptionalField >> methodDefinitionReturnTypeOwner [
 	"Relation named: #methodDefinitionReturnTypeOwner type: #FASTTypeScriptMethodDefinition opposite: #return_type"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My owner'>
 	<container>
@@ -74,21 +70,16 @@ FASTTypeScriptTOptionalField >> methodDefinitionReturnTypeOwner [
 { #category : 'accessing' }
 FASTTypeScriptTOptionalField >> methodDefinitionReturnTypeOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	methodDefinitionReturnTypeOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTOptionalField >> methodDefinitionReturnTypeOwnerGroup [
-	<generated>
-	<navigation: 'MethodDefinitionReturnTypeOwner'>
-	^ MooseSpecializedGroup with: self methodDefinitionReturnTypeOwner
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTOptionalField >> requiredParameterTypeOwner [
 	"Relation named: #requiredParameterTypeOwner type: #FASTTypeScriptRequiredParameter opposite: #type"
 
+	<ignoreForCoverage>
 	<generated>
 	<container>
 	<derived>
@@ -98,13 +89,7 @@ FASTTypeScriptTOptionalField >> requiredParameterTypeOwner [
 { #category : 'accessing' }
 FASTTypeScriptTOptionalField >> requiredParameterTypeOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	requiredParameterTypeOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTOptionalField >> requiredParameterTypeOwnerGroup [
-	<generated>
-	<navigation: 'RequiredParameterTypeOwner'>
-	^ MooseSpecializedGroup with: self requiredParameterTypeOwner
 ]

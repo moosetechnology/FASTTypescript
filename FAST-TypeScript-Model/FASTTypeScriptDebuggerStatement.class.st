@@ -9,17 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptDebuggerStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #DebuggerStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptDebuggerStatement class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptDebugger_statement }
-
- 
- 
 ]

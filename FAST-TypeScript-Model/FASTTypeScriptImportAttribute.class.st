@@ -1,6 +1,21 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `childrenNode` | `FASTTypeScriptImportAttribute` | `importAttributeOwner` | `FASTTypeScriptEntity` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptImportAttribute',
 	#superclass : 'FASTTypeScriptEntity',
+	#instVars : [
+		'#childrenNode => FMOne type: #FASTTypeScriptEntity opposite: #importAttributeOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,16 +24,25 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptImportAttribute class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ImportAttribute super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptImportAttribute class >> initialize [ 
+{ #category : 'accessing' }
+FASTTypeScriptImportAttribute >> childrenNode [
+	"Relation named: #childrenNode type: #FASTTypeScriptEntity opposite: #importAttributeOwner"
 
-	self deprecatedAliases: { #FASTTypescriptImport_attribute }
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ childrenNode
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptImportAttribute >> childrenNode: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	childrenNode := anObject
 ]

@@ -28,24 +28,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptIfStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #IfStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptIfStatement class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptIf_statement }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptIfStatement >> alternative [
 	"Relation named: #alternative type: #FASTTypeScriptElseClause opposite: #ifStatementAlternativeOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	^ alternative
 ]
@@ -53,21 +46,16 @@ FASTTypeScriptIfStatement >> alternative [
 { #category : 'accessing' }
 FASTTypeScriptIfStatement >> alternative: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	alternative := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIfStatement >> alternativeGroup [
-	<generated>
-	<navigation: 'Alternative'>
-	^ MooseSpecializedGroup with: self alternative
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptIfStatement >> condition [
 	"Relation named: #condition type: #FASTTypeScriptParenthesizedExpression opposite: #ifStatementConditionOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My condition as parenthesized expression'>
 	^ condition
@@ -76,21 +64,16 @@ FASTTypeScriptIfStatement >> condition [
 { #category : 'accessing' }
 FASTTypeScriptIfStatement >> condition: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	condition := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIfStatement >> conditionGroup [
-	<generated>
-	<navigation: 'Condition'>
-	^ MooseSpecializedGroup with: self condition
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptIfStatement >> consequence [
 	"Relation named: #consequence type: #FASTTypeScriptStatementBlock opposite: #ifStatementConsequenceOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My consequence as statement block'>
 	^ consequence
@@ -99,13 +82,7 @@ FASTTypeScriptIfStatement >> consequence [
 { #category : 'accessing' }
 FASTTypeScriptIfStatement >> consequence: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	consequence := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIfStatement >> consequenceGroup [
-	<generated>
-	<navigation: 'Consequence'>
-	^ MooseSpecializedGroup with: self consequence
 ]

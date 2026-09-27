@@ -9,14 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptHtmlComment class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #HtmlComment super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptHtmlComment class >> initialize [
-
-	self deprecatedAliases: { #FASTTypeScriptHtml_comment } 
 ]

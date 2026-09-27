@@ -9,16 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptOverrideModifier class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #OverrideModifier super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptOverrideModifier class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptOverride_modifier }
- 
- 
 ]

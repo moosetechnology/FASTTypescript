@@ -1,6 +1,21 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `childrenNode` | `FASTTypeScriptAddingTypeAnnotation` | `addingTypeAnnotationOwner` | `FASTTypeScriptEntity` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptAddingTypeAnnotation',
 	#superclass : 'FASTTypeScriptEntity',
+	#instVars : [
+		'#childrenNode => FMOne type: #FASTTypeScriptEntity opposite: #addingTypeAnnotationOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,16 +24,25 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptAddingTypeAnnotation class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #AddingTypeAnnotation super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptAddingTypeAnnotation class >> initialize [ 
+{ #category : 'accessing' }
+FASTTypeScriptAddingTypeAnnotation >> childrenNode [
+	"Relation named: #childrenNode type: #FASTTypeScriptEntity opposite: #addingTypeAnnotationOwner"
 
-	self deprecatedAliases: { #FASTTypescriptAdding_type_annotation }
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ childrenNode
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptAddingTypeAnnotation >> childrenNode: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	childrenNode := anObject
 ]

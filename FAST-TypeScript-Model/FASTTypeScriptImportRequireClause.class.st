@@ -1,6 +1,21 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `source` | `FASTTypeScriptImportRequireClause` | `importRequireClauseSourceOwner` | `FASTTypeScriptString` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptImportRequireClause',
 	#superclass : 'FASTTypeScriptEntity',
+	#instVars : [
+		'#source => FMOne type: #FASTTypeScriptString opposite: #importRequireClauseSourceOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,16 +24,25 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptImportRequireClause class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ImportRequireClause super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptImportRequireClause class >> initialize [ 
+{ #category : 'accessing' }
+FASTTypeScriptImportRequireClause >> source [
+	"Relation named: #source type: #FASTTypeScriptString opposite: #importRequireClauseSourceOwner"
 
-	self deprecatedAliases: { #FASTTypescriptImport_require_clause }
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ source
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptImportRequireClause >> source: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	source := anObject
 ]

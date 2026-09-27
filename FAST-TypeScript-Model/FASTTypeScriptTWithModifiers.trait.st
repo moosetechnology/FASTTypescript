@@ -25,14 +25,16 @@ Trait {
 { #category : 'meta' }
 FASTTypeScriptTWithModifiers classSide >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #TWithModifiers super: #Object>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
 { #category : 'adding' }
 FASTTypeScriptTWithModifiers >> addModifier: anObject [
+
+	<ignoreForCoverage>
 	<generated>
 	^ self modifiers add: anObject
 ]
@@ -41,6 +43,7 @@ FASTTypeScriptTWithModifiers >> addModifier: anObject [
 FASTTypeScriptTWithModifiers >> modifiers [
 	"Relation named: #modifiers type: #FASTTypeScriptTModifier opposite: #tWithModifiersModifiersOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My modifiers'>
 	<derived>
@@ -50,13 +53,7 @@ FASTTypeScriptTWithModifiers >> modifiers [
 { #category : 'accessing' }
 FASTTypeScriptTWithModifiers >> modifiers: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	modifiers value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTWithModifiers >> modifiersGroup [
-	<generated>
-	<navigation: 'Modifiers'>
-	^ MooseSpecializedGroup withAll: self modifiers asSet
 ]

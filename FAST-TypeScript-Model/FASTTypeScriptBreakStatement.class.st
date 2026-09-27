@@ -1,6 +1,21 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `label` | `FASTTypeScriptBreakStatement` | `breakStatementLabelOwner` | `FASTTypeScriptStatementIdentifier` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptBreakStatement',
 	#superclass : 'FASTTypeScriptStatement',
+	#instVars : [
+		'#label => FMOne type: #FASTTypeScriptStatementIdentifier opposite: #breakStatementLabelOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,16 +24,25 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptBreakStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #BreakStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptBreakStatement class >> initialize [ 
+{ #category : 'accessing' }
+FASTTypeScriptBreakStatement >> label [
+	"Relation named: #label type: #FASTTypeScriptStatementIdentifier opposite: #breakStatementLabelOwner"
 
-	self deprecatedAliases: { #FASTTypescriptBreak_statement }
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ label
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptBreakStatement >> label: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	label := anObject
 ]

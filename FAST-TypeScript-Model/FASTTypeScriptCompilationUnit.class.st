@@ -9,21 +9,16 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptCompilationUnit class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #CompilationUnit super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptCompilationUnit class >> initialize [
-
-	self deprecatedAliases: { #FASTTypeScriptCompilation_unit }
 ]
 
 { #category : 'testing' }
 FASTTypeScriptCompilationUnit >> isCompilationUnit [
 
+	<ignoreForCoverage>
 	<generated>
 	^ true
 ]

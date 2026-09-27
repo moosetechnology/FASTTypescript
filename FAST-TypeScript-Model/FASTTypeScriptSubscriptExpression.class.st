@@ -2,18 +2,94 @@
 ## Relations
 ======================
 
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `argumentOwner` | `FASTTExpression` | `arguments` | `FASTTWithArguments` | my owner|
+| `argumentsOwner` | `FASTTEntity` | `argumentsList` | `FASTTypeScriptArguments` | The arguments node that owns me|
+| `arrowFunctionBodyOwner` | `FASTTEntity` | `body` | `FASTTypeScriptArrowFunction` | My owner|
+| `assignedIn` | `FASTTExpression` | `expression` | `FASTTAssignment` | Optional assignment where this expression is used|
+| `assignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptAssignmentExpression` | The expression parent|
+| `assignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAssignmentExpression` | The expression parent|
+| `assignmentPatternLeftOwner` | `FASTTypeScriptTPattern` | `left` | `FASTTypeScriptAssignmentPattern` | |
+| `assignmentPatternRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAssignmentPattern` | |
+| `augmentedAssignmentExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptAugmentedAssignmentExpression` | The left operand (if possible)|
+| `augmentedAssignmentExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptAugmentedAssignmentExpression` | The right operand (if possible)|
+| `binaryExpressionLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptBinaryExpression` | My Owner|
+| `binaryExpressionRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptBinaryExpression` | My Owner|
+| `conditionalTypeAlternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypeScriptConditionalType` | Alternative owner|
+| `conditionalTypeConsequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypeScriptConditionalType` | Consequence owner|
+| `conditionalTypeLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptConditionalType` | The left operand (if possible)|
+| `conditionalTypeRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptConditionalType` | The right operand (if possible)|
+| `constructorTypeTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptConstructorType` | The owner of this type identifier|
+| `enumAssignmentValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptEnumAssignment` | |
+| `exportStatementValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptExportStatement` | |
+| `expressionStatementOwner` | `FASTTExpression` | `expression` | `FASTTExpressionStatement` | The expression statement that own me (if it's the case|
+| `extendsClauseValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptExtendsClause` | |
+| `extendsTypeClauseTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptExtendsTypeClause` | The owner of this type identifier|
+| `forInStatementLeftOwner` | `FASTTExpression` | `left` | `FASTTypeScriptForInStatement` | My owner|
+| `forInStatementRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptForInStatement` | My owner|
+| `forInStatementValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptForInStatement` | |
+| `functionTypeReturnTypeOwner` | `FASTTExpression` | `return_type` | `FASTTypeScriptFunctionType` | The owner of this type|
+| `genericTypeNameOwner` | `FASTTExpression` | `name` | `FASTTypeScriptGenericType` | The owner of this type identifier|
+| `importSpecifierNameOwner` | `FASTTypeScriptTPrimaryExpression` | `name` | `FASTTypeScriptImportSpecifier` | |
+| `indexSignatureIndexTypeOwner` | `FASTTExpression` | `index_type` | `FASTTypeScriptIndexSignature` | The owner of this index type|
+| `indexSignatureTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptIndexSignature` | The owner of this type|
+| `mappedTypeClauseAliasOwner` | `FASTTExpression` | `alias` | `FASTTypeScriptMappedTypeClause` | |
+| `mappedTypeClauseTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptMappedTypeClause` | |
+| `memberExpressionObjectOwner` | `FASTTExpression` | `object` | `FASTTypeScriptMemberExpression` | This owner|
+| `memberExpressionPropertyOwner` | `FASTTExpression` | `property` | `FASTTypeScriptMemberExpression` | My owner|
+| `newExpressionConstructorOwner` | `FASTTExpression` | `constructor` | `FASTTypeScriptNewExpression` | The owner of this constructor|
+| `objectAssignmentPatternRightOwner` | `FASTTExpression` | `right` | `FASTTypeScriptObjectAssignmentPattern` | |
+| `optionalParameterPatternOwner` | `FASTTExpression` | `pattern` | `FASTTypeScriptOptionalParameter` | The owner of this identifier|
+| `optionalParameterValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptOptionalParameter` | |
+| `pairValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptPair` | |
+| `parentConditional` | `FASTTExpression` | `condition` | `FASTTWithCondition` | Optional condition statement/expression where this expression is used|
+| `parentExpression` | `FASTTExpression` | `expression` | `FASTTUnaryExpression` | Parent (unary) expression|
+| `parentExpressionLeft` | `FASTTExpression` | `leftOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am left side|
+| `parentExpressionRight` | `FASTTExpression` | `rightOperand` | `FASTTBinaryExpression` | Parent (binary) expression of which I am right side|
+| `parentFormalParameters` | `FASTTEntity` | `parameters` | `FASTTypeScriptFormalParameters` | My owner|
+| `publicFieldDefinitionValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptPublicFieldDefinition` | |
+| `requiredParameterPatternOwner` | `FASTTExpression` | `pattern` | `FASTTypeScriptRequiredParameter` | |
+| `requiredParameterValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptRequiredParameter` | |
+| `returnOwner` | `FASTTExpression` | `expression` | `FASTTReturnStatement` | The return statement that own the expression (if it's the case)|
+| `subscriptExpressionIndexOwner` | `FASTTExpression` | `index` | `FASTTypeScriptSubscriptExpression` | My owner|
+| `subscriptExpressionObjectOwner` | `FASTTExpression` | `object` | `FASTTypeScriptSubscriptExpression` | My owner|
+| `ternaryExpressionAlternativeOwner` | `FASTTExpression` | `alternative` | `FASTTypeScriptTernaryExpression` | |
+| `ternaryExpressionConditionOwner` | `FASTTExpression` | `condition` | `FASTTypeScriptTernaryExpression` | |
+| `ternaryExpressionConsequenceOwner` | `FASTTExpression` | `consequence` | `FASTTypeScriptTernaryExpression` | |
+| `typeAliasDeclarationValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptTypeAliasDeclaration` | |
+| `typePredicateNameOwner` | `FASTTypeScriptTPrimaryExpression` | `name` | `FASTTypeScriptTypePredicate` | |
+| `typePredicateTypeOwner` | `FASTTExpression` | `type` | `FASTTypeScriptTypePredicate` | |
+| `unaryExpressionArgumentOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUnaryExpression` | The owner of this class|
+| `updateExpressionArgumentOwner` | `FASTTExpression` | `argument` | `FASTTypeScriptUpdateExpression` | |
+| `variableDeclaratorValueOwner` | `FASTTExpression` | `value` | `FASTTypeScriptVariableDeclarator` | |
+
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `index` | `FASTTypeScriptSubscriptExpression` | `subscriptExpressionIndexOwner` | `FASTTExpression` | My index|
 | `object` | `FASTTypeScriptSubscriptExpression` | `subscriptExpressionObjectOwner` | `FASTTExpression` | My identifier|
+| `optionalChain` | `FASTTypeScriptSubscriptExpression` | `subscriptExpressionOptionalChainOwner` | `FASTTypeScriptOptionalChain` | |
 
 
+## Properties
+======================
+
+| Name | Type | Default value | Comment |
+|---|
+| `endPos` | `Number` | nil | |
+| `startPos` | `Number` | nil | |
 
 "
 Class {
 	#name : 'FASTTypeScriptSubscriptExpression',
 	#superclass : 'FASTTypeScriptExpression',
+	#traits : 'FASTTypeScriptTPattern + FASTTypeScriptTPrimaryExpression',
+	#classTraits : 'FASTTypeScriptTPattern classTrait + FASTTypeScriptTPrimaryExpression classTrait',
+	#instVars : [
+		'#optionalChain => FMOne type: #FASTTypeScriptOptionalChain opposite: #subscriptExpressionOptionalChainOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -22,25 +98,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptSubscriptExpression class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #SubscriptExpression super: #FASTTypeScriptExpression>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptSubscriptExpression class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptSubscript_expression }
-	
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptSubscriptExpression >> index [
 	"Relation named: #index type: #FASTTExpression opposite: #subscriptExpressionIndexOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My index'>
 	<FMProperty: #index type: #FASTTExpression opposite: #subscriptExpressionIndexOwner>
@@ -50,6 +118,7 @@ FASTTypeScriptSubscriptExpression >> index [
 { #category : 'accessing' }
 FASTTypeScriptSubscriptExpression >> index: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #index ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -61,17 +130,11 @@ FASTTypeScriptSubscriptExpression >> index: anObject [
 		anObject subscriptExpressionIndexOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptSubscriptExpression >> indexGroup [
-	<generated>
-	<navigation: 'Index'>
-	^ MooseSpecializedGroup with: self index
-]
-
 { #category : 'accessing' }
 FASTTypeScriptSubscriptExpression >> object [
 	"Relation named: #object type: #FASTTExpression opposite: #subscriptExpressionObjectOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My identifier'>
 	<FMProperty: #object type: #FASTTExpression opposite: #subscriptExpressionObjectOwner>
@@ -81,6 +144,7 @@ FASTTypeScriptSubscriptExpression >> object [
 { #category : 'accessing' }
 FASTTypeScriptSubscriptExpression >> object: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #object ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -92,9 +156,19 @@ FASTTypeScriptSubscriptExpression >> object: anObject [
 		anObject subscriptExpressionObjectOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptSubscriptExpression >> objectGroup [
+{ #category : 'accessing' }
+FASTTypeScriptSubscriptExpression >> optionalChain [
+	"Relation named: #optionalChain type: #FASTTypeScriptOptionalChain opposite: #subscriptExpressionOptionalChainOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'Object'>
-	^ MooseSpecializedGroup with: self object
+	^ optionalChain
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptSubscriptExpression >> optionalChain: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	optionalChain := anObject
 ]

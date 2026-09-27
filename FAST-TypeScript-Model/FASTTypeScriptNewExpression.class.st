@@ -27,24 +27,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptNewExpression class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #NewExpression super: #FASTTypeScriptExpression>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptNewExpression class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptNew_expression }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> arguments [
 	"Relation named: #arguments type: #FASTTypeScriptArguments opposite: #newExpressionArgumentsOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The arguments of the new expression'>
 	^ arguments
@@ -53,21 +46,16 @@ FASTTypeScriptNewExpression >> arguments [
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> arguments: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	arguments := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptNewExpression >> argumentsGroup [
-	<generated>
-	<navigation: 'Arguments'>
-	^ MooseSpecializedGroup with: self arguments
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> constructor [
 	"Relation named: #constructor type: #FASTTExpression opposite: #newExpressionConstructorOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The constructor of the new expression'>
 	<FMProperty: #constructor type: #FASTTExpression opposite: #newExpressionConstructorOwner>
@@ -77,6 +65,7 @@ FASTTypeScriptNewExpression >> constructor [
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> constructor: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #constructor ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -88,17 +77,11 @@ FASTTypeScriptNewExpression >> constructor: anObject [
 		anObject newExpressionConstructorOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptNewExpression >> constructorGroup [
-	<generated>
-	<navigation: 'Constructor'>
-	^ MooseSpecializedGroup with: self constructor
-]
-
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> type_arguments [
 	"Relation named: #type_arguments type: #FASTTypeScriptTypeArguments opposite: #newExpressionTypeArgumentsOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The type arguments of the new expression if they exist between <>'>
 	^ type_arguments
@@ -107,13 +90,7 @@ FASTTypeScriptNewExpression >> type_arguments [
 { #category : 'accessing' }
 FASTTypeScriptNewExpression >> type_arguments: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	type_arguments := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptNewExpression >> type_argumentsGroup [
-	<generated>
-	<navigation: 'Type_arguments'>
-	^ MooseSpecializedGroup with: self type_arguments
 ]
