@@ -1,9 +1,23 @@
 Class {
 	#name : 'FASTTypeScriptImporterTest',
 	#superclass : 'TSFASTAbstractImporterTest',
+	#instVars : [
+		'parser'
+	],
 	#category : 'FAST-TypeScript-Model-Tests',
 	#package : 'FAST-TypeScript-Model-Tests'
 }
+
+{ #category : 'running' }
+FASTTypeScriptImporterTest >> setUp [
+
+	super setUp.
+]
+
+{ #category : 'running' }
+FASTTypeScriptImporterTest >> tearDown [
+	super tearDown
+]
 
 { #category : 'tests' }
 FASTTypeScriptImporterTest >> testGeneratedAbstract [
@@ -425,10 +439,10 @@ abstract class Foo {
 						self assert: self topEntity sourceCode equals: 'console.log("roaming the earth...");'.
 						self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
-						
-							stack push: (stack top genericChildren at: 1).
+						"Testing value of monovalue relation expression"
+						self assert: self topEntity expression isNotNil.
+
+							stack push: self topEntity expression.
 							self assert: self topEntity sourceCode equals: 'console.log("roaming the earth...")'.
 							self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 							
@@ -439,10 +453,10 @@ abstract class Foo {
 								self assert: self topEntity sourceCode equals: '("roaming the earth...")'.
 								self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 								
-								"Testing value of multivalued relation genericChildren"
-								self assert: self topEntity genericChildren size equals: 1.
+								"Testing value of multivalued relation argumentsList"
+								self assert: self topEntity argumentsList size equals: 1.
 								
-									stack push: (stack top genericChildren at: 1).
+									stack push: (stack top argumentsList at: 1).
 									self assert: self topEntity sourceCode equals: '"roaming the earth..."'.
 									self assert: (self topEntity isOfType: FASTTypeScriptString).
 									self assert: (self topEntity isOfType: FASTTLiteral).
@@ -612,10 +626,10 @@ FASTTypeScriptImporterTest >> testGeneratedAccessibilityModifiersAsPairKeywords 
 	self assert: self topEntity sourceCode equals: 'x = { name, description, private: private_ };'.
 	self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 	
-	"Testing value of multivalued relation genericChildren"
-	self assert: self topEntity genericChildren size equals: 1.
-	
-		stack push: (stack top genericChildren at: 1).
+	"Testing value of monovalue relation expression"
+	self assert: self topEntity expression isNotNil.
+
+		stack push: self topEntity expression.
 		self assert: self topEntity sourceCode equals: 'x = { name, description, private: private_ }'.
 		self assert: (self topEntity isOfType: FASTTypeScriptAssignmentExpression).
 		
@@ -1026,10 +1040,10 @@ declare module Foo {
 				self assert: self topEntity sourceCode equals: '(greeting: string)'.
 				self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
+				"Testing value of multivalued relation parameters"
+				self assert: self topEntity parameters size equals: 1.
 				
-					stack push: (stack top genericChildren at: 1).
+					stack push: (stack top parameters at: 1).
 					self assert: self topEntity sourceCode equals: 'greeting: string'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -1153,10 +1167,10 @@ declare module Foo {
 						self assert: self topEntity sourceCode equals: '(s: string)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation parameters"
+						self assert: self topEntity parameters size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top parameters at: 1).
 							self assert: self topEntity sourceCode equals: 's: string'.
 							self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 							
@@ -1482,10 +1496,10 @@ declare module Foo {
 						self assert: self topEntity sourceCode equals: '(greeting: string)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation parameters"
+						self assert: self topEntity parameters size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top parameters at: 1).
 							self assert: self topEntity sourceCode equals: 'greeting: string'.
 							self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 							
@@ -1912,10 +1926,10 @@ declare module Foo {
 					self assert: self topEntity sourceCode equals: '1;'.
 					self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
-					
-						stack push: (stack top genericChildren at: 1).
+					"Testing value of monovalue relation expression"
+					self assert: self topEntity expression isNotNil.
+
+						stack push: self topEntity expression.
 						self assert: self topEntity sourceCode equals: '1'.
 						self assert: (self topEntity isOfType: FASTTypeScriptNumber).
 						self assert: (self topEntity isOfType: FASTTLiteral).
@@ -2256,10 +2270,10 @@ FASTTypeScriptImporterTest >> testGeneratedAmbientExportFunctionDeclarations [
 							self assert: self topEntity sourceCode equals: '(iter: Iterable.Keyed<K, V>)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation parameters"
+							self assert: self topEntity parameters size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top parameters at: 1).
 								self assert: self topEntity sourceCode equals: 'iter: Iterable.Keyed<K, V>'.
 								self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 								
@@ -2560,10 +2574,10 @@ export async function readFile(filename: string): Promise<Buffer>;' withPlatform
 				self assert: self topEntity sourceCode equals: '(x: number, y: number)'.
 				self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 2.
+				"Testing value of multivalued relation parameters"
+				self assert: self topEntity parameters size equals: 2.
 				
-					stack push: (stack top genericChildren at: 1).
+					stack push: (stack top parameters at: 1).
 					self assert: self topEntity sourceCode equals: 'x: number'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -2592,7 +2606,7 @@ export async function readFile(filename: string): Promise<Buffer>;' withPlatform
 						stack pop.
 					stack pop.
 				
-					stack push: (stack top genericChildren at: 2).
+					stack push: (stack top parameters at: 2).
 					self assert: self topEntity sourceCode equals: 'y: number'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -2684,10 +2698,10 @@ export async function readFile(filename: string): Promise<Buffer>;' withPlatform
 				self assert: self topEntity sourceCode equals: '(filename: string)'.
 				self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
+				"Testing value of multivalued relation parameters"
+				self assert: self topEntity parameters size equals: 1.
 				
-					stack push: (stack top genericChildren at: 1).
+					stack push: (stack top parameters at: 1).
 					self assert: self topEntity sourceCode equals: 'filename: string'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -2905,10 +2919,10 @@ declare module "example" { };' withPlatformLineEndings.
 						self assert: self topEntity sourceCode equals: '(value?: Thenable<R>)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation parameters"
+						self assert: self topEntity parameters size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top parameters at: 1).
 							self assert: self topEntity sourceCode equals: 'value?: Thenable<R>'.
 							self assert: (self topEntity isOfType: FASTTypeScriptOptionalParameter).
 							
@@ -3711,10 +3725,10 @@ function foo(): () => { [key: foo]: bar } {};' withPlatformLineEndings.
 			self assert: self topEntity sourceCode equals: '(bar)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'bar'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -3748,10 +3762,10 @@ function foo(): () => { [key: foo]: bar } {};' withPlatformLineEndings.
 			self assert: self topEntity sourceCode equals: '(bar)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'bar'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -3801,10 +3815,10 @@ function foo(): () => { [key: foo]: bar } {};' withPlatformLineEndings.
 			self assert: self topEntity sourceCode equals: '(bar)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'bar'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -4107,10 +4121,10 @@ function foo()
 		self assert: self topEntity sourceCode equals: 'foo();'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'foo()'.
 			self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 			
@@ -4320,10 +4334,10 @@ FASTTypeScriptImporterTest >> testGeneratedArrayWithEmptyElements [
 	self assert: self topEntity sourceCode equals: '[, a, , b, , , , s, , , ];'.
 	self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 	
-	"Testing value of multivalued relation genericChildren"
-	self assert: self topEntity genericChildren size equals: 1.
-	
-		stack push: (stack top genericChildren at: 1).
+	"Testing value of monovalue relation expression"
+	self assert: self topEntity expression isNotNil.
+
+		stack push: self topEntity expression.
 		self assert: self topEntity sourceCode equals: '[, a, , b, , , , s, , , ]'.
 		self assert: (self topEntity isOfType: FASTTypeScriptArray).
 		
@@ -4471,10 +4485,10 @@ function* foo<A>(amount, interestRate, duration): number {
 		self assert: self topEntity sourceCode equals: '<A>(amount, interestRate, duration): number => 2'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '<A>(amount, interestRate, duration): number => 2'.
 			self assert: (self topEntity isOfType: FASTTypeScriptArrowFunction).
 			
@@ -4494,10 +4508,10 @@ function* foo<A>(amount, interestRate, duration): number {
 				self assert: self topEntity sourceCode equals: '(amount, interestRate, duration)'.
 				self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 3.
+				"Testing value of multivalued relation parameters"
+				self assert: self topEntity parameters size equals: 3.
 				
-					stack push: (stack top genericChildren at: 1).
+					stack push: (stack top parameters at: 1).
 					self assert: self topEntity sourceCode equals: 'amount'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -4510,7 +4524,7 @@ function* foo<A>(amount, interestRate, duration): number {
 						stack pop.
 					stack pop.
 				
-					stack push: (stack top genericChildren at: 2).
+					stack push: (stack top parameters at: 2).
 					self assert: self topEntity sourceCode equals: 'interestRate'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -4523,7 +4537,7 @@ function* foo<A>(amount, interestRate, duration): number {
 						stack pop.
 					stack pop.
 				
-					stack push: (stack top genericChildren at: 3).
+					stack push: (stack top parameters at: 3).
 					self assert: self topEntity sourceCode equals: 'duration'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -4601,10 +4615,10 @@ function* foo<A>(amount, interestRate, duration): number {
 				self assert: self topEntity sourceCode equals: 'yield amount * interestRate * duration / 12'.
 				self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
-				
-					stack push: (stack top genericChildren at: 1).
+				"Testing value of monovalue relation expression"
+				self assert: self topEntity expression isNotNil.
+
+					stack push: self topEntity expression.
 					self assert: self topEntity sourceCode equals: 'yield amount * interestRate * duration / 12'.
 					self assert: (self topEntity isOfType: FASTTypeScriptYieldExpression).
 					
@@ -4683,10 +4697,10 @@ function* foo<A>(amount, interestRate, duration): number {
 			self assert: self topEntity sourceCode equals: '(amount, interestRate, duration)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 3.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 3.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'amount'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -4699,7 +4713,7 @@ function* foo<A>(amount, interestRate, duration): number {
 					stack pop.
 				stack pop.
 			
-				stack push: (stack top genericChildren at: 2).
+				stack push: (stack top parameters at: 2).
 				self assert: self topEntity sourceCode equals: 'interestRate'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -4712,7 +4726,7 @@ function* foo<A>(amount, interestRate, duration): number {
 					stack pop.
 				stack pop.
 			
-				stack push: (stack top genericChildren at: 3).
+				stack push: (stack top parameters at: 3).
 				self assert: self topEntity sourceCode equals: 'duration'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -4771,10 +4785,10 @@ function* foo<A>(amount, interestRate, duration): number {
 		self assert: self topEntity sourceCode equals: '(module: any): number => 2;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '(module: any): number => 2'.
 			self assert: (self topEntity isOfType: FASTTypeScriptArrowFunction).
 			
@@ -4794,10 +4808,10 @@ function* foo<A>(amount, interestRate, duration): number {
 				self assert: self topEntity sourceCode equals: '(module: any)'.
 				self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
+				"Testing value of multivalued relation parameters"
+				self assert: self topEntity parameters size equals: 1.
 				
-					stack push: (stack top genericChildren at: 1).
+					stack push: (stack top parameters at: 1).
 					self assert: self topEntity sourceCode equals: 'module: any'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -4890,10 +4904,10 @@ T as {} & { [t: T]: T } & { [g: G]: G };' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'h as `hello`'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'h as `hello`'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAsExpression).
 			
@@ -4924,10 +4938,10 @@ T as {} & { [t: T]: T } & { [g: G]: G };' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'T as {} & { [t: T]: T }'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'T as {} & { [t: T]: T }'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAsExpression).
 			
@@ -5003,10 +5017,10 @@ T as {} & { [t: T]: T } & { [g: G]: G };' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'T as {} & { [t: T]: T } & { [g: G]: G };'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'T as {} & { [t: T]: T } & { [g: G]: G }'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAsExpression).
 			
@@ -5223,10 +5237,10 @@ function isT(t: T): t is T {
 			self assert: self topEntity sourceCode equals: '(x: any)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'x: any'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -5459,10 +5473,10 @@ function isT(t: T): t is T {
 			self assert: self topEntity sourceCode equals: '(t: T)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 't: T'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -5601,10 +5615,10 @@ FASTTypeScriptImporterTest >> testGeneratedAssertionFunctionsCheckingAValue [
 			self assert: self topEntity sourceCode equals: '(x: any)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'x: any'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -5703,10 +5717,10 @@ foo! += bar;
 		self assert: self topEntity sourceCode equals: 'foo! = bar;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'foo! = bar'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAssignmentExpression).
 			
@@ -5740,10 +5754,10 @@ foo! += bar;
 		self assert: self topEntity sourceCode equals: 'foo! += bar;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'foo! += bar'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAugmentedAssignmentExpression).
 			
@@ -5777,10 +5791,10 @@ foo! += bar;
 		self assert: self topEntity sourceCode equals: '(foo)! = bar;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '(foo)! = bar'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAssignmentExpression).
 			
@@ -5822,10 +5836,10 @@ foo! += bar;
 		self assert: self topEntity sourceCode equals: '(foo)! += bar;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '(foo)! += bar'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAugmentedAssignmentExpression).
 			
@@ -5950,10 +5964,10 @@ f
 				self assert: self topEntity sourceCode equals: '''a'';'.
 				self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
-				
-					stack push: (stack top genericChildren at: 1).
+				"Testing value of monovalue relation expression"
+				self assert: self topEntity expression isNotNil.
+
+					stack push: self topEntity expression.
 					self assert: self topEntity sourceCode equals: '''a'''.
 					self assert: (self topEntity isOfType: FASTTypeScriptString).
 					self assert: (self topEntity isOfType: FASTTLiteral).
@@ -5973,10 +5987,10 @@ f
 				self assert: self topEntity sourceCode equals: '''b'';'.
 				self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
-				
-					stack push: (stack top genericChildren at: 1).
+				"Testing value of monovalue relation expression"
+				self assert: self topEntity expression isNotNil.
+
+					stack push: self topEntity expression.
 					self assert: self topEntity sourceCode equals: '''b'''.
 					self assert: (self topEntity isOfType: FASTTypeScriptString).
 					self assert: (self topEntity isOfType: FASTTLiteral).
@@ -6054,10 +6068,10 @@ f
 				self assert: self topEntity sourceCode equals: '''a'''.
 				self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
-				
-					stack push: (stack top genericChildren at: 1).
+				"Testing value of monovalue relation expression"
+				self assert: self topEntity expression isNotNil.
+
+					stack push: self topEntity expression.
 					self assert: self topEntity sourceCode equals: '''a'''.
 					self assert: (self topEntity isOfType: FASTTypeScriptString).
 					self assert: (self topEntity isOfType: FASTTLiteral).
@@ -6077,10 +6091,10 @@ f
 				self assert: self topEntity sourceCode equals: '''b'''.
 				self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
-				
-					stack push: (stack top genericChildren at: 1).
+				"Testing value of monovalue relation expression"
+				self assert: self topEntity expression isNotNil.
+
+					stack push: self topEntity expression.
 					self assert: self topEntity sourceCode equals: '''b'''.
 					self assert: (self topEntity isOfType: FASTTypeScriptString).
 					self assert: (self topEntity isOfType: FASTTLiteral).
@@ -6607,10 +6621,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithDecorators [
 							self assert: self topEntity sourceCode equals: '(grue)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation argumentsList"
+							self assert: self topEntity argumentsList size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top argumentsList at: 1).
 								self assert: self topEntity sourceCode equals: 'grue'.
 								self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 								stack pop.
@@ -6796,10 +6810,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithDecorators [
 					self assert: self topEntity sourceCode equals: '(@required param: any, @optional param2?: any)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 2.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 2.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: '@required param: any'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -6844,7 +6858,7 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithDecorators [
 							stack pop.
 						stack pop.
 					
-						stack push: (stack top genericChildren at: 2).
+						stack push: (stack top parameters at: 2).
 						self assert: self topEntity sourceCode equals: '@optional param2?: any'.
 						self assert: (self topEntity isOfType: FASTTypeScriptOptionalParameter).
 						
@@ -7026,10 +7040,10 @@ export class A extends B<C, D> implements C {};' withPlatformLineEndings.
 						self assert: self topEntity sourceCode equals: '(D)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation argumentsList"
+						self assert: self topEntity argumentsList size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top argumentsList at: 1).
 							self assert: self topEntity sourceCode equals: 'D'.
 							self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 							stack pop.
@@ -7071,10 +7085,10 @@ export class A extends B<C, D> implements C {};' withPlatformLineEndings.
 						self assert: self topEntity sourceCode equals: '(D)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation argumentsList"
+						self assert: self topEntity argumentsList size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top argumentsList at: 1).
 							self assert: self topEntity sourceCode equals: 'D'.
 							self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 							stack pop.
@@ -7176,10 +7190,10 @@ export class A extends B<C, D> implements C {};' withPlatformLineEndings.
 							self assert: self topEntity sourceCode equals: '(D)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation argumentsList"
+							self assert: self topEntity argumentsList size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top argumentsList at: 1).
 								self assert: self topEntity sourceCode equals: 'D'.
 								self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 								stack pop.
@@ -7221,10 +7235,10 @@ export class A extends B<C, D> implements C {};' withPlatformLineEndings.
 							self assert: self topEntity sourceCode equals: '(D)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation argumentsList"
+							self assert: self topEntity argumentsList size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top argumentsList at: 1).
 								self assert: self topEntity sourceCode equals: 'D'.
 								self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 								stack pop.
@@ -7336,10 +7350,10 @@ export class A extends B<C, D> implements C {};' withPlatformLineEndings.
 						self assert: self topEntity sourceCode equals: '(D)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation argumentsList"
+						self assert: self topEntity argumentsList size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top argumentsList at: 1).
 							self assert: self topEntity sourceCode equals: 'D'.
 							self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 							stack pop.
@@ -7381,10 +7395,10 @@ export class A extends B<C, D> implements C {};' withPlatformLineEndings.
 						self assert: self topEntity sourceCode equals: '(D)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation argumentsList"
+						self assert: self topEntity argumentsList size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top argumentsList at: 1).
 							self assert: self topEntity sourceCode equals: 'D'.
 							self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 							stack pop.
@@ -7502,10 +7516,10 @@ export class A extends B<C, D> implements C {};' withPlatformLineEndings.
 							self assert: self topEntity sourceCode equals: '(D)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation argumentsList"
+							self assert: self topEntity argumentsList size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top argumentsList at: 1).
 								self assert: self topEntity sourceCode equals: 'D'.
 								self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 								stack pop.
@@ -7547,10 +7561,10 @@ export class A extends B<C, D> implements C {};' withPlatformLineEndings.
 							self assert: self topEntity sourceCode equals: '(D)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation argumentsList"
+							self assert: self topEntity argumentsList size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top argumentsList at: 1).
 								self assert: self topEntity sourceCode equals: 'D'.
 								self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 								stack pop.
@@ -8023,10 +8037,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithMethodSignatures [
 					self assert: self topEntity sourceCode equals: '(func: () => T | Promise<T | undefined>, accept?: (result: T) => boolean | Promise<boolean>, timeoutMessage?: string, retryCount?: number)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 4.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 4.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: 'func: () => T | Promise<T | undefined>'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -8129,7 +8143,7 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithMethodSignatures [
 							stack pop.
 						stack pop.
 					
-						stack push: (stack top genericChildren at: 2).
+						stack push: (stack top parameters at: 2).
 						self assert: self topEntity sourceCode equals: 'accept?: (result: T) => boolean | Promise<boolean>'.
 						self assert: (self topEntity isOfType: FASTTypeScriptOptionalParameter).
 						
@@ -8162,10 +8176,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithMethodSignatures [
 									self assert: self topEntity sourceCode equals: '(result: T)'.
 									self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 									
-									"Testing value of multivalued relation genericChildren"
-									self assert: self topEntity genericChildren size equals: 1.
+									"Testing value of multivalued relation parameters"
+									self assert: self topEntity parameters size equals: 1.
 									
-										stack push: (stack top genericChildren at: 1).
+										stack push: (stack top parameters at: 1).
 										self assert: self topEntity sourceCode equals: 'result: T'.
 										self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 										
@@ -8243,7 +8257,7 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithMethodSignatures [
 							stack pop.
 						stack pop.
 					
-						stack push: (stack top genericChildren at: 3).
+						stack push: (stack top parameters at: 3).
 						self assert: self topEntity sourceCode equals: 'timeoutMessage?: string'.
 						self assert: (self topEntity isOfType: FASTTypeScriptOptionalParameter).
 						
@@ -8272,7 +8286,7 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithMethodSignatures [
 							stack pop.
 						stack pop.
 					
-						stack push: (stack top genericChildren at: 4).
+						stack push: (stack top parameters at: 4).
 						self assert: self topEntity sourceCode equals: 'retryCount?: number'.
 						self assert: (self topEntity isOfType: FASTTypeScriptOptionalParameter).
 						
@@ -8632,10 +8646,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithMethodsWithAndWithoutTrail
 					self assert: self topEntity sourceCode equals: '(a)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: 'a'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -8693,10 +8707,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithMethodsWithAndWithoutTrail
 					self assert: self topEntity sourceCode equals: '(b)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: 'b'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -8754,10 +8768,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithMethodsWithAndWithoutTrail
 					self assert: self topEntity sourceCode equals: '(c)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: 'c'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -9296,10 +9310,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithStaticBlocks [
 						self assert: self topEntity sourceCode equals: 'this.#bar = '''';'.
 						self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
-						
-							stack push: (stack top genericChildren at: 1).
+						"Testing value of monovalue relation expression"
+						self assert: self topEntity expression isNotNil.
+
+							stack push: self topEntity expression.
 							self assert: self topEntity sourceCode equals: 'this.#bar = '''''.
 							self assert: (self topEntity isOfType: FASTTypeScriptAssignmentExpression).
 							
@@ -9363,10 +9377,10 @@ FASTTypeScriptImporterTest >> testGeneratedClassesWithStaticBlocks [
 						self assert: self topEntity sourceCode equals: 'this.baz();'.
 						self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
-						
-							stack push: (stack top genericChildren at: 1).
+						"Testing value of monovalue relation expression"
+						self assert: self topEntity expression isNotNil.
+
+							stack push: self topEntity expression.
 							self assert: self topEntity sourceCode equals: 'this.baz()'.
 							self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 							
@@ -9712,10 +9726,10 @@ type T<X> = T extends { x: infer X extends number } ? X : never;;' withPlatformL
 						self assert: self topEntity sourceCode equals: '(t: T)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation parameters"
+						self assert: self topEntity parameters size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top parameters at: 1).
 							self assert: self topEntity sourceCode equals: 't: T'.
 							self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 							
@@ -9808,10 +9822,10 @@ type T<X> = T extends { x: infer X extends number } ? X : never;;' withPlatformL
 						self assert: self topEntity sourceCode equals: '(t: T)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation parameters"
+						self assert: self topEntity parameters size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top parameters at: 1).
 							self assert: self topEntity sourceCode equals: 't: T'.
 							self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 							
@@ -9961,10 +9975,10 @@ type T<X> = T extends { x: infer X extends number } ? X : never;;' withPlatformL
 				self assert: self topEntity sourceCode equals: '(t: T)'.
 				self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
+				"Testing value of multivalued relation parameters"
+				self assert: self topEntity parameters size equals: 1.
 				
-					stack push: (stack top genericChildren at: 1).
+					stack push: (stack top parameters at: 1).
 					self assert: self topEntity sourceCode equals: 't: T'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -10046,10 +10060,10 @@ type T<X> = T extends { x: infer X extends number } ? X : never;;' withPlatformL
 							self assert: self topEntity sourceCode equals: '(t: T)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation parameters"
+							self assert: self topEntity parameters size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top parameters at: 1).
 								self assert: self topEntity sourceCode equals: 't: T'.
 								self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 								
@@ -10694,10 +10708,10 @@ FASTTypeScriptImporterTest >> testGeneratedConstructorTypes [
 						self assert: self topEntity sourceCode equals: '( p1, p2 )'.
 						self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 2.
+						"Testing value of multivalued relation parameters"
+						self assert: self topEntity parameters size equals: 2.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top parameters at: 1).
 							self assert: self topEntity sourceCode equals: 'p1'.
 							self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 							
@@ -10710,7 +10724,7 @@ FASTTypeScriptImporterTest >> testGeneratedConstructorTypes [
 								stack pop.
 							stack pop.
 						
-							stack push: (stack top genericChildren at: 2).
+							stack push: (stack top parameters at: 2).
 							self assert: self topEntity sourceCode equals: 'p2'.
 							self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 							
@@ -11160,10 +11174,10 @@ enum Style {
 						self assert: self topEntity sourceCode equals: '(Math.random() * 1000)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation argumentsList"
+						self assert: self topEntity argumentsList size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top argumentsList at: 1).
 							self assert: self topEntity sourceCode equals: 'Math.random() * 1000'.
 							self assert: (self topEntity isOfType: FASTTypeScriptBinaryExpression).
 							
@@ -12102,10 +12116,10 @@ type Foo<T extends new (...args: any) => any> = T;;' withPlatformLineEndings.
 							self assert: self topEntity sourceCode equals: '(...args: any)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation parameters"
+							self assert: self topEntity parameters size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top parameters at: 1).
 								self assert: self topEntity sourceCode equals: '...args: any'.
 								self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 								
@@ -12219,10 +12233,10 @@ type Foo<T extends new (...args: any) => any> = T;;' withPlatformLineEndings.
 							self assert: self topEntity sourceCode equals: '(...args: any)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation parameters"
+							self assert: self topEntity parameters size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top parameters at: 1).
 								self assert: self topEntity sourceCode equals: '...args: any'.
 								self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 								
@@ -14192,10 +14206,10 @@ a<C.D[]>();;' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'a.b<[C]>();'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'a.b<[C]>()'.
 			self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 			
@@ -14261,10 +14275,10 @@ a<C.D[]>();;' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'a<C.D[]>();'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'a<C.D[]>()'.
 			self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 			
@@ -14364,10 +14378,10 @@ FASTTypeScriptImporterTest >> testGeneratedFunctionCallsWithOptionalChainingAndT
 		self assert: self topEntity sourceCode equals: 'A?.<B>();'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'A?.<B>()'.
 			self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 			
@@ -14543,10 +14557,10 @@ const foo: (this: Readable, size?: number) => any;;' withPlatformLineEndings.
 						self assert: self topEntity sourceCode equals: '(result: string)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation parameters"
+						self assert: self topEntity parameters size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top parameters at: 1).
 							self assert: self topEntity sourceCode equals: 'result: string'.
 							self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 							
@@ -14628,10 +14642,10 @@ const foo: (this: Readable, size?: number) => any;;' withPlatformLineEndings.
 						self assert: self topEntity sourceCode equals: '(this: Readable, size?: number)'.
 						self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 2.
+						"Testing value of multivalued relation parameters"
+						self assert: self topEntity parameters size equals: 2.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top parameters at: 1).
 							self assert: self topEntity sourceCode equals: 'this: Readable'.
 							self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 							
@@ -14660,7 +14674,7 @@ const foo: (this: Readable, size?: number) => any;;' withPlatformLineEndings.
 								stack pop.
 							stack pop.
 						
-							stack push: (stack top genericChildren at: 2).
+							stack push: (stack top parameters at: 2).
 							self assert: self topEntity sourceCode equals: 'size?: number'.
 							self assert: (self topEntity isOfType: FASTTypeScriptOptionalParameter).
 							
@@ -14771,10 +14785,10 @@ FASTTypeScriptImporterTest >> testGeneratedFunctionsWithDestructuredParameters [
 					self assert: self topEntity sourceCode equals: '({a}: Foo)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: '{a}: Foo'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -14968,10 +14982,10 @@ function foo<const T, const U extends string>(x: T, y: U) {
 			self assert: self topEntity sourceCode equals: '(person: string)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'person: string'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -15033,10 +15047,10 @@ function foo<const T, const U extends string>(x: T, y: U) {
 			self assert: self topEntity sourceCode equals: '(x: T)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'x: T'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -15138,10 +15152,10 @@ function foo<const T, const U extends string>(x: T, y: U) {
 			self assert: self topEntity sourceCode equals: '(a: T[], f: (x: T) => U)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 2.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 2.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'a: T[]'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -15178,7 +15192,7 @@ function foo<const T, const U extends string>(x: T, y: U) {
 					stack pop.
 				stack pop.
 			
-				stack push: (stack top genericChildren at: 2).
+				stack push: (stack top parameters at: 2).
 				self assert: self topEntity sourceCode equals: 'f: (x: T) => U'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -15211,10 +15225,10 @@ function foo<const T, const U extends string>(x: T, y: U) {
 							self assert: self topEntity sourceCode equals: '(x: T)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation parameters"
+							self assert: self topEntity parameters size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top parameters at: 1).
 								self assert: self topEntity sourceCode equals: 'x: T'.
 								self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 								
@@ -15365,10 +15379,10 @@ function foo<const T, const U extends string>(x: T, y: U) {
 			self assert: self topEntity sourceCode equals: '(this: T[])'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'this: T[]'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -15499,10 +15513,10 @@ function foo<const T, const U extends string>(x: T, y: U) {
 			self assert: self topEntity sourceCode equals: '(x: T, y: U)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 2.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 2.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'x: T'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -15531,7 +15545,7 @@ function foo<const T, const U extends string>(x: T, y: U) {
 					stack pop.
 				stack pop.
 			
-				stack push: (stack top genericChildren at: 2).
+				stack push: (stack top parameters at: 2).
 				self assert: self topEntity sourceCode equals: 'y: U'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -15660,10 +15674,10 @@ FASTTypeScriptImporterTest >> testGeneratedGenericCalls [
 	self assert: self topEntity sourceCode equals: 'f<T>(x);'.
 	self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 	
-	"Testing value of multivalued relation genericChildren"
-	self assert: self topEntity genericChildren size equals: 1.
-	
-		stack push: (stack top genericChildren at: 1).
+	"Testing value of monovalue relation expression"
+	self assert: self topEntity expression isNotNil.
+
+		stack push: self topEntity expression.
 		self assert: self topEntity sourceCode equals: 'f<T>(x)'.
 		self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 		
@@ -15674,10 +15688,10 @@ FASTTypeScriptImporterTest >> testGeneratedGenericCalls [
 			self assert: self topEntity sourceCode equals: '(x)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation argumentsList"
+			self assert: self topEntity argumentsList size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top argumentsList at: 1).
 				self assert: self topEntity sourceCode equals: 'x'.
 				self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 				stack pop.
@@ -16524,10 +16538,10 @@ FASTTypeScriptImporterTest >> testGeneratedImportInType [
 						self assert: self topEntity sourceCode equals: '(''node:fs'')'.
 						self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
+						"Testing value of multivalued relation argumentsList"
+						self assert: self topEntity argumentsList size equals: 1.
 						
-							stack push: (stack top genericChildren at: 1).
+							stack push: (stack top argumentsList at: 1).
 							self assert: self topEntity sourceCode equals: '''node:fs'''.
 							self assert: (self topEntity isOfType: FASTTypeScriptString).
 							self assert: (self topEntity isOfType: FASTTLiteral).
@@ -17700,10 +17714,10 @@ interface Enum extends Bar, Baz, Foo<A> {
 					self assert: self topEntity sourceCode equals: '(key: Key)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: 'key: Key'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -17966,10 +17980,10 @@ FASTTypeScriptImporterTest >> testGeneratedLanguagetsx [
 <>fragment</>;' withPlatformLineEndings.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '<Element<T>>hi</Element>;
 <Element<T> />;
 <>fragment</>' withPlatformLineEndings.
@@ -18109,8 +18123,32 @@ FASTTypeScriptImporterTest >> testGeneratedLanguagetsx [
 					"Testing value of multivalued relation genericChildren"
 					self assert: self topEntity genericChildren size equals: 1.
 					
-						
-				self assert: self topEntity sourceText equals: '<Element<T>>hi</Element>;
+						"Testing value of monovalue relation pattern"
+						self assert: self topEntity pattern isNotNil.
+
+							stack push: self topEntity pattern.
+							self assert: self topEntity sourceCode equals: '>;
+'.
+							self assert: (self topEntity isOfType: FASTTypeScriptRegexPattern).
+							stack pop.
+						stack pop.
+					stack pop.
+				
+				"Testing value of monovalue relation right"
+				self assert: self topEntity right isNotNil.
+
+					stack push: self topEntity right.
+					self assert: self topEntity sourceCode equals: ''.
+					self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
+					stack pop.
+				stack pop.
+			stack pop.
+		
+			stack push: (stack top childrenNodes at: 2).
+			self assert: self topEntity sourceCode equals: ';'.
+			self assert: (self topEntity isOfType: FASTTypeScriptEmptyStatement).
+			stack pop.
+		self assert: self topEntity source equals: '<Element<T>>hi</Element>;
 <Element<T> />;
 <>fragment</>;;' withPlatformLineEndings
 ]
@@ -18149,10 +18187,10 @@ FASTTypeScriptImporterTest >> testGeneratedLanguagetypescript [
 		self assert: self topEntity sourceCode equals: '<A>b;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '<A>b'.
 			self assert: (self topEntity isOfType: FASTTypeScriptTypeAssertion).
 			
@@ -18183,10 +18221,10 @@ FASTTypeScriptImporterTest >> testGeneratedLanguagetypescript [
 		self assert: self topEntity sourceCode equals: '<C<D>>e.f;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '<C<D>>e.f'.
 			self assert: (self topEntity isOfType: FASTTypeScriptTypeAssertion).
 			
@@ -19663,10 +19701,10 @@ FASTTypeScriptImporterTest >> testGeneratedMethodDeclarationsWithKeywordsAsNames
 					self assert: self topEntity sourceCode equals: '(plugin)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: 'plugin'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -19829,10 +19867,10 @@ namespace Bar {
 }' withPlatformLineEndings.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'namespace Foo {
 }' withPlatformLineEndings.
 			self assert: (self topEntity isOfType: FASTTypeScriptInternalModule).
@@ -20904,10 +20942,10 @@ FASTTypeScriptImporterTest >> testGeneratedObjectTypesWithAutomaticSemicolonInse
 				self assert: self topEntity sourceCode equals: '(string)'.
 				self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
+				"Testing value of multivalued relation parameters"
+				self assert: self topEntity parameters size equals: 1.
 				
-					stack push: (stack top genericChildren at: 1).
+					stack push: (stack top parameters at: 1).
 					self assert: self topEntity sourceCode equals: 'string'.
 					self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 					
@@ -21069,10 +21107,10 @@ FASTTypeScriptImporterTest >> testGeneratedObjectTypesWithCallSignatures [
 							self assert: self topEntity sourceCode equals: '(string)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation parameters"
+							self assert: self topEntity parameters size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top parameters at: 1).
 								self assert: self topEntity sourceCode equals: 'string'.
 								self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 								
@@ -21200,10 +21238,10 @@ FASTTypeScriptImporterTest >> testGeneratedObjectsWithReservedWordsAsKeys [
 };' withPlatformLineEndings.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '{
   public: true,
   private: true,
@@ -21293,10 +21331,10 @@ FASTTypeScriptImporterTest >> testGeneratedObjectsWithReservedWordsAsKeys [
 };' withPlatformLineEndings.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '{
   readonly: 1,
   abstract: 1,
@@ -21830,10 +21868,10 @@ FASTTypeScriptImporterTest >> testGeneratedPredefinedTypesAsIdentifiers [
 					self assert: self topEntity sourceCode equals: '(string: string, query: string)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 2.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 2.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: 'string: string'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -21862,7 +21900,7 @@ FASTTypeScriptImporterTest >> testGeneratedPredefinedTypesAsIdentifiers [
 							stack pop.
 						stack pop.
 					
-						stack push: (stack top genericChildren at: 2).
+						stack push: (stack top parameters at: 2).
 						self assert: self topEntity sourceCode equals: 'query: string'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -22434,10 +22472,10 @@ T satisfies {} & { [t: T]: T } & { [g: G]: G };' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'h satisfies `hello`'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'h satisfies `hello`'.
 			self assert: (self topEntity isOfType: FASTTypeScriptSatisfiesExpression).
 			
@@ -22468,10 +22506,10 @@ T satisfies {} & { [t: T]: T } & { [g: G]: G };' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'T satisfies {} & { [t: T]: T }'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'T satisfies {} & { [t: T]: T }'.
 			self assert: (self topEntity isOfType: FASTTypeScriptSatisfiesExpression).
 			
@@ -22547,10 +22585,10 @@ T satisfies {} & { [t: T]: T } & { [g: G]: G };' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'T satisfies {} & { [t: T]: T } & { [g: G]: G };'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'T satisfies {} & { [t: T]: T } & { [g: G]: G }'.
 			self assert: (self topEntity isOfType: FASTTypeScriptSatisfiesExpression).
 			
@@ -22871,10 +22909,10 @@ FASTTypeScriptImporterTest >> testGeneratedSubscriptExpressionsInIfStatements [
 				self assert: self topEntity sourceCode equals: 'set[ 1 ].apply()'.
 				self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 				
-				"Testing value of multivalued relation genericChildren"
-				self assert: self topEntity genericChildren size equals: 1.
-				
-					stack push: (stack top genericChildren at: 1).
+				"Testing value of monovalue relation expression"
+				self assert: self topEntity expression isNotNil.
+
+					stack push: self topEntity expression.
 					self assert: self topEntity sourceCode equals: 'set[ 1 ].apply()'.
 					self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 					
@@ -23048,10 +23086,10 @@ FASTTypeScriptImporterTest >> testGeneratedSuper [
 						self assert: self topEntity sourceCode equals: 'super(x);'.
 						self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 						
-						"Testing value of multivalued relation genericChildren"
-						self assert: self topEntity genericChildren size equals: 1.
-						
-							stack push: (stack top genericChildren at: 1).
+						"Testing value of monovalue relation expression"
+						self assert: self topEntity expression isNotNil.
+
+							stack push: self topEntity expression.
 							self assert: self topEntity sourceCode equals: 'super(x)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptCallExpression).
 							
@@ -23062,10 +23100,10 @@ FASTTypeScriptImporterTest >> testGeneratedSuper [
 								self assert: self topEntity sourceCode equals: '(x)'.
 								self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 								
-								"Testing value of multivalued relation genericChildren"
-								self assert: self topEntity genericChildren size equals: 1.
+								"Testing value of multivalued relation argumentsList"
+								self assert: self topEntity argumentsList size equals: 1.
 								
-									stack push: (stack top genericChildren at: 1).
+									stack push: (stack top argumentsList at: 1).
 									self assert: self topEntity sourceCode equals: 'x'.
 									self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 									stack pop.
@@ -23097,10 +23135,10 @@ FASTTypeScriptImporterTest >> testGeneratedSuper [
 					self assert: self topEntity sourceCode equals: '(x: number, y: number)'.
 					self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 2.
+					"Testing value of multivalued relation parameters"
+					self assert: self topEntity parameters size equals: 2.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top parameters at: 1).
 						self assert: self topEntity sourceCode equals: 'x: number'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -23129,7 +23167,7 @@ FASTTypeScriptImporterTest >> testGeneratedSuper [
 							stack pop.
 						stack pop.
 					
-						stack push: (stack top genericChildren at: 2).
+						stack push: (stack top parameters at: 2).
 						self assert: self topEntity sourceCode equals: 'y: number'.
 						self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 						
@@ -23442,10 +23480,10 @@ const symBar: symbol = Symbol.for("bar");;' withPlatformLineEndings.
 					self assert: self topEntity sourceCode equals: '("foo")'.
 					self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation argumentsList"
+					self assert: self topEntity argumentsList size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top argumentsList at: 1).
 						self assert: self topEntity sourceCode equals: '"foo"'.
 						self assert: (self topEntity isOfType: FASTTypeScriptString).
 						self assert: (self topEntity isOfType: FASTTLiteral).
@@ -23521,10 +23559,10 @@ const symBar: symbol = Symbol.for("bar");;' withPlatformLineEndings.
 					self assert: self topEntity sourceCode equals: '("bar")'.
 					self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation argumentsList"
+					self assert: self topEntity argumentsList size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top argumentsList at: 1).
 						self assert: self topEntity sourceCode equals: '"bar"'.
 						self assert: (self topEntity isOfType: FASTTypeScriptString).
 						self assert: (self topEntity isOfType: FASTTLiteral).
@@ -24600,10 +24638,10 @@ FASTTypeScriptImporterTest >> testGeneratedTernaryExpression [
 		self assert: self topEntity sourceCode equals: 'a ? function(){ return true } : b;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'a ? function(){ return true } : b'.
 			self assert: (self topEntity isOfType: FASTTypeScriptTernaryExpression).
 			
@@ -24707,10 +24745,10 @@ i < string.length;;' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'i < foo.length;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'i < foo.length'.
 			self assert: (self topEntity isOfType: FASTTypeScriptBinaryExpression).
 			
@@ -24752,10 +24790,10 @@ i < string.length;;' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'i < type.length;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'i < type.length'.
 			self assert: (self topEntity isOfType: FASTTypeScriptBinaryExpression).
 			
@@ -24797,10 +24835,10 @@ i < string.length;;' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'i < string.length;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'i < string.length'.
 			self assert: (self topEntity isOfType: FASTTypeScriptBinaryExpression).
 			
@@ -25945,10 +25983,10 @@ bar satisfies number[]
 		self assert: self topEntity sourceCode equals: 'foo as any as Array<number>'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'foo as any as Array<number>'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAsExpression).
 			
@@ -26008,10 +26046,10 @@ bar satisfies number[]
 		self assert: self topEntity sourceCode equals: 'bar satisfies number[]'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'bar satisfies number[]'.
 			self assert: (self topEntity isOfType: FASTTypeScriptSatisfiesExpression).
 			
@@ -26042,10 +26080,10 @@ bar satisfies number[]
 		self assert: self topEntity sourceCode equals: '"foobar" as const;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: '"foobar" as const'.
 			self assert: (self topEntity isOfType: FASTTypeScriptAsExpression).
 			
@@ -26153,10 +26191,10 @@ declare const g: (x: any) => asserts x is number;;' withPlatformLineEndings.
 							self assert: self topEntity sourceCode equals: '(x: any)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation parameters"
+							self assert: self topEntity parameters size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top parameters at: 1).
 								self assert: self topEntity sourceCode equals: 'x: any'.
 								self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 								
@@ -26254,10 +26292,10 @@ declare const g: (x: any) => asserts x is number;;' withPlatformLineEndings.
 							self assert: self topEntity sourceCode equals: '(x: any)'.
 							self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 							
-							"Testing value of multivalued relation genericChildren"
-							self assert: self topEntity genericChildren size equals: 1.
+							"Testing value of multivalued relation parameters"
+							self assert: self topEntity parameters size equals: 1.
 							
-								stack push: (stack top genericChildren at: 1).
+								stack push: (stack top parameters at: 1).
 								self assert: self topEntity sourceCode equals: 'x: any'.
 								self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 								
@@ -26398,10 +26436,10 @@ function isFish(object: Fish): object is Fish {
 			self assert: self topEntity sourceCode equals: '(pet: Fish)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'pet: Fish'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -26493,10 +26531,10 @@ function isFish(object: Fish): object is Fish {
 			self assert: self topEntity sourceCode equals: '(object: Fish)'.
 			self assert: (self topEntity isOfType: FASTTypeScriptFormalParameters).
 			
-			"Testing value of multivalued relation genericChildren"
-			self assert: self topEntity genericChildren size equals: 1.
+			"Testing value of multivalued relation parameters"
+			self assert: self topEntity parameters size equals: 1.
 			
-				stack push: (stack top genericChildren at: 1).
+				stack push: (stack top parameters at: 1).
 				self assert: self topEntity sourceCode equals: 'object: Fish'.
 				self assert: (self topEntity isOfType: FASTTypeScriptRequiredParameter).
 				
@@ -26908,10 +26946,10 @@ type T = typeof array[number];;' withPlatformLineEndings.
 					self assert: self topEntity sourceCode equals: '(''person'')'.
 					self assert: (self topEntity isOfType: FASTTypeScriptArguments).
 					
-					"Testing value of multivalued relation genericChildren"
-					self assert: self topEntity genericChildren size equals: 1.
+					"Testing value of multivalued relation argumentsList"
+					self assert: self topEntity argumentsList size equals: 1.
 					
-						stack push: (stack top genericChildren at: 1).
+						stack push: (stack top argumentsList at: 1).
 						self assert: self topEntity sourceCode equals: '''person'''.
 						self assert: (self topEntity isOfType: FASTTypeScriptString).
 						self assert: (self topEntity isOfType: FASTTLiteral).
@@ -27159,10 +27197,10 @@ typeof module === "object" && typeof module.exports === "object";' withPlatformL
 		self assert: self topEntity sourceCode equals: 'typeof class {} === "function";'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'typeof class {} === "function"'.
 			self assert: (self topEntity isOfType: FASTTypeScriptBinaryExpression).
 			
@@ -27214,10 +27252,10 @@ typeof module === "object" && typeof module.exports === "object";' withPlatformL
 		self assert: self topEntity sourceCode equals: 'typeof module === "object" && typeof module.exports === "object";'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'typeof module === "object" && typeof module.exports === "object"'.
 			self assert: (self topEntity isOfType: FASTTypeScriptBinaryExpression).
 			
@@ -28446,10 +28484,10 @@ module;;' withPlatformLineEndings.
 		self assert: self topEntity sourceCode equals: 'module;'.
 		self assert: (self topEntity isOfType: FASTTypeScriptExpressionStatement).
 		
-		"Testing value of multivalued relation genericChildren"
-		self assert: self topEntity genericChildren size equals: 1.
-		
-			stack push: (stack top genericChildren at: 1).
+		"Testing value of monovalue relation expression"
+		self assert: self topEntity expression isNotNil.
+
+			stack push: self topEntity expression.
 			self assert: self topEntity sourceCode equals: 'module'.
 			self assert: (self topEntity isOfType: FASTTypeScriptIdentifier).
 			stack pop.
