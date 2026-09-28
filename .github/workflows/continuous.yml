@@ -7,9 +7,11 @@ on:
   push:
     branches:
       - main
+      - WorkOfTrainee
   pull_request:
     branches:
       - main
+      - WorkOfTrainee
 jobs:
   build:
     runs-on: ubuntu-latest
