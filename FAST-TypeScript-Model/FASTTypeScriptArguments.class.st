@@ -29,20 +29,16 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptArguments class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #Arguments super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptArguments class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptArguments }
 ]
 
 { #category : 'adding' }
 FASTTypeScriptArguments >> addArgumentsList: anObject [
+
+	<ignoreForCoverage>
 	<generated>
 	^ self argumentsList add: anObject
 ]
@@ -51,31 +47,28 @@ FASTTypeScriptArguments >> addArgumentsList: anObject [
 FASTTypeScriptArguments >> argumentsList [
 	"Relation named: #argumentsList type: #FASTTEntity opposite: #argumentsOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The list of arguments (expressions or spread elements)'>
 	<derived>
 	<FMProperty: #argumentsList type: #FASTTEntity opposite: #argumentsOwner>
+	<multivalued>
 	^ self attributeAt: #argumentsList ifAbsentPut: [ FMMultivalueLink on: self opposite: #argumentsOwner: ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptArguments >> argumentsList: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	self argumentsList value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptArguments >> argumentsListGroup [
-	<generated>
-	<navigation: 'ArgumentsList'>
-	^ MooseSpecializedGroup withAll: self argumentsList asSet
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptArguments >> newExpressionArgumentsOwner [
 	"Relation named: #newExpressionArgumentsOwner type: #FASTTypeScriptNewExpression opposite: #arguments"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The owner of these arguments'>
 	<container>
@@ -86,13 +79,7 @@ FASTTypeScriptArguments >> newExpressionArgumentsOwner [
 { #category : 'accessing' }
 FASTTypeScriptArguments >> newExpressionArgumentsOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	newExpressionArgumentsOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptArguments >> newExpressionArgumentsOwnerGroup [
-	<generated>
-	<navigation: 'NewExpressionArgumentsOwner'>
-	^ MooseSpecializedGroup with: self newExpressionArgumentsOwner
 ]

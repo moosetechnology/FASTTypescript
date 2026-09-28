@@ -9,16 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptHashBangLine class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #HashBangLine super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptHashBangLine class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptHash_bang_line }
- 
- 
 ]

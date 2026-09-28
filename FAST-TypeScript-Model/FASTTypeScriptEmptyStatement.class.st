@@ -9,16 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptEmptyStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #EmptyStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptEmptyStatement class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptEmpty_statement }
- 
- 
 ]

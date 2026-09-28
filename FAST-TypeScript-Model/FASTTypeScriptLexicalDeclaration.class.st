@@ -5,16 +5,42 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `forInitializerOwner` | `FASTTypeScriptLexicalDeclaration` | `initializer` | `FASTTypeScriptForStatement` | |
+| `argumentsOwner` | `FASTTEntity` | `argumentsList` | `FASTTypeScriptArguments` | The arguments node that owns me|
+| `arrowFunctionBodyOwner` | `FASTTEntity` | `body` | `FASTTypeScriptArrowFunction` | My owner|
+| `doStatementBodyOwner` | `FASTTStatement` | `body` | `FASTTypeScriptDoStatement` | |
+| `exportStatementDeclarationOwner` | `FASTTypeScriptTDeclaration` | `declaration` | `FASTTypeScriptExportStatement` | |
+| `forStatementBodyOwner` | `FASTTStatement` | `body` | `FASTTypeScriptForStatement` | |
+| `labeledStatementBodyOwner` | `FASTTStatement` | `body` | `FASTTypeScriptLabeledStatement` | |
+| `parentFormalParameters` | `FASTTEntity` | `parameters` | `FASTTypeScriptFormalParameters` | My owner|
+| `parentLoopStatement` | `FASTTStatement` | `body` | `FASTTLoopStatement` | Optional loop of which this statement is the body|
+| `statementContainer` | `FASTTStatement` | `statements` | `FASTTStatementBlock` | Block containing this statement.|
+| `switchCaseBodyOwner` | `FASTTStatement` | `body` | `FASTTypeScriptSwitchCase` | |
+| `switchDefaultBodyOwner` | `FASTTStatement` | `body` | `FASTTypeScriptSwitchDefault` | |
+| `tWithDeclarationsDeclarationsOwner` | `FASTTypeScriptTDeclaration` | `declarations` | `FASTTypeScriptTWithDeclarations` | The element that declares me|
+| `whileStatementBodyOwner` | `FASTTStatement` | `body` | `FASTTypeScriptWhileStatement` | |
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `kind` | `FASTTypeScriptLexicalDeclaration` | `lexicalDeclarationKindOwner` | `FASTTypeScriptEntity` | |
 
 
+## Properties
+======================
+
+| Name | Type | Default value | Comment |
+|---|
+| `endPos` | `Number` | nil | |
+| `startPos` | `Number` | nil | |
 
 "
 Class {
 	#name : 'FASTTypeScriptLexicalDeclaration',
 	#superclass : 'FASTTypeScriptEntity',
+	#traits : 'FASTTypeScriptTDeclaration',
+	#classTraits : 'FASTTypeScriptTDeclaration classTrait',
 	#instVars : [
-		'#forInitializerOwner => FMOne type: #FASTTypeScriptForStatement opposite: #initializer'
+		'#kind => FMOne type: #FASTTypeScriptEntity opposite: #lexicalDeclarationKindOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -24,40 +50,25 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptLexicalDeclaration class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #LexicalDeclaration super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptLexicalDeclaration class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptLexical_declaration }
- 
- 
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptLexicalDeclaration >> forInitializerOwner [
-	"Relation named: #forInitializerOwner type: #FASTTypeScriptForStatement opposite: #initializer"
+FASTTypeScriptLexicalDeclaration >> kind [
+	"Relation named: #kind type: #FASTTypeScriptEntity opposite: #lexicalDeclarationKindOwner"
 
+	<ignoreForCoverage>
 	<generated>
-	<container>
-	<derived>
-	^ forInitializerOwner
+	^ kind
 ]
 
 { #category : 'accessing' }
-FASTTypeScriptLexicalDeclaration >> forInitializerOwner: anObject [
+FASTTypeScriptLexicalDeclaration >> kind: anObject [
 
+	<ignoreForCoverage>
 	<generated>
-	forInitializerOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptLexicalDeclaration >> forInitializerOwnerGroup [
-	<generated>
-	<navigation: 'ForInitializerOwner'>
-	^ MooseSpecializedGroup with: self forInitializerOwner
+	kind := anObject
 ]

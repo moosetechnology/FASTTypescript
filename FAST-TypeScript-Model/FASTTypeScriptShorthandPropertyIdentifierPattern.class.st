@@ -9,17 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptShorthandPropertyIdentifierPattern class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ShorthandPropertyIdentifierPattern super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptShorthandPropertyIdentifierPattern class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptShorthand_property_identifier_pattern }
-
- 
- 
 ]

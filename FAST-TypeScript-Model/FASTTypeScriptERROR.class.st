@@ -29,14 +29,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptERROR class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ERROR super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptERROR class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptERROR }
 ]

@@ -1,6 +1,21 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `childrenNode` | `FASTTypeScriptComputedPropertyName` | `computedPropertyNameOwner` | `FASTTypeScriptEntity` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptComputedPropertyName',
 	#superclass : 'FASTTypeScriptEntity',
+	#instVars : [
+		'#childrenNode => FMOne type: #FASTTypeScriptEntity opposite: #computedPropertyNameOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,16 +24,25 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptComputedPropertyName class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ComputedPropertyName super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptComputedPropertyName class >> initialize [ 
+{ #category : 'accessing' }
+FASTTypeScriptComputedPropertyName >> childrenNode [
+	"Relation named: #childrenNode type: #FASTTypeScriptEntity opposite: #computedPropertyNameOwner"
 
-	self deprecatedAliases: { #FASTTypescriptComputed_property_name }
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ childrenNode
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptComputedPropertyName >> childrenNode: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	childrenNode := anObject
 ]

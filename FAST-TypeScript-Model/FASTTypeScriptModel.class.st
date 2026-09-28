@@ -10,19 +10,17 @@ Class {
 
 { #category : 'accessing' }
 FASTTypeScriptModel class >> allSubmetamodelsPackagesNames [
+
+	<ignoreForCoverage>
 	<generated>
 	^ #(#'Moose-Query' #'Famix-Traits' #'FAST-Core-Model')
 ]
 
 { #category : 'meta' }
 FASTTypeScriptModel class >> annotation [
-	<FMClass: #FASTTypeScriptModel super: #MooseModel>
+
+	<ignoreForCoverage>
+	<FMClass: #Model super: #MooseModel>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptModel class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptModel }
 ]

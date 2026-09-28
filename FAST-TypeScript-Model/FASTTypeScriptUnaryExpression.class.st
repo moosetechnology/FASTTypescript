@@ -6,6 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `argument` | `FASTTypeScriptUnaryExpression` | `unaryExpressionArgumentOwner` | `FASTTExpression` | My argument|
+| `operator` | `FASTTypeScriptUnaryExpression` | `unaryExpressionOperatorOwner` | `FASTTypeScriptEntity` | |
 
 
 
@@ -13,6 +14,9 @@
 Class {
 	#name : 'FASTTypeScriptUnaryExpression',
 	#superclass : 'FASTTypeScriptExpression',
+	#instVars : [
+		'#operator => FMOne type: #FASTTypeScriptEntity opposite: #unaryExpressionOperatorOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -21,24 +25,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptUnaryExpression class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #UnaryExpression super: #FASTTypeScriptExpression>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptUnaryExpression class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptUnary_expression }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptUnaryExpression >> argument [
 	"Relation named: #argument type: #FASTTExpression opposite: #unaryExpressionArgumentOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My argument'>
 	<FMProperty: #argument type: #FASTTExpression opposite: #unaryExpressionArgumentOwner>
@@ -48,6 +45,7 @@ FASTTypeScriptUnaryExpression >> argument [
 { #category : 'accessing' }
 FASTTypeScriptUnaryExpression >> argument: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #argument ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -59,9 +57,19 @@ FASTTypeScriptUnaryExpression >> argument: anObject [
 		anObject unaryExpressionArgumentOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptUnaryExpression >> argumentGroup [
+{ #category : 'accessing' }
+FASTTypeScriptUnaryExpression >> operator [
+	"Relation named: #operator type: #FASTTypeScriptEntity opposite: #unaryExpressionOperatorOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'Argument'>
-	^ MooseSpecializedGroup with: self argument
+	^ operator
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptUnaryExpression >> operator: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	operator := anObject
 ]

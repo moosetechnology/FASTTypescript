@@ -28,24 +28,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptTryStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #TryStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptTryStatement class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptTry_statement }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> body [
 	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #tryStatementBodyOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'Body'>
 	^ body
@@ -54,21 +47,16 @@ FASTTypeScriptTryStatement >> body [
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> body: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	body := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTryStatement >> bodyGroup [
-	<generated>
-	<navigation: 'Body'>
-	^ MooseSpecializedGroup with: self body
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> finalizer [
 	"Relation named: #finalizer type: #FASTTypeScriptFinallyClause opposite: #tryStatementFinalizerOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'Finalizer'>
 	^ finalizer
@@ -77,21 +65,16 @@ FASTTypeScriptTryStatement >> finalizer [
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> finalizer: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	finalizer := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTryStatement >> finalizerGroup [
-	<generated>
-	<navigation: 'Finalizer'>
-	^ MooseSpecializedGroup with: self finalizer
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> handler [
 	"Relation named: #handler type: #FASTTypeScriptCatchClause opposite: #tryStatementHandlerOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'Handler'>
 	^ handler
@@ -100,13 +83,7 @@ FASTTypeScriptTryStatement >> handler [
 { #category : 'accessing' }
 FASTTypeScriptTryStatement >> handler: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	handler := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTryStatement >> handlerGroup [
-	<generated>
-	<navigation: 'Handler'>
-	^ MooseSpecializedGroup with: self handler
 ]

@@ -1,6 +1,21 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `label` | `FASTTypeScriptContinueStatement` | `continueStatementLabelOwner` | `FASTTypeScriptStatementIdentifier` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptContinueStatement',
 	#superclass : 'FASTTypeScriptStatement',
+	#instVars : [
+		'#label => FMOne type: #FASTTypeScriptStatementIdentifier opposite: #continueStatementLabelOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,16 +24,25 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptContinueStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ContinueStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptContinueStatement class >> initialize [ 
+{ #category : 'accessing' }
+FASTTypeScriptContinueStatement >> label [
+	"Relation named: #label type: #FASTTypeScriptStatementIdentifier opposite: #continueStatementLabelOwner"
 
-	self deprecatedAliases: { #FASTTypescriptContinue_statement }
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ label
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptContinueStatement >> label: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	label := anObject
 ]

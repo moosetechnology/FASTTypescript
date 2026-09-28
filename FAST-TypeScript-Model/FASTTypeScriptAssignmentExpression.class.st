@@ -22,22 +22,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptAssignmentExpression class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #AssignmentExpression super: #FASTTypeScriptExpression>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptAssignmentExpression class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptAssignment_expression }
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptAssignmentExpression >> left [
 	"Relation named: #left type: #FASTTExpression opposite: #assignmentExpressionLeftOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The left operand'>
 	<FMProperty: #left type: #FASTTExpression opposite: #assignmentExpressionLeftOwner>
@@ -47,6 +42,7 @@ FASTTypeScriptAssignmentExpression >> left [
 { #category : 'accessing' }
 FASTTypeScriptAssignmentExpression >> left: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #left ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -58,17 +54,11 @@ FASTTypeScriptAssignmentExpression >> left: anObject [
 		anObject assignmentExpressionLeftOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptAssignmentExpression >> leftGroup [
-	<generated>
-	<navigation: 'Left'>
-	^ MooseSpecializedGroup with: self left
-]
-
 { #category : 'accessing' }
 FASTTypeScriptAssignmentExpression >> right [
 	"Relation named: #right type: #FASTTExpression opposite: #assignmentExpressionRightOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The right operand'>
 	<FMProperty: #right type: #FASTTExpression opposite: #assignmentExpressionRightOwner>
@@ -78,6 +68,7 @@ FASTTypeScriptAssignmentExpression >> right [
 { #category : 'accessing' }
 FASTTypeScriptAssignmentExpression >> right: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #right ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -87,11 +78,4 @@ FASTTypeScriptAssignmentExpression >> right: anObject [
 	ifNotNil: [ 
 		self attributeAt: #right put: anObject.
 		anObject assignmentExpressionRightOwner: self ]
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptAssignmentExpression >> rightGroup [
-	<generated>
-	<navigation: 'Right'>
-	^ MooseSpecializedGroup with: self right
 ]

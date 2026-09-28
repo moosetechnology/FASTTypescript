@@ -2,15 +2,11 @@
 ## Relations
 ======================
 
-### Parents
-| Relation | Origin | Opposite | Type | Comment |
-|---|
-| `forConditionOwner` | `FASTTypeScriptBinaryExpression` | `condition` | `FASTTypeScriptForStatement` | |
-
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `left` | `FASTTypeScriptBinaryExpression` | `binaryExpressionLeftOwner` | `FASTTExpression` | The left operand (if possible)|
+| `operator` | `FASTTypeScriptBinaryExpression` | `binaryExpressionOperatorOwner` | `FASTTypeScriptEntity` | |
 | `right` | `FASTTypeScriptBinaryExpression` | `binaryExpressionRightOwner` | `FASTTExpression` | The right operand (if possible)|
 
 
@@ -20,7 +16,7 @@ Class {
 	#name : 'FASTTypeScriptBinaryExpression',
 	#superclass : 'FASTTypeScriptExpression',
 	#instVars : [
-		'#forConditionOwner => FMOne type: #FASTTypeScriptForStatement opposite: #condition'
+		'#operator => FMOne type: #FASTTypeScriptEntity opposite: #binaryExpressionOperatorOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -30,49 +26,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptBinaryExpression class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #BinaryExpression super: #FASTTypeScriptExpression>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptBinaryExpression class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptBinary_expression }
-
- 
- 
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptBinaryExpression >> forConditionOwner [
-	"Relation named: #forConditionOwner type: #FASTTypeScriptForStatement opposite: #condition"
-
-	<generated>
-	<container>
-	<derived>
-	^ forConditionOwner
-]
-
-{ #category : 'accessing' }
-FASTTypeScriptBinaryExpression >> forConditionOwner: anObject [
-
-	<generated>
-	forConditionOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptBinaryExpression >> forConditionOwnerGroup [
-	<generated>
-	<navigation: 'ForConditionOwner'>
-	^ MooseSpecializedGroup with: self forConditionOwner
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptBinaryExpression >> left [
 	"Relation named: #left type: #FASTTExpression opposite: #binaryExpressionLeftOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The left operand (if possible)'>
 	<FMProperty: #left type: #FASTTExpression opposite: #binaryExpressionLeftOwner>
@@ -82,6 +46,7 @@ FASTTypeScriptBinaryExpression >> left [
 { #category : 'accessing' }
 FASTTypeScriptBinaryExpression >> left: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #left ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -93,17 +58,28 @@ FASTTypeScriptBinaryExpression >> left: anObject [
 		anObject binaryExpressionLeftOwner: self ]
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptBinaryExpression >> leftGroup [
+{ #category : 'accessing' }
+FASTTypeScriptBinaryExpression >> operator [
+	"Relation named: #operator type: #FASTTypeScriptEntity opposite: #binaryExpressionOperatorOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'Left'>
-	^ MooseSpecializedGroup with: self left
+	^ operator
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptBinaryExpression >> operator: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	operator := anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptBinaryExpression >> right [
 	"Relation named: #right type: #FASTTExpression opposite: #binaryExpressionRightOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The right operand (if possible)'>
 	<FMProperty: #right type: #FASTTExpression opposite: #binaryExpressionRightOwner>
@@ -113,6 +89,7 @@ FASTTypeScriptBinaryExpression >> right [
 { #category : 'accessing' }
 FASTTypeScriptBinaryExpression >> right: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #right ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
@@ -122,11 +99,4 @@ FASTTypeScriptBinaryExpression >> right: anObject [
 	ifNotNil: [ 
 		self attributeAt: #right put: anObject.
 		anObject binaryExpressionRightOwner: self ]
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptBinaryExpression >> rightGroup [
-	<generated>
-	<navigation: 'Right'>
-	^ MooseSpecializedGroup with: self right
 ]

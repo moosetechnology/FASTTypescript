@@ -1,6 +1,23 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `body` | `FASTTypeScriptSwitchStatement` | `switchStatementBodyOwner` | `FASTTypeScriptSwitchBody` | |
+| `value` | `FASTTypeScriptSwitchStatement` | `switchStatementValueOwner` | `FASTTypeScriptParenthesizedExpression` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptSwitchStatement',
 	#superclass : 'FASTTypeScriptStatement',
+	#instVars : [
+		'#body => FMOne type: #FASTTypeScriptSwitchBody opposite: #switchStatementBodyOwner',
+		'#value => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #switchStatementValueOwner'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,16 +26,42 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptSwitchStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #SwitchStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptSwitchStatement class >> initialize [ 
+{ #category : 'accessing' }
+FASTTypeScriptSwitchStatement >> body [
+	"Relation named: #body type: #FASTTypeScriptSwitchBody opposite: #switchStatementBodyOwner"
 
-	self deprecatedAliases: { #FASTTypescriptSwitch_statement }
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ body
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptSwitchStatement >> body: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	body := anObject
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptSwitchStatement >> value [
+	"Relation named: #value type: #FASTTypeScriptParenthesizedExpression opposite: #switchStatementValueOwner"
+
+	<ignoreForCoverage>
+	<generated>
+	^ value
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptSwitchStatement >> value: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	value := anObject
 ]

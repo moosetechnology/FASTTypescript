@@ -9,17 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptAccessibilityModifier class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #AccessibilityModifier super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptAccessibilityModifier class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptAccessibility_modifier }
-
- 
- 
 ]

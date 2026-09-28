@@ -9,17 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptEscapeSequence class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #EscapeSequence super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptEscapeSequence class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptEscape_sequence }
-
- 
- 
 ]

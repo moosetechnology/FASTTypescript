@@ -7,6 +7,11 @@
 |---|
 | `enumDeclarationBodyOwner` | `FASTTypeScriptEnumBody` | `body` | `FASTTypeScriptEnumDeclaration` | The enum declaration that contains me|
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `name` | `FASTTypeScriptEnumBody` | `enumBodyNameOwner` | `FASTTypeScriptEntity` | |
+
 
 
 "
@@ -14,7 +19,8 @@ Class {
 	#name : 'FASTTypeScriptEnumBody',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#enumDeclarationBodyOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #body'
+		'#enumDeclarationBodyOwner => FMOne type: #FASTTypeScriptEnumDeclaration opposite: #body',
+		'#name => FMMany type: #FASTTypeScriptEntity opposite: #enumBodyNameOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -24,25 +30,25 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptEnumBody class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #EnumBody super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptEnumBody class >> initialize [ 
+{ #category : 'adding' }
+FASTTypeScriptEnumBody >> addName: anObject [
 
-	self deprecatedAliases: { #FASTTypescriptEnum_body }
-	
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ self name add: anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptEnumBody >> enumDeclarationBodyOwner [
 	"Relation named: #enumDeclarationBodyOwner type: #FASTTypeScriptEnumDeclaration opposite: #body"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The enum declaration that contains me'>
 	<container>
@@ -53,13 +59,25 @@ FASTTypeScriptEnumBody >> enumDeclarationBodyOwner [
 { #category : 'accessing' }
 FASTTypeScriptEnumBody >> enumDeclarationBodyOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	enumDeclarationBodyOwner := anObject
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptEnumBody >> enumDeclarationBodyOwnerGroup [
+{ #category : 'accessing' }
+FASTTypeScriptEnumBody >> name [
+	"Relation named: #name type: #FASTTypeScriptEntity opposite: #enumBodyNameOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'EnumDeclarationBodyOwner'>
-	^ MooseSpecializedGroup with: self enumDeclarationBodyOwner
+	<derived>
+	^ name
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptEnumBody >> name: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	name value: anObject
 ]

@@ -26,24 +26,17 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptWithStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #WithStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptWithStatement class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptWith_statement }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptWithStatement >> body [
 	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #withStatementBodyOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My body as statement block'>
 	^ body
@@ -52,21 +45,16 @@ FASTTypeScriptWithStatement >> body [
 { #category : 'accessing' }
 FASTTypeScriptWithStatement >> body: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	body := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptWithStatement >> bodyGroup [
-	<generated>
-	<navigation: 'Body'>
-	^ MooseSpecializedGroup with: self body
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptWithStatement >> object [
 	"Relation named: #object type: #FASTTypeScriptParenthesizedExpression opposite: #withStatementObjectOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My object as parenthesized expression'>
 	^ object
@@ -75,13 +63,7 @@ FASTTypeScriptWithStatement >> object [
 { #category : 'accessing' }
 FASTTypeScriptWithStatement >> object: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	object := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptWithStatement >> objectGroup [
-	<generated>
-	<navigation: 'Object'>
-	^ MooseSpecializedGroup with: self object
 ]

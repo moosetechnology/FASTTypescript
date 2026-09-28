@@ -5,7 +5,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `type` | `FASTTypeScriptExtendsTypeClause` | `extendsTypeClauseTypeOwner` | `FASTTypeScriptTypeIdentifier` | My type identifier|
+| `type` | `FASTTypeScriptExtendsTypeClause` | `extendsTypeClauseTypeOwner` | `FASTTExpression` | My type identifier|
 
 
 
@@ -13,9 +13,6 @@
 Class {
 	#name : 'FASTTypeScriptExtendsTypeClause',
 	#superclass : 'FASTTypeScriptEntity',
-	#instVars : [
-		'#type => FMOne type: #FASTTypeScriptTypeIdentifier opposite: #extendsTypeClauseTypeOwner'
-	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -24,39 +21,34 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptExtendsTypeClause class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ExtendsTypeClause super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptExtendsTypeClause class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptExtends_type_clause }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptExtendsTypeClause >> type [
-	"Relation named: #type type: #FASTTypeScriptTypeIdentifier opposite: #extendsTypeClauseTypeOwner"
+	"Relation named: #type type: #FASTTExpression opposite: #extendsTypeClauseTypeOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My type identifier'>
-	^ type
+	<FMProperty: #type type: #FASTTExpression opposite: #extendsTypeClauseTypeOwner>
+	^ self attributeAt: #type ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptExtendsTypeClause >> type: anObject [
 
+	<ignoreForCoverage>
 	<generated>
-	type := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptExtendsTypeClause >> typeGroup [
-	<generated>
-	<navigation: 'Type'>
-	^ MooseSpecializedGroup with: self type
+	(self attributeAt: #type ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self type.
+		self attributeAt: #type put: anObject.
+		otherSide extendsTypeClauseTypeOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #type put: anObject.
+		anObject extendsTypeClauseTypeOwner: self ]
 ]

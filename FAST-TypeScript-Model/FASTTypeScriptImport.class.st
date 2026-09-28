@@ -9,14 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptImport class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #Import super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptImport class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptImport }
 ]

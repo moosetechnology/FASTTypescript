@@ -1,6 +1,21 @@
+"
+## Relations
+======================
+
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `regexPatternOwner` | `FASTTypeScriptRegexPattern` | `pattern` | `FASTTypeScriptRegex` | |
+
+
+
+"
 Class {
 	#name : 'FASTTypeScriptRegexPattern',
 	#superclass : 'FASTTypeScriptEntity',
+	#instVars : [
+		'#regexPatternOwner => FMOne type: #FASTTypeScriptRegex opposite: #pattern'
+	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
 	#tag : 'Entities'
@@ -9,14 +24,27 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptRegexPattern class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #RegexPattern super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptRegexPattern class >> initialize [
+{ #category : 'accessing' }
+FASTTypeScriptRegexPattern >> regexPatternOwner [
+	"Relation named: #regexPatternOwner type: #FASTTypeScriptRegex opposite: #pattern"
 
-	self deprecatedAliases: { #FASTTypescriptRegex_pattern }
+	<ignoreForCoverage>
+	<generated>
+	<container>
+	<derived>
+	^ regexPatternOwner
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptRegexPattern >> regexPatternOwner: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	regexPatternOwner := anObject
 ]

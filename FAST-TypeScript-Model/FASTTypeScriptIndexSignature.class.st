@@ -5,9 +5,10 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `index_type` | `FASTTypeScriptIndexSignature` | `indexSignatureIndexTypeOwner` | `FASTTypeScriptTypeIdentifier` | My type idetifier|
+| `index_type` | `FASTTypeScriptIndexSignature` | `indexSignatureIndexTypeOwner` | `FASTTExpression` | My type identifier|
 | `name` | `FASTTypeScriptIndexSignature` | `indexSignatureNameOwner` | `FASTTypeScriptIdentifier` | My name|
-| `type` | `FASTTypeScriptIndexSignature` | `indexSignatureTypeOwner` | `FASTTypeScriptTypeAnnotation` | My annotation type|
+| `sign` | `FASTTypeScriptIndexSignature` | `indexSignatureSignOwner` | `FASTTypeScriptEntity` | |
+| `type` | `FASTTypeScriptIndexSignature` | `indexSignatureTypeOwner` | `FASTTExpression` | My annotation type|
 
 
 
@@ -16,9 +17,8 @@ Class {
 	#name : 'FASTTypeScriptIndexSignature',
 	#superclass : 'FASTTypeScriptEntity',
 	#instVars : [
-		'#index_type => FMOne type: #FASTTypeScriptTypeIdentifier opposite: #indexSignatureIndexTypeOwner',
-		'#type => FMOne type: #FASTTypeScriptTypeAnnotation opposite: #indexSignatureTypeOwner',
-		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #indexSignatureNameOwner'
+		'#name => FMOne type: #FASTTypeScriptIdentifier opposite: #indexSignatureNameOwner',
+		'#sign => FMOne type: #FASTTypeScriptEntity opposite: #indexSignatureSignOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -28,47 +28,43 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptIndexSignature class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #IndexSignature super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptIndexSignature class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptIndex_signature }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptIndexSignature >> index_type [
-	"Relation named: #index_type type: #FASTTypeScriptTypeIdentifier opposite: #indexSignatureIndexTypeOwner"
+	"Relation named: #index_type type: #FASTTExpression opposite: #indexSignatureIndexTypeOwner"
 
+	<ignoreForCoverage>
 	<generated>
-	<FMComment: 'My type idetifier'>
-	^ index_type
+	<FMComment: 'My type identifier'>
+	<FMProperty: #index_type type: #FASTTExpression opposite: #indexSignatureIndexTypeOwner>
+	^ self attributeAt: #index_type ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptIndexSignature >> index_type: anObject [
 
+	<ignoreForCoverage>
 	<generated>
-	index_type := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIndexSignature >> index_typeGroup [
-	<generated>
-	<navigation: 'Index_type'>
-	^ MooseSpecializedGroup with: self index_type
+	(self attributeAt: #index_type ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self index_type.
+		self attributeAt: #index_type put: anObject.
+		otherSide indexSignatureIndexTypeOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #index_type put: anObject.
+		anObject indexSignatureIndexTypeOwner: self ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptIndexSignature >> name [
 	"Relation named: #name type: #FASTTypeScriptIdentifier opposite: #indexSignatureNameOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My name'>
 	^ name
@@ -77,36 +73,50 @@ FASTTypeScriptIndexSignature >> name [
 { #category : 'accessing' }
 FASTTypeScriptIndexSignature >> name: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	name := anObject
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptIndexSignature >> nameGroup [
+{ #category : 'accessing' }
+FASTTypeScriptIndexSignature >> sign [
+	"Relation named: #sign type: #FASTTypeScriptEntity opposite: #indexSignatureSignOwner"
+
+	<ignoreForCoverage>
 	<generated>
-	<navigation: 'Name'>
-	^ MooseSpecializedGroup with: self name
+	^ sign
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptIndexSignature >> sign: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	sign := anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptIndexSignature >> type [
-	"Relation named: #type type: #FASTTypeScriptTypeAnnotation opposite: #indexSignatureTypeOwner"
+	"Relation named: #type type: #FASTTExpression opposite: #indexSignatureTypeOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'My annotation type'>
-	^ type
+	<FMProperty: #type type: #FASTTExpression opposite: #indexSignatureTypeOwner>
+	^ self attributeAt: #type ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptIndexSignature >> type: anObject [
 
+	<ignoreForCoverage>
 	<generated>
-	type := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptIndexSignature >> typeGroup [
-	<generated>
-	<navigation: 'Type'>
-	^ MooseSpecializedGroup with: self type
+	(self attributeAt: #type ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self type.
+		self attributeAt: #type put: anObject.
+		otherSide indexSignatureTypeOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #type put: anObject.
+		anObject indexSignatureTypeOwner: self ]
 ]

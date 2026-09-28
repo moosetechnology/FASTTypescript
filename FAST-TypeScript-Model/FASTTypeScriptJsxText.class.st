@@ -9,17 +9,8 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptJsxText class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #JsxText super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptJsxText class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptJsx_text }
-	
- 
- 
 ]

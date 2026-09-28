@@ -25,14 +25,16 @@ Trait {
 { #category : 'meta' }
 FASTTypeScriptTWithDeclarations classSide >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #TWithDeclarations super: #Object>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
 { #category : 'adding' }
 FASTTypeScriptTWithDeclarations >> addDeclaration: anObject [
+
+	<ignoreForCoverage>
 	<generated>
 	^ self declarations add: anObject
 ]
@@ -41,6 +43,7 @@ FASTTypeScriptTWithDeclarations >> addDeclaration: anObject [
 FASTTypeScriptTWithDeclarations >> declarations [
 	"Relation named: #declarations type: #FASTTypeScriptTDeclaration opposite: #tWithDeclarationsDeclarationsOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The elements I declare'>
 	<derived>
@@ -50,13 +53,7 @@ FASTTypeScriptTWithDeclarations >> declarations [
 { #category : 'accessing' }
 FASTTypeScriptTWithDeclarations >> declarations: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	declarations value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTWithDeclarations >> declarationsGroup [
-	<generated>
-	<navigation: 'Declarations'>
-	^ MooseSpecializedGroup withAll: self declarations asSet
 ]

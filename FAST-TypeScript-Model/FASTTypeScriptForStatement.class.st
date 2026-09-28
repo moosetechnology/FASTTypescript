@@ -5,10 +5,10 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptForStatement` | `forBodyOwner` | `FASTTypeScriptStatementBlock` | |
-| `condition` | `FASTTypeScriptForStatement` | `forConditionOwner` | `FASTTypeScriptBinaryExpression` | |
-| `increment` | `FASTTypeScriptForStatement` | `forIncrementOwner` | `FASTTypeScriptUpdateExpression` | |
-| `initializer` | `FASTTypeScriptForStatement` | `forInitializerOwner` | `FASTTypeScriptLexicalDeclaration` | |
+| `body` | `FASTTypeScriptForStatement` | `forStatementBodyOwner` | `FASTTStatement` | |
+| `condition` | `FASTTypeScriptForStatement` | `forStatementConditionOwner` | `FASTTypeScriptEntity` | |
+| `increment` | `FASTTypeScriptForStatement` | `forStatementIncrementOwner` | `FASTTypeScriptEntity` | |
+| `initializer` | `FASTTypeScriptForStatement` | `forStatementInitializerOwner` | `FASTTypeScriptEntity` | |
 
 
 
@@ -17,10 +17,9 @@ Class {
 	#name : 'FASTTypeScriptForStatement',
 	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
-		'#body => FMOne type: #FASTTypeScriptStatementBlock opposite: #forBodyOwner',
-		'#condition => FMOne type: #FASTTypeScriptBinaryExpression opposite: #forConditionOwner',
-		'#increment => FMOne type: #FASTTypeScriptUpdateExpression opposite: #forIncrementOwner',
-		'#initializer => FMOne type: #FASTTypeScriptLexicalDeclaration opposite: #forInitializerOwner'
+		'#condition => FMMany type: #FASTTypeScriptEntity opposite: #forStatementConditionOwner',
+		'#increment => FMOne type: #FASTTypeScriptEntity opposite: #forStatementIncrementOwner',
+		'#initializer => FMOne type: #FASTTypeScriptEntity opposite: #forStatementInitializerOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -30,69 +29,68 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptForStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #ForStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptForStatement class >> initialize [ 
+{ #category : 'adding' }
+FASTTypeScriptForStatement >> addCondition: anObject [
 
-	self deprecatedAliases: { #FASTTypescriptFor_statement }
-	
- 
- 
+	<ignoreForCoverage>
+	<generated>
+	^ self condition add: anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForStatement >> body [
-	"Relation named: #body type: #FASTTypeScriptStatementBlock opposite: #forBodyOwner"
+	"Relation named: #body type: #FASTTStatement opposite: #forStatementBodyOwner"
 
+	<ignoreForCoverage>
 	<generated>
-	^ body
+	<FMProperty: #body type: #FASTTStatement opposite: #forStatementBodyOwner>
+	^ self attributeAt: #body ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForStatement >> body: anObject [
 
+	<ignoreForCoverage>
 	<generated>
-	body := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptForStatement >> bodyGroup [
-	<generated>
-	<navigation: 'Body'>
-	^ MooseSpecializedGroup with: self body
+	(self attributeAt: #body ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
+	anObject ifNil: [ | otherSide |
+		otherSide :=  self body.
+		self attributeAt: #body put: anObject.
+		otherSide forStatementBodyOwner: nil ]
+	ifNotNil: [ 
+		self attributeAt: #body put: anObject.
+		anObject forStatementBodyOwner: self ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForStatement >> condition [
-	"Relation named: #condition type: #FASTTypeScriptBinaryExpression opposite: #forConditionOwner"
+	"Relation named: #condition type: #FASTTypeScriptEntity opposite: #forStatementConditionOwner"
 
+	<ignoreForCoverage>
 	<generated>
+	<derived>
 	^ condition
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForStatement >> condition: anObject [
 
+	<ignoreForCoverage>
 	<generated>
-	condition := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptForStatement >> conditionGroup [
-	<generated>
-	<navigation: 'Condition'>
-	^ MooseSpecializedGroup with: self condition
+	condition value: anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptForStatement >> increment [
-	"Relation named: #increment type: #FASTTypeScriptUpdateExpression opposite: #forIncrementOwner"
+	"Relation named: #increment type: #FASTTypeScriptEntity opposite: #forStatementIncrementOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	^ increment
 ]
@@ -100,21 +98,16 @@ FASTTypeScriptForStatement >> increment [
 { #category : 'accessing' }
 FASTTypeScriptForStatement >> increment: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	increment := anObject
 ]
 
-{ #category : 'navigation' }
-FASTTypeScriptForStatement >> incrementGroup [
-	<generated>
-	<navigation: 'Increment'>
-	^ MooseSpecializedGroup with: self increment
-]
-
 { #category : 'accessing' }
 FASTTypeScriptForStatement >> initializer [
-	"Relation named: #initializer type: #FASTTypeScriptLexicalDeclaration opposite: #forInitializerOwner"
+	"Relation named: #initializer type: #FASTTypeScriptEntity opposite: #forStatementInitializerOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	^ initializer
 ]
@@ -122,13 +115,7 @@ FASTTypeScriptForStatement >> initializer [
 { #category : 'accessing' }
 FASTTypeScriptForStatement >> initializer: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	initializer := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptForStatement >> initializerGroup [
-	<generated>
-	<navigation: 'Initializer'>
-	^ MooseSpecializedGroup with: self initializer
 ]

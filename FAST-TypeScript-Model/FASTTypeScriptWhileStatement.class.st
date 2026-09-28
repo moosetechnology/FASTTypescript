@@ -5,8 +5,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `body` | `FASTTypeScriptWhileStatement` | `whileBodyOwner` | `FASTTStatement` | |
-| `condition` | `FASTTypeScriptWhileStatement` | `whileConditionOwner` | `FASTTypeScriptParenthesizedExpression` | |
+| `body` | `FASTTypeScriptWhileStatement` | `whileStatementBodyOwner` | `FASTTStatement` | |
+| `condition` | `FASTTypeScriptWhileStatement` | `whileStatementConditionOwner` | `FASTTypeScriptParenthesizedExpression` | |
 
 
 
@@ -15,7 +15,7 @@ Class {
 	#name : 'FASTTypeScriptWhileStatement',
 	#superclass : 'FASTTypeScriptStatement',
 	#instVars : [
-		'#condition => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #whileConditionOwner'
+		'#condition => FMOne type: #FASTTypeScriptParenthesizedExpression opposite: #whileStatementConditionOwner'
 	],
 	#category : 'FAST-TypeScript-Model-Entities',
 	#package : 'FAST-TypeScript-Model',
@@ -25,54 +25,42 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptWhileStatement class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #WhileStatement super: #FASTTypeScriptStatement>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
-]
-
-{ #category : 'class initialization' }
-FASTTypeScriptWhileStatement class >> initialize [ 
-
-	self deprecatedAliases: { #FASTTypescriptWhile_statement }
- 
- 
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptWhileStatement >> body [
-	"Relation named: #body type: #FASTTStatement opposite: #whileBodyOwner"
+	"Relation named: #body type: #FASTTStatement opposite: #whileStatementBodyOwner"
 
+	<ignoreForCoverage>
 	<generated>
-	<FMProperty: #body type: #FASTTStatement opposite: #whileBodyOwner>
+	<FMProperty: #body type: #FASTTStatement opposite: #whileStatementBodyOwner>
 	^ self attributeAt: #body ifAbsent: [ nil ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptWhileStatement >> body: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	(self attributeAt: #body ifAbsentPut: [nil]) == anObject ifTrue: [ ^ anObject ].
 	anObject ifNil: [ | otherSide |
 		otherSide :=  self body.
 		self attributeAt: #body put: anObject.
-		otherSide whileBodyOwner: nil ]
+		otherSide whileStatementBodyOwner: nil ]
 	ifNotNil: [ 
 		self attributeAt: #body put: anObject.
-		anObject whileBodyOwner: self ]
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptWhileStatement >> bodyGroup [
-	<generated>
-	<navigation: 'Body'>
-	^ MooseSpecializedGroup with: self body
+		anObject whileStatementBodyOwner: self ]
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptWhileStatement >> condition [
-	"Relation named: #condition type: #FASTTypeScriptParenthesizedExpression opposite: #whileConditionOwner"
+	"Relation named: #condition type: #FASTTypeScriptParenthesizedExpression opposite: #whileStatementConditionOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	^ condition
 ]
@@ -80,13 +68,7 @@ FASTTypeScriptWhileStatement >> condition [
 { #category : 'accessing' }
 FASTTypeScriptWhileStatement >> condition: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	condition := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptWhileStatement >> conditionGroup [
-	<generated>
-	<navigation: 'Condition'>
-	^ MooseSpecializedGroup with: self condition
 ]

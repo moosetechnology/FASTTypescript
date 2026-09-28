@@ -25,16 +25,17 @@ Trait {
 { #category : 'meta' }
 FASTTypeScriptTModifier classSide >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #TModifier super: #Object>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptTModifier >> tWithModifiersModifiersOwner [
 	"Relation named: #tWithModifiersModifiersOwner type: #FASTTypeScriptTWithModifiers opposite: #modifiers"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The owner of the modifier'>
 	<container>
@@ -44,13 +45,7 @@ FASTTypeScriptTModifier >> tWithModifiersModifiersOwner [
 { #category : 'accessing' }
 FASTTypeScriptTModifier >> tWithModifiersModifiersOwner: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	tWithModifiersModifiersOwner := anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptTModifier >> tWithModifiersModifiersOwnerGroup [
-	<generated>
-	<navigation: 'TWithModifiersModifiersOwner'>
-	^ MooseSpecializedGroup with: self tWithModifiersModifiersOwner
 ]

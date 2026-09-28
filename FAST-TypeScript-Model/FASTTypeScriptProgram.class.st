@@ -12,6 +12,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `childrenNodes` | `FASTTypeScriptProgram` | `programOwner` | `FASTTypeScriptEntity` | |
 | `classDeclarations` | `FASTTypeScriptProgram` | `programClassDeclarationOwner` | `FASTTypeScriptClassDeclaration` | The class declarations that I define|
 | `enumDeclarations` | `FASTTypeScriptProgram` | `programEnumDeclarationOwner` | `FASTTypeScriptEnumDeclaration` | The enum declarations that I define|
 | `interfaceDeclarations` | `FASTTypeScriptProgram` | `programInterfaceDeclarationOwner` | `FASTTypeScriptInterfaceDeclaration` | The interface declarations that I define|
@@ -38,6 +39,7 @@ Class {
 	#traits : '(FASTTEntity + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)',
 	#classTraits : '(FASTTEntity classTrait + FamixTHasImmediateSource classTrait withPrecedenceOf: FamixTHasImmediateSource classTrait)',
 	#instVars : [
+		'#childrenNodes => FMMany type: #FASTTypeScriptEntity opposite: #programOwner',
 		'#classDeclarations => FMMany type: #FASTTypeScriptClassDeclaration opposite: #programClassDeclarationOwner',
 		'#enumDeclarations => FMMany type: #FASTTypeScriptEnumDeclaration opposite: #programEnumDeclarationOwner',
 		'#interfaceDeclarations => FMMany type: #FASTTypeScriptInterfaceDeclaration opposite: #programInterfaceDeclarationOwner'
@@ -50,40 +52,67 @@ Class {
 { #category : 'meta' }
 FASTTypeScriptProgram class >> annotation [
 
+	<ignoreForCoverage>
 	<FMClass: #Program super: #FASTTypeScriptEntity>
 	<package: #'FAST-TypeScript-Model'>
 	<generated>
-	^ self
 ]
 
-{ #category : 'class initialization' }
-FASTTypeScriptProgram class >> initialize [ 
+{ #category : 'adding' }
+FASTTypeScriptProgram >> addChildrenNode: anObject [
 
-	self deprecatedAliases: { #FASTTypescriptProgram }
+	<ignoreForCoverage>
+	<generated>
+	^ self childrenNodes add: anObject
 ]
 
 { #category : 'adding' }
 FASTTypeScriptProgram >> addClassDeclaration: anObject [
+
+	<ignoreForCoverage>
 	<generated>
 	^ self classDeclarations add: anObject
 ]
 
 { #category : 'adding' }
 FASTTypeScriptProgram >> addEnumDeclaration: anObject [
+
+	<ignoreForCoverage>
 	<generated>
 	^ self enumDeclarations add: anObject
 ]
 
 { #category : 'adding' }
 FASTTypeScriptProgram >> addInterfaceDeclaration: anObject [
+
+	<ignoreForCoverage>
 	<generated>
 	^ self interfaceDeclarations add: anObject
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptProgram >> childrenNodes [
+	"Relation named: #childrenNodes type: #FASTTypeScriptEntity opposite: #programOwner"
+
+	<ignoreForCoverage>
+	<generated>
+	<derived>
+	^ childrenNodes
+]
+
+{ #category : 'accessing' }
+FASTTypeScriptProgram >> childrenNodes: anObject [
+
+	<ignoreForCoverage>
+	<generated>
+	childrenNodes value: anObject
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptProgram >> classDeclarations [
 	"Relation named: #classDeclarations type: #FASTTypeScriptClassDeclaration opposite: #programClassDeclarationOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The class declarations that I define'>
 	<derived>
@@ -93,21 +122,16 @@ FASTTypeScriptProgram >> classDeclarations [
 { #category : 'accessing' }
 FASTTypeScriptProgram >> classDeclarations: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	classDeclarations value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptProgram >> classDeclarationsGroup [
-	<generated>
-	<navigation: 'ClassDeclarations'>
-	^ MooseSpecializedGroup withAll: self classDeclarations asSet
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptProgram >> enumDeclarations [
 	"Relation named: #enumDeclarations type: #FASTTypeScriptEnumDeclaration opposite: #programEnumDeclarationOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The enum declarations that I define'>
 	<derived>
@@ -117,21 +141,16 @@ FASTTypeScriptProgram >> enumDeclarations [
 { #category : 'accessing' }
 FASTTypeScriptProgram >> enumDeclarations: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	enumDeclarations value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptProgram >> enumDeclarationsGroup [
-	<generated>
-	<navigation: 'EnumDeclarations'>
-	^ MooseSpecializedGroup withAll: self enumDeclarations asSet
 ]
 
 { #category : 'accessing' }
 FASTTypeScriptProgram >> interfaceDeclarations [
 	"Relation named: #interfaceDeclarations type: #FASTTypeScriptInterfaceDeclaration opposite: #programInterfaceDeclarationOwner"
 
+	<ignoreForCoverage>
 	<generated>
 	<FMComment: 'The interface declarations that I define'>
 	<derived>
@@ -141,13 +160,7 @@ FASTTypeScriptProgram >> interfaceDeclarations [
 { #category : 'accessing' }
 FASTTypeScriptProgram >> interfaceDeclarations: anObject [
 
+	<ignoreForCoverage>
 	<generated>
 	interfaceDeclarations value: anObject
-]
-
-{ #category : 'navigation' }
-FASTTypeScriptProgram >> interfaceDeclarationsGroup [
-	<generated>
-	<navigation: 'InterfaceDeclarations'>
-	^ MooseSpecializedGroup withAll: self interfaceDeclarations asSet
 ]
