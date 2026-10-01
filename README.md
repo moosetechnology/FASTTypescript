@@ -29,7 +29,7 @@ But for more details, you can have a look at this [blog-post][tree-sitter-blog].
 To use it in Pharo, you can check the example below:
 
 ```smalltalk  
-res := FASTTypeScriptParser new parse: 'class SimpleClass {
+res := FASTTypeScriptImporter new parse: 'class SimpleClass {
     integerProperty = 1;
     doubleProperty = 1.2;
     booleanProperty = true;
@@ -39,15 +39,10 @@ res := FASTTypeScriptParser new parse: 'class SimpleClass {
 
 ## NB
 
-The project is still at the very beginning. But at least now it can parse and generate a basic model of FASTTypescript.
-Still need to:
-- Reorder classes
-- Add new properties
-- Check traits
-- Add tests
+The project is updated starting October 1 2026. It works on Moose 12+ (despite making the ci runs only for Moose 13, and this is because some tests are using a slot that is not defined in Moose 12, which makes the tests fail). The metamodel is complete following the description of tree sitter typescript original repo.
 
-Your contribution is more than welcome.
-Happy coding with TypeScript :)
+If you think an update is recommended or new feature is requested ... Your contribution is more than welcome. Happy coding with Pharo and typescript :)
+
 
 [fast]: https://github.com/moosetechnology/FAST 
 [pharo-tree-sitter]: https://github.com/Evref-BL/Pharo-Tree-Sitter
