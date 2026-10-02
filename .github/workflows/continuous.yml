@@ -7,16 +7,18 @@ on:
   push:
     branches:
       - main
+      - WorkOfTrainee
   pull_request:
     branches:
       - main
+      - WorkOfTrainee
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        smalltalk: [ Moose64-13 ]
+        smalltalk: [  Moose64-13 ]
     name: ${{ matrix.smalltalk }}
     steps:
       - uses: actions/checkout@v7
