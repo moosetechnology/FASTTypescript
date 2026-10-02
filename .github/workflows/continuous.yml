@@ -31,7 +31,7 @@ jobs:
       
       - name: Coveralls
         uses: coverallsapp/github-action@v2
-        if: ${{ matrix.smalltalk == ' Moose64-13 ' }}
+        if: ${{ matrix.smalltalk == 'Moose64-13' }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./coverage/lcov.info
