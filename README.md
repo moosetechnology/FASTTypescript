@@ -16,7 +16,7 @@ To load FASTTypeScript in Pharo, execute the following in a Moose image:
 ```smalltalk  
 Metacello new  
   baseline: 'FASTTypeScript';  
-  repository: 'github://moosetechnology/FASTTypescript:main';  
+  repository: 'github://moosetechnology/FASTTypescript:main/src';  
   load.
 ```  
 
