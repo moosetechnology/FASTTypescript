@@ -1,5 +1,8 @@
 # FASTTypeScript  
 
+[![Coverage Status](https://coveralls.io/repos/github/moosetechnology/FASTTypescript/badge.svg?branch=main)](https://coveralls.io/github/moosetechnology/FASTTypescript?branch=main)
+[![CI](https://github.com/moosetechnology/FASTTypescript/actions/workflows/continuous.yml/badge.svg)](https://github.com/moosetechnology/FASTTypescript/actions/workflows/continuous.yml)
+
 FASTTypeScript is a recently created project that integrates with Moose and leverages the Tree-Sitter parser to analyze TypeScript source code in Pharo.  
 
 ## Features  
