@@ -8,6 +8,13 @@ Class {
 	#package : 'FAST-TypeScript-Tools'
 }
 
+{ #category : 'accessing' }
+FASTTypeScriptImporter class >> extensions [
+	"File extensions without the dot that the importer handles"
+
+	^ #( 'ts' )
+]
+
 { #category : 'initialization' }
 FASTTypeScriptImporter >> deleteTreeSitterParser [
 	

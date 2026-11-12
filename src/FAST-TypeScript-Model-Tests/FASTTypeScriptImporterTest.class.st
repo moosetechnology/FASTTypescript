@@ -28288,6 +28288,13 @@ module;;' withPlatformLineEndings.
 module;;' withPlatformLineEndings
 ]
 
+{ #category : 'tests - importer API' }
+FASTTypeScriptImporterTest >> testHandlesItsExtensions [
+
+	self assert: (FASTTypeScriptImporter handlesFile: 'module.ts' asFileReference).
+	self deny: (FASTTypeScriptImporter handlesFile: 'module.js' asFileReference)
+]
+
 { #category : 'as yet unclassified' }
 FASTTypeScriptImporterTest >> topEntity [
 	^ stack top
