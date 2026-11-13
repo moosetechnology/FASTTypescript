@@ -13,7 +13,7 @@ TypeScriptParsingClassesTest >> setUp [
 
 	super setUp.
 
-	parser := FASTTypeScriptParser new
+	parser := FASTTypeScriptImporter new
 ]
 
 { #category : 'running' }
@@ -1102,20 +1102,20 @@ const lines = new Array<DiffLine>();'.
 { #category : 'tests' }
 TypeScriptParsingClassesTest >> testParsingWhileStatement [
 
-    | ast whileNode |
-    
-    ast := FASTTypeScriptParser new parse: 'while (x < 10) { console.log("hello"); x++; }'.
-    
-    
-    whileNode := (ast allWithType: FASTTypeScriptWhileStatement) first.
-    
+	| ast whileNode |
+	ast := FASTTypeScriptImporter new parse:
+		       'while (x < 10) { console.log("hello"); x++; }'.
 
-    self assert: whileNode isNotNil.
-    self assert: whileNode condition isNotNil.
-    self assert: whileNode body isNotNil.
-    
-   
-    self assert: whileNode condition sourceCode equals: '(x < 10)'.
+
+	whileNode := (ast allWithType: FASTTypeScriptWhileStatement) first.
+
+
+	self assert: whileNode isNotNil.
+	self assert: whileNode condition isNotNil.
+	self assert: whileNode body isNotNil.
+
+
+	self assert: whileNode condition sourceCode equals: '(x < 10)'
 ]
 
 { #category : 'tests' }

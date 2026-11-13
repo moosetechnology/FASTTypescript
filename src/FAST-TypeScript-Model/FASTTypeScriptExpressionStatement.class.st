@@ -20,8 +20,8 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `expression` | `FASTTExpressionStatement` | `expressionStatementOwner` | `FASTTExpression` | The expression of the statement|
 | `expression` | `FASTTypeScriptExpressionStatement` | `expressionStatementOwner` | `FASTTypeScriptEntity` | |
+| `expression` | `FASTTExpressionStatement` | `expressionStatementOwner` | `FASTTExpression` | The expression of the statement|
 
 
 ## Properties
